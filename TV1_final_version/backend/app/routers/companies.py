@@ -4,7 +4,8 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException, Query
 
 from .. import db
-from ..engine import pipeline, pipeline_pro
+from ..engine import pipeline_pro
+from ..engine import pipeline
 from ..engine.model import Target, resolve
 from ..schemas import ValueByCodeRequest, ValueCustomRequest
 

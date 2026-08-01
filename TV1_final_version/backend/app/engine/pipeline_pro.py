@@ -15,7 +15,9 @@ from . import live_market
 from . import llm_analyst
 from . import peers as peers_mod
 from . import triangulate
-from .approaches import market, income, asset
+from .approaches import market
+from .approaches import asset
+from .approaches import income
 from .approaches.income import DCFAssumptions
 from .model import Target, load_target, resolve
 

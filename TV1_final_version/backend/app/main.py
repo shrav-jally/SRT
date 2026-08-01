@@ -14,7 +14,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from .routers import companies, extraction, intake
+from .routers import intake
+from .routers import companies
+from .routers import extraction
 
 app = FastAPI(
     title="Comparable-Company Valuation Platform",
