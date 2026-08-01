@@ -1,0 +1,12 @@
+# Core API + engine
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+xlrd==2.0.2               # reads the legacy .xls Capitaline extracts (ETL only)
+python-multipart>=0.0.9   # PDF upload endpoint
+numpy                     # warranted-multiple regression
+scikit-learn              # warranted-multiple regression (Ridge)
+langgraph                 # human-in-the-loop intake agent
+
+# Postgres (only needed when DATABASE_URL points at postgres; SQLite works w/o)
+# psycopg[binary]>=3.1
