@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ theme
+  Deloitte Digital Design System (DDS) — aligned to the Brand Guide.
+  Open Sans typography, 8px spacing grid, DDS color tokens,
+  sharp corners, BEM-inspired class names with dds- prefix. */
+
+:root {
+  /* Brand (DDS Section 4.1) */
+  --deloitte-green: #86BC25;
+  --accessible-blue: #007CB0;
+  --accessible-green: #26890D;
+  --accessible-teal: #0D8390;
+  --red: #DA291C;
+
+  /* Neutrals */
+  --black: #000000;
+  --white: #FFFFFF;
+  --cool-gray-2: #D0D0CE;
+  --cool-gray-4: #BBBCBC;
+  --cool-gray-6: #A7A8AA;
+  --cool-gray-7: #97999B;
+  --cool-gray-9: #75787B;
+  --cool-gray-10: #63666A;
+  --cool-gray-11: #53565A;
+
+  /* Focus */
+  --focus-color: #005587;
+  --focus-width: 2px;
+
+  /* Spacing (8px base grid — DDS Section 4.2) */
+  --space-0: 0;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+  --space-5: 24px;
+
+  /* Typography (DDS Section 4.3) */
+  --font-family: "Open Sans", sans-serif;
+  --font-mono: monospace;
+  --h1: 600 56px/72px var(--font-family);
+  --h2: 600 40px/52px var(--font-family);
+  --h3: 600 32px/40px var(--font-family);
+  --h4: 700 24px/36px var(--font-family);
+  --h5: 600 16px/24px var(--font-family);
+  --body: 400 14px/20px var(--font-family);
+  --body-bold: 700 14px/20px var(--font-family);
+  --label: 400 12px/16px var(--font-family);
+  --label-bold: 600 12px/16px var(--font-family);
+
+  /* Borders, Radius, Shadows (DDS Section 4.4) */
+  --border-width: 1px;
+  --border-color: var(--cool-gray-2);
+  --radius: 4px;
+  --radius-sm: 2px;
+  --radius-lg: 6px;
+  --radius-pill: 50rem;
+  --shadow: 0 8px 16px rgba(0,0,0,.15);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,.075);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,.175);
+  --shadow-inset: inset 0 1px 2px rgba(0,0,0,.075);
+  --transition: .15s;
+
+  /* Semantic — mapped from DDS for app use */
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --ink: var(--black);
+  --muted: var(--cool-gray-9);
+  --line: var(--cool-gray-2);
+  --primary: var(--deloitte-green);
+  --primary-ink: var(--black);
+  --accent: var(--accessible-blue);
+  --accent-soft: #e8f4fa;
+  --warn-bg: #fdf6e3;
+  --warn-ink: #8a6d1a;
+  --bad: var(--red);
+  --good: var(--accessible-green);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: var(--body);
+}
+
+/* ------------------------------------------------------------------ dds-btn
+    DDS Button (Section 5.1) */
+.dds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: var(--body-bold);
+  border: var(--border-width) solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  background: transparent;
+}
+.dds-btn_primary {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.dds-btn_primary:hover,
+.dds-btn_primary:active {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+.dds-btn_secondary {
+  border-color: var(--cool-gray-11);
+  color: var(--cool-gray-11);
+}
+.dds-btn_secondary:hover {
+  background: var(--cool-gray-11);
+  color: var(--white);
+}
+.dds-btn_secondary-loud {
+  background: var(--cool-gray-11);
+  border-color: var(--cool-gray-11);
+  color: var(--white);
+}
+.dds-btn_silent {
+  border-color: transparent;
+  color: var(--black);
+}
+.dds-btn_silent:hover {
+  background: var(--cool-gray-2);
+}
+.dds-btn_green { border-color: var(--deloitte-green); color: var(--deloitte-green); }
+.dds-btn_green:hover, .dds-btn_green:active { background: var(--deloitte-green); color: var(--black); }
+.dds-btn_blue { border-color: var(--accessible-blue); color: var(--accessible-blue); }
+.dds-btn_blue:hover, .dds-btn_blue:active { background: var(--accessible-blue); color: var(--white); }
+.dds-btn_danger { border-color: var(--red); color: var(--red); }
+.dds-btn_danger:hover, .dds-btn_danger:active { background: var(--red); color: var(--white); }
+.dds-btn_lg { font: 600 16px/24px var(--font-family); padding: 18px 24px; }
+.dds-btn_sm { font: var(--label-bold); padding: 8px 12px; }
+.dds-btn_fluid-width { width: 100%; }
+.dds-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Backward-compatible aliases so existing page.tsx keeps working */
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-ink);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font: var(--body-bold);
+  border: none;
+  cursor: pointer;
+  transition: filter var(--transition);
+}
+.btn-primary:hover { filter: brightness(1.1); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-ghost {
+  border: var(--border-width) solid var(--line);
+  color: var(--muted);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font: var(--body-bold);
+  background: transparent;
+  cursor: pointer;
+}
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+
+/* ------------------------------------------------------------------ dds-input
+    DDS Input (Section 5.2) */
+.dds-input__field,
+.input {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--border-color);
+  background: var(--surface);
+  padding: 10px 12px;
+  font: var(--body);
+  color: var(--ink);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.dds-input__field:focus,
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 var(--focus-width) var(--focus-color);
+}
+.dds-input__field:disabled,
+.input:disabled { opacity: 0.5; }
+.dds-input_error .dds-input__field,
+.input_error { border-color: var(--red); }
+
+/* ------------------------------------------------------------------ cards
+    DDS: compose with dds-table-block / sharp corners */
+.card {
+  background: var(--surface);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  color: var(--primary-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------ dds-data-table
+    DDS Data Table (Section 5.6) */
+.dds-data-table,
+.table-pro {
+  width: 100%;
+  font: var(--body);
+  border-collapse: collapse;
+}
+.dds-data-table__header-cell,
+.table-pro th {
+  text-align: left;
+  font: var(--label-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding: 10px 12px;
+  background: #fafcfa;
+  border-bottom: var(--border-width) solid var(--line);
+  white-space: nowrap;
+}
+.dds-data-table__cell,
+.table-pro td {
+  padding: 10px 12px;
+  border-bottom: var(--border-width) solid var(--line);
+  white-space: nowrap;
+}
+.table-pro tr:last-child td { border-bottom: none; }
+
+/* ------------------------------------------------------------------ dds-status-tag
+    DDS Status Tags (Section 5.7) */
+.dds-status-tag {
+  display: inline-block;
+  font: var(--label-bold);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+.dds-status-tag_green { background: #e6f4d5; color: var(--accessible-green); }
+.dds-status-tag_red { background: #fde8e6; color: var(--red); }
+.dds-status-tag_orange { background: #fef3e2; color: #b45309; }
+.dds-status-tag_blue { background: #e0f0fa; color: var(--accessible-blue); }
+.dds-status-tag_gray { background: #eeeeee; color: var(--cool-gray-11); }
+
+/* ------------------------------------------------------------------ dds-header
+    DDS Header / App Shell (Section 5.8) */
+.dds-header {
+  background: var(--black);
+  color: var(--white);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.dds-header__logo {
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+.dds-header__logo svg {
+  height: 28px;
+  width: auto;
+}
+.dds-header__project-name {
+  font: var(--h5);
+  color: var(--white);
+  margin-left: var(--space-3);
+  border-left: 1px solid var(--cool-gray-11);
+  padding-left: var(--space-3);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ dds-tabs
+    DDS Tabs (Section 5.9) */
+.dds-tabs__item {
+  font: var(--body-bold);
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+.dds-tabs__item:hover { color: var(--ink); }
+.dds-tabs__item_active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ------------------------------------------------------------------ dds-modal
+    DDS Modal (Section 5.5) */
+.dds-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 999;
+}
+.dds-modal {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-height: 90vh;
+  overflow: auto;
+}
+.dds-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-width) solid var(--line);
+}
+.dds-modal__title { font: var(--h5); }
+.dds-modal__close {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--muted);
+}
+.dds-modal__body { padding: var(--space-4); }
+.dds-modal__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-top: var(--border-width) solid var(--line);
+}
+
+/* ------------------------------------------------------------------ dds-progress / spinner
+    DDS Progress / Spinner (Section 5.10) */
+.dds-progress {
+  height: 4px;
+  background: var(--cool-gray-2);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.dds-progress__bar {
+  height: 100%;
+  background: var(--primary);
+  border-radius: var(--radius-pill);
+  transition: width var(--transition);
+}
+
+.dds-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--cool-gray-2);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: dds-spin 0.6s linear infinite;
+}
+@keyframes dds-spin { to { transform: rotate(360deg); } }
+
+/* ------------------------------------------------------------------ accessibility
+    DDS Section 6.1 */
+.dds-keyboard-focused,
+*:focus-visible {
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: 0;
+}
+.dds-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

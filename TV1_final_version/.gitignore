@@ -1,0 +1,16 @@
+# secrets — never commit API keys
+.env
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# node / next (the prebuilt static export in frontend/out IS committed)
+frontend/node_modules/
+frontend/.next/
+
+# local db journals
+backend/data/*.db-wal
+backend/data/*.db-shm
+backend/data/comps_backup_5excel.db
