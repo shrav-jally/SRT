@@ -1,0 +1,220 @@
+{
+  "spec_id": "demo_custom_spec_v0",
+  "spec_name": "Enterprise Annual Report Custom Extraction Spec",
+  "version": "v0",
+  "fields": [
+    {
+      "field_id": "company_name",
+      "category": "Financial Data",
+      "subcategory": "Company Information",
+      "entity_name": "Company Legal Name",
+      "entity_type": "text_fact",
+      "description": "Legal registered name of the corporate entity.",
+      "extraction_mode": "INFERENCE_BASED",
+      "synonyms": [
+        "company name",
+        "name of the company",
+        "legal name"
+      ],
+      "expected_section_types": [
+        "company_information",
+        "corporate_overview"
+      ],
+      "expected_value_type": "string",
+      "required": true,
+      "output_cardinality": "single"
+    },
+    {
+      "field_id": "board_of_directors",
+      "category": "Management & Governance",
+      "subcategory": "Board of Directors",
+      "entity_name": "Board of Directors",
+      "entity_type": "list",
+      "description": "Names, DIN numbers, and designations of board members and directors.",
+      "extraction_mode": "INFERENCE_BASED",
+      "synonyms": [
+        "directors",
+        "board members",
+        "composition of board"
+      ],
+      "expected_section_types": [
+        "board_of_directors",
+        "corporate_governance"
+      ],
+      "expected_value_type": "list",
+      "required": true,
+      "output_cardinality": "list"
+    },
+    {
+      "field_id": "employee_count",
+      "category": "Demographics",
+      "subcategory": "Workforce Information",
+      "entity_name": "Employee Count",
+      "entity_type": "count",
+      "description": "Total head count or number of permanent employees reported.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "employees",
+        "total employees",
+        "permanent employees",
+        "workforce count",
+        "people count"
+      ],
+      "expected_section_types": [
+        "human_resources",
+        "brsr",
+        "corporate_overview"
+      ],
+      "expected_value_type": "count",
+      "required": false,
+      "output_cardinality": "single"
+    },
+    {
+      "field_id": "balance_sheet",
+      "category": "Financial Data",
+      "subcategory": "Balance Sheet",
+      "entity_name": "Balance Sheet Statement",
+      "entity_type": "table",
+      "description": "Primary statement of financial position showing assets, liabilities, and equity.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "standalone balance sheet",
+        "consolidated balance sheet",
+        "statement of financial position"
+      ],
+      "expected_section_types": [
+        "balance_sheet",
+        "financial_statements"
+      ],
+      "expected_value_type": "table",
+      "required": true,
+      "output_cardinality": "table"
+    },
+    {
+      "field_id": "profit_and_loss",
+      "category": "Financial Data",
+      "subcategory": "Profit & Loss Statement",
+      "entity_name": "Profit & Loss Statement",
+      "entity_type": "table",
+      "description": "Statement of profit and loss / income statement showing revenue and expenses.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "statement of profit and loss",
+        "profit & loss account",
+        "income statement"
+      ],
+      "expected_section_types": [
+        "profit_and_loss",
+        "financial_statements"
+      ],
+      "expected_value_type": "table",
+      "required": true,
+      "output_cardinality": "table"
+    },
+    {
+      "field_id": "cash_flow",
+      "category": "Financial Data",
+      "subcategory": "Cash Flow Statement",
+      "entity_name": "Cash Flow Statement",
+      "entity_type": "table",
+      "description": "Statement of cash flows from operating, investing, and financing activities.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "cash flow statement",
+        "statement of cash flows"
+      ],
+      "expected_section_types": [
+        "cash_flow",
+        "financial_statements"
+      ],
+      "expected_value_type": "table",
+      "required": true,
+      "output_cardinality": "table"
+    },
+    {
+      "field_id": "share_capital",
+      "category": "Shareholding Information",
+      "subcategory": "Share Capital",
+      "entity_name": "Paid-up Share Capital",
+      "entity_type": "currency_amount",
+      "description": "Authorized and paid-up equity share capital amount.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "paid up capital",
+        "equity share capital",
+        "share capital"
+      ],
+      "expected_section_types": [
+        "shareholding_pattern",
+        "directors_report"
+      ],
+      "expected_value_type": "currency_amount",
+      "required": true,
+      "output_cardinality": "single"
+    },
+    {
+      "field_id": "dividend_info",
+      "category": "Shareholding Information",
+      "subcategory": "Dividend Information",
+      "entity_name": "Dividend Declared",
+      "entity_type": "currency_amount",
+      "description": "Dividend amount per share or total dividend declared for the fiscal year.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "dividend per share",
+        "dividend declared",
+        "final dividend"
+      ],
+      "expected_section_types": [
+        "directors_report",
+        "shareholder_information"
+      ],
+      "expected_value_type": "currency_amount",
+      "required": false,
+      "output_cardinality": "single"
+    },
+    {
+      "field_id": "auditor_report",
+      "category": "Management & Governance",
+      "subcategory": "Auditor's Report",
+      "entity_name": "Auditor Opinion",
+      "entity_type": "text_fact",
+      "description": "Independent auditor name and audit opinion (e.g. Unqualified / Clean).",
+      "extraction_mode": "INFERENCE_BASED",
+      "synonyms": [
+        "auditor opinion",
+        "auditors report",
+        "independent auditor"
+      ],
+      "expected_section_types": [
+        "auditors_report",
+        "governance"
+      ],
+      "expected_value_type": "string",
+      "required": true,
+      "output_cardinality": "single"
+    },
+    {
+      "field_id": "business_outlook",
+      "category": "Management Discussion & Analysis",
+      "subcategory": "Future Outlook",
+      "entity_name": "Business Outlook & Strategy",
+      "entity_type": "text_fact",
+      "description": "Summary of management's future business outlook, strategic targets, and growth guidance.",
+      "extraction_mode": "INFERENCE_BASED",
+      "synonyms": [
+        "future outlook",
+        "strategy",
+        "opportunities and risks",
+        "guidance"
+      ],
+      "expected_section_types": [
+        "md&a",
+        "management_discussion_and_analysis"
+      ],
+      "expected_value_type": "string",
+      "required": false,
+      "output_cardinality": "single"
+    }
+  ]
+}

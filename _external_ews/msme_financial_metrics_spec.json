@@ -1,0 +1,416 @@
+{
+  "spec_id": "msme_financial_metrics_v1",
+  "name": "Detailed Financial Metrics (MSME)",
+  "description": "Extracts highly granular financial line items from the Balance Sheet and P&L.",
+  "version": "1.0",
+  "fields": [
+    {
+      "field_id": "company_name",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Company Name",
+      "entity_type": "Metric",
+      "description": "Extracts Company Name",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "string",
+      "synonyms": [
+        "company name",
+        "name of the company",
+        "legal name"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "cin",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Cin",
+      "entity_type": "Metric",
+      "description": "Extracts Cin",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "string",
+      "synonyms": [
+        "cin",
+        "corporate identity number"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "financial_year_end",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Financial Year End",
+      "entity_type": "Metric",
+      "description": "Extracts Financial Year End",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "string",
+      "synonyms": [
+        "financial year end",
+        "year ended"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "reporting_currency",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Reporting Currency",
+      "entity_type": "Metric",
+      "description": "Extracts Reporting Currency",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "string",
+      "synonyms": [
+        "reporting currency",
+        "currency"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "revenue_from_operations",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Revenue From Operations",
+      "entity_type": "Metric",
+      "description": "Extracts Revenue From Operations",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "revenue from operations",
+        "sale of products",
+        "revenue"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "other_income",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Other Income",
+      "entity_type": "Metric",
+      "description": "Extracts Other Income",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "other income"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "cost_of_materials_consumed",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Cost Of Materials Consumed",
+      "entity_type": "Metric",
+      "description": "Extracts Cost Of Materials Consumed",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "cost of materials consumed",
+        "raw materials consumed"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "employee_benefits_expense",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Employee Benefits Expense",
+      "entity_type": "Metric",
+      "description": "Extracts Employee Benefits Expense",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "employee benefits expense",
+        "employee cost"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "finance_costs",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Finance Costs",
+      "entity_type": "Metric",
+      "description": "Extracts Finance Costs",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "finance costs",
+        "interest expense"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "depreciation_and_amortisation",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Depreciation And Amortisation",
+      "entity_type": "Metric",
+      "description": "Extracts Depreciation And Amortisation",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "depreciation and amortisation",
+        "depreciation"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "other_expenses",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Other Expenses",
+      "entity_type": "Metric",
+      "description": "Extracts Other Expenses",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "other expenses"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "profit_before_tax",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Profit Before Tax",
+      "entity_type": "Metric",
+      "description": "Extracts Profit Before Tax",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "profit before tax",
+        "pbt"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "profit_for_the_period",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Profit For The Period",
+      "entity_type": "Metric",
+      "description": "Extracts Profit For The Period",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "profit for the period",
+        "pat",
+        "profit after tax"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "equity_share_capital",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Equity Share Capital",
+      "entity_type": "Metric",
+      "description": "Extracts Equity Share Capital",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "equity share capital",
+        "share capital"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "other_equity",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Other Equity",
+      "entity_type": "Metric",
+      "description": "Extracts Other Equity",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "other equity",
+        "reserves and surplus"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "long_term_borrowings",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Long Term Borrowings",
+      "entity_type": "Metric",
+      "description": "Extracts Long Term Borrowings",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "long term borrowings",
+        "long-term borrowings",
+        "non-current borrowings"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "short_term_borrowings",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Short Term Borrowings",
+      "entity_type": "Metric",
+      "description": "Extracts Short Term Borrowings",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "short term borrowings",
+        "short-term borrowings",
+        "current borrowings"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "cash_and_cash_equivalents",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Cash And Cash Equivalents",
+      "entity_type": "Metric",
+      "description": "Extracts Cash And Cash Equivalents",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "cash and cash equivalents",
+        "cash & bank balances"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "total_current_liabilities",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Total Current Liabilities",
+      "entity_type": "Metric",
+      "description": "Extracts Total Current Liabilities",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "total current liabilities",
+        "current liabilities"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "total_non_current_liabilities",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Total Non-Current Liabilities",
+      "entity_type": "Metric",
+      "description": "Extracts Total Non-Current Liabilities",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "total non-current liabilities",
+        "non-current liabilities"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "total_current_assets",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Total Current Assets",
+      "entity_type": "Metric",
+      "description": "Extracts Total Current Assets",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "total current assets",
+        "current assets"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "property_plant_and_equipment",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Property, Plant And Equipment",
+      "entity_type": "Metric",
+      "description": "Extracts Property, Plant And Equipment",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "property, plant and equipment",
+        "tangible assets"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "inventories",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Inventories",
+      "entity_type": "Metric",
+      "description": "Extracts Inventories",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "inventories",
+        "inventory"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "trade_receivables",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Trade Receivables",
+      "entity_type": "Metric",
+      "description": "Extracts Trade Receivables",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "trade receivables",
+        "debtors"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "trade_payables",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Trade Payables",
+      "entity_type": "Metric",
+      "description": "Extracts Trade Payables",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "trade payables",
+        "creditors"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "total_assets",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Total Assets",
+      "entity_type": "Metric",
+      "description": "Extracts Total Assets",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "total assets"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "basic_and_diluted_eps",
+      "category": "Financial Statements",
+      "subcategory": "Line Items",
+      "entity_name": "Earnings Per Share",
+      "entity_type": "Metric",
+      "description": "Extracts Earnings Per Share",
+      "extraction_mode": "DIRECT_MAPPING",
+      "expected_value_type": "number",
+      "synonyms": [
+        "earnings per share",
+        "eps",
+        "basic eps"
+      ],
+      "is_required": false
+    }
+  ]
+}

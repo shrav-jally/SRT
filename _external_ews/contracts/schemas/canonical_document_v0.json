@@ -1,0 +1,1171 @@
+{
+  "$defs": {
+    "BoundingBox": {
+      "description": "Normalized or absolute coordinate bounding box [x0, y0, x1, y1].",
+      "properties": {
+        "x0": {
+          "title": "X0",
+          "type": "number"
+        },
+        "y0": {
+          "title": "Y0",
+          "type": "number"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        },
+        "y1": {
+          "title": "Y1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "BoundingBox",
+      "type": "object"
+    },
+    "CanonicalBlock": {
+      "description": "Layout block grouping primitive tokens (heading, paragraph, table, list, etc.).",
+      "properties": {
+        "block_id": {
+          "title": "Block Id",
+          "type": "string"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "block_type": {
+          "enum": [
+            "heading",
+            "paragraph",
+            "table",
+            "figure",
+            "list",
+            "footnote",
+            "other"
+          ],
+          "title": "Block Type",
+          "type": "string"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BoundingBox"
+        },
+        "token_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Token Ids",
+          "type": "array"
+        },
+        "table_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Table Id"
+        },
+        "section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section Id"
+        },
+        "reading_order_index": {
+          "default": 0,
+          "title": "Reading Order Index",
+          "type": "integer"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        }
+      },
+      "required": [
+        "block_id",
+        "page_number",
+        "block_type",
+        "bbox"
+      ],
+      "title": "CanonicalBlock",
+      "type": "object"
+    },
+    "CanonicalCell": {
+      "description": "Grid cell within a CanonicalTable.",
+      "properties": {
+        "cell_id": {
+          "title": "Cell Id",
+          "type": "string"
+        },
+        "row_index": {
+          "title": "Row Index",
+          "type": "integer"
+        },
+        "column_index": {
+          "title": "Column Index",
+          "type": "integer"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BoundingBox"
+        },
+        "token_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Token Ids",
+          "type": "array"
+        },
+        "raw_text": {
+          "default": "",
+          "title": "Raw Text",
+          "type": "string"
+        },
+        "numeric_token_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Numeric Token Ids",
+          "type": "array"
+        },
+        "parsed_numeric": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parsed Numeric"
+        },
+        "rowspan": {
+          "default": 1,
+          "title": "Rowspan",
+          "type": "integer"
+        },
+        "colspan": {
+          "default": 1,
+          "title": "Colspan",
+          "type": "integer"
+        },
+        "role": {
+          "default": "unknown",
+          "enum": [
+            "header",
+            "data",
+            "subtotal",
+            "total",
+            "note",
+            "unknown"
+          ],
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cell_id",
+        "row_index",
+        "column_index",
+        "bbox"
+      ],
+      "title": "CanonicalCell",
+      "type": "object"
+    },
+    "CanonicalColumn": {
+      "description": "Column structure within a CanonicalTable.",
+      "properties": {
+        "column_index": {
+          "title": "Column Index",
+          "type": "integer"
+        },
+        "column_id": {
+          "title": "Column Id",
+          "type": "string"
+        },
+        "header_text": {
+          "default": "",
+          "title": "Header Text",
+          "type": "string"
+        },
+        "role": {
+          "default": "unknown",
+          "enum": [
+            "label",
+            "numeric",
+            "note",
+            "unknown"
+          ],
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "column_index",
+        "column_id"
+      ],
+      "title": "CanonicalColumn",
+      "type": "object"
+    },
+    "CanonicalIndexes": {
+      "description": "Lookups and inverted indexes for Product 2 domain extractors.",
+      "properties": {
+        "sections_by_type": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Sections By Type",
+          "type": "object"
+        },
+        "table_ids_by_section_id": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Table Ids By Section Id",
+          "type": "object"
+        },
+        "blocks_by_page": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Blocks By Page",
+          "type": "object"
+        },
+        "token_ids_by_page": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Token Ids By Page",
+          "type": "object"
+        },
+        "tables_by_page": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Tables By Page",
+          "type": "object"
+        },
+        "normalized_title_to_section_ids": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Normalized Title To Section Ids",
+          "type": "object"
+        },
+        "note_number_to_section_ids": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Note Number To Section Ids",
+          "type": "object"
+        }
+      },
+      "title": "CanonicalIndexes",
+      "type": "object"
+    },
+    "CanonicalPage": {
+      "description": "Page-level container and token index.",
+      "properties": {
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "width": {
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        },
+        "rotation": {
+          "default": 0,
+          "title": "Rotation",
+          "type": "integer"
+        },
+        "token_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Token Ids",
+          "type": "array"
+        },
+        "block_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Block Ids",
+          "type": "array"
+        },
+        "section_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Section Ids",
+          "type": "array"
+        },
+        "table_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Table Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "page_number",
+        "width",
+        "height"
+      ],
+      "title": "CanonicalPage",
+      "type": "object"
+    },
+    "CanonicalRow": {
+      "description": "Row structure within a CanonicalTable.",
+      "properties": {
+        "row_index": {
+          "title": "Row Index",
+          "type": "integer"
+        },
+        "row_id": {
+          "title": "Row Id",
+          "type": "string"
+        },
+        "cell_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Cell Ids",
+          "type": "array"
+        },
+        "is_header": {
+          "default": false,
+          "title": "Is Header",
+          "type": "boolean"
+        },
+        "role": {
+          "default": "unknown",
+          "enum": [
+            "header",
+            "data",
+            "subtotal",
+            "total",
+            "note",
+            "unknown"
+          ],
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "row_index",
+        "row_id"
+      ],
+      "title": "CanonicalRow",
+      "type": "object"
+    },
+    "CanonicalSection": {
+      "description": "Logical document section boundary.",
+      "properties": {
+        "section_id": {
+          "title": "Section Id",
+          "type": "string"
+        },
+        "title_raw": {
+          "title": "Title Raw",
+          "type": "string"
+        },
+        "title_normalized": {
+          "title": "Title Normalized",
+          "type": "string"
+        },
+        "section_type": {
+          "default": "other",
+          "title": "Section Type",
+          "type": "string"
+        },
+        "subcategory": {
+          "default": "",
+          "title": "Subcategory",
+          "type": "string"
+        },
+        "parent_section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Section Id"
+        },
+        "child_section_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Child Section Ids",
+          "type": "array"
+        },
+        "start_page": {
+          "title": "Start Page",
+          "type": "integer"
+        },
+        "end_page": {
+          "title": "End Page",
+          "type": "integer"
+        },
+        "block_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Block Ids",
+          "type": "array"
+        },
+        "table_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Table Ids",
+          "type": "array"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "taxonomy_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Taxonomy Path"
+        }
+      },
+      "required": [
+        "section_id",
+        "title_raw",
+        "title_normalized",
+        "start_page",
+        "end_page"
+      ],
+      "title": "CanonicalSection",
+      "type": "object"
+    },
+    "CanonicalTable": {
+      "description": "Structured table extracted from bounding box regions.",
+      "properties": {
+        "table_id": {
+          "title": "Table Id",
+          "type": "string"
+        },
+        "page_numbers": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Page Numbers",
+          "type": "array"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BoundingBox"
+        },
+        "source_block_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Block Id"
+        },
+        "is_borderless": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Borderless"
+        },
+        "detection_method": {
+          "title": "Detection Method",
+          "type": "string"
+        },
+        "structure_method": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Structure Method"
+        },
+        "token_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Token Ids",
+          "type": "array"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/CanonicalRow"
+          },
+          "title": "Rows",
+          "type": "array"
+        },
+        "columns": {
+          "items": {
+            "$ref": "#/$defs/CanonicalColumn"
+          },
+          "title": "Columns",
+          "type": "array"
+        },
+        "cells": {
+          "items": {
+            "$ref": "#/$defs/CanonicalCell"
+          },
+          "title": "Cells",
+          "type": "array"
+        },
+        "validation_status": {
+          "$ref": "#/$defs/ValidationStatus",
+          "default": "NOT_RUN"
+        },
+        "validation_issues": {
+          "items": {
+            "$ref": "#/$defs/ValidationIssue"
+          },
+          "title": "Validation Issues",
+          "type": "array"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        }
+      },
+      "required": [
+        "table_id",
+        "bbox",
+        "detection_method"
+      ],
+      "title": "CanonicalTable",
+      "type": "object"
+    },
+    "CanonicalToken": {
+      "description": "Atomic text token extracted from PDF primitive text layer.",
+      "properties": {
+        "token_id": {
+          "title": "Token Id",
+          "type": "string"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BoundingBox"
+        },
+        "reading_order_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reading Order Index"
+        },
+        "font_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Font Name"
+        },
+        "font_size": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Font Size"
+        },
+        "is_bold": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Bold"
+        },
+        "is_italic": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Italic"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        }
+      },
+      "required": [
+        "token_id",
+        "page_number",
+        "text",
+        "bbox"
+      ],
+      "title": "CanonicalToken",
+      "type": "object"
+    },
+    "DocumentMetadata": {
+      "description": "High-level document metadata inferred from canonical tokens and sections.",
+      "properties": {
+        "company_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Company Name"
+        },
+        "reporting_period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reporting Period"
+        },
+        "fy_end": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fy End"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency"
+        },
+        "unit_denomination": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit Denomination"
+        },
+        "consolidation_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "standalone",
+                "consolidated",
+                "both",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "unknown",
+          "title": "Consolidation Type"
+        },
+        "auditor_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Auditor Name"
+        },
+        "auditor_opinion": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Auditor Opinion"
+        }
+      },
+      "title": "DocumentMetadata",
+      "type": "object"
+    },
+    "SourceMetadata": {
+      "description": "File ingestion provenance and raw document properties.",
+      "properties": {
+        "file_name": {
+          "title": "File Name",
+          "type": "string"
+        },
+        "file_hash": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File Hash"
+        },
+        "file_size_bytes": {
+          "default": 0,
+          "title": "File Size Bytes",
+          "type": "integer"
+        },
+        "page_count": {
+          "default": 0,
+          "title": "Page Count",
+          "type": "integer"
+        },
+        "creation_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Creation Date"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "author": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Author"
+        },
+        "producer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Producer"
+        }
+      },
+      "required": [
+        "file_name"
+      ],
+      "title": "SourceMetadata",
+      "type": "object"
+    },
+    "SourceReference": {
+      "description": "Fine-grained atomic reference to source tokens, pages, tables, and cells.",
+      "properties": {
+        "document_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Id"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section Id"
+        },
+        "table_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Table Id"
+        },
+        "row_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row Index"
+        },
+        "column_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Column Index"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Id"
+        },
+        "token_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Token Ids",
+          "type": "array"
+        },
+        "raw_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Text"
+        }
+      },
+      "required": [
+        "page_number"
+      ],
+      "title": "SourceReference",
+      "type": "object"
+    },
+    "ValidationIssue": {
+      "description": "Structured validation diagnostic issue.",
+      "properties": {
+        "issue_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Issue Id"
+        },
+        "issue_type": {
+          "title": "Issue Type",
+          "type": "string"
+        },
+        "severity": {
+          "default": "warning",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceReference"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "issue_type",
+        "description"
+      ],
+      "title": "ValidationIssue",
+      "type": "object"
+    },
+    "ValidationStatus": {
+      "description": "Validation status for table reconstruction and numeric alignment.",
+      "enum": [
+        "NOT_RUN",
+        "VALIDATED",
+        "FAILED",
+        "PARTIAL"
+      ],
+      "title": "ValidationStatus",
+      "type": "string"
+    }
+  },
+  "description": "Canonical document contract v0.\n\nThe sole input format for all Product 2 domain extractors.",
+  "properties": {
+    "schema_version": {
+      "default": "v0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "source_metadata": {
+      "$ref": "#/$defs/SourceMetadata"
+    },
+    "document_metadata": {
+      "$ref": "#/$defs/DocumentMetadata"
+    },
+    "pages": {
+      "items": {
+        "$ref": "#/$defs/CanonicalPage"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "token_registry": {
+      "additionalProperties": {
+        "$ref": "#/$defs/CanonicalToken"
+      },
+      "title": "Token Registry",
+      "type": "object"
+    },
+    "blocks": {
+      "items": {
+        "$ref": "#/$defs/CanonicalBlock"
+      },
+      "title": "Blocks",
+      "type": "array"
+    },
+    "tables": {
+      "items": {
+        "$ref": "#/$defs/CanonicalTable"
+      },
+      "title": "Tables",
+      "type": "array"
+    },
+    "sections": {
+      "items": {
+        "$ref": "#/$defs/CanonicalSection"
+      },
+      "title": "Sections",
+      "type": "array"
+    },
+    "indexes": {
+      "$ref": "#/$defs/CanonicalIndexes"
+    },
+    "processing_metadata": {
+      "additionalProperties": true,
+      "title": "Processing Metadata",
+      "type": "object"
+    },
+    "errors_and_warnings": {
+      "items": {
+        "$ref": "#/$defs/ValidationIssue"
+      },
+      "title": "Errors And Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "document_id",
+    "source_metadata",
+    "document_metadata"
+  ],
+  "title": "CanonicalDocument",
+  "type": "object"
+}

@@ -1,0 +1,93 @@
+{
+  "$defs": {
+    "TaxonomyNode": {
+      "description": "A node in the document taxonomy tree.",
+      "properties": {
+        "category_id": {
+          "title": "Category Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "page_spans": {
+          "items": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "title": "Page Spans",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category_id",
+        "name",
+        "path"
+      ],
+      "title": "TaxonomyNode",
+      "type": "object"
+    }
+  },
+  "description": "Domain output model for document taxonomy representation.",
+  "properties": {
+    "schema_version": {
+      "default": "v0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "taxonomy_tree": {
+      "items": {
+        "$ref": "#/$defs/TaxonomyNode"
+      },
+      "title": "Taxonomy Tree",
+      "type": "array"
+    },
+    "unmapped_pages": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Unmapped Pages",
+      "type": "array"
+    }
+  },
+  "required": [
+    "document_id"
+  ],
+  "title": "TaxonomyDocument",
+  "type": "object"
+}

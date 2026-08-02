@@ -1,0 +1,146 @@
+{
+  "$defs": {
+    "CustomExtractionFieldSpec": {
+      "description": "Specification for a single user-requested extraction field.",
+      "properties": {
+        "field_id": {
+          "title": "Field Id",
+          "type": "string"
+        },
+        "category": {
+          "title": "Category",
+          "type": "string"
+        },
+        "subcategory": {
+          "title": "Subcategory",
+          "type": "string"
+        },
+        "entity_name": {
+          "title": "Entity Name",
+          "type": "string"
+        },
+        "entity_type": {
+          "default": "metric",
+          "title": "Entity Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "extraction_mode": {
+          "$ref": "#/$defs/FieldExtractionMode",
+          "default": "DIRECT_MAPPING"
+        },
+        "synonyms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Synonyms",
+          "type": "array"
+        },
+        "expected_section_types": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Expected Section Types",
+          "type": "array"
+        },
+        "expected_value_type": {
+          "$ref": "#/$defs/FieldValueType",
+          "default": "string"
+        },
+        "required": {
+          "default": true,
+          "title": "Required",
+          "type": "boolean"
+        },
+        "output_cardinality": {
+          "default": "single",
+          "enum": [
+            "single",
+            "multi",
+            "table",
+            "list"
+          ],
+          "title": "Output Cardinality",
+          "type": "string"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "field_id",
+        "category",
+        "subcategory",
+        "entity_name",
+        "description"
+      ],
+      "title": "CustomExtractionFieldSpec",
+      "type": "object"
+    },
+    "FieldExtractionMode": {
+      "description": "Supported extraction resolution modes.",
+      "enum": [
+        "DIRECT_MAPPING",
+        "INFERENCE_BASED",
+        "DERIVED"
+      ],
+      "title": "FieldExtractionMode",
+      "type": "string"
+    },
+    "FieldValueType": {
+      "description": "Expected data type for field values.",
+      "enum": [
+        "string",
+        "number",
+        "currency_amount",
+        "integer",
+        "count",
+        "date",
+        "table",
+        "list",
+        "boolean"
+      ],
+      "title": "FieldValueType",
+      "type": "string"
+    }
+  },
+  "description": "A document containing a list of requested custom field specifications.",
+  "properties": {
+    "spec_id": {
+      "default": "custom_spec_v0",
+      "title": "Spec Id",
+      "type": "string"
+    },
+    "spec_name": {
+      "default": "Custom Extraction Specification",
+      "title": "Spec Name",
+      "type": "string"
+    },
+    "version": {
+      "default": "v0",
+      "title": "Version",
+      "type": "string"
+    },
+    "fields": {
+      "items": {
+        "$ref": "#/$defs/CustomExtractionFieldSpec"
+      },
+      "title": "Fields",
+      "type": "array"
+    }
+  },
+  "title": "CustomExtractionSpecDocument",
+  "type": "object"
+}

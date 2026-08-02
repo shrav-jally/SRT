@@ -1,0 +1,285 @@
+{
+  "$defs": {
+    "CustomExtractionResult": {
+      "description": "Structured extraction result for a single requested custom field.",
+      "properties": {
+        "field_id": {
+          "title": "Field Id",
+          "type": "string"
+        },
+        "category": {
+          "title": "Category",
+          "type": "string"
+        },
+        "subcategory": {
+          "title": "Subcategory",
+          "type": "string"
+        },
+        "entity_name": {
+          "title": "Entity Name",
+          "type": "string"
+        },
+        "entity_type": {
+          "title": "Entity Type",
+          "type": "string"
+        },
+        "extraction_mode": {
+          "$ref": "#/$defs/FieldExtractionMode"
+        },
+        "status": {
+          "$ref": "#/$defs/ExtractionStatus",
+          "default": "NOT_FOUND"
+        },
+        "value_raw": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value Raw"
+        },
+        "value_normalized": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value Normalized"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency"
+        },
+        "confidence": {
+          "default": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "explanation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Explanation"
+        },
+        "provenance": {
+          "items": {
+            "$ref": "#/$defs/SourceReference"
+          },
+          "title": "Provenance",
+          "type": "array"
+        },
+        "validation_status": {
+          "$ref": "#/$defs/ValidationStatus",
+          "default": "NOT_RUN"
+        }
+      },
+      "required": [
+        "field_id",
+        "category",
+        "subcategory",
+        "entity_name",
+        "entity_type",
+        "extraction_mode"
+      ],
+      "title": "CustomExtractionResult",
+      "type": "object"
+    },
+    "ExtractionStatus": {
+      "description": "Explicit extraction status for every domain field.\n\nNEVER use null alone to represent missing fields.",
+      "enum": [
+        "FOUND",
+        "NOT_FOUND",
+        "NOT_APPLICABLE",
+        "AMBIGUOUS",
+        "FAILED_VALIDATION"
+      ],
+      "title": "ExtractionStatus",
+      "type": "string"
+    },
+    "FieldExtractionMode": {
+      "description": "Supported extraction resolution modes.",
+      "enum": [
+        "DIRECT_MAPPING",
+        "INFERENCE_BASED",
+        "DERIVED"
+      ],
+      "title": "FieldExtractionMode",
+      "type": "string"
+    },
+    "SourceReference": {
+      "description": "Fine-grained atomic reference to source tokens, pages, tables, and cells.",
+      "properties": {
+        "document_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Id"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section Id"
+        },
+        "table_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Table Id"
+        },
+        "row_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row Index"
+        },
+        "column_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Column Index"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Id"
+        },
+        "token_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Token Ids",
+          "type": "array"
+        },
+        "raw_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Text"
+        }
+      },
+      "required": [
+        "page_number"
+      ],
+      "title": "SourceReference",
+      "type": "object"
+    },
+    "ValidationStatus": {
+      "description": "Validation status for table reconstruction and numeric alignment.",
+      "enum": [
+        "NOT_RUN",
+        "VALIDATED",
+        "FAILED",
+        "PARTIAL"
+      ],
+      "title": "ValidationStatus",
+      "type": "string"
+    }
+  },
+  "description": "Complete result document containing extracted values for all requested fields.",
+  "properties": {
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "spec_id": {
+      "title": "Spec Id",
+      "type": "string"
+    },
+    "results": {
+      "items": {
+        "$ref": "#/$defs/CustomExtractionResult"
+      },
+      "title": "Results",
+      "type": "array"
+    },
+    "summary": {
+      "additionalProperties": true,
+      "title": "Summary",
+      "type": "object"
+    }
+  },
+  "required": [
+    "document_id",
+    "spec_id"
+  ],
+  "title": "CustomExtractionResultDocument",
+  "type": "object"
+}

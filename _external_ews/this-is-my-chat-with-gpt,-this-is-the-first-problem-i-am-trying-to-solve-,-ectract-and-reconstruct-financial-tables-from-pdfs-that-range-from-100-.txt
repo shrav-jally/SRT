@@ -1,0 +1,3981 @@
+From: https://www.perplexity.ai/search/807cbd57-056f-4db8-89cc-fd57328c2efc?sm=d
+
+
+
+you asked
+
+message time: 2026-07-19 16:34:40
+
+this is my chat with gpt, this is the first problem i am trying to solve , ectract and reconstruct financial tables from pdfs that range from 100 to 400 pages... pdfs are always digitized... I need 100% accurate extraction and reconstruction of financial tables...
+give me the sota approach
+
+
+perplexity response
+
+The most reliable “SOTA” approach for digitized financial PDFs today is a hybrid, mostly deterministic pipeline: use PDF primitives (PyMuPDF/pdfplumber) as the source of truth for text and geometry, add a strong table/layout detector (DocLayout/MinerU/TableFormer) only for ambiguous layouts, and wrap everything in a constraint‑based reconstruction + financial validation layer before emitting JSON/Excel.[0][1][2][3]
+
+Below I’ll break this into concrete stages and choices, tailored to your use case (100–400‑page annual reports, no OCR, “no‑wrong‑values” requirement).
+
+Problem framing
+
+Your task is document understanding, not RAG: input is a fully digital financial PDF, output is structurally faithful tables (hierarchy, merged cells, headers, subtotals) in JSON/Excel with character‑exact values and auditable behavior.[0]
+
+Existing deep models optimize table metrics like TEDS/F1 on datasets such as PubTabNet, while production financial pipelines must instead optimize “never change a single number”, which favors deterministic extraction and explicit validation over end‑to‑end generative models.[1][0]
+
+Core design principles
+
+PDF primitives first, ML second: the PDF already encodes text, fonts, coordinates, and vector lines; any model that “infers” these will be less reliable than reading them directly.[0]
+Separate extraction from reconstruction: getting all tokens correctly is mostly solved; the hard part is assigning them to the right row/column/group and proving that structure is correct.[0]
+Use ML/VLM only for ambiguity: instead of “convert this table to JSON”, let deterministic algorithms reconstruct 95–99% and ask a model only to resolve specific structural choices (e.g., which header spans which columns).[1][0]
+
+Phase 1: PDF primitive extraction
+
+For your setting (digitized, financial reports), the first stage should be pure PDF parsing:
+
+Use PyMuPDF or pdfplumber to get text tokens with (x,y) coordinates, bounding boxes, fonts, and vector drawing commands (ruling lines, rectangles).[0]
+This gives you deterministic, repeatable access to all characters and layout, and avoids the non‑determinism and speed issues you saw with Docling’s neural models on CPU.[0]
+
+You already have strong evidence that pdfplumber matches printed balance sheets value‑for‑value and is ~100x faster and deterministic compared to Docling on your test set.[0]
+
+Phase 2: Table page and region detection
+
+Next, identify which pages contain tables and where on each page the tables are:
+
+A fast heuristic detector over PDF primitives can flag table pages: dense numeric columns, repeated column alignment, horizontal/vertical ruling lines, regular row spacing, etc., so you only do heavy work on ~20/100–300 pages.[0]
+For table regions, you can combine:Rule‑based detection using lines + text clusters.
+Optional layout models (MinerU’s layout/table detection, DocLayout‑style models, or TableFormer cell detectors) for side‑by‑side tables and complex multi‑column layouts where geometry alone struggles.[2][3][1]
+
+Tools like MinerU explicitly aim to “extract images, image descriptions, tables, table titles and footnotes” and convert tables to HTML/JSON while handling complex layouts, which makes them good candidates for fallback or cross‑checking.[3][4][2]
+
+Phase 3: Table structure reconstruction
+
+This is the real core of your problem: given a set of characters (tokens) and their coordinates in a table region, reconstruct a table model:
+
+Represent tokens as a character graph: nodes are characters/words; edges capture “same row”, “same column”, “aligned”, “same font group”, etc., based on geometric thresholds.[0]
+Use clustering on this graph to infer:Rows (segments of vertically overlapping tokens).
+Columns (horizontally aligned groups).
+Header hierarchies (rows with different fonts/weights/positions).
+Merged cells and spanning headers (continuous ranges of coordinates across row/column indices).
+
+This is conceptually similar to what TableFormer does from images—predicting both structure and cell bounding boxes—but you’re starting from precise PDF geometry instead of noisy OCR, which can be more reliable for programmatic PDFs.[5][1]
+
+The important design choice: treat structure construction as a constraint/graph problem, not a pure ML sequence‑to‑sequence problem, so you can reason about correctness and support auditing.[0]
+
+Phase 4: Financial validation and auditing
+
+Because these are financial statements, you can add a domain‑specific validator:
+
+Check totals and subtotals: verify that “Total Assets” equals “Current Assets + Non‑Current Assets”, that column sums match row subtotals, etc., and flag any mismatch.[0]
+Detect inconsistent hierarchies: e.g., headings repeated incorrectly, orphan subtotals, or mis‑grouped segments when comparing similar tables (e.g., standalone vs consolidated).[0]
+Track provenance: for every JSON cell, record the originating page, coordinates, and raw PDF token so that you can re‑audit and visually inspect errors.
+
+This validation layer is what pushes you closer to “effective 100% accuracy in production”: errors become detectable and traceable instead of silent, and ambiguous cases can be escalated to manual review or a specialized model.[0]
+
+Role of VLMs and table models
+
+VLMs and table‑structure models are still useful, but in a constrained role:
+
+Use a VLM (e.g., GPT‑4.1V‑class) only when your deterministic reconstruction finds multiple plausible mappings—e.g., a header could span columns 2–3 or 2–4; you ask the model to pick between options, not to redraw the entire table.[0]
+Use TableFormer‑style models as a fallback for visually complex layouts (dense, multi‑row headers, side‑by‑side grids) where your geometry‑only approach fails; they can propose cell bounding boxes and structure that you then reconcile with the PDF primitives.[5][1]
+
+Literature on TableFormer shows state‑of‑the‑art tree‑editing‑distance scores on complex tables by combining structure decoding and cell bbox detection, but even there the recommended architecture for programmatic PDFs is to extract cell content from the PDF directly while using the model for structure.[1]
+
+Practical stack recommendation
+
+Given your experiments and constraints, a pragmatic “SOTA‑ish” stack for 2026 looks like:
+
+Primary extractor: PyMuPDF + pdfplumber for PDF primitives and text geometry.[0]
+Table/page detection: fast heuristic detector over primitives; optional layout/table models from MinerU/DocLayout for tricky multi‑column pages.[2][3][0]
+Structure reconstruction: custom character‑graph + constraint‑based reconstruction engine, inspired by TableFormer’s structure/token separation but built on deterministic PDF coordinates.[1][0]
+Validation: financial consistency checks (totals, subtotals, cross‑footing), hierarchy sanity, and confidence scoring per table/page, with provenance metadata.  
+Targeted AI: VLM or table‑structure model invoked only on low‑confidence pages to resolve specific structural ambiguities; its outputs are checked against primitives and validators rather than directly trusted.[1][0]
+
+This isn’t “one magical SOTA model”, but it is aligned with how the strongest open‑source systems (MinerU, Docling) and recent table‑structure research are evolving: hybrid, multi‑stage, and deterministic at the core, with ML reserved for ambiguity and complex layouts.[6][3][2][0]
+
+If you want, I can next sketch a concrete architecture diagram and pseudo‑code for the character‑graph + constraint solver so you can start prototyping v1 in Python around pdfplumber.
+
+
+you asked
+
+message time: 2026-07-19 16:43:19
+
+A fast heuristic detector over PDF primitives can flag table pages: dense numeric columns, repeated column alignment, horizontal/vertical ruling lines, regular row spacing, etc., so you only do heavy work on ~20/100–300 pages. how to do this? if i atleast get all tables, and use vlm nad just extract off everything from them and keep the tables i want for time being it should already be good enough right ?... also we can then make a layer that matches all the pdf plumbers raw numbers if they exactly match with tthe vlm output... isnt that good enough... and yeah the financial checks stay anyways
+because i dont want to spend weeks building the table reconstructiion thing which may just crash on a pdf format we dont yet know about...
+
+
+perplexity response
+
+You have exactly the right intuition for a pragmatic, shipping-focused architecture. The idea is: Use cheap heuristics to find the tables, use a VLM to do the heavy lifting of structure/extraction, and use a deterministic check against PDF primitives (pdfplumber/PyMuPDF) to guarantee 100% accuracy.
+
+This entirely bypasses the need to write complex constraint solvers for table reconstruction, while still achieving your "no-wrong-values" requirement.
+
+Here is how you actually build this pipeline:
+
+1. The Fast Heuristic Detector (Page Filtering)
+
+You don't want to send 300 pages to a VLM. You need a fast script that runs in seconds to find the ~20 table pages.
+
+Instead of ML, use PyMuPDF (or a fast rust port like tablers or pdf-inspector) to scan the primitives of each page. A page likely contains a table if it meets 2 or 3 of these conditions:[0][1]
+
+Line density: The page contains a high number of explicit vector drawing lines (e.g., page.get_drawings() in PyMuPDF). Most financial tables have at least horizontal ruling lines.
+Numeric density: Extract all text (using a fast text extractor). If >20% of the non-whitespace characters on a page are digits (0-9), it's almost certainly a financial schedule.
+Whitespace / Alignment: If you look at the $x$-coordinates of the words, table pages have strong vertical "bands" of text (columns) separated by empty space. 
+PyMuPDF/pdfplumber default table finders: Both libraries have built-in find_tables() or extract_tables() methods. While they might fail at reconstructing complex headers perfectly, they are very good at simply detecting the bounding box of a table.[2][3]
+
+Result of Step 1: You narrow down a 300-page PDF to just the 20 bounding boxes (crops) that actually contain tables. 
+
+2. The VLM Extraction
+
+Render those 20 specific bounding boxes as high-res images and pass them to a VLM (like GPT-4o, Claude 3.5 Sonnet, or Gemini 1.5 Pro). 
+
+The Prompt: 
+"This is an image of a financial table. Convert it perfectly into a JSON array of objects. Preserve all hierarchical headers by flattening them into the keys (e.g., 'Assets_Current_Cash'). Output ONLY the numbers as they appear, do not do any math. Format output as JSON."
+
+The VLM is excellent at visual structure: it will figure out the merged headers, the indented rows, and the multi-line text wraps that trip up basic scripts. However, VLMs hallucinate numbers (e.g. turning 999.54 into 999.45). This is where your validation layer comes in.[4]
+
+3. The Deterministic Validation Layer (The Guardrail)
+
+This is the magic step that guarantees your 100% accuracy requirement without needing a custom table reconstruction algorithm.
+
+You have two sets of data:
+
+The VLM JSON Output: Perfect structure, but untrusted numbers.
+The pdfplumber Output: Perfect text/numbers (extracted from the exact same bounding box), but no structure.
+
+The algorithm to match them:
+
+Extract a raw, unformatted "bag of words/numbers" from the PDF bounding box using pdfplumber.extract_text(). Use a regex to pull out every single numeric token (e.g., ["100.5", "20.0", "150", "(40)"]).
+Do the exact same thing to the JSON values output by the VLM.
+Compare the two lists sequentially or via subset checking.If the sequence of numbers in the VLM output exactly matches the sequence of numbers in the raw PDF layer, the VLM did not hallucinate. You can confidently save the JSON.
+If there is a mismatch (e.g., the VLM dropped a column or transposed a digit), you flag that specific table.
+
+Why this is the best pragmatic approach
+
+This gives you exactly what you asked for:
+
+No training/building complex models: You just write API calls and standard Python regex/matching.
+Speed: You only run VLM inference on ~20 regions, not 300 pages.
+Safety: The VLM cannot sneak a hallucinated number into your database because it must pass the deterministic pdfplumber check to be accepted.[4]
+Graceful degradation: If a table fails the validation check, it simply kicks out an alert for manual review, rather than silently inserting bad data into a financial system.
+
+
+you asked
+
+message time: 2026-07-19 16:50:49
+
+1. The Fast Heuristic Detector (Page Filtering)You don't want to send 300 pages to a VLM. You need a fast script that runs in seconds to find the ~20 table pages.Instead of ML, use PyMuPDF (or a fast rust port like tablers or pdf-inspector) to scan the primitives of each page. A page likely contains a table if it meets 2 or 3 of these conditions:Line density: The page contains a high number of explicit vector drawing lines (e.g., page.get_drawings() in PyMuPDF). Most financial tables have at least horizontal ruling lines.Numeric density: Extract all text (using a fast text extractor). If >20% of the non-whitespace characters on a page are digits (0-9), it's almost certainly a financial schedule.Whitespace / Alignment: If you look at the $x$-coordinates of the words, table pages have strong vertical "bands" of text (columns) separated by empty space.PyMuPDF/pdfplumber default table finders: Both libraries have built-in find_tables() or extract_tables() methods. While they might fail at reconstructing complex headers perfectly, they are very good at simply detecting the bounding box of a table.Result of Step 1: You narrow down a 300-page PDF to just the 20 bounding boxes (crops) that actually contain tables. now the problem with this approach might be if the tables are borderless and stuff...
+will it still work... the complex part is 100% table discovery, i dont care if there are extra stuff , but the financial tables of all types and designs must be discovered... best if the extra stuff is as less as possible and the entire process is lightning fast...
+
+
+perplexity response
+
+If borderless tables (like standard balance sheets with no ruling lines) are common, simple primitive-based heuristics might miss them or capture them poorly. In that case, your goal of "100% table discovery with minimal non-table data, executed at lightning speed" requires a slight pivot in the first step.
+
+The current State of the Art for lightning-fast, 100% table discovery (even for borderless, complex layouts) without slowing down the pipeline is DocLayout-YOLO (or a similar YOLOv8/v10 table detection model).[0][1]
+
+Here is why this completely solves your "what if it's borderless" problem, while fitting perfectly into the VLM + pdfplumber pipeline:
+
+1. Why YOLO for Table Detection?
+
+Instead of manually writing heuristics to look for lines or text density, you convert each PDF page to an image and run it through a tiny object-detection model. 
+
+It detects borderless tables easily: YOLO models trained on datasets like DocLayNet (which contains thousands of financial reports) learn the visual gestalt of a table (alignment, white space, numeric columns) rather than relying on drawn borders.[1][0]
+It is incredibly fast: YOLO models run in milliseconds. Even on a CPU, you can scan a 300-page PDF in a few seconds. This satisfies your "lightning fast" requirement.[2][0]
+High Recall (100% Discovery): You can set the confidence threshold slightly lower (e.g., 0.25) to guarantee you never miss a table. As you noted, getting a little extra non-table data is fine because the VLM will filter it out, but missing a table is catastrophic.[1]
+
+The Perfected Pipeline
+
+If you implement DocLayout-YOLO for the first step, your pipeline is bulletproof:
+
+Step 1: Lightning Fast Discovery (DocLayout-YOLO)
+
+Convert the 300-page PDF into 300 low-resolution images.
+Pass them through DocLayout-YOLO (or keremberke/yolov8m-table-extraction).[2][1]
+The model outputs bounding boxes [x1, y1, x2, y2] for every table it finds, whether bordered or borderless.[1]
+Time cost: ~10-15 seconds for the entire PDF.
+
+Step 2: VLM Structure Generation
+
+Crop those specific bounding boxes from the high-resolution PDF pages.
+Send just those ~20 image crops to your VLM. 
+The VLM returns the perfect hierarchical JSON structure. If the YOLO box accidentally included a paragraph of text above the table, the VLM will naturally ignore it because you prompted it to extract only the table.[3]
+
+Step 3: The pdfplumber Guardrail
+
+Pass those exact same [x1, y1, x2, y2] bounding box coordinates to pdfplumber (page.crop((x1, y1, x2, y2)).extract_text()).[4][1]
+Extract the raw, 100% accurate text layer numbers.
+Compare the raw numbers to the VLM JSON numbers.
+If they match perfectly: Save to database.
+If they don't match: Flag for manual review.
+
+Does this actually work for borderless tables?
+
+Yes. YOLOv8 variants specifically trained on document intelligence (like the keremberke/yolov8m-table-extraction model on HuggingFace or OpenDataLab's DocLayout-YOLO) are trained explicitly on bordered and borderless tables. They look at the spatial arrangement of text blocks, not just lines.[0][1]
+
+By using YOLO just to find the table, the VLM to structure the table, and pdfplumber to verify the numbers, you are using each tool for exactly what it is best at, avoiding complex manual rule creation entirely.
+
+
+you asked
+
+message time: 2026-07-19 16:54:18
+
+great this sounds good, make this into a good document and specify evrything properly, i will use it to give context of our finalized architecture to an ai agent to implement this
+the ai must be able to see the document and start building everything using the best building blocks...
+
+
+perplexity response
+
+I have generated the architecture document outlining the exact, optimized pipeline combining DocLayout-YOLO, VLM parsing, and deterministic pdfplumber validation. You can use this document directly to prompt an AI coding agent to start implementing the system. 
+
+Here is the document for you to download and share with your agent .
+
+This architecture strikes the perfect balance: it uses lightweight ML for rapid table discovery (solving the borderless table problem instantly), relies on a VLM to handle all the messy structural hierarchy and merged cell logic, and secures everything with a deterministic PDF primitive check to guarantee absolute financial accuracy.
+
+
+you asked
+
+message time: 2026-07-19 19:36:05
+
+now all of this becomes just a part of this project...
+
+the current thing only falls into priority 1...
+now make a prompt so that i can switch to deepresearch and paste to comeup with a SOTA approach for this entire thing...
+try to understand what we are trying to do here... make a very accurate thing which sort of extracts all those stuff mentioned 
+
+basially i had a conversation with gpt too, and i attached it here , this is what i think i will be doing next
+Product 1 — Annual Report Canonicalizer (run once)
+Input:
+PDF
+Output:
+Document tree
+All paragraphs
+All tables
+All cells
+Reading order
+Page numbers
+Bounding boxes
+Metadata
+Section hierarchy
+This aims to preserve everything.
+
+Product 2 — Domain Extractors (run many times)
+Input:
+Canonical document
+Output:
+Valuation JSON
+ESG JSON
+Credit-risk JSON
+Governance JSON
+Any future client-specific schema
+This is where your spreadsheet and the MSME extraction spec live.
+
+takle both of these paralelly, my friend works on making the product 2 where as i will make the product 1
+, so now lets finalise stuff and prepare a prompt for deepresearch architecture/design thing...
+
+
+perplexity response
+
+I understand exactly what you and your friend are building. This is a classic, high-level Document Understanding Architecture. 
+
+You are taking a two-pronged, decoupled approach:
+
+Product 1 (You): The Annual Report Canonicalizer. This is a one-time ingestion engine that reads a 300-page PDF and converts it into a loss-less, structured "Document Tree" (preserving paragraphs, tables, reading order, coordinates, hierarchies).[0]
+Product 2 (Your Friend): The Domain Extractors. These are specialized APIs (like the MSME valuation spec or the Excel taxonomy your boss wants) that query the Canonical Document to produce specific JSON outputs.[0]
+
+By decoupling these, your friend's domain extractors never have to parse a raw PDF again—they just query your canonical tree. This means when your boss asks for a new field, you don't have to rebuild the ingestion pipeline.
+
+Here is the exact prompt you can feed into an AI agent (like Perplexity DeepResearch, an o1 model, or Claude 3.5 Sonnet) to design the state-of-the-art (SOTA) architecture for this system.
+
+
+Copy and paste this prompt:
+
+# Context
+We are building an Enterprise Document Understanding system specifically for 100-400 page digitized Financial Annual Reports (IFRS/Ind AS). We have decided to decouple document parsing from data extraction. 
+
+Our system consists of two distinct products being built in parallel:
+
+## Product 1: The Annual Report Canonicalizer (Ingestion Layer)
+- **Goal:** Run once per PDF. Extract the entire document into a lossless, structured Canonical Document Representation (JSON/XML).
+- **Requirements:** It must preserve the document tree, all paragraphs, all tables (using layout/YOLO models and VLM structure verification for perfect financial tables), all cells, reading order, page numbers, bounding boxes, metadata, and section hierarchy. 
+- **Rule:** This layer does NOT extract business logic (e.g., it doesn't know what "EBITDA" is). It just accurately maps the physical and logical structure of the PDF.
+
+## Product 2: Domain Extractors (Application Layer)
+- **Goal:** Run many times. These are specialized APIs that query the Canonicalizer's output to extract specific business data.
+- **Current Specs to Implement:** 
+  1. A top-level taxonomy (Boss's Excel Sheet) covering categories like "Company Information", "Management & Governance", "Financial Statements", and "ESG". 
+  2. A highly specific MSME Valuation API covering exactly 47 fields (e.g., "Revenue from Operations", "Long-term borrowings") with strict rules on units, currency, and comparative years.
+- **Rule:** These extractors must never touch a raw PDF. They only interact with the JSON/Tree from Product 1. Every extracted field MUST have an audit trail (provenance) linking back to the exact page, table, and bounding box from Product 1.
+
+# Task for the AI / DeepResearch
+I need a State-of-the-Art (SOTA) Architectural Design Document for this entire system. Please provide a comprehensive plan covering the following:
+
+1. **The Canonical Schema Design (Product 1):** Propose an optimal JSON/XML schema structure that can hold a 300-page document tree losslessly. How do we represent nested tables, paragraphs, and reading order while maintaining `(x0, y0, x1, y1)` provenance for every token?
+2. **The Product 1 Ingestion Pipeline:** What is the SOTA tech stack to build this today? (e.g., PyMuPDF for primitives, DocLayout-YOLO for region detection, VLM for complex table structure resolution). How do we ensure "no-wrong-values" in tables?
+3. **The Product 2 Extractor Design Pattern:** How should the domain extractors query the Canonical JSON? (e.g., JsonPath, Vector Search, LLM-based structured output over the JSON). 
+4. **Handling the MSME / Taxonomy Overlap:** How do we structure Product 2 so that the high-level taxonomy (Boss's Excel) acts as the navigation layer, while the MSME spec acts as the granular field-level extractor? How do we handle "Not Found" vs "Null"?
+5. **Data Flow Diagram:** Provide a clear, step-by-step workflow of how a PDF flows through Product 1, becomes a Canonical JSON, and is then queried by Product 2 to produce the final MSME Valuation JSON.
+
+
+you asked
+
+message time: 2026-07-19 19:41:55
+
+Context
+
+We are building an Enterprise Document Understanding system specifically for 100-400 page digitized Financial Annual Reports (IFRS/Ind AS). We have decided to decouple document parsing from data extraction. 
+
+Our system consists of two distinct products being built in parallel:
+
+Product 1: The Annual Report Canonicalizer (Ingestion Layer)
+
+Goal: Run once per PDF. Extract the entire document into a lossless, structured Canonical Document Representation (JSON/XML).
+Requirements: It must preserve the document tree, all paragraphs, all tables (using layout/YOLO models and VLM structure verification for perfect financial tables), all cells, reading order, page numbers, bounding boxes, metadata, and section hierarchy. 
+Rule: This layer does NOT extract business logic (e.g., it doesn't know what "EBITDA" is). It just accurately maps the physical and logical structure of the PDF.
+
+Product 2: Domain Extractors (Application Layer)
+
+Goal: Run many times. These are specialized APIs that query the Canonicalizer's output to extract specific business data.
+Current Specs to Implement: A top-level taxonomy (Boss's Excel Sheet) covering categories like "Company Information", "Management & Governance", "Financial Statements", and "ESG". 
+A highly specific MSME Valuation API covering exactly 47 fields (e.g., "Revenue from Operations", "Long-term borrowings") with strict rules on units, currency, and comparative years.
+
+
+Rule: These extractors must never touch a raw PDF. They only interact with the JSON/Tree from Product 1. Every extracted field MUST have an audit trail (provenance) linking back to the exact page, table, and bounding box from Product 1.
+
+Task for the AI / DeepResearch
+
+I need a State-of-the-Art (SOTA) Architectural Design Document for this entire system. Please provide a comprehensive plan covering the following:
+
+The Canonical Schema Design (Product 1): Propose an optimal JSON/XML schema structure that can hold a 300-page document tree losslessly. How do we represent nested tables, paragraphs, and reading order while maintaining (x0, y0, x1, y1) provenance for every token?
+The Product 1 Ingestion Pipeline: What is the SOTA tech stack to build this today? (e.g., PyMuPDF for primitives, DocLayout-YOLO for region detection, VLM for complex table structure resolution). How do we ensure "no-wrong-values" in tables?
+The Product 2 Extractor Design Pattern: How should the domain extractors query the Canonical JSON? (e.g., JsonPath, Vector Search, LLM-based structured output over the JSON). 
+Handling the MSME / Taxonomy Overlap: How do we structure Product 2 so that the high-level taxonomy (Boss's Excel) acts as the navigation layer, while the MSME spec acts as the granular field-level extractor? How do we handle "Not Found" vs "Null"?
+Data Flow Diagram: Provide a clear, step-by-step workflow of how a PDF flows through Product 1, becomes a Canonical JSON, and is then queried by Product 2 to produce the final MSME Valuation JSON.
+
+
+perplexity response
+
+Here’s a ready-to-use prompt you can paste into DeepResearch (or any strong architect-level model). It already aligns with the architecture spec I just generated and will push it to design the full SOTA system.
+
+
+You are an expert in large-scale document understanding systems, financial data extraction, and enterprise ETL architecture.
+
+# Context
+We are building an Enterprise Document Understanding system specifically for 100–400 page **digitized** Financial Annual Reports (IFRS/Ind AS). The core design decision is to **decouple document parsing from data extraction** into two products:
+
+## Product 1 — Annual Report Canonicalizer (Ingestion Layer)
+Goal:
+- Run once per PDF.
+- Convert the entire annual report into a **lossless, structured Canonical Document Representation** (JSON or JSON-like tree).
+
+Requirements:
+- Preserve:
+  - Document tree (pages, blocks, paragraphs, tables, figures, footnotes, lists).
+  - Reading order within each page and across sections.
+  - All tables (including borderless financial schedules) with accurate row/column structure, merged cells, headers, subtotals, totals.
+  - All text tokens with `(x0, y0, x1, y1)` coordinates, font info, page numbers.
+  - Section hierarchy: Company Information, Management & Governance, Financial Statements, ESG, etc. including subsections (Balance Sheet, P&L, Cash Flow, Notes).
+  - Metadata: company name, FY end, currency, units, standalone vs consolidated, auditor opinion, etc.
+- Use:
+  - PDF primitives (PyMuPDF, pdfplumber) as source of truth for all text and numbers.
+  - Layout / table detection models (e.g., DocLayout-YOLO, PP-DocLayout, TableFormer) to find and segment tables and complex layouts.
+  - A VLM only for structural ambiguity (e.g., header-to-column mapping, merged cells), **not** for generating numbers.
+- Rule:
+  - This layer does **not** know about business concepts like EBITDA, MSME valuation, or ESG KPIs. It only produces a rich canonical representation with full provenance.
+
+## Product 2 — Domain Extractors (Application Layer)
+Goal:
+- Run many times.
+- Take the Canonical Document from Product 1 and expose domain-specific JSON APIs.
+
+Current specs to support:
+1. **Boss’s Excel taxonomy (section-oriented)**  
+   - Categories: Company Information, Management & Governance, Shareholding, Financial Statements, Notes to Accounts, ESG, CSR, etc.  
+   - Used as the top-level navigation and grouping for the annual report content.
+2. **MSME Comparable Valuation spec (field-oriented)**  
+   - 47 explicit financial statement fields (Revenue from operations, Other income, Long-term borrowings, Cash & cash equivalents, Total assets, Total current liabilities, etc.).  
+   - Strict rules:
+     - Capture both current year and prior year where columns exist.
+     - Preserve currency and units (Crore/Lakh/Million/Actuals) as printed, no pre-scaling.
+     - Preserve signs/brackets exactly “as reported”.
+     - Prefer Consolidated over Standalone where applicable.
+     - Every extracted value must carry page / note / table provenance and a status: FOUND / NOT_FOUND / NOT_APPLICABLE / AMBIGUOUS.
+
+Rules for Product 2:
+- Domain extractors must **never** touch the raw PDF.
+- They must query the canonical JSON/tree produced by Product 1.
+- Every field returned must include provenance (page, section, table_id, cell coordinates, token_ids, note number) and a status flag.
+
+# Your Task
+Design a **State-of-the-Art Architectural Design Document** for this entire system (Product 1 + Product 2). The document should be implementation-oriented but vendor-agnostic, suitable for a small senior team to build over several sprints.
+
+Cover at least the following:
+
+1. **Canonical Schema Design (Product 1)**
+   - Propose a concrete JSON schema for the canonical document:
+     - Top-level structure (document metadata, pages, sections).
+     - Block types (paragraph, heading, table, figure, list, footnote) and their fields.
+     - Token representation with coordinates, font info, page references.
+     - Table representation: rows, columns, cells, row/col spans, header/subtotal/total roles, and how cells reference tokens.
+     - How to represent section hierarchy and reading order across pages.
+   - The schema must be **lossless** for the use cases above and extensible for future ESG / governance / credit-risk extractors.
+
+2. **Product 1 Ingestion Pipeline (SOTA Stack)**
+   - End-to-end pipeline stages from raw PDF to canonical JSON:
+     - PDF loading and primitive extraction using PyMuPDF / pdfplumber.
+     - Page rendering and layout detection (DocLayout-YOLO or similar) for tables, headings, figures.
+     - Table page detection and region cropping (including borderless tables).
+     - Table structure reconstruction strategy combining:
+       - geometry-based row/column detection from primitives
+       - optional TableFormer-like models for complex structures
+       - VLM assistance only for structural ambiguity (not numeric values).
+     - Section hierarchy building using heading detection, layout models, fonts, and semantic tags.
+   - Describe how to guarantee **“no-wrong-values”**:
+     - PDF primitives as the numeric source of truth.
+     - Numeric token list per table region.
+     - Post-structure validation that the structured table’s numeric values exactly match the primitive numeric tokens before accepting.
+
+3. **Product 2 Extractor Design Pattern**
+   - Define a standard interface for extractors, e.g.:
+     - `extract_financial_statements(canonical_doc) -> canonical_financials_json`
+     - `extract_msm_valuation(canonical_doc) -> msm_valuation_json`
+   - Show how extractors:
+     - Navigate via the taxonomy (Excel hierarchy) to find relevant sections/tables.
+     - Match labels using synonym lists / patterns (“Revenue from operations”, “Sales”, etc.).
+     - Use JsonPath / structured queries over the canonical JSON instead of ad-hoc traversal.
+     - Optionally use an LLM over the canonical JSON snippets for fuzzy matching, while still validating against tokens/coordinates.
+   - Specify the provenance model and status flags (FOUND, NOT_FOUND, NOT_APPLICABLE, AMBIGUOUS) for every field.
+
+4. **Handling MSME / Taxonomy Overlap**
+   - Explain how the high-level Excel taxonomy acts as the **navigation layer** and the MSME spec as the **granular field schema**.
+   - Recommend a design where:
+     - A generic Financial Statements extractor returns a full canonical set of PL/BS line items.
+     - The MSME extractor is a thin mapping layer on top of that canonical set.
+   - Address how to extend this approach to future APIs (ESG JSON, credit-risk JSON, governance JSON) without changing Product 1.
+
+5. **Data Flow Diagram and Sequence**
+   - Provide a textual and/or diagram-style description of the full data flow:
+     - PDF → Product 1 pipeline → Canonical JSON stored in a document store.
+     - Canonical JSON → Domain extractor(s) → MSME Valuation JSON and other APIs.
+   - Highlight where layout models, VLMs, and validations sit.
+   - Show how provenance is propagated end-to-end.
+
+6. **Implementation Roadmap**
+   - Suggest a multi-sprint roadmap:
+     - Sprint 1–2: minimal canonicalizer + MSME extractor using the canonical doc.
+     - Sprint 3+: upgrading canonical schema and ingestion (DocLayout-YOLO, TableFormer, VLM-assisted ambiguity resolution).
+     - Sprint 4+: adding ESG/governance extractors on top of the same canonical representation.
+   - Emphasize how this roadmap aligns with business priorities (boss’s initial Excel + MSME spec), while keeping the door open to richer Product 1 capabilities.
+
+Deliver the answer as a **clear architectural design document**, using sections, bullet points, and (if helpful) simple ASCII-style diagrams. Focus on actionable, implementation-grade detail rather than only high-level concepts.
+
+
+you asked
+
+message time: 2026-07-19 20:17:56
+
+now the tricky part https://github.com/Mir-Inayat/ews.git  branch qwen-onprem
+@GitHub 
+We can architect this as a two-layer system: (1) a lossless canonicalizer that turns each annual report PDF into a richly structured JSON document, and (2) a set of domain extractors that only ever operate on this canonical JSON to expose APIs like MSME valuation, ESG, and governance.
+Below is an implementation-oriented design document covering schema, pipelines, extractor patterns, data flow, and roadmap.
+Overall architecture
+At a high level:
+Product 1 — Canonicalizer
+Input: 100–400 page IFRS/Ind AS annual report PDF.
+Output: Canonical JSON document with:
+Pages, blocks, tokens, tables, figures, lists, footnotes.
+Section hierarchy (including financial statements and notes).
+Full geometric and typographic provenance for all tokens.
+Product 2 — Domain Extractors
+Input: Canonical JSON.
+Output: Domain-specific JSON APIs (Boss’s taxonomy, MSME valuation, ESG, governance, credit risk) with strict provenance and status flags.
+Never touch the raw PDF, only the canonical document.
+Think of Product 1 as a specialized “compiler front-end” for annual reports, and Product 2 as a collection of “analysis passes” over the canonical IR.
+Canonical schema design (Product 1)
+Top-level document structure
+Canonical JSON is a single document per PDF:
+json
+{
+  "version": "1.0.0",
+  "source": {
+    "file_name": "ACME_Ltd_Annual_Report_FY2025.pdf",
+    "hash": "sha256:...",
+    "ingested_at": "2026-07-19T20:14:00Z",
+    "pdf_metadata": {
+      "title": "...",
+      "author": "...",
+      "producer": "...",
+      "creation_date": "...",
+      "mod_date": "..."
+    }
+  },
+  "document_metadata": {
+    "company_name": "ACME Ltd",
+    "financial_year_end": "2025-03-31",
+    "reporting_framework": "IFRS",
+    "local_gaap": "Ind AS",
+    "currency": "INR",
+    "presentation_currency": "INR",
+    "units": "Crore",
+    "is_consolidated": true,
+    "has_standalone": true,
+    "auditor_opinion_type": "UNQUALIFIED",
+    "auditor_name": "XYZ & Co",
+    "exchange_listings": ["NSE", "BSE"]
+  },
+  "pages": [ /* see below / ],
+  "sections": [ / section tree / ],
+  "index": { / navigational indexes / }
+}
+This explicitly separates source-level metadata (PDF facts) from domain metadata discovered during canonicalization (company, FY end, currency), which domain extractors later re-use and refine. IFRS requires a complete set of statements (balance sheet, profit and loss/OCI, cash flows, changes in equity, and notes) with comparative figures, so these will be represented in sections and tables.[ifrs]
+Page model
+Each page is a container of blocks and tokens, preserving local reading order:
+json
+"pages": [
+  {
+    "page_id": 1,
+    "page_number": 1,
+    "width": 595.0,
+    "height": 842.0,
+    "rotation": 0,
+    "blocks": [ / paragraphs, headings, tables, figures, lists, footnotes / ],
+    "tokens": [ / page-level token registry */ ]
+  }
+]
+Page-level tokens are the primitive registry: every text fragment extracted from the PDF, with coordinates and font attributes.
+Token representation
+Tokens are the atomic units of text, always backed by PDF primitives:
+json
+"tokens": [
+  {
+    "token_id": "p1_t000123",
+    "text": "Revenue",
+    "bbox": { "x0": 72.3, "y0": 145.6, "x1": 115.9, "y1": 160.1 },
+    "font": {
+      "family": "Times New Roman",
+      "size": 9.0,
+      "weight": "bold",
+      "italic": false,
+      "color": "#000000"
+    },
+    "pdf_object_ref": {
+      "page_index": 0,
+      "char_indices": [345, 346, 347, 348, 349, 350, 351]
+    },
+    "reading_order_index": 1234
+  }
+]
+Design notes:
+Coordinates are in PDF space; bbox is authoritative for spatial reasoning.
+reading_order_index captures the best-effort intra-page reading order based on primitives (e.g., text runs sorted by y, then x, plus heuristics).
+Tokens are immutable: downstream components never modify them; they only reference them.
+Block model (layout elements)
+Each page’s blocks is a sequential list in reading order, with a block_type and type-specific payload:
+json
+"blocks": [
+  {
+    "block_id": "p1_b0001",
+    "block_type": "heading",
+    "bbox": { ... },
+    "tokens": ["p1_t000001", "p1_t000002"],
+    "heading_level": 1,
+    "semantic_role": "section_title",
+    "section_ref": "sec_001"
+  },
+  {
+    "block_id": "p1_b0002",
+    "block_type": "paragraph",
+    "bbox": { ... },
+    "tokens": ["p1_t000010", "p1_t000011", "p1_t000012"],
+    "paragraph_role": "body",
+    "section_ref": "sec_001"
+  },
+  {
+    "block_id": "p1_b0100",
+    "block_type": "table",
+    "bbox": { ... },
+    "table_ref": "tbl_0005"
+  },
+  {
+    "block_id": "p1_b0200",
+    "block_type": "footnote",
+    "bbox": { ... },
+    "tokens": ["p1_t000500", "p1_t000501"],
+    "footnote_ref": "fn_007"
+  }
+]
+Supported block_type values:
+heading
+paragraph
+table
+figure
+list
+footnote
+other (catch-all for banners, logos, etc.)
+Blocks refer to tokens by ID; they never store text directly, preserving provenance and avoiding duplication.
+Table representation
+Tables are defined in a top-level registry, referenced by table_ref from blocks and sections:
+json
+"tables": [
+  {
+    "table_id": "tbl_0005",
+    "page_ids": [4],
+    "bbox": { "x0": 60.0, "y0": 210.0, "x1": 540.0, "y1": 720.0 },
+    "is_borderless": true,
+    "structure_source": {
+      "layout_model": "DocLayout-YOLO",
+      "grid_model": "TableFormer",
+      "manual_rules_applied": ["numeric_column_alignment", "indent_based_row_grouping"],
+      "vlm_assisted": true
+    },
+    "columns": [
+      {
+        "col_id": "tbl_0005_c0",
+        "header_cells": ["tbl_0005_r0_c0"],
+        "role": "row_label"
+      },
+      {
+        "col_id": "tbl_0005_c1",
+        "header_cells": ["tbl_0005_r0_c1"],
+        "role": "current_year"
+      },
+      {
+        "col_id": "tbl_0005_c2",
+        "header_cells": ["tbl_0005_r0_c2"],
+        "role": "prior_year"
+      }
+    ],
+    "rows": [
+      {
+        "row_id": "tbl_0005_r0",
+        "row_role": "header",
+        "cells": ["tbl_0005_r0_c0", "tbl_0005_r0_c1", "tbl_0005_r0_c2"]
+      },
+      {
+        "row_id": "tbl_0005_r1",
+        "row_role": "data",
+        "cells": ["tbl_0005_r1_c0", "tbl_0005_r1_c1", "tbl_0005_r1_c2"]
+      },
+      {
+        "row_id": "tbl_0005_r2",
+        "row_role": "subtotal",
+        "cells": ["tbl_0005_r2_c0", "tbl_0005_r2_c1", "tbl_0005_r2_c2"]
+      }
+    ],
+    "cells": [
+      {
+        "cell_id": "tbl_0005_r1_c1",
+        "row_id": "tbl_0005_r1",
+        "col_id": "tbl_0005_c1",
+        "bbox": { ... },
+        "rowspan": 1,
+        "colspan": 1,
+        "tokens": ["p4_t000345", "p4_t000346"],
+        "numeric_tokens": ["p4_t000346"],
+        "text": "1,234.56",
+        "parsed_numeric": 1234.56,
+        "sign_representation": "positive",
+        "bracketed": false,
+        "role": "data",
+        "semantic_tags": ["currency_INR", "unit_Crore"]
+      }
+    ],
+    "validation": {
+      "primitive_numeric_tokens": ["p4_t000346", "p4_t000347"],
+      "structured_numeric_values": [
+        {
+          "cell_id": "tbl_0005_r1_c1",
+          "parsed_numeric": 1234.56
+        }
+      ],
+      "status": "VALIDATED",
+      "mismatches": []
+    }
+  }
+]
+Key points:
+Cells reference tokens; numbers are parsed but the canonicalizer never invents or alters numeric values, it only parses and attaches validation.
+role and row_role allow extractors to distinguish headers, subtotals, totals, and data rows.
+semantic_tags (units, currency, consolidation type) are discovered in Product 1 and reused everywhere.
+Section hierarchy and reading order
+Sections provide logical structure across pages:
+json
+"sections": [
+  {
+    "section_id": "sec_001",
+    "title_tokens": ["p1_t000001", "p1_t000002"],
+    "normalized_title": "Company Information",
+    "taxonomy_path": ["Company Information"],
+    "section_type": "company_info",
+    "parent_section_id": null,
+    "child_section_ids": ["sec_001_01"],
+    "page_span": { "start_page_id": 1, "end_page_id": 3 },
+    "block_ids": ["p1_b0001", "p1_b0002", "p2_b0010"],
+    "tables": [],
+    "notes_metadata": {}
+  },
+  {
+    "section_id": "sec_fs_pl",
+    "title_tokens": ["p10_t000010"],
+    "normalized_title": "Statement of Profit and Loss",
+    "section_type": "financial_statements_pl",
+    "taxonomy_path": ["Financial Statements", "Profit and Loss"],
+    "parent_section_id": "sec_fs",
+    "page_span": { "start_page_id": 10, "end_page_id": 11 },
+    "block_ids": ["p10_b0001", "p10_b0002"],
+    "tables": ["tbl_0030"],
+    "notes_metadata": {
+      "related_note_numbers": ["Note 23", "Note 24"],
+      "consolidated": true,
+      "standalone": false
+    }
+  }
+]
+Design notes:
+Section hierarchy is a tree, rooted at the whole document, with taxonomy-aligned section_type and taxonomy_path.
+page_span and block_ids allow reconstructing global reading order across pages.
+Sections actively link to tables and notes, forming the primary navigation graph for Product 2.
+Cross-document indexes
+An index block accelerates querying:
+json
+"index": {
+  "sections_by_type": {
+    "financial_statements_bs": ["sec_fs_bs"],
+    "financial_statements_pl": ["sec_fs_pl"],
+    "notes_to_accounts": ["sec_notes"]
+  },
+  "tables_by_section": {
+    "sec_fs_pl": ["tbl_0030"],
+    "sec_fs_bs": ["tbl_0025"]
+  },
+  "notes_by_number": {
+    "Note 1": "sec_note_001",
+    "Note 23": "sec_note_023"
+  },
+  "labels": {
+    "normalized_line_items": [
+      {
+        "normalized_label": "revenue_from_operations",
+        "raw_tokens": ["p10_t000100", "p10_t000101"],
+        "table_id": "tbl_0030",
+        "row_id": "tbl_0030_r3"
+      }
+    ]
+  }
+}
+This makes Product 2 implementations more declarative (JsonPath / structured queries) and less reliant on ad-hoc traversals.
+Product 1 ingestion pipeline (SOTA stack)
+High-level stages
+PDF loading & primitives extraction
+Use PyMuPDF or pdfplumber to:
+Extract pages, text runs, character boxes, fonts, and simple rectangular bounding boxes.[linguistics.rub]
+Capture PDF metadata and object references.
+Build the token registry per page and coarse reading order (sort by y, then x, with heuristics for multi-column layouts).
+Page rendering & layout detection
+Render each page to an image (e.g., 300 DPI PNG).
+Run a layout detection model (DocLayout-YOLO, PP-DocLayout, etc.) to detect:
+Tables (with border vs borderless).
+Headings (different levels).
+Figures, captions.
+Lists, footnotes.
+Each detection is mapped back to PDF coordinates and associated with primitive tokens inside its bounding box.
+Table page detection & region cropping
+From layout detections:
+Mark pages with table regions (including borderless schedules common in IFRS illustrations).[assets.kpmg]
+Define table candidates as regions containing:
+Dense numeric tokens aligned in columns.
+Repeated row labels on the left.
+Crop the region and gather all included tokens as primitive candidates for that table.
+Table structure reconstruction
+Combine three sources of evidence:
+Geometry-based grid inference
+Cluster tokens into columns using x-coordinates and alignment (e.g., Gaussian mixture on x centers).
+Cluster tokens into rows using y-coordinates and baseline alignment.
+Use heuristics to identify merged cells (large bounding boxes spanning multiple column bands).
+TableFormer-like model
+Feed the cropped image + associated tokens into a transformer-based model that predicts:
+Cell boundaries (grid graph).
+Row/column header roles.
+Relationships between header cells and data cells.
+VLM assistance (for ambiguity only)
+In cases where geometry and TableFormer disagree (e.g., ambiguous header spanning two columns, or complex multi-level headers), crop the header region and ask a VLM:
+“For this table header, map visual headers to underlying columns. Return column-role assignments.”
+VLM output is only structure (roles, spans), never numbers; numeric tokens remain untouched.
+The final table structure is a merged, validated grid:
+Start with geometry-based grid.
+Overlay TableFormer predictions.
+Apply VLM-based corrections only where needed.
+Construct rows, columns, and cells with explicit rowspan and colspan.
+Section hierarchy building
+Heading detection
+Merge layout model detections with font analysis (size, weight, all caps, extra spacing) to classify headings and infer levels (H1–H4).
+Semantic tagging
+Use rule-based and LLM-assisted normalization:
+“Statement of Profit and Loss and Other Comprehensive Income” → financial_statements_pl.[ifrs]
+“Notes to the Financial Statements” → notes_to_accounts.
+“Corporate Governance Report” → governance.
+Section tree construction
+Sort headings by page and position.
+Build a tree using heading levels (outline-style).
+Assign blocks and tables to the nearest enclosing section based on spatial overlap and reading order.
+Metadata extraction
+Use a constrained NLP/LLM pipeline over canonical tokens for:
+Company name, FY end date, reporting framework, currency, auditor opinion type.[pwc]
+All metadata extraction paths include token references and confidence scores; extracted values are stored in document_metadata.
+“No-wrong-values” numeric validation Core principle: all numbers in tables must be traceable back to primitive numeric tokens without alteration. Strategy:
+For each table region:
+Collect primitive numeric tokens (regex-based numeric recognition, including parentheses, negative signs, comma separators).
+For each cell:
+Record numeric_tokens (token IDs) and a text field (joined raw text).
+Parse parsed_numeric via deterministic rules:
+Remove separators, interpret parentheses as negative, respect plus/minus.
+Do not apply unit scaling at this stage (Crore/Lakh/Million is a tag, not a transform).
+Validation process:
+Re-encode parsed_numeric back to a string using the same formatting rules and compare with raw cell text (modulo whitespace).
+Confirm that the set of structured numeric values equals the set of primitive numeric tokens in value and multiplicity (i.e., no extra or missing numbers).
+If any mismatch:
+Mark validation.status = "FAILED".
+Log mismatches in validation.mismatches.
+Option: flag the table as unsafe for downstream extractors, or require manual QA.
+This ensures domain extractors see either validated tables or clearly flagged exceptions, avoiding silent numeric corruption.
+Product 2 extractor design pattern
+Standard extractor interface
+All extractors implement a common interface:
+python
+class DomainExtractor(Protocol):
+    def extract(self, canonical_doc: dict) -> dict:
+        """Returns domain-specific JSON with provenance and status flags."""
+Concrete examples:
+python
+def extract_financial_statements(canonical_doc: dict) -> dict: ...
+def extract_msm_valuation(canonical_doc: dict) -> dict: ...
+def extract_esg_metrics(canonical_doc: dict) -> dict: ...
+Each extractor:
+Is pure (no external side effects).
+Operates only on the canonical JSON (no PDF access).
+Returns a JSON with a well-defined schema and provenance.
+Navigation via taxonomy
+Extractors use the taxonomy-aware section hierarchy as the primary navigation layer:
+Query canonical_doc["index"]["sections_by_type"]["financial_statements_bs"] to get candidate balance sheet sections.
+Within each section:
+Retrieve associated tables via canonical_doc["index"]["tables_by_section"][section_id].
+Iterate rows and cells to collect line items.
+This keeps the extractor logic declarative:
+python
+
+Example: find PL section and its primary table
+
+pl_sections = index["sections_by_type"]["financial_statements_pl"]
+for sec_id in pl_sections:
+    for tbl_id in index["tables_by_section"].get(sec_id, []):
+        table = table_map[tbl_id]
+        # inspect rows and columns
+Label matching (synonyms/patterns)
+A small line-item matcher library supports robust label recognition:
+Precomputed dictionary of synonyms:
+revenue_from_operations: ["Revenue from operations", "Sales", "Turnover", "Gross revenue"].
+other_income: ["Other income", "Miscellaneous income"].
+Pattern-based matching for noisy labels:
+Normalize text: lowercase, strip punctuation, normalize whitespace.
+Apply regex patterns (e.g., r"^revenue.operations$").
+Use language-specific models where necessary (for Ind AS bilingual reports).
+Lookup pattern:
+python
+def match_label(raw_label_text: str) -> Optional[str]:
+    normalized = normalize(raw_label_text)
+    if normalized in exact_map:
+        return exact_map[normalized]
+    for key, patterns in pattern_map.items():
+        if any(p.match(normalized) for p in patterns):
+            return key
+    return None
+Matched line items are stored in index["labels"]["normalized_line_items"] in Product 1, and reused by extractors for speed.
+Structured queries (JsonPath-like)
+To avoid ad-hoc tree walking, build a small query library over canonical JSON:
+Examples:
+Find all rows in PL that match revenue_from_operations:
+python
+jsonpath("$.tables[].rows[?(@.row_role=='data')].cells[?(@.normalized_label=='revenue_from_operations')]")
+Find all notes related to a section:
+python
+jsonpath("$.sections[?(@.section_type=='notes_to_accounts')].child_section_ids")
+Implementation can be a light wrapper over Python with filtering functions, not necessarily full JsonPath.
+Optional LLM assistance (fuzzy matching)
+LLMs can be used over canonical snippets, never directly over PDFs:
+Provide as input:
+Snippet of JSON containing table structures and token texts.
+Specific task, e.g., “Identify which rows correspond to revenue-from-operations and other-income given these synonyms.”
+LLM returns candidate row IDs and confidence scores.
+Extractor validates numeric cells against canonical tokens (already done in Product 1) and checks label mappings against existing synonym sets.
+LLM outputs are considered hints, not ground truth:
+If LLM suggests a mapping inconsistent with canonical label normalization, mark the field status = "AMBIGUOUS" rather than overriding.
+Provenance model and status flags
+Every extracted field has a uniform structure:
+json
+{
+  "field_name": "revenue_from_operations",
+  "label_text": "Revenue from operations",
+  "value": "1,234.56",
+  "parsed_numeric": 1234.56,
+  "currency": "INR",
+  "units": "Crore",
+  "consolidation": "CONSOLIDATED",
+  "year": "FY2025",
+  "status": "FOUND",
+  "provenance": {
+    "section_id": "sec_fs_pl",
+    "table_id": "tbl_0030",
+    "row_id": "tbl_0030_r3",
+    "col_id": "tbl_0030_c1",
+    "cell_id": "tbl_0030_r3_c1",
+    "page_id": 10,
+    "note_number": "Note 23",
+    "token_ids": ["p10_t000345", "p10_t000346"]
+  }
+}
+Status flags:
+FOUND: Clean mapping with high confidence and validated numeric value.
+NOT_FOUND: No matching line item found in eligible sections/tables.
+NOT_APPLICABLE: Field logically not applicable (e.g., “ESG score” in a pre-ESG-era report).
+AMBIGUOUS: Multiple competing matches or inconsistent structure (e.g., table validation failed, or label mapping uncertain).
+Extractors must always return a record per requested field, even if status is not FOUND.
+Handling MSME / taxonomy overlap
+Taxonomy as navigation, MSME as granular schema
+Boss’s Excel taxonomy defines high-level buckets:
+Company Information, Management & Governance, Shareholding, Financial Statements, Notes, ESG, CSR.
+MSME Comparable Valuation spec defines a strict set of 47 granular fields primarily within Financial Statements and Notes.
+Design:
+Build a generic Financial Statements extractor:
+Output: Canonical PL/BS/CF/Equity line items in a stable schema:
+json
+{
+  "financial_statements": {
+    "pl": [
+      {
+        "canonical_line_item": "revenue_from_operations",
+        "variants": ["Revenue from operations", "Sales"],
+        "current_year": { /* value + provenance / },
+        "prior_year": { / value + provenance / }
+      },
+      {
+        "canonical_line_item": "other_income",
+        "current_year": { ... },
+        "prior_year": { ... }
+      }
+    ],
+    "bs": [ / assets, liabilities, equity line items / ],
+    "cf": [ / cash flow line items */ ]
+  }
+}
+
+Uses taxonomy + label matching + table validation.
+Understands consolidated vs standalone (tags in canonical tables).
+Preserves currency, units, signs exactly as printed.
+Implement MSME extractor as a thin mapping layer:
+MSME spec enumerates 47 fields:
+msme_total_revenue, msme_other_income, msme_long_term_borrowings, etc.
+For each MSME field:
+Map to one or more canonical_line_items plus a consolidation preference (e.g., prefer consolidated).
+Apply simple transformation rules (sum of certain items, choose specific column for current/prior year).
+MSME output schema:
+json
+{
+"msme_valuation": {
+  "fields": [
+{
+  "field_name": "total_revenue",
+  "canonical_sources": ["revenue_from_operations", "other_income"],
+  "current_year": { /* aggregated value + provenance list / },
+  "prior_year": { / aggregated value + provenance list */ },
+  "status": "FOUND"
+}
+  ]
+}
+}
+This layer never looks at raw tables; it only consumes canonical FS JSON.
+Extensibility to future APIs
+Because Product 1 is domain-agnostic, future APIs (ESG JSON, credit-risk JSON, governance JSON) can:
+Define their own canonical intermediate representations (e.g., esg_metrics, governance_events) backed by sections/tables and line-item labels.
+Implement extractors that:
+Navigate via sections of type esg, governance.
+Use the same label matching and provenance model.
+Product 1’s schema does not change; only new section_type tags and indexes may be added.
+This aligns with IFRS guidance that notes and narrative sections can be arbitrarily extended without changing primary statements’ structure, so a canonical layout representation remains stable.[ifrs]
+Data flow and sequence
+End-to-end data flow
+Textual description:
+Ingestion
+PDF uploaded → Canonicalizer pipeline (Product 1).
+PDF primitives → tokens, blocks, tables, sections.
+Output: canonical JSON document (canonical_doc).
+Stored in a document store (e.g., S3 + Elastic/Mongo) keyed by (company, FY, version).
+Domain extraction
+Domain extractor service reads canonical_doc.
+For Boss’s taxonomy:
+Build annual_report_taxonomy_json with sections grouped into Company Info, Governance, Shareholding, etc.
+For MSME:
+FS extractor → canonical FS line items.
+MSME extractor → MSME valuation JSON.
+For ESG, governance, credit risk:
+Dedicated extractors read canonical sections/tables and output domain JSON.
+API Serving
+Expose REST/GraphQL endpoints:
+/annual-report/{company}/{fy}/taxonomy
+/annual-report/{company}/{fy}/msme-valuation
+/annual-report/{company}/{fy}/esg
+Each endpoint resolves to an extractor run, optionally cached.
+ASCII-style diagram
+text
+         +-------------------+
+
+PDF (Annual)   |  Product 1        |
+-------------->|  Canonicalizer    |
+               |-------------------|
+               |  - PyMuPDF /      |
+               |    pdfplumber     |
+               |  - Layout models  |
+               |    (DocLayout,    |
+               |     TableFormer)  |
+               |  - VLM for        |
+               |    structure only |
+               |  - Validation     |
+               +---------+---------+
+                         |
+                         v
+               +-------------------+
+               | Canonical JSON    |
+               |  (document store) |
+               +---------+---------+
+                         |
+        +----------------+----------------+
+        |                                 |
+        v                                 v
++-------------------+          +-------------------+
+| Product 2         |          | Product 2         |
+| FS Extractor      |          | ESG / Gov / Risk  |
+|-------------------|          | Extractors        |
+| - Taxonomy nav    |          | - Section nav     |
+| - Label matcher   |          | - Label matcher   |
+| - JsonPath        |          | - JsonPath        |
++---------+---------+          +---------+---------+
+          |                               |
+          v                               v
++-------------------+          +-------------------+
+| MSME Extractor    |          | ESG / Gov JSON    |
+| (mapping layer)   |          | APIs              |
++-------------------+          +-------------------+
+Provenance propagation:
+Product 1: every token/table/section has IDs and metadata.
+Product 2: every field carries provenance with these IDs and status.
+APIs: surface provenance for downstream audit/debugging.
+Implementation roadmap
+Sprint 1–2: Minimal canonicalizer + MSME extractor
+Goals:
+Support boss’s Excel taxonomy and core MSME spec for a limited set of reports (e.g., 10–20 Indian listed companies).
+Deliver working MSME Comparable Valuation JSON with provenance.
+Scope:
+Canonicalizer v0
+Use PyMuPDF/pdfplumber only:
+Token registry per page.
+Simple block segmentation (paragraph vs heading) based on font heuristics.
+Basic table detection:
+Geometry-based detection using dense numeric regions, no ML.
+Simple grid inference (columns by x clusters, rows by y clusters).
+Section hierarchy:
+Heading detection via font size/weight and keywords (“Balance Sheet”, “Statement of Profit and Loss”, “Notes to Financial Statements”).
+Basic section_type tags for FS and Notes.
+FS extractor v0
+Hand-crafted mappings for:
+PL line items: revenue from operations, other income, finance costs, depreciation, profit before tax, tax expense, profit after tax.
+BS line items: total assets, total liabilities, equity, cash & cash equivalents.
+Hard-coded table selection (e.g., first main PL table in PL section).
+MSME extractor v0
+Implement mapping from canonical FS line items to the 47 MSME fields.
+Strict rules on:
+Consolidated vs standalone preference (tagging simple).
+Current vs prior year columns.
+Currency/units is carried through but unit tagging can be basic (string tags only).
+Outcome: end-to-end working pipeline for a small subset of reports, suitable for pilot demos.
+Sprint 3+: Canonicalizer upgrade (DocLayout, TableFormer, VLM)
+Goals:
+Make Product 1 robust across layout variations (multi-column, borderless tables, complex headers).
+Enforce “no-wrong-values” at scale.
+Scope:
+Layout models integration
+Integrate DocLayout-YOLO or PP-DocLayout for robust detection of:
+Tables, headings, figures, lists, footnotes.
+Back-map detections to PDF coordinates and tokens.
+TableFormer-like integration
+Train/fine-tune or adopt a TableFormer model on:
+Financial tables from IFRS example financial statements and Indian annual reports.[bdo]
+Use it for cell boundary detection and header-role inference.
+VLM assistance module
+Introduce a microservice that:
+Accepts cropped table header images + tokens.
+Returns column roles and merged header interpretations.
+Use it only when geometry/TableFormer disagree.
+Validation subsystem
+Implement full numeric validation as described earlier.
+Introduce a QA dashboard to review tables with validation.status != "VALIDATED".
+Section taxonomy enrichment
+Expand section_type tags to include:
+Company Information, Management & Governance, Shareholding, ESG, CSR.
+Build indexes for easier navigation by Product 2.
+Outcome: canonical JSON that’s robust enough for large-scale ingestion and supports more powerful extractors.
+Sprint 4+: ESG/governance extractors
+Goals:
+Add new APIs on top of the same canonical representation, without changing Product 1.
+Align with business priorities around ESG and governance scoring.
+Scope:
+ESG extractor
+Identify ESG-related sections and tables (e.g., “Sustainability Report”, “Business Responsibility and Sustainability Report”).
+Extract:
+Key ESG KPIs (emissions, energy use, diversity metrics, safety incidents).
+Represent them as esg_metrics JSON with provenance and status flags.
+Governance extractor
+Navigate “Corporate Governance Report” sections.[pwc]
+Extract:
+Board composition, independent director count, committee memberships, meeting attendance.
+Output governance_json suitable for downstream governance scoring.
+Credit-risk extractor (optional)
+Combine FS line items and governance signals:
+Leverage ratios, coverage ratios, liquidity metrics, plus governance features.
+Output credit_risk_json.
+Business alignment:
+Sprint 1–2: Directly address boss’s Excel taxonomy and MSME spec (critical for near-term valuation workflows).
+Sprint 3+: Raise the quality and robustness of Product 1 so MSME (and other) extractors remain stable as coverage expands.
+Sprint 4+: Introduce new revenue-generating APIs (ESG, governance, credit risk) on the same canonical backbone, proving the value of the decoupled architecture.
+This design gives you a compiler-style front-end for annual reports and a library of analysis passes (extractors) that can grow over time, while keeping numeric correctness and provenance central to the architecture.
+we have the architecture, i also got this from deepresearch, but i also have something that i have been working on from quite a while, it is at the github repo i attached,  now can our stuff be built on top of the current code, or is it best to start from scratch?
+I was thinking of branching the code to two branches one is product 1 nd the other is product 2, and i want the design and architecture so solid before proceeding so that my final both branches should work effortlessly,  also look at the current code that is what all other ai coding antigravity and opencode agents pushed me to making, i have to still test it out on how good it is... aalso there arises this thing that is that approach better than what we are building here?
+so lets take everything step by step and breakdown and come to a final conclusion and start implementing
+
+
+perplexity response
+
+Do not start from scratch yet, and do not create long-lived product-1 and product-2 branches. First, assess the existing qwen-onprem code against the new target architecture, then preserve/reuse the parts that already implement useful Product 2 behavior while introducing a stable canonical-document contract underneath it. Your existing work appears to be centered on extracting financial-statement information, which is directly valuable as the first domain extractor rather than something to discard.[0]
+
+I could not retrieve the repository contents from the GitHub URL in this environment, so I cannot responsibly tell you which files/modules to retain versus replace without seeing the actual tree, dependencies, data models, prompts, and extraction flow.
+
+The likely conclusion
+
+Your old approach and the new architecture are not competing approaches.
+
+Your present system likely does some variant of:
+
+PDF -> locate relevant pages/tables -> Qwen/VLM/LLM extraction -> financial JSON
+
+That is effectively a Product 2-first MSME / financial-statement extractor. It can deliver business value quickly, but it risks repeatedly re-reading PDFs for every new output requirement.
+
+The new architecture reframes it as:
+
+PDF -> Canonical Document -> Generic Financial Statements Extractor -> MSME JSON
+                                                    -> ESG JSON
+                                                    -> Governance JSON
+
+The correct move is therefore:
+
+Keep the existing extraction logic, but progressively make it consume a CanonicalDocument instead of a PDF.
+
+
+
+That directly implements the “parse once, extract many times” design from the attached discussion.[0]
+
+Do not use product branches
+
+Long-lived branches for separate products are usually a maintenance trap:
+
+main
+├── product-1-canonicalizer
+└── product-2-extractors
+
+Both products must evolve together because Product 2 depends on Product 1’s schema. Separate long-lived branches will cause merge conflicts, duplicated models, incompatible JSON contracts, and delayed integration.
+
+Use a single repository / monorepo with independently deployable modules instead:
+
+ews/
+├── canonicalizer/                 # Product 1
+│   ├── pdf_primitives/
+│   ├── layout/
+│   ├── reading_order/
+│   ├── tables/
+│   ├── sections/
+│   ├── validation/
+│   └── schema/
+│
+├── extractors/                    # Product 2
+│   ├── common/
+│   ├── financial_statements/
+│   ├── msme_valuation/
+│   ├── taxonomy/
+│   ├── esg/
+│   └── governance/
+│
+├── contracts/
+│   ├── canonical_document.schema.json
+│   ├── financial_statements.schema.json
+│   └── msme_valuation.schema.json
+│
+├── services/
+│   ├── ingestion_api/
+│   └── extraction_api/
+│
+├── tests/
+│   ├── fixtures/
+│   ├── golden_canonical_docs/
+│   ├── golden_msme_outputs/
+│   └── regression/
+│
+└── docs/
+
+Use short-lived feature branches such as:
+
+feat/canonical-schema-v0
+feat/pdf-primitive-adapter
+feat/financial-statement-extractor
+feat/msme-provenance
+feat/table-validation
+
+This keeps both streams independently buildable while continuously enforcing the shared contract.
+
+The migration design
+
+The most important artifact to finalize before changing major code is the Product 1 → Product 2 interface:
+
+class CanonicalDocument:
+    source: SourceMetadata
+    pages: list[Page]
+    blocks: list[Block]
+    tables: list[Table]
+    sections: list[Section]
+    indexes: DocumentIndexes
+
+Then Product 2 must follow this rule:
+
+def extract_msm_valuation(document: CanonicalDocument) -> MSMEValuation:
+    ...
+
+Not:
+
+def extract_msm_valuation(pdf_path: str) -> MSMEValuation:
+    ...
+
+That one interface decision is what prevents your codebase from becoming a collection of PDF-specific one-off scripts. It also makes the existing MSME requirements—exact values, units, comparative years, consolidated/standalone selection, and page-level audit trail—natural outputs of the extractor layer rather than scattered parsing logic.[0]
+
+How to evaluate current code
+
+Before refactoring anything, run your existing branch against a fixed benchmark corpus of around 10–20 annual reports containing the failure modes you already observed:
+
+Borderless balance sheets and P&L statements.
+Multi-level headers.
+Side-by-side tables.
+Dense note schedules.
+Rotated tables.
+Standalone and consolidated statements.
+Multiple units: actuals, thousands, lakhs, crores, millions.
+Notes that contain financial tables and narrative.
+Reports where line-item names differ materially.
+
+For each report, create a ground-truth sheet for the 47 MSME fields plus source page/table/row/column. The current code must be judged on field-level correctness and evidence, not merely whether it returns plausible JSON.
+
+Evaluation dimension Must measure Why it decides reuse vs rewrite
+Numeric accuracy Exact character-level match against the PDF Financial values cannot be “approximately correct”
+Field recall Required MSME fields found / applicable fields Detects silent omissions
+Field precision Correct mappings / all returned mappings Detects wrong-row selection
+Provenance Page, table, row/cell evidence available Required for review and audit
+Consolidation logic Correct selection of consolidated vs standalone Core MSME rule
+Unit preservation Actuals/Lakh/Crore/Million retained as printed Prevents valuation-scale errors
+Determinism Identical input produces same output Essential for auditability
+Runtime and cost Per-report CPU/GPU/API usage Determines production viability
+
+Reuse decision matrix
+
+After testing, classify every current component rather than judging the repository as one unit:
+
+Existing component type Likely action Condition
+PDF text/coordinate extraction Keep If it uses PyMuPDF/pdfplumber and preserves original tokens/coordinates
+Financial section/page locator Keep and wrap If it reliably finds Balance Sheet, P&L, Cash Flow, Notes
+Qwen prompts for field extraction Keep as fallback/hint Never let generated numbers bypass primitive validation
+Raw-PDF RAG/vector retrieval Deprecate for structured extraction It may still help retrieve narrative sections, but should not own numerical truth
+Direct PDF-to-final-MSME JSON logic Refactor Convert it into an extractor operating on canonical blocks/tables
+Existing output schema Keep if business-aligned Add field status and complete provenance
+Unvalidated VLM table extraction Do not trust directly Use it for structure only; verify against PDF primitive tokens
+Hardcoded page-specific rules Isolate Keep as report-family plugins, not core architecture
+
+The key is that PDF primitives provide the durable foundation, while layout models can improve detection and VLMs can resolve structure. DocLayout-YOLO is designed as a real-time document-layout detector, and TableFormer-style approaches address table structure; neither should be the authoritative source for financial characters or values.[1][2]
+
+Recommended implementation order
+
+Step 0 — Freeze and benchmark qwen-onprem
+
+Do not refactor blindly. Tag the current state:
+
+git checkout qwen-onprem
+git tag baseline/qwen-onprem-before-canonicalization
+
+Create a benchmark runner that produces:
+
+report_id
+field_name
+expected_value
+actual_value
+exact_match
+status
+page_number
+table_id
+latency_ms
+model_cost
+
+This tells you whether the old system is already a strong MVP for Product 2 or merely a prototype.
+
+Step 1 — Define contracts
+
+Add versioned JSON schemas before implementation:
+
+contracts/canonical_document.v0.json
+contracts/financial_statements.v0.json
+contracts/msme_valuation.v0.json
+
+Make every MSME field return a full evidence object:
+
+{
+  "field_name": "revenue_from_operations",
+  "current_year": {
+    "raw_value": "1,234.56",
+    "parsed_numeric": 1234.56,
+    "unit_as_reported": "Crore",
+    "currency_as_reported": "INR",
+    "status": "FOUND",
+    "provenance": {
+      "page_number": 184,
+      "section_id": "sec_financial_statements_pl",
+      "table_id": "tbl_0030",
+      "row_id": "tbl_0030_r3",
+      "cell_id": "tbl_0030_r3_c1",
+      "token_ids": ["p184_t221", "p184_t222"]
+    }
+  }
+}
+
+Step 2 — Add a thin canonical adapter
+
+Do not wait for the perfect canonicalizer. Build CanonicalDocument v0 from your current parser:
+
+PDF
+ -> Existing extraction / primitive parser
+ -> pages + tokens + basic blocks + detected tables + sections
+ -> canonical_document.json
+ -> existing MSME logic, refactored to read canonical_document.json
+
+This lets you ship Product 2 while making every next improvement in Product 1 automatically available downstream.
+
+Step 3 — Product 2 first for business value
+
+Your friend should implement the Financial Statements Extractor and MSME mapping layer against the v0 canonical schema:
+
+Canonical Document
+ -> Financial Statements Extractor
+ -> Canonical Financial Statements JSON
+ -> MSME Valuation Mapper
+ -> MSME JSON
+
+The boss’s spreadsheet should remain the top-level navigation taxonomy; the MSME specification is the fine-grained field contract beneath it. The attached material correctly identifies that the taxonomy alone is too coarse for the MSME line-item requirements, especially for units, comparative-year values, note provenance, and specific balance-sheet fields.[0]
+
+Step 4 — Improve Product 1 incrementally
+
+Only after the v0 pipeline runs end to end:
+
+Preserve word/character geometry and PDF drawing primitives.
+Improve table-region recall using a layout detector.
+Add borderless-table reconstruction.
+Add numeric-token validation.
+Add table confidence and manual-review queues.
+Add richer section hierarchy and indexes.
+Use VLM assistance only on low-confidence, structurally ambiguous regions.
+
+What “better” means
+
+The old approach may be better for an immediate demo if it already returns most of the 47 fields accurately.
+
+The canonical architecture is better for the actual product because it prevents repeated PDF processing for every new client schema and makes all data traceable. The attached design correctly recognizes that the canonicalizer is a reusable intermediate representation and that future ESG, governance, credit-risk, or custom extractors should query it—not restart from PDFs.[0]
+
+So the final direction should be:
+
+Keep the existing repository.
+Do not fork it into permanent Product 1 and Product 2 branches.
+Benchmark the current qwen-onprem pipeline.
+Define the canonical and output contracts first.
+Turn the existing code into Product 2-compatible modules through an adapter.
+Build Product 1 incrementally behind the stable CanonicalDocument interface.
+
+To make the keep/refactor/rewrite decision file-by-file, attach a ZIP of the qwen-onprem branch or paste the output of these commands:
+
+git checkout qwen-onprem
+git log --oneline -15
+find . -maxdepth 3 -type f \
+  -not -path './.git/*' \
+  -not -path '*/node_modules/*' \
+  -not -path '*/.venv/*' | sort
+sed -n '1,240p' README.md
+
+Then I can produce an exact migration plan: current-module inventory, what to retain, what to remove, the target folder tree, contracts, and the first implementation sequence.
+
+
+you asked
+
+message time: 2026-07-19 20:26:34
+
+$ git checkout qwen-onprem
+git log --oneline -15
+find . -maxdepth 3 -type f 
+  -not -path './.git/' 
+  -not -path '/node_modules/' 
+  -not -path '/.venv/*' | sort
+sed -n '1,240p' README.md
+Already on 'qwen-onprem'
+Your branch is up to date with 'origin/qwen-onprem'.
+9f5db42 (HEAD -> qwen-onprem, origin/qwen-onprem) raggg
+0ccd787 fix: resolve quality score metrics, VLM targets, and FP logic
+238280b feat: implement priority 3-7 extraction and dynamic excel generation
+7d1ba91 Sprint 2: Sheet 2 Quality & Sheet 3 Valuation Counterpart Strength
+99c221d Add latest version (qwen-onprem)
+./.gitignore
+./.pytest_cache/.gitignore
+./.pytest_cache/CACHEDIR.TAG
+./.pytest_cache/README.md
+./pycache/app.cpython-312.pyc
+./pycache/app.cpython-314.pyc
+./pycache/test_sprint2.cpython-312-pytest-8.3.4.pyc
+./2017-18_nse_annual_report_full_extraction.json
+./2017-18_nse_annual_report_full_extraction.xlsx
+./app.py
+./cfac411d-76f4-45b4-9c7c-fdcf7508e7fc.pdf
+./cfac411d-76f4-45b4-9c7c-fdcf7508e7fc_full_extraction.json
+./cfac411d-76f4-45b4-9c7c-fdcf7508e7fc_full_extraction.xlsx
+./db/init.py
+./db/pycache/init.cpython-312.pyc
+./db/pycache/init.cpython-314.pyc
+./db/pycache/store.cpython-312.pyc
+./db/pycache/store.cpython-314.pyc
+./db/index.json
+./db/README.md
+./db/store.py
+./graph/.gitignore
+./graph/init.py
+./graph/pycache/init.cpython-312.pyc
+./graph/pycache/init.cpython-314.pyc
+./graph/app/init.py
+./graph/app/financial_tables_api.py
+./graph/ews_finance.egg-info/dependency_links.txt
+./graph/ews_finance.egg-info/PKG-INFO
+./graph/ews_finance.egg-info/requires.txt
+./graph/ews_finance.egg-info/SOURCES.txt
+./graph/ews_finance.egg-info/top_level.txt
+./graph/pyproject.toml
+./graph/README.md
+./graph/run_pipeline.py
+./graph/sources/init.py
+./graph/touch
+./implementation_plan.md
+./implementation_sprint2.md
+./INVESTIGATION_REPORT_SHEET2.md
+./plans/section-consolidation-architecture.md
+./plans/sprint2-implementation-plan.md
+./README.md
+./requirements.txt
+./SHEET2_FIX_IMPLEMENTATION_REPORT.md
+./temp_output.txt
+./temp_struct.json
+./temp_struct2.json
+./test_sprint2.py
+./test_sprint2_output.xlsx
+./vlm_migration_guide.md
+./walkthrough.md
+./walkthrough2.md
+./walkthrough3.md
+./walkthrough4.md
+./walkthrough5.md
+
+EWS Financial Data Extraction (VLM)
+
+This project provides an automated, end-to-end pipeline for extracting complex financial tables (Balance Sheet, Profit & Loss, Cash Flow) from Indian Annual Report PDFs. It uses a Vision Language Model (VLM) powered by Deloitte's On-Premise Qwen3-VL to robustly process scanned, noisy, or natively digital PDFs.
+
+?? Architecture & Workflow
+
+The pipeline is designed to handle extremely long and noisy PDFs gracefully:
+
+Upload & Ingestion (FastAPI):
+
+Users upload an Annual Report PDF via a sleek, modern web UI.
+The file is ingested and routed to the extraction pipeline.
+
+
+Heuristic Discovery & Parsing (PyMuPDF):
+
+The document's text layer is parsed to find the Table of Contents (TOC).
+Pages are scanned for keywords indicating financial statements.
+
+
+VLM Classification Fallback:
+
+For heavily scanned or "corrupted" PDFs where the text layer is missing or garbled, the pipeline routes the page images to a specialized VLM classifier.
+The classifier identifies which pages contain the Standalone or Consolidated Balance Sheet, P&L, and Cash Flow.
+
+
+VLM Tabular Extraction (LangChain):
+
+Identified pages are converted to base64 images and sent to the core Vision Language Model (Qwen3-VL).
+The model follows strict prompt instructions to extract the tabular data into structured, hierarchical JSON (sections, line items, note numbers, current/previous periods).
+Resilience: The extraction layer features a highly robust retry mechanism that validates the LLM's output. If the model hallucinates or outputs malformed JSON, the pipeline automatically catches the error and retries the prompt.
+
+
+Excel Reconstruction (OpenPyXL):
+
+The structured JSON is passed to the Excel Builder, which dynamically reconstructs the financial tables into a professional, multi-sheet Excel workbook.
+Both the JSON and the Excel workbook are dynamically bundled into a single ZIP file and streamed back to the user.
+
+
+🚀 Recent Enhancements (Phases 2-4 & Sprint 3)
+
+During our most recent pair-programming sessions, we fundamentally upgraded the extraction architecture to an enterprise-grade "Master Data" model, and hardened the extraction logic:
+
+Section Registry (Phase 2): Replaced raw taxonomy mappings with a Master Sections layer that dynamically aggregates contiguous pages of the same category into structural blocks.
+Table Inventory (Phase 3): Formalized table detection to log all potential tables (and whether they require VLM processing) into a centralized table_inventory.
+Generic VLM Router (Phase 4): The extraction pipeline now seamlessly routes all complex non-financial tables (e.g., Shareholding Pattern, Segment Info, SOCE) to a dynamic, generic VLM extraction engine, while preserving the highly-optimized legacy VLM engine exclusively for the core 3 financial statements.
+Universal Excel Generator: Completely overhauled excel_builder.py to ensure the generated Excel workbook is an exact 1:1 reflection of the Master Data JSON. The exporter dynamically creates a dedicated Excel sheet for every Category, and prints out beautiful, cleanly wrapped text blocks and formatted table grids for every Subcategory.
+Schema Bleeding & Flattening Fixes (Sprint 3): Hardened extraction routing (content_extractor.py) to use strict explicit target mapping, completely solving the "Schema Bleeding" issue where overlapping text heuristics caused data extraction to overwrite adjacent targets. Additionally, overhauled workbook_population.py to index the hierarchical JSON using exact lookups, fixing the "Flattening Collisions".
+Pydantic Resilience (Sprint 3): Re-wrote canonical schemas to use Optional types, preventing catastrophic validation failures when the LLM returns null for missing parameters.
+RAG & Semantic Chunking (Sprint 3): Eliminated naive token truncation (which caused massive data loss in the MD&A section). We introduced rag_chunker.py, utilizing sentence-transformers and LangChain to dynamically chunk and query long sections, keeping the most semantically relevant text within the model's context window.
+
+
+??? Setup & Installation
+
+Create a virtual environment (Recommended):
+ash
+python -m venv .venv
+..venv\Scripts\activate
+`
+
+
+Install core dependencies:
+ash
+pip install -r requirements.txt
+`
+
+
+Configuration:
+The VLM configuration (API Keys, Base URLs, Model names) is managed in graph/sources/annual_report/llm_config.py. By default, it is configured for the Deloitte on-premise Qwen VLM.
+
+?? Usage
+
+Start the backend server:
+Run the following command from the root of the project:
+ash
+uvicorn app:app --port 8080 --reload
+`
+
+
+Access the application:
+Open http://127.0.0.1:8080 in your browser. Upload an Annual Report PDF, wait for the extraction pipeline to complete, and download your ZIP bundle!
+
+take ur call then
+go ahead and make me the entire plan this, also better if we can also make two plans on for me and other for my friend , but we work on different parts and merge at the end... and what would be recommended , like doing everything sequentially, perfecting each part before moving on to the next or something else ?
+
+
+perplexity response
+
+Your existing qwen-onprem branch is not a throwaway prototype. It is already a reasonably advanced Product 2-first system: it discovers statement pages, applies a VLM to core statements and general table extraction, has a section registry/table inventory, emits master-data JSON, and reconstructs Excel. The right decision is evolution, not rewrite: preserve the useful pipeline, introduce a canonical-document contract, and refactor the existing extraction flows to consume that contract. The README itself shows that it already has components that map naturally to both products: primitive discovery, section registry, table inventory, generic VLM routing, master-data JSON, and RAG for long narrative regions.[0]
+
+Do not create permanent product-1 and product-2 branches. Keep a single integration branch (main or develop) and use short-lived task branches with pull requests; this reduces late merge pain and exposes schema incompatibilities early.[1][2]
+
+Final architectural decision
+
+Keep
+
+These are useful and should be retained, tested, and moved behind cleaner interfaces:
+
+Current capability Keep? Target place Required change
+FastAPI upload / pipeline API Yes services/ingestion_api Separate upload/ingestion from extractor endpoints
+PyMuPDF TOC and financial-keyword discovery Yes Product 1: canonicalizer/section_detection Return page/region candidates with coordinates and evidence
+Existing Section Registry Yes Product 1: canonicalizer/sections Make it produce a generic section tree, not only taxonomy-specific output
+table_inventory Yes Product 1: canonicalizer/tables Make it canonical and complete: every candidate region gets ID, bbox, page, confidence, status
+Core three-statement VLM logic Yes Product 2: extractors/financial_statements It must read canonical table/section objects, not decide PDF navigation itself
+Generic non-financial VLM router Yes Product 2 fallback / canonicalizer ambiguity service Constrain it with structured output and provenance
+Dynamic Excel builder Yes exporters/excel Make it render canonical JSON and domain outputs; never become source of truth
+Pydantic schemas Yes contracts/models Replace permissive Optional-everywhere behavior with explicit field states
+Semantic chunking / RAG Keep, but narrow use Narrative-domain extractors Do not use it for table-value extraction or primary statement numbers
+
+Refactor
+
+These should not remain as they are:
+
+Direct PDF-to-final business JSON paths
+They mix Product 1 and Product 2 concerns. Refactor them so the pipeline becomes:
+
+PDF -> CanonicalDocument -> FinancialStatementsExtractor -> MSMEExtractor -> output
+
+
+VLM-generated values accepted solely because JSON parses
+JSON validity is not financial correctness. A VLM may return well-formed but incorrect numbers. Every accepted table value needs token-level provenance and deterministic validation against the PDF text layer.
+
+
+“Master Data” driven only by today’s Excel taxonomy
+Your current Section Registry is a strong starting point, but a canonical document must preserve all structural content—including items the current taxonomy does not yet request—so new client schemas do not require PDF re-ingestion.[0]
+
+
+RAG for financial tables
+Keep RAG for MD&A, governance narratives, and long sections where semantic retrieval helps. Do not make it authoritative for numeric line items, table headers, periods, units, or row-column relationships.
+
+Add
+
+The main missing architectural pieces are:
+
+CanonicalDocument v1 schema.
+Token registry with raw PDF geometry, font metadata, reading order, and immutable token IDs.
+Universal block model: heading, paragraph, table, figure, list, footnote, unknown.
+Table/cell model with bbox, rowspan, colspan, raw token references, validation state, and table-confidence diagnostics.
+A numeric provenance validator.
+A generic FinancialStatementsExtractor intermediary between canonical JSON and MSME JSON.
+Golden test fixtures and a benchmark harness.
+A manual-review queue for tables/fields marked AMBIGUOUS or FAILED_VALIDATION.
+
+The end-state folder design
+
+Do not throw the repository away. Restructure incrementally toward this:
+
+ews/
+├── apps/
+│   └── api/
+│       ├── ingestion_routes.py
+│       └── extraction_routes.py
+│
+├── contracts/
+│   ├── canonical_document_v1.py
+│   ├── canonical_document_v1.schema.json
+│   ├── financial_statements_v1.py
+│   ├── msme_valuation_v1.py
+│   └── taxonomy_v1.py
+│
+├── canonicalizer/                         # Product 1
+│   ├── ingest.py
+│   ├── pdf_primitives.py                  # PyMuPDF / pdfplumber adapters
+│   ├── layout_detection.py                # existing heuristics, later YOLO
+│   ├── reading_order.py
+│   ├── blocks.py
+│   ├── sections.py                        # migrate Section Registry
+│   ├── table_inventory.py                 # migrate existing inventory
+│   ├── table_structure.py
+│   ├── table_validation.py
+│   ├── metadata.py
+│   └── canonical_store.py
+│
+├── extractors/                            # Product 2
+│   ├── base.py
+│   ├── taxonomy/
+│   │   └── annual_report_taxonomy.py
+│   ├── financial_statements/
+│   │   ├── section_selector.py
+│   │   ├── line_item_matcher.py
+│   │   ├── statement_extractor.py
+│   │   └── validation.py
+│   ├── msme/
+│   │   ├── field_registry.py
+│   │   ├── mapper.py
+│   │   └── output_schema.py
+│   ├── esg/
+│   └── governance/
+│
+├── intelligence/
+│   ├── vlm/
+│   │   ├── client.py
+│   │   ├── table_structure_resolver.py
+│   │   └── narrative_extractor.py
+│   └── retrieval/
+│       └── rag_chunker.py                 # migrate current RAG here
+│
+├── exporters/
+│   ├── excel.py                            # migrate current Excel logic
+│   └── json.py
+│
+├── evaluation/
+│   ├── benchmark_runner.py
+│   ├── metrics.py
+│   └── ground_truth/
+│
+├── tests/
+│   ├── contract/
+│   ├── canonicalizer/
+│   ├── extractors/
+│   ├── regression/
+│   └── fixtures/
+│
+└── docs/
+
+The critical interface
+
+Before either of you changes extraction logic, create and freeze this contract. It is the shared boundary between your work.
+
+class CanonicalDocument(BaseModel):
+    schema_version: str
+    document_id: str
+    source: SourceMetadata
+    pages: list[CanonicalPage]
+    tables: list[CanonicalTable]
+    sections: list[CanonicalSection]
+    indexes: CanonicalIndexes
+
+Minimum table model:
+
+class CanonicalTable(BaseModel):
+    table_id: str
+    page_numbers: list[int]
+    bbox: BoundingBox
+    block_id: str
+    source_tokens: list[str]
+
+    rows: list[CanonicalRow]
+    columns: list[CanonicalColumn]
+    cells: list[CanonicalCell]
+
+    extraction_status: Literal[
+        "DETECTED", "STRUCTURED", "VALIDATED",
+        "AMBIGUOUS", "FAILED_VALIDATION"
+    ]
+
+    validation: TableValidation
+
+Every cell must preserve raw evidence:
+
+class CanonicalCell(BaseModel):
+    cell_id: str
+    row_index: int
+    column_index: int
+    rowspan: int = 1
+    colspan: int = 1
+    bbox: BoundingBox
+    token_ids: list[str]
+
+    raw_text: str                     # Exact joined PDF token text
+    numeric_token_ids: list[str]
+    parsed_numeric: Decimal | None    # Never replace raw_text
+    role: Literal["header", "data", "subtotal", "total", "note", "unknown"]
+
+Your friend must build against this, not against whatever internal shape Product 1 currently uses. JSON Schema/Pydantic contract tests should be run in CI to ensure that a canonicalizer change cannot silently break extractors.[3][4]
+
+Two-person plan
+
+You should work in parallel, but only after a short contract-first phase. Waiting to perfect Product 1 before Product 2 begins will waste time; building both without a shared contract will create a painful merge.
+
+Shared foundation: first 2–3 days
+
+Both of you work together on these items:
+
+Freeze 8–12 representative annual reports as a benchmark corpus.
+
+
+Define CanonicalDocument v0, FinancialStatements v0, and MSMEValuation v0.
+
+
+Define exact field statuses:
+
+FOUND
+NOT_FOUND
+NOT_APPLICABLE
+AMBIGUOUS
+FAILED_VALIDATION
+
+
+Define the provenance object required for every output field.
+
+
+Create 15–20 manually verified expected values per report at first; then expand toward all 47 MSME fields.
+
+
+Create a basic CI command:
+
+pytest tests/contract tests/regression
+
+Your workstream: Product 1
+
+You own the canonicalizer and should move in this order:
+
+Phase Deliverable Definition of done
+P1.0 Canonical schema and adapter Current pipeline can emit pages, tokens, sections, table inventory
+P1.1 Primitive-first token store All text has stable token IDs, page number, raw bbox, raw text
+P1.2 Generic section hierarchy Financial statements, notes, ESG, governance regions represented without hardcoding MSME fields
+P1.3 Table region coverage Every candidate table receives bbox, page ID, region confidence, and source tokens
+P1.4 Table structure Cells/rows/columns/spans for core statements; support borderless layouts
+P1.5 Numeric validator Tables cannot be marked VALIDATED if cell numeric tokens differ from source primitives
+P1.6 Upgrade fallback Add DocLayout-YOLO / VLM ambiguity route only after baseline failures prove the need
+
+For the immediate implementation, reuse the existing TOC/keyword discovery and table_inventory components. Do not begin with YOLO, TableFormer, or a VLM rewrite. First prove the current pipeline’s recall and establish the canonical evidence objects.
+
+Your friend’s workstream: Product 2
+
+Your friend owns semantic and business-level extraction:
+
+Phase Deliverable Definition of done
+P2.0 Extractor base interface All extractors accept only CanonicalDocument
+P2.1 Taxonomy navigator Locates Company Info, Financial Statements, Notes, ESG, Governance by section IDs/tags
+P2.2 Financial Statements extractor Emits normalized Balance Sheet/P&L/CF line items with raw label/value/provenance
+P2.3 MSME mapper Maps Financial Statements output to the 47-field MSME schema
+P2.4 Units and period resolver Correctly retains raw units and extracts both years
+P2.5 Consolidation selector Consistently prefers Consolidated and explicitly reports fallback to Standalone
+P2.6 Field-confidence/review policy Never returns a guessed value as FOUND
+P2.7 Boss taxonomy API Returns category/subcategory material and metadata for the spreadsheet requirement
+
+The friend should not add new PDF parsing calls. If a canonical object lacks something needed, they create a schema change request or a failing contract test for you to satisfy.
+
+Integration cadence
+
+Use trunk-based integration with short-lived branches, ideally merged every 1–3 days. AWS recommends short-lived feature branches and frequent integration because it reveals integration errors early rather than concentrating them at the end.[1]
+
+Recommended workflow:
+
+main
+├── feat/contracts-v0                  # shared; merge first
+├── feat/canonical-token-adapter       # you
+├── feat/msme-on-canonical-v0          # friend
+├── feat/table-provenance-validation   # you
+├── feat/fs-line-item-matcher          # friend
+└── feat/regression-suite              # either / shared
+
+Rules:
+
+Neither of you changes contracts/ without the other’s approval.
+Any contract change increments the schema version.
+A PR must include at least one fixture or regression test when it changes extraction logic.
+Merge only if old benchmark reports still pass—or if changed expected output is documented as a deliberate correction.
+Keep your experimental Qwen / VLM prompt work isolated under intelligence/vlm; it must not directly mutate canonical values.
+
+Sequential versus parallel
+
+Do neither extreme.
+
+Do not do fully sequential work
+
+If you perfect Product 1 first, you may spend weeks developing representations that Product 2 does not need, while delaying the direct business output—MSME valuation and the boss’s taxonomy.
+
+Do not do uncoordinated parallel work
+
+If you and your friend build independently without schemas, Product 2 will hardcode assumptions about Product 1’s JSON and merging will be expensive.
+
+Use contract-first parallel delivery
+
+Days 1–3:
+  Shared contracts + benchmark corpus + baseline test
+
+Week 1:
+  You: CanonicalDocument v0 adapter
+  Friend: Extractor interfaces + synonym/field registry
+
+Week 2:
+  You: tokens, sections, table inventory, provenance
+  Friend: Financial Statements extractor over v0 canonical doc
+
+Week 3:
+  You: table structure + numeric validation
+  Friend: MSME mapping + consolidated / units / periods
+
+Week 4:
+  Joint: benchmark, repair highest-impact failures, release pilot
+
+This is the optimal balance for two developers: Product 2 produces demonstrable value early, while Product 1 becomes a durable platform rather than a speculative rewrite.[5][0]
+
+What to test before any major rebuild
+
+Your current branch claims table inventory, generic routing, master-data JSON, hardened schema handling, Excel export, and RAG-based narrative processing. Test those claims before redesigning them.
+
+For each selected annual report, record:
+
+1. Table-page recall:
+   discovered financial table regions / total known financial table regions
+
+2. Numeric fidelity:
+   exact VLM/canonical value matches / all expected raw PDF values
+
+3. Cell-structure fidelity:
+   correctly assigned row-column cells / all cells
+
+4. MSME field recall:
+   correctly FOUND required fields / applicable required fields
+
+5. Provenance completeness:
+   FOUND fields with page + table + cell/token evidence / FOUND fields
+
+6. Safety:
+   wrong values returned as FOUND
+   target: zero
+
+7. Runtime:
+   PDF ingestion, VLM time, total latency, GPU/API cost
+
+A system that extracts 42/47 fields but gives 2 incorrect values as FOUND is worse than one that extracts 37/47 and routes 10 uncertain fields to review. For finance, safe uncertainty beats confident corruption.
+
+Immediate next implementation task
+
+Do this first—before new models, branches, or a broad refactor:
+
+Create contracts/canonical_document_v0.py.
+Make the current pipeline emit a canonical JSON alongside its current full_extraction.json.
+Include only:source
+pages
+page-level raw tokens
+sections from the existing Section Registry
+table inventory from the existing table detection
+bboxes, page IDs, and detection confidence.
+
+
+Add a CanonicalDocument schema validation test.
+Refactor one existing extractor—preferably the Balance Sheet extractor—to accept canonical JSON rather than a PDF path.
+Run it on your current report and compare against current output.
+
+If that succeeds, you have proven the migration path without risking the functionality already built.
+
+Your repository has enough existing capability to become the foundation. The goal now is not “build Product 1 versus build Product 2”; it is to turn the current direct-extraction pipeline into a contract-driven platform, where Product 1 produces reliable evidence and Product 2 turns that evidence into the business outputs your boss actually needs.
+
+
+you asked
+
+message time: 2026-07-25 18:18:23
+
+my friend just dropped, now it is all me, give me the entire steps to be done, i will paste it into antigravity and code it quickly...
+
+
+perplexity response
+
+Since you are now building this alone, do not attempt the full perfect canonicalizer, table engine, all taxonomy flows, MSME API, ESG, governance, and UI at once. Build a vertical slice first: one PDF -> canonical document -> validated financial statements -> MSME output -> Excel/audit artifact. Then expand systematically.
+
+Your current qwen-onprem branch is a strong foundation: it already has PyMuPDF discovery, a section registry, table inventory, Qwen VLM extraction, master-data JSON, Excel generation, and RAG for narrative sections. The implementation should preserve those capabilities but force them behind a Product 1 canonical-document contract and Product 2 extractor interfaces.[0]
+
+Paste the following into Antigravity as the master implementation instruction.
+
+
+You are the lead engineer refactoring and extending an existing Python repository named `ews`.
+
+# IMPORTANT: WORKING STYLE
+
+Do NOT rewrite the project from scratch.
+Do NOT remove existing working pipeline behavior until an equivalent replacement is tested.
+Do NOT make broad speculative refactors.
+Work incrementally, preserve backward compatibility where practical, and run tests after every phase.
+
+The current branch is `qwen-onprem`. It already contains:
+- FastAPI app (`app.py`)
+- PyMuPDF-based PDF / TOC / keyword discovery
+- Section Registry / master-data approach
+- Table Inventory
+- Qwen3-VL on-prem VLM integration
+- Core extraction for Balance Sheet, Profit and Loss, Cash Flow
+- Generic VLM router for other tables
+- RAG / semantic chunking for long narrative sections
+- Dynamic Excel output
+- Pydantic models
+- Existing JSON and Excel output fixtures
+
+The target is a production-oriented, two-layer enterprise document understanding architecture for 100–400 page digitized Indian annual reports (Ind AS / IFRS).
+
+# TARGET ARCHITECTURE
+
+Product 1: Annual Report Canonicalizer
+Input: raw PDF
+Output: `CanonicalDocument` JSON
+
+Product 2: Domain Extractors
+Input: `CanonicalDocument` only
+Outputs:
+- Financial Statements JSON
+- MSME Valuation JSON
+- Boss taxonomy / annual-report extraction JSON
+- Future ESG / Governance / Credit Risk outputs
+
+STRICT RULE:
+Product 2 extractors must never parse, open, crop, render, or otherwise access the original PDF.
+They consume only `CanonicalDocument`.
+
+Core data flow:
+
+PDF
+  -> PDF primitives + current discovery
+  -> canonicalizer
+  -> CanonicalDocument JSON
+  -> financial-statement extractor
+  -> MSME valuation mapper
+  -> JSON / Excel / API response
+
+# NON-NEGOTIABLE SAFETY RULES
+
+1. PDF primitive text is the authority for text and numeric values.
+2. VLMs may assist with:
+   - table region identification
+   - table structure
+   - header mapping
+   - cell-span ambiguity
+   - narrative classification
+   - label matching candidates
+3. VLMs must NOT be treated as the authority for financial values.
+4. Every value emitted as `FOUND` must contain provenance:
+   - page number
+   - section ID
+   - table ID if applicable
+   - row / column / cell ID if applicable
+   - source token IDs
+   - raw source text
+5. Never use null alone to mean a missing field.
+6. Every requested domain field must have one of:
+   - FOUND
+   - NOT_FOUND
+   - NOT_APPLICABLE
+   - AMBIGUOUS
+   - FAILED_VALIDATION
+7. Preserve values exactly as printed:
+   - commas
+   - decimal precision
+   - parentheses / negative signs
+   - raw units such as Actuals, Thousand, Lakh, Crore, Million
+   - raw currency
+8. Parsed numerics may be added for calculations, but raw strings are immutable.
+9. Do not silently guess. Safe uncertainty is better than an incorrect found value.
+10. Existing direct-PDF extraction paths may remain temporarily as legacy fallbacks, but all new logic must work through CanonicalDocument.
+
+# BRANCHING RULE
+
+Remain on a single integration branch unless explicitly told otherwise.
+Use small commits with clear messages.
+Do NOT create permanent `product-1` and `product-2` branches.
+
+Recommended commit sequence:
+1. feat: add canonical document contract v0
+2. feat: emit canonical document from existing pipeline
+3. feat: add canonical document persistence and API route
+4. feat: refactor financial statement extractor to canonical input
+5. feat: add MSME extraction contract and mapper
+6. feat: add numeric provenance validation
+7. feat: add regression benchmark framework
+8. feat: migrate existing Excel exporter to canonical/domain outputs
+9. feat: add low-confidence VLM structure resolver
+10. feat: add review queue artifacts
+
+# PHASE 0 — AUDIT THE CURRENT REPOSITORY
+
+Before changing implementation:
+1. Read:
+   - README.md
+   - requirements.txt
+   - app.py
+   - graph/run_pipeline.py
+   - graph/app/financial_tables_api.py
+   - all annual-report-related source modules
+   - all Pydantic schemas
+   - Excel generation modules
+   - existing test files
+   - implementation plans and migration guides
+2. Build a concise `docs/current_architecture_audit.md` containing:
+   - current request flow
+   - current PDF discovery flow
+   - current VLM call sites
+   - current JSON schemas
+   - current table inventory format
+   - current section registry format
+   - current Excel generation flow
+   - direct PDF dependencies that must be moved to Product 1
+   - reusable modules
+   - risky / duplicated / obsolete code
+3. Do not delete modules in this phase.
+4. Confirm existing tests run.
+5. Add a smoke test that runs the current baseline extraction against one already committed sample PDF, if a fixture exists.
+
+# PHASE 1 — CREATE VERSIONED CONTRACTS
+
+Create:
+
+contracts/
+  __init__.py
+  common.py
+  canonical_document_v0.py
+  financial_statements_v0.py
+  msme_valuation_v0.py
+  taxonomy_output_v0.py
+
+Use Pydantic v2 models if the project dependency set supports it.
+Avoid `dict[str, Any]` except where truly unavoidable.
+
+## 1A. Common types
+
+Create:
+- BoundingBox: x0, y0, x1, y1
+- SourceReference
+- Provenance
+- ExtractionStatus enum
+- Confidence metadata
+- ValidationIssue
+- ValidationStatus enum
+
+Suggested types:
+
+```python
+class ExtractionStatus(str, Enum):
+    FOUND = "FOUND"
+    NOT_FOUND = "NOT_FOUND"
+    NOT_APPLICABLE = "NOT_APPLICABLE"
+    AMBIGUOUS = "AMBIGUOUS"
+    FAILED_VALIDATION = "FAILED_VALIDATION"
+
+class ValidationStatus(str, Enum):
+    NOT_RUN = "NOT_RUN"
+    VALIDATED = "VALIDATED"
+    FAILED = "FAILED"
+    PARTIAL = "PARTIAL"
+
+class BoundingBox(BaseModel):
+    x0: float
+    y0: float
+    x1: float
+    y1: float
+
+1B. CanonicalDocument v0
+
+Create models for:
+
+SourceMetadata
+DocumentMetadata
+CanonicalToken
+CanonicalBlock
+CanonicalPage
+CanonicalSection
+CanonicalTable
+CanonicalRow
+CanonicalColumn
+CanonicalCell
+TableValidation
+CanonicalIndexes
+CanonicalDocument
+
+Minimum schema requirements:
+
+class CanonicalToken(BaseModel):
+    token_id: str
+    page_number: int
+    text: str
+    bbox: BoundingBox
+    reading_order_index: int | None = None
+    font_name: str | None = None
+    font_size: float | None = None
+    is_bold: bool | None = None
+    is_italic: bool | None = None
+    color: str | None = None
+
+class CanonicalBlock(BaseModel):
+    block_id: str
+    page_number: int
+    block_type: Literal[
+        "heading", "paragraph", "table",
+        "figure", "list", "footnote", "other"
+    ]
+    bbox: BoundingBox
+    token_ids: list[str] = Field(default_factory=list)
+    table_id: str | None = None
+    section_id: str | None = None
+    reading_order_index: int
+    confidence: float | None = None
+
+class CanonicalCell(BaseModel):
+    cell_id: str
+    row_index: int
+    column_index: int
+    bbox: BoundingBox
+    token_ids: list[str] = Field(default_factory=list)
+    raw_text: str
+    numeric_token_ids: list[str] = Field(default_factory=list)
+    parsed_numeric: Decimal | None = None
+    rowspan: int = 1
+    colspan: int = 1
+    role: Literal[
+        "header", "data", "subtotal", "total", "note", "unknown"
+    ] = "unknown"
+
+class CanonicalTable(BaseModel):
+    table_id: str
+    page_numbers: list[int]
+    bbox: BoundingBox
+    source_block_id: str | None = None
+    is_borderless: bool | None = None
+    detection_method: str
+    structure_method: str | None = None
+    token_ids: list[str]
+    rows: list[CanonicalRow] = Field(default_factory=list)
+    columns: list[CanonicalColumn] = Field(default_factory=list)
+    cells: list[CanonicalCell] = Field(default_factory=list)
+    validation_status: ValidationStatus = ValidationStatus.NOT_RUN
+    validation_issues: list[ValidationIssue] = Field(default_factory=list)
+    confidence: float | None = None
+
+CanonicalDocument must contain:
+
+schema version
+document ID
+hash / source metadata
+page list
+token registry
+tables
+sections
+indexes
+processing metadata
+errors / warnings
+
+1C. Domain contracts
+
+Define:
+
+FinancialStatementsDocument
+FinancialLineItem
+PeriodValue
+MSMEValuationDocument
+MSMEFieldResult
+
+A value object must contain:
+
+raw value string
+parsed numeric when safe
+unit as reported
+currency as reported
+financial year / period
+consolidation type
+extraction status
+provenance
+
+PHASE 2 — BUILD THE CANONICALIZER V0 USING CURRENT COMPONENTS
+
+Create:
+
+canonicalizer/
+  init.py
+  service.py
+  primitives.py
+  tokens.py
+  blocks.py
+  sections.py
+  table_inventory_adapter.py
+  metadata.py
+  indexes.py
+  persistence.py
+
+The purpose is not perfect table reconstruction yet.
+The purpose is to produce a useful, lossless-enough intermediate representation from the current pipeline.
+
+2A. PDF primitive adapter
+
+Implement canonicalizer/primitives.py.
+
+Use existing PyMuPDF / pdfplumber code wherever possible.
+Extract for every page:
+
+page width / height / rotation
+all text spans or words
+stable token IDs
+token bounding boxes
+font attributes where available
+drawings / line counts if already available
+raw text in reading order
+
+Token IDs must be stable within a processing run:
+p{page_number}_t{zero_padded_index}
+
+Do not alter extracted text.
+Do not normalize numeric strings in-place.
+
+2B. Page and block construction
+
+Implement:
+
+page-level token registry
+existing text blocks converted to CanonicalBlock
+basic paragraph grouping
+headings from current heuristics / section registry
+table blocks from current table inventory
+
+If a region is detected as table but its cells are not reconstructed:
+
+create CanonicalTable
+set structure method = "inventory_only"
+leave cells empty
+retain bbox and all tokens inside bbox
+set validation status = NOT_RUN
+
+This is allowed in v0.
+
+2C. Section adapter
+
+Migrate existing Section Registry output into CanonicalSection.
+
+Requirements:
+
+retain raw title tokens
+normalized title
+generic section type
+parent / child links
+page span
+associated block IDs
+associated table IDs
+confidence
+taxonomy path if available
+
+Do not hardcode MSME-specific semantics inside CanonicalDocument.
+Generic tags are acceptable:
+
+company_information
+governance
+shareholding
+financial_statements
+balance_sheet
+profit_and_loss
+cash_flow
+notes_to_accounts
+esg
+csr
+audit
+other
+
+2D. Table inventory adapter
+
+Convert current table_inventory to CanonicalTable records.
+
+Every candidate table must get:
+
+deterministic table ID
+page number(s)
+bbox
+method used to detect it
+table / non-table confidence if available
+tokens in region
+linked section ID when available
+is_borderless if detection can infer it
+processing state
+
+Do NOT discard suspected tables merely because current extraction does not require them.
+High recall is preferable to missed financial tables.
+
+2E. Metadata extraction
+
+Implement limited generic metadata extraction from canonical tokens and sections:
+
+company name
+reporting dates
+FY end
+currency
+unit / denomination
+standalone / consolidated indicators
+auditor name and opinion if available
+
+Every metadata value must have provenance token IDs and a confidence.
+If uncertain, store it as missing or ambiguous, never guessed.
+
+2F. Indexes
+
+Build indexes to make Product 2 simple:
+
+sections_by_type
+table_ids_by_section_id
+blocks_by_page
+token_ids_by_page
+tables_by_page
+normalized_title_to_section_ids
+note_number_to_section_ids when discoverable
+
+PHASE 3 — PERSIST AND EXPOSE THE CANONICAL DOCUMENT
+
+Add canonical document persistence.
+Reuse existing db/ only if its data model is suitable; otherwise add a clean local filesystem JSON store first.
+Write:{document_id}/canonical_document.v0.json
+{document_id}/processing_manifest.json
+{document_id}/errors.json
+
+
+Add a FastAPI endpoint:POST /documents/canonicalize
+GET /documents/{document_id}/canonical
+GET /documents/{document_id}/canonical/summary
+
+
+Do not break the old upload/extract endpoint.
+Have the old endpoint internally call canonicalization first where feasible.
+
+PHASE 4 — REFACTOR FINANCIAL STATEMENT EXTRACTION TO USE CANONICAL JSON
+
+Create:
+
+extractors/
+  init.py
+  base.py
+  financial_statements/
+    init.py
+    extractor.py
+    table_selector.py
+    line_item_matcher.py
+    period_resolver.py
+    consolidation_resolver.py
+    unit_resolver.py
+    validation.py
+
+4A. Extractor base interface
+
+class DomainExtractor(Protocol):
+    def extract(self, document: CanonicalDocument) -> BaseModel:
+        ...
+
+No extractor in this folder may take pdf_path, PyMuPDF page, pdfplumber page, or image as an argument.
+
+4B. Financial statement extraction
+
+Implement:
+
+extract_financial_statements(canonical_doc)
+identify candidate Balance Sheet, P&L, Cash Flow tables through section IDs and table links
+prefer consolidated statement sections when both standalone and consolidated are available
+return both if required, but make selection explicit
+extract raw labels and raw values
+capture current and prior periods where present
+preserve units/currency exactly as printed
+attach provenance
+
+Build the first line-item synonym registry for the MSME fields:
+
+revenue from operations
+other income
+cost of materials consumed
+purchases of stock-in-trade
+changes in inventories
+employee benefits expense
+finance costs
+depreciation and amortisation
+other expenses
+exceptional items
+profit before tax
+profit for the period
+equity share capital
+other equity
+long-term borrowings
+short-term borrowings
+current maturities of long-term debt
+cash and cash equivalents
+bank balances / current investments
+total current liabilities
+total assets
+total current assets
+total non-current liabilities
+inventories
+trade receivables
+trade payables
+property plant and equipment
+intangible assets / goodwill
+non-current investments
+number of equity shares
+face value
+
+Do not claim FOUND based only on fuzzy matching.
+If multiple candidates are equally plausible, output AMBIGUOUS with candidates and provenance.
+
+4C. Temporary compatibility bridge
+
+For existing VLM-based core statement extraction:
+
+wrap current VLM output in a FinancialStatementsDocument
+attach the CanonicalTable / token provenance based on source page/table region
+mark values lacking deterministic evidence as AMBIGUOUS or FAILED_VALIDATION
+do not silently mark them as FOUND
+
+This lets the legacy VLM behavior keep working while it is gradually constrained.
+
+PHASE 5 — IMPLEMENT MSME VALUATION MAPPER
+
+Create:
+
+extractors/msme/
+  init.py
+  field_registry.py
+  mapper.py
+  schema.py
+  validation.py
+
+The MSME mapper accepts only FinancialStatementsDocument plus canonical document metadata.
+
+def extract_msme_valuation(
+    canonical_doc: CanonicalDocument,
+    financials: FinancialStatementsDocument,
+) -> MSMEValuationDocument:
+    ...
+
+Requirements:
+
+Implement all 47 specified fields as registry-driven configuration, not hardcoded repeated if/else code.
+Each field definition must include:canonical field name
+expected section(s)
+synonyms
+required vs optional
+whether both years are required
+accepted type
+consolidated preference
+notes / fallback policy
+
+
+Return every requested field even when absent.
+Never scale raw values.
+Preserve raw unit and currency.
+Derived values such as EBITDA, EBIT, net debt, capital employed, working capital, margins, growth, and ratios must not be falsely presented as raw extracted values.
+Store “as reported” source values separately from any later calculation layer.
+
+PHASE 6 — TABLE STRUCTURE AND NUMERIC VALIDATION
+
+Create:
+
+canonicalizer/tables/
+  init.py
+  region_detector.py
+  geometry_grid.py
+  structure_resolver.py
+  numeric_validation.py
+  confidence.py
+
+Implement incrementally.
+
+6A. Geometry-first reconstruction
+
+Use tokens inside a known table bbox:
+
+cluster into rows by y/baseline overlap
+cluster into columns by x alignment
+identify left label column vs numeric columns
+retain original token order
+support no-border / borderless tables
+never drop orphan tokens silently
+produce diagnostics for unassigned tokens
+
+Start with core Balance Sheet / P&L / Cash Flow tables.
+
+6B. Numeric recognition
+
+Create a deterministic numeric recognizer that preserves:
+
+1,234.56
+(1,234.56)
+-1,234.56
+—
+-
+note references such as 2.18
+percentages
+dates
+
+Do not automatically interpret every decimal token as a financial number.
+Context matters:
+
+Note columns can look like decimals.
+Date headers can look numeric.
+Years can look numeric.
+Page numbers can leak into regions.
+
+6C. Validation
+
+For each reconstructed table:
+
+Gather primitive numeric tokens from table bbox.
+Gather numeric-bearing cell token IDs.
+Compare raw token occurrence and multiplicity.
+Flag:missing primitive numeric token
+extra structured numeric token
+duplicated numeric token
+cell contains a VLM number not supported by a token
+unassigned primitive token
+
+
+Set:VALIDATED if all expected numeric tokens are accounted for
+PARTIAL if only structural uncertainty remains
+FAILED if values disagree
+
+
+Store exact validation issues.
+
+Do not use only a “bag of numbers” comparison if ordering matters.
+Use:
+
+token membership
+ordered row/column sequence where available
+source cell token references
+
+6D. VLM structure resolver
+
+Use the existing on-prem Qwen VLM only as a fallback when:
+
+table structure is low confidence
+geometry algorithm has conflicting column assignments
+multi-level header spans are uncertain
+side-by-side tables cannot be split cleanly
+
+Prompt the VLM to return only:
+
+header/cell span relationships
+row/column grouping
+candidate table split boundaries
+semantic row role suggestions
+
+Never ask it to invent or return financial values if they already exist in PDF primitives.
+
+Record:
+
+model name
+prompt version
+input image / crop reference
+response
+applied correction
+confidence
+reason for escalation
+
+PHASE 7 — MIGRATE EXCEL OUTPUT
+
+Existing Excel output is useful. Refactor it so it has two explicit modes:
+
+export_canonical_document_to_excel
+
+worksheets / tables with raw data
+source pages / bboxes / IDs
+validation statuses
+useful for debugging / review
+
+
+export_domain_output_to_excel
+
+MSME valuation workbook
+Boss taxonomy workbook
+presentation-friendly
+each field includes status and provenance sheet/reference
+
+The Excel exporter must never alter values, units, signs, or statuses.
+
+PHASE 8 — EVALUATION AND REGRESSION TESTING
+
+Create:
+
+evaluation/
+  init.py
+  benchmark_runner.py
+  metrics.py
+  dataset_manifest.json
+  reports/
+tests/
+  contract/
+  canonicalizer/
+  extractors/
+  regression/
+  fixtures/
+
+8A. Benchmark corpus
+
+Use at least 8–12 annual reports with variation:
+
+Reliance-style dense schedules
+Infosys-style clean statements
+CG Power-style rotated schedule
+side-by-side tables
+borderless statements
+standalone plus consolidated statements
+different units: actuals, lakh, crore, million
+reports with complex notes and detailed schedules
+
+Do not fabricate results.
+
+8B. Ground truth
+
+For each test report, begin with:
+
+Balance Sheet
+P&L
+Cash Flow
+all 47 MSME fields where applicable
+
+Ground truth must include:
+
+expected raw value
+page number
+statement type
+source label
+year
+unit
+currency
+expected status
+
+8C. Metrics
+
+Implement:
+
+table page recall
+table-region recall
+numeric-token recall
+numeric-token precision
+validated-table rate
+MSME required-field recall
+MSME exact raw-value accuracy
+provenance completeness
+number of wrong values marked FOUND
+pipeline runtime by stage
+VLM calls / pages / cost proxy
+
+Critical gate:
+A report may not be considered successful if it returns a wrong financial value with status=FOUND.
+
+8D. Regression policy
+
+Every bug fix must add:
+
+a minimal fixture or report-specific regression case
+expected canonical / extractor output assertion
+assertion that the failure cannot recur
+
+PHASE 9 — REVIEW QUEUE AND OPERABILITY
+
+Implement lightweight artifacts first; no complex frontend required.
+
+For every document create:
+
+review_queue.json
+validation_report.json
+processing_manifest.json
+
+A review item includes:
+
+document ID
+page number
+table ID
+crop bbox
+reason
+error category
+candidate values / structures
+validation diagnostics
+suggested action
+model trace if VLM was used
+
+Reasons:
+
+FAILED_VALIDATION
+AMBIGUOUS_TABLE_STRUCTURE
+AMBIGUOUS_LINE_ITEM
+MISSING_REQUIRED_MSME_FIELD
+UNIT_OR_CURRENCY_AMBIGUITY
+CONSOLIDATION_AMBIGUITY
+LOW_CONFIDENCE_SECTION
+
+PHASE 10 — API DESIGN
+
+Keep existing endpoint behavior working.
+Add versioned endpoints:
+
+POST /v1/documents/canonicalize
+GET  /v1/documents/{document_id}/canonical
+GET  /v1/documents/{document_id}/canonical/summary
+POST /v1/documents/{document_id}/extract/financial-statements
+POST /v1/documents/{document_id}/extract/msme-valuation
+POST /v1/documents/{document_id}/extract/taxonomy
+GET  /v1/documents/{document_id}/review-queue
+GET  /v1/documents/{document_id}/exports/{export_type}
+
+Each extraction endpoint:
+
+loads persisted canonical JSON
+validates schema version compatibility
+never reopens raw PDF
+returns structured output with provenance
+returns warnings / review requirement explicitly
+
+IMPLEMENTATION ORDER
+
+Implement in exactly this order:
+
+MILESTONE A — Preserve and understand current behavior
+
+Repository audit
+Existing test execution
+Baseline sample run
+Current architecture documentation
+
+MILESTONE B — Contract first
+
+Pydantic contracts
+JSON schema export
+Contract tests
+No functional behavior changes yet
+
+MILESTONE C — CanonicalDocument v0
+
+Extract tokens/pages/blocks/sections/table inventory from existing pipeline
+Persist canonical JSON
+Add summary endpoint
+Validate canonical schema on every run
+
+MILESTONE D — One vertical slice
+
+Refactor only Balance Sheet extraction to accept CanonicalDocument
+Output FinancialStatementsDocument
+Add provenance
+Compare output against current baseline output
+Do not work on all statement types yet
+
+MILESTONE E — MSME MVP
+
+Add P&L and Cash Flow
+Build field registry
+Implement all 47-field MSME output
+Correct statuses and provenance
+No unit conversion / no derived metrics in raw extraction
+
+MILESTONE F — Validation
+
+Add geometry grid reconstruction for core statements
+Add numeric-token validation
+Make unsafe values fail closed into FAILED_VALIDATION / AMBIGUOUS
+
+MILESTONE G — Quality upgrades
+
+Integrate existing VLM only as structural fallback
+Add improved borderless / side-by-side handling
+Add review queue
+Add regression corpus
+
+MILESTONE H — Extensions
+
+Boss taxonomy extraction endpoint
+ESG extractor
+Governance extractor
+Credit-risk extractor only after foundational accuracy is stable
+
+ACCEPTANCE CRITERIA FOR FIRST RELEASE
+
+A first usable release must:
+
+Canonicalize a digitized annual report into valid CanonicalDocument JSON.
+Preserve page-level tokens, bboxes, sections, and table inventory.
+Extract Balance Sheet, P&L, and Cash Flow from CanonicalDocument only.
+Emit all MSME fields with explicit statuses.
+Preserve raw financial strings, units, currency, signs, and comparative years.
+Include page/table/cell/token provenance for every FOUND field.
+Never return a non-validated / ambiguous generated number as FOUND.
+Produce JSON, Excel, validation report, and review queue.
+Run regression tests using a benchmark fixture corpus.
+Keep the existing Qwen/on-prem capability available as a controlled fallback.
+
+FINAL ENGINEERING RULE
+
+Prefer a small end-to-end working vertical slice over a large unfinished redesign.
+
+At the end of every milestone:
+
+run tests
+run one sample annual report
+save canonical JSON
+save domain output
+save validation report
+compare output to previous baseline
+document known failure modes
+commit cleanly
+
+
+***
+
+## How to drive Antigravity
+
+Do **not** paste the whole thing and allow it to modify the entire repository in one uncontrolled pass. Give it the master prompt above, then issue these one-by-one commands:
+
+### Prompt 1 — Audit only
+
+```text
+Execute only PHASE 0. Do not modify functional code yet.
+Inspect the repository, run existing tests, trace the pipeline, and create docs/current_architecture_audit.md.
+Then tell me:
+1. the current end-to-end flow,
+2. exact modules to preserve,
+3. exact direct-PDF dependencies,
+4. the safest first files to add for contracts,
+5. any blockers or dependency conflicts.
+
+Prompt 2 — Contracts
+
+Execute only PHASE 1.
+Add the versioned Pydantic contracts and JSON schema exports.
+Do not refactor the pipeline yet.
+Add contract tests and show the generated CanonicalDocument v0 example.
+
+Prompt 3 — Canonicalizer v0
+
+Execute only PHASE 2 and PHASE 3.
+Reuse the existing PyMuPDF discovery, Section Registry, and table inventory.
+Emit a valid CanonicalDocument v0 for the existing sample PDF.
+Do not attempt cell-level table reconstruction yet.
+Add persistence and canonical-document API endpoints.
+
+Prompt 4 — First vertical slice
+
+Execute only MILESTONE D.
+Refactor just the Balance Sheet extraction flow so it accepts CanonicalDocument and emits FinancialStatementsDocument with page/table/token provenance.
+Preserve the legacy implementation as a comparison fallback.
+Add a regression test comparing both paths on the sample report.
+
+Prompt 5 — MSME MVP
+
+Execute MILESTONE E only after the Balance Sheet canonical flow passes tests.
+Implement the registry-driven 47-field MSME schema and mapping layer.
+Every field must be returned with explicit status and provenance.
+Do not introduce unit scaling or derived financial calculations.
+
+Prompt 6 — Validation
+
+Execute MILESTONE F only.
+Add deterministic numeric-token validation and make incorrect/unverifiable financial values fail closed.
+Do not yet introduce new VLM models or a broad UI.
+
+Recommended solo execution order
+
+Week Your focus Outcome
+1 Repository audit, contracts, CanonicalDocument v0 Your codebase has a stable internal boundary
+2 Token/block/section/table-inventory canonicalization Every PDF creates reusable canonical JSON
+3 Balance Sheet -> P&L -> Cash Flow extractors Core statements read only canonical JSON
+4 MSME mapper, units, periods, consolidated preference Business-facing 47-field output
+5 Numeric validation, review queue, regression tests Safe, auditable output
+6+ Borderless tables, side-by-side tables, VLM structural fallback, taxonomy/ESG/governance Expand robustness and coverage
+
+The one rule to remember
+
+Do not aim for “100% automated output” first. Aim for:
+
+100% source traceability
++ zero wrong values marked FOUND
++ explicit review for uncertain cases
+
+That is the financially defensible architecture and is much more valuable than a VLM that confidently produces plausible but unverified JSON.
+
+
+you asked
+
+message time: 2026-07-25 18:30:22
+
+see we dont want it to be 100 % accurate in what it gives and manually verify the rest, i want it to be rather gives 100% output with best accuracy and and points out the wrong ones/unvalidated/unverified ones... also we have to come up with a demo right tomorrow, so 20 hours lock in and need to complete this ...
+this is the phase 0 already 
+dont just give it a whole week and scare me
+Listed directory EWS%20%28Data%20extraction%20using%20VLM%29
+Viewed README.md:1-72
+Viewed requirements.txt:1-14
+Viewed app.py:1-31
+Listed directory graph
+Listed directory app
+Listed directory sources
+Listed directory annual_report
+Listed directory discovery
+Listed directory db
+Listed directory plans
+Searched for "def test_"
+Viewed test_sprint2.py:1-100
+Ran command: python test_sprint2.py
+Viewed test_sprint2.py:300-350
+Searched for "class BoardMember"
+Viewed content_extractor.py:90-150
+Viewed content_extractor.py:50-90
+Ran command: python -m pytest
+Ran command: .\.venv\Scripts\python.exe -m pytest
+Ran command: .\.venv\Scripts\python.exe test_sprint2.py
+Searched for "def "
+Viewed run_pipeline.py:1-94
+Viewed financial_tables_api.py:1-656
+Viewed vlm_migration_guide.md:1-50
+Viewed implementation_plan.md:1-63
+Viewed section-consolidation-architecture.md:1-100
+Viewed extraction_pipeline.py:1-150
+Viewed extraction_pipeline.py:151-300
+Viewed extraction_pipeline.py:301-450
+Viewed extraction_pipeline.py:451-729
+Viewed vlm_extractor.py:1-100
+Searched for "fitz"
+Searched for "def "
+Searched for "fitz"
+Searched for "pdfplumber"
+Searched for "import pdf"
+Viewed pdf_ingestion.py:1-100
+Viewed pdf_ingestion.py:101-297
+Viewed test_sprint2.py:310-386
+Edited test_sprint2.py
+Ran command: python test_sprint2.py
+Listed directory tests
+Edited test_baseline_smoke.py
+Ran command: python tests/test_baseline_smoke.py
+Viewed schemas.py:1-150
+Used tool: manage_task
+Viewed schemas.py:151-250
+Viewed master_data.py:1-100
+Viewed store.py:1-100
+Used tool: manage_task
+Listed directory docs
+Used tool: manage_task
+Edited current_architecture_audit.md
+Used tool: manage_task
+
+I have completed Phase 0 (Repository Audit & Baseline Verification) without making any functional changes to the pipeline.
+
+The comprehensive audit report has been compiled and saved to docs/current_architecture_audit.md.
+
+Here are the detailed answers to your 5 questions:
+
+
+1. Current End-to-End Flow
+
+API / CLI Entry Points:Web API: app.py & graph/app/financial_tables_api.py (POST /extract/full, /extract, /extract/zip, /extract/excel).
+CLI: graph/run_pipeline.py. Both delegate execution to run_full_extraction() in graph/sources/annual_report/extraction_pipeline.py.
+
+
+Layer 1 (PDF Ingestion): pdf_ingestion.py parses raw page text with pdfplumber and extracts file metadata via PyMuPDF (fitz).
+Layer 2 (Master Data Store): master_data.py loads pages, headings, and table flags into an in-memory SQLite database (:memory:).
+Layer 3 (Section Registry & TOC Parsing): toc_parser.py extracts TOC page anchors, and section_consolidator.py builds contiguous MasterSection blocks.
+Layer 3.5 & 3.6 (Taxonomy & Hierarchy): taxonomy.py classifies sections into 17 taxonomy categories using hybrid LLM / keyword-regex rules.
+Layer 4 & 4.5 (Table Inventory & VLM Targets): table_detector.py identifies candidate tables, and vlm_targets.py computes VLM target priorities (HIGH/MEDIUM/LOW).
+Layer 5 & 6 (Narrative & Subcategory Extraction): content_extractor.py applies regex pre-extractors + priority source routing (source_routing.py) + LLM extraction.
+Layer 7 (Financial Statement Engine & VLM Router): vlm_extractor.py renders page images and invokes Qwen3-VL on-prem VLM for Balance Sheet, P&L, Cash Flow, and generic non-financial tables.
+Layer 8, 9 & 9.5 (Output Schema & Validation): validation_engine.py checks completeness, and schemas.py builds the DocumentRegistry output.
+Export & Storage: excel_builder.py & workbook_population.py construct multi-sheet Excel workbooks, and db/store.py updates the flat JSON/Excel index on disk.
+
+
+2. Exact Modules to Preserve
+
+graph/sources/annual_report/schemas.py: Schema foundations (will be used to seed contracts/).
+graph/sources/annual_report/toc_parser.py: TOC anchor extraction algorithms.
+graph/sources/annual_report/section_consolidator.py: Section boundary and hierarchy building.
+graph/sources/annual_report/source_routing.py: Domain field priority mapping rules.
+graph/sources/annual_report/llm_config.py & llm_utils.py: Qwen VLM / LLM client configuration.
+graph/sources/annual_report/excel_builder.py & workbook_population.py: Excel export layout logic.
+db/store.py & master_data.py: Database indexing and session store.
+
+
+3. Exact Direct-PDF Dependencies
+
+The following modules make direct PDF calls and must be encapsulated inside Product 1 (canonicalizer/):
+
+pdfplumber: Used in pdf_ingestion.py, toc_parser.py, and table_detector.py to extract text lines, words, and bounding grids.
+PyMuPDF (fitz): Used in pdf_ingestion.py, vlm_extractor.py (for page image rendering), and discovery/parser.py.
+
+In the new architecture:
+
+Product 1 (canonicalizer/) will handle all pdfplumber and fitz operations and emit CanonicalDocument JSON.
+Product 2 (Extractors) will consume only CanonicalDocument JSON and will contain zero calls to pdfplumber, fitz, or PDF file handles.
+
+
+4. Safest First Files to Add for Contracts (Phase 1 / Milestone B)
+
+We can safely create the new contract files under a contracts/ directory without affecting any existing code:
+
+contracts/__init__.py
+contracts/common.py: Enums (ExtractionStatus, ValidationStatus), BoundingBox, SourceReference, Provenance, ValidationIssue.
+contracts/canonical_document_v0.py: CanonicalToken, CanonicalBlock, CanonicalPage, CanonicalSection, CanonicalRow, CanonicalColumn, CanonicalCell, CanonicalTable, CanonicalIndexes, CanonicalDocument.
+contracts/financial_statements_v0.py: FinancialLineItem, PeriodValue, FinancialStatementsDocument.
+contracts/msme_valuation_v0.py: MSMEFieldResult, MSMEValuationDocument.
+contracts/taxonomy_output_v0.py.
+
+
+5. Blockers or Dependency Conflicts
+
+Dependencies: All required core packages (pydantic>=2.0.0, pymupdf==1.28.0, pdfplumber>=0.11.0, openpyxl==3.1.5, fastapi==0.139.0, langchain-core==1.4.8) are installed and functional.
+Tests: Ran test_sprint2.py (fixed 1 minor schema default assertion mismatch; all 5 tests passed). Created a baseline smoke test fixture tests/test_baseline_smoke.py.
+Blockers: None. We are ready to proceed with Phase 1 (Versioned Contracts).
+
+also note that i am using a company hosted vlm so i need to build here and test it on the company laptop 
+it is working pretty well for the extraction of these fields
+
+for one of the pdf not sure about other pdfs 
+Company Profile
+Business Overview
+Products & Services
+Subsidiaries & Group Structure
+Board of Directors
+Key Management Personnel
+Corporate Governance
+Board Committees
+Share Capital
+Shareholding Pattern
+Major Shareholders
+Dividend Information
+Industry Overview
+Business Review
+Opportunities & Challenges
+Future Outlook
+Balance Sheet
+Profit & Loss Statement
+Cash Flow Statement
+Statement of Changes in Equity
+Accounting Policies
+Related Party Transactions
+Contingent Liabilities
+Segment Information
+Financial Ratios
+Working Capital Analysis
+Debt Analysis
+Revenue & Sales Performance
+Segment Performance
+Operational Performance
+Key Performance Indicators (KPIs)
+Business Risks
+Financial Risks
+Operational Risks
+Regulatory Risks
+Workforce Information
+Training & Development
+Employee Welfare
+Diversity & Inclusion
+Environmental
+Social
+Governance
+Sustainability Initiatives
+CSR Spending
+CSR Projects
+Community Development
+Litigations
+Regulatory Compliance
+Statutory Compliance
+Growth Strategy
+Expansion Plans
+Mergers & Acquisitions
+Digital Transformation
+Share Price Performance
+Market Capitalization
+Shareholder Information
+Investor Relations
+Auditor's Report
+Key Audit Matters
+Internal Controls
+Management Guidance
+Growth Targets
+Future Plans
+
+also this is some additional info
+Based on my thorough analysis of the logs and codebase, here's my comprehensive analysis:
+
+📊 Pipeline Execution Time Breakdown
+Phase
+Duration
+% of Total
+Key Details
+Layer 1-3.6: Ingestion → Taxonomy
+4.8s (12:04:34 - 12:04:39)
+0.7%
+329 pages, 154 LLM classifications, 102 sections after merge
+Layer 4: Table Detection
+~3.1s (12:04:39 - 12:04:42)
+0.5%
+133 tables detected across 98 pages
+Layer 4.5: VLM Target Generation
+<1s
+<0.1%
+102 targets (57 HIGH, 4 MEDIUM, 41 LOW)
+Layer 5/6: Text Extraction
+<1s
+<0.1%
+102 sections extracted
+Layer 6.5: Structured Extraction
+~63s (12:04:42 - 12:05:45)
+9.5%
+10 priority fields + governance multi-extract
+Layer 7: Financial VLM (Discovery + VLM)
+~426s (12:05:47 - 12:11:43)
+64%
+Discovery: 120s, 6 VLM calls: ~300s
+Layer 7: VLM Target Routing
+~29s (12:11:43 - 12:12:12)
+4.3%
+4 generic table extractions
+Layer 9: Validation & Quality
+<1s
+<0.1%
+Score: 7.4/10, 58.8% coverage
+Total Pipeline Time: 665.2s (11 minutes)
+
+🐛 Bugs Identified
+Critical Bug: valuation_counterpart Sheet Crash
+WARNING: Failed to build valuation counterpart sheet: 'list' object has no attribute 'items'
+
+Location: excel_builder.py:249 → workbook_population.py:populate_valuation_report()
+Root Cause: populate_valuation_report() returns list[dict] but excel_builder.py tries to iterate with .items() (dict method).
+Fix needed in excel_builder.py:246:
+
+Current (broken):
+
+valuation_rows = populate_valuation_report(...)
+_build_valuation_counterpart_sheet(wb, valuation_rows)  # expects dict?
+
+Should be:
+
+_build_valuation_counterpart_sheet expects list[dict] - fix the function signature
+
+Logic Bug: Shareholding Pattern Mismatch
+Log shows:
+Field 'Shareholding Pattern' matched priority 'corporate governance' → section 'Corporate Governance'
+Field 'Major Shareholders' matched priority 'corporate governance' → section 'Corporate Governance'
+
+Issue: Shareholding data should come from "Shareholding Pattern" section (Shareholding Information category), not Corporate Governance. The FIELD_SOURCE_PRIORITY mapping in source_routing.py is misconfigured.
+
+Redundant Extractions (Wasted LLM Calls)
+Multiple duplicate extractions visible in logs:
+Statement of Changes in Equity → extracted 3 times (skipped twice)
+Board of Directors → extracted 4 times from different sources
+Corporate Governance → extracted 3 times
+Board Committees → extracted 2 times
+Subsidiaries & Group Structure → extracted 2 times
+The deduplication logic in extraction_pipeline.py:404 only checks by subcategory name, but the same logical field gets extracted from multiple source sections with different names.
+
+⚡ Performance Bottlenecks
+Bottleneck
+Time
+Root Cause
+Discovery Pipeline
+120s
+PDF parsing (329 pages), TOC parsing, LLM classification
+6 Core Financial VLM Calls
+~300s (50s each)
+Sequential VLM calls for standalone + consolidated B/S, P&L, CF
+4 Generic VLM Target Calls
+~29s
+Sequential processing of Segment Info + Financial Risks
+Structured Extraction (Layer 6.5)
+~63s
+10+ sequential LLM calls for governance fields
+Sequential VLM Call Pattern (Major Optimization Opportunity)
+
+vlm_extractor.py - processes ONE statement at a time
+
+for entity in ("standalone", "consolidated"):
+    for stmt in ("balance_sheet", "profit_and_loss", "cash_flow"):
+        render_page() → VLM call → wait 30-50s
+
+All 6 calls are independent and could run in parallel.
+Same for VLM target routing - 4 independent table extractions run sequentially.
+
+🎯 Quality & Coverage Metrics
+Metric
+Value
+Assessment
+Overall Quality Score
+7.4/10
+Good
+Consolidation
+9.2/10
+Excellent section merging
+TOC Coverage
+0.8/10
+Critical weakness - only 5 TOC-anchored sections
+Taxonomy
+10/10
+Perfect classification
+Financial Statement
+6.5/10
+Partial extraction
+VLM Extraction
+10/10
+Perfect when it runs
+Category Coverage
+58.8% (10/17)
+Missing 7 categories
+Validation Issues: 16 total (0 errors, 10 warnings, 6 info)
+
+🚀 Actionable Recommendations
+Priority 1: Fix Critical Bugs
+Fix valuation counterpart sheet crash - excel_builder.py:246 type mismatch
+Fix shareholding pattern routing - Update FIELD_SOURCE_PRIORITY in source_routing.py to map to "Shareholding Pattern" section
+Priority 2: Parallelize VLM Calls (5-10x Speedup on Layer 7)
+
+In vlm_extractor.py - use asyncio.gather or ThreadPoolExecutor
+
+async def extract_all_statements_parallel(pdf_path, pages_map):
+    tasks = []
+    for entity in ("standalone", "consolidated"):
+        for stmt in ("balance_sheet", "profit_and_loss", "cash_flow"):
+            tasks.append(extract_single_statement(entity, stmt, pages_map))
+    return await asyncio.gather(*tasks)
+
+Estimated impact: 300s → 50-60s (5x faster)
+Priority 3: Deduplication Logic Enhancement
+In extraction_pipeline.py, enhance priority_extracted_targets to track by logical field (WORKBOOK_TARGETS name) not just taxonomy subcategory:
+
+Current: tracks by taxonomy subcategory name
+
+Better: tracks by canonical field name from WORKBOOK_TARGETS
+
+canonical_field = _resolve_target_field(subcategory)  # Maps to "Board of Directors"
+if canonical_field in priority_extracted_targets:
+    continue  # Skip duplicate logical extraction
+
+Priority 4: Improve TOC Coverage (0.8 → 8+/10)
+Only 5/102 sections TOC-anchored → TOC parser failing on this PDF format
+Add fallback: use PDF bookmarks (8 found) + heading hierarchy for section boundaries
+Consider pdfplumber outline extraction as backup to PyMuPDF
+Priority 5: Caching for Repeated Runs
+Cache discovery pipeline results (120s) by PDF hash
+Cache VLM financial statement extractions (300s) - these are deterministic per page
+Would reduce re-run time from 11min → ~2min
+Priority 6: Expand Category Coverage (58.8% → 85%+)
+Missing categories likely include: Related Party Transactions, Contingent Liabilities, Employee Benefits, Fair Value Measurements, Capital Commitments
+Add detection rules in table_detector.py for these table types
+Add VLM targets for high-value note tables
+
+📈 Summary
+Area
+Status
+Effort
+Impact
+Bug fixes
+🔴 Critical
+Low
+Unblocks Excel output
+VLM Parallelization
+🟡 High
+Medium
+5x speedup on slowest phase
+Deduplication
+🟡 Medium
+Low
+Saves 30-40s + LLM costs
+TOC Coverage
+🟡 Medium
+Medium
+Better section boundaries
+Caching
+🟢 Nice-to-have
+Medium
+Fast re-runs
+Category Coverage
+🟢 Nice-to-have
+Ongoing
+Better completeness
+The pipeline architecture is solid - the 9-layer design is well-structured. The main issues are the valuation sheet bug (blocker), sequential VLM bottleneck (performance), and deduplication gaps (waste). Fix those three and you'll cut runtime to ~3-4 minutes with clean output.
+with all this we also need to keep an eye on the time this stuff takes
+
+
+perplexity response
+
+I’ll break this down so you can feed it directly to Antigravity. I understand you have a tight 20-hour deadline for a demo. We will skip the perfect TableFormer/YOLO ML reconstructions, skip the perfect JSON schemas, and skip all other extraction APIs.
+
+We will focus on one raw, high-value vertical slice using only existing tools, so you can show a working MSME Excel extraction tomorrow with validation transparency.
+
+Paste exactly the prompt below into Antigravity.
+
+
+# URGENT: 20-HOUR DEMO DEADLINE
+You are leading the refactoring of the `ews` repository (`qwen-onprem` branch) for a demo tomorrow.
+We do NOT need 100% correct automatic values.
+We DO need 100% traceability, meaning every value has an exact provenance, and any uncertain value is marked for review rather than guessed.
+
+We are implementing a vertical slice of the 2-layer architecture (Canonicalizer -> MSME Extractor) but stripping away the theory to just what we need by tomorrow.
+
+# CORE RULES FOR THIS DEMO
+1. No new ML models. Use only the existing `PyMuPDF`/`pdfplumber` for discovery and the existing `Qwen3-VL` on-prem model for extraction.
+2. No long-lived branches. Commit directly to a feature branch or `qwen-onprem`.
+3. Do NOT rewrite the FastAPI app yet.
+4. The goal is a working MSME Excel output from one PDF with Explicit Statuses (`FOUND`, `NOT_FOUND`, `AMBIGUOUS`, `FAILED_VALIDATION`).
+
+# PHASE A: THE CANONICAL CONTRACT & ADAPTER
+1. Create `contracts/models.py`.
+2. Define `CanonicalDocument` with pages, tokens (with bboxes), and `CanonicalTable` candidates.
+3. Define `ExtractionStatus` (`FOUND`, `NOT_FOUND`, `AMBIGUOUS`, `FAILED_VALIDATION`).
+4. Write a fast adapter: intercept the output of the current `table_detector.py` and `toc_parser.py` and wrap it in a `CanonicalDocument`. Do not build a database; keep it in memory or dump to a simple JSON file.
+
+# PHASE B: THE FINANCIAL STATEMENT VLM ADAPTER
+The current `vlm_extractor.py` calls Qwen and produces a JSON dict.
+1. Intercept that Qwen JSON response.
+2. Build a `FinancialStatementsDocument` Pydantic model.
+3. Attempt to match the Qwen numeric values back to the PDF primitive text.
+   - If the exact number exists in the PDF text near the table candidate: mark `status="FOUND"`.
+   - If the VLM generated a number that doesn't exist: mark `status="FAILED_VALIDATION"`.
+   - If the VLM output is scrambled: mark `status="AMBIGUOUS"`.
+4. Wrap every line item in an object containing: `raw_value`, `status`, and `page_number`.
+
+# PHASE C: THE MSME MAPPER (HARDCODED FOR DEMO)
+1. We only need the MSME fields to look good for the demo.
+2. Create `extractors/msme/mapper.py`.
+3. Accept the `FinancialStatementsDocument`.
+4. Build the output array for the 47 MSME fields.
+5. If the Boss's Excel taxonomy or Qwen extracted the relevant field (e.g., "Cash and cash equivalents"), copy the value and its `status`.
+6. If the field is missing, set `status="NOT_FOUND"`.
+
+# PHASE D: THE REVIEW QUEUE ARTIFACT
+1. Create a script that takes the final MSME output and generates a simple HTML or text report.
+2. List every field where `status != "FOUND"`.
+3. Include the Page Number and the Reason.
+4. This is crucial for the demo: we are pitching "100% Traceability with Human-in-the-Loop", not magic.
+
+# PHASE E: EXCEL UPDATES
+1. Modify `excel_builder.py`.
+2. Ensure the generated Excel sheet has a new column: `Status`.
+3. Highlight rows where `Status != "FOUND"` in yellow or red.
+
+# YOUR FIRST ACTION:
+Acknowledge these exact rules. Then, provide the code for `contracts/models.py` (Phase A) and the hook in `vlm_extractor.py` (Phase B) to capture the primitive numeric validation. Do not write the whole system yet; stop and wait for me to run the code.
+
+
+you asked
+
+message time: 2026-07-25 18:59:10
+
+forget msme, ig it is better to do the perfect json and the support for custom fields 
+like if i give something like this it should be able to give me those outputs, this is pretty straightforward right? 
+Category
+Sub Category
+Entity Name
+Entity Type
+Description
+Financial Data
+Balance Sheet
+X
+Direct Mapping
+This values help us to know ...
+Y
+Inference Based
+Z
+Demographics
+Employee Count
+
+btw phase 1 is done too
+Viewed test_baseline_smoke.py:1-24
+Edited init.py
+Edited common.py
+Edited canonical_document_v0.py
+Edited financial_statements_v0.py
+Edited msme_valuation_v0.py
+Edited taxonomy_output_v0.py
+Edited export_schemas.py
+Ran command: python contracts/export_schemas.py
+Edited export_schemas.py
+Ran command: python contracts/export_schemas.py
+Edited test_contracts.py
+Ran command: python tests/contract/test_contracts.py
+Edited example_canonical_doc.py
+Ran command: python contracts/example_canonical_doc.py
+Edited example_canonical_doc.py
+Ran command: python contracts/example_canonical_doc.py
+
+I have executed PHASE 1 (Create Versioned Contracts).
+
+Summary of Changes
+
+1. Created Versioned Contract Modules (contracts/)
+
+contracts/common.py: Common types & enums:ExtractionStatus (FOUND, NOT_FOUND, NOT_APPLICABLE, AMBIGUOUS, FAILED_VALIDATION)
+ValidationStatus (NOT_RUN, VALIDATED, FAILED, PARTIAL)
+BoundingBox, SourceReference, Provenance, ConfidenceMetadata, ValidationIssue
+
+
+contracts/canonical_document_v0.py: Product 1 Canonical Document v0 model:CanonicalToken, CanonicalBlock, CanonicalCell, CanonicalRow, CanonicalColumn, CanonicalTable, CanonicalSection, CanonicalPage, TableValidation, CanonicalIndexes, CanonicalDocument
+
+
+contracts/financial_statements_v0.py: Domain model for financial statement extraction (PeriodValue, FinancialLineItem, FinancialStatementTable, FinancialStatementsDocument).
+contracts/msme_valuation_v0.py: MSME Valuation contract (MSMEFieldResult, MSMEValuationDocument).
+contracts/taxonomy_output_v0.py: Taxonomy representation (TaxonomyNode, TaxonomyDocument).
+
+2. JSON Schema Export Tool
+
+Created contracts/export_schemas.py and generated Pydantic v2 JSON schema definitions in contracts/schemas/:canonical_document_v0.json
+financial_statements_v0.json
+msme_valuation_v0.json
+taxonomy_output_v0.json
+
+3. Contract Tests
+
+Created tests/contract/test_contracts.py to verify:CanonicalDocument creation, nested tokens/cells/tables, and lossless JSON serialization/deserialization.
+FinancialStatementsDocument with strict ExtractionStatus and fine-grained Provenance.
+MSMEValuationDocument with raw vs derived field distinctions.
+JSON schema export integrity.
+
+
+Test execution result: ALL CONTRACT TESTS PASSED!
+
+
+Generated CanonicalDocument v0 Example JSON
+
+Below is a truncated excerpt of a valid CanonicalDocument v0 instance (generated via contracts/example_canonical_doc.py):
+
+{
+  "schema_version": "v0",
+  "document_id": "doc_ril_fy25_001",
+  "source_metadata": {
+    "file_name": "reliance_annual_report_2024-25.pdf",
+    "file_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "file_size_bytes": 15420100,
+    "page_count": 384
+  },
+  "document_metadata": {
+    "company_name": "Reliance Industries Limited",
+    "reporting_period": "2024-2025",
+    "fy_end": "31 March 2025",
+    "currency": "INR",
+    "unit_denomination": "Crore",
+    "consolidation_type": "consolidated",
+    "auditor_name": "SRBC & CO LLP",
+    "auditor_opinion": "Unqualified"
+  },
+  "pages": [
+    {
+      "page_number": 105,
+      "width": 595.0,
+      "height": 842.0,
+      "rotation": 0,
+      "token_ids": ["p105_t001", "p105_t002", "p105_t003", "p105_t004", "p105_t005", "p105_t006", "p105_t007"],
+      "block_ids": ["blk_p105_01"],
+      "section_ids": ["sec_bs_001"],
+      "table_ids": ["tbl_p105_01"]
+    }
+  ],
+  "token_registry": {
+    "p105_t006": {
+      "token_id": "p105_t006",
+      "page_number": 105,
+      "text": "7,32,150.00",
+      "bbox": { "x0": 380.0, "y0": 90.0, "x1": 450.0, "y1": 100.0 },
+      "reading_order_index": 5,
+      "font_name": "Inter-Regular",
+      "font_size": 10.0
+    }
+  },
+  "tables": [
+    {
+      "table_id": "tbl_p105_01",
+      "page_numbers": [105],
+      "bbox": { "x0": 54.0, "y0": 70.0, "x1": 540.0, "y1": 600.0 },
+      "detection_method": "pdfplumber_grid_detector",
+      "structure_method": "geometry_grid",
+      "rows": [
+        { "row_index": 0, "row_id": "r0", "cell_ids": [], "is_header": true, "role": "header" },
+        { "row_index": 1, "row_id": "r1", "cell_ids": ["cell_p105_r1_c0", "cell_p105_r1_c1", "cell_p105_r1_c2"], "is_header": false, "role": "data" }
+      ],
+      "columns": [
+        { "column_index": 0, "column_id": "c0", "header_text": "Particulars", "role": "label" },
+        { "column_index": 1, "column_id": "c1", "header_text": "As at 31 March 2025", "role": "numeric" }
+      ],
+      "cells": [
+        {
+          "cell_id": "cell_p105_r1_c1",
+          "row_index": 1,
+          "column_index": 1,
+          "bbox": { "x0": 380.0, "y0": 90.0, "x1": 450.0, "y1": 100.0 },
+          "token_ids": ["p105_t006"],
+          "raw_text": "7,32,150.00",
+          "numeric_token_ids": ["p105_t006"],
+          "parsed_numeric": "732150.00",
+          "role": "data"
+        }
+      ],
+      "validation_status": "VALIDATED",
+      "confidence": 0.99
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "sec_bs_001",
+      "title_raw": "Consolidated Balance Sheet as at 31 March 2025",
+      "title_normalized": "consolidated_balance_sheet",
+      "section_type": "financial_statements",
+      "subcategory": "balance_sheet",
+      "start_page": 105,
+      "end_page": 105,
+      "table_ids": ["tbl_p105_01"]
+    }
+  ],
+  "indexes": {
+    "sections_by_type": { "financial_statements": ["sec_bs_001"] },
+    "tables_by_page": { "105": ["tbl_p105_01"] },
+    "normalized_title_to_section_ids": { "consolidated_balance_sheet": ["sec_bs_001"] }
+  }
+}
+
+
+perplexity response
+
+Yes — this is the right pivot for the demo. A strong canonical JSON plus a custom field extraction layer is much more general, easier to sell, and easier to demo than locking yourself into MSME right now. A schema-driven extractor is also exactly how universal IE systems are usually framed: a fixed document representation plus a task/schema prompt that tells the system what entities/attributes/relations to extract.[0][1]
+
+Your sample spec is straightforward if you model it as a field registry over the canonical document, not as hardcoded Python for every category. The winning design is: Product 1 emits a lossless canonical document with tables, tokens, sections, and provenance; Product 2 accepts a user-defined extraction schema like “Category / Subcategory / Entity Name / Entity Type / Description / Extraction Mode” and returns structured results with status and provenance for each requested field.[2][3]
+
+What to build now
+
+Build a Custom Extraction Spec Engine on top of the canonical JSON, not a separate MSME-only extractor. The spec should define fields such as Financial Data -> Balance Sheet -> X -> Direct Mapping or Demographics -> Employee Count -> Y -> Inference Based, and the engine should resolve each field against the canonical document using either deterministic matching or constrained LLM inference.[1][3]
+
+For tomorrow’s demo, the output should be one JSON array of requested fields, where every field includes: request metadata, extracted value, status, confidence, explanation, and provenance down to section/table/cell/token where available.[4][2]
+
+Recommended field schema
+
+Use a registry row model like this for every custom field request:
+
+Field Purpose
+field_id Stable machine identifier for the requested output.
+category Top-level grouping like Financial Data or Demographics.
+subcategory Narrow grouping like Balance Sheet or Employee Count.
+entity_name The exact business label requested by the user.
+entity_type For example metric, text_fact, count, date, table, list.
+description Human description of what the field means.
+extraction_mode DIRECT_MAPPING, INFERENCE_BASED, or DERIVED.
+synonyms Candidate phrases to match in canonical sections/tables.
+expected_section_types Likely places to search first.
+expected_value_type string, number, currency_amount, integer, list, etc.
+required Whether absence is important.
+output_cardinality single, multi, table, list.
+
+This gives you a proper machine-readable extraction contract, and it matches the idea of schema-controlled extraction in universal IE rather than task-specific code paths.[0][1]
+
+Extraction modes
+
+Use three modes only:
+
+DIRECT_MAPPING: exact or synonym-based retrieval from canonical sections/tables, best for Balance Sheet items, named sections, auditor name, employee count if explicitly printed.
+INFERENCE_BASED: use the company VLM/LLM over a small canonical snippet, never the raw PDF, when the answer is implied but not printed as a neat label.
+DERIVED: computed from already extracted canonical values, with formulas and dependencies recorded.
+
+This separation matters because it lets you say in the demo: “The system supports exact lookup, contextual inference, and calculated outputs, all from the same canonical JSON.” That is much stronger than “we built a bunch of fixed extractors.”[3][1]
+
+Output contract
+
+Every returned field should look like this conceptually:
+
+{
+  "field_id": "employee_count",
+  "category": "Demographics",
+  "subcategory": "Workforce Information",
+  "entity_name": "Employee Count",
+  "entity_type": "count",
+  "extraction_mode": "DIRECT_MAPPING",
+  "status": "FOUND",
+  "value": {
+    "raw": "3,47,362",
+    "normalized": 347362,
+    "unit": "employees"
+  },
+  "confidence": 0.93,
+  "explanation": "Matched from Workforce Information section using direct label and nearby numeric evidence.",
+  "provenance": [
+    {
+      "section_id": "sec_workforce_014",
+      "page_number": 189,
+      "block_id": "blk_p189_03",
+      "table_id": null,
+      "cell_id": null,
+      "token_ids": ["p189_t091", "p189_t092"]
+    }
+  ],
+  "validation_status": "VALIDATED"
+}
+
+That structure is demo-friendly because it supports custom fields, auditability, and later API productization.[2][3]
+
+What Antigravity should build next
+
+Since Phase 1 is done, the next move is not MSME. It is:
+
+CanonicalDocument v0 -> v0 usable adapter from the current pipeline.
+CustomExtractionSpec contract.
+SpecExecutionEngine that reads a list of requested fields.
+DirectMappingResolver.
+InferenceResolver.
+Unified output JSON + Excel.
+
+For tomorrow, keep it narrow:
+
+Use the current section registry, taxonomy, table inventory, and VLM outputs as sources.
+Build a clean resolver over those sources.
+Do not chase perfect cell reconstruction everywhere unless it directly improves demo fields.
+
+The exact prompt to paste
+
+We are changing scope for the demo.
+
+Do NOT prioritize MSME-specific extraction now.
+Instead, build a generic “Custom Extraction Spec Engine” on top of the new contracts already created in `contracts/`.
+
+# CURRENT STATE
+Phase 0 is complete.
+Phase 1 contracts are complete and tested:
+- common.py
+- canonical_document_v0.py
+- financial_statements_v0.py
+- msme_valuation_v0.py
+- taxonomy_output_v0.py
+- export_schemas.py
+Contract tests pass.
+
+# NEW DEMO GOAL
+We need a strong demo by tomorrow:
+1. ingest one annual report,
+2. build a high-quality CanonicalDocument JSON,
+3. accept a user-defined extraction spec like:
+
+Category | Sub Category | Entity Name | Entity Type | Description | Extraction Mode
+Financial Data | Balance Sheet | X | Direct Mapping | This values help us to know ... | DIRECT_MAPPING
+Financial Data | Balance Sheet | Y | Inference Based | ... | INFERENCE_BASED
+Demographics | Employee Count | Z | Count | ... | DIRECT_MAPPING
+
+4. produce structured JSON output for all requested fields
+5. include provenance and statuses for every result
+6. optionally export to Excel
+
+# PRODUCT DIRECTION
+Product 1 = Canonicalizer
+Product 2 = Generic Schema-Driven Extractor
+
+The extractor must support custom fields, not just MSME.
+
+# WHAT TO BUILD NOW
+
+## PHASE 2A — CANONICALIZER V0 ADAPTER
+Create:
+- canonicalizer/__init__.py
+- canonicalizer/service.py
+- canonicalizer/primitives.py
+- canonicalizer/sections.py
+- canonicalizer/table_inventory_adapter.py
+- canonicalizer/metadata.py
+- canonicalizer/indexes.py
+
+Goal:
+Use the current repository outputs and adapt them into a valid `CanonicalDocument`.
+
+Requirements:
+- Reuse current PDF ingestion, TOC parsing, section consolidation, taxonomy, and table inventory.
+- Build CanonicalDocument with:
+  - source metadata
+  - document metadata
+  - pages
+  - token registry (even if basic at first)
+  - blocks
+  - sections
+  - tables
+  - indexes
+- It is acceptable in this demo version if:
+  - some blocks are coarse-grained
+  - some tables have bbox + page + token_ids but not perfect cell reconstruction
+- Do NOT wait for perfect table structure to emit CanonicalDocument.
+- Persist canonical JSON to disk:
+  - output/{document_id}/canonical_document.v0.json
+
+## PHASE 2B — CUSTOM EXTRACTION SPEC CONTRACT
+Create:
+- contracts/custom_extraction_spec_v0.py
+
+Models to add:
+- CustomExtractionSpecDocument
+- CustomExtractionFieldSpec
+- FieldExtractionMode enum
+- FieldValueType enum
+- CustomExtractionResultDocument
+- CustomExtractionResult
+- ExtractionEvidence
+
+Field spec must support:
+- field_id
+- category
+- subcategory
+- entity_name
+- entity_type
+- description
+- extraction_mode: DIRECT_MAPPING | INFERENCE_BASED | DERIVED
+- synonyms: list[str]
+- expected_section_types: list[str]
+- expected_value_type
+- required
+- output_cardinality
+- notes
+
+Result must support:
+- field_id
+- status
+- value_raw
+- value_normalized
+- unit
+- currency
+- confidence
+- explanation
+- provenance[]
+- validation_status
+
+Add schema export and contract tests.
+
+## PHASE 2C — SPEC EXECUTION ENGINE
+Create:
+- extractors/custom_spec/__init__.py
+- extractors/custom_spec/extractor.py
+- extractors/custom_spec/spec_loader.py
+- extractors/custom_spec/direct_mapping.py
+- extractors/custom_spec/inference_mapping.py
+- extractors/custom_spec/normalization.py
+- extractors/custom_spec/output_models.py
+
+Main interface:
+```python
+def extract_from_custom_spec(
+    canonical_doc: CanonicalDocument,
+    spec: CustomExtractionSpecDocument,
+) -> CustomExtractionResultDocument:
+    ...
+
+STRICT RULE:
+This extractor must consume only CanonicalDocument and the spec.
+It must not open the PDF directly.
+
+PHASE 2D — DIRECT MAPPING RESOLVER
+
+Implement DIRECT_MAPPING first.
+
+Algorithm:
+
+Find candidate sections using:expected_section_types
+category/subcategory
+normalized section titles
+synonyms
+
+
+Search candidate blocks/tables/cells/tokens for matching labels.
+Extract the nearest or structurally associated value.
+Return provenance:section_id
+page_number
+block_id
+table_id
+cell_id if available
+token_ids
+
+
+Set status:FOUND
+NOT_FOUND
+AMBIGUOUS
+FAILED_VALIDATION
+
+For demo:
+
+prioritize fields like Balance Sheet labels, Employee Count, Auditor Name, Board of Directors, Share Capital, Dividend Information, etc.
+
+PHASE 2E — INFERENCE RESOLVER
+
+Implement a constrained inference mode for fields that are not explicit.
+
+Rules:
+
+It must use only canonical snippets, not the raw PDF.
+Input to the company-hosted VLM/LLM should be:relevant section text
+relevant table text if any
+field spec
+required JSON output format
+
+
+The model should return:candidate value
+reasoning summary
+evidence text span
+
+
+The system must then link this answer back to canonical provenance.
+If provenance cannot be linked cleanly, mark AMBIGUOUS or FAILED_VALIDATION.
+
+Do not over-engineer this for the demo.
+Use the existing company-hosted model integration if available.
+Keep prompts short and deterministic.
+
+PHASE 2F — OPTIONAL DERIVED MODE
+
+Add the enum and scaffolding for DERIVED but do not fully implement unless time remains.
+It is enough to support a simple dependency-based design placeholder.
+
+PHASE 2G — EXCEL / JSON OUTPUT
+
+Add:
+
+output/{document_id}/custom_extraction_result.json
+output/{document_id}/custom_extraction_result.xlsx
+
+Excel must include columns:
+
+Category
+Sub Category
+Entity Name
+Entity Type
+Extraction Mode
+Status
+Raw Value
+Normalized Value
+Unit
+Currency
+Confidence
+Explanation
+Page Number(s)
+Section ID
+Table ID
+Cell ID
+
+Highlight non-FOUND rows.
+
+PHASE 2H — DEMO ENTRYPOINT
+
+Add a single runnable path:
+
+load PDF
+canonicalize
+load a sample custom extraction spec from JSON
+run extractor
+save outputs
+
+Prefer:
+
+a CLI command first
+API integration second if fast
+
+Example:
+
+python -m demo.run_custom_extraction --pdf sample.pdf --spec sample_custom_spec.json
+
+IMPORTANT DEMO CONSTRAINTS
+
+Time is limited.
+Do not try to perfect all tables.
+Do not try to rebuild the whole architecture.
+Build a convincing vertical slice with:valid CanonicalDocument
+user-defined extraction schema
+direct mapping
+inference mode for a few fields
+provenance-rich output
+
+
+Preserve existing working extraction paths where useful.
+Keep runtime in mind:reuse existing discovery outputs
+avoid unnecessary repeated VLM calls
+prefer direct mapping over inference whenever possible
+
+DELIVERABLES FOR THIS STEP
+
+Do the following now:
+
+implement contracts/custom_extraction_spec_v0.py
+add schema export support
+add tests
+implement CanonicalDocument adapter skeleton
+implement extract_from_custom_spec() with DIRECT_MAPPING only
+add one sample spec JSON using fields like:Company Profile
+Board of Directors
+Employee Count
+Balance Sheet
+Profit & Loss Statement
+Cash Flow Statement
+Share Capital
+Dividend Information
+Auditor's Report
+
+
+add one runnable demo script
+
+Stop after that and summarize:
+
+files created
+files modified
+how to run the demo
+what still remains for inference mode
+
+
+## Demo framing
+
+For tomorrow, pitch it like this:
+
+- **Step 1**: “We convert the full annual report into a canonical, auditable JSON.”
+- **Step 2**: “Any business team can define its own extraction schema.”
+- **Step 3**: “The system returns structured outputs with provenance and confidence.”
+- **Step 4**: “Direct fields are deterministic; fuzzy ones go through controlled inference.”
+
+That is a much more scalable product story than “we built one MSME extractor,” and it aligns well with your current architecture direction.[[1]](https://aclanthology.org/2022.acl-long.395.pdf)[[2]](https://github.com/ogcincubator/bblock-prov-schema)
+
+Your listed categories also make a good **starter sample spec** for the demo because they cover governance, financials, risk, ESG, and shareholder information across multiple extraction modes, which shows generality rather than one-off hardcoding. The system can expose those as configurable field specs instead of embedding them in code.[[3]](https://json-schema.org/blog/posts/advanced-json-schema-with-slashdb)

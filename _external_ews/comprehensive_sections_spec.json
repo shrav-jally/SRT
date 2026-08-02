@@ -1,0 +1,201 @@
+{
+  "spec_id": "comprehensive_sections_v1",
+  "name": "Comprehensive Narrative Sections",
+  "description": "Extracts broad narrative sections like CSR, ESG, Outlook, and Governance.",
+  "version": "1.0",
+  "fields": [
+    {
+      "field_id": "company_profile",
+      "category": "Company Information",
+      "subcategory": "Company Profile",
+      "entity_name": "Company Profile",
+      "entity_type": "Narrative",
+      "description": "Extracts Company Profile",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "company profile",
+        "about us"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "board_of_directors",
+      "category": "Management & Governance",
+      "subcategory": "Board Of Directors",
+      "entity_name": "Board Of Directors",
+      "entity_type": "Narrative",
+      "description": "Extracts Board Of Directors",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "board of directors",
+        "directors"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "corporate_governance",
+      "category": "Management & Governance",
+      "subcategory": "Corporate Governance",
+      "entity_name": "Corporate Governance",
+      "entity_type": "Narrative",
+      "description": "Extracts Corporate Governance",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "corporate governance"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "shareholding_pattern",
+      "category": "Shareholding Information",
+      "subcategory": "Shareholding Pattern",
+      "entity_name": "Shareholding Pattern",
+      "entity_type": "Narrative",
+      "description": "Extracts Shareholding Pattern",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "shareholding pattern"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "industry_overview",
+      "category": "Management Discussion & Analysis",
+      "subcategory": "Industry Overview",
+      "entity_name": "Industry Overview",
+      "entity_type": "Narrative",
+      "description": "Extracts Industry Overview",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "industry overview"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "future_outlook",
+      "category": "Management Discussion & Analysis",
+      "subcategory": "Future Outlook",
+      "entity_name": "Future Outlook",
+      "entity_type": "Narrative",
+      "description": "Extracts Future Outlook",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "future outlook",
+        "outlook"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "accounting_policies",
+      "category": "Notes to Accounts",
+      "subcategory": "Accounting Policies",
+      "entity_name": "Accounting Policies",
+      "entity_type": "Narrative",
+      "description": "Extracts Accounting Policies",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "accounting policies",
+        "significant accounting policies"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "related_party_transactions",
+      "category": "Notes to Accounts",
+      "subcategory": "Related Party Transactions",
+      "entity_name": "Related Party Transactions",
+      "entity_type": "Narrative",
+      "description": "Extracts Related Party Transactions",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "related party transactions"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "business_risks",
+      "category": "Risk Management",
+      "subcategory": "Business Risks",
+      "entity_name": "Business Risks",
+      "entity_type": "Narrative",
+      "description": "Extracts Business Risks",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "business risks",
+        "risk management"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "esg_initiatives",
+      "category": "ESG & Sustainability",
+      "subcategory": "Esg",
+      "entity_name": "Esg",
+      "entity_type": "Narrative",
+      "description": "Extracts Esg",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "esg",
+        "sustainability",
+        "environmental"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "csr_projects",
+      "category": "CSR",
+      "subcategory": "Csr",
+      "entity_name": "Csr",
+      "entity_type": "Narrative",
+      "description": "Extracts Csr",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "csr",
+        "corporate social responsibility"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "litigations",
+      "category": "Legal & Compliance",
+      "subcategory": "Litigations",
+      "entity_name": "Litigations",
+      "entity_type": "Narrative",
+      "description": "Extracts Litigations",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "litigations",
+        "legal proceedings",
+        "contingent liabilities"
+      ],
+      "is_required": false
+    },
+    {
+      "field_id": "auditor_report",
+      "category": "Audit Information",
+      "subcategory": "Auditor'S Report",
+      "entity_name": "Auditor'S Report",
+      "entity_type": "Narrative",
+      "description": "Extracts Auditor'S Report",
+      "extraction_mode": "INFERENCE_BASED",
+      "expected_value_type": "string",
+      "synonyms": [
+        "auditor's report",
+        "independent auditor"
+      ],
+      "is_required": false
+    }
+  ]
+}
