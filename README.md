@@ -18,3 +18,7 @@ https://github.com/Chandana909/AuditIQ-DeloitteHacksplosion.git - latest version
 Drive links:
 
 https://drive.google.com/drive/folders/1zxXHG_VL5UcTqYAjCAQU-rxhrzBemCBY 
+
+Doc links:
+
+https://docs.google.com/document/d/1XmhFIVlqY1r8wqyZv27ue13JlcWKlfJyau0pXiNRoLg/edit?usp=sharing 
