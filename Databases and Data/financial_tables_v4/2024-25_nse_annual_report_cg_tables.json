@@ -1,0 +1,2659 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmpbnmgvrzz/2024-25_nse_annual_report_cg.pdf",
+    "file_name": "2024-25_nse_annual_report_cg.pdf",
+    "financial_year": "2024-25",
+    "extraction_timestamp": "2026-07-03T07:47:30.933133+00:00",
+    "page_count": 369
+  },
+  "standalone": {
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 165,
+      "pages": [
+        165
+      ],
+      "title": "Standalone Balance Sheet",
+      "currency": null,
+      "periods": [
+        "31.03.2025",
+        "31.03.2024"
+      ],
+      "column_headers": [
+        "As at 31-03-2025",
+        "As at 31-03-2024"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Property, plant and equipment 4",
+          "note_no": "",
+          "values": {
+            "current_period": 810.76,
+            "previous_period": 804.63
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Capital work-in-progress 4",
+          "note_no": "",
+          "values": {
+            "current_period": 220.12,
+            "previous_period": 65.6
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets 5",
+          "note_no": "",
+          "values": {
+            "current_period": 44.68,
+            "previous_period": 26.57
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets under development 5",
+          "note_no": "",
+          "values": {
+            "current_period": 20.09,
+            "previous_period": 19.6
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Investments 6",
+          "note_no": "",
+          "values": {
+            "current_period": 1436.88,
+            "previous_period": 406.91
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Loans 7",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Other financial assets 8",
+          "note_no": "",
+          "values": {
+            "current_period": 10.44,
+            "previous_period": 11.13
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Current tax assets",
+          "note_no": "",
+          "values": {
+            "current_period": 98.46,
+            "previous_period": 113.35
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Deferred tax assets (net) 9",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 152.8
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Other non-current assets 10",
+          "note_no": "",
+          "values": {
+            "current_period": 45.41,
+            "previous_period": 4.91
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories 11",
+          "note_no": "",
+          "values": {
+            "current_period": 1033.29,
+            "previous_period": 689.62
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Investments 12",
+          "note_no": "",
+          "values": {
+            "current_period": 156.29,
+            "previous_period": 587.7
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Trade receivables 13",
+          "note_no": "",
+          "values": {
+            "current_period": 1878.86,
+            "previous_period": 1463.88
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Cash and cash equivalents 14",
+          "note_no": "",
+          "values": {
+            "current_period": 10.66,
+            "previous_period": 138.25
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Bank balances other than (iii) above 15",
+          "note_no": "",
+          "values": {
+            "current_period": 785.27,
+            "previous_period": 642.89
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other financial assets 16",
+          "note_no": "",
+          "values": {
+            "current_period": 62.68,
+            "previous_period": 58.51
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other current assets 17",
+          "note_no": "",
+          "values": {
+            "current_period": 206.43,
+            "previous_period": 238.43
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "TOTAL ASSETS",
+          "note_no": "",
+          "values": {
+            "current_period": 6820.32,
+            "previous_period": 5424.78
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Equity share capital 18",
+          "note_no": "",
+          "values": {
+            "current_period": 305.78,
+            "previous_period": 305.47
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Other equity 19",
+          "note_no": "",
+          "values": {
+            "current_period": 3762.8,
+            "previous_period": 2939.97
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings 20",
+          "note_no": "",
+          "values": {
+            "current_period": 2.69,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Lease liabilities 38",
+          "note_no": "",
+          "values": {
+            "current_period": 10.58,
+            "previous_period": 8.85
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial liabilities 21",
+          "note_no": "",
+          "values": {
+            "current_period": 28.06,
+            "previous_period": 10.87
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions 22",
+          "note_no": "",
+          "values": {
+            "current_period": 43.72,
+            "previous_period": 35.46
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Deferred tax liabilities (net) 9",
+          "note_no": "",
+          "values": {
+            "current_period": 38.29,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings 23",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 2.69
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Lease liabilities 38",
+          "note_no": "",
+          "values": {
+            "current_period": 5.01,
+            "previous_period": 3.86
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Trade payables",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Total outstanding dues of micro enterprises and small enterprises; and 24",
+          "note_no": "",
+          "values": {
+            "current_period": 160,
+            "previous_period": 104.71
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Total outstanding dues of creditors other than micro enterprises and small enterprises 24",
+          "note_no": "",
+          "values": {
+            "current_period": 1617.26,
+            "previous_period": 1352.13
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial liabilities 25",
+          "note_no": "",
+          "values": {
+            "current_period": 155.47,
+            "previous_period": 128.29
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other current liabilities 26",
+          "note_no": "",
+          "values": {
+            "current_period": 459.71,
+            "previous_period": 301.19
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions 27",
+          "note_no": "",
+          "values": {
+            "current_period": 209.58,
+            "previous_period": 192.54
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Current tax liabilities",
+          "note_no": "",
+          "values": {
+            "current_period": 21.37,
+            "previous_period": 38.75
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "TOTAL EQUITY AND LIABILITIES",
+          "note_no": "",
+          "values": {
+            "current_period": 6820.32,
+            "previous_period": 5424.78
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 35,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "profit_and_loss": {
+      "statement": "standalone_profit_and_loss",
+      "page": 166,
+      "pages": [
+        166,
+        167
+      ],
+      "title": "Standalone Statement of Profit and Loss",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "Note No.",
+        "2024-25",
+        "2023-24"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "Revenue from Operations",
+          "line_item": "Other income",
+          "note_no": "29",
+          "values": {
+            "current_period": 161.77,
+            "previous_period": 150.89
+          }
+        },
+        {
+          "section": "Revenue from Operations",
+          "line_item": "Total income",
+          "note_no": "",
+          "values": {
+            "current_period": 9490.74,
+            "previous_period": 7760.8
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Cost of materials consumed",
+          "note_no": "30",
+          "values": {
+            "current_period": 6439.61,
+            "previous_period": 5158.92
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Purchases of stock-in-trade",
+          "note_no": "31",
+          "values": {
+            "current_period": 359.32,
+            "previous_period": 271.57
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Changes in inventories of finished goods, work-in-progress and stock-in-trade",
+          "note_no": "32",
+          "values": {
+            "current_period": -189.62,
+            "previous_period": -101.1
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Employee benefits expense",
+          "note_no": "33",
+          "values": {
+            "current_period": 480.22,
+            "previous_period": 406.33
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Finance costs",
+          "note_no": "34",
+          "values": {
+            "current_period": 6.17,
+            "previous_period": 2.68
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Depreciation and amortisation expense",
+          "note_no": "35",
+          "values": {
+            "current_period": 86.37,
+            "previous_period": 77.84
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Other expenses",
+          "note_no": "36",
+          "values": {
+            "current_period": 966.39,
+            "previous_period": 798.11
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Total expenses",
+          "note_no": "",
+          "values": {
+            "current_period": 8148.46,
+            "previous_period": 6614.35
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit before exceptional items and tax",
+          "note_no": "",
+          "values": {
+            "current_period": 1342.28,
+            "previous_period": 1146.45
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Exceptional items (net)",
+          "note_no": "45",
+          "values": {
+            "current_period": null,
+            "previous_period": 142.49
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit before tax",
+          "note_no": "",
+          "values": {
+            "current_period": 1342.28,
+            "previous_period": 1288.94
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Tax expense:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Current tax",
+          "note_no": "9",
+          "values": {
+            "current_period": 173.81,
+            "previous_period": 0.54
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Deferred tax",
+          "note_no": "9",
+          "values": {
+            "current_period": 194.01,
+            "previous_period": 284.04
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 974.46,
+            "previous_period": 1004.36
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Items that will not be reclassified subsequently to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Remeasurement gain / (loss) on defined benefit plans",
+          "note_no": "",
+          "values": {
+            "current_period": -10.74,
+            "previous_period": -12.21
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Income tax relating to items that will not be reclassified subsequently to profit or loss",
+          "note_no": "9",
+          "values": {
+            "current_period": 2.92,
+            "previous_period": 2.67
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total other comprehensive income for the year",
+          "note_no": "",
+          "values": {
+            "current_period": -7.82,
+            "previous_period": -9.54
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total comprehensive income for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 966.64,
+            "previous_period": 994.82
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "Basic (`)",
+          "note_no": "50",
+          "values": {
+            "current_period": 6.38,
+            "previous_period": 6.58
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "Diluted (`)",
+          "note_no": "50",
+          "values": {
+            "current_period": 6.37,
+            "previous_period": 6.57
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "(Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 25,
+        "total_rows": 4
+      }
+    },
+    "cash_flow": {
+      "statement": "standalone_cash_flow",
+      "page": 168,
+      "pages": [
+        168
+      ],
+      "title": "Standalone Statement of Cash Flows",
+      "currency": "reversal",
+      "periods": [],
+      "column_headers": [
+        "2024-25",
+        "2023-24"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "[B] CASH FLOWS FROM INVESTING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from sale of property, plant and equipment",
+          "note_no": null,
+          "values": {
+            "current_period": 1.81,
+            "previous_period": 11.48
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from sale of investments",
+          "note_no": null,
+          "values": {
+            "current_period": 4222.18,
+            "previous_period": 1220
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Loan repaid by subsidiaries",
+          "note_no": null,
+          "values": {
+            "current_period": 38.35,
+            "previous_period": 122.74
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest received",
+          "note_no": null,
+          "values": {
+            "current_period": 65.88,
+            "previous_period": 41.42
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Investments in subsidiaries and associate",
+          "note_no": null,
+          "values": {
+            "current_period": -1029.97,
+            "previous_period": -0.21
+          }
+        },
+        {
+          "section": null,
+          "line_item": "urchase of property, plant and equipment (including capital work-in-progress, capital advances and capital creditors) and intangible assets (including under development)",
+          "note_no": null,
+          "values": {
+            "current_period": -253.55,
+            "previous_period": -195.47
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Purchase of investments",
+          "note_no": null,
+          "values": {
+            "current_period": -3757.18,
+            "previous_period": -1784
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Bank balances other than cash and cash equivalents (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -142.38,
+            "previous_period": -630.56
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deposit in relation to bidding process for proposed acquisition",
+          "note_no": null,
+          "values": {
+            "current_period": -28.68,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Loan given to subsidiaries",
+          "note_no": null,
+          "values": {
+            "current_period": -30,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from investing activities [B]",
+          "note_no": null,
+          "values": {
+            "current_period": -913.54,
+            "previous_period": -1214.6
+          }
+        },
+        {
+          "section": null,
+          "line_item": "[C] CASH FLOWS FROM FINANCING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from issue of equity shares",
+          "note_no": null,
+          "values": {
+            "current_period": 32.35,
+            "previous_period": 3.15
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Repayment of long-term borrowings",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": -0.18
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Payment of lease liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": -5.4,
+            "previous_period": -4.75
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Finance costs paid",
+          "note_no": null,
+          "values": {
+            "current_period": -2.68,
+            "previous_period": -0.88
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Dividend Paid",
+          "note_no": null,
+          "values": {
+            "current_period": -198.75,
+            "previous_period": -198.55
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Payment towards settlement of litigation with Asset Reconstruction Company",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": -42
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from financing activities [C]",
+          "note_no": null,
+          "values": {
+            "current_period": -174.48,
+            "previous_period": -243.21
+          }
+        },
+        {
+          "section": null,
+          "line_item": "NET INCREASE / (DECREASE) IN CASH AND CASH EQUIVALENTS (A+B+C)",
+          "note_no": null,
+          "values": {
+            "current_period": -127.59,
+            "previous_period": -495.3
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash and cash equivalents at beginning of the year",
+          "note_no": null,
+          "values": {
+            "current_period": 138.25,
+            "previous_period": 633.55
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash and cash equivalents at end of the year (Refer note 14)",
+          "note_no": null,
+          "values": {
+            "current_period": 10.66,
+            "previous_period": 138.25
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 Refer note 49 in respect of disclosure for changes in liabilities arising from financing activities.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2 The standalone statement of cash flows has been prepared under the ‘Indirect Method’ as set out",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Statement of Cash Flows. The accompanying notes form an integral part of standalone financial statements",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 26,
+        "total_rows": 0
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 62,
+        "extraction_method": "text_reconstruction",
+        "row_count": 80,
+        "column_count": 1,
+        "rows": [
+          [
+            "Corporate Overview Statutory Reports Financial Statements"
+          ],
+          [
+            "2. CG Drives & Automation Sweden AB: 6. CG Semi Private Limited:"
+          ],
+          [
+            "CG Drives & Automation Sweden AB is a Subsidiary of CG Industrial CG Semi Private Limited is Company’s Subsidiary. Your Company"
+          ],
+          [
+            "Holdings Sweden AB and a wholly owned step-down Subsidiary holds 92.34% equity share capital of CG Semi. It is currently"
+          ],
+          [
+            "of your Company in Sweden. It is a technology partner for energy developing Outsourced Semiconductor Assembly and Test"
+          ],
+          [
+            "efficient products and solutions. It develops, manufactures and (‘OSAT’) facility. During the year under review, CG Semi recorded"
+          ],
+          [
+            "markets the equipment for control and protection of industrial a loss before tax of ` 16.12 crores."
+          ],
+          [
+            "processes."
+          ],
+          [
+            "7. Axiro Semiconductor Private Limited"
+          ],
+          [
+            "During the year under review, CG Drives & Automation Sweden"
+          ],
+          [
+            "Axiro Semiconductor Private Limited (“Axiro”) is Company’s"
+          ],
+          [
+            "AB recorded revenue of SEK 365.53 Mn i.e. equivalent to"
+          ],
+          [
+            "Wholly Owned Subsidiary formed for acquiring Radio Frequency"
+          ],
+          [
+            "` 302.57 crores (previous year: SEK 334.17 Mn i.e. equivalent"
+          ],
+          [
+            "business of Renesas Electronics America Inc. and other affiliate"
+          ],
+          [
+            "to ` 265.33 crores) and registered profit before tax of SEK 21.12"
+          ],
+          [
+            "entities of Renesas Electronics Corporation. During the year"
+          ],
+          [
+            "Mn i.e. equivalent to ` 17.49 crores. (previous year: SEK 36.31"
+          ],
+          [
+            "under review, Axiro recorded a loss before tax of ` 5.98 crores."
+          ],
+          [
+            "Mn i.e. equivalent to ` 28.83 crores)."
+          ],
+          [
+            "Other than above, the remaining Subsidiaries of the Company do not"
+          ],
+          [
+            "3. CG Drives & Automation Germany GmbH:"
+          ],
+          [
+            "have any business operations. In terms of Section 129 of the Act, a"
+          ],
+          [
+            "CG Drives & Automation Germany GmbH is a Subsidiary of CG"
+          ],
+          [
+            "statement containing salient features of the financial statements of"
+          ],
+          [
+            "Drives & Automation Sweden AB and a wholly owned step-down"
+          ],
+          [
+            "your Company’s Subsidiaries/ Associates/ Joint Venture companies in"
+          ],
+          [
+            "Subsidiary of your Company in Germany. It is into manufacture,"
+          ],
+          [
+            "Form AOC-1 is given in the notes to the financial statements in this"
+          ],
+          [
+            "sale, maintenance and repair of electronic devices and facilities"
+          ],
+          [
+            "Annual Report."
+          ],
+          [
+            "in the area of drive technology."
+          ],
+          [
+            "Pursuant to Regulation 16 of the SEBI (Listing Obligations and"
+          ],
+          [
+            "During the year under review, CG Drives & Automation Germany"
+          ],
+          [
+            "Disclosure Requirements) Regulations, 2015 (“SEBI LODR”), a policy"
+          ],
+          [
+            "GmbH recorded revenue of € 21.99 Mn i.e. equivalent to"
+          ],
+          [
+            "for determining material subsidiary of your Company as approved by"
+          ],
+          [
+            "` 201.19 crores (previous year: € 21.19 Mn i.e. equivalent to"
+          ],
+          [
+            "the Board of Directors is available on the website under: https://www."
+          ],
+          [
+            "` 191.12 crores). It registered profit before tax of € 1.66 Mn"
+          ],
+          [
+            "cgglobal.com/assets/pdf_files/Policy_determining_Mat_Subsidiaries.pdf"
+          ],
+          [
+            "i.e. equivalent to ` 15.17 crores (previous year: € 0.60 Mn i.e."
+          ],
+          [
+            "equivalent to ` 5.40 crores)."
+          ],
+          [
+            "MATERIAL ORDERS OF REGULATORS / COURTS / TRIBUNALS"
+          ],
+          [
+            "4. CG Drives & Automation Netherlands BV: There are no significant and material orders passed by the regulators"
+          ],
+          [
+            "or courts or tribunals impacting the going concern status and the"
+          ],
+          [
+            "CG Drives & Automation Netherlands BV is a Subsidiary of CG"
+          ],
+          [
+            "Company’s operations in future."
+          ],
+          [
+            "Drives & Automation Sweden AB and a wholly owned step-"
+          ],
+          [
+            "down Subsidiary of your Company in Netherlands. It is into"
+          ],
+          [
+            "UPDATE ON INVESTIGATIONS INITIATED IN THE PREVIOUS"
+          ],
+          [
+            "development, production and marketing of inverter products"
+          ],
+          [
+            "YEARS"
+          ],
+          [
+            "including electrical motor drives, and trading of related products."
+          ],
+          [
+            "The investigations by Central Bureau of Investigation (CBI), Serious"
+          ],
+          [
+            "During the year under review, CG Drives & Automation"
+          ],
+          [
+            "Fraud Investigation Office (SFIO) and Enforcement Directorate (ED) into"
+          ],
+          [
+            "Netherlands BV recorded revenue of € 9.63 Mn i.e. equivalent"
+          ],
+          [
+            "the affairs of your Company and its Subsidiaries pertaining to the past"
+          ],
+          [
+            "to ` 88.14 crores (previous year: € 9.94 Mn i.e. equivalent to period and against the erstwhile Promoters/Directors of the Company"
+          ],
+          [
+            "` 89.68 crores) and registered profit before tax of € 0.45 Mn relating to transactions that took place when the Company was under"
+          ],
+          [
+            "i.e. equivalent to ` 4.09 crores (previous year: € 0.55 Mn i.e. the control of the previous Management / Promoters, details of which"
+          ],
+          [
+            "equivalent to ` 4.93 crores). have already been reported to the Stock Exchanges/ in the previous"
+          ],
+          [
+            "Annual Reports of the Company, are in progress. Your Company is"
+          ],
+          [
+            "5. G.G. Tronics India Private Limited:"
+          ],
+          [
+            "extending full co-operation to these agencies and information and"
+          ],
+          [
+            "G.G. Tronics India Private Limited (“GGT”) is Company’s"
+          ],
+          [
+            "documents as sought by them are being promptly provided by the"
+          ],
+          [
+            "Subsidiary in Bengaluru. The Company has acquired 55.60%"
+          ],
+          [
+            "Company."
+          ],
+          [
+            "shares in the said Company during FY 2024-25. It operates"
+          ],
+          [
+            "in the field of design, manufacturing, supply and installation of AUDITORS AND AUDIT REPORTS"
+          ],
+          [
+            "electronic safety embedded signaling systems for the railway"
+          ],
+          [
+            "STATUTORY AUDITORS"
+          ],
+          [
+            "transportation sector."
+          ],
+          [
+            "M/s. S R B C & CO LLP, Chartered Accountants (ICAI Firm Registration"
+          ],
+          [
+            "During the year under review (from the date of acquisition Number 324982E/ E300003) were re-appointed as Statutory Auditor"
+          ],
+          [
+            "till year-end), GGT recorded revenue of ` 91.35 crores and of the Company at the 86th Annual General Meeting (“AGM”) held"
+          ],
+          [
+            "registered profit before tax of ` 3.75 crores. on 27 July, 2023, to hold office for a second term of five consecutive"
+          ],
+          [
+            "Annual Report 2024-25 59"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 65,
+        "extraction_method": "text_reconstruction",
+        "row_count": 80,
+        "column_count": 1,
+        "rows": [
+          [
+            "the interests of employees, shareholders and all stakeholders in PARTICULARS OF LOANS, GUARANTEES AND INVESTMENTS"
+          ],
+          [
+            "accordance with the Murugappa Group’s values and beliefs. The terms"
+          ],
+          [
+            "Pursuant to the provisions of Section 186 of the Act and Schedule V of"
+          ],
+          [
+            "of reference of the Nomination and Remuneration Committee includes"
+          ],
+          [
+            "the SEBI LODR, particulars of loans, guarantees given and investments"
+          ],
+          [
+            "formulation of criteria for determining qualifications, positive attributes"
+          ],
+          [
+            "made by your Company during financial year 2024-25 are given in the"
+          ],
+          [
+            "and independence of Directors."
+          ],
+          [
+            "notes to the Financial Statements."
+          ],
+          [
+            "The Company’s Remuneration Policy is available on the website of"
+          ],
+          [
+            "BUSINESS RESPONSIBILITY AND SUSTAINABILITY REPORT"
+          ],
+          [
+            "the Company under: https://www.cgglobal.com/assets/pdf_files/CG_"
+          ],
+          [
+            "Remuneration_Policy.pdf In accordance with Regulation 34(2)(f) of the Listing Regulations, the"
+          ],
+          [
+            "Business Responsibility and Sustainability Report (BRSR) forms part"
+          ],
+          [
+            "Your Company has adopted a Board Diversity Policy to reap the benefits"
+          ],
+          [
+            "of this Annual Report describing the initiatives undertaken by the"
+          ],
+          [
+            "of a broader experience in decision making."
+          ],
+          [
+            "Company from an environmental, social and governance perspective"
+          ],
+          [
+            "for the Financial Year ended 31 March, 2025."
+          ],
+          [
+            "PERFORMANCE EVALUATION OF THE BOARD OF DIRECTORS"
+          ],
+          [
+            "In line with the requirements of the Act and the SEBI LODR, an ENTERPRISE RISK MANAGEMENT (“ERM”) FRAMEWORK"
+          ],
+          [
+            "annual evaluation of performance of the Board, its Committees and"
+          ],
+          [
+            "Company’s comprehensive Risk Management Framework involves"
+          ],
+          [
+            "individual Directors was carried out during the year under review."
+          ],
+          [
+            "a three-tiered approach, taking into account the Enterprise Risks,"
+          ],
+          [
+            "Pursuant to the provisions of Schedule IV of the Act and Regulation"
+          ],
+          [
+            "Process Risks and Compliance Risks."
+          ],
+          [
+            "25 of the SEBI LODR, the Independent Directors of your Company, at"
+          ],
+          [
+            "their Meeting held on 11 March, 2025, evaluated the performance of"
+          ],
+          [
+            "Enterprise risk identification and mitigation initiatives are handled"
+          ],
+          [
+            "Non-Independent Directors, the Board as a whole, performance of the"
+          ],
+          [
+            "through an on-going process for each of the businesses, as well as"
+          ],
+          [
+            "Chairman; and also assessed the quality, quantity and timeliness of"
+          ],
+          [
+            "for the Company as a whole. The coverage extends to all key business"
+          ],
+          [
+            "flow of information between the Management and the Board."
+          ],
+          [
+            "exposures. After getting a measure of each such enterprise risk, the"
+          ],
+          [
+            "mitigation actions are tracked."
+          ],
+          [
+            "FAMILIARISATION PROGRAMME FOR INDEPENDENT"
+          ],
+          [
+            "DIRECTORS"
+          ],
+          [
+            "The Risk Management Committee of the Board reviews the key risks"
+          ],
+          [
+            "Pursuant to Regulation 25 of the SEBI LODR, your Company familiarizes associated with the businesses of your Company and their mitigation"
+          ],
+          [
+            "its Independent Directors with their roles, rights, responsibilities as"
+          ],
+          [
+            "measures. A detailed note on ERM is given in the Management"
+          ],
+          [
+            "well as the Company’s business and operations. Moreover, Directors"
+          ],
+          [
+            "Discussion and Analysis, forming part of this report."
+          ],
+          [
+            "are regularly updated on the business strategies and performance,"
+          ],
+          [
+            "management structure and key initiatives of businesses at every Board RESEARCH AND DEVELOPMENT (“R&D”)"
+          ],
+          [
+            "Meeting. Details of the programme can be viewed under the following"
+          ],
+          [
+            "During the year under review, your Company’s R&D activities continued"
+          ],
+          [
+            "link available on the Company’s website: https://www.cgglobal.com/"
+          ],
+          [
+            "to focus on development of indigenous and energy efficient products."
+          ],
+          [
+            "assets/pdf_files/Familiarisation_Programme_for_Independent_Directors.pdf"
+          ],
+          [
+            "Additionally, the Vacuum Interrupter and Instrument Transformer"
+          ],
+          [
+            "Division at Aurangabad focused on developing Indian railway rolling"
+          ],
+          [
+            "RELATED PARTY TRANSACTIONS"
+          ],
+          [
+            "stock products, specifically the 35kV Loco Head Bushing and"
+          ],
+          [
+            "All related party transactions that were entered into during the financial"
+          ],
+          [
+            "high current OIP bushing for transformers used in reactive power"
+          ],
+          [
+            "year under review were on arm’s length basis and were in the ordinary"
+          ],
+          [
+            "compensation systems like STATCOM coupling transformers."
+          ],
+          [
+            "course of business. Hence, disclosure of particulars of contracts/"
+          ],
+          [
+            "arrangements entered into by your Company with related parties in"
+          ],
+          [
+            "Power Systems"
+          ],
+          [
+            "Form AOC-2 is not applicable for the year under review. There were no"
+          ],
+          [
+            "Transformers"
+          ],
+          [
+            "materially significant related party transactions during the year which"
+          ],
+          [
+            "may have a potential conflict with the interest of the Company at large. During the year, Power Transformer division’s (T3) R&D wing continued"
+          ],
+          [
+            "The Audit Committee grants omnibus approval for transactions which to support the business through its effort to drive innovation, enhance"
+          ],
+          [
+            "are of repetitive nature with related parties. product offerings and improve operational efficiencies. This focus"
+          ],
+          [
+            "resulted in development of several new products, upgradation/"
+          ],
+          [
+            "Related party transactions entered during the year under review are"
+          ],
+          [
+            "extension on existing products and strengthening of presence in"
+          ],
+          [
+            "disclosed in the notes to the Financial Statements. None of the Directors"
+          ],
+          [
+            "renewable energy segment."
+          ],
+          [
+            "had any pecuniary relationship or transactions with the Company, except"
+          ],
+          [
+            "the payments made to them in the form of remuneration/ sitting fees. 1. PRODUCT AND TECHNOLOGY DEVELOPMENT:"
+          ],
+          [
+            "The Company’s Related Party Transactions Policy is available on the a. Developed 38/53/63 MVA, 132 kV and 38/53/63 MVA,"
+          ],
+          [
+            "website of the Company under: https://www.cgglobal.com/assets/ 220 kV V-Connected Transformers for Indian Railways, with"
+          ],
+          [
+            "pdf_files/Related_Party_Transaction_Policy.pdf complete dynamic short-circuit testing."
+          ],
+          [
+            "Annual Report 2024-25 62"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 101,
+        "extraction_method": "text_reconstruction",
+        "row_count": 27,
+        "column_count": 1,
+        "rows": [
+          [
+            "CEO/CFO CERTIFICATION"
+          ],
+          [
+            "To"
+          ],
+          [
+            "The Audit Committee & Board of Directors"
+          ],
+          [
+            "CG Power and Industrial Solutions Limited"
+          ],
+          [
+            "We have reviewed the Standalone and Consolidated Financial Statements and Cash Flow Statements of the Company for the year ended"
+          ],
+          [
+            "31st March, 2025 and certify that:"
+          ],
+          [
+            "(A) These statements, to the best of our knowledge and belief:"
+          ],
+          [
+            "(1) do not contain any materially untrue statement or omit any material fact or contain statements that might be misleading."
+          ],
+          [
+            "(2) present a true and fair view of the Company’s affairs and are in compliance with the applicable accounting standards, applicable laws"
+          ],
+          [
+            "and regulations."
+          ],
+          [
+            "(B) To the best of our knowledge and belief, no transactions entered into by the Company during the year, are fraudulent, illegal or violate the"
+          ],
+          [
+            "Company’s Code of Conduct and Business Practices."
+          ],
+          [
+            "(C) We accept responsibility for establishing and maintaining internal controls for financial reporting and have evaluated the effectiveness"
+          ],
+          [
+            "of internal control systems of the Company pertaining to financial reporting and have disclosed to the Auditors and the Audit Committee,"
+          ],
+          [
+            "deficiencies, if any, in the design or operation of such internal controls of which we are aware, and the steps taken or proposed to be taken"
+          ],
+          [
+            "to rectify these deficiencies."
+          ],
+          [
+            "(D) we have indicated to the Auditors and the Audit Committee that:"
+          ],
+          [
+            "(1) there was no significant change in internal control over financial reporting during the year ended 31st March, 2025;"
+          ],
+          [
+            "(2) there was no significant change in accounting policies during the year ended 31st March, 2025 other than what have been disclosed"
+          ],
+          [
+            "in the notes to the financial statements; and"
+          ],
+          [
+            "(3) There are no instances of significant fraud of which we have become aware during the year ended 31st March, 2025."
+          ],
+          [
+            "Amar Kaul"
+          ],
+          [
+            "Managing Director & CEO"
+          ],
+          [
+            "Susheel Todi"
+          ],
+          [
+            "Chief Financial Officer"
+          ],
+          [
+            "Mumbai, 6th May, 2025"
+          ],
+          [
+            "Annual Report 2024-25 98"
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 249,
+      "pages": [
+        249
+      ],
+      "title": "Consolidated Balance Sheet",
+      "currency": null,
+      "periods": [
+        "31.03.2025",
+        "31.03.2024"
+      ],
+      "column_headers": [
+        "Note No.",
+        "As at 31-03-2025",
+        "As at 31-03-2024"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Property, plant and equipment",
+          "note_no": "4",
+          "values": {
+            "current_period": 934.96,
+            "previous_period": 852.61
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Capital work-in-progress",
+          "note_no": "4",
+          "values": {
+            "current_period": 355.18,
+            "previous_period": 65.87
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Goodwill",
+          "note_no": "5",
+          "values": {
+            "current_period": 281.06,
+            "previous_period": 163.76
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Other intangible assets",
+          "note_no": "5",
+          "values": {
+            "current_period": 263,
+            "previous_period": 42.53
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets under development",
+          "note_no": "5",
+          "values": {
+            "current_period": 30.49,
+            "previous_period": 27.91
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Investments",
+          "note_no": "6",
+          "values": {
+            "current_period": 0.76,
+            "previous_period": 0.75
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Other financial assets",
+          "note_no": "7",
+          "values": {
+            "current_period": 18.32,
+            "previous_period": 11.64
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Current tax assets",
+          "note_no": "",
+          "values": {
+            "current_period": 101.22,
+            "previous_period": 115.53
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Deferred tax assets (net)",
+          "note_no": "8",
+          "values": {
+            "current_period": 4.48,
+            "previous_period": 156.3
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Other non-current assets",
+          "note_no": "9",
+          "values": {
+            "current_period": 102.96,
+            "previous_period": 4.91
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": "10",
+          "values": {
+            "current_period": 1136.71,
+            "previous_period": 750.71
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Investments",
+          "note_no": "11",
+          "values": {
+            "current_period": 436.78,
+            "previous_period": 587.7
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Trade receivables",
+          "note_no": "12",
+          "values": {
+            "current_period": 2009.2,
+            "previous_period": 1534.19
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Cash and cash equivalents",
+          "note_no": "13",
+          "values": {
+            "current_period": 409.51,
+            "previous_period": 199.84
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Bank balances other than (iii) above",
+          "note_no": "14",
+          "values": {
+            "current_period": 849.61,
+            "previous_period": 654.57
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other financial assets",
+          "note_no": "15",
+          "values": {
+            "current_period": 182.52,
+            "previous_period": 136.21
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other current assets",
+          "note_no": "16",
+          "values": {
+            "current_period": 227,
+            "previous_period": 247.53
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "(3) Assets classified as held for sale and discontinued operations",
+          "note_no": "42",
+          "values": {
+            "current_period": 73.31,
+            "previous_period": 73.18
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "TOTAL ASSETS",
+          "note_no": "",
+          "values": {
+            "current_period": 7417.07,
+            "previous_period": 5625.74
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Equity share capital",
+          "note_no": "17",
+          "values": {
+            "current_period": 305.78,
+            "previous_period": 305.47
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Other equity",
+          "note_no": "18",
+          "values": {
+            "current_period": 3538.17,
+            "previous_period": 2711.97
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Non-controlling interest",
+          "note_no": "",
+          "values": {
+            "current_period": 193.68,
+            "previous_period": 1.33
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings",
+          "note_no": "19",
+          "values": {
+            "current_period": 0.26,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Lease liabilities",
+          "note_no": "37",
+          "values": {
+            "current_period": 26.97,
+            "previous_period": 11.91
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial liabilities",
+          "note_no": "20",
+          "values": {
+            "current_period": 26.17,
+            "previous_period": 10.96
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions",
+          "note_no": "21",
+          "values": {
+            "current_period": 47.84,
+            "previous_period": 35.46
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Deferred tax liabilities (net)",
+          "note_no": "8",
+          "values": {
+            "current_period": 88.23,
+            "previous_period": 0.56
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings",
+          "note_no": "22",
+          "values": {
+            "current_period": 0.08,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Lease liabilities",
+          "note_no": "37",
+          "values": {
+            "current_period": 13.66,
+            "previous_period": 5.53
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Trade payables",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Total outstanding dues of micro enterprises and small enterprises; and",
+          "note_no": "23",
+          "values": {
+            "current_period": 162.34,
+            "previous_period": 104.87
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Total outstanding dues of creditors other than micro enterprises and small enterprises",
+          "note_no": "23",
+          "values": {
+            "current_period": 1707.7,
+            "previous_period": 1379.38
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial liabilities",
+          "note_no": "24",
+          "values": {
+            "current_period": 460.48,
+            "previous_period": 368.65
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other current liabilities",
+          "note_no": "25",
+          "values": {
+            "current_period": 534.67,
+            "previous_period": 373.63
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions",
+          "note_no": "26",
+          "values": {
+            "current_period": 215.94,
+            "previous_period": 196.85
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Current tax liabilities",
+          "note_no": "",
+          "values": {
+            "current_period": 30.83,
+            "previous_period": 54.9
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "(3) Liabilities associated with group of assets classified as held for sale and discontinued operations",
+          "note_no": "42",
+          "values": {
+            "current_period": 64.27,
+            "previous_period": 64.27
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "TOTAL EQUITY AND LIABILITIES",
+          "note_no": "",
+          "values": {
+            "current_period": 7417.07,
+            "previous_period": 5625.74
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 38,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "profit_and_loss": {
+      "statement": "consolidated_profit_and_loss",
+      "page": 250,
+      "pages": [
+        250,
+        251
+      ],
+      "title": "Consolidated Statement of Profit and Loss",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "Note No.",
+        "2024-25",
+        "2023-24"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "Revenue from Operations",
+          "line_item": "Other income",
+          "note_no": "28",
+          "values": {
+            "current_period": 162.17,
+            "previous_period": 106.26
+          }
+        },
+        {
+          "section": "Revenue from Operations",
+          "line_item": "Total income",
+          "note_no": "",
+          "values": {
+            "current_period": 10070.83,
+            "previous_period": 8152.24
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Cost of materials consumed",
+          "note_no": "29",
+          "values": {
+            "current_period": 6762.31,
+            "previous_period": 5387.04
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Purchases of stock-in-trade",
+          "note_no": "30",
+          "values": {
+            "current_period": 359.32,
+            "previous_period": 271.57
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Changes in inventories of finished goods, work-in-progress and stock-in-trade",
+          "note_no": "31",
+          "values": {
+            "current_period": -195.44,
+            "previous_period": -106.46
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Employee benefits expense",
+          "note_no": "32",
+          "values": {
+            "current_period": 612.77,
+            "previous_period": 508.14
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Finance costs",
+          "note_no": "33",
+          "values": {
+            "current_period": 7.09,
+            "previous_period": 2.54
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Depreciation and amortisation expense",
+          "note_no": "34",
+          "values": {
+            "current_period": 111.84,
+            "previous_period": 94.89
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Other expenses",
+          "note_no": "35",
+          "values": {
+            "current_period": 1064.97,
+            "previous_period": 857.62
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Total expenses",
+          "note_no": "",
+          "values": {
+            "current_period": 8722.86,
+            "previous_period": 7015.34
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit before share of profit / (loss) of associate, exceptional items and tax",
+          "note_no": "",
+          "values": {
+            "current_period": 1347.97,
+            "previous_period": 1136.9
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Share of profit / (loss) of associate",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit before exceptional items and tax",
+          "note_no": "",
+          "values": {
+            "current_period": 1347.97,
+            "previous_period": 1136.9
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Exceptional items (net)",
+          "note_no": "43",
+          "values": {
+            "current_period": null,
+            "previous_period": 21.48
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit before tax",
+          "note_no": "",
+          "values": {
+            "current_period": 1347.97,
+            "previous_period": 1158.38
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Tax expense:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Current tax",
+          "note_no": "8",
+          "values": {
+            "current_period": 185.24,
+            "previous_period": 6.81
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Deferred tax (net)",
+          "note_no": "8",
+          "values": {
+            "current_period": 189.75,
+            "previous_period": 280.45
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit from continuing operations after tax",
+          "note_no": "",
+          "values": {
+            "current_period": 972.98,
+            "previous_period": 871.12
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit from discontinued operations before tax",
+          "note_no": "42",
+          "values": {
+            "current_period": null,
+            "previous_period": 555.69
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Tax expense on discontinued operations",
+          "note_no": "8",
+          "values": {
+            "current_period": null,
+            "previous_period": -0.8
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit from discontinued operations after tax",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 556.49
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 972.98,
+            "previous_period": 1427.61
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Attributable to:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Equity holders of the parent",
+          "note_no": "",
+          "values": {
+            "current_period": 974.6,
+            "previous_period": 1427.01
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Non-controlling interests",
+          "note_no": "",
+          "values": {
+            "current_period": 1.62,
+            "previous_period": -0.6
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Other comprehensive income:",
+          "note_no": "",
+          "values": {
+            "current_period": 972.98,
+            "previous_period": 1427.61
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Items that will not be reclassified subsequently to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Remeasurement gain / (loss) on defined benefit plans",
+          "note_no": "",
+          "values": {
+            "current_period": -10.94,
+            "previous_period": -12.25
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Income tax relating to items that will not be reclassified subsequently to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": 2.98,
+            "previous_period": 2.68
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Items that will be reclassified subsequently to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Exchange differences on translating the financial statements of foreign operations",
+          "note_no": "",
+          "values": {
+            "current_period": 7.41,
+            "previous_period": 1.61
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Net movement on effective portion of cash flow hedges",
+          "note_no": "",
+          "values": {
+            "current_period": -4.45,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Total other comprehensive income for the year",
+          "note_no": "",
+          "values": {
+            "current_period": -5,
+            "previous_period": -7.96
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Attributable to:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Equity holders of the parent",
+          "note_no": "",
+          "values": {
+            "current_period": -4.59,
+            "previous_period": -7.96
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Non-controlling interests",
+          "note_no": "",
+          "values": {
+            "current_period": 0.41,
+            "previous_period": 0
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Total comprehensive income for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 967.98,
+            "previous_period": 1419.65
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Attributable to:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Equity holders of the parent",
+          "note_no": "",
+          "values": {
+            "current_period": 970.01,
+            "previous_period": 1419.05
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Non-controlling interests",
+          "note_no": "",
+          "values": {
+            "current_period": 2.03,
+            "previous_period": -0.6
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Earnings per share for continuing operations",
+          "note_no": "47",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Basic (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 6.38,
+            "previous_period": 5.7
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Diluted (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 6.37,
+            "previous_period": 5.69
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "(Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Earnings per share for discontinued operations",
+          "note_no": "47",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Basic (`)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 3.64
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Diluted (`)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 3.64
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "(Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Earnings per share for total operations",
+          "note_no": "47",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Basic (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 6.38,
+            "previous_period": 9.34
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Diluted (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 6.37,
+            "previous_period": 9.33
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "(Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 53,
+        "total_rows": 5
+      }
+    },
+    "cash_flow": {
+      "statement": "consolidated_cash_flow",
+      "page": 252,
+      "pages": [
+        252
+      ],
+      "title": "Consolidated Statement of Cash Flows",
+      "currency": "reversal",
+      "periods": [],
+      "column_headers": [
+        "2024-25",
+        "2023-24"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "B. CASH FLOWS FROM INVESTING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from sale of property, plant and equipment",
+          "note_no": null,
+          "values": {
+            "current_period": 1.9,
+            "previous_period": 11.48
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from sale of investments",
+          "note_no": null,
+          "values": {
+            "current_period": 4785.03,
+            "previous_period": 1220.55
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest received",
+          "note_no": null,
+          "values": {
+            "current_period": 68.01,
+            "previous_period": 42.36
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Investment in associate",
+          "note_no": null,
+          "values": {
+            "current_period": -0.01,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "urchase of property, plant and equipment (including capital work-in- progress, capital advances and capital creditors) and intangible assets (including under development)",
+          "note_no": null,
+          "values": {
+            "current_period": -427.32,
+            "previous_period": -234.27
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Purchase of investments",
+          "note_no": null,
+          "values": {
+            "current_period": -4594.13,
+            "previous_period": -1784
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Bank balances other than cash and cash equivalents (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -194.87,
+            "previous_period": -631.4
+          }
+        },
+        {
+          "section": null,
+          "line_item": "onsideration for acquisition of equity shares in G.G.Tronics India Private Limited from it's erstwhile promoters (net of cash acquired)",
+          "note_no": null,
+          "values": {
+            "current_period": -171.53,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deposit in relation to bidding process for proposed acquisition",
+          "note_no": null,
+          "values": {
+            "current_period": -28.68,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unrealised exchange gain / (loss) on consolidation (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -6.48,
+            "previous_period": -1.49
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing investing activities",
+          "note_no": null,
+          "values": {
+            "current_period": -568.08,
+            "previous_period": -1376.77
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from discontinued investing activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 83.2
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing and discontinued investing activities (B)",
+          "note_no": null,
+          "values": {
+            "current_period": -568.08,
+            "previous_period": -1293.57
+          }
+        },
+        {
+          "section": null,
+          "line_item": "C. CASH FLOWS FROM FINANCING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from issue of equity shares",
+          "note_no": null,
+          "values": {
+            "current_period": 32.35,
+            "previous_period": 3.15
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Subscription of equity in subsidiary by non-controlling Interest",
+          "note_no": null,
+          "values": {
+            "current_period": 29.93,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Repayment of borrowings",
+          "note_no": null,
+          "values": {
+            "current_period": -15.68,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Payment of lease liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": -11.23,
+            "previous_period": -6.57
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Finance costs paid",
+          "note_no": null,
+          "values": {
+            "current_period": -3.24,
+            "previous_period": -0.91
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Dividend paid",
+          "note_no": null,
+          "values": {
+            "current_period": -198.75,
+            "previous_period": -198.55
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Payment towards settlement of litigation with Asset Reconstruction Company",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": -42
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Payment towards purchase of non-controlling interest",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": -0.21
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing financing activities",
+          "note_no": null,
+          "values": {
+            "current_period": -166.62,
+            "previous_period": -245.09
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from discontinued financing activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": -0.64
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing and discontinued financing activities (C)",
+          "note_no": null,
+          "values": {
+            "current_period": -166.62,
+            "previous_period": -245.73
+          }
+        },
+        {
+          "section": null,
+          "line_item": "NET INCREASE / (DECREASE) IN CASH AND CASH EQUIVALENTS (A+B+C)",
+          "note_no": null,
+          "values": {
+            "current_period": 209.72,
+            "previous_period": -511.51
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash and cash equivalents at beginning of the year",
+          "note_no": null,
+          "values": {
+            "current_period": 200.4,
+            "previous_period": 711.91
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash and cash equivalents at end of the year",
+          "note_no": null,
+          "values": {
+            "current_period": 410.12,
+            "previous_period": 200.4
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash and cash equivalents from continuing operations (Refer note 13)",
+          "note_no": null,
+          "values": {
+            "current_period": 409.51,
+            "previous_period": 199.84
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash and cash equivalents from discontinued operations",
+          "note_no": null,
+          "values": {
+            "current_period": 0.61,
+            "previous_period": 0.56
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash and cash equivalents from continuing and discontinued operations",
+          "note_no": null,
+          "values": {
+            "current_period": 410.12,
+            "previous_period": 200.4
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1. Refer note 46 in respect of disclosure for changes in liabilities arising from financing activities.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2. The consolidated statement of cash flows has been prepared under the ‘Indirect Method’ as set out",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Statement of Cash Flows. The accompanying notes form an integral part of consolidated financial statements",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 35,
+        "total_rows": 0
+      }
+    },
+    "notes_to_accounts": []
+  }
+}

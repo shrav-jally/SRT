@@ -1,0 +1,6 @@
+new/*.xls
+__pycache__/
+*.pyc
+tool/comps_v2.db-wal
+tool/comps_v2.db-shm
+*:Zone.Identifier

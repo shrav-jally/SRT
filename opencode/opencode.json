@@ -1,0 +1,20 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "custom-gateway/srt-glm5",
+  "provider": {
+    "custom-gateway": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Deloitte Gateway",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "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"
+      },
+      "models": {
+        "srt-glm5": {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b",
+          "name": "GLM 5.1 744B"
+        }
+      }
+    }
+  }
+}

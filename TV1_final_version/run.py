@@ -69,21 +69,14 @@ def ensure_deps() -> None:
 
 def ensure_env() -> None:
     envfile = ROOT / ".env"
-    if envfile.is_file() and "GROQ_API_KEY" in envfile.read_text(encoding="utf-8"):
+    env_text = envfile.read_text(encoding="utf-8") if envfile.is_file() else ""
+    key = os.environ.get("GROQ_API_KEY", "").strip()
+    if not key and "GROQ_API_KEY" in env_text:
         print(".env found (GROQ_API_KEY configured — LLM analyst enabled)")
         return
     print("No GROQ_API_KEY configured. The LLM analyst step is optional —")
     print("get a free key at https://console.groq.com/keys")
-    try:
-        key = input("Paste GROQ_API_KEY (or press Enter to skip): ").strip()
-    except EOFError:
-        key = ""
-    if key:
-        with open(envfile, "a", encoding="utf-8") as f:
-            f.write(f"\nGROQ_API_KEY={key}\n")
-        print("saved to .env — LLM analyst enabled")
-    else:
-        print("skipped — running fully deterministic (no LLM)")
+    print("skipped — running fully deterministic (no LLM)")
 
 
 def ensure_db() -> None:
@@ -123,7 +116,7 @@ def refresh_drift() -> None:
 
 
 def serve() -> None:
-    url = "http://localhost:3000"
+    url = f"http://localhost:{PORT}/landing"
     print(f"\nPlatform: {url}   (API docs: http://localhost:{PORT}/docs)   Ctrl+C to stop")
     try:
         webbrowser.open(url)

@@ -1,0 +1,18 @@
+{
+  "name": "touchless-valuation-evardhan",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Touchless Valuation : E-Vardhan — CCM Valuation Tool",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "cd backend && python3 -m uvicorn app:app --host 0.0.0.0 --port 5899 --reload",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "npm --prefix frontend run start",
+    "start:backend": "cd backend && python3 -m uvicorn app:app --host 0.0.0.0 --port 5899",
+    "setup": "npm install && cd frontend && npm install && cd ../backend && pip install -r requirements.txt"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

@@ -1,0 +1,2053 @@
+<!doctype html>
+<html class="digital" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Touchless Valuation : E-Vardhan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+  :root{
+    /* ── DDS Brand Tokens ── */
+    --deloitte-green:#86BC25;
+    --accessible-blue:#007CB0;
+    --accessible-green:#26890D;
+    --accessible-teal:#0D8390;
+    --red:#DA291C;
+
+    /* ── DDS Neutrals ── */
+    --black:#000000;
+    --white:#FFFFFF;
+    --cool-gray-2:#D0D0CE;
+    --cool-gray-4:#BBBCBC;
+    --cool-gray-6:#A7A8AA;
+    --cool-gray-7:#97999B;
+    --cool-gray-9:#75787B;
+    --cool-gray-10:#63666A;
+    --cool-gray-11:#53565A;
+
+    /* ── DDS Focus ── */
+    --focus-color:#005587;
+    --focus-width:2px;
+
+    /* ── DDS Radius (sharp corners) ── */
+    --radius:4px;
+    --radius-sm:2px;
+    --radius-lg:6px;
+    --radius-pill:50rem;
+
+    /* ── DDS Shadows ── */
+    --shadow:0 2px 4px rgba(0,0,0,.075);
+    --shadow-sm:0 2px 4px rgba(0,0,0,.075);
+    --shadow-lg:0 16px 48px rgba(0,0,0,.175);
+    --shadow-inset:inset 0 1px 2px rgba(0,0,0,.075);
+
+    /* ── DDS Spacing (8px base grid) ── */
+    --space-0:0;
+    --space-1:8px;
+    --space-2:12px;
+    --space-3:16px;
+    --space-4:20px;
+    --space-5:24px;
+
+    /* ── DDS Typography ── */
+    --font-family:"Open Sans",sans-serif;
+    --font-mono:monospace;
+    --transition:.15s;
+
+    /* ── Semantic aliases ── */
+    --primary:var(--deloitte-green);
+    --primary-bg:#f0f5e8;
+    --primary-border:#c9e08a;
+    --success:var(--accessible-green);
+    --success-bg:#e8f5e0;
+    --success-border:#b8d9a8;
+    --warning:#ED8B00;
+    --warning-bg:#fff5e5;
+    --warning-border:#ffd699;
+    --error:var(--red);
+    --error-bg:#fce8e7;
+    --error-border:#f5b8b4;
+    --bg:#f5f5f5;
+    --card:var(--white);
+    --text:var(--cool-gray-11);
+    --text-sec:var(--cool-gray-10);
+    --text-light:var(--cool-gray-7);
+    --border:var(--cool-gray-2);
+    --border-light:#e8e8e8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:100%;height:100%;margin:0;padding:0;overflow-x:hidden;position:relative}
+  body{font-family:var(--font-family);background:var(--bg);color:var(--text);font-size:13px;line-height:1.45}
+  ::-webkit-scrollbar{height:8px;width:8px}
+  ::-webkit-scrollbar-thumb{background:var(--cool-gray-4);border-radius:var(--radius-sm)}
+  html{overflow-x:hidden}
+  body{overflow-x:hidden}
+
+  /* ── DDS Header (App Shell) ── */
+  .dds-header{background:var(--black);height:48px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--deloitte-green);width:100%!important;max-width:100%!important;left:0!important;position:fixed;top:0;right:0;z-index:1000;margin:0;padding:0 var(--space-3);box-sizing:border-box}
+  body{padding-top:48px}
+  .dds-header__container{display:flex;align-items:center;justify-content:space-between;width:100%}
+  .dds-header__main{display:flex;align-items:center;gap:var(--space-2)}
+  .dds-header__logo{display:flex;align-items:center;gap:2px}
+  .dds-header__logo-wordmark{color:var(--white);font-size:17px;font-weight:700;letter-spacing:-.02em}
+  .dds-header__logo-dot{width:7px;height:7px;background:var(--deloitte-green);border-radius:50%;flex-shrink:0;margin-left:1px}
+  .dds-header__logo-favicon{width:28px;height:28px;background:var(--deloitte-green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:800;font-size:14px;flex-shrink:0}
+  .dds-header__project-name{color:var(--white);font-size:15px;font-weight:600;letter-spacing:-.01em}
+  .dds-header__project-name span{color:var(--cool-gray-6);font-weight:400}
+  .dds-header__subtitle{color:var(--cool-gray-7);font-size:11px}
+  .dds-header__right-wrap{display:flex;align-items:center;gap:var(--space-2)}
+  .dds-user-pic{background:var(--cool-gray-11);color:var(--white);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+  .user-badge{background:rgba(255,255,255,.08);color:var(--white);padding:4px var(--space-2);border-radius:var(--radius-pill);font-size:11px;display:flex;align-items:center;gap:6px}
+  .user-badge i{color:var(--deloitte-green)}
+
+  /* ── Login Page (full-screen split per DDS circular-motif) ── */
+  #loginPage{height:calc(100vh - 48px);display:flex;align-items:stretch;justify-content:center;background:var(--bg);width:100%}
+  .login-container{display:flex;width:100%;height:100%;overflow:hidden}
+  .login-left{flex:1.2;background:var(--black);padding:var(--space-5) var(--space-4);display:flex;flex-direction:column;justify-content:center;color:var(--white);position:relative;overflow:hidden}
+  .login-left::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:rgba(134,188,37,.10);pointer-events:none}
+  .login-left::after{content:'';position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;border-radius:50%;background:rgba(134,188,37,.06);pointer-events:none}
+  .login-left h2{font-size:28px;font-weight:700;margin-bottom:var(--space-2);position:relative;z-index:1}
+  .login-left p{color:var(--cool-gray-7);font-size:14px;margin-bottom:var(--space-4);line-height:1.7;position:relative;z-index:1}
+  .login-features{display:flex;flex-direction:column;gap:var(--space-2);position:relative;z-index:1}
+  .login-feature{display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:rgba(255,255,255,.9)}
+  .login-feature-icon{width:36px;height:36px;background:rgba(134,188,37,.15);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;color:var(--deloitte-green)}
+  .login-right{flex:1;padding:var(--space-5) var(--space-4);display:flex;flex-direction:column;justify-content:center;max-width:480px;margin:0 auto;width:100%}
+  .login-right h3{font-size:22px;font-weight:700;margin-bottom:6px;color:var(--text)}
+  .login-right .sub{color:var(--text-light);font-size:13px;margin-bottom:var(--space-3)}
+
+  /* ── DDS Input ── */
+  .dds-input{margin-bottom:var(--space-2)}
+  .dds-input__label{display:block;font-size:13px;font-weight:500;color:var(--text-sec);margin-bottom:6px}
+  .dds-input__field{width:100%;padding:5px 9px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:12px;font-family:var(--font-family);transition:var(--transition);background:var(--white)}
+  .dds-input__field:focus{border-color:var(--accessible-blue);box-shadow:0 0 0 var(--focus-width) var(--focus-color);outline:none}
+  .dds-input__field:disabled{background:#f5f6f8;color:var(--text-light)}
+
+  /* ── DDS Button ── */
+  .dds-btn{padding:5px var(--space-2);border-radius:var(--radius-sm);font-size:12px;font-weight:600;font-family:var(--font-family);cursor:pointer;transition:var(--transition);border:1px solid transparent;display:inline-flex;align-items:center;gap:5px}
+  .dds-btn_primary{background:transparent;border-color:var(--deloitte-green);color:var(--deloitte-green)}
+  .dds-btn_primary:hover{background:var(--deloitte-green);color:var(--white)}
+  .dds-btn_primary:disabled{opacity:.35;cursor:not-allowed}
+  .dds-btn_primary:disabled:hover{background:transparent;color:var(--deloitte-green)}
+  .dds-btn_secondary-loud{background:var(--cool-gray-11);border-color:var(--cool-gray-11);color:var(--white)}
+  .dds-btn_secondary-loud:hover{background:var(--black);border-color:var(--black)}
+  .dds-btn_secondary{background:transparent;border-color:var(--cool-gray-11);color:var(--cool-gray-11)}
+  .dds-btn_secondary:hover{border-color:var(--black);color:var(--black)}
+  .dds-btn_silent{background:transparent;border-color:transparent;color:var(--black)}
+  .dds-btn_silent:hover{background:var(--cool-gray-2)}
+  .dds-btn_danger{background:transparent;border-color:var(--red);color:var(--red)}
+  .dds-btn_danger:hover{background:var(--red);color:var(--white)}
+  .dds-btn_blue{background:transparent;border-color:var(--accessible-blue);color:var(--accessible-blue)}
+  .dds-btn_blue:hover{background:var(--accessible-blue);color:var(--white)}
+  .dds-btn_green{background:transparent;border-color:var(--deloitte-green);color:var(--deloitte-green)}
+  .dds-btn_green:hover{background:var(--deloitte-green);color:var(--white)}
+  .dds-btn_sm{padding:4px 10px;font-size:11px}
+  .dds-btn_lg{padding:8px var(--space-2);font-size:14px}
+  .dds-btn_fluid-width{width:100%;justify-content:center}
+  .demo-badge{display:inline-flex;align-items:center;gap:4px;background:var(--success-bg);color:var(--success);border:1px solid var(--success-border);padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:500;margin-top:var(--space-1)}
+
+  /* ── Main App Layout ── */
+  #mainApp{display:none;width:100vw!important;max-width:none!important;min-width:100vw!important;overflow-x:visible!important;position:relative;left:0!important;right:0!important;margin:0!important;padding:0!important}
+  #mainApp *{max-width:none!important}
+  .main-wrap{max-width:none!important;min-width:0!important;margin:0!important;padding:0!important;width:100%!important;overflow-x:hidden!important;float:none!important;position:relative;left:0!important;right:0!important;display:block}
+
+  /* ── Progress Steps ── */
+  .progress-bar{display:flex;align-items:center;gap:0;background:var(--card);padding:var(--space-1) var(--space-2)!important;border-radius:0!important;box-shadow:var(--shadow);border:none;margin:0!important;width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important}
+  .progress-step{flex:1 1 0;display:flex;align-items:center;gap:4px;position:relative;min-width:0}
+  .progress-step:last-child{flex:0 1 auto}
+  .progress-step:not(:last-child)::after{content:'';flex:1 1 auto;min-width:12px;height:2px;background:var(--border-light);margin:0 var(--space-1)}
+  .progress-step.completed:not(:last-child)::after{background:var(--deloitte-green)}
+  .step-num{width:22px;height:22px;border-radius:50%;background:var(--border-light);color:var(--text-light);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;transition:all .3s;border:2px solid transparent}
+  .progress-step.active .step-num{background:var(--deloitte-green);color:var(--white);border-color:var(--deloitte-green)}
+  .progress-step.completed .step-num{background:var(--accessible-green);color:var(--white)}
+  .step-info{display:flex;flex-direction:column;min-width:0}
+  .step-title{font-size:11px;font-weight:600;color:var(--text-light);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .progress-step.active .step-title,.progress-step.completed .step-title{color:var(--text)}
+  .step-subtitle{font-size:9px;color:var(--text-light);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  @media(max-width:900px){.step-info{display:none}.progress-step:not(:last-child)::after{margin:0 2px}}
+
+  /* ── Content Area ── */
+  .content-grid{display:grid;grid-template-columns:1fr;gap:6px;align-items:start;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;box-sizing:border-box}
+  .content-grid.has-sidebar{grid-template-columns:1fr 240px;gap:6px;align-items:start;width:100%!important;max-width:none!important}
+  @media(max-width:1000px){.content-grid,.content-grid.has-sidebar{grid-template-columns:1fr}}
+
+  /* ── Cards ── */
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border-light);width:100%;display:flex;flex-direction:column;overflow:visible}
+  .card-body{flex:1;overflow-y:auto}
+  .card-header{padding:var(--space-1) var(--space-2);border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:var(--space-1)}
+  .card-header-icon{width:26px;height:26px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:12px}
+  .card-header-icon.blue{background:#e8f4fd;color:var(--accessible-blue)}
+  .card-header-icon.green{background:var(--success-bg);color:var(--success)}
+  .card-header-icon.orange{background:var(--warning-bg);color:var(--warning)}
+  .card-header-icon.red{background:var(--error-bg);color:var(--error)}
+  .card-header h2{font-size:14px;font-weight:600}
+  .card-header .desc{font-size:10px;color:var(--text-light);font-weight:400}
+  .card-body{padding:10px var(--space-2);overflow-y:auto;overflow-x:hidden}
+  .card-footer{padding:var(--space-1) var(--space-2);border-top:1px solid var(--border-light);background:#fafbfc;display:flex;gap:var(--space-1);justify-content:space-between;position:sticky;bottom:0;z-index:10;flex-shrink:0;box-shadow:0 -2px 8px rgba(0,0,0,.06)}
+
+  /* ── Form Styles ── */
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-1)}
+  @media(max-width:600px){.form-grid{grid-template-columns:1fr}}
+  .form-grid.col3{grid-template-columns:1fr 1fr 1fr}
+  @media(max-width:760px){.form-grid.col3{grid-template-columns:1fr}}
+  .field{display:flex;flex-direction:column;gap:2px}
+  .field label{font-size:11px;font-weight:500;color:var(--text-sec)}
+  .field label .req{color:var(--error);margin-left:2px}
+  .field .input-wrap{position:relative}
+  .field .input-wrap input{padding-right:48px}
+  .field .suffix{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text-light);font-size:12px;font-weight:500;pointer-events:none}
+  select.dds-input__field{cursor:pointer}
+
+  /* ── Matrix Selector ── */
+  .matrix-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+  @media(max-width:600px){.matrix-grid{grid-template-columns:1fr}}
+  .matrix-card{border:1px solid var(--border);border-radius:var(--radius);padding:10px var(--space-1);text-align:center;cursor:pointer;transition:var(--transition);position:relative}
+  .matrix-card:hover{border-color:var(--primary-border);background:var(--primary-bg)}
+  .matrix-card.selected{border-color:var(--deloitte-green);background:var(--primary-bg);box-shadow:inset 0 0 0 1px var(--deloitte-green)}
+  .matrix-card input{position:absolute;opacity:0}
+  .matrix-icon{font-size:16px;color:var(--deloitte-green);margin-bottom:4px}
+  .matrix-name{font-size:12px;font-weight:700;margin-bottom:1px}
+  .matrix-desc{font-size:10px;color:var(--text-light)}
+
+  /* ── Screening Criteria ── */
+  .crit-item{border:1px solid var(--border-light);border-radius:var(--radius);padding:5px 10px;margin-bottom:4px;display:flex;align-items:center;gap:var(--space-1);transition:var(--transition)}
+  .crit-item.active{border-color:var(--primary-border);background:var(--primary-bg)}
+  .crit-item.off{opacity:.5}
+  .crit-label{flex:1;font-size:12px;font-weight:500}
+  .crit-inputs{display:flex;gap:6px}
+  .crit-inputs input{width:75px;padding:4px var(--space-1);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:11px;text-align:center;font-family:var(--font-family)}
+  .crit-inputs input:focus{border-color:var(--accessible-blue);box-shadow:0 0 0 var(--focus-width) var(--focus-color);outline:none}
+  .custom-checkbox{width:18px;height:18px;accent-color:var(--deloitte-green);cursor:pointer}
+  
+  /* ── Disabled/Freezed Criteria ── */
+  .crit-item.disabled{opacity:.35;pointer-events:none;user-select:none}
+  .threshold-notice{background:var(--warning-bg);border:1px solid var(--warning-border);border-radius:var(--radius);padding:10px 14px;font-size:12px;color:#8a6100;margin-top:var(--space-1);display:flex;align-items:center;gap:var(--space-1)}
+  .threshold-notice.hidden{display:none}
+  
+  /* ── Sidebar / Info Graphics ── */
+  .sidebar{position:static;display:flex;flex-direction:column;gap:var(--space-2);max-width:240px}
+  .sidebar.hidden{display:none}
+  .info-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border-light);overflow:hidden}
+  .info-card-header{padding:7px 10px;background:var(--black);color:var(--white)}
+  .info-card-header h3{font-size:11px;font-weight:600;display:flex;align-items:center;gap:5px}
+  .info-card-body{padding:10px}
+  .big-number{text-align:center;padding:4px 0}
+  .big-number .value{font-size:28px;font-weight:800;color:var(--accessible-blue);letter-spacing:-.02em;line-height:1}
+  .big-number .label{font-size:10px;color:var(--text-light);margin-top:3px}
+  .big-number .change{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:600;margin-top:5px;padding:2px 6px;border-radius:var(--radius-pill)}
+  .big-number .change.down{background:var(--success-bg);color:var(--success)}
+
+  /* Progress bar */
+  .progress-track{margin-top:var(--space-1)}
+  .progress-track .label-row{display:flex;justify-content:space-between;font-size:10px;color:var(--text-light);margin-bottom:3px}
+  .progress-track .track{height:6px;background:var(--border-light);border-radius:3px;overflow:hidden}
+  .progress-track .fill{height:100%;background:linear-gradient(90deg,var(--deloitte-green),var(--accessible-blue));border-radius:3px;transition:width .5s ease}
+
+  /* Filter path */
+  .filter-path{margin-top:var(--space-1);padding-top:var(--space-1);border-top:1px solid var(--border-light)}
+  .filter-path .path-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-light);margin-bottom:3px}
+  .filter-path .path-item .icon{color:var(--accessible-blue);font-size:11px}
+  .filter-path .path-item .separator{color:var(--border)}
+
+  /* Mini chart */
+  .mini-chart{display:flex;align-items:flex-end;gap:4px;height:80px;padding-top:var(--space-1)}
+  .mini-chart .col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+  .mini-chart .bar{width:100%;background:linear-gradient(180deg,var(--deloitte-green),var(--accessible-blue));border-radius:var(--radius-sm) var(--radius-sm) 0 0;min-height:3px;transition:height .4s ease}
+  .mini-chart .bar-label{font-size:9px;color:var(--text-light);text-align:center;line-height:1.1;max-width:60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  /* Sector tag */
+  .sector-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--space-1)}
+  .sector-tag{font-size:11px;padding:3px 10px;background:var(--primary-bg);color:var(--accessible-green);border-radius:var(--radius-pill);font-weight:500}
+
+  /* ── DDS Data Table ── */
+  .dds-data-table,.comp-table{width:100%;border-collapse:collapse;font-size:11px}
+  .dds-data-table th,.comp-table th{background:var(--bg);text-align:right;padding:5px var(--space-1);font-size:10px;text-transform:uppercase;color:var(--text-light);font-weight:600;border-bottom:2px solid var(--deloitte-green);letter-spacing:.04em;position:sticky;top:0}
+  .dds-data-table th:first-child,.comp-table th:first-child{text-align:left}
+  .dds-data-table td,.comp-table td{padding:4px var(--space-1);text-align:right;border-bottom:1px solid var(--border-light);font-variant-numeric:tabular-nums}
+  .dds-data-table td:first-child,.comp-table td:first-child{text-align:left;font-weight:500}
+  .comp-table .med-row,.comp-table tr.med td{background:var(--primary-bg);font-weight:700}
+  .comp-table .med-row td,.comp-table tr.med td{color:var(--accessible-green)}
+  .comp-table tbody tr:hover{background:#fafbfc}
+  .comp-table th.sortable{cursor:pointer;user-select:none;white-space:nowrap}
+  .comp-table th.sortable:hover{color:var(--accessible-blue);background:#e8f4fd}
+  .comp-table th .sort-arrow{margin-left:3px;font-size:9px;opacity:.35}
+  #peerTable th:nth-child(2),#peerTable td:nth-child(2){text-align:left;width:auto}
+  #peerTable td:nth-child(2){font-weight:600;color:var(--text)}
+  #peerTable th:nth-child(n+3),#peerTable td:nth-child(n+3){width:11%;white-space:nowrap}
+
+  /* ── DDS Status Tags ── */
+  .dds-status-tag{display:inline-flex;align-items:center;justify-content:center;padding:2px var(--space-1);border-radius:var(--radius-pill);font-size:11px;font-weight:600}
+  .dds-status-tag_green{background:var(--success-bg);color:var(--success)}
+  .dds-status-tag_blue{background:#e8f4fd;color:var(--accessible-blue)}
+  .dds-status-tag_orange{background:var(--warning-bg);color:var(--warning)}
+  .dds-status-tag_red{background:var(--error-bg);color:var(--error)}
+  .dds-status-tag_gray{background:var(--bg);color:var(--cool-gray-9)}
+
+  /* ── Results ── */
+  #out{display:none;width:100%;position:relative;overflow-y:auto;height:calc(100vh - 138px)}
+  .result-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-1);margin-bottom:0}
+  @media(max-width:600px){.result-row{grid-template-columns:1fr}}
+  .result-card{background:var(--card);border-radius:var(--radius);padding:var(--space-2) 14px;box-shadow:var(--shadow);border:1px solid var(--border-light)}
+  .result-card.highlight{border-color:var(--primary-border);box-shadow:inset 0 0 0 1px var(--primary-border)}
+  .result-card .tag{font-size:10px;text-transform:uppercase;letter-spacing:.04em;font-weight:600;color:var(--text-light);margin-bottom:4px}
+  .result-card .amount{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.02em}
+  .result-card.highlight .amount{color:var(--accessible-blue)}
+  .result-card .range{font-size:10px;color:var(--text-light);margin-top:4px}
+
+  /* Value bridge */
+  .bridge-box{background:var(--black);color:var(--white);border-radius:var(--radius);padding:14px 18px;margin:var(--space-2) 0;font-family:var(--font-mono);font-size:12px;line-height:1.9;white-space:nowrap;overflow-x:auto}
+  .bridge-box .hl{color:var(--deloitte-green);font-weight:600}
+  .bridge-box .result{color:#7fc4a0;font-weight:700;font-size:14px}
+
+  /* ── DDS Modal ── */
+  .dds-modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.6);align-items:center;justify-content:center}
+  .dds-modal-overlay.open{display:flex}
+  .dds-modal{background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);width:520px;max-width:92vw;max-height:80vh;overflow-y:auto}
+  .dds-modal__header{padding:var(--space-3) var(--space-3);border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between}
+  .dds-modal__title{font-size:17px;font-weight:700;margin:0}
+  .dds-modal__close{border:none;background:none;cursor:pointer;font-size:18px;color:var(--text-light);padding:4px}
+  .dds-modal__body{padding:var(--space-3)}
+  .dds-modal__footer{padding:var(--space-2) var(--space-3);border-top:1px solid var(--border-light);display:flex;gap:var(--space-2);justify-content:space-between;align-items:center}
+
+  /* ── Utility ── */
+  .step-content{display:none}
+  .step-content.active{display:block;animation:fadeIn .3s ease}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .badge{display:inline-flex;align-items:center;justify-content:center;padding:2px var(--space-1);border-radius:var(--radius-pill);font-size:11px;font-weight:600}
+  .badge-blue{background:#e8f4fd;color:var(--accessible-blue)}
+  .badge-green{background:var(--success-bg);color:var(--success)}
+  .badge-orange{background:var(--warning-bg);color:var(--warning)}
+  .spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:var(--deloitte-green);border-radius:50%;animation:spin .6s linear infinite;display:inline-block}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .err-box{background:var(--error-bg);border:1px solid var(--error-border);color:var(--error);padding:var(--space-2) var(--space-3);border-radius:var(--radius);font-size:13px;margin-top:var(--space-1)}
+  .note{font-size:11px;color:var(--text-light);margin-top:6px}
+  .collapsible-section{border:1px solid var(--border-light);border-radius:var(--radius);overflow:hidden;margin-bottom:var(--space-2)}
+  .section-header{padding:var(--space-2) var(--space-3);background:var(--primary-bg);transition:background .2s;cursor:pointer;user-select:none;display:flex;align-items:center;gap:var(--space-1);font-size:14px;font-weight:700;color:var(--accessible-green)}
+  .section-header:hover{background:#e8f4fd}
+  .section-body{padding:var(--space-3)}
+  .section-body.collapsed{display:none}
+  /* #disclaimerModal styles inherited from .dds-modal-overlay — ID rule removed to avoid specificity conflict with .open class toggle */
+  @media print{.dds-header,.btnrow,.steps-bar,.sidebar{display:none!important}.main-wrap{padding:0}}
+
+  /* ── FULL WIDTH FIX ── */
+  body,html,#mainApp,.main-wrap,.content-grid{width:100%!important;max-width:100%!important;min-width:0!important;margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important}
+  html{overflow-x:hidden}body{overflow-x:hidden}
+  .dds-header{width:100%!important;max-width:100%!important;min-width:0!important;margin-left:0!important;margin-right:0!important}
+  #mainApp,.main-wrap{position:relative!important;left:0!important;right:0!important}
+  .dds-header{left:0!important;right:0!important}
+
+  /* ── Fixed app chrome ── */
+  .progress-bar{position:fixed!important;top:48px;left:0;right:0;z-index:900}
+  #mainApp{padding-top:45px!important}
+
+  .step-content.active{height:calc(100vh - 138px);display:flex;flex-direction:column;overflow:hidden}
+  .step-content.active > .card-header,
+  .step-content.active > #universeHeader{flex:0 0 auto}
+  .step-content.active > .card-body{flex:1 1 auto;min-height:0;overflow-y:auto}
+  .step-content[data-step="2"].active > .card-body{overflow-y:auto}
+
+  /* ── Sub-sector multi-select dropdown ── */
+  .dds-multiselect{position:relative;width:100%}
+  .dds-multiselect__trigger{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;height:28px;padding:0 9px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--white);cursor:pointer;transition:border-color .15s,box-shadow .15s;font-size:12px;font-family:var(--font-family);box-sizing:border-box}
+  .dds-multiselect__trigger:hover{border-color:var(--black)}
+  .dds-multiselect__trigger:focus-visible{outline:var(--focus-width) solid var(--focus-color);outline-offset:0}
+  .dds-multiselect__trigger.open{border-color:var(--accessible-blue);box-shadow:0 0 0 var(--focus-width) var(--focus-color)}
+  .dds-multiselect__text{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text)}
+  .dds-multiselect__text.placeholder{color:var(--text-light)}
+  .dds-multiselect__arrow{font-size:10px;color:var(--text-light);transition:transform .2s;flex-shrink:0}
+  .dds-multiselect__trigger.open .dds-multiselect__arrow{transform:rotate(180deg)}
+  .dds-multiselect__panel{position:fixed;z-index:950;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 8px 24px rgba(0,0,0,.12);display:none;overflow:hidden}
+  .dds-multiselect__panel.open{display:flex;flex-direction:column}
+  .dds-multiselect__actions{display:flex;gap:4px;padding:6px 10px;border-bottom:1px solid var(--border-light);flex-shrink:0}
+  .dds-multiselect__list{overflow-y:auto;max-height:220px;padding:4px 0}
+  .dds-multiselect__list .sector-item{display:flex;align-items:center;justify-content:space-between;padding:6px 12px;font-size:12px;cursor:pointer;transition:background .1s;color:var(--text)}
+  .dds-multiselect__list .sector-item:hover{background:var(--primary-bg)}
+  .dds-multiselect__list .sector-item.selected{background:var(--primary-bg);font-weight:600;color:var(--accessible-green)}
+  .dds-multiselect__list .sector-item .sec-count{color:var(--text-light);font-size:11px;font-weight:400}
+  .dds-multiselect__list .sub-sector-item{display:flex;align-items:center;gap:8px;padding:5px 12px;font-size:12px;cursor:pointer;transition:background .1s}
+  .dds-multiselect__list .sub-sector-item:hover{background:var(--primary-bg)}
+  .dds-multiselect__list .sub-sector-item.disabled{opacity:.4;pointer-events:none}
+  .dds-multiselect__list .sub-sector-item input[type=checkbox]{accent-color:var(--deloitte-green);width:16px;height:16px;cursor:pointer;flex-shrink:0}
+  .dds-multiselect__list .sub-sector-item .ss-name{flex:1;color:var(--text);font-weight:500}
+  .dds-multiselect__list .sub-sector-item .ss-count{color:var(--text-light);font-size:11px;font-weight:400;white-space:nowrap}
+
+  #screeningFilters{margin:var(--space-2);border:1px solid var(--border-light);border-radius:var(--radius);overflow:visible}
+  #screeningFiltersHeader{border-radius:var(--radius) var(--radius) 0 0}
+  #screeningFiltersHeader{padding:10px 14px;background:var(--primary-bg);border-bottom:1px solid var(--border-light);font-size:13px;font-weight:700;color:var(--accessible-green)}
+  #screeningFiltersBody{padding:14px;overflow:visible}
+  #peerTableWrap{max-height:340px;overflow-y:auto}
+  @media(max-height:640px){
+    #peerTableWrap{max-height:260px}
+  }
+
+  .card-footer{flex:0 0 auto;position:sticky;bottom:0;height:45px;box-sizing:border-box;align-items:center;z-index:10;margin:0;border-top:1px solid var(--border);background:var(--card);box-shadow:0 -2px 10px rgba(0,0,0,.08)}
+
+  @media print{.dds-header,.progress-bar,.card-footer{position:static!important}
+    body{padding-top:0}#mainApp{padding-top:0!important}
+    .step-content.active,.step-content[data-step="2"].active > .card-body,
+    .step-content.active > .card-body,#peerSection,#peerTableWrap,
+    #screeningFiltersBody{height:auto!important;max-height:none!important;overflow:visible!important}}
+
+  /* ── DDS Focus States ── */
+  .dds-btn:focus-visible,.dds-input__field:focus-visible{outline:var(--focus-width) solid var(--focus-color);outline-offset:0}
+  </style>
+</head>
+<body>
+
+<!-- ════ DDS HEADER ════ -->
+<header class="dds-header">
+  <div class="dds-header__container">
+    <div class="dds-header__main">
+      <div class="dds-header__logo">
+        <span class="dds-header__logo-wordmark">Deloitte</span><span class="dds-header__logo-dot"></span>
+      </div>
+      <div>
+        <span class="dds-header__project-name">Touchless Valuation : <span>E-Vardhan</span></span>
+        <div class="dds-header__subtitle">EV/EBITDA · EV/Revenue · P/E · Median Multiple · ±5% Range</div>
+      </div>
+    </div>
+    <div class="dds-header__right-wrap">
+      <div class="user-badge" id="userBadge" style="display:none">
+        <i class="fa-solid fa-user"></i>
+        <span id="userEmail"></span>
+        <span style="margin-left:8px;padding-left:8px;border-left:1px solid rgba(255,255,255,.25);cursor:pointer;font-size:11px;opacity:.75" onclick="signOut()" title="Sign out"><i class="fa-solid fa-right-from-bracket"></i> Sign out</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ════ LOGIN PAGE ════ -->
+<div id="loginPage">
+  <div class="login-container">
+    <div class="login-left">
+      <h2>Automated Valuation</h2>
+      <p>Generate instant company valuations using comparable companies method — powered by real-time market data from 3,700+ listed companies.</p>
+      <div class="login-features">
+        <div class="login-feature"><div class="login-feature-icon"><i class="fa-solid fa-chart-line"></i></div><span>Comparable Companies Analysis</span></div>
+        <div class="login-feature"><div class="login-feature-icon"><i class="fa-solid fa-building-columns"></i></div><span>Multiple Valuation Methods</span></div>
+        <div class="login-feature"><div class="login-feature-icon"><i class="fa-solid fa-file-pdf"></i></div><span>Instant PDF Reports</span></div>
+        <div class="login-feature"><div class="login-feature-icon"><i class="fa-solid fa-database"></i></div><span>3,700+ Company Database</span></div>
+      </div>
+    </div>
+    <div class="login-right">
+      <h3>Welcome</h3>
+      <p class="sub">Sign in to start a valuation</p>
+      <div class="dds-input">
+        <label class="dds-input__label" for="loginEmail"><i class="fa-solid fa-envelope" style="margin-right:6px;color:var(--accessible-blue)"></i>Email Address</label>
+        <input id="loginEmail" type="email" class="dds-input__field" value="demo@valuetech.com" placeholder="name@company.com">
+      </div>
+      <button class="dds-btn dds-btn_primary dds-btn_green dds-btn_fluid-width" id="loginBtn" onclick="doLogin()">
+        <i class="fa-solid fa-right-to-bracket"></i> Sign in
+      </button>
+      <div id="loginError" style="display:none;margin-top:10px;background:var(--error-bg);border:1px solid var(--error-border);border-radius:var(--radius);padding:10px 14px;font-size:13px;color:var(--error)"></div>
+      <div class="demo-badge"><i class="fa-solid fa-bolt"></i> Authorised users only · Instant access</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ DISCLAIMER MODAL ════ -->
+<div id="disclaimerModal" class="dds-modal-overlay">
+  <div class="dds-modal">
+    <div class="dds-modal__header">
+      <div style="display:flex;align-items:center;gap:10px">
+        <i class="fa-solid fa-triangle-exclamation" style="color:var(--warning);font-size:20px"></i>
+        <h3 class="dds-modal__title">Disclaimer & Caveats</h3>
+      </div>
+    </div>
+    <div class="dds-modal__body">
+      <div style="font-size:13px;color:var(--text-light);margin-bottom:var(--space-2)">
+        <i class="fa-solid fa-calendar" style="margin-right:6px"></i>
+        <span style="font-weight:500">Date:</span> <span id="disclaimerDate"></span>
+      </div>
+      <div style="font-size:13px;color:var(--text);line-height:1.8;margin-bottom:var(--space-3)">
+        <p style="margin-top:0"><span style="font-weight:600;color:var(--text)">Important Disclaimer:</span> By proceeding with the valuation, you acknowledge and agree to the following:</p>
+        <ol style="padding-left:20px;margin:12px 0;font-weight:400">
+          <li style="font-weight:400">Multiples derived from published market data may not reflect illiquidity discounts or control premiums applicable to the subject company.</li>
+          <li style="font-weight:400">Financial data for the subject company is provided by the user and should be verified against audited financial statements.</li>
+          <li style="font-weight:400">The valuation output is indicative only and must not be used as a binding basis for any financial or investment decision without independent verification.</li>
+          <li style="font-weight:400">Market conditions are volatile; this valuation remains valid for 30–60 days from the date of generation.</li>
+          <li style="font-weight:400">Macroeconomic, sector-specific, and company-specific factors should be considered before finalisation.</li>
+          <li style="font-weight:400">No control premium or DLOM (Discount for Lack of Marketability) has been applied unless explicitly stated.</li>
+          <li style="font-weight:400">Peer selection and screening thresholds affect reliability.</li>
+        </ol>
+        <p style="margin-bottom:0;color:var(--warning);font-weight:600">By clicking "Accept & Continue", you confirm that you have read, understood, and agreed to these terms.</p>
+      </div>
+      <div class="dds-modal__footer">
+        <button class="dds-btn dds-btn_danger" onclick="rejectDisclaimer()" style="font-size:13px"><i class="fa-solid fa-xmark"></i> Reject</button>
+        <button class="dds-btn dds-btn_primary dds-btn_green" onclick="acceptDisclaimer()" style="font-size:13px"><i class="fa-solid fa-check"></i> Accept & Continue</button>
+      </div>
+      <div id="rejectMsg" style="display:none;margin-top:var(--space-2);background:var(--error-bg);border:1px solid var(--error-border);border-radius:var(--radius);padding:14px var(--space-2)">
+        <div style="font-size:14px;font-weight:600;color:var(--error);margin-bottom:6px"><i class="fa-solid fa-circle-exclamation"></i> Access Denied</div>
+        <div style="font-size:13px;color:var(--error);line-height:1.6">You must accept the disclaimer and caveats to proceed with the valuation. No changes have been made — please review the terms and click "Accept & Continue" to continue.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ CONFIRMATION MODAL ════ -->
+<div id="confirmModal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.6);align-items:center;justify-content:center">
+  <div class="dds-modal" style="width:440px">
+    <div class="dds-modal__header">
+      <div style="display:flex;align-items:center;gap:10px">
+        <i class="fa-solid fa-circle-check" style="color:var(--success);font-size:20px"></i>
+        <h3 class="dds-modal__title">Confirm Acceptance</h3>
+      </div>
+    </div>
+    <div class="dds-modal__body">
+      <div style="font-size:14px;color:var(--text);line-height:1.8;margin-bottom:var(--space-3)">
+        <p style="margin-top:0">You are about to accept the <b>Disclaimer & Caveats</b> dated <b id="confirmDate"></b>.</p>
+        <p style="margin-bottom:0">By proceeding, you confirm that you have read, understood, and agree to all the terms mentioned above.</p>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:flex-end">
+        <button class="dds-btn dds-btn_secondary" onclick="closeConfirmModal()" style="font-size:13px">Go Back</button>
+        <button class="dds-btn dds-btn_primary dds-btn_green" onclick="confirmAccept()" style="font-size:13px"><i class="fa-solid fa-check"></i> OK, Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ MAIN APP ════ -->
+<div id="mainApp">
+
+<div class="main-wrap">
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-step active" data-step="1">
+      <div class="step-num">1</div>
+      <div class="step-info"><span class="step-title">Company & Financials</span><span class="step-subtitle">Details, data, methods</span></div>
+    </div>
+    <div class="progress-step" data-step="2">
+      <div class="step-num">2</div>
+      <div class="step-info"><span class="step-title">Screening & Peer Selection</span><span class="step-subtitle">Apply filters, select up to 10 peers</span></div>
+    </div>
+    <div class="progress-step" data-step="3">
+      <div class="step-num">3</div>
+      <div class="step-info"><span class="step-title">Valuation Report</span><span class="step-subtitle">Results & summary</span></div>
+    </div>
+  </div>
+
+  <div class="content-grid" id="contentGrid">
+
+    <!-- ════ LEFT: FORM STEPS ════ -->
+    <div>
+
+      <!-- Step 1: Company, Financials, Balance Sheet, Valuation Methods (Merged) -->
+      <div class="card step-content active" data-step="1">
+        <div class="card-header">
+          <div class="card-header-icon blue"><i class="fa-solid fa-building"></i></div>
+          <div><h2>Company Details, Financials & Valuation</h2><span class="desc">Complete company info, financial data, balance sheet, and valuation methods</span></div>
+        </div>
+        <div class="card-body">
+          <!-- Section 1: Company & Contact Details -->
+          <div class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('sec-company')">
+              <i class="fa-solid fa-building"></i> Company & Contact Details
+              <i id="icon-sec-company" class="fa-solid fa-chevron-down" style="margin-left:auto;font-size:12px;transition:transform .2s"></i>
+            </div>
+            <div id="body-sec-company" class="section-body">
+              <div class="form-grid">
+                <div class="field"><label>Company Name <span class="req">*</span></label><input id="f_company" class="dds-input__field" placeholder="Target company name"></div>
+                <div class="field"><label>Contact Person <span class="req">*</span></label><input id="f_person" class="dds-input__field" placeholder="Full name"></div>
+                <div class="field"><label>Designation</label><input id="f_desig" class="dds-input__field" placeholder="e.g. CFO"></div>
+                <div class="field"><label>Email ID <span class="req">*</span></label><input id="f_email" type="email" class="dds-input__field" placeholder="name@company.com"></div>
+                <div class="field"><label>Contact Number <span class="req">*</span></label><input id="f_phone" class="dds-input__field" placeholder="+91 XXXXX XXXXX"></div>
+                <div class="field"><label>Valuation Date</label><input id="f_valdate" type="date" class="dds-input__field"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Financial Information (LTM) -->
+          <div class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('sec-financials')">
+              <i class="fa-solid fa-chart-pie"></i> Financial Information (LTM) — ₹ Crore
+              <i id="icon-sec-financials" class="fa-solid fa-chevron-down" style="margin-left:auto;font-size:12px;transition:transform .2s"></i>
+            </div>
+            <div id="body-sec-financials" class="section-body">
+              <div class="form-grid col3">
+                <div class="field"><label>Revenue <span class="req">*</span></label><div class="input-wrap"><input id="f_revenue" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+                <div class="field"><label>EBITDA <span class="req">*</span></label><div class="input-wrap"><input id="f_ebitda" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+                <div class="field"><label>PAT <span class="req">*</span></label><div class="input-wrap"><input id="f_pat" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+              </div>
+              <div class="form-grid" style="margin-top:16px">
+                <div class="field"><label>Net Worth (Book Equity) <span class="req">*</span></label><div class="input-wrap"><input id="f_networth" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+                <div class="field"><label>&nbsp;</label><div class="note"><i class="fa-solid fa-circle-info" style="margin-right:4px"></i>Required for balance sheet items</div></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px">
+                <div style="background:#e8f4fd;border:1px solid var(--border-light);border-radius:var(--radius);padding:10px;text-align:center">
+                  <div style="font-size:11px;color:var(--text-light);font-weight:500">Revenue</div>
+                  <div id="kpi-rev" style="font-size:17px;font-weight:700;color:var(--accessible-blue)">—</div>
+                </div>
+                <div style="background:#e8f4fd;border:1px solid var(--border-light);border-radius:var(--radius);padding:10px;text-align:center">
+                  <div style="font-size:11px;color:var(--text-light);font-weight:500">EBITDA Margin</div>
+                  <div id="kpi-ebit" style="font-size:17px;font-weight:700;color:var(--accessible-blue)">—</div>
+                </div>
+                <div style="background:#e8f4fd;border:1px solid var(--border-light);border-radius:var(--radius);padding:10px;text-align:center">
+                  <div style="font-size:11px;color:var(--text-light);font-weight:500">PAT Margin</div>
+                  <div id="kpi-pat" style="font-size:17px;font-weight:700;color:var(--accessible-blue)">—</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Balance Sheet -->
+          <div class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('sec-balance')">
+              <i class="fa-solid fa-scale-balanced"></i> Balance Sheet — as of valuation date
+              <i id="icon-sec-balance" class="fa-solid fa-chevron-down" style="margin-left:auto;font-size:12px;transition:transform .2s"></i>
+            </div>
+            <div id="body-sec-balance" class="section-body">
+              <div class="form-grid col3">
+                <div class="field"><label>Cash & Equivalents</label><div class="input-wrap"><input id="f_cash" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+                <div class="field"><label>Surplus Investments</label><div class="input-wrap"><input id="f_surinv" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+                <div class="field"><label>Debt</label><div class="input-wrap"><input id="f_debt" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+                <div class="field"><label>Lease Liabilities</label><div class="input-wrap"><input id="f_lease" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+                <div class="field"><label>Surplus Assets</label><div class="input-wrap"><input id="f_surass" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+                <div class="field"><label>Surplus Liabilities</label><div class="input-wrap"><input id="f_surliab" type="number" step="any" class="dds-input__field" placeholder="0"><span class="suffix">₹ Cr</span></div></div>
+              </div>
+              <div style="margin-top:12px;background:#fafbfc;border:1px solid var(--border-light);border-radius:var(--radius);padding:10px 14px">
+                <div style="font-size:12px;font-weight:600;color:var(--text-sec);margin-bottom:10px"><i class="fa-solid fa-calculator" style="margin-right:6px;color:var(--accessible-blue)"></i>Net Debt Calculator</div>
+                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                  <span style="font-size:12px;color:var(--text-light)">Debt</span>
+                  <span id="calc-debt" style="font-size:16px;font-weight:700;color:var(--text)">0</span>
+                  <span style="color:var(--text-light)">+</span>
+                  <span style="font-size:12px;color:var(--text-light)">Lease</span>
+                  <span id="calc-lease" style="font-size:16px;font-weight:700;color:var(--text)">0</span>
+                  <span style="color:var(--text-light)">−</span>
+                  <span style="font-size:12px;color:var(--text-light)">Cash</span>
+                  <span id="calc-cash" style="font-size:16px;font-weight:700;color:var(--text)">0</span>
+                  <span style="color:var(--text-light)">=</span>
+                  <span style="font-size:12px;font-weight:600;color:var(--text-sec)">Net Debt</span>
+                  <span id="calc-netdebt" style="font-size:18px;font-weight:800;color:var(--error)">0</span>
+                  <span style="font-size:12px;color:var(--text-light)">₹ Cr</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Valuation Methods -->
+          <div class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('sec-matrix')">
+              <i class="fa-solid fa-xmark-large"></i> Valuation Methods
+              <i id="icon-sec-matrix" class="fa-solid fa-chevron-down" style="margin-left:auto;font-size:12px;transition:transform .2s"></i>
+            </div>
+            <div id="body-sec-matrix" class="section-body">
+              <div class="matrix-grid" id="matrix">
+                <label class="matrix-card selected">
+                  <input type="checkbox" name="matrix" value="EV/EBITDA" checked>
+                  <div class="matrix-icon"><i class="fa-solid fa-chart-line"></i></div>
+                  <div class="matrix-name">EV / EBITDA</div>
+                  <div class="matrix-desc">Profit-based</div>
+                </label>
+                <label class="matrix-card">
+                  <input type="checkbox" name="matrix" value="EV/Revenue">
+                  <div class="matrix-icon"><i class="fa-solid fa-coins"></i></div>
+                  <div class="matrix-name">EV / Revenue</div>
+                  <div class="matrix-desc">Sales-based</div>
+                </label>
+                <label class="matrix-card">
+                  <input type="checkbox" name="matrix" value="P/E">
+                  <div class="matrix-icon"><i class="fa-solid fa-chart-column"></i></div>
+                  <div class="matrix-name">P / E</div>
+                  <div class="matrix-desc">Earnings-based</div>
+                </label>
+              </div>
+              <div class="note" style="margin-top:12px"><i class="fa-solid fa-circle-info" style="margin-right:4px"></i>Each selected method produces its own valuation card in the report.</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div></div>
+          <button class="dds-btn dds-btn_primary dds-btn_green" onclick="goStep(2)">Continue to Screening <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Step 2: Screening & Peer Selection (Merged) -->
+      <div class="card step-content" data-step="2">
+        <div class="card-header">
+          <div style="display:flex;align-items:center;gap:12px;flex:1">
+            <i class="fa-solid fa-magnifying-glass-chart" style="font-size:20px;color:var(--accessible-green)"></i>
+            <div>
+              <h2 style="margin:0">Screening & Peer Selection</h2>
+              <span class="desc" style="margin-top:2px;display:block">Apply filters, then select up to 10 comparable companies</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0;align-items:center">
+            <div style="font-size:14px;font-weight:700;color:var(--accessible-blue)" id="peerCountSelected2">0 / 10 Selected</div>
+          </div>
+        </div>
+        <!-- Sticky Universe Header - OUTSIDE card-body so it doesn't scroll -->
+        <div id="universeHeader" style="background:linear-gradient(135deg,#e8f0fe,#f0f4f8);border-bottom:2px solid var(--deloitte-green);padding:12px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.08)">
+          <div style="display:flex;align-items:center;gap:8px;white-space:nowrap">
+            <i class="fa-solid fa-database" style="color:var(--accessible-blue);font-size:16px"></i>
+            <span style="font-weight:700;color:var(--text)">Comparable Universe</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;padding:4px 10px;background:var(--deloitte-green);color:white;border-radius:var(--radius-pill);font-weight:700;font-size:14px">
+            <i class="fa-solid fa-building" style="font-size:12px"></i>
+            <span id="compCount2">—</span>
+          </div>
+          <div style="color:var(--accessible-green);font-weight:600" id="compChange2"><i class="fa-solid fa-globe"></i>Universe</div>
+          <div style="border-left:2px solid var(--border-light);height:24px"></div>
+          <div style="display:flex;align-items:center;gap:4px;white-space:nowrap">
+            <i class="fa-solid fa-globe" style="color:var(--text-light)"></i>
+            <span style="color:var(--text-light)">Universe:</span>
+            <b id="totalUniverse2">3,772</b>
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;white-space:nowrap">
+            <i class="fa-solid fa-layer-group" style="color:var(--accessible-blue)"></i>
+            <span style="color:var(--text-light)">Sector:</span>
+            <b id="sectorLabel">—</b>
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;white-space:nowrap">
+            <i class="fa-solid fa-map-pin" style="color:var(--accessible-green)"></i>
+            <span style="color:var(--text-light)">Sub-Sector:</span>
+            <b id="subSectorLabel" style="color:var(--accessible-green)">—</b>
+          </div>
+        </div>
+        <div class="card-body" style="padding:0;overflow-x:hidden">
+          <!-- Screening Section — its own card: header frozen, body scrolls -->
+          <div id="screeningFilters">
+            <div id="screeningFiltersHeader"><i class="fa-solid fa-filter" style="margin-right:6px;color:var(--accessible-green)"></i>1. Screening Filters</div>
+            <div id="screeningFiltersBody">
+              <div class="form-grid">
+                <div class="field">
+                  <label>Sector <span class="req">*</span></label>
+                  <input type="hidden" id="f_sector" value="">
+                  <div class="dds-multiselect">
+                    <div class="dds-multiselect__trigger" id="secTrigger" onclick="toggleSectorDropdown()">
+                      <span class="dds-multiselect__text placeholder" id="secTriggerText">— Select sector —</span>
+                      <i class="fa-solid fa-chevron-down dds-multiselect__arrow"></i>
+                    </div>
+                    <div class="dds-multiselect__panel" id="secPanel">
+                      <div id="sectorList" class="dds-multiselect__list"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="field" id="subSectorWrap" style="display:none">
+                  <label>Sub-sector <span id="subSectorSelCount" style="color:var(--accessible-blue);font-weight:400"></span></label>
+                  <div class="dds-multiselect">
+                    <div class="dds-multiselect__trigger" id="ssTrigger" onclick="toggleSSDropdown()">
+                      <span class="dds-multiselect__text placeholder" id="ssTriggerText">— Select sub-sector —</span>
+                      <i class="fa-solid fa-chevron-down dds-multiselect__arrow"></i>
+                    </div>
+                    <div class="dds-multiselect__panel" id="ssPanel">
+                      <div class="dds-multiselect__actions">
+                        <button class="dds-btn dds-btn_sm dds-btn_silent" onclick="event.stopPropagation();subSectorSelectAll()">All</button>
+                        <button class="dds-btn dds-btn_sm dds-btn_silent" onclick="event.stopPropagation();subSectorClearAll()">Clear</button>
+                      </div>
+                      <div id="subSectorList" class="dds-multiselect__list"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top:16px">
+                <div style="font-size:12px;font-weight:600;color:var(--text-sec);margin-bottom:8px"><i class="fa-solid fa-sliders" style="margin-right:4px;color:var(--accessible-blue)"></i>Thresholds</div>
+                <div id="crits"></div>
+                <div class="threshold-notice hidden" id="thresholdNotice"><i class="fa-solid fa-triangle-exclamation"></i><span id="thresholdMsg"></span></div>
+              </div>
+              <div class="note" style="margin-top:12px"><i class="fa-solid fa-circle-info" style="margin-right:4px"></i>Tighter screening narrows peer pool. Select 1–10 peers from the filtered results.</div>
+              <div class="note" id="filteredCount" style="margin-top:8px;color:var(--accessible-blue);font-weight:600"></div>
+            </div>
+          </div>
+
+          <hr style="border:none;border-top:1px solid var(--border-light);margin:0 16px">
+
+          <!-- Peer Selection Section -->
+          <div id="peerSection" style="padding:16px">
+            <div style="font-size:13px;font-weight:600;color:var(--text-sec);margin-bottom:12px"><i class="fa-solid fa-users" style="margin-right:6px;color:var(--accessible-blue)"></i>2. Available Comparables <span id="availCompCount" style="color:var(--accessible-blue)"></span></div>
+            <!-- Warning banner shown when count > 20 -->
+            <div id="peerWarningBanner" style="background:linear-gradient(135deg,#fff3cd,#fff8e1);border:1px solid #ffc107;border-radius:var(--radius);padding:16px;margin-bottom:12px;display:none;align-items:flex-start;gap:10px">
+              <div><i class="fa-solid fa-triangle-exclamation" style="color:#856404;font-size:18px"></i></div>
+              <div>
+                <div style="font-weight:700;color:#856404;margin-bottom:4px">Too Many Companies</div>
+                <div style="color:#664d03;font-size:12px">Results exceed 20 companies. Please tighten your screening filters until 20 or fewer companies remain to select peers.</div>
+              </div>
+            </div>
+            <!-- Company table shown only when count <= 20 -->
+            <div id="peerTableWrap" style="max-height:340px;overflow-y:auto;border:1px solid var(--border-light);border-radius:var(--radius);display:none">
+              <table class="dds-data-table" id="peerTable">
+                <thead>
+                  <tr>
+                    <th style="width:40px;text-align:left"><input type="checkbox" id="peerSelectAll" onchange="toggleAllPeers(this.checked)" disabled></th>
+                    <th class="sortable" data-key="name" onclick="sortPeers('name')">Company <i class="sort-arrow fa-solid fa-sort"></i></th>
+                    <th class="sortable" data-key="revenue" onclick="sortPeers('revenue')">Revenue <i class="sort-arrow fa-solid fa-sort"></i></th>
+                    <th class="sortable" data-key="ebitda" onclick="sortPeers('ebitda')">EBITDA <i class="sort-arrow fa-solid fa-sort"></i></th>
+                    <th class="sortable" data-key="pat" onclick="sortPeers('pat')">PAT <i class="sort-arrow fa-solid fa-sort"></i></th>
+                    <th class="sortable" data-key="ebitda_margin" onclick="sortPeers('ebitda_margin')">EBITDA% <i class="sort-arrow fa-solid fa-sort"></i></th>
+                    <th class="sortable" data-key="pat_margin" onclick="sortPeers('pat_margin')">PAT% <i class="sort-arrow fa-solid fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody id="peerTableBody">
+                  <tr><td colspan="7" style="text-align:center;color:var(--text-light);padding:40px"><i class="fa-solid fa-filter" style="font-size:24px;display:block;margin-bottom:8px"></i>Please apply screening filters first</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="note" style="margin-top:12px"><i class="fa-solid fa-circle-info" style="margin-right:4px"></i>Select up to 10 companies for a reliable valuation median (minimum 1 required) <span id="peerCountSelected" style="font-weight:600;color:var(--accessible-blue)"></span></div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="dds-btn dds-btn_secondary" onclick="goStep(1)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+          <button class="dds-btn dds-btn_primary dds-btn_green" id="toValueBtn2" onclick="runValue()" disabled><i class="fa-solid fa-calculator"></i> Value Company <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div id="msg"></div>
+      </div>
+
+      <!-- ════ STEP 4: VALUATION REPORT ════ -->
+      <div class="card step-content" data-step="4">
+        <div class="card-header">
+          <div style="display:flex;align-items:center;gap:12px;flex:1">
+            <i class="fa-solid fa-file-chart-line" style="font-size:20px;color:var(--accessible-blue)"></i>
+            <div>
+              <h2 style="margin:0">Valuation Report — <span id="reportTitle">Company</span></h2>
+              <span class="desc" id="reportSubtitle"></span>
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0">
+            <button class="dds-btn dds-btn_sm dds-btn_secondary" onclick="goStep(2)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <button class="dds-btn dds-btn_sm dds-btn_secondary" onclick="openReport(false)"><i class="fa-solid fa-file-lines"></i> Preview Report</button>
+            <button class="dds-btn dds-btn_sm dds-btn_primary dds-btn_green" onclick="openReport(true)"><i class="fa-solid fa-file-export"></i> Export Report</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- Valuation cards per method (3 cards each: low, median, high) -->
+          <div id="methodCards"></div>
+
+          <!-- Peer comparison tables per method -->
+          <div id="peerTables"></div>
+
+          <!-- Disclaimer & Caveats -->
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border-light)">
+            <div style="background:var(--warning-bg);border:1px solid var(--warning-border);border-radius:var(--radius);padding:12px 16px;margin-bottom:16px">
+              <div style="font-size:13px;font-weight:600;color:var(--warning);margin-bottom:6px;display:flex;align-items:center;gap:8px">
+                <i class="fa-solid fa-triangle-exclamation"></i> Disclaimer & Agreement
+              </div>
+              <div style="font-size:12px;color:var(--text-light);line-height:1.6">
+                <div><b>Report Date:</b> <span id="reportDate"></span></div>
+                <div style="margin-top:4px"><b>Disclaimer Accepted:</b> <span id="disclaimerAcceptedDate"></span> <i class="fa-solid fa-check" style="color:var(--success);margin-left:4px"></i></div>
+              </div>
+            </div>
+            <div style="font-size:13px;font-weight:600;color:var(--text-sec);margin-bottom:10px"><i class="fa-solid fa-list-check" style="margin-right:6px;color:var(--accessible-blue)"></i>Caveats & Assumptions</div>
+            <ol id="caveats" style="font-size:12px;color:var(--text-light);line-height:2;padding-left:20px;margin-bottom:0"></ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ════ RIGHT: SIDEBAR ════ -->
+    <div class="sidebar hidden" id="sidebar">
+      <!-- Comp Count -->
+      <div class="info-card">
+        <div class="info-card-header">
+          <h3><i class="fa-solid fa-database"></i> Comparable Universe</h3>
+        </div>
+        <div class="info-card-body">
+          <div class="big-number">
+            <div class="value" id="compCount">—</div>
+            <div class="label">Available Companies</div>
+            <div class="change down" id="compChange"><i class="fa-solid fa-arrow-trend-down"></i>Filtered from universe</div>
+          </div>
+          <div class="progress-track">
+            <div class="label-row"><span>Peer depth</span><span id="selPct">0.00%</span></div>
+            <div class="track"><div class="fill" id="selBar" style="width:0%"></div></div>
+          </div>
+          <div class="filter-path" id="filterPath">
+            <div class="path-item"><i class="fa-solid fa-globe icon"></i> Full Universe: <b id="totalUniverse">—</b></div>
+          </div>
+        </div>
+      </div>
+      <!-- Sector Distribution removed -->
+    </div>
+  </div>
+</div>
+
+<!-- ════ RESULTS ════ -->
+<div id="out" style="display:none;width:100%">
+  <div class="card">
+    <div class="card-header" style="justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="card-header-icon blue"><i class="fa-solid fa-file-invoice"></i></div>
+        <div><h2 id="outTitle">Valuation Result</h2><span class="desc" id="outSub"></span></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="dds-btn dds-btn_sm dds-btn_secondary" onclick="goStep(2);$('#out').style.display='none'"><i class="fa-solid fa-arrow-left"></i> Back to Peers</button>
+        <button class="dds-btn dds-btn_sm dds-btn_secondary" onclick="openReport(false)"><i class="fa-solid fa-file-lines"></i> Preview Report</button>
+        <button class="dds-btn dds-btn_sm dds-btn_primary dds-btn_green" onclick="openReport(true)"><i class="fa-solid fa-file-export"></i> Export Report</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <!-- 3 Valuation Cards: -5%, Median, +5% -->
+      <div style="display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:16px;margin-bottom:24px">
+        <div class="result-card">
+          <div class="tag" style="color:var(--error)"><i class="fa-solid fa-arrow-trend-down"></i> Conservative (−5%)</div>
+          <div class="amount" id="valLow" style="color:var(--error)">—</div>
+          <div class="range">5% below median valuation</div>
+        </div>
+        <div class="result-card highlight">
+          <div class="tag" id="ccmTag">CCM — Valuation</div>
+          <div class="amount" id="ccmMid">—</div>
+          <div class="range" id="ccmRng"></div>
+        </div>
+        <div class="result-card">
+          <div class="tag" style="color:var(--success)"><i class="fa-solid fa-arrow-trend-up"></i> Optimistic (+5%)</div>
+          <div class="amount" id="valHigh" style="color:var(--success)">—</div>
+          <div class="range">5% above median valuation</div>
+        </div>
+      </div>
+      
+      <!-- Peer Selection Table -->
+      <div style="font-size:13px;font-weight:600;color:var(--text-sec);margin-bottom:10px"><i class="fa-solid fa-users" style="margin-right:6px;color:var(--accessible-blue)"></i>Selected Peer Companies</div>
+      <div style="overflow-x:auto;margin-bottom:20px"><table class="dds-data-table" id="compTbl"></table></div>
+      
+      <!-- Caveats -->
+      <div style="font-size:13px;font-weight:600;color:var(--text-sec);margin-bottom:10px"><i class="fa-solid fa-triangle-exclamation" style="margin-right:6px;color:var(--warning)"></i>Caveats & Assumptions</div>
+      <ol id="caveats" style="font-size:12px;color:var(--text-light);line-height:2;padding-left:20px;margin-bottom:24px"></ol>
+      
+      <div id="prov" style="font-size:11px;color:var(--text-light);padding-top:12px;border-top:1px solid var(--border-light)"></div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+"use strict";
+/* ═══════════ GLOBAL ERROR CATCHER ═══════════ */
+window._debugErrors=[];
+function _showDebugBanner(msg){
+  var b=document.getElementById("_debugBanner");
+  if(!b){b=document.createElement("div");b.id="_debugBanner";b.style.cssText="position:fixed;top:0;left:0;right:0;z-index:99999;background:#DA291C;color:#fff;padding:8px 16px;font-size:13px;font-family:monospace;white-space:pre-wrap;max-height:40vh;overflow:auto;";document.body.prepend(b);}
+  b.textContent+=msg+"\n";b.style.display="block";
+}
+window.onerror=function(msg,url,line,col,err){window._debugErrors.push(msg);_showDebugBanner("JS ERROR: "+msg+" (line "+line+")");};
+window.addEventListener("unhandledrejection",function(ev){window._debugErrors.push(ev.reason);_showDebugBanner("PROMISE REJECT: "+(ev.reason&&ev.reason.message||ev.reason));});
+/* ═══════════ CORE HELPERS ═══════════ */
+const $=s=>document.querySelector(s);
+const $$=s=>document.querySelectorAll(s);
+const cr=x=>x==null?"—":"₹"+Number(x).toLocaleString("en-IN",{maximumFractionDigits:0})+" Cr";
+const mult=x=>x==null?"—":Number(x).toFixed(2)+"x";
+const pct=x=>x==null?"—":(x*100).toFixed(1)+"%";
+const val=id=>{const el=$(id);if(!el){_showDebugBanner("VAL ERROR: element "+id+" not found");return null;}const v=el.value.trim();return v===""?null:parseFloat(v);};
+
+/* ═══════════ DEMO DATA ═══════════ */
+const DEMO={
+  company:"Acme Technologies Ltd.",person:"Rajesh Kumar",desig:"Chief Financial Officer",
+  email:"rajesh@acmetech.com",phone:"+91 98765 43210",valdate:new Date().toISOString().split("T")[0],
+  revenue:520,ebitda:98,pat:72,networth:1840,cash:65,surinv:40,debt:320,lease:18,surass:25,surliab:8
+};
+
+function fillDemo(){
+  $("#f_company").value=DEMO.company;$("#f_person").value=DEMO.person;
+  $("#f_desig").value=DEMO.desig;$("#f_email").value=DEMO.email;
+  $("#f_phone").value=DEMO.phone;$("#f_valdate").value=DEMO.valdate;
+  $("#f_revenue").value=DEMO.revenue;$("#f_ebitda").value=DEMO.ebitda;
+  $("#f_pat").value=DEMO.pat;$("#f_networth").value=DEMO.networth;
+  $("#f_cash").value=DEMO.cash;$("#f_surinv").value=DEMO.surinv;
+  $("#f_debt").value=DEMO.debt;$("#f_lease").value=DEMO.lease;
+  $("#f_surass").value=DEMO.surass;$("#f_surliab").value=DEMO.surliab;
+  updateKPIs();updateNetDebt();
+}
+
+/* ═══════════ LOGIN ═══════════ */
+function doLogin(){
+  const email=$("#loginEmail").value.trim();
+  if(!email){showLoginError("Please enter your email address.");return;}
+  const btn=$("#loginBtn");
+  if(btn){btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Checking access…';}
+  // Hide any previous error
+  const errEl=$("#loginError");if(errEl)errEl.style.display="none";
+  fetch("/api/auth/login",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({username:email})
+  }).then(function(r){return r.json();}).then(function(j){
+    if(btn){btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-right-to-bracket"></i> Sign in';}
+    if(j.error){
+      showLoginError(j.error.message||"Access denied");
+      return;
+    }
+    // Access granted — store user info and show disclaimer
+    sessionStorage.setItem("userEmail",email);
+    sessionStorage.setItem("userRole",j.user.role||"user");
+    showDisclaimer();
+  }).catch(function(err){
+    if(btn){btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-right-to-bracket"></i> Sign in';}
+    showLoginError("Connection error. Please try again.");
+    console.error("[doLogin] error:",err);
+  });
+}
+function showLoginError(msg){
+  const el=$("#loginError");
+  if(el){el.textContent=msg;el.style.display="block";}
+}
+document.addEventListener("DOMContentLoaded",()=>{$("#loginEmail").addEventListener("keydown",e=>{if(e.key==="Enter")doLogin();});});
+
+/* ═══════════ TRIAL TRACKING ═══════════ */
+var TRIAL_UUID="";
+function initTrial(){
+  // Generate a fresh UUID for this trial session
+  fetch("/api/trial/new-uuid",{method:"POST"}).then(r=>r.json()).then(j=>{
+    TRIAL_UUID=j.uuid||crypto.randomUUID();
+    sessionStorage.setItem("trialUUID",TRIAL_UUID);
+    console.log("[initTrial] trial UUID:",TRIAL_UUID);
+  }).catch(()=>{
+    TRIAL_UUID=crypto.randomUUID();
+    sessionStorage.setItem("trialUUID",TRIAL_UUID);
+    console.log("[initTrial] fallback UUID:",TRIAL_UUID);
+  });
+}
+function logTrialStep(step,data){
+  const uuid=sessionStorage.getItem("trialUUID")||TRIAL_UUID;
+  const username=sessionStorage.getItem("userEmail")||"";
+  if(!uuid||!username)return;
+  // Build structured payload: extract known fields from data into top-level keys
+  const payload={uuid:uuid,username:username,step_number:step,action:data.action||""};
+  // Step 1: Subject company inputs
+  if(data.company_name) payload.company_name=data.company_name;
+  if(data.sector) payload.sector=data.sector;
+  if(data.sub_sector) payload.sub_sector=data.sub_sector;
+  if(data.revenue!=null) payload.revenue=data.revenue;
+  if(data.ebitda!=null) payload.ebitda=data.ebitda;
+  if(data.pat!=null) payload.pat=data.pat;
+  if(data.net_worth!=null) payload.net_worth=data.net_worth;
+  if(data.total_debt!=null) payload.total_debt=data.total_debt;
+  if(data.cash!=null) payload.cash=data.cash;
+  if(data.valuation_matrices) payload.valuation_matrices=data.valuation_matrices;
+  // Step 2: Screening filters
+  if(data.screen_sector) payload.screen_sector=data.screen_sector;
+  if(data.screen_sub_sector) payload.screen_sub_sector=data.screen_sub_sector;
+  if(data.threshold_revenue_min!=null) payload.threshold_revenue_min=data.threshold_revenue_min;
+  if(data.threshold_revenue_max!=null) payload.threshold_revenue_max=data.threshold_revenue_max;
+  if(data.threshold_ebitda_min!=null) payload.threshold_ebitda_min=data.threshold_ebitda_min;
+  if(data.threshold_ebitda_max!=null) payload.threshold_ebitda_max=data.threshold_ebitda_max;
+  if(data.threshold_pat_min!=null) payload.threshold_pat_min=data.threshold_pat_min;
+  if(data.threshold_pat_max!=null) payload.threshold_pat_max=data.threshold_pat_max;
+  // Step 3: Peer selection
+  if(data.peers_selected) payload.peers_selected=data.peers_selected;
+  if(data.peer_count!=null) payload.peer_count=data.peer_count;
+  // Step 4: Valuation results
+  if(data.ev_ebitda_median!=null) payload.ev_ebitda_median=data.ev_ebitda_median;
+  if(data.ev_revenue_median!=null) payload.ev_revenue_median=data.ev_revenue_median;
+  if(data.pe_median!=null) payload.pe_median=data.pe_median;
+  if(data.concluded_value!=null) payload.concluded_value=data.concluded_value;
+  if(data.value_min!=null) payload.value_min=data.value_min;
+  if(data.value_max!=null) payload.value_max=data.value_max;
+  // Catch-all: remaining data as trial_data
+  payload.trial_data=data;
+  fetch("/api/trial/log",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify(payload)
+  }).then(r=>r.json()).then(j=>{
+    console.log("[logTrialStep] step",step,"logged:",j.status);
+  }).catch(err=>{
+    console.error("[logTrialStep] error:",err);
+  });
+}
+
+/* ═══════════ COLLAPSIBLE SECTIONS ═══════════ */
+function toggleSection(id){
+  const body=document.getElementById("body-"+id);
+  const icon=document.getElementById("icon-"+id);
+  if(!body||!icon)return;
+  body.classList.toggle("collapsed");
+  icon.style.transform=body.classList.contains("collapsed")?"rotate(-90deg)":"rotate(0deg)";
+}
+
+/* ═══════════ DISCLAIMER ═══════════ */
+function showDisclaimer(){
+  const today=new Date().toLocaleDateString("en-IN",{day:"2-digit",month:"long",year:"numeric"});
+  $("#disclaimerDate").textContent=today;
+  $("#rejectMsg").style.display="none";
+  $("#disclaimerModal").classList.add("open");
+}
+function acceptDisclaimer(){
+  // Show confirmation modal
+  const today=new Date().toLocaleDateString("en-IN",{day:"2-digit",month:"long",year:"numeric"});
+  $("#confirmDate").textContent=today;
+  $("#disclaimerModal").classList.remove("open");
+  $("#confirmModal").style.display="flex";
+}
+function confirmAccept(){
+  try{
+  // User confirmed - proceed to main app
+  $("#confirmModal").style.display="none";
+  sessionStorage.setItem("disclaimerAccepted","true");
+  sessionStorage.setItem("disclaimerDate",new Date().toISOString().split("T")[0]);
+  $("#loginPage").style.display="none";$("#mainApp").style.display="block";
+  $("#userBadge").style.display="flex";$("#userEmail").textContent=sessionStorage.getItem("userEmail")||"demo@valuetech.com";
+  console.log("[confirmAccept] calling fillDemo and initApp...");
+  // Start trial tracking
+  initTrial();
+  logTrialStep(0,{action:"login_disclaimer_accepted",disclaimer_date:sessionStorage.getItem("disclaimerDate")});
+  fillDemo();
+  initApp();
+  setTimeout(()=>{try{goStep(2);}catch(e){console.error("[goStep] error:",e);_showDebugBanner("goStep: "+e.message);}},300);
+  }catch(e){console.error("[confirmAccept] error:",e);_showDebugBanner("confirmAccept: "+e.message);}
+}
+function closeConfirmModal(){
+  $("#confirmModal").style.display="none";
+  $("#disclaimerModal").classList.add("open");
+}
+function rejectDisclaimer(){
+  // Show rejection message - block access
+  $("#rejectMsg").style.display="block";
+}
+
+/* ═══════════ SIGN OUT ═══════════ */
+function signOut(){
+  logTrialStep(99,{action:"sign_out"});
+  sessionStorage.removeItem("userEmail");
+  sessionStorage.removeItem("userRole");
+  sessionStorage.removeItem("trialUUID");
+  TRIAL_UUID="";
+  $("#mainApp").style.display="none";$("#loginPage").style.display="flex";
+  $("#userBadge").style.display="none";$("#userEmail").textContent="";
+}
+
+/* ═══════════ STEP NAV ═══════════ */
+let currentStep=1;
+function goStep(n){
+  if(n>currentStep){
+    if(currentStep===1){
+      const m=[];if(!$("#f_company").value.trim())m.push("Company name");if(!$("#f_person").value.trim())m.push("Contact person");if(!$("#f_email").value.trim())m.push("Email");if(!$("#f_phone").value.trim())m.push("Contact number");
+      if(m.length){alert("Please fill: "+m.join(", "));return;}
+      const fm=[];if(val("#f_revenue")==null)fm.push("Revenue");if(val("#f_ebitda")==null)fm.push("EBITDA");if(val("#f_pat")==null)fm.push("PAT");if(val("#f_networth")==null)fm.push("Net worth");if(fm.length){alert("Please fill: "+fm.join(", "));return;}
+    }
+    if(currentStep===2&&PEERS.selected.size<1){alert("Please select at least 1 company to proceed");return;}
+  }
+  $(`.step-content[data-step="${currentStep}"]`).classList.remove("active");
+  $$(".progress-step").forEach(p=>{const s=+p.dataset.step;p.classList.remove("active","completed");if(s===n)p.classList.add("active");else if(s<n)p.classList.add("completed");});
+  // Log step transition
+  if(n!==currentStep){
+    const subj=gatherSubject();
+    const th=SCREENING.currentThresholds||{};
+    logTrialStep(n,{action:"step_transition",from:currentStep,to:n,
+      company_name:subj.name||"",
+      sector:SCREENING.currentSector||"",
+      sub_sector:SCREENING.currentSubSector||"",
+      revenue:subj.revenue||null,
+      ebitda:subj.ebitda||null,
+      pat:subj.pat||null,
+      net_worth:subj.net_worth||null,
+      total_debt:subj.debt||null,
+      cash:subj.cash||null,
+      screen_sector:SCREENING.currentSector||"",
+      screen_sub_sector:SCREENING.currentSubSector||"",
+      threshold_revenue_min:th.revenue_min||null,
+      threshold_revenue_max:th.revenue_max||null,
+      threshold_ebitda_min:th.ebitda_min||null,
+      threshold_ebitda_max:th.ebitda_max||null,
+      threshold_pat_min:th.pat_min||null,
+      threshold_pat_max:th.pat_max||null,
+      peers_selected:Array.from(PEERS.selected||[]).join(", "),
+      peer_count:(PEERS.selected||[]).size||0});
+  }
+  currentStep=n;
+  $(`.step-content[data-step="${n}"]`).classList.add("active");
+  const sg = $("#contentGrid");
+  // Content grid: single column for all steps (universe info now in sticky header)
+  sg?.classList.remove("has-sidebar");
+  // Sidebar hidden on step 2 (universe info now in sticky header), visible only on results page
+  $("#sidebar").classList.add("hidden");$("#sidebar").classList.remove("visible");
+  // Load peer table and update sidebar when on step 2
+  if(n===2){loadPeerTable();}
+  // Update sidebar with peer selection count when on step 3
+  if(n===3){
+    updatePeerCount();
+    // Update compChange text to show correct universe info
+    const compChange=document.getElementById("compChange");
+    if(compChange){
+      const pct=((PEERS.selected.size/10)*100).toFixed(2);
+      compChange.innerHTML=`<i class="fa-solid fa-check"></i> ${pct}% of universe selected`;
+    }
+  }
+  // Scroll
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ═══════════ MATRIX (multi-select) ═══════════ */
+document.querySelectorAll('#matrix input').forEach(r=>r.addEventListener('change',()=>{
+  document.querySelectorAll('.matrix-card').forEach(l=>l.classList.toggle('selected',l.querySelector('input').checked));
+  // Guard: never allow zero methods selected — re-check the one just unchecked.
+  if(currentMatrices().length===0){r.checked=true;r.closest('.matrix-card').classList.add('selected');}
+}));
+function currentMatrices(){return Array.from(document.querySelectorAll('#matrix input:checked')).map(i=>i.value);}
+function currentMatrix(){return currentMatrices()[0];}  // primary method (compat)
+
+/* ═══════════ SCREENING CRITERIA ═══════════ */
+// Screening criteria: progressive API-driven filtering
+var SCREENING={
+  currentCount:0,  // current qualified count
+  currentThresholds:{},  // accumulated thresholds
+  currentSubSector:"",  // current sub-sector
+  currentSector:"",  // current sector name (parent)
+  displayText:"",  // display text like "Sector → Sub-Sector"
+};
+var CRIT_ORDER=["revenue","ebitda","pat","ebitda_margin","pat_margin"];
+var CRIT_LABELS={revenue:"Revenue Size",ebitda:"EBITDA Size",pat:"PAT Size",ebitda_margin:"EBITDA Margin",pat_margin:"PAT Margin"};
+var CRIT_UNITS={revenue:"₹ Cr",ebitda:"₹ Cr",pat:"₹ Cr",ebitda_margin:"%",pat_margin:"%"};
+var OPS=[["gte",">="],["gt",">"],["lte","<="],["lt","<"]];
+
+function buildCrits(){
+  var html="";
+  CRIT_ORDER.forEach(function(k,i){
+    html+=`<div class="crit-item off" id="crow_${k}" data-idx="${i}">`+
+      `<label style="display:flex;align-items:center;gap:8px;flex-shrink:0">`+
+      `<input type="checkbox" class="custom-checkbox" id="cchk_${k}" onchange="onCritCheck('${k}',this.checked)" disabled>`+
+      `<span style="font-size:13px;font-weight:500">${CRIT_LABELS[k]} <span style="color:var(--text-light);font-weight:400">(${CRIT_UNITS[k]})</span></span>`+
+      `</label>`+
+      `<div class="crit-inputs" style="margin-left:auto">`+
+      `<select id="copr_${k}" onchange="onOpChange('${k}')" disabled>`+
+      `<option value="">—</option>${OPS.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join("")}`+
+      `</select>`+
+      `<input type="number" step="any" placeholder="Value" id="cval_${k}" onchange="onCritValChange('${k}')" disabled>`+
+      `</div></div>`;
+  });
+  document.getElementById("crits").innerHTML=html;
+}
+buildCrits();
+
+function onCritCheck(k,checked){
+  var el=document.getElementById("crow_"+k);
+  var sel=document.getElementById("copr_"+k);
+  var inp=document.getElementById("cval_"+k);
+  if(checked){
+    el.classList.add("active");el.classList.remove("off");
+  }else{
+    el.classList.remove("active");el.classList.add("off");
+    if(sel)sel.value="";
+    if(inp)inp.value="";
+    delete SCREENING.currentThresholds[k];
+  }
+  triggerScreening();
+}
+function onOpChange(k){
+  var sel=document.getElementById("copr_"+k);
+  var inp=document.getElementById("cval_"+k);
+  if(inp)inp.disabled=(sel.value==="");
+  triggerScreening();
+}
+function onCritValChange(k){
+  triggerScreening();
+}
+
+var screenTimeout=null;
+function triggerScreening(){
+  // Use stored sub_sector value (ensures consistency)
+  var sub=SCREENING.currentSubSector;
+  if(!sub)return;
+  
+  // Build thresholds from all active criteria up to the current editable one
+  var accumulated={};
+  var currentK=null;
+  var foundCurrent=false;
+  
+  CRIT_ORDER.forEach(function(k){
+    var chk=document.getElementById("cchk_"+k);
+    var sel=document.getElementById("copr_"+k);
+    var inp=document.getElementById("cval_"+k);
+    if(!chk||!sel)return;
+    if(chk.checked){
+      var opr=sel.value;
+      var v=inp?inp.value.trim():"";
+      if(opr&&v){
+        var fv=parseFloat(v);
+        if(isNaN(fv))return;
+        if(CRIT_ORDER.indexOf(k)>=3)fv/=100; // margins
+        if(opr==="gte"||opr==="gt")accumulated[k]={min:fv};
+        else if(opr==="lte"||opr==="lt")accumulated[k]={max:fv};
+        else accumulated[k]={min:fv};
+      }
+    }
+    if(!foundCurrent&&sel.disabled===false){
+      foundCurrent=true;
+      currentK=k;
+    }
+  });
+  
+  SCREENING.currentThresholds=accumulated;
+  
+  // Abort any in-flight screening request
+  if(SCREENING._screenAbortCtrl) SCREENING._screenAbortCtrl.abort();
+  SCREENING._screenAbortCtrl = new AbortController();
+  
+  // Call API
+  if(screenTimeout)clearTimeout(screenTimeout);
+  screenTimeout=setTimeout(function(){
+    fetch("/api/tool/screen",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({sub_sector:sub,thresholds:accumulated,subject:gatherSubject(),all:true}),
+      signal: SCREENING._screenAbortCtrl.signal
+    }).then(function(r){return r.json();}).then(function(j){
+      console.log("[triggerScreening] response:", j);
+      updateScreeningResults(j);
+    }).catch(function(err){
+      if(err.name !== 'AbortError') console.error("[triggerScreening] error:", err);
+    });
+  },400);
+}
+
+// Progressive unfreezing: enable filters one by one (always called AFTER API response)
+// No count cap — filters can always be added regardless of how few companies match
+function applyProgressiveFreeze(count){
+  // Find the last consecutively active filter index in the chain
+  var lastActiveInChain=-1;
+  for(var i=0;i<CRIT_ORDER.length;i++){
+    var k=CRIT_ORDER[i];
+    var chk=document.getElementById("cchk_"+k);
+    var sel=document.getElementById("copr_"+k);
+    var inp=document.getElementById("cval_"+k);
+    if(!chk||!sel)continue;
+    if(chk.checked && sel.value && inp && inp.value.trim()){
+      lastActiveInChain=i;
+    }else{
+      break; // Chain broken
+    }
+  }
+  
+  CRIT_ORDER.forEach(function(k,i){
+    var sel=document.getElementById("copr_"+k);
+    var inp=document.getElementById("cval_"+k);
+    var chk=document.getElementById("cchk_"+k);
+    if(!chk||!sel)return;
+    
+    var enabled=false;
+    
+    // First filter (Revenue) is always available
+    if(i===0){
+      enabled=true;
+    }
+    // Filters immediately after the active chain unfreeze (always, no count cap)
+    else if(i===lastActiveInChain+1){
+      enabled=true;
+    }
+    // Active chain filters (i <= lastActiveInChain) are enabled only if checked
+    else if(i<=lastActiveInChain && chk.checked){
+      enabled=true;
+    }
+    
+    if(enabled){
+      chk.disabled=false;
+      sel.disabled=false;
+      if(chk.checked){
+        if(inp)inp.disabled=false;
+      }else{
+        if(inp)inp.disabled=true;
+      }
+    }else{
+      chk.disabled=true;
+      sel.disabled=true;
+      if(inp)inp.disabled=true;
+    }
+  });
+}
+
+function updateScreeningResults(j){
+  var count=j.qualified||0;
+  SCREENING.currentCount=count;
+  
+  // Update filtered count display
+  var fc=document.getElementById("filteredCount");
+  if(count===0){
+    fc.textContent="No companies match current thresholds";
+    fc.style.color="var(--text-light)";
+  }else if(count<=20){
+    fc.textContent=count+" companies match — select up to 10 peers";
+    fc.style.color="var(--accessible-green)";
+  }else{
+    fc.textContent=count+" companies match — adjust thresholds to narrow results";
+    fc.style.color="var(--warning)";
+  }
+  
+  // Update sidebar comp count
+  updateCompCount(count,SCREENING.currentSubSector);
+  
+  // All filters always available — no cap on screening depth
+  applyProgressiveFreeze(count);
+  updateRunButton();
+  
+  // Auto-update peer table on-the-fly as screening filters change
+  console.log("[updateScreeningResults] updating peer table with", j.comparables ? j.comparables.length : 0, "comparables");
+  PEERS.data=j.comparables||[];
+  PEERS.selected=new Set();
+  
+  // Always show peer section; adjust table/banner visibility based on count
+  var peerWarningBanner = document.getElementById("peerWarningBanner");
+  var peerTableWrap = document.getElementById("peerTableWrap");
+  if(count > 20) {
+    // Show warning banner, hide company table — user must narrow filters to ≤20
+    if(peerWarningBanner) peerWarningBanner.style.display = "flex";
+    if(peerTableWrap) peerTableWrap.style.display = "none";
+  } else {
+    // Hide warning banner, show company table
+    if(peerWarningBanner) peerWarningBanner.style.display = "none";
+    if(peerTableWrap) peerTableWrap.style.display = "block";
+  }
+  renderPeerTable();
+}
+
+function updateRunButton(){
+  var btn=document.getElementById("toValueBtn2");
+  if(btn){
+    // Enable button when peer table is visible and at least 1 peer selected (up to 10)
+    btn.disabled=!(PEERS.data.length >= 1 && PEERS.selected.size >= 1);
+    if(PEERS.data.length >= 1 && PEERS.selected.size >= 1){
+      btn.innerHTML='<i class="fa-solid fa-calculator"></i> Value Company <i class="fa-solid fa-arrow-right"></i>';
+    }else{
+      btn.innerHTML='<i class="fa-solid fa-lock"></i> Select at Least 1 Peer';
+    }
+  }
+}
+
+// ═══════════ PEER SELECTION ═══════════
+var PEERS={
+  data:[],
+  selected:new Set(),   // stores stable company keys, NOT array indices
+  sortKey:null,          // column currently sorted by
+  sortDir:1              // 1 = ascending, -1 = descending
+};
+function peerKey(c){return c.name;}  // stable identity, survives re-sorting
+
+// Sort PEERS.data in place by a column, toggling direction on repeat clicks.
+function sortPeers(key){
+  if(PEERS.sortKey===key){PEERS.sortDir*=-1;}
+  else{PEERS.sortKey=key;PEERS.sortDir=(key==="name")?1:-1;}  // numbers default high→low
+  var dir=PEERS.sortDir;
+  PEERS.data.sort(function(a,b){
+    var x=a[key],y=b[key];
+    if(x==null&&y==null)return 0;
+    if(x==null)return 1;   // nulls always last
+    if(y==null)return -1;
+    if(typeof x==="string"||typeof y==="string"){
+      return String(x).localeCompare(String(y))*dir;
+    }
+    return (x-y)*dir;
+  });
+  renderPeerTable();
+}
+
+function loadPeerTable(){
+  // Peer table is already updated on-the-fly by updateScreeningResults()
+  // Just re-render to reflect any changes that happened while user was on step 1
+  console.log("[loadPeerTable] re-rendering with current data:", PEERS.data ? PEERS.data.length : 0, "companies");
+  renderPeerTable();
+}
+
+function renderPeerTable(){
+  try{
+  var tbody=document.getElementById("peerTableBody");
+  var selAll=document.getElementById("peerSelectAll");
+  var countEl=document.getElementById("peerCountSelected");
+  var countEl2=document.getElementById("peerCountSelected2");
+  var availEl=document.getElementById("availCompCount");
+  
+  if(!tbody){console.warn("[renderPeerTable] peerTableBody not found");return;}
+  
+  // Update "Available Comparables" header
+  if(availEl) availEl.textContent = PEERS.data ? PEERS.data.length : 0;
+  
+  if(!PEERS.data||PEERS.data.length===0){
+    tbody.innerHTML='<tr><td colspan="7" style="text-align:center;color:var(--text-light);padding:40px">No comparables found</td></tr>';
+    if(selAll) selAll.disabled=true;
+    if(countEl) countEl.textContent="0 / 10 Selected";
+    if(countEl2) countEl2.textContent="0 / 10 Selected";
+    updatePeerButton();
+    return;
+  }
+  
+  if(selAll) selAll.disabled=false;
+  var html="";
+  PEERS.data.forEach(function(c,i){
+    var k=peerKey(c);
+    var sel=PEERS.selected.has(k);
+    var checked=sel?'checked':'';
+    html+=`<tr class="${sel?'selected-peer':''}">`+
+      `<td><input type="checkbox" class="peer-cb" data-idx="${i}" onchange="togglePeer(${i},this.checked)" ${checked}></td>`+
+      `<td style="font-weight:600">${c.name}</td>`+
+      `<td>${cr(c.revenue)}</td>`+
+      `<td>${cr(c.ebitda)}</td>`+
+      `<td>${cr(c.pat)}</td>`+
+      `<td>${pct(c.ebitda_margin)}</td>`+
+      `<td>${pct(c.pat_margin)}</td>`+
+      `</tr>`;
+  });
+  tbody.innerHTML=html;
+  updateSortIndicators();
+  updatePeerCount();
+  updatePeerButton();
+  }catch(e){console.error("[renderPeerTable]",e);_showDebugBanner("renderPeerTable: "+e.message);}
+}
+
+// Reflect the current sort column/direction in the header arrows.
+function updateSortIndicators(){
+  document.querySelectorAll("#peerTable th.sortable").forEach(function(th){
+    var arrow=th.querySelector(".sort-arrow");
+    if(!arrow)return;
+    if(th.dataset.key===PEERS.sortKey){
+      arrow.className="sort-arrow fa-solid "+(PEERS.sortDir===1?"fa-sort-up":"fa-sort-down");
+      arrow.style.opacity="1";
+    }else{
+      arrow.className="sort-arrow fa-solid fa-sort";
+      arrow.style.opacity=".35";
+    }
+  });
+}
+
+function togglePeer(idx,checked){
+  var c=PEERS.data[idx];if(!c)return;
+  var k=peerKey(c);
+  if(checked){
+    if(PEERS.selected.size>=10){
+      alert("Maximum 10 peers allowed. Deselect one before selecting another.");
+      return;
+    }
+    PEERS.selected.add(k);
+  }else{
+    PEERS.selected.delete(k);
+  }
+  renderPeerTable();
+}
+
+function toggleAllPeers(checked){
+  if(checked){
+    // Select up to 10 from the current (possibly sorted) order
+    var n=Math.min(10,PEERS.data.length);
+    for(var i=0;i<n;i++)PEERS.selected.add(peerKey(PEERS.data[i]));
+  }else{
+    PEERS.selected=new Set();
+  }
+  renderPeerTable();
+}
+
+function updatePeerCount(){
+  var label=PEERS.selected.size+" / 10 Selected";
+  var c1=document.getElementById("peerCountSelected");
+  var c2=document.getElementById("peerCountSelected2");
+  if(c1) c1.textContent=label;
+  if(c2) c2.textContent=label;
+  // Also update the peer-depth readout (sidebar only)
+  var maxSel = Math.min(PEERS.selected.size, 10);
+  const pct=((maxSel/10)*100).toFixed(2)+"%";
+  var selPctEl=document.getElementById("selPct");
+  if(selPctEl) selPctEl.textContent=pct;
+  const selBar=document.getElementById("selBar");
+  if(selBar) selBar.style.width=pct;
+}
+
+function updatePeerButton(){
+  var ready=PEERS.selected.size>=1;
+  var html=ready?'<i class="fa-solid fa-calculator"></i> Value Company <i class="fa-solid fa-arrow-right"></i>'
+                 :'<i class="fa-solid fa-lock"></i> Select at Least 1 Peer';
+  document.querySelectorAll("#toValueBtn2").forEach(function(btn){
+    btn.disabled=!ready;
+    btn.innerHTML=html;
+  });
+  var btn1=document.getElementById("toValueBtn");
+  if(btn1){btn1.disabled=!ready;btn1.innerHTML=html;}
+}
+
+// ═══════════ KPIs & Calc ═══════════
+function updateKPIs(){
+  const r=val("#f_revenue"),e=val("#f_ebitda"),p=val("#f_pat");
+  $("#kpi-rev").textContent=r?cr(r):"—";
+  $("#kpi-ebit").textContent=(r&&e)?pct(e/r):"—";
+  $("#kpi-pat").textContent=(r&&p)?pct(p/r):"—";
+}
+function updateNetDebt(){
+  const d=val("#f_debt")||0,l=val("#f_lease")||0,c=val("#f_cash")||0;
+  $("#calc-debt").textContent=d;$("#calc-lease").textContent=l;$("#calc-cash").textContent=c;
+  $("#calc-netdebt").textContent=(d+l-c);
+}
+["#f_revenue","#f_ebitda","#f_pat"].forEach(s=>$(s).addEventListener("input",updateKPIs));
+["#f_debt","#f_lease","#f_cash"].forEach(s=>$(s).addEventListener("input",updateNetDebt));
+
+/* ═══════════ SECTORS ═══════════ */
+let SECTORS=[],TOTAL_COMPANIES=0;
+function initApp(){
+  console.log("[initApp] starting sectors fetch...");
+  fetch("/api/tool/sectors").then(r=>r.json()).then(j=>{
+    try{
+    SECTORS=j.sectors;
+    TOTAL_COMPANIES=j.sectors.reduce((s,sec)=>s+sec.sub_sectors.reduce((ss,ss2)=>ss+ss2.comparable_count,0),0);
+    $("#totalUniverse").textContent=TOTAL_COMPANIES.toLocaleString("en-IN");
+    updateCompCount(TOTAL_COMPANIES,"Full Universe");
+    // Build sector dropdown items
+    const secList=$("#sectorList");
+    if(secList){
+      secList.innerHTML=SECTORS.map((s,i)=>{
+        const total=s.sub_sectors.reduce((x,y)=>x+(y.available?y.comparable_count:0),0);
+        return `<div class="sector-item" data-idx="${i}" onclick="selectSector(${i})">${s.sector}<span class="sec-count">${total} comps</span></div>`;
+      }).join("");
+    }
+    // Try demo sector
+    const demoSec="Finance";const demoSS="NBFC-Others";
+    const demoIdx=SECTORS.findIndex(s=>s.sector===demoSec);
+    console.log("[initApp] demoIdx="+demoIdx+" for sector '"+demoSec+"'");
+    if(demoIdx>=0){
+      selectSector(demoIdx);
+      console.log("[initApp] calling fillSub()...");
+      fillSub();
+      const s=SECTORS[demoIdx];
+      const first=s.sub_sectors.find(ss=>ss.available);
+      console.log("[initApp] first available sub_sector:", first?first.name:"NONE");
+      // Check the demo sub-sector checkbox (fillSub already built the list)
+      if(first){
+        const targetSS=demoSS&&s.sub_sectors.find(ss=>ss.name.trim()===demoSS&&ss.available)?demoSS:first.name.trim();
+        const cb=document.querySelector('#subSectorList input[value="'+CSS.escape(targetSS)+'"]');
+        if(cb){cb.checked=true;updateSubSectorSelCount();updateSubCount();
+          console.log("[initApp] checked sub-sector '"+targetSS+"' and called updateSubCount()");
+        }else{
+          updateSubCount();
+          console.log("[initApp] no checkbox found for '"+targetSS+"', called updateSubCount()");
+        }
+      }
+    }
+    }catch(e){console.error("[initApp] inner error:",e);_showDebugBanner("initApp inner: "+e.message);}
+  }).catch(function(err){console.error("[initApp] fetch error:",err);_showDebugBanner("initApp fetch: "+err.message);});
+}
+
+/* ═══════════ SECTOR DROPDOWN ═══════════ */
+function toggleSectorDropdown(){
+  const panel=$("#secPanel"),trigger=$("#secTrigger");
+  const isOpen=panel.classList.contains("open");
+  if(isOpen){panel.classList.remove("open");trigger.classList.remove("open")}
+  else{
+    const r=trigger.getBoundingClientRect();
+    panel.style.top=(r.bottom+4)+"px";
+    panel.style.left=r.left+"px";
+    panel.style.width=r.width+"px";
+    panel.classList.add("open");trigger.classList.add("open");
+  }
+}
+function closeSectorDropdown(){
+  const panel=$("#secPanel"),trigger=$("#secTrigger");
+  if(panel){panel.classList.remove("open");trigger.classList.remove("open")}
+}
+function selectSector(idx){
+  $("#f_sector").value=idx;
+  const txt=$("#secTriggerText");
+  if(txt){txt.textContent=SECTORS[idx].sector;txt.classList.remove("placeholder")}
+  // Highlight selected item
+  document.querySelectorAll("#sectorList .sector-item").forEach(el=>{
+    el.classList.toggle("selected",+el.dataset.idx===idx);
+  });
+  closeSectorDropdown();
+  fillSub();
+}
+
+/* ═══════════ SUB-SECTOR MULTI-SELECT ═══════════ */
+function toggleSSDropdown(){
+  const panel=$("#ssPanel"),trigger=$("#ssTrigger");
+  const isOpen=panel.classList.contains("open");
+  if(isOpen){panel.classList.remove("open");trigger.classList.remove("open")}
+  else{
+    // Position fixed panel below trigger
+    const r=trigger.getBoundingClientRect();
+    panel.style.top=(r.bottom+4)+"px";
+    panel.style.left=r.left+"px";
+    panel.style.width=r.width+"px";
+    panel.classList.add("open");trigger.classList.add("open");
+  }
+}
+function closeSSDropdown(){
+  const panel=$("#ssPanel"),trigger=$("#ssTrigger");
+  if(panel){panel.classList.remove("open");trigger.classList.remove("open")}
+}
+// Click outside to close any dropdown (panels are fixed, so check them separately)
+document.addEventListener("click",function(e){
+  const secPanel=$("#secPanel"),ssPanel=$("#ssPanel");
+  const secTrigger=$("#secTrigger"),ssTrigger=$("#ssTrigger");
+  // Close sector dropdown if click outside
+  if(secPanel&&secPanel.classList.contains("open")&&secTrigger&&!secTrigger.contains(e.target)&&!secPanel.contains(e.target)) closeSectorDropdown();
+  // Close sub-sector dropdown if click outside
+  const ms=document.querySelector("#subSectorWrap .dds-multiselect");
+  if(ms&&ssPanel&&ssPanel.classList.contains("open")&&!ms.contains(e.target)&&!ssPanel.contains(e.target)) closeSSDropdown();
+});
+// Close dropdowns on scroll of the card-body (panels are fixed, won't follow trigger)
+// But NOT when scrolling inside the panel itself
+document.addEventListener("scroll",function(e){
+  const secPanel=$("#secPanel");
+  if(secPanel&&secPanel.classList.contains("open")&&!secPanel.contains(e.target)) closeSectorDropdown();
+  const ssPanel=$("#ssPanel");
+  if(ssPanel&&ssPanel.classList.contains("open")&&!ssPanel.contains(e.target)) closeSSDropdown();
+},true);
+function getSelectedSubSectors(){
+  return Array.from(document.querySelectorAll('#subSectorList input[type=checkbox]:checked')).map(cb=>cb.value);
+}
+function subSectorSelectAll(){
+  document.querySelectorAll('#subSectorList input[type=checkbox]:not(:disabled)').forEach(cb=>cb.checked=true);
+  updateSubSectorSelCount();updateSubCount();
+}
+function subSectorClearAll(){
+  document.querySelectorAll('#subSectorList input[type=checkbox]').forEach(cb=>cb.checked=false);
+  updateSubSectorSelCount();updateSubCount();
+}
+function updateSubSectorSelCount(){
+  const n=document.querySelectorAll('#subSectorList input[type=checkbox]:checked').length;
+  const total=document.querySelectorAll('#subSectorList input[type=checkbox]:not(:disabled)').length;
+  const el=$("#subSectorSelCount");
+  if(el) el.textContent=n>0?`(${n}/${total} selected)`:"";
+  // Update trigger text
+  const txt=$("#ssTriggerText");
+  if(txt){
+    if(n===0){txt.textContent="— Select sub-sector —";txt.classList.add("placeholder")}
+    else if(n===total){txt.textContent="All sub-sectors selected";txt.classList.remove("placeholder")}
+    else{txt.textContent=n+" sub-sector"+(n>1?"s":"")+" selected";txt.classList.remove("placeholder")}
+  }
+}
+
+function fillSub(){
+  const secVal=$("#f_sector").value;
+  const s=secVal!==""?SECTORS[+secVal]:null;
+  const wrap=$("#subSectorWrap");
+  if(!s){SCREENING.currentSector="";SCREENING.currentSubSector="";SCREENING.displayText="Full Universe";updateCompCount(TOTAL_COMPANIES,"Full Universe");if(wrap)wrap.style.display="none";var _snap=$("#sectorSnap");if(_snap)_snap.style.display="none";return;}
+  if(wrap)wrap.style.display="block";
+  closeSSDropdown();
+  const avail=s.sub_sectors.filter(ss=>ss.available);const total=avail.reduce((x,y)=>x+y.comparable_count,0);
+  SCREENING.currentSector=s.sector;
+  SCREENING.displayText=s.sector;
+  // Build checkbox list
+  const list=$("#subSectorList");
+  if(list){
+    list.innerHTML=s.sub_sectors.map(ss=>{
+      const name=ss.name.trim();
+      const disabled=!ss.available;
+      return `<label class="sub-sector-item${disabled?' disabled':''}">
+        <input type="checkbox" value="${name}" ${disabled?'disabled':''} onchange="updateSubSectorSelCount();updateSubCount()">
+        <span class="ss-name">${name}</span>
+        <span class="ss-count">${ss.available?ss.comparable_count+' comps':'—'}</span>
+      </label>`;
+    }).join("");
+  }
+  updateSubSectorSelCount();
+  updateCompCount(total,s.sector);showSnapshot(s,avail);
+}
+function updateSubCount(){
+  const secVal=$("#f_sector").value;if(secVal==="")return;
+  const secIdx=+secVal;if(secIdx<0)return;
+  const s=SECTORS[secIdx];if(!s)return;
+  const selected=getSelectedSubSectors();
+  
+  console.log("[updateSubCount] sector:", s.sector, "selected sub_sectors:", selected);
+  
+  let subSectorToSend, displayText;
+  
+  if(selected.length===0){
+    // No sub-sector selected → use all companies in sector
+    subSectorToSend="";
+    const total=s.sub_sectors.reduce((sum,ss)=>sum+(ss.available?ss.comparable_count:0),0);
+    displayText=s.sector+" (All Companies)";
+    console.log("[updateSubCount] NO sub_sectors, total in sector:", total);
+  }else{
+    // Join multiple sub-sectors with comma (backend supports comma-separated)
+    subSectorToSend=selected.join(",");
+    if(selected.length===1){
+      displayText=s.sector+" → "+selected[0];
+    }else{
+      displayText=s.sector+" → "+selected.length+" sub-sectors";
+    }
+    console.log("[updateSubCount] MULTI sub_sector:", subSectorToSend);
+  }
+  
+  SCREENING.currentSubSector=subSectorToSend;
+  SCREENING.currentSector=s.sector;
+  SCREENING.displayText=displayText;
+  SCREENING.currentThresholds={};
+  buildCrits();
+  
+  // Abort any in-flight screening request to prevent stale responses
+  if(SCREENING._abortCtrl) SCREENING._abortCtrl.abort();
+  SCREENING._abortCtrl = new AbortController();
+  
+  // Fetch from all/selected sub-sectors (server-side cache reset is automatic)
+  console.log("[updateSubCount] making screen API call for sub_sector:", JSON.stringify(subSectorToSend));
+  fetch("/api/tool/screen",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({sub_sector:subSectorToSend,thresholds:{},subject:gatherSubject(),all:true}),
+    signal: SCREENING._abortCtrl.signal
+  }).then(function(r){
+    console.log("[updateSubCount] API response status:", r.status);
+    return r.json();
+  }).then(function(j){
+    console.log("[updateSubCount] API response qualified:", j.qualified, "comparables:", (j.comparables||[]).length);
+    const count=j.qualified||0;
+    SCREENING.currentCount=count;
+    updateCompCount(count,displayText);
+    updateScreeningResults(j);
+  }).catch(function(err){
+    if(err.name !== 'AbortError') console.error("[updateSubCount] API error:", err);
+  });
+}
+function updateCompCount(n,ctx){
+  $("#compCount").textContent=n.toLocaleString("en-IN");
+  // Also update the sticky header in Step 2
+  $("#compCount2").textContent=n.toLocaleString("en-IN");
+  const pct=((n/TOTAL_COMPANIES)*100).toFixed(2);
+  $("#selPct").textContent=pct+"%";$("#selBar").style.width=pct+"%";
+  // Update compChange labels
+  $("#compChange").innerHTML=pct<50?`<i class="fa-solid fa-filter"></i> ${pct}% of universe`:`<i class="fa-solid fa-check"></i> Full sector view`;
+  $("#compChange2").innerHTML=pct<50?`<i class="fa-solid fa-filter"></i> ${pct}% of universe`:`<i class="fa-solid fa-check"></i> Full sector view`;
+  
+  // Use stored sector and display text
+  var sector = SCREENING.currentSector || "";
+  var display = SCREENING.displayText || "";
+  
+  // Update sticky header labels
+  $("#sectorLabel").textContent=sector||"—";
+  $("#subSectorLabel").textContent=display.includes(" → ") ? display.split(" → ")[1] : (display||"—");
+  
+  // Build filter path with separate Sector and Sub-Sector rows
+  var pathHtml = `<div class="path-item"><i class="fa-solid fa-globe icon"></i> Universe: <b>${TOTAL_COMPANIES.toLocaleString("en-IN")}</b></div>`;
+  if(sector){
+    pathHtml += `<div class="path-item"><i class="fa-solid fa-layer-group icon"></i> Sector: <b>${sector}</b></div>`;
+  }
+  if(display.includes(" → ")){
+    var parts = display.split(" → ");
+    pathHtml += `<div class="path-item"><i class="fa-solid fa-map-pin icon"></i> Sub-Sector: <b>${parts[1] || ""}</b></div>`;
+  }else if(display){
+    pathHtml += `<div class="path-item"><i class="fa-solid fa-map-pin icon"></i> Sub-Sector: <b>${display}</b></div>`;
+  }
+  $("#filterPath").innerHTML = pathHtml;
+}
+function showSnapshot(sec,avail){
+  // The sector snapshot lives in the optional sidebar — skip when it's absent,
+  // otherwise this throws and aborts the caller mid-way.
+  const snap=$("#sectorSnap");
+  if(!snap)return;
+  snap.style.display="block";
+  const total=avail.reduce((x,y)=>x+y.comparable_count,0);
+  $("#sectorInfo").innerHTML=`<b>${sec.sector}</b> · ${avail.length} sub-sectors · <span style="color:var(--accessible-blue);font-weight:700">${total.toLocaleString("en-IN")} companies</span>`;
+  const top=avail.slice(0,8).sort((a,b)=>b.comparable_count-a.comparable_count);
+  const mx=Math.max(...top.map(x=>x.comparable_count),1);
+  const labels=[];
+  $("#miniChart").innerHTML=top.map(x=>{
+    let lbl=x.name;
+    let idx=1;while(labels.includes(lbl)){lbl=x.name+'-'+idx;idx++;}
+    labels.push(lbl);
+    return `<div class="col"><div class="bar" style="height:${Math.max(6,(x.comparable_count/mx)*100)}%" title="${x.name}: ${x.comparable_count}"></div><div class="bar-label" title="${x.name}">${lbl}</div></div>`;
+  }).join("");
+}
+
+/* ═══════════ GATHER ═══════════ */
+function gatherSubject(){return{name:$("#f_company").value.trim(),contact_person:$("#f_person").value.trim(),designation:$("#f_desig").value.trim(),email:$("#f_email").value.trim(),contact_number:$("#f_phone").value.trim(),valuation_date:$("#f_valdate").value,revenue:val("#f_revenue"),ebitda:val("#f_ebitda"),pat:val("#f_pat"),net_worth:val("#f_networth"),cash:val("#f_cash"),surplus_investments:val("#f_surinv"),debt:val("#f_debt"),lease_liabilities:val("#f_lease"),surplus_assets:val("#f_surass"),surplus_liabilities:val("#f_surliab")};}
+function gatherThresholds(){
+  return SCREENING.currentThresholds||{};
+}
+
+/* ═══════════ RUN ═══════════ */
+let LAST_PAYLOAD=null;
+async function runValue(){
+  // Check if we're on step 3 (peer selection) or step 2 (screening)
+  // Use SCREENING.currentSubSector (supports multi-select, comma-separated)
+  var actualSubSector=SCREENING.currentSubSector||"";
+  if(!actualSubSector){$("#msg").innerHTML=`<div class="err-box"><i class="fa-solid fa-circle-exclamation"></i> Please select a sector first.</div>`;return;}
+  var subj=gatherSubject();const miss=[];
+  if(!subj.name)miss.push("company name");if(subj.revenue==null)miss.push("revenue");if(subj.ebitda==null)miss.push("EBITDA");if(subj.pat==null)miss.push("PAT");if(subj.net_worth==null)miss.push("net worth");
+  if(miss.length){$("#msg").innerHTML=`<div class="err-box"><i class="fa-solid fa-circle-exclamation"></i> Please fill: ${miss.join(", ")}</div>`;return;}
+  
+  // Check if on step 3 - validate peer selection (1-10 peers allowed)
+  if(currentStep===3){
+    if(PEERS.selected.size<1 || PEERS.selected.size>10){
+      $("#msg").innerHTML=`<div class="err-box"><i class="fa-solid fa-circle-exclamation"></i> Please select between 1 and 10 peer companies</div>`;return;
+    }
+    // Use cached peer data from the peer table (no extra API call needed).
+    // Selection is keyed by company identity, so it survives column sorting.
+    var selectedComps=PEERS.data.filter(function(c){return PEERS.selected.has(peerKey(c));});
+    console.log("[runValue] using cached peers, count:", selectedComps.length);
+    executeValuation(actualSubSector, subj, selectedComps);
+  }else{
+    executeValuation(actualSubSector, subj, []);
+  }
+}
+
+// v20260727 - fixed async/await for valuation
+function executeValuation(sub, subj, selectedComps){
+  console.log("[V20260727] executeValuation called, currentStep=", currentStep, "selectedComps=", selectedComps.length);
+  // Log valuation execution with full trial data
+  const th4=gatherThresholds();
+  logTrialStep(4,{action:"execute_valuation",
+    company_name:subj.name||"",
+    sub_sector:sub||"",
+    valuation_matrices:currentMatrices().join(", "),
+    peers_selected:selectedComps.map(function(c){return c.name;}).join(", "),
+    peer_count:selectedComps.length,
+    screen_sector:SCREENING.currentSector||"",
+    screen_sub_sector:sub||"",
+    threshold_revenue_min:th4.revenue_min||null,
+    threshold_revenue_max:th4.revenue_max||null,
+    threshold_ebitda_min:th4.ebitda_min||null,
+    threshold_ebitda_max:th4.ebitda_max||null,
+    threshold_pat_min:th4.pat_min||null,
+    threshold_pat_max:th4.pat_max||null});
+  const btn=$("#toValueBtn");if(btn){btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Valuing…';$("#msg").innerHTML="";}
+  LAST_PAYLOAD={subject:subj,matrix:currentMatrix(),matrices:currentMatrices(),sub_sector:sub,thresholds:gatherThresholds(),selected_peers:selectedComps,disclaimer_accepted_date:sessionStorage.getItem("disclaimerDate")||""};
+  console.log("[V20260727] payload sent, matrices=", LAST_PAYLOAD.matrices);
+  fetch("/api/tool/value",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(LAST_PAYLOAD)})
+  .then(async function(r){
+    console.log("[V20260727] fetch done, status=", r.status, "ok=", r.ok);
+    const j = await r.json();
+    console.log("[V20260727] JSON parsed, keys=", Object.keys(j), "ccm.status=", j.ccm?.status);
+    if(!r.ok){
+      $("#msg").innerHTML=`<div class="err-box">${(j.error&&j.error.message)||"Could not value."}</div>`;
+      if(btn){btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-calculator"></i> Value Company';}
+      return;
+    }
+    console.log("[V20260727] calling render()");
+    render(j,subj);
+    console.log("[V20260727] render() done, currentStep=", currentStep);
+    // Transition to Step 4 after successful valuation
+    if(currentStep===3 || currentStep===2){
+      console.log("[V20260727] scheduling goStep(4) in 300ms");
+      setTimeout(function(){
+        console.log("[V20260727] executing goStep(4) NOW");
+        goStep(4);
+        console.log("[V20260727] goStep(4) executed");
+      }, 300);
+    } else {
+      console.log("[V20260727] NOT transitioning, currentStep=", currentStep);
+    }
+    if(btn){btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-calculator"></i> Value Company';}
+  })
+  .catch(function(err){
+    console.error("[V20260727] catch error:", err);
+    $("#msg").innerHTML=`<div class="err-box"><i class="fa-solid fa-circle-exclamation"></i> Valuation failed: ${err.message}</div>`;
+    if(btn){btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-calculator"></i> Value Company';}
+  });
+}
+async function openReport(pdf){if(!LAST_PAYLOAD)return;const w=window.open("","_blank");if(w)w.document.write("<p style='font-family:system-ui;padding:20px'>Generating…</p>");try{const r=await fetch("/api/tool/report"+(pdf?"?print=1":""),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(LAST_PAYLOAD)});const h=await r.text();if(w){w.document.open();w.document.write(h);w.document.close();}}catch(e){if(w)w.document.write("<p>Failed: "+e+"</p>");}}
+
+/* ═══════════ RENDER ═══════════ */
+function med(arr){if(!arr||!arr.length)return null;const s=[...arr].sort((a,b)=>a-b);const m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2;}
+
+function render(j,subj){
+  const ccm=j.ccm, nav=j.nav, ms=ccm?.multiple_summary;
+
+  // Set report date and disclaimer info
+  const today=new Date().toLocaleDateString("en-IN",{day:"2-digit",month:"long",year:"numeric"});
+  $("#reportDate").textContent=today;
+  const discDate=sessionStorage.getItem("disclaimerDate")||today;
+  $("#disclaimerAcceptedDate").textContent=discDate;
+
+  // ═══ Step 7: Populate Valuation Report ═══
+  const matrices=j.matrices||[j.matrix];
+  const ccmByMatrix=j.ccm_by_matrix||{[j.matrix]:ccm};
+  const peers=j.ccm?.comparables||[];
+  $("#reportTitle").textContent=subj.name||"Company";
+  $("#reportSubtitle").textContent=`${j.screening.sub_sector} · ${matrices.join(" · ")} · ${ms.n} comparables`;
+
+  // ── 3 cards per method: Low (−5%), Median, High (+5%) ──
+  $("#methodCards").innerHTML=matrices.map(function(m){
+    const c=ccmByMatrix[m]||{};
+    if(c.status==="ok"){
+      const cardLow=cr(c.low);
+      const cardMid=cr(c.mid);
+      const cardHigh=cr(c.high);
+      const medianMult=mult(c.median_multiple);
+      // Header row — use standardized method labels
+      const METHOD_LABELS={"EV/EBITDA":"EV/EBITDA – Profit-based","EV/Revenue":"EV/Revenue – Sales-based","P/E":"P/E – Earnings-based"};
+      var html=`<div style="margin-bottom:16px"><div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px;padding-left:4px"><i class="fa-solid fa-chart-column" style="color:var(--accessible-blue)"></i> ${METHOD_LABELS[m]||m}</div>`;
+      // 3 cards: low, median, high
+      html+=`<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">`;
+      // Low card
+      html+=`<div class="result-card"><div class="tag" style="color:var(--error)"><i class="fa-solid fa-arrow-trend-down"></i> Conservative (−5%)</div><div class="amount" style="color:var(--error)">${cardLow}</div><div class="range">5% below median</div></div>`;
+      // Median card
+      html+=`<div class="result-card highlight"><div class="tag">Median Valuation</div><div class="amount">${cardMid}</div><div class="range">Median multiple ${medianMult}</div></div>`;
+      // High card
+      html+=`<div class="result-card"><div class="tag" style="color:var(--success)"><i class="fa-solid fa-arrow-trend-up"></i> Optimistic (+5%)</div><div class="amount" style="color:var(--success)">${cardHigh}</div><div class="range">5% above median</div></div>`;
+      html+=`</div></div>`;
+      return html;
+    }
+    return `<div style="margin-bottom:16px"><div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">${METHOD_LABELS[m]||m}</div><div class="result-card"><div class="amount">N/A</div><div class="range">${c.message||c.status||"unavailable"}</div></div></div>`;
+  }).join("");
+
+  // ── Peer comparison table per method ──
+  var peerHtml="";
+  matrices.forEach(function(m){
+    const c=ccmByMatrix[m]||{};
+    if(c.status!=="ok" || !c.comparables || !c.comparables.length) return;
+    const comp=c.comparables;
+    // Determine which columns to show based on this matrix
+    var cols=[];
+    var hdrs=['Company','Sector','EV/EBITDA','EV/Revenue','P/E','Equity Value','EV','EBITDA','Revenue'];
+    if(m==='EV/EBITDA'){
+      cols=['name','sector','ev_ebitda_ltm_equity_value','ev_ebitda_ltm_ev','equity_value','ev','ebitda_ltm'];
+      hdrs=['Company','Sector','EV/EBITDA','Equity Value','EV','EBITDA'];
+    } else if(m==='EV/Revenue'){
+      cols=['name','sector','ev_revenue_ltm_equity_value','ev_revenue_ltm_ev','equity_value','ev','revenue_ltm'];
+      hdrs=['Company','Sector','EV/Revenue','Equity Value','EV','Revenue'];
+    } else if(m==='P/E'){
+      cols=['name','sector','pe_equity_value','pe_ev','equity_value','ev','ebitda_ltm'];
+      hdrs=['Company','Sector','P/E','Equity Value','EV'];
+    }
+    // Build header
+    var tbl=`<div style="margin-top:20px;margin-bottom:8px;font-size:13px;font-weight:600;color:var(--text-sec)"><i class="fa-solid fa-users" style="margin-right:6px;color:var(--accessible-blue)"></i>Peer Comparables — ${m}</div>`;
+    tbl+=`<div style="overflow-x:auto;border:1px solid var(--border-light);border-radius:var(--radius)"><table class="dds-data-table">`;
+    tbl+=`<thead><tr>`;
+    hdrs.forEach(function(h){ tbl+=`<th>${h}</th>`; });
+    tbl+=`</tr></thead><tbody>`;
+    comp.forEach(function(p){
+      tbl+=`<tr>`;
+      tbl+=`<td style="font-weight:600">${p.name||""}</td>`;
+      tbl+=`<td>${p.sector||""}</td>`;
+      if(m==='EV/EBITDA'){
+        tbl+=`<td>${p.ev_ebitda_ltm_equity_value!=null?cr(p.ev_ebitda_ltm_equity_value):"—"}</td>`;
+        tbl+=`<td>${cr(p.equity_value)}</td>`;
+        tbl+=`<td>${cr(p.ev)}</td>`;
+        tbl+=`<td>${cr(p.ebitda_ltm)}</td>`;
+      } else if(m==='EV/Revenue'){
+        tbl+=`<td>${p.ev_revenue_ltm_equity_value!=null?cr(p.ev_revenue_ltm_equity_value):"—"}</td>`;
+        tbl+=`<td>${cr(p.equity_value)}</td>`;
+        tbl+=`<td>${cr(p.ev)}</td>`;
+        tbl+=`<td>${cr(p.revenue_ltm)}</td>`;
+      } else if(m==='P/E'){
+        tbl+=`<td>${p.pe_equity_value!=null?cr(p.pe_equity_value):"—"}</td>`;
+        tbl+=`<td>${cr(p.equity_value)}</td>`;
+        tbl+=`<td>${cr(p.ev)}</td>`;
+      }
+      tbl+=`</tr>`;
+    });
+    // Add calculated median row
+    tbl+=`</tbody><tfoot><tr style="font-weight:700;background:var(--primary-bg)">`;
+    tbl+=`<td colspan="2">Median (${comp.length} peers)</td>`;
+    if(m==='EV/EBITDA'){
+      const sorted=comp.filter(x=>x.ev_ebitda_ltm_equity_value!=null).map(x=>x.ev_ebitda_ltm_equity_value).sort((a,b)=>a-b);
+      tbl+=`<td>${sorted.length?cr(med(sorted)):"—"}</td>`;
+      tbl+=`<td>—</td><td>—</td><td>—</td>`;
+    } else if(m==='EV/Revenue'){
+      const sorted=comp.filter(x=>x.ev_revenue_ltm_equity_value!=null).map(x=>x.ev_revenue_ltm_equity_value).sort((a,b)=>a-b);
+      tbl+=`<td>${sorted.length?cr(med(sorted)):"—"}</td>`;
+      tbl+=`<td>—</td><td>—</td><td>—</td>`;
+    } else if(m==='P/E'){
+      const sorted=comp.filter(x=>x.pe_equity_value!=null).map(x=>x.pe_equity_value).sort((a,b)=>a-b);
+      tbl+=`<td>${sorted.length?cr(med(sorted)):"—"}</td>`;
+      tbl+=`<td>—</td><td>—</td>`;
+    }
+    tbl+=`</tr></tfoot>`;
+    tbl+=`</table></div>`;
+    peerHtml+=tbl;
+  });
+  // Peer tables render only when matrices exist and have comparables
+  if (peerHtml) {
+    document.getElementById("peerTables").innerHTML = peerHtml;
+  } else {
+    document.getElementById("peerTables").innerHTML = "";
+  }
+
+  // ═══ Old Results Page — hidden (Step 7 shows all) ═══
+  // Kept for PDF report generation (openReport uses LAST_PAYLOAD)
+  $("#out").style.display="none";
+  $("#caveats").innerHTML=`<li>Multiples from published market data; may not reflect illiquidity discounts or control premiums</li><li>Subject company data is as provided by the user — please verify audited figures</li><li>Valuation is indicative only and should not be relied upon for binding decisions</li><li>Market conditions can change rapidly; validity typically 30–60 days</li><li>Consider macro, sector, and company-specific adjustments before finalisation</li><li>Valuation range shown (±5%) reflects typical market volatility</li>`;
+
+  $("#prov").textContent=`Multiple source: ${j.meta.multiple_source} · Methods: ${j.meta.methods.join(" + ")} · Range: ${j.meta.range_basis} · No control premium or DLOM applied.`;
+  $("#out").scrollIntoView({behavior:"smooth",block:"start"});
+}
+</script>
+</body>
+</html>

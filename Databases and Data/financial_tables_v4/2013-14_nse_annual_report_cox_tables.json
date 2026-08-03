@@ -1,0 +1,3519 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmp6z4sag5n/2013-14_nse_annual_report_cox.pdf",
+    "file_name": "2013-14_nse_annual_report_cox.pdf",
+    "financial_year": "2013-14",
+    "extraction_timestamp": "2026-07-03T07:25:15.937812+00:00",
+    "page_count": 144
+  },
+  "standalone": {
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 64,
+      "pages": [
+        64
+      ],
+      "title": "Balance Sheet",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "Note",
+        "As at",
+        "As at"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Shareholder’s Funds",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Share Capital",
+          "note_no": "1",
+          "values": {
+            "current_period": 6826,
+            "previous_period": 6826
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Reserves and Surplus",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 107056
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities",
+          "line_item": "Long-term borrowings",
+          "note_no": "3",
+          "values": {
+            "current_period": 35188,
+            "previous_period": 30722
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities",
+          "line_item": "Deferred tax liability (Net)",
+          "note_no": "4",
+          "values": {
+            "current_period": 1295,
+            "previous_period": 1040
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Short-term borrowings",
+          "note_no": "5",
+          "values": {
+            "current_period": 26576,
+            "previous_period": 22005
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Trade payables",
+          "note_no": "6",
+          "values": {
+            "current_period": 5947,
+            "previous_period": 10641
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Other current liabilities",
+          "note_no": "7",
+          "values": {
+            "current_period": 27816,
+            "previous_period": 22434
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Short-term provisions",
+          "note_no": "8",
+          "values": {
+            "current_period": 6423,
+            "previous_period": 1900
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Total",
+          "note_no": "",
+          "values": {
+            "current_period": 226233,
+            "previous_period": 202624
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Fixed assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Tangible assets",
+          "note_no": "9",
+          "values": {
+            "current_period": 6666,
+            "previous_period": 7165
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets",
+          "note_no": "10",
+          "values": {
+            "current_period": 4227,
+            "previous_period": 2666
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Capital work-in-progress",
+          "note_no": "",
+          "values": {
+            "current_period": 83,
+            "previous_period": 239
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets under development",
+          "note_no": "",
+          "values": {
+            "current_period": 6832,
+            "previous_period": 6278
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Non-current investments",
+          "note_no": "11",
+          "values": {
+            "current_period": 14693,
+            "previous_period": 11520
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Long term loans and advances",
+          "note_no": "12",
+          "values": {
+            "current_period": 1507,
+            "previous_period": 1513
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Current investments",
+          "note_no": "13",
+          "values": {
+            "current_period": 2806,
+            "previous_period": 2807
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": "14",
+          "values": {
+            "current_period": 422,
+            "previous_period": 615
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Trade receivables",
+          "note_no": "15",
+          "values": {
+            "current_period": 65448,
+            "previous_period": 47379
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Cash and Bank Balance",
+          "note_no": "16",
+          "values": {
+            "current_period": 24913,
+            "previous_period": 27082
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Short-term loans and advances",
+          "note_no": "17",
+          "values": {
+            "current_period": 98636,
+            "previous_period": 95360
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Total",
+          "note_no": "",
+          "values": {
+            "current_period": 226233,
+            "previous_period": 202624
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 23,
+        "total_rows": 2,
+        "current_period_balanced": true,
+        "previous_period_balanced": true
+      }
+    },
+    "profit_and_loss": {
+      "statement": "standalone_profit_and_loss",
+      "page": 65,
+      "pages": [
+        65
+      ],
+      "title": "Financial Statement",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "Note",
+        "For the",
+        "For the"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "Income",
+          "line_item": "Revenue from operations",
+          "note_no": "18",
+          "values": {
+            "current_period": 41860,
+            "previous_period": 37227
+          }
+        },
+        {
+          "section": "Income",
+          "line_item": "Other Income",
+          "note_no": "19",
+          "values": {
+            "current_period": 5398,
+            "previous_period": 2360
+          }
+        },
+        {
+          "section": "Income",
+          "line_item": "Total Revenue",
+          "note_no": "",
+          "values": {
+            "current_period": 47258,
+            "previous_period": 39587
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Employee benefit expenses",
+          "note_no": "20",
+          "values": {
+            "current_period": 9907,
+            "previous_period": 8862
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Finance costs",
+          "note_no": "22",
+          "values": {
+            "current_period": 4610,
+            "previous_period": 8637
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Depreciation and amortization expense",
+          "note_no": "9 & 10",
+          "values": {
+            "current_period": 2158,
+            "previous_period": 1816
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Other expenses",
+          "note_no": "24",
+          "values": {
+            "current_period": 11288,
+            "previous_period": 10332
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Total Expenses",
+          "note_no": "",
+          "values": {
+            "current_period": 27963,
+            "previous_period": 29647
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Profit before tax",
+          "note_no": "",
+          "values": {
+            "current_period": 19295,
+            "previous_period": 9940
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Tax Expenses:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Current tax",
+          "note_no": "",
+          "values": {
+            "current_period": 7150,
+            "previous_period": 3510
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Deferred tax",
+          "note_no": "",
+          "values": {
+            "current_period": 254,
+            "previous_period": 887
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Current tax expenses relating to prior years",
+          "note_no": "",
+          "values": {
+            "current_period": 623,
+            "previous_period": 204
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Profit for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 11268,
+            "previous_period": 5339
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Earnings per equity share (Face Value per share ` 5 each):",
+          "note_no": "29",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Basic (In `)",
+          "note_no": "",
+          "values": {
+            "current_period": 8.25,
+            "previous_period": 3.91
+          }
+        },
+        {
+          "section": "Expenditure",
+          "line_item": "Diluted (In `)",
+          "note_no": "",
+          "values": {
+            "current_period": 8.25,
+            "previous_period": 3.91
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 17,
+        "total_rows": 2
+      }
+    },
+    "cash_flow": {
+      "statement": "standalone_cash_flow",
+      "page": 66,
+      "pages": [
+        66
+      ],
+      "title": "Cash Flow Statement",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "For the",
+        "For the"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "Operating Activities",
+          "line_item": "Profit before Tax",
+          "note_no": null,
+          "values": {
+            "current_period": 19295,
+            "previous_period": 9940
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustment for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Depreciation",
+          "note_no": null,
+          "values": {
+            "current_period": 2158,
+            "previous_period": 1816
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Unrealized foreign exchange Loss / (Gain)",
+          "note_no": null,
+          "values": {
+            "current_period": 112,
+            "previous_period": 120
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Profit on sale of Investment (Previous year `0.08 Lacs)",
+          "note_no": null,
+          "values": {
+            "current_period": -2,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Dividend on Investment",
+          "note_no": null,
+          "values": {
+            "current_period": -12,
+            "previous_period": -78
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Interest Income",
+          "note_no": null,
+          "values": {
+            "current_period": -4177,
+            "previous_period": -1399
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Interest Expense",
+          "note_no": null,
+          "values": {
+            "current_period": 4610,
+            "previous_period": 8637
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Reversal of loss in value of Current Investment",
+          "note_no": null,
+          "values": {
+            "current_period": 2,
+            "previous_period": -1
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "(Profit)/Loss on Sale of Fixed Assets (Net)",
+          "note_no": null,
+          "values": {
+            "current_period": 154,
+            "previous_period": 11
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Operating profit before working capital changes",
+          "note_no": null,
+          "values": {
+            "current_period": 22140,
+            "previous_period": 19046
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustment for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "(Increase)/Decrease in Inventories",
+          "note_no": null,
+          "values": {
+            "current_period": 193,
+            "previous_period": -108
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "(Increase)/Decrease in Trade Receivable",
+          "note_no": null,
+          "values": {
+            "current_period": -18613,
+            "previous_period": -10399
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "(Increase)/Decrease in Loans and Advances",
+          "note_no": null,
+          "values": {
+            "current_period": -6346,
+            "previous_period": -10463
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Increase/(Decrease) in Current Liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": -11506,
+            "previous_period": 9387
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Cash Generated from Operations",
+          "note_no": null,
+          "values": {
+            "current_period": -14132,
+            "previous_period": 7463
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Income Taxes Paid",
+          "note_no": null,
+          "values": {
+            "current_period": -2853,
+            "previous_period": -2245
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Net cash flow from operating activities A",
+          "note_no": null,
+          "values": {
+            "current_period": -16985,
+            "previous_period": 5218
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Purchase of Fixed Assets & Capital Work In Progress",
+          "note_no": null,
+          "values": {
+            "current_period": -3790,
+            "previous_period": -5353
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Sale of Fixed Assets",
+          "note_no": null,
+          "values": {
+            "current_period": 20,
+            "previous_period": 9
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Interest Received",
+          "note_no": null,
+          "values": {
+            "current_period": 4177,
+            "previous_period": 1399
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Dividend Received",
+          "note_no": null,
+          "values": {
+            "current_period": 12,
+            "previous_period": 78
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Investment in Subsidiaries",
+          "note_no": null,
+          "values": {
+            "current_period": -3173,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Intercoporate Deposits given",
+          "note_no": null,
+          "values": {
+            "current_period": -13520,
+            "previous_period": -3106
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Advances (given to)/Refunded by Subsidiaries (Net)",
+          "note_no": null,
+          "values": {
+            "current_period": 16184,
+            "previous_period": 67425
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Sales of Investment",
+          "note_no": null,
+          "values": {
+            "current_period": 1,
+            "previous_period": -1807
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Net cash used in investing activities B",
+          "note_no": null,
+          "values": {
+            "current_period": -89,
+            "previous_period": 58647
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "64 Cox & Kings Limited",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 29,
+        "total_rows": 0
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 2,
+        "extraction_method": "text_reconstruction",
+        "row_count": 44,
+        "column_count": 1,
+        "rows": [
+          [
+            "Delivering a Strategy"
+          ],
+          [
+            "The parlance of business remains full with many impactful variables – economic growth,"
+          ],
+          [
+            "industry-specific trends, regulations, consumer behavior, input cost, competitive pricing"
+          ],
+          [
+            "power and so on. Shortfalls or moderation in business performances often get attributed"
+          ],
+          [
+            "to adversities emanating from these macro environments."
+          ],
+          [
+            "Mature businesses deploy their knowledge, experience, insights and foresight in"
+          ],
+          [
+            "developing robust strategies, tools, processes and safeguards in order to contain the"
+          ],
+          [
+            "impact of these external variables and stay predictable in their performance. As one of the"
+          ],
+          [
+            "oldest global travel company with interest in holiday business and education travel, we"
+          ],
+          [
+            "have honed our insights, foresight and control over many decades of business operations"
+          ],
+          [
+            "in 26 countries spanning 4 continents."
+          ],
+          [
+            "With a clear focus on strengthening our business fundamentals, we started our journey of"
+          ],
+          [
+            "business transformation in 2009 and developed a strategic plan enumerating certain"
+          ],
+          [
+            "deliverables to be achieved within set timeframes. We made certain promises to our own"
+          ],
+          [
+            "self and to our stakeholders towards actualizing these set goals. At the close of fiscal year"
+          ],
+          [
+            "2013-14, we are happy to return measurable deliveries across many counts. In our Annual"
+          ],
+          [
+            "Report 2013-14, we take pleasure in highlighting the deliverables."
+          ],
+          [
+            "Annual Report 2013-14 01"
+          ],
+          [
+            "stnetnoC"
+          ],
+          [
+            "Business Overview 01"
+          ],
+          [
+            "Financial Highlights 08"
+          ],
+          [
+            "Chairman's Letter 10"
+          ],
+          [
+            "Board of Directors 12"
+          ],
+          [
+            "The World of Cox & Kings 14"
+          ],
+          [
+            "Corporate Information 18"
+          ],
+          [
+            "Management Discussion & Analysis 19"
+          ],
+          [
+            "Statutory Reports"
+          ],
+          [
+            "Directors' Report 30"
+          ],
+          [
+            "Report on Corporate Governance 37"
+          ],
+          [
+            "Corporate Social Responsibility Report 54"
+          ],
+          [
+            "Financial Statements"
+          ],
+          [
+            "Standalone"
+          ],
+          [
+            "Auditor’s Report 58"
+          ],
+          [
+            "Financial Statements 62"
+          ],
+          [
+            "Significant Accounting Policies 66"
+          ],
+          [
+            "Notes 68"
+          ],
+          [
+            "Financial Information of Subsidiary Companies 93"
+          ],
+          [
+            "Statement regarding Subsidiary Companies 98"
+          ],
+          [
+            "Pursuant to Section 212 of the companies"
+          ],
+          [
+            "Consolidated"
+          ],
+          [
+            "Auditor’s Report 107"
+          ],
+          [
+            "Financial Statements 108"
+          ],
+          [
+            "Significant Accounting Policies 112"
+          ],
+          [
+            "Notes 115"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 3,
+        "extraction_method": "text_reconstruction",
+        "row_count": 44,
+        "column_count": 1,
+        "rows": [
+          [
+            "Delivering a Strategy"
+          ],
+          [
+            "The parlance of business remains full with many impactful variables – economic growth,"
+          ],
+          [
+            "industry-specific trends, regulations, consumer behavior, input cost, competitive pricing"
+          ],
+          [
+            "power and so on. Shortfalls or moderation in business performances often get attributed"
+          ],
+          [
+            "to adversities emanating from these macro environments."
+          ],
+          [
+            "Mature businesses deploy their knowledge, experience, insights and foresight in"
+          ],
+          [
+            "developing robust strategies, tools, processes and safeguards in order to contain the"
+          ],
+          [
+            "impact of these external variables and stay predictable in their performance. As one of the"
+          ],
+          [
+            "oldest global travel company with interest in holiday business and education travel, we"
+          ],
+          [
+            "have honed our insights, foresight and control over many decades of business operations"
+          ],
+          [
+            "in 26 countries spanning 4 continents."
+          ],
+          [
+            "With a clear focus on strengthening our business fundamentals, we started our journey of"
+          ],
+          [
+            "business transformation in 2009 and developed a strategic plan enumerating certain"
+          ],
+          [
+            "deliverables to be achieved within set timeframes. We made certain promises to our own"
+          ],
+          [
+            "self and to our stakeholders towards actualizing these set goals. At the close of fiscal year"
+          ],
+          [
+            "2013-14, we are happy to return measurable deliveries across many counts. In our Annual"
+          ],
+          [
+            "Report 2013-14, we take pleasure in highlighting the deliverables."
+          ],
+          [
+            "Annual Report 2013-14 01"
+          ],
+          [
+            "stnetnoC"
+          ],
+          [
+            "Business Overview 01"
+          ],
+          [
+            "Financial Highlights 08"
+          ],
+          [
+            "Chairman's Letter 10"
+          ],
+          [
+            "Board of Directors 12"
+          ],
+          [
+            "The World of Cox & Kings 14"
+          ],
+          [
+            "Corporate Information 18"
+          ],
+          [
+            "Management Discussion & Analysis 19"
+          ],
+          [
+            "Statutory Reports"
+          ],
+          [
+            "Directors' Report 30"
+          ],
+          [
+            "Report on Corporate Governance 37"
+          ],
+          [
+            "Corporate Social Responsibility Report 54"
+          ],
+          [
+            "Financial Statements"
+          ],
+          [
+            "Standalone"
+          ],
+          [
+            "Auditor’s Report 58"
+          ],
+          [
+            "Financial Statements 62"
+          ],
+          [
+            "Significant Accounting Policies 66"
+          ],
+          [
+            "Notes 68"
+          ],
+          [
+            "Financial Information of Subsidiary Companies 93"
+          ],
+          [
+            "Statement regarding Subsidiary Companies 98"
+          ],
+          [
+            "Pursuant to Section 212 of the companies"
+          ],
+          [
+            "Consolidated"
+          ],
+          [
+            "Auditor’s Report 107"
+          ],
+          [
+            "Financial Statements 108"
+          ],
+          [
+            "Significant Accounting Policies 112"
+          ],
+          [
+            "Notes 115"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 49,
+        "extraction_method": "text_reconstruction",
+        "row_count": 44,
+        "column_count": 1,
+        "rows": [
+          [
+            "Business Overview Management Discussion & Analysis Statutory Reports Financial Statements"
+          ],
+          [
+            "Equity Shares Suspense Account"
+          ],
+          [
+            "As per Clause 5A of the Listing Agreement, the Company reports the following details in respect of equity shares lying in the"
+          ],
+          [
+            "suspense account as on 31st March, 2014:"
+          ],
+          [
+            "Particulars No. of Share No. of Equity"
+          ],
+          [
+            "Holders Shares"
+          ],
+          [
+            "Aggregate Number of shareholders and the outstanding shares in the suspense account lying 15 1,680"
+          ],
+          [
+            "as on 1st April, 2013"
+          ],
+          [
+            "Number of shareholders who approached the Company for transfer of shares from suspense 1 600"
+          ],
+          [
+            "account during the year"
+          ],
+          [
+            "Number of shareholders to whom shares were transferred from the suspense account during 1 600"
+          ],
+          [
+            "the year"
+          ],
+          [
+            "Aggregate Number of shareholders and the outstanding shares in the suspense account lying 14 1,080"
+          ],
+          [
+            "as on 31st March, 2014"
+          ],
+          [
+            "Dematerialization of Shares:"
+          ],
+          [
+            "99.7% of the Company’s paid up capital has been dematerialized up to 31st March, 2014. Trading of equity shares of the"
+          ],
+          [
+            "Company is permitted only in demateralised form."
+          ],
+          [
+            "Sr. No Category No. of Holders Total Shares % To Equity"
+          ],
+          [
+            "1 Physical 5 246 0.00%"
+          ],
+          [
+            "2 N S D L 18,358 13,31,65,115 97.54%"
+          ],
+          [
+            "3 C D S L 8,140 33,62,529 2.46%"
+          ],
+          [
+            "Total 26,503 13,65,27,890 100.00%"
+          ],
+          [
+            "Other Information"
+          ],
+          [
+            "Related Party Disclosure"
+          ],
+          [
+            "Details of related party transactions entered into by the Company are included in the Notes to Accounts. There are no materially"
+          ],
+          [
+            "significant related party transactions of the Company, which have potential conflict with the interests of the Company at large."
+          ],
+          [
+            "The Company’s major related party transactions are generally with its subsidiaries and associates. The related party transactions"
+          ],
+          [
+            "are entered into based on the considerations of various business exigencies such as synergy in operations, sectoral specialization"
+          ],
+          [
+            "and the Company’s long term strategy. All the related party transactions are negotiated on arms length basis and are intended"
+          ],
+          [
+            "to further the interest of the Company."
+          ],
+          [
+            "Details of Capital market non-compliance, if any"
+          ],
+          [
+            "There has been no instance of non-compliance by the Company of any legal requirements; nor has there been any penalty,"
+          ],
+          [
+            "stricture imposed on the Company by any Stock Exchange, SEBI or any statutory authority on any matter related to the capital"
+          ],
+          [
+            "markets during the year under review."
+          ],
+          [
+            "Auditors’ Certificate on Corporate Governance"
+          ],
+          [
+            "The Company has obtained the certificate from its statutory auditors regarding compliance with the provisions relating to Corporate"
+          ],
+          [
+            "Governance laid down in Clause 49 of the listing agreement. This report annexed to the Directors’ Report will be sent to the stock"
+          ],
+          [
+            "exchanges along with the annual report to be filed by the Company."
+          ],
+          [
+            "Risk Management Policy"
+          ],
+          [
+            "The Company has a comprehensive risk management policy and the same is periodically reviewed by the Audit Committee"
+          ],
+          [
+            "& Board of Directors of the Company. Pursuant to RBI Master Circular No. 10/2013-14 dated 1st July, 2013 the Company had"
+          ],
+          [
+            "obtained a certificate from the Statutory Auditors certifying that the Company has compliant with KYC/ AML/ CFT guidelines issued"
+          ],
+          [
+            "by the RBI from time to time."
+          ],
+          [
+            "Annual Report 2013-14 47"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": null,
+        "title": null,
+        "page": 64,
+        "extraction_method": "text_reconstruction",
+        "row_count": 52,
+        "column_count": 1,
+        "rows": [
+          [
+            "Balance Sheet"
+          ],
+          [
+            "as at 31st March, 2014"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "Particulars Note As at As at"
+          ],
+          [
+            "No. 31st March, 2014 31st March, 2013"
+          ],
+          [
+            "EQUITY AND LIABILITIES"
+          ],
+          [
+            "Shareholder’s Funds"
+          ],
+          [
+            "Share Capital 1 6,826 6,826"
+          ],
+          [
+            "Reserves and Surplus 2 116,162 107,056"
+          ],
+          [
+            "122,988 113,882"
+          ],
+          [
+            "Non-Current Liabilities"
+          ],
+          [
+            "Long-term borrowings 3 35,188 30,722"
+          ],
+          [
+            "Deferred tax liability (Net) 4 1,295 1,040"
+          ],
+          [
+            "36,483 31,762"
+          ],
+          [
+            "Current Liabilities"
+          ],
+          [
+            "Short-term borrowings 5 26,576 22,005"
+          ],
+          [
+            "Trade payables 6 5,947 10,641"
+          ],
+          [
+            "Other current liabilities 7 27,816 22,434"
+          ],
+          [
+            "Short-term provisions 8 6,423 1,900"
+          ],
+          [
+            "66,762 56,980"
+          ],
+          [
+            "Total 226,233 202,624"
+          ],
+          [
+            "ASSETS"
+          ],
+          [
+            "Non-current assets"
+          ],
+          [
+            "Fixed assets"
+          ],
+          [
+            "Tangible assets 9 6,666 7,165"
+          ],
+          [
+            "Intangible assets 10 4,227 2,666"
+          ],
+          [
+            "Capital work-in-progress 83 239"
+          ],
+          [
+            "Intangible assets under development 6,832 6,278"
+          ],
+          [
+            "17,808 16,348"
+          ],
+          [
+            "Non-current investments 11 14,693 11,520"
+          ],
+          [
+            "Long term loans and advances 12 1,507 1,513"
+          ],
+          [
+            "16,200 13,033"
+          ],
+          [
+            "Current assets"
+          ],
+          [
+            "Current investments 13 2,806 2,807"
+          ],
+          [
+            "Inventories 14 422 615"
+          ],
+          [
+            "Trade receivables 15 65,448 47,379"
+          ],
+          [
+            "Cash and Bank Balance 16 24,913 27,082"
+          ],
+          [
+            "Short-term loans and advances 17 98,636 95,360"
+          ],
+          [
+            "192,225 173,243"
+          ],
+          [
+            "Total 226,233 202,624"
+          ],
+          [
+            "Significant Accounting Policies and notes to the financial statements - 1 to 37"
+          ],
+          [
+            "As per our report of even date"
+          ],
+          [
+            "For Chaturvedi & Shah For and on behalf of the Board"
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "Firm Registration No. 101720W"
+          ],
+          [
+            "Amit Chaturvedi Urrshila Kerkar Peter Kerkar"
+          ],
+          [
+            "Partner Director Director"
+          ],
+          [
+            "Membership No. 103141"
+          ],
+          [
+            "Date : 30th May, 2014 Rashmi Jain Anil Khandelwal"
+          ],
+          [
+            "Place : Mumbai Company Secretary Chief Financial"
+          ],
+          [
+            "Officer"
+          ],
+          [
+            "62 Cox & Kings Limited"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": null,
+        "title": null,
+        "page": 65,
+        "extraction_method": "text_reconstruction",
+        "row_count": 39,
+        "column_count": 1,
+        "rows": [
+          [
+            "Business Overview Management Discussion & Analysis Statutory Reports Financial Statements"
+          ],
+          [
+            "Statement of Profit & Loss"
+          ],
+          [
+            "for the year ended 31st March, 2014"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "Particulars Note For the For the"
+          ],
+          [
+            "No. year ended year ended"
+          ],
+          [
+            "31st March, 2014 31st March, 2013"
+          ],
+          [
+            "INCOME :"
+          ],
+          [
+            "Revenue from operations 18 41,860 37,227"
+          ],
+          [
+            "Other Income 19 5,398 2,360"
+          ],
+          [
+            "Total Revenue 47,258 39,587"
+          ],
+          [
+            "EXPENDITURE :"
+          ],
+          [
+            "Employee benefit expenses 20 9,907 8,862"
+          ],
+          [
+            "Finance costs 22 4,610 8,637"
+          ],
+          [
+            "Depreciation and amortization expense 9 & 10 2,158 1,816"
+          ],
+          [
+            "Other expenses 24 11,288 10,332"
+          ],
+          [
+            "Total Expenses 27,963 29,647"
+          ],
+          [
+            "Profit before tax 19,295 9,940"
+          ],
+          [
+            "Tax Expenses:"
+          ],
+          [
+            "Current tax 7,150 3,510"
+          ],
+          [
+            "Deferred tax 254 887"
+          ],
+          [
+            "Current tax expenses relating to prior years 623 204"
+          ],
+          [
+            "8,027 4,601"
+          ],
+          [
+            "Profit for the year 11,268 5,339"
+          ],
+          [
+            "Earnings per equity share (Face Value per share ` 5 each): 29"
+          ],
+          [
+            "Basic (In `) 8.25 3.91"
+          ],
+          [
+            "Diluted (In `) 8.25 3.91"
+          ],
+          [
+            "Significant Accounting policies and notes to the financial statements - 1 to 37"
+          ],
+          [
+            "As per our report of even date"
+          ],
+          [
+            "For Chaturvedi & Shah For and on behalf of the Board"
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "Firm Registration No. 101720W"
+          ],
+          [
+            "Amit Chaturvedi Urrshila Kerkar Peter Kerkar"
+          ],
+          [
+            "Partner Director Director"
+          ],
+          [
+            "Membership No. 103141"
+          ],
+          [
+            "Date : 30th May, 2014 Rashmi Jain Anil Khandelwal"
+          ],
+          [
+            "Place : Mumbai Company Secretary Chief Financial"
+          ],
+          [
+            "Officer"
+          ],
+          [
+            "Annual Report 2013-14 63"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": null,
+        "title": null,
+        "page": 66,
+        "extraction_method": "text_reconstruction",
+        "row_count": 37,
+        "column_count": 1,
+        "rows": [
+          [
+            "Cash Flow Statement"
+          ],
+          [
+            "for the year ended 31st March, 2014"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "Particular For the For the"
+          ],
+          [
+            "year ended year ended"
+          ],
+          [
+            "31st Mar, 2014 31st March, 2013"
+          ],
+          [
+            "Cash Flow from Operating Activities"
+          ],
+          [
+            "Profit before Tax 19,295 9,940"
+          ],
+          [
+            "Adjustment for:"
+          ],
+          [
+            "Depreciation 2,158 1,816"
+          ],
+          [
+            "Unrealized foreign exchange Loss / (Gain) 112 120"
+          ],
+          [
+            "Profit on sale of Investment (Previous year `0.08 Lacs) (2) -"
+          ],
+          [
+            "Dividend on Investment (12) (78)"
+          ],
+          [
+            "Interest Income (4,177) (1,399)"
+          ],
+          [
+            "Interest Expense 4,610 8,637"
+          ],
+          [
+            "Reversal of loss in value of Current Investment 2 (1)"
+          ],
+          [
+            "(Profit)/Loss on Sale of Fixed Assets (Net) 154 11"
+          ],
+          [
+            "Operating profit before working capital changes 22,140 19,046"
+          ],
+          [
+            "Adjustment for:"
+          ],
+          [
+            "(Increase)/Decrease in Inventories 193 (108)"
+          ],
+          [
+            "(Increase)/Decrease in Trade Receivable (18,613) (10,399)"
+          ],
+          [
+            "(Increase)/Decrease in Loans and Advances (6,346) (10,463)"
+          ],
+          [
+            "Increase/(Decrease) in Current Liabilities (11,506) 9,387"
+          ],
+          [
+            "Cash Generated from Operations (14,132) 7,463"
+          ],
+          [
+            "Income Taxes Paid (2,853) (2,245)"
+          ],
+          [
+            "Net cash flow from operating activities A (16,985) 5,218"
+          ],
+          [
+            "Cash Flow from Investing Activities"
+          ],
+          [
+            "Purchase of Fixed Assets & Capital Work In Progress (3,790) (5,353)"
+          ],
+          [
+            "Sale of Fixed Assets 20 9"
+          ],
+          [
+            "Interest Received 4,177 1,399"
+          ],
+          [
+            "Dividend Received 12 78"
+          ],
+          [
+            "Investment in Subsidiaries (3,173) -"
+          ],
+          [
+            "Intercoporate Deposits given (13,520) (3,106)"
+          ],
+          [
+            "Advances (given to)/Refunded by Subsidiaries (Net) 16,184 67,425"
+          ],
+          [
+            "Sales of Investment 1 (1,807)"
+          ],
+          [
+            "Net cash used in investing activities B (89) 58,647"
+          ],
+          [
+            "64 Cox & Kings Limited"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_7",
+        "note_no": "16",
+        "title": "to the Financial Statements (adjusted for the Book Overdraft as per Note 7)",
+        "page": 67,
+        "extraction_method": "text_reconstruction",
+        "row_count": 32,
+        "column_count": 1,
+        "rows": [
+          [
+            "Business Overview Management Discussion & Analysis Statutory Reports Financial Statements"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "Particular For the For the"
+          ],
+          [
+            "year ended year ended"
+          ],
+          [
+            "31st Mar, 2014 31st March, 2013"
+          ],
+          [
+            "Cash Flow from Financing Activities"
+          ],
+          [
+            "Proceeds of Long Term Borrowing 27,327 5,000"
+          ],
+          [
+            "Repayment of Long Term Borrowing (10,350) (59,591)"
+          ],
+          [
+            "Movement in Short Term Borrowing 4,570 (3,494)"
+          ],
+          [
+            "Expenses on issue of NCD (565) -"
+          ],
+          [
+            "Dividend Paid (1,587) (1,590)"
+          ],
+          [
+            "Interest Paid (4,876) (9,674)"
+          ],
+          [
+            "Net cash flow from financing activities C 14,522 (69,349)"
+          ],
+          [
+            "Net Increase/(decrease) in cash and Cash equivalents (A+B+C) (2,552) (5,484)"
+          ],
+          [
+            "Cash and Cash equivalents"
+          ],
+          [
+            "at the beginning of the period 26,667 32,134"
+          ],
+          [
+            "Effect of Unrealised gain/(loss) on revaluation 404 16"
+          ],
+          [
+            "at the end of the period 24,519 26,667"
+          ],
+          [
+            "Net Increase/(decrease) in cash and Cash equivalents (2,552) (5,484)"
+          ],
+          [
+            "Cash and cash equivalents are as per Note 16 to the Financial Statements (adjusted for the Book Overdraft as per Note 7)"
+          ],
+          [
+            "See accompanying significant accounting policies and notes to the financial statements - 1 to 37"
+          ],
+          [
+            "As per our report of even date"
+          ],
+          [
+            "For Chaturvedi & Shah For and on behalf of the Board"
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "Firm Registration No. 101720W"
+          ],
+          [
+            "Amit Chaturvedi Urrshila Kerkar Peter Kerkar"
+          ],
+          [
+            "Partner Director Director"
+          ],
+          [
+            "Membership No. 103141"
+          ],
+          [
+            "Date : 30th May, 2014 Rashmi Jain Anil Khandelwal"
+          ],
+          [
+            "Place : Mumbai Company Secretary Chief Financial"
+          ],
+          [
+            "Officer"
+          ],
+          [
+            "Annual Report 2013-14 65"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_8",
+        "note_no": null,
+        "title": null,
+        "page": 68,
+        "extraction_method": "text_reconstruction",
+        "row_count": 83,
+        "column_count": 1,
+        "rows": [
+          [
+            "Significant Accounting Policies"
+          ],
+          [
+            "a. Method of Accounting acquisition and installation of fixed assets. Intangible"
+          ],
+          [
+            "assets represent software, video shoots and trademarks"
+          ],
+          [
+            "The financial statements are prepared as per historical"
+          ],
+          [
+            "stated at cost less accumulated amortisation and"
+          ],
+          [
+            "cost convention on accrual basis and comply with the"
+          ],
+          [
+            "impairment losses, if any."
+          ],
+          [
+            "provisions of the Companies Act, 1956, the generally"
+          ],
+          [
+            "accepted accounting principles in India and the g. Depreciation"
+          ],
+          [
+            "applicable accounting standards."
+          ],
+          [
+            "Depreciation on fixed assets is provided on the"
+          ],
+          [
+            "b. Use of Estimates: written down value method at the rates prescribed"
+          ],
+          [
+            "under Schedule XIV to the Companies Act, 1956."
+          ],
+          [
+            "The preparation of financial statements requires"
+          ],
+          [
+            "Intangible assets are amortised over a period of five"
+          ],
+          [
+            "estimates and assumptions to be made that affect the"
+          ],
+          [
+            "to ten years, being the expected period of use. The"
+          ],
+          [
+            "reported amount of the assets and liabilities on the date"
+          ],
+          [
+            "leasehold land is depreciated over the lease period."
+          ],
+          [
+            "of the financial statements and the reported amount"
+          ],
+          [
+            "Leasehold improvements are depreciated over the"
+          ],
+          [
+            "of revenues and expenses during the reporting period."
+          ],
+          [
+            "lease period or at the rates prescribed for Furniture in"
+          ],
+          [
+            "Difference between the actual results and estimates are"
+          ],
+          [
+            "Schedule XVI to the Companies Act, 1956, whichever"
+          ],
+          [
+            "recognized in the period in which the results are known/"
+          ],
+          [
+            "is higher."
+          ],
+          [
+            "materialized."
+          ],
+          [
+            "h. Impairment of assets"
+          ],
+          [
+            "c. Income from operations"
+          ],
+          [
+            "An asset is treated as impaired when the carrying cost"
+          ],
+          [
+            "In line with generally accepted accounting practices,"
+          ],
+          [
+            "of asset exceeds its recoverable value. An impairment"
+          ],
+          [
+            "turnover comprises of net commissions earned on"
+          ],
+          [
+            "loss is charged to the Statement of Profit and Loss in"
+          ],
+          [
+            "travel management, service agency charges including"
+          ],
+          [
+            "the year in which an asset is identified as impaired. The"
+          ],
+          [
+            "margins in respect of tour and tour related services,"
+          ],
+          [
+            "impairment loss recognised in prior accounting period"
+          ],
+          [
+            "commissions/margins earned on foreign exchange"
+          ],
+          [
+            "is reversed if there has been change in the estimate of"
+          ],
+          [
+            "transactions in the normal course of the business as"
+          ],
+          [
+            "recoverable amount."
+          ],
+          [
+            "Authorised Dealer and Franchisees signup fees. The"
+          ],
+          [
+            "income arising from the buying and selling of foreign i. Leases"
+          ],
+          [
+            "currencies has been included on the basis of margins"
+          ],
+          [
+            "Lease arrangement, where the risks and rewards"
+          ],
+          [
+            "achieved."
+          ],
+          [
+            "incidental to ownership of an asset substantially vests"
+          ],
+          [
+            "d. Revenue Recognition with the lessor, are recognized as operating leases."
+          ],
+          [
+            "Lease payments under operating lease are recognized"
+          ],
+          [
+            "In accordance with the Company’s accounting policy"
+          ],
+          [
+            "as an expense in the Statement of Profit and Loss."
+          ],
+          [
+            "followed consistently, commissions/income arising from"
+          ],
+          [
+            "tours and related services is accounted after netting off j. Investments"
+          ],
+          [
+            "all direct expenditures relating thereto. Income from"
+          ],
+          [
+            "Long-term investments are valued at cost. Provision"
+          ],
+          [
+            "buying and selling of foreign currencies is accounted"
+          ],
+          [
+            "for diminution in value of investments is made, if the"
+          ],
+          [
+            "on net basis as stated in (c) above. All revenues are"
+          ],
+          [
+            "diminution is of a nature other than temporary. Current"
+          ],
+          [
+            "accounted when there is reasonable certainty of its"
+          ],
+          [
+            "investments are valued at the lower of cost and market"
+          ],
+          [
+            "ultimate collection."
+          ],
+          [
+            "value."
+          ],
+          [
+            "e. Expenditure"
+          ],
+          [
+            "k. Inventory"
+          ],
+          [
+            "All general business expenditure is accounted in the"
+          ],
+          [
+            "Inventory represents stock of foreign currencies, which"
+          ],
+          [
+            "year in which it is incurred. All direct tour related"
+          ],
+          [
+            "have been valued at lower of cost and realisable value"
+          ],
+          [
+            "expenses including advertisement expenses for specific"
+          ],
+          [
+            "as at the year-end."
+          ],
+          [
+            "tour are accounted in the year in which the tours are"
+          ],
+          [
+            "undertaken. l. Employee Retirement Benefits"
+          ],
+          [
+            "a. Short term employee benefits are recognised as"
+          ],
+          [
+            "f. Fixed Assets"
+          ],
+          [
+            "an expense at the undiscounted amount in the"
+          ],
+          [
+            "Fixed Assets are stated at cost, less accumulated"
+          ],
+          [
+            "Statement of Profit and Loss of the year in which"
+          ],
+          [
+            "depreciation. Costs include all costs relating to"
+          ],
+          [
+            "the related service is rendered."
+          ],
+          [
+            "66 Cox & Kings Limited"
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 110,
+      "pages": [
+        110
+      ],
+      "title": "Consolidated Balance Sheet",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "Note",
+        "As at",
+        "As at"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Shareholder’s Funds",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Share Capital",
+          "note_no": "1",
+          "values": {
+            "current_period": 6826,
+            "previous_period": 6826
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Reserves and Surplus",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 125769
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Minority Interest",
+          "note_no": "",
+          "values": {
+            "current_period": 82054,
+            "previous_period": 54219
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities",
+          "line_item": "Long-term borrowings",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 391816
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities",
+          "line_item": "Deferred tax liabilities",
+          "note_no": "4",
+          "values": {
+            "current_period": 6999,
+            "previous_period": 7464
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities",
+          "line_item": "Long term provisions",
+          "note_no": "5",
+          "values": {
+            "current_period": 2448,
+            "previous_period": 1015
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Short-term borrowings",
+          "note_no": "6",
+          "values": {
+            "current_period": 34634,
+            "previous_period": 25636
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Trade payables",
+          "note_no": "7",
+          "values": {
+            "current_period": 54277,
+            "previous_period": 46997
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Other current liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 171671
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Short-term provisions",
+          "note_no": "9",
+          "values": {
+            "current_period": 6433,
+            "previous_period": 3765
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Total",
+          "note_no": "",
+          "values": {
+            "current_period": 1048075,
+            "previous_period": 835178
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Fixed assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Tangible assets",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 187768
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets",
+          "note_no": "11",
+          "values": {
+            "current_period": 10518,
+            "previous_period": 8393
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Capital work-in-progress",
+          "note_no": "",
+          "values": {
+            "current_period": 4707,
+            "previous_period": 1151
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets under development",
+          "note_no": "",
+          "values": {
+            "current_period": 17173,
+            "previous_period": 13193
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Goodwill on Consolidation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 273329
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Non-current investments",
+          "note_no": "12",
+          "values": {
+            "current_period": 3210,
+            "previous_period": 43831
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Deferred tax Assets",
+          "note_no": "4",
+          "values": {
+            "current_period": 11,
+            "previous_period": 666
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Long term loans and advances",
+          "note_no": "13",
+          "values": {
+            "current_period": 1507,
+            "previous_period": 1513
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Current investments",
+          "note_no": "14",
+          "values": {
+            "current_period": 2808,
+            "previous_period": 2809
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": "15",
+          "values": {
+            "current_period": 1991,
+            "previous_period": 1859
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Trade receivables",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 90540
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Cash and Cash Equivalents",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 126925
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Short-term loans and advances",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 82870
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Other current assets",
+          "note_no": "19",
+          "values": {
+            "current_period": 165,
+            "previous_period": 331
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Total",
+          "note_no": "",
+          "values": {
+            "current_period": 1048075,
+            "previous_period": 835178
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 28,
+        "total_rows": 2,
+        "current_period_balanced": true,
+        "previous_period_balanced": true
+      }
+    },
+    "profit_and_loss": {
+      "statement": "consolidated_profit_and_loss",
+      "page": 111,
+      "pages": [
+        111
+      ],
+      "title": "Financial Statement",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "Note",
+        "For the",
+        "For the"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "INCOME : Revenue from operations",
+          "note_no": "20",
+          "values": {
+            "current_period": 230759,
+            "previous_period": 180873
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other Income",
+          "note_no": "21",
+          "values": {
+            "current_period": 4307,
+            "previous_period": 5879
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total Revenue",
+          "note_no": "",
+          "values": {
+            "current_period": 235066,
+            "previous_period": 186752
+          }
+        },
+        {
+          "section": null,
+          "line_item": "EXPENDITURE : Employee benefit expenses",
+          "note_no": "22",
+          "values": {
+            "current_period": 87479,
+            "previous_period": 69576
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Finance costs",
+          "note_no": "23",
+          "values": {
+            "current_period": 32358,
+            "previous_period": 37054
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortization expense",
+          "note_no": "10 & 11",
+          "values": {
+            "current_period": 17113,
+            "previous_period": 14736
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other expenses",
+          "note_no": "24",
+          "values": {
+            "current_period": 32221,
+            "previous_period": 39491
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total Expenses",
+          "note_no": "",
+          "values": {
+            "current_period": 169170,
+            "previous_period": 160858
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit before exceptional items and tax",
+          "note_no": "",
+          "values": {
+            "current_period": 65896,
+            "previous_period": 25895
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Exceptional Items",
+          "note_no": "35(d)",
+          "values": {
+            "current_period": 4562,
+            "previous_period": 6208
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add: Profit / (Loss) on Disposal of Subsidiary",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 771
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit before tax",
+          "note_no": "",
+          "values": {
+            "current_period": 61334,
+            "previous_period": 20458
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Tax Expenses:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current tax",
+          "note_no": "",
+          "values": {
+            "current_period": 16857,
+            "previous_period": 6030
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deferred tax",
+          "note_no": "",
+          "values": {
+            "current_period": -1027,
+            "previous_period": -272
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current tax expenses relating to prior years",
+          "note_no": "",
+          "values": {
+            "current_period": 598,
+            "previous_period": -548
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit after tax for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 44906,
+            "previous_period": 15249
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add : Share of Income/(Loss) from Investment in Associates",
+          "note_no": "",
+          "values": {
+            "current_period": -154,
+            "previous_period": 4035
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 44751,
+            "previous_period": 19284
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Share of Minority Interest",
+          "note_no": "",
+          "values": {
+            "current_period": 6434,
+            "previous_period": -5558
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit after Minority Interest",
+          "note_no": "",
+          "values": {
+            "current_period": 38317,
+            "previous_period": 24842
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Earnings each per equity share (Face Value per share ` 5 each):",
+          "note_no": "29",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Basic (In `)",
+          "note_no": "",
+          "values": {
+            "current_period": 28.07,
+            "previous_period": 18.2
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Diluted (In `)",
+          "note_no": "",
+          "values": {
+            "current_period": 28.07,
+            "previous_period": 18.2
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 24,
+        "total_rows": 2
+      }
+    },
+    "cash_flow": {
+      "statement": "consolidated_cash_flow",
+      "page": 112,
+      "pages": [
+        112
+      ],
+      "title": "Cash Flow Statement",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "For the",
+        "For the"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "Operating Activities",
+          "line_item": "Profit before Tax",
+          "note_no": null,
+          "values": {
+            "current_period": 61334,
+            "previous_period": 19686
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustment for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Depreciation",
+          "note_no": null,
+          "values": {
+            "current_period": 17113,
+            "previous_period": 14736
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Profit on sale of Investment",
+          "note_no": null,
+          "values": {
+            "current_period": -2,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Dividend on Investment",
+          "note_no": null,
+          "values": {
+            "current_period": -12,
+            "previous_period": -78
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Interest Income",
+          "note_no": null,
+          "values": {
+            "current_period": -2752,
+            "previous_period": -3584
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Interest Expense",
+          "note_no": null,
+          "values": {
+            "current_period": 32358,
+            "previous_period": 37054
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Bad Debts",
+          "note_no": null,
+          "values": {
+            "current_period": 49,
+            "previous_period": 28
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Foreign Exchange Gain / Loss on Translation",
+          "note_no": null,
+          "values": {
+            "current_period": -11649,
+            "previous_period": -4428
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Profit on Sale of Fixed Assets (Net)",
+          "note_no": null,
+          "values": {
+            "current_period": -778,
+            "previous_period": -803
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Operating profit before working capital changes",
+          "note_no": null,
+          "values": {
+            "current_period": 95661,
+            "previous_period": 62611
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustment for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "(Increase)/Decrease in Inventories",
+          "note_no": null,
+          "values": {
+            "current_period": 19,
+            "previous_period": -133
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "(Increase)/Decrease in Trade Receivable",
+          "note_no": null,
+          "values": {
+            "current_period": -20344,
+            "previous_period": -19062
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "(Increase)/Decrease in Loans and Advances",
+          "note_no": null,
+          "values": {
+            "current_period": -16578,
+            "previous_period": -14667
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Increase/(Decrease) in Current Liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 35108,
+            "previous_period": -309
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Cash Generated from Operations",
+          "note_no": null,
+          "values": {
+            "current_period": 93866,
+            "previous_period": 28440
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Income Taxes Paid",
+          "note_no": null,
+          "values": {
+            "current_period": -12939,
+            "previous_period": -8060
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Net cash flow from operating activities A",
+          "note_no": null,
+          "values": {
+            "current_period": 80927,
+            "previous_period": 20380
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Purchase of Fixed Assets & Capital Work In Progress",
+          "note_no": null,
+          "values": {
+            "current_period": -28406,
+            "previous_period": -16949
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Sale of Fixed Assets",
+          "note_no": null,
+          "values": {
+            "current_period": 1780,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Interest Received",
+          "note_no": null,
+          "values": {
+            "current_period": 2752,
+            "previous_period": 3584
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Dividend Received",
+          "note_no": null,
+          "values": {
+            "current_period": 12,
+            "previous_period": 3512
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Additional Investment in Meninger (Refer Schedule 12)",
+          "note_no": null,
+          "values": {
+            "current_period": -25682,
+            "previous_period": -17190
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Intercoporate Deposits given",
+          "note_no": null,
+          "values": {
+            "current_period": -13520,
+            "previous_period": -3106
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Sale of Subsidiary",
+          "note_no": null,
+          "values": {
+            "current_period": 685,
+            "previous_period": 9083
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Net cash used in investing activities B",
+          "note_no": null,
+          "values": {
+            "current_period": -62378,
+            "previous_period": -21066
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "110 Cox & Kings Limited",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 28,
+        "total_rows": 0
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 110,
+        "extraction_method": "text_reconstruction",
+        "row_count": 57,
+        "column_count": 1,
+        "rows": [
+          [
+            "Consolidated Balance Sheet"
+          ],
+          [
+            "as at 31st March, 2014"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "Particulars Note As at As at"
+          ],
+          [
+            "No. 31st March, 2014 31st March, 2013"
+          ],
+          [
+            "EQUITY AND LIABILITIES"
+          ],
+          [
+            "Shareholder’s Funds"
+          ],
+          [
+            "Share Capital 1 6,826 6,826"
+          ],
+          [
+            "Reserves and Surplus 2 168,665 125,769"
+          ],
+          [
+            "Minority Interest 82,054 54,219"
+          ],
+          [
+            "257,545 186,814"
+          ],
+          [
+            "Non-Current Liabilities"
+          ],
+          [
+            "Long-term borrowings 3 473,945 391,816"
+          ],
+          [
+            "Deferred tax liabilities 4 6,999 7,464"
+          ],
+          [
+            "Long term provisions 5 2,448 1,015"
+          ],
+          [
+            "483,392 400,295"
+          ],
+          [
+            "Current Liabilities"
+          ],
+          [
+            "Short-term borrowings 6 34,634 25,636"
+          ],
+          [
+            "Trade payables 7 54,277 46,997"
+          ],
+          [
+            "Other current liabilities 8 211,794 171,671"
+          ],
+          [
+            "Short-term provisions 9 6,433 3,765"
+          ],
+          [
+            "307,138 248,069"
+          ],
+          [
+            "Total 1,048,075 835,178"
+          ],
+          [
+            "ASSETS"
+          ],
+          [
+            "Non-current assets"
+          ],
+          [
+            "Fixed assets"
+          ],
+          [
+            "Tangible assets 10 228,822 187,768"
+          ],
+          [
+            "Intangible assets 11 10,518 8,393"
+          ],
+          [
+            "Capital work-in-progress 4,707 1,151"
+          ],
+          [
+            "Intangible assets under development 17,173 13,193"
+          ],
+          [
+            "Goodwill on Consolidation 405,320 273,329"
+          ],
+          [
+            "666,540 483,834"
+          ],
+          [
+            "Non-current investments 12 3,210 43,831"
+          ],
+          [
+            "Deferred tax Assets 4 11 666"
+          ],
+          [
+            "Long term loans and advances 13 1,507 1,513"
+          ],
+          [
+            "4,728 46,010"
+          ],
+          [
+            "Current assets"
+          ],
+          [
+            "Current investments 14 2,808 2,809"
+          ],
+          [
+            "Inventories 15 1,991 1,859"
+          ],
+          [
+            "Trade receivables 16 113,558 90,540"
+          ],
+          [
+            "Cash and Cash Equivalents 17 137,863 126,925"
+          ],
+          [
+            "Short-term loans and advances 18 120,422 82,870"
+          ],
+          [
+            "Other current assets 19 165 331"
+          ],
+          [
+            "376,807 305,334"
+          ],
+          [
+            "Total 1,048,075 835,178"
+          ],
+          [
+            "Significant accounting policies and notes to the financial statements - 1 to 35"
+          ],
+          [
+            "As per our report of even date"
+          ],
+          [
+            "For Chaturvedi & Shah For and on behalf of the Board"
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "Firm Registration No. 101720W"
+          ],
+          [
+            "Amit Chaturvedi Urrshila Kerkar Peter Kerkar"
+          ],
+          [
+            "Partner Director Director"
+          ],
+          [
+            "Membership No. 103141"
+          ],
+          [
+            "Date: May 30, 2014 Rashmi Jain Anil Khandelwal"
+          ],
+          [
+            "Place: Mumbai Company Secretary Chief Financial"
+          ],
+          [
+            "Officer"
+          ],
+          [
+            "108 Cox & Kings Limited"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 111,
+        "extraction_method": "text_reconstruction",
+        "row_count": 45,
+        "column_count": 1,
+        "rows": [
+          [
+            "Business Overview Management Discussion & Analysis Statutory Reports Financial Statements"
+          ],
+          [
+            "Consolidated Statement of Profit & Loss"
+          ],
+          [
+            "for the year ended 31st March, 2014"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "Particulars Note For the For the"
+          ],
+          [
+            "No. year ended year ended"
+          ],
+          [
+            "31st March, 2014 31st March, 2013"
+          ],
+          [
+            "INCOME : -"
+          ],
+          [
+            "Revenue from operations 20 230,759 180,873"
+          ],
+          [
+            "Other Income 21 4,307 5,879"
+          ],
+          [
+            "Total Revenue 235,066 186,752"
+          ],
+          [
+            "EXPENDITURE : -"
+          ],
+          [
+            "Employee benefit expenses 22 87,479 69,576"
+          ],
+          [
+            "Finance costs 23 32,358 37,054"
+          ],
+          [
+            "Depreciation and amortization expense 10 & 11 17,113 14,736"
+          ],
+          [
+            "Other expenses 24 32,221 39,491"
+          ],
+          [
+            "Total Expenses 169,170 160,858"
+          ],
+          [
+            "Profit before exceptional items and tax 65,896 25,895"
+          ],
+          [
+            "Less: Exceptional Items 35(d) 4,562 6,208"
+          ],
+          [
+            "Add: Profit / (Loss) on Disposal of Subsidiary - 771"
+          ],
+          [
+            "Profit before tax 61,334 20,458"
+          ],
+          [
+            "Tax Expenses:"
+          ],
+          [
+            "Current tax 16,857 6,030"
+          ],
+          [
+            "Deferred tax (1,027) (272)"
+          ],
+          [
+            "Current tax expenses relating to prior years 598 (548)"
+          ],
+          [
+            "Profit after tax for the year 44,906 15,249"
+          ],
+          [
+            "Add : Share of Income/(Loss) from Investment in Associates (154) 4,035"
+          ],
+          [
+            "Profit for the year 44,751 19,284"
+          ],
+          [
+            "Share of Minority Interest 6,434 (5,558)"
+          ],
+          [
+            "Profit after Minority Interest 38,317 24,842"
+          ],
+          [
+            "Earnings each per equity share (Face Value per share ` 5 each): 29"
+          ],
+          [
+            "Basic (In `) 28.07 18.20"
+          ],
+          [
+            "Diluted (In `) 28.07 18.20"
+          ],
+          [
+            "Significant accounting policies and notes to the financial statements - 1 to 35"
+          ],
+          [
+            "As per our report of even date"
+          ],
+          [
+            "For Chaturvedi & Shah For and on behalf of the Board"
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "Firm Registration No. 101720W"
+          ],
+          [
+            "Amit Chaturvedi Urrshila Kerkar Peter Kerkar"
+          ],
+          [
+            "Partner Director Director"
+          ],
+          [
+            "Membership No. 103141"
+          ],
+          [
+            "Date: May 30, 2014 Rashmi Jain Anil Khandelwal"
+          ],
+          [
+            "Place: Mumbai Company Secretary Chief Financial"
+          ],
+          [
+            "Officer"
+          ],
+          [
+            "Annual Report 2013-14 109"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 112,
+        "extraction_method": "text_reconstruction",
+        "row_count": 36,
+        "column_count": 1,
+        "rows": [
+          [
+            "Cash Flow Statement"
+          ],
+          [
+            "for the Year ended March 31, 2014"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "Particulars For the For the"
+          ],
+          [
+            "year ended year ended"
+          ],
+          [
+            "31st March, 2014 31st March, 2013"
+          ],
+          [
+            "Cash Flow from Operating Activities"
+          ],
+          [
+            "Profit before Tax 61,334 19,686"
+          ],
+          [
+            "Adjustment for:"
+          ],
+          [
+            "Depreciation 17,113 14,736"
+          ],
+          [
+            "Profit on sale of Investment (2) -"
+          ],
+          [
+            "Dividend on Investment (12) (78)"
+          ],
+          [
+            "Interest Income (2,752) (3,584)"
+          ],
+          [
+            "Interest Expense 32,358 37,054"
+          ],
+          [
+            "Bad Debts 49 28"
+          ],
+          [
+            "Foreign Exchange Gain / Loss on Translation (11,649) (4,428)"
+          ],
+          [
+            "Profit on Sale of Fixed Assets (Net) (778) (803)"
+          ],
+          [
+            "Operating profit before working capital changes 95,661 62,611"
+          ],
+          [
+            "Adjustment for:"
+          ],
+          [
+            "(Increase)/Decrease in Inventories 19 (133)"
+          ],
+          [
+            "(Increase)/Decrease in Trade Receivable (20,344) (19,062)"
+          ],
+          [
+            "(Increase)/Decrease in Loans and Advances (16,578) (14,667)"
+          ],
+          [
+            "Increase/(Decrease) in Current Liabilities 35,108 (309)"
+          ],
+          [
+            "Cash Generated from Operations 93,866 28,440"
+          ],
+          [
+            "Income Taxes Paid (12,939) (8,060)"
+          ],
+          [
+            "Net cash flow from operating activities A 80,927 20,380"
+          ],
+          [
+            "Cash Flow from Investing Activities"
+          ],
+          [
+            "Purchase of Fixed Assets & Capital Work In Progress (28,406) (16,949)"
+          ],
+          [
+            "Sale of Fixed Assets 1,780 -"
+          ],
+          [
+            "Interest Received 2,752 3,584"
+          ],
+          [
+            "Dividend Received 12 3,512"
+          ],
+          [
+            "Additional Investment in Meninger (Refer Schedule 12) (25,682) (17,190)"
+          ],
+          [
+            "Intercoporate Deposits given (13,520) (3,106)"
+          ],
+          [
+            "Sale of Subsidiary 685 9,083"
+          ],
+          [
+            "Net cash used in investing activities B (62,378) (21,066)"
+          ],
+          [
+            "110 Cox & Kings Limited"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": "17",
+        "title": "to the financial statements (adjusted for the Book Overdraft as per Note 8)",
+        "page": 113,
+        "extraction_method": "text_reconstruction",
+        "row_count": 34,
+        "column_count": 1,
+        "rows": [
+          [
+            "Business Overview Management Discussion & Analysis Statutory Reports Financial Statements"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "Particulars For the For the"
+          ],
+          [
+            "year ended year ended"
+          ],
+          [
+            "31st March, 2014 31st March, 2013"
+          ],
+          [
+            "Cash Flow from Financing Activities"
+          ],
+          [
+            "Proceeds of Long Term Borrowing 144,675 135,641"
+          ],
+          [
+            "Repayment of Long Term Borrowing (140,639) (134,333)"
+          ],
+          [
+            "Movements of Short Term Borrowing 8,997 137"
+          ],
+          [
+            "Proceed from Issue of Preference Shares in Subsidiary 10,912 64,990"
+          ],
+          [
+            "Expenses for Issue of Shares (565) -"
+          ],
+          [
+            "Dividend Paid (1,587) (1,588)"
+          ],
+          [
+            "Interest Paid (33,653) (39,170)"
+          ],
+          [
+            "Net cash flow from financing activities C (11,859) 25,677"
+          ],
+          [
+            "Net Increase in cash and Cash equivalents (A+B+C) 6,691 24,991"
+          ],
+          [
+            "Cash and Cash equivalents"
+          ],
+          [
+            "at the beginning of the period 126,447 101,441"
+          ],
+          [
+            "as part of acquired subsidiary 3,900 -"
+          ],
+          [
+            "Effect of Unrealised gain/(loss) on revaluation 404 16"
+          ],
+          [
+            "at the end of the period 137,442 126,448"
+          ],
+          [
+            "Net Increase in cash and Cash equivalents 6,691 24,991"
+          ],
+          [
+            "Cash and cash equivalents are as per Note 17 to the financial statements (adjusted for the Book Overdraft as per Note 8)"
+          ],
+          [
+            "Significant accounting policies and notes to the financial statements - 1 to 35"
+          ],
+          [
+            "As per our report of even date"
+          ],
+          [
+            "For Chaturvedi & Shah For and on behalf of the Board"
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "Firm Registration No. 101720W"
+          ],
+          [
+            "Amit Chaturvedi Urrshila Kerkar Peter Kerkar"
+          ],
+          [
+            "Partner Director Director"
+          ],
+          [
+            "Membership No. 103141"
+          ],
+          [
+            "Date: May 30, 2014 Rashmi Jain Anil Khandelwal"
+          ],
+          [
+            "Place: Mumbai Company Secretary Chief Financial"
+          ],
+          [
+            "Officer"
+          ],
+          [
+            "Annual Report 2013-14 111"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": null,
+        "title": null,
+        "page": 114,
+        "extraction_method": "text_reconstruction",
+        "row_count": 81,
+        "column_count": 1,
+        "rows": [
+          [
+            "Significant Accounting Policies"
+          ],
+          [
+            "A. Principles of consolidation associates’ profit and loss account and through"
+          ],
+          [
+            "• The financial statements of the Company and its its reserves for the balance, based on available"
+          ],
+          [
+            "subsidiary companies (which are not in the nature information."
+          ],
+          [
+            "of joint ventures) are combined on a line-by-line"
+          ],
+          [
+            "• The difference between the cost of investment in"
+          ],
+          [
+            "basis by adding together the book values of like"
+          ],
+          [
+            "the associates and the share of net assets at the"
+          ],
+          [
+            "items of assets, liabilities, income and expenses,"
+          ],
+          [
+            "time of acquisition of shares in the associates is"
+          ],
+          [
+            "after fully eliminating intra-group balances and"
+          ],
+          [
+            "identified in the financial statements as Goodwill"
+          ],
+          [
+            "intra-group transactions resulting in unrealised"
+          ],
+          [
+            "or Capital Reserve as the case may be."
+          ],
+          [
+            "profits or losses in accordance with Accounting"
+          ],
+          [
+            "Standard (AS) 21 - “Consolidated Financial • In case of joint venture companies (JVC’s), the"
+          ],
+          [
+            "Statements”. consolidated financial statements include the"
+          ],
+          [
+            "interest of the company in JVC’s, which has"
+          ],
+          [
+            "• In case of foreign subsidiaries, being non-"
+          ],
+          [
+            "been accounted for using the proportionate"
+          ],
+          [
+            "integral foreign operations, revenue items are"
+          ],
+          [
+            "consolidation method of accounting and"
+          ],
+          [
+            "consolidated at the average rate prevailing during"
+          ],
+          [
+            "reporting whereby the Company’s share of each"
+          ],
+          [
+            "the period. All assets and liabilities are converted"
+          ],
+          [
+            "of the assets, liabilities, income and expenses"
+          ],
+          [
+            "at rates prevailing at the end of the period. Any"
+          ],
+          [
+            "of a jointly controlled entity is considered as"
+          ],
+          [
+            "exchange difference arising on consolidation is"
+          ],
+          [
+            "separate line items in the Consolidated Financial"
+          ],
+          [
+            "recognised in the foreign exchange translation"
+          ],
+          [
+            "Statements."
+          ],
+          [
+            "reserve."
+          ],
+          [
+            "• As far as possible, the consolidated financial"
+          ],
+          [
+            "• The difference between the costs of investment"
+          ],
+          [
+            "statements are prepared using uniform"
+          ],
+          [
+            "in the subsidiaries, over the net assets at the"
+          ],
+          [
+            "accounting policies for like transactions and other"
+          ],
+          [
+            "time of acquisition of shares in the subsidiaries is"
+          ],
+          [
+            "events in similar circumstances and are presented"
+          ],
+          [
+            "recognised in the financial statements as Goodwill"
+          ],
+          [
+            "in the same manner as the Company’s separate"
+          ],
+          [
+            "or Capital Reserve as the case may be."
+          ],
+          [
+            "financial statements."
+          ],
+          [
+            "• Minority Interest’s share of net profit of"
+          ],
+          [
+            "• Investments other than in subsidiaries and"
+          ],
+          [
+            "consolidated subsidiaries for the year is identified"
+          ],
+          [
+            "associates have been accounted as per Accounting"
+          ],
+          [
+            "and adjusted against the income of the group in"
+          ],
+          [
+            "Standard (AS) 13 “Accounting for Investments”."
+          ],
+          [
+            "order to arrive at the net income attributable to"
+          ],
+          [
+            "shareholders of the Company. B. Other significant accounting policies"
+          ],
+          [
+            "a. Basis of accounting:"
+          ],
+          [
+            "• Minority Interest’s share of net assets of"
+          ],
+          [
+            "consolidated subsidiaries is identified and The financial statements of the parent company"
+          ],
+          [
+            "presented in the consolidated balance sheet are prepared as per historical cost convention on"
+          ],
+          [
+            "separate from liabilities and the equity of the accrual basis except certain fixed assets which"
+          ],
+          [
+            "Company’s shareholders. are stated at fair value and comply with the"
+          ],
+          [
+            "generally accepted accounting principles in India"
+          ],
+          [
+            "• In case of associates where the company directly"
+          ],
+          [
+            "and the applicable accounting standards. The"
+          ],
+          [
+            "or indirectly through subsidiaries holds more"
+          ],
+          [
+            "financial statements of the foreign subsidiaries are"
+          ],
+          [
+            "than 20% of equity, Investments in associates are"
+          ],
+          [
+            "prepared as per the Financial Reporting Standards"
+          ],
+          [
+            "accounted for using equity method in accordance"
+          ],
+          [
+            "prevalent in respective countries. Accordingly,"
+          ],
+          [
+            "with Accounting Standard (AS) 23 - “Accounting"
+          ],
+          [
+            "United Kingdom based subsidiaries are prepared"
+          ],
+          [
+            "for investments in associates in consolidated"
+          ],
+          [
+            "in accordance with the UK financial reporting"
+          ],
+          [
+            "financial statements”."
+          ],
+          [
+            "standards, UAE based subsidiary company are"
+          ],
+          [
+            "• The Company accounts for its share in the prepared in accordance with International Financial"
+          ],
+          [
+            "change in the net assets of the associates, post Reporting Standards, Singapore based subsidiaries"
+          ],
+          [
+            "acquisition, after eliminating unrealized profits are prepared in accordance with the Singapore"
+          ],
+          [
+            "and losses resulting from transactions between Financial Reporting Standards and Australia based"
+          ],
+          [
+            "the Company and its associates to the extent of subsidiaries are prepared in accordance with the"
+          ],
+          [
+            "its share, through its profit and loss account to Australia Financial Reporting Standards."
+          ],
+          [
+            "the extent such change is attributable to the"
+          ],
+          [
+            "112 Cox & Kings Limited"
+          ]
+        ]
+      }
+    ]
+  }
+}

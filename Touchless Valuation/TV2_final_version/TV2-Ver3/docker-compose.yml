@@ -1,0 +1,21 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - BACKEND_HOST=backend
+      - BACKEND_PORT=5899
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "5899:5899"
+    volumes:
+      - ./database:/app/database:ro
+    environment:
+      - PORT=5899
+      - HOST=0.0.0.0

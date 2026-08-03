@@ -10,8 +10,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .routers import intake
@@ -39,6 +40,14 @@ app.include_router(intake.router)
 # platform runs from one Python process — `python run.py`, no Node required.
 _STATIC = Path(__file__).resolve().parent.parent.parent / "frontend" / "out"
 if _STATIC.is_dir():
+    @app.get("/")
+    def root_redirect(request: Request):
+        return RedirectResponse(url="/landing", status_code=307)
+
+    @app.get("/landing")
+    def landing_redirect(request: Request):
+        return RedirectResponse(url="/landing.html", status_code=307)
+
     app.mount("/", StaticFiles(directory=str(_STATIC), html=True), name="ui")
 else:
     @app.get("/")

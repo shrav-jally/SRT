@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ProResult, SearchHit, SectorNode } from "@/lib/types";
 import Dashboard from "@/app/components/Dashboard";
-import LoginPage from "@/app/components/LoginPage";
 
 type Mode = "listed" | "private";
 
@@ -16,23 +15,6 @@ type Assumptions = {
 };
 
 export default function ValuationWorkspace() {
-  /* ---- auth state ---- */
-  const [user, setUser] = useState<string | null>(() => {
-    if (typeof window === "undefined") return null;
-    return sessionStorage.getItem("tv1_user");
-  });
-
-  function handleLogin(username: string) {
-    sessionStorage.setItem("tv1_user", username);
-    setUser(username);
-  }
-
-  function handleLogout() {
-    sessionStorage.removeItem("tv1_user");
-    sessionStorage.removeItem("tv1_pending_code");
-    setUser(null);
-  }
-
   /* ---- valuation state ---- */
   const [mode, setMode] = useState<Mode>("listed");
   const [result, setResult] = useState<ProResult | null>(null);
@@ -93,7 +75,7 @@ export default function ValuationWorkspace() {
   }, [assump, lastReq, runValuation]);
 
   useEffect(() => {
-    if (!user || loading || result) return;
+    if (loading || result) return;
 
     const pendingCode =
       typeof window !== "undefined"
@@ -106,9 +88,7 @@ export default function ValuationWorkspace() {
       void runValuation("/api/value-pro", { code: Number(pendingCode), max_peers: 8 });
     }, 0);
     return () => window.clearTimeout(timer);
-  }, [loading, result, runValuation, user]);
-
-  if (!user) return <LoginPage onLogin={handleLogin} />;
+  }, [loading, result, runValuation]);
 
   return (
     <div className="min-h-screen">
@@ -126,13 +106,6 @@ export default function ValuationWorkspace() {
             <span className="text-xs text-emerald-100/70">
               Income · Market · Asset — triangulated | 4,200+ listed Indian comparables
             </span>
-            <button
-              onClick={handleLogout}
-              className="dds-btn dds-btn_sm rounded border-white/20 text-white/60 hover:border-white/40 hover:text-white"
-              title="Sign out"
-            >
-              Sign out
-            </button>
           </div>
         </div>
       </header>

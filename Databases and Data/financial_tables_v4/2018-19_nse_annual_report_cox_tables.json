@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmpcnvnbadp/2018-19_nse_annual_report_cox.pdf",
+    "file_name": "2018-19_nse_annual_report_cox.pdf",
+    "financial_year": "2018-19",
+    "extraction_timestamp": "2026-07-03T07:33:23.573165+00:00",
+    "page_count": 2
+  },
+  "standalone": {
+    "notes_to_accounts": []
+  },
+  "consolidated": {
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "title": "1.C onsolidated Cash FlowStatement fortheyearended May631,2018",
+      "currency": null,
+      "periods": [
+        "21.09.2018"
+      ],
+      "column_headers": [
+        "For the",
+        "For the"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustment for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Foreign Exchange Gain/",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Loss on Translation",
+          "note_no": null,
+          "values": {
+            "current_period": -32072,
+            "previous_period": 16135
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Repayment of Long Term Borrowing",
+          "note_no": null,
+          "values": {
+            "current_period": -193906,
+            "previous_period": -54547
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Change in liability 1st April arising from 2017",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "firtandng activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Borrowings Non Current",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 236220
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "2. Consolidated Reserves and surpluses",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "12. Reserves and Surplus",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Retained Earnings",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Opening Balance",
+          "note_no": null,
+          "values": {
+            "current_period": 89626,
+            "previous_period": 76369
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Profit for the year",
+          "note_no": null,
+          "values": {
+            "current_period": 44387,
+            "previous_period": 14696
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Non-Controlling Interest adjusted through Retained Earnings",
+          "note_no": null,
+          "values": {
+            "current_period": 268671,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Transfer from Retained Earnings to Statutory Reserve",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 671
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "DMdend including Dividend",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Distribution Tax",
+          "note_no": null,
+          "values": {
+            "current_period": -2140,
+            "previous_period": -2110
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Impact on change in Controlling Interest",
+          "note_no": null,
+          "values": {
+            "current_period": -6728,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Profit on sale of investments",
+          "note_no": null,
+          "values": {
+            "current_period": 62036,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Closing Balance",
+          "note_no": null,
+          "values": {
+            "current_period": 160294,
+            "previous_period": 89626
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "The above printing errors does not",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Audited Accounts of the Company.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Report remains unchanged. This conjunction with the printed annual",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "updated version of the said annual the Company.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "We sincerely regret inconvenience",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 24,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "notes_to_accounts": []
+  }
+}
