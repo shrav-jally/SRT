@@ -1,0 +1,12 @@
+# Ignore large or unrelated workspace content
+Branding Guidelines/
+Databases and Data/Mock Data/
+Databases and Data/WEVOIS LABS PRIVATE LIMITED/
+Databases and Data/accumn/
+Databases and Data/companies_annual_reports*.zip
+Databases and Data/financial_tables_v3/
+Databases and Data/financial_tables_v4.zip
+Early Warning System  (Sentinel)/
+ICICI Lombard/
+Touchless Valuation/
+Voice Agent for Dashverify/
