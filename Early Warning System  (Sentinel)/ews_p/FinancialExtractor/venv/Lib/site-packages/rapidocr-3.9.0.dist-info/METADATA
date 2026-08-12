@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: rapidocr
+Version: 3.9.0
+Summary: Awesome OCR Library
+Author-email: SWHL <liekkaskono@163.com>
+License-Expression: Apache-2.0
+Project-URL: Documentation, https://rapidai.github.io/RapidOCRDocs
+Project-URL: Changelog, https://github.com/RapidAI/RapidOCR/releases
+Keywords: ocr,text_detection,text_recognition,db,onnxruntime,paddleocr,openvino,rapidocr
+Platform: Any
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: <4,>=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pyclipper>=1.2.0
+Requires-Dist: opencv_python>=4.5.1.48
+Requires-Dist: numpy<3.0.0,>=1.19.5
+Requires-Dist: six>=1.15.0
+Requires-Dist: Shapely!=2.0.4,>=1.7.1
+Requires-Dist: PyYAML
+Requires-Dist: Pillow
+Requires-Dist: tqdm
+Requires-Dist: omegaconf!=2.2.1
+Requires-Dist: requests
+Requires-Dist: colorlog
+
+### See [Documentation](https://rapidai.github.io/RapidOCRDocs)
