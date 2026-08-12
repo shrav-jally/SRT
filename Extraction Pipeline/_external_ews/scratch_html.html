@@ -1,0 +1,315 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EWS | Enterprise Custom Extraction Engine</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --primary: #6366F1;
+                --primary-hover: #4F46E5;
+                --accent: #10B981;
+                --bg-dark: #0F172A;
+                --card-bg: rgba(30, 41, 59, 0.85);
+                --border-color: rgba(255, 255, 255, 0.1);
+                --text-main: #F8FAFC;
+                --text-muted: #94A3B8;
+            }
+            body {
+                margin: 0; padding: 24px;
+                font-family: 'Inter', sans-serif;
+                background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+                color: var(--text-main);
+                min-height: 100vh;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 32px;
+            }
+            .badge {
+                display: inline-block;
+                padding: 4px 12px;
+                border-radius: 9999px;
+                font-size: 12px;
+                font-weight: 600;
+                background: rgba(99, 102, 241, 0.15);
+                color: #818CF8;
+                border: 1px solid rgba(99, 102, 241, 0.3);
+                margin-bottom: 8px;
+            }
+            h1 {
+                margin: 0 0 8px 0;
+                font-size: 32px;
+                font-weight: 700;
+                background: linear-gradient(to right, #818CF8, #C084FC);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .sub-header { color: var(--text-muted); font-size: 15px; margin: 0; }
+            
+            .main-grid {
+                display: grid;
+                grid-template-columns: 360px 1fr;
+                gap: 24px;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+            
+            .card {
+                background: var(--card-bg);
+                backdrop-filter: blur(12px);
+                border: 1px solid var(--border-color);
+                border-radius: 20px;
+                padding: 24px;
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+            }
+            
+            .file-upload {
+                border: 2px dashed var(--border-color);
+                border-radius: 16px;
+                padding: 32px 16px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-bottom: 16px;
+            }
+            .file-upload:hover {
+                border-color: var(--primary);
+                background: rgba(99, 102, 241, 0.05);
+            }
+            .file-upload input { display: none; }
+            .btn {
+                background: var(--primary);
+                color: white;
+                border: none;
+                padding: 14px 20px;
+                border-radius: 12px;
+                font-size: 15px;
+                font-weight: 600;
+                width: 100%;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+            .btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+            
+            /* Results Panel */
+            .stats-bar {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+            .stat-card {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                padding: 16px;
+                text-align: center;
+            }
+            .stat-val { font-size: 22px; font-weight: 700; color: #818CF8; }
+            .stat-lbl { font-size: 11px; color: var(--text-muted); text-transform: uppercase; margin-top: 4px; }
+
+            .results-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 12px;
+                font-size: 13px;
+            }
+            .results-table th {
+                background: rgba(255, 255, 255, 0.05);
+                color: var(--text-muted);
+                text-align: left;
+                padding: 10px 12px;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .results-table td {
+                padding: 12px;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+                vertical-align: top;
+            }
+            .status-tag {
+                padding: 3px 8px;
+                border-radius: 6px;
+                font-size: 11px;
+                font-weight: 700;
+                display: inline-block;
+            }
+            .status-FOUND { background: rgba(16, 185, 129, 0.2); color: #34D399; }
+            .status-NOT_FOUND { background: rgba(239, 68, 68, 0.2); color: #F87171; }
+            .status-AMBIGUOUS { background: rgba(245, 158, 11, 0.2); color: #FBBF24; }
+
+            .action-bar {
+                display: flex;
+                gap: 12px;
+                margin-top: 20px;
+            }
+            .btn-secondary {
+                background: rgba(255,255,255,0.1);
+                color: white;
+                border: 1px solid var(--border-color);
+                padding: 10px 16px;
+                border-radius: 10px;
+                cursor: pointer;
+                font-weight: 600;
+                text-decoration: none;
+                font-size: 13px;
+            }
+            .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <span class="badge">PRODUCT 1 (CANONICALIZER) + PRODUCT 2 (SPEC ENGINE)</span>
+            <h1>Enterprise Document Understanding Architecture</h1>
+            <p class="sub-header">Schema-Driven Extraction over Canonical Document Representation v0</p>
+        </div>
+
+        <div class="main-grid">
+            <!-- Sidebar / Upload -->
+            <div class="card">
+                <h3 style="margin-top:0;">Upload & Extract</h3>
+                <div class="file-upload" onclick="document.getElementById('pdfInput').click()">
+                    <div style="font-size:32px; margin-bottom:8px;">ðŸ“„</div>
+                    <div id="fileName" style="font-weight:500;">Click or Drop PDF Annual Report</div>
+                    <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">100â€“400 Page IFRS/Ind AS Annual Reports</div>
+                    <input type="file" id="pdfInput" accept=".pdf" onchange="document.getElementById('fileName').innerText = this.files[0].name">
+                </div>
+
+                <div style="margin-bottom:16px;">
+                    <label style="font-size:12px; color:var(--text-muted);">Extraction Specification Spec</label>
+                    <select id="specSelect" style="width:100%; padding:10px; border-radius:8px; background:rgba(255,255,255,0.05); color:white; border:1px solid var(--border-color); margin-top:4px;">
+                        <option value="sample_custom_spec.json">Enterprise Demo Spec (10 Core Fields)</option>
+                        <option value="msme_financial_metrics_spec.json">Detailed Financial Metrics (27 Items)</option>
+                        <option value="comprehensive_sections_spec.json">Comprehensive Narrative Sections (13 Items)</option>
+                    </select>
+                </div>
+
+                <button class="btn" id="runBtn" onclick="runExtraction()">Execute Custom Spec Extraction</button>
+
+                <div id="statusBox" style="margin-top:16px; font-size:13px; color:var(--text-muted); display:none;">
+                    Processing PDF through Product 1 & Product 2...
+                </div>
+            </div>
+
+            <!-- Main Results Display -->
+            <div class="card" id="resultsPanel" style="display:none;">
+                <div class="stats-bar">
+                    <div class="stat-card">
+                        <div class="stat-val" id="statFound">-</div>
+                        <div class="stat-lbl">Fields Found</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-val" id="statRate">-</div>
+                        <div class="stat-lbl">Completion Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-val" id="statPages">-</div>
+                        <div class="stat-lbl">Canonical Pages</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-val" id="statTables">-</div>
+                        <div class="stat-lbl">Canonical Tables</div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 0 0 12px 0;">Custom Extraction Results</h3>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Entity Name</th>
+                            <th>Mode</th>
+                            <th>Status</th>
+                            <th>Confidence</th>
+                            <th>Extracted Value / Provenance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody"></tbody>
+                </table>
+
+                <div class="action-bar">
+                    <a id="excelBtn" class="btn-secondary" href="#" target="_blank">ðŸ“¥ Download Excel (.xlsx)</a>
+                    <a id="jsonBtn" class="btn-secondary" href="#" target="_blank">ðŸ“„ Download JSON (.json)</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            async function runExtraction() {
+                const fileInput = document.getElementById('pdfInput');
+                if (!fileInput.files.length) {
+                    alert("Please select a PDF file first.");
+                    return;
+                }
+
+                const runBtn = document.getElementById('runBtn');
+                const statusBox = document.getElementById('statusBox');
+                const resultsPanel = document.getElementById('resultsPanel');
+
+                runBtn.disabled = true;
+                runBtn.innerText = "Extracting...";
+                statusBox.style.display = "block";
+
+                const specVal = document.getElementById('specSelect').value;
+                const formData = new FormData();
+                formData.append('file', fileInput.files[0]);
+
+                try {
+                    const resp = await fetch('/api/v1/custom-extract?spec_id=' + encodeURIComponent(specVal), {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const data = await resp.json();
+
+                    if (!resp.ok) throw new Error(data.error || "Extraction failed");
+
+                    // Update Stats
+                    document.getElementById('statFound').innerText = data.summary.fields_found + " / " + data.summary.total_fields_requested;
+                    document.getElementById('statRate').innerText = data.summary.completion_rate_pct + "%";
+                    document.getElementById('statPages').innerText = data.canonical_summary.pages;
+                    document.getElementById('statTables').innerText = data.canonical_summary.tables;
+
+                    // Update Table Rows
+                    const tbody = document.getElementById('resultsBody');
+                    tbody.innerHTML = '';
+
+                    data.results.forEach(res => {
+                        const tr = document.createElement('tr');
+                        const confPct = Math.round(res.confidence * 100);
+                        const prov = res.provenance && res.provenance.length ? res.provenance[0] : {};
+                        const provText = prov.page_number ? ` (Page ${prov.page_number}${prov.section_id ? ', Section: ' + prov.section_id : ''})` : '';
+
+                        tr.innerHTML = `
+                            <td><b>${res.category}</b><br><span style="color:var(--text-muted); font-size:11px;">${res.subcategory}</span></td>
+                            <td>${res.entity_name}</td>
+                            <td><span style="font-size:11px; color:var(--text-muted);">${res.extraction_mode}</span></td>
+                            <td><span class="status-tag status-${res.status}">${res.status}</span></td>
+                            <td>${confPct}%</td>
+                            <td>
+                                <div><b>${res.value_raw || '-'}</b></div>
+                                <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">${res.explanation || ''}${provText}</div>
+                            </td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+
+                    // Update Download Links
+                    document.getElementById('excelBtn').href = data.excel_download_url;
+                    document.getElementById('jsonBtn').href = data.json_download_url;
+
+                    resultsPanel.style.display = "block";
+                    statusBox.innerText = "Extraction complete!";
+                } catch (err) {
+                    alert("Error: " + err.message);
+                    statusBox.innerText = "Extraction failed.";
+                } finally {
+                    runBtn.disabled = false;
+                    runBtn.innerText = "Execute Custom Spec Extraction";
+                }
+            }
+        </script>
+    </body>
+    </html>
+    

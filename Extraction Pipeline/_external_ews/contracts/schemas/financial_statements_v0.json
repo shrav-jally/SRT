@@ -1,0 +1,557 @@
+{
+  "$defs": {
+    "ExtractionStatus": {
+      "description": "Explicit extraction status for every domain field.\n\nNEVER use null alone to represent missing fields.",
+      "enum": [
+        "FOUND",
+        "NOT_FOUND",
+        "NOT_APPLICABLE",
+        "AMBIGUOUS",
+        "FAILED_VALIDATION"
+      ],
+      "title": "ExtractionStatus",
+      "type": "string"
+    },
+    "FinancialLineItem": {
+      "description": "Line item within a financial statement (e.g., Revenue from operations).",
+      "properties": {
+        "line_item_id": {
+          "title": "Line Item Id",
+          "type": "string"
+        },
+        "canonical_name": {
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "raw_label": {
+          "title": "Raw Label",
+          "type": "string"
+        },
+        "note_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note Number"
+        },
+        "period_values": {
+          "additionalProperties": {
+            "$ref": "#/$defs/PeriodValue"
+          },
+          "title": "Period Values",
+          "type": "object"
+        },
+        "status": {
+          "$ref": "#/$defs/ExtractionStatus",
+          "default": "NOT_FOUND"
+        },
+        "provenance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Provenance"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "line_item_id",
+        "canonical_name",
+        "raw_label"
+      ],
+      "title": "FinancialLineItem",
+      "type": "object"
+    },
+    "FinancialStatementTable": {
+      "description": "Domain model for a complete financial statement (BS, P&L, CF).",
+      "properties": {
+        "statement_type": {
+          "enum": [
+            "balance_sheet",
+            "profit_and_loss",
+            "cash_flow",
+            "notes",
+            "other"
+          ],
+          "title": "Statement Type",
+          "type": "string"
+        },
+        "consolidation_type": {
+          "enum": [
+            "standalone",
+            "consolidated"
+          ],
+          "title": "Consolidation Type",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "reporting_currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reporting Currency"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "period_labels": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Period Labels",
+          "type": "array"
+        },
+        "line_items": {
+          "items": {
+            "$ref": "#/$defs/FinancialLineItem"
+          },
+          "title": "Line Items",
+          "type": "array"
+        },
+        "status": {
+          "$ref": "#/$defs/ExtractionStatus",
+          "default": "NOT_FOUND"
+        },
+        "provenance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Provenance"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "statement_type",
+        "consolidation_type",
+        "title"
+      ],
+      "title": "FinancialStatementTable",
+      "type": "object"
+    },
+    "PeriodValue": {
+      "description": "Extracted financial value for a single reporting period (e.g. FY25, FY24).",
+      "properties": {
+        "period_label": {
+          "title": "Period Label",
+          "type": "string"
+        },
+        "raw_value": {
+          "title": "Raw Value",
+          "type": "string"
+        },
+        "parsed_numeric": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parsed Numeric"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency"
+        },
+        "status": {
+          "$ref": "#/$defs/ExtractionStatus",
+          "default": "NOT_FOUND"
+        },
+        "provenance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Provenance"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "period_label",
+        "raw_value"
+      ],
+      "title": "PeriodValue",
+      "type": "object"
+    },
+    "Provenance": {
+      "description": "Complete provenance and evidence record attached to every emitted domain value.",
+      "properties": {
+        "source_refs": {
+          "items": {
+            "$ref": "#/$defs/SourceReference"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "method": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Method"
+        },
+        "raw_value_as_printed": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value As Printed"
+        },
+        "parsed_numeric": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parsed Numeric"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency"
+        },
+        "note_reference": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note Reference"
+        }
+      },
+      "title": "Provenance",
+      "type": "object"
+    },
+    "SourceReference": {
+      "description": "Fine-grained atomic reference to source tokens, pages, tables, and cells.",
+      "properties": {
+        "document_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Id"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section Id"
+        },
+        "table_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Table Id"
+        },
+        "row_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row Index"
+        },
+        "column_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Column Index"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Id"
+        },
+        "token_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Token Ids",
+          "type": "array"
+        },
+        "raw_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Text"
+        }
+      },
+      "required": [
+        "page_number"
+      ],
+      "title": "SourceReference",
+      "type": "object"
+    },
+    "ValidationIssue": {
+      "description": "Structured validation diagnostic issue.",
+      "properties": {
+        "issue_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Issue Id"
+        },
+        "issue_type": {
+          "title": "Issue Type",
+          "type": "string"
+        },
+        "severity": {
+          "default": "warning",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceReference"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "issue_type",
+        "description"
+      ],
+      "title": "ValidationIssue",
+      "type": "object"
+    }
+  },
+  "description": "Domain output model for all extracted financial statements.",
+  "properties": {
+    "schema_version": {
+      "default": "v0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "company_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Company Name"
+    },
+    "reporting_year": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reporting Year"
+    },
+    "standalone_statements": {
+      "additionalProperties": {
+        "$ref": "#/$defs/FinancialStatementTable"
+      },
+      "title": "Standalone Statements",
+      "type": "object"
+    },
+    "consolidated_statements": {
+      "additionalProperties": {
+        "$ref": "#/$defs/FinancialStatementTable"
+      },
+      "title": "Consolidated Statements",
+      "type": "object"
+    },
+    "validation_issues": {
+      "items": {
+        "$ref": "#/$defs/ValidationIssue"
+      },
+      "title": "Validation Issues",
+      "type": "array"
+    }
+  },
+  "required": [
+    "document_id"
+  ],
+  "title": "FinancialStatementsDocument",
+  "type": "object"
+}

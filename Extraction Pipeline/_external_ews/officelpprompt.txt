@@ -1,0 +1,626 @@
+PRODUCT 1 (CANONICALIZER) + PRODUCT 2 (SPEC ENGINE)
+Enterprise Document Understanding Architecture
+Schema-Driven Extraction over Canonical Document Representation v0
+Upload & Extract
+📄
+Landsmill Green Limited.pdf
+100–400 Page IFRS/Ind AS Annual Reports
+Extraction Specification Spec                          Enterprise Demo Spec (10 Core Fields)                         Detailed Financial Metrics (27 Items)                         Comprehensive Narrative Sections (13 Items)                     
+Execute Custom Spec Extraction
+Extraction complete!
+10 / 10
+Fields Found
+100%
+Completion Rate
+163
+Canonical Pages
+41
+Canonical Tables
+Custom Extraction Results
+Category
+Entity Name
+Mode
+Status
+Confidence
+Extracted Value / Provenance
+Financial Data
+Company Information
+Company Legal Name
+DIRECT_MAPPING
+FOUND
+95%
+Landsmill Green Limited
+Extracted company name from source PDF document title. (Page 1)
+Management & Governance
+Board of Directors
+Board of Directors
+DIRECT_MAPPING
+FOUND
+90%
+[{'name': 'part of this Report.\nA Certificate of the Managing Director and CFO of the company in terms of Listing Regulations', 'designation': 'i', 'type': 'Not Specified', 'din': None, 'appointment_date': None, 'source_page': None}]
+Matched direct label 'Board of Directors' from section 'Corporate Governance' on page 1. (Page 1, Section: sec_unclassified_opening_pages_3abcf67f)
+Demographics
+Workforce Information
+Employee Count
+DIRECT_MAPPING
+FOUND
+88%
+SEBI, vide its circular dated May 10, 2021, made BRSR mandatory for the top 1,000 listed companies (by market
+Matched canonical section 'SEBI, vide its circular dated May 10, 2021, made BRSR mandatory for the top 1,000 listed companies (by market' (Type: ESG & Sustainability) on page 13. (Page 13, Section: sec_esg_sustainability_sustainability_initiatives_fd33597c)
+Financial Data
+Balance Sheet
+Balance Sheet Statement
+DIRECT_MAPPING
+FOUND
+92%
+Table 'Independent Auditors' Report' [Section: sec_unclassified_independent_auditors_report_c91cd27b, Pages: 59-59]
+Found primary financial statement table 'Independent Auditors' Report' spanning pages 59-59. (Page 59, Section: sec_unclassified_independent_auditors_report_c91cd27b)
+Financial Data
+Profit & Loss Statement
+Profit & Loss Statement
+DIRECT_MAPPING
+FOUND
+92%
+Table 'Standalone Statement of Profit and loss for the year ended 31st March, 2025' [Section: sec_financial_statements_profit_loss_statement_c2af313e, Pages: 69-69]
+Found primary financial statement table 'Standalone Statement of Profit and loss for the year ended 31st March, 2025' spanning pages 69-69. (Page 69, Section: sec_financial_statements_profit_loss_statement_c2af313e)
+Financial Data
+Cash Flow Statement
+Cash Flow Statement
+DIRECT_MAPPING
+FOUND
+92%
+Table 'Standlone Cash Flow Statement for the year ended 31 March, 2025' [Section: sec_financial_statements_cash_flow_statement_4d1053fc, Pages: 70-70]
+Found primary financial statement table 'Standlone Cash Flow Statement for the year ended 31 March, 2025' spanning pages 70-70. (Page 70, Section: sec_financial_statements_cash_flow_statement_4d1053fc)
+Shareholding Information
+Share Capital
+Paid-up Share Capital
+DIRECT_MAPPING
+FOUND
+70%
+{'authorized_capital': None, 'paidup_capital': None}
+Matched direct label 'Paid-up Share Capital' from section 'Balance Sheet' on page 1. (Page 1, Section: sec_unclassified_opening_pages_3abcf67f)
+Shareholding Information
+Dividend Information
+Dividend Declared
+DIRECT_MAPPING
+FOUND
+70%
+{'authorized_capital': None, 'paidup_capital': None}
+Matched direct label 'Dividend Declared' from section 'Balance Sheet' on page 1. (Page 1, Section: sec_unclassified_opening_pages_3abcf67f)
+Management & Governance
+Auditor's Report
+Auditor Opinion
+DIRECT_MAPPING
+FOUND
+88%
+CORPORATE INFORMATION BOARD OF DIRECTORS
+Matched canonical section 'CORPORATE INFORMATION BOARD OF DIRECTORS' (Type: Management & Governance) on page 3. (Page 3, Section: sec_management_governance_board_of_directors_6de98a1d)
+Management Discussion & Analysis
+Future Outlook
+Business Outlook & Strategy
+INFERENCE_BASED
+FOUND
+75%
+--- Page 24 ---
+Inferred contextual summary from section 'Management Discussion & Analysis Report'. (Page 24, Section: sec_management_discussion_analysis_business_review_b1363070)
+
+📥 Download Excel (.xlsx)📄 Download JSON (.json)
+
+
+
+I ran this on my laptop on financial metrics waala dropdown option but it gave this output on the ui and , even after like extracting landsmill once it is still doing all these, is this supposed to work like this…?
+INFO:     127.0.0.1:62407 - "GET / HTTP/1.1" 200 OK
+2026-07-27 10:29:44,578 [INFO] canonicalizer.service: [Canonicalizer] Starting Canonicalization v0 for: Landsmill Green Limited.pdf
+2026-07-27 10:29:44,578 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] === Starting Full Extraction Pipeline ===
+2026-07-27 10:29:44,579 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] File: Landsmill Green Limited.pdf
+2026-07-27 10:29:44,579 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 1: PDF Ingestion --
+2026-07-27 10:29:44,664 [INFO] sources.annual_report.pdf_ingestion: [Ingestion] Opening PDF: Landsmill Green Limited.pdf
+2026-07-27 10:29:44,894 [INFO] sources.annual_report.pdf_ingestion: [Ingestion] Total pages: 163
+2026-07-27 10:29:55,485 [INFO] sources.annual_report.pdf_ingestion: [Ingestion] Processed 50/163 pages...
+2026-07-27 10:30:04,833 [INFO] sources.annual_report.pdf_ingestion: [Ingestion] Processed 100/163 pages...
+2026-07-27 10:30:15,344 [INFO] sources.annual_report.pdf_ingestion: [Ingestion] Processed 150/163 pages...
+2026-07-27 10:30:18,926 [INFO] sources.annual_report.pdf_ingestion: [Ingestion] Complete: 163 pages ingested, 67 headings detected
+2026-07-27 10:30:18,927 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Ingested 163 pages
+2026-07-27 10:30:18,927 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 2: Master Data Layer (SQLite) --
+2026-07-27 10:30:18,931 [INFO] sources.annual_report.master_data: [MasterData] Loaded 163 pages into SQLite
+2026-07-27 10:30:18,932 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    SQLite loaded: 163 pages, 67 headings, 60 pages with tables
+2026-07-27 10:30:18,932 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Unique sections: 62
+2026-07-27 10:30:18,932 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * CORPORATE INFORMATION BOARD OF DIRECTORS
+2026-07-27 10:30:18,933 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * DIRECTORS' REPORT
+2026-07-27 10:30:18,933 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * 18. MANAGEMENT DISCUSSION AND ANALYSIS REPORT
+2026-07-27 10:30:18,933 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * Internal Financial Controls are an integrated part of the risk management process, addressing financial and financial
+2026-07-27 10:30:18,933 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * of the Notice of the 23rd AGM of the Company.
+2026-07-27 10:30:18,933 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * During the year, the materially significant related party transactions pursuant to the provisions of SEBI Listing Regulations
+2026-07-27 10:30:18,933 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * SEBI, vide its circular dated May 10, 2021, made BRSR mandatory for the top 1,000 listed companies (by market
+2026-07-27 10:30:18,933 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * 36. POLICIES
+2026-07-27 10:30:18,933 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * ANNEXURE III
+2026-07-27 10:30:18,934 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * SECRETARIAL AUDIT REPORT
+2026-07-27 10:30:18,934 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * ANNEXURE - I
+2026-07-27 10:30:18,934 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * ANNEXURE - III
+2026-07-27 10:30:18,934 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * MANAGEMENT'S DISCUSSION AND ANALYSIS REPORT
+2026-07-27 10:30:18,934 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * OPPORTUNITIES AND THREATS
+2026-07-27 10:30:18,934 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * INTERNAL CONTROL SYSTEMS AND THEIR ADEQUACY
+2026-07-27 10:30:18,934 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * CORPORATE GOVERNANCE REPORT
+2026-07-27 10:30:18,935 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * responsibilities in the Company, nature of the industry in which the Company operates, Company's Strategy,
+2026-07-27 10:30:18,935 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * 2. Developing and managing / executing business plans,operational plans, risk management, and financial affairs
+2026-07-27 10:30:18,935 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * Listing Regulations. The details of last three (3) Annual General Meetings (AGMs) is mentioned below:
+2026-07-27 10:30:18,935 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      * 7. GENERAL SHAREHOLDER INFORMATION:
+2026-07-27 10:30:18,935 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]      ... and 42 more
+2026-07-27 10:30:18,935 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 3: Section Registry (TOC & Headings) --
+2026-07-27 10:30:18,958 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    TOC parsed: 10 entries found
+2026-07-27 10:30:18,959 [INFO] sources.annual_report.section_consolidator: [Consolidator] Building Section Registry for 163 pages
+2026-07-27 10:30:18,960 [INFO] sources.annual_report.section_consolidator: [Consolidator] Pass 1: Found 10 TOC anchors
+2026-07-27 10:30:18,967 [INFO] sources.annual_report.section_consolidator: [Consolidator] Pass 2: Found 32 heading anchors
+2026-07-27 10:30:18,967 [INFO] sources.annual_report.section_consolidator: [Consolidator] Final: 43 sections in Section Registry
+2026-07-27 10:30:18,968 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 3.5: Taxonomy Classification --
+2026-07-27 10:30:18,968 [INFO] sources.annual_report.taxonomy: [Taxonomy] Classifying 43 section blocks (hybrid: LLM-first + keyword/regex fallback)
+2026-07-27 10:30:19,075 [INFO] sources.annual_report.taxonomy: [Taxonomy] Section Classification complete: 0 blocks via LLM, 32 blocks via keyword/regex
+2026-07-27 10:30:19,076 [INFO] sources.annual_report.taxonomy: [Taxonomy] After merging adjacent sections: 37 sections remaining
+2026-07-27 10:30:19,077 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    37 sections and 163 page mappings saved to SQLite
+2026-07-27 10:30:19,078 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Sources: 9 TOC, 27 Heading, 1 Inferred
+2026-07-27 10:30:19,078 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 3.6: Section Hierarchy --
+2026-07-27 10:30:19,078 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    10 categories, 37 sections in hierarchy
+2026-07-27 10:30:19,078 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 4: Table Inventory --
+2026-07-27 10:30:19,078 [INFO] sources.annual_report.table_detector: [TableDetect] Scanning 163 pages for structured tables...
+2026-07-27 10:30:19,974 [INFO] sources.annual_report.table_detector: [TableDetect] Detected 41 tables across 31 pages
+2026-07-27 10:30:19,974 [INFO] sources.annual_report.table_detector: [TableDetect]   profit_and_loss: 12 page(s), 12 need VLM
+2026-07-27 10:30:19,974 [INFO] sources.annual_report.table_detector: [TableDetect]   financial_ratios: 3 page(s), 0 need VLM
+2026-07-27 10:30:19,975 [INFO] sources.annual_report.table_detector: [TableDetect]   shareholding_pattern: 3 page(s), 2 need VLM
+2026-07-27 10:30:19,975 [INFO] sources.annual_report.table_detector: [TableDetect]   changes_in_equity: 9 page(s), 9 need VLM
+2026-07-27 10:30:19,975 [INFO] sources.annual_report.table_detector: [TableDetect]   balance_sheet: 6 page(s), 6 need VLM
+2026-07-27 10:30:19,975 [INFO] sources.annual_report.table_detector: [TableDetect]   cash_flow: 6 page(s), 6 need VLM
+2026-07-27 10:30:19,975 [INFO] sources.annual_report.table_detector: [TableDetect]   segment_information: 2 page(s), 0 need VLM
+2026-07-27 10:30:19,976 [INFO] sources.annual_report.table_detector: [TableDetect]   category=financial_statement: 25
+2026-07-27 10:30:19,976 [INFO] sources.annual_report.table_detector: [TableDetect]   category=note_table: 5
+2026-07-27 10:30:19,976 [INFO] sources.annual_report.table_detector: [TableDetect]   category=kpi_table: 3
+2026-07-27 10:30:19,976 [INFO] sources.annual_report.table_detector: [TableDetect]   category=ratio_table: 3
+2026-07-27 10:30:19,976 [INFO] sources.annual_report.table_detector: [TableDetect]   category=shareholding_table: 3
+2026-07-27 10:30:19,976 [INFO] sources.annual_report.table_detector: [TableDetect]   category=segment_table: 2
+2026-07-27 10:30:19,977 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    41 tables added to Table Inventory
+2026-07-27 10:30:19,977 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 4.5: VLM Target Generation --
+2026-07-27 10:30:19,977 [INFO] sources.annual_report.vlm_targets: [VLMTargets] Generating VLM extraction targets...
+2026-07-27 10:30:19,978 [INFO] sources.annual_report.vlm_targets: [VLMTargets] 37 targets: 13 HIGH, 1 MEDIUM, 23 LOW
+2026-07-27 10:30:19,978 [INFO] sources.annual_report.vlm_targets: [VLMTargets]   financial_statement: 19
+2026-07-27 10:30:19,979 [INFO] sources.annual_report.vlm_targets: [VLMTargets]   other: 13
+2026-07-27 10:30:19,979 [INFO] sources.annual_report.vlm_targets: [VLMTargets]   ratio_table: 3
+2026-07-27 10:30:19,979 [INFO] sources.annual_report.vlm_targets: [VLMTargets]   related_party_table: 1
+2026-07-27 10:30:19,979 [INFO] sources.annual_report.vlm_targets: [VLMTargets]   shareholding_table: 1
+2026-07-27 10:30:19,979 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    37 VLM targets: 13 HIGH, 1 MEDIUM, 23 LOW
+2026-07-27 10:30:19,979 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 5/6: Extraction + VLM Workflow --
+2026-07-27 10:30:19,984 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    37 sections extracted as text/content
+2026-07-27 10:30:19,984 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 6.5: Subcategory Content Extraction Engine --
+2026-07-27 10:30:19,986 [INFO] sources.annual_report.llm_config: Initializing LLM: model=Qwen/Qwen3-VL-8B-Instruct, base_url=https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1, temperature=0.0, max_tokens=2048, request_timeout=180
+2026-07-27 10:30:19,990 [INFO] sources.annual_report.source_routing: [SourceRouting] No priority match for field 'Company Profile'
+2026-07-27 10:30:19,991 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Business Overview' matched priority 'management discussion' → section 'Management Discussion & Analysis Report' (category: 'Management Discussion & Analysis', score: 2)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 34.54it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  6.47it/s]
+2026-07-27 10:30:22,131 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:22,169 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Business Overview source=Management Discussion & Analysis Report
+2026-07-27 10:30:22,173 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Business Overview' ← source 'Management Discussion & Analysis Report'
+2026-07-27 10:30:22,181 [INFO] sources.annual_report.source_routing: [SourceRouting] No priority match for field 'Products & Services'
+2026-07-27 10:30:22,184 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Subsidiaries & Group Structure' matched priority 'annexure' → section 'ANNEXURE A TO THE INDEPENDENT AUDITORS' REPORT ON THE CONSOLIDATED FINANCIAL STATEMENTS' (category: 'Financial Statements', score: 2)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 31.29it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  6.56it/s]
+2026-07-27 10:30:22,719 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:22,721 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Subsidiaries & Group Structure source=ANNEXURE A TO THE INDEPENDENT AUDITORS' REPORT ON THE CONSOLIDATED FINANCIAL STATEMENTS
+2026-07-27 10:30:22,721 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Subsidiaries & Group Structure' ← source 'ANNEXURE A TO THE INDEPENDENT AUDITORS' REPORT ON THE CONSOLIDATED FINANCIAL STATEMENTS'
+2026-07-27 10:30:22,721 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Board of Directors' matched priority 'board of directors' → section 'Board of Directors' (category: 'Management & Governance', score: 3)
+2026-07-27 10:30:22,725 [INFO] sources.annual_report.content_extractor: [Board] method=regex_name members=5 section=Board of Directors
+2026-07-27 10:30:22,725 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] Board: method=regex_name members=5
+2026-07-27 10:30:23,558 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:23,559 [INFO] sources.annual_report.content_extractor: [KMP] method=llm count=2 section=Board of Directors
+2026-07-27 10:30:23,559 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] KMP: method=llm count=2
+2026-07-27 10:30:23,562 [INFO] sources.annual_report.content_extractor: [Committee] method=regex_committee count=5 section=Board of Directors
+2026-07-27 10:30:23,563 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] Committees: method=regex_committee count=5
+2026-07-27 10:30:25,464 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:25,466 [INFO] sources.annual_report.content_extractor: [CorpGov] method=llm keys=['governance_philosophy', 'policies'] section=Board of Directors
+2026-07-27 10:30:25,466 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] Governance: method=llm
+2026-07-27 10:30:25,466 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] Extracted 4 governance sub-fields from section 'Board of Directors'
+2026-07-27 10:30:25,467 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Board of Directors source=Board of Directors (via governance multi)
+2026-07-27 10:30:25,467 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Governance multi: 'Board of Directors' ← source 'Board of Directors'
+2026-07-27 10:30:25,467 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Key Management Personnel source=Board of Directors (via governance multi)
+2026-07-27 10:30:25,467 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Governance multi: 'Key Management Personnel' ← source 'Board of Directors'
+2026-07-27 10:30:25,467 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Board Committees source=Board of Directors (via governance multi)
+2026-07-27 10:30:25,467 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Governance multi: 'Board Committees' ← source 'Board of Directors'
+2026-07-27 10:30:25,467 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Corporate Governance source=Board of Directors (via governance multi)
+2026-07-27 10:30:25,467 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Governance multi: 'Corporate Governance' ← source 'Board of Directors'
+2026-07-27 10:30:25,468 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Key Management Personnel' matched priority 'corporate governance' → section 'Corporate Governance' (category: 'Management & Governance', score: 3)
+2026-07-27 10:30:25,538 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:25,540 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] Board: method=regex_name members=1
+2026-07-27 10:30:26,303 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:26,304 [INFO] sources.annual_report.content_extractor: [KMP] method=llm count=2 section=Corporate Governance
+2026-07-27 10:30:26,304 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] KMP: method=llm count=2
+2026-07-27 10:30:26,305 [INFO] sources.annual_report.content_extractor: [Committee] method=regex_committee count=1 section=Corporate Governance
+2026-07-27 10:30:26,306 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] Committees: method=regex_committee count=1
+2026-07-27 10:30:27,401 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:27,403 [INFO] sources.annual_report.content_extractor: [CorpGov] method=llm keys=['governance_philosophy', 'policies'] section=Corporate Governance
+2026-07-27 10:30:27,404 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] Governance: method=llm
+2026-07-27 10:30:27,405 [INFO] sources.annual_report.content_extractor: [GovernanceMulti] Extracted 4 governance sub-fields from section 'Corporate Governance'
+2026-07-27 10:30:27,405 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Board of Directors source=Corporate Governance (via governance multi)
+2026-07-27 10:30:27,405 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Governance multi: 'Board of Directors' ← source 'Corporate Governance'
+2026-07-27 10:30:27,405 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Key Management Personnel source=Corporate Governance (via governance multi)
+2026-07-27 10:30:27,406 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Governance multi: 'Key Management Personnel' ← source 'Corporate Governance'
+2026-07-27 10:30:27,406 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Board Committees source=Corporate Governance (via governance multi)
+2026-07-27 10:30:27,406 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Governance multi: 'Board Committees' ← source 'Corporate Governance'
+2026-07-27 10:30:27,406 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Corporate Governance source=Corporate Governance (via governance multi)
+2026-07-27 10:30:27,406 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Governance multi: 'Corporate Governance' ← source 'Corporate Governance'
+2026-07-27 10:30:27,407 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Corporate Governance' matched priority 'corporate governance' → section 'Corporate Governance' (category: 'Management & Governance', score: 3)
+2026-07-27 10:30:27,409 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Board Committees' matched priority 'corporate governance' → section 'Corporate Governance' (category: 'Management & Governance', score: 3)
+2026-07-27 10:30:27,411 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Share Capital' matched priority 'balance sheet' → section 'Balance Sheet' (category: 'Financial Statements', score: 3)
+2026-07-27 10:30:27,736 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:27,738 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Share Capital source=Balance Sheet
+2026-07-27 10:30:27,738 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Share Capital' ← source 'Balance Sheet'
+2026-07-27 10:30:27,739 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Shareholding Pattern' matched priority 'corporate governance' → section 'Corporate Governance' (category: 'Management & Governance', score: 3)
+2026-07-27 10:30:27,817 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:27,818 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Shareholding Pattern source=Corporate Governance
+2026-07-27 10:30:27,818 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Shareholding Pattern' ← source 'Corporate Governance'
+2026-07-27 10:30:27,820 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Major Shareholders' matched priority 'corporate governance' → section 'Corporate Governance' (category: 'Management & Governance', score: 3)
+2026-07-27 10:30:27,898 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:27,899 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Major Shareholders source=Corporate Governance
+2026-07-27 10:30:27,900 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Major Shareholders' ← source 'Corporate Governance'
+2026-07-27 10:30:27,901 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Dividend Information' matched priority 'financial statements' → section 'Balance Sheet' (category: 'Financial Statements', score: 3)
+2026-07-27 10:30:28,220 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:28,221 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Dividend Information source=Balance Sheet
+2026-07-27 10:30:28,221 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Dividend Information' ← source 'Balance Sheet'
+2026-07-27 10:30:28,224 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Industry Overview' matched priority 'management discussion' → section 'Management Discussion & Analysis Report' (category: 'Management Discussion & Analysis', score: 2)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 59.01it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  5.75it/s]
+2026-07-27 10:30:30,271 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:30,272 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Industry Overview source=Management Discussion & Analysis Report
+2026-07-27 10:30:30,272 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Industry Overview' ← source 'Management Discussion & Analysis Report'
+2026-07-27 10:30:30,273 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Business Review' matched priority 'management discussion' → section 'Management Discussion & Analysis Report' (category: 'Management Discussion & Analysis', score: 2)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 33.18it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  6.11it/s]
+2026-07-27 10:30:32,412 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:32,413 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Business Review source=Management Discussion & Analysis Report
+2026-07-27 10:30:32,414 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Business Review' ← source 'Management Discussion & Analysis Report'
+2026-07-27 10:30:32,416 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Opportunities & Challenges' matched priority 'management discussion' → section 'Management Discussion & Analysis Report' (category: 'Management Discussion & Analysis', score: 2)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 51.86it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  6.13it/s]
+2026-07-27 10:30:34,436 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:34,438 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Opportunities & Challenges source=Management Discussion & Analysis Report
+2026-07-27 10:30:34,438 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Opportunities & Challenges' ← source 'Management Discussion & Analysis Report'
+2026-07-27 10:30:34,441 [INFO] sources.annual_report.source_routing: [SourceRouting] Field 'Future Outlook' matched priority 'management discussion' → section 'Management Discussion & Analysis Report' (category: 'Management Discussion & Analysis', score: 2)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 48.04it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  6.12it/s]
+2026-07-27 10:30:36,486 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:36,487 [INFO] sources.annual_report.extraction_pipeline: [Priority] Extracted target=Future Outlook source=Management Discussion & Analysis Report
+2026-07-27 10:30:36,487 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Priority match: 'Future Outlook' ← source 'Management Discussion & Analysis Report'
+2026-07-27 10:30:36,487 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    14 fields extracted via source priority
+2026-07-27 10:30:36,488 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Board of Directors
+2026-07-27 10:30:36,488 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Corporate Governance
+2026-07-27 10:30:38,749 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:38,751 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Risk Management target=Risk Management (from subcategory=Internal Financial Controls are an integrated part of the risk management process, addressing financial and financial)
+2026-07-27 10:30:39,269 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:39,270 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Investor Information target=of the Notice of the 23rd AGM of the Company (unmapped)
+2026-07-27 10:30:39,789 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:39,790 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Investor Information target=Related Party Mention (unmapped)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 58.78it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.25it/s]
+2026-07-27 10:30:40,612 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:40,614 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=CSR target=CSR (from subcategory=Social)
+2026-07-27 10:30:40,615 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Management Discussion & Analysis Report
+2026-07-27 10:30:41,242 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:41,243 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Audit Information target=Internal Controls (unmapped)
+2026-07-27 10:30:41,243 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Corporate Governance
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 32.40it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.54it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 65.91it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  5.32it/s]
+2026-07-27 10:30:47,631 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:47,632 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Risk Management target=Risk Management (from subcategory=Developing and managing / executing business plans,operational plans, risk management, and financial affairs)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 82.83it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.47it/s]
+2026-07-27 10:30:48,935 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:48,936 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Investor Information target=Investor Information (from subcategory=Shareholder Information)
+2026-07-27 10:30:48,936 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Board of Directors
+2026-07-27 10:30:48,936 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Balance Sheet
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 38.14it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.42it/s]
+2026-07-27 10:30:50,590 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:50,591 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Audit Information target=Audit Information (from subcategory=Auditor's Report)
+2026-07-27 10:30:50,591 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Balance Sheet
+2026-07-27 10:30:53,381 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:53,383 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Risk Management target=Risk Management (from subcategory=Financial Risks)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 34.26it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.30it/s]
+2026-07-27 10:30:57,816 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:57,817 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Risk Management target=Risk Management (from subcategory=credit risk management. Credit risk has always been managed by the Company through credit approvals, estabilishing)
+2026-07-27 10:30:57,817 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Balance Sheet
+2026-07-27 10:30:59,068 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:59,069 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Audit Information target=Audit Information (from subcategory=Auditor's Report)
+2026-07-27 10:30:59,453 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:30:59,455 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Audit Information target=Audit Information (from subcategory=Auditor's Report)
+2026-07-27 10:30:59,455 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=ANNEXURE A TO THE INDEPENDENT AUDITORS' REPORT ON THE CONSOLIDATED FINANCIAL STATEMENTS
+2026-07-27 10:31:02,478 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:31:02,479 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Risk Management target=Risk Management (from subcategory=Financial Risks)
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 44.89it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  6.09it/s]
+2026-07-27 10:31:06,768 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:31:06,769 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Risk Management target=Risk Management (from subcategory=credit risk management. Credit risk has always been managed by the Company through credit approvals, estabilishing)
+2026-07-27 10:31:06,770 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Board of Directors
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 16.50it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  9.40it/s]
+2026-07-27 10:31:07,671 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-27 10:31:07,672 [INFO] sources.annual_report.extraction_pipeline: [Storage] category=Human Resources target=Human Resources (from subcategory=Shareholder will be provided with a facility to attend the AGM through VC/OAVM through the CDSL e)
+2026-07-27 10:31:07,672 [INFO] sources.annual_report.extraction_pipeline: [Priority] Skipping already processed target=Board of Directors
+2026-07-27 10:31:07,672 [INFO] sources.annual_report.extraction_pipeline: [Pipeline]    Structured Intelligence populated for 9 categories
+2026-07-27 10:31:07,672 [INFO] sources.annual_report.extraction_pipeline: [Pipeline] -- Layer 7: Financial Statement Engine --
+2026-07-27 10:31:07,673 [INFO] sources.annual_report.vlm_extractor: [VLM] Starting VLM extraction for: Landsmill Green Limited.pdf
+2026-07-27 10:31:07,673 [INFO] sources.annual_report.vlm_extractor: [VLM] Step 1/5: Parsing PDF metadata...
+2026-07-27 10:31:07,705 [INFO] sources.annual_report.vlm_extractor: [VLM] Step 2/5: Identifying financial statement pages (discovery pipeline)...
+2026-07-27 10:31:07,705 [INFO] sources.annual_report.discovery.pipeline: [Discovery] Starting pipeline for: Landsmill Green Limited.pdf
+2026-07-27 10:31:07,705 [INFO] sources.annual_report.discovery.classifier: [Stage 0] Classifying document: Landsmill Green Limited.pdf
+2026-07-27 10:31:23,385 [INFO] sources.annual_report.discovery.classifier: [Stage 0] Classification: text | pages=163 | low_text=1 | ocr_required=False | confidence=0.99
+2026-07-27 10:31:23,385 [INFO] sources.annual_report.discovery.parser: [Stage 1] Parsing all pages: Landsmill Green Limited.pdf
+2026-07-27 10:31:55,441 [INFO] sources.annual_report.discovery.parser: [Stage 1] Parsed 163 pages
+2026-07-27 10:31:55,452 [INFO] sources.annual_report.discovery.parser: [Stage 1] Page types: text=162, image=1, mixed=0, blank=0
+2026-07-27 10:31:55,453 [INFO] sources.annual_report.discovery.candidates: [Stage 3] Generating candidates...
+2026-07-27 10:31:55,476 [INFO] sources.annual_report.discovery.candidates: [Stage 3] TOC: 62 candidate(s)
+2026-07-27 10:31:55,486 [INFO] sources.annual_report.discovery.candidates: [Stage 3] Headings: 6 candidate(s)
+2026-07-27 10:31:55,497 [INFO] sources.annual_report.discovery.candidates: [Stage 3] Content: 2 candidate(s)
+2026-07-27 10:31:55,497 [INFO] sources.annual_report.discovery.candidates:   [Stage 3] Total candidates: 70
+2026-07-27 10:31:55,498 [INFO] sources.annual_report.discovery.scoring: [Stage 4] Scoring and ranking candidates...
+2026-07-27 10:31:55,499 [INFO] sources.annual_report.discovery.scoring: [Stage 4] consolidated_balance_sheet: 24 candidate(s), best=page 108 (conf=0.71, source=heading+toc)
+2026-07-27 10:31:55,499 [INFO] sources.annual_report.discovery.scoring: [Stage 4] consolidated_profit_and_loss: 20 candidate(s), best=page 109 (conf=0.54, source=heading)
+2026-07-27 10:31:55,499 [INFO] sources.annual_report.discovery.scoring: [Stage 4] consolidated_cash_flow: 20 candidate(s), best=page 110 (conf=0.38, source=content+toc)
+2026-07-27 10:31:55,500 [INFO] sources.annual_report.discovery.scoring: [Stage 4] standalone_balance_sheet: 1 candidate(s), best=page 68 (conf=0.55, source=heading)
+2026-07-27 10:31:55,500 [INFO] sources.annual_report.discovery.scoring: [Stage 4] standalone_profit_and_loss: 1 candidate(s), best=page 69 (conf=0.54, source=heading)
+2026-07-27 10:31:55,533 [INFO] sources.annual_report.discovery.scoring: [Stage 4] standalone_cash_flow: 2 candidate(s), best=page 110 (conf=0.53, source=heading)
+2026-07-27 10:31:55,533 [INFO] sources.annual_report.discovery.validation: [Stage 7] Validating sequences and resolving pages...
+2026-07-27 10:31:55,533 [INFO] sources.annual_report.discovery.validation: [Stage 7] Conflict on page 110: standalone_cash_flow (conf=0.53) wins over consolidated_cash_flow (conf=0.38)
+2026-07-27 10:31:55,534 [INFO] sources.annual_report.discovery.validation: [Stage 7] Order warning: standalone pages extend beyond consolidated pages (sa_max=110, co_min=108). This may indicate entity misassignment.
+2026-07-27 10:31:55,534 [INFO] sources.annual_report.discovery.validation: [Stage 7] Inferred consolidated_cash_flow at page 111 (after standalone_cash_flow at page 110)
+2026-07-27 10:31:55,534 [INFO] sources.annual_report.discovery.validation: [Stage 7] consolidated_balance_sheet: page 108
+2026-07-27 10:31:55,534 [INFO] sources.annual_report.discovery.validation: [Stage 7] consolidated_profit_and_loss: page 109
+2026-07-27 10:31:55,534 [INFO] sources.annual_report.discovery.validation: [Stage 7] standalone_balance_sheet: page 68
+2026-07-27 10:31:55,535 [INFO] sources.annual_report.discovery.validation: [Stage 7] standalone_profit_and_loss: page 69
+2026-07-27 10:31:55,535 [INFO] sources.annual_report.discovery.validation: [Stage 7] standalone_cash_flow: page 110
+2026-07-27 10:31:55,536 [INFO] sources.annual_report.discovery.validation: [Stage 7] consolidated_cash_flow: pages [111, 112, 113, 114, 115] (multi-page)
+2026-07-27 10:31:55,536 [INFO] sources.annual_report.discovery.validation: [Stage 7] Resolved 6/6 statement types
+2026-07-27 10:31:55,536 [INFO] sources.annual_report.discovery.pipeline: [Discovery] Pipeline complete in 47.83s — found 6/6 statements
+2026-07-27 10:31:55,536 [INFO] sources.annual_report.vlm_extractor: [VLM] Discovery pipeline found pages: {'standalone': {'balance_sheet': [68], 'profit_and_loss': [69], 'cash_flow': [110]}, 'consolidated': {'balance_sheet': [108], 'profit_and_loss': [109], 'cash_flow': [111, 112, 113, 114, 115]}}
+2026-07-27 10:31:55,537 [INFO] sources.annual_report.vlm_extractor: [VLM] Final pages: {'standalone': {'balance_sheet': [68], 'profit_and_loss': [69], 'cash_flow': [110]}, 'consolidated': {'balance_sheet': [108], 'profit_and_loss': [109], 'cash_flow': [111, 112, 113, 114, 115]}}
+2026-07-27 10:31:55,537 [INFO] sources.annual_report.vlm_extractor: [VLM] Step 3/5: Rendering pages and extracting statements with VLM...
+2026-07-27 10:31:55,537 [INFO] sources.annual_report.vlm_extractor: [VLM] Processing standalone statements...
+2026-07-27 10:31:55,537 [INFO] sources.annual_report.vlm_extractor: [VLM]   Rendering balance_sheet pages [68]...
+2026-07-27 10:31:55,684 [INFO] sources.annual_report.vlm_extractor:   Resized page 68 from 1240x1755 to 1059x1500
+2026-07-27 10:31:55,712 [INFO] sources.annual_report.vlm_extractor: Rendered page 68 (166,223 bytes, jpeg, 1059x1500)
+2026-07-27 10:31:55,717 [INFO] sources.annual_report.vlm_extractor: [VLM]   Calling VLM for standalone_balance_sheet (1 image(s))...
+2026-07-27 10:31:55,717 [INFO] sources.annual_report.vlm_extractor: VLM extracting standalone_balance_sheet from 1 page image(s) (per_page=True)...
+2026-07-27 10:31:55,717 [INFO] sources.annual_report.vlm_extractor:   Attempt 1/5 for standalone_balance_sheet...
+2026-07-27 10:32:31,766 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions/batch "HTTP/1.1 200 OK"
+2026-07-27 10:32:31,769 [INFO] sources.annual_report.vlm_extractor:   VLM response length: 8224 chars
+2026-07-27 10:32:31,769 [INFO] sources.annual_report.vlm_extractor:   Extracted 40 rows from VLM response
+2026-07-27 10:32:31,769 [INFO] sources.annual_report.vlm_extractor: [VLM]   [+] standalone_balance_sheet: 40 rows extracted
+2026-07-27 10:32:36,769 [INFO] sources.annual_report.vlm_extractor: [VLM]   Rendering profit_and_loss pages [69]...
+2026-07-27 10:32:36,897 [INFO] sources.annual_report.vlm_extractor:   Resized page 69 from 1240x1755 to 1059x1500
+2026-07-27 10:32:36,906 [INFO] sources.annual_report.vlm_extractor: Rendered page 69 (153,276 bytes, jpeg, 1059x1500)
+2026-07-27 10:32:36,908 [INFO] sources.annual_report.vlm_extractor: [VLM]   Calling VLM for standalone_profit_and_loss (1 image(s))...
+2026-07-27 10:32:36,908 [INFO] sources.annual_report.vlm_extractor: VLM extracting standalone_profit_and_loss from 1 page image(s) (per_page=True)...
+2026-07-27 10:32:36,908 [INFO] sources.annual_report.vlm_extractor:   Attempt 1/5 for standalone_profit_and_loss...
+2026-07-27 10:33:03,201 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions/batch "HTTP/1.1 200 OK"
+2026-07-27 10:33:03,203 [INFO] sources.annual_report.vlm_extractor:   VLM response length: 6126 chars
+2026-07-27 10:33:03,203 [INFO] sources.annual_report.vlm_extractor:   Extracted 30 rows from VLM response
+2026-07-27 10:33:03,203 [INFO] sources.annual_report.vlm_extractor: [VLM]   [+] standalone_profit_and_loss: 30 rows extracted
+2026-07-27 10:33:08,203 [INFO] sources.annual_report.vlm_extractor: [VLM]   Rendering cash_flow pages [110]...
+2026-07-27 10:33:08,350 [INFO] sources.annual_report.vlm_extractor:   Resized page 110 from 1240x1755 to 1059x1500
+2026-07-27 10:33:08,370 [INFO] sources.annual_report.vlm_extractor: Rendered page 110 (162,985 bytes, jpeg, 1059x1500)
+2026-07-27 10:33:08,377 [INFO] sources.annual_report.vlm_extractor: [VLM]   Calling VLM for standalone_cash_flow (1 image(s))...
+2026-07-27 10:33:08,377 [INFO] sources.annual_report.vlm_extractor: VLM extracting standalone_cash_flow from 1 page image(s) (per_page=True)...
+2026-07-27 10:33:08,377 [INFO] sources.annual_report.vlm_extractor:   Attempt 1/5 for standalone_cash_flow...
+2026-07-27 10:33:35,201 [INFO] httpx: HTTP Request: POST https://llm-qwen-7b-route-srt-innovation.apps.inmumocpcl.atrapa.deloitte.com/v1/chat/completions/batch "HTTP/1.1 200 OK"
+2026-07-27 10:33:35,202 [INFO] sources.annual_report.vlm_extractor:   VLM response length: 6565 chars
+2026-07-27 10:33:35,202 [INFO] sources.annual_report.vlm_extractor:   Extracted 30 rows from VLM response
+2026-07-27 10:33:35,203 [INFO] sources.annual_report.vlm_extractor: [VLM]   [+] standalone_cash_flow: 30 rows extracted
+2026-07-27 10:33:40,202 [INFO] sources.annual_report.vlm_extractor: [VLM] Processing consolidated statements...
+2026-07-27 10:33:40,203 [INFO] sources.annual_report.vlm_extractor: [VLM]   Rendering balance_sheet pages [108]...
+2026-07-27 10:33:40,319 [INFO] sources.annual_report.vlm_extractor:   Resized page 108 from 1240x1755 to 1059x1500
+2026-07-27 10:33:40,336 [INFO] sources.annual_report.vlm_extractor: Rendered page 108 (164,437 bytes, jpeg, 1059x1500)
+2026-07-27 10:33:40,339 [INFO] sources.annual_report.vlm_extractor: [VLM]   Calling VLM for consolidated_balance_sheet (1 image(s))...
+2026-07-27 10:33:40,339 [INFO] sources.annual_report.vlm_extractor: VLM extracting consolidated_balance_sheet from 1 page image(s) (per_page=True)...
+2026-07-27 10:33:40,339 [INFO] sources.annual_report.vlm_extractor:   Attempt 1/5 for consolidated_balance_sheet...
+
+
+
+
+
+
+—----------------------------------------------------------------------------------------------------------------------------------
+
+
+git diff origin/qwen-onprem --stat
+extractors/custom_spec/direct_mapping.py           | 45 +++++++++++++++++++---
+ graph/sources/annual_report/llm_config.py          |  2 +-
+ .../sources/annual_report/section_consolidator.py  | 19 ++++++---
+ graph/sources/annual_report/validation_engine.py   |  3 +-
+ 4 files changed, 56 insertions(+), 13 deletions(-)
++ Thought: 11ms
+$ git diff origin/qwen-onprem
+diff --git a/extractors/custom_spec/direct_mapping.py b/extractors/custom_spec/direct_mapping.py
+index de604b1..019cb3c 100644
+--- a/extractors/custom_spec/direct_mapping.py
++++ b/extractors/custom_spec/direct_mapping.py
+@@ -20,6 +20,26 @@ from .normalization import normalize_field_value
+ logger = logging.getLogger(__name__)
+ 
+ 
++def _term_match(text: str, term: str) -> bool:
++    """Check if term appears as a whole word/phrase in text (word-boundary aware)."""
++    if not text or not term:
++        return False
++    t = text.lower()
++    term_l = term.lower()
++    # Try exact phrase first
++    if term_l in t:
++        # Check word boundaries for the first and last word of term
++        words = term_l.split()
++        if len(words) == 1:
++            # Single word - check word boundaries
++            pattern = r'\b' + re.escape(words[0]) + r'\b'
++            return bool(re.search(pattern, t))
++        else:
++            # Multi-word phrase - check if it appears as a phrase
++            return term_l in t
++    return False
++
++
+ def resolve_direct_mapping(
+     canonical_doc: CanonicalDocument,
+     spec: CustomExtractionFieldSpec,
+@@ -72,6 +92,7 @@ def resolve_direct_mapping(
+ 
+     if match_val is not None:
+         norm_val, unit, currency = normalize_field_value(match_val, spec.expected_value_type.value)
++
+         page_num = (match_evidence.get("source_page") or 1) if match_evidence else 1
+         section_name = match_evidence.get("source_section") if match_evidence else subcategory
+         sec_id = _find_section_id(canonical_doc.sections, section_name, page_num)
+@@ -270,7 +291,7 @@ def _find_table_entity(
+         sub_cat = (sec.subcategory or "").lower()
+         t_title = (sec.title_normalized or sec.title_raw or "").lower()
+ 
+-        if any(term in s_type or term in sub_cat or term in t_title for term in target_terms):
++        if any(_term_match(s_type, term) or _term_match(sub_cat, term) or _term_match(t_title, term) for term in target_terms):
+             # Check if section has linked table IDs
+             linked_tbl_id = sec.table_ids[0] if sec.table_ids else None
+             tbl_obj = next((t for t in canonical_doc.tables if t.table_id == linked_tbl_id), None) if linked_tbl_id else None
+@@ -318,7 +339,7 @@ def _find_section_by_type_or_synonym(
+         sub_cat = (sec.subcategory or "").lower()
+         t_raw = (sec.title_raw or "").lower()
+ 
+-        if any(st in s_type or st in sub_cat or st in t_raw for st in search_types + search_syns):
++        if any(_term_match(s_type, st) or _term_match(sub_cat, st) or _term_match(t_raw, st) for st in search_types + search_syns):
+             # Gather text from first block of section
+             block_tokens = []
+             for b_id in sec.block_ids[:3]:
+@@ -416,7 +437,7 @@ def _find_in_structured_intelligence(
+             for sub_key, val in sub_dict.items():
+                 sub_lower = sub_key.lower()
+                 for cand in candidates:
+-                    if cand in sub_lower or sub_lower in cand:
++                    if _term_match(sub_lower, cand):
+                         ev = evidence_map.get(sub_key) or evidence_map.get(entity_name)
+                         return val, ev
+ 
+@@ -436,6 +457,20 @@ def _find_section_id(sections: list[CanonicalSection], section_name: str | None,
+ 
+ 
+ 
++def _term_match(text: str, term: str) -> bool:
++    """Check if term matches text with word boundaries (not just substring)."""
++    term = term.lower().strip()
++    text = text.lower().strip()
++    if not term or not text:
++        return False
++    # Exact match
++    if term == text:
++        return True
++    # Word boundary match
++    pattern = r'\b' + re.escape(term) + r'\b'
++    return bool(re.search(pattern, text))
++
++
+ def _find_in_canonical_tables(
+     doc: CanonicalDocument,
+     entity_name: str,
+@@ -449,7 +484,7 @@ def _find_in_canonical_tables(
+             if cell.role == "data" and cell.raw_text:
+                 c_text = cell.raw_text.lower()
+                 for q in query_terms:
+-                    if q in c_text:
++                    if _term_match(c_text, q):
+                         for adj_cell in tbl.cells:
+                             if adj_cell.row_index == cell.row_index and adj_cell.column_index > cell.column_index:
+                                 prov = SourceReference(
+@@ -481,7 +516,7 @@ def _find_in_canonical_sections(
+                 b_lower = block_text.lower()
+ 
+                 for q in query_terms:
+-                    if q in b_lower:
++                    if _term_match(b_lower, q):
+                         prov = SourceReference(
+                             document_id=doc.document_id,
+                             page_number=blk.page_number,
+diff --git a/graph/sources/annual_report/llm_config.py b/graph/sources/annual_report/llm_config.py
+index 55c4a9c..ef22cf2 100644
+--- a/graph/sources/annual_report/llm_config.py
++++ b/graph/sources/annual_report/llm_config.py
+@@ -31,7 +31,7 @@ DEFAULT_LLM_BASE_URL = (
+ )
+ DEFAULT_LLM_MODEL = "Qwen/Qwen3-VL-8B-Instruct"
+ DEFAULT_LLM_API_KEY = "9f86d081884c7d659a2feaa0c55ad015"
+-DEFAULT_LLM_MAX_TOKENS = 4096
++DEFAULT_LLM_MAX_TOKENS = 2048
+ DEFAULT_LLM_TEMPERATURE = 0.0
+ 
+ 
+diff --git a/graph/sources/annual_report/section_consolidator.py b/graph/sources/annual_report/section_consolidator.py
+index c3be79d..1dac742 100644
+--- a/graph/sources/annual_report/section_consolidator.py
++++ b/graph/sources/annual_report/section_consolidator.py
+@@ -21,6 +21,14 @@ from typing import Any
+ 
+ logger = logging.getLogger(__name__)
+ 
++_TABLE_VLM_SUBCATEGORIES = {
++    "Balance Sheet", "Profit & Loss Statement", "Cash Flow Statement",
++    "Statement of Changes in Equity", "Shareholding Pattern",
++    "Segment Information", "Related Party Transactions",
++    "Financial Ratios", "Ten Year Summary", "Financial Highlights",
++    "Accounting Policies", "Contingent Liabilities",
++}
++
+ 
+ # ===================================================================
+ # Data structures
+@@ -43,7 +51,7 @@ class ConsolidatedSection:
+     confidence: float = 0.0
+     section_status: str = "confirmed"
+     boundary_source: str = "toc"
+-    source: str = "taxonomy"
++    source: str = ""
+     toc_entry: str | None = None
+     page_count: int = 0
+     zone: str = "narrative"
+@@ -53,12 +61,11 @@ class ConsolidatedSection:
+         self.page_count = self.end_page - self.start_page + 1
+         if not self.normalized_section_name:
+             self.normalized_section_name = self.raw_section_name
+-            
+-        # Fix: set source from boundary_source for quality score
+-        if self.boundary_source:
++        if not self.source:
+             self.source = self.boundary_source
+-            
+-        # Fix: VLM targets get LOW priority if content_type isn't "table"
++        if self.content_type == "text" and self.section_subtype in _TABLE_VLM_SUBCATEGORIES:
++            self.content_type = "table"
++            self.extraction_strategy = "vlm"
+         if self.category == "Financial Statements" or self.section_type == "Financial Statements":
+             self.content_type = "table"
+ 
+diff --git a/graph/sources/annual_report/validation_engine.py b/graph/sources/annual_report/validation_engine.py
+index 507e8ec..0643dea 100644
+--- a/graph/sources/annual_report/validation_engine.py
++++ b/graph/sources/annual_report/validation_engine.py
+@@ -360,7 +360,8 @@ def compute_quality_report(
+     # or "Notes to Accounts" section are likely false positives
+     financial_page_ranges: list[tuple[int, int]] = []
+     for section in master_sections:
+-        if section.get("category") in (
++        sec_type = section.get("section_type") or section.get("category", "")
++        if sec_type in (
+             "Financial Statements", "Notes to Accounts",
+             "Shareholding Information", "Related Party Transactions",
+         ) or section.get("section_type") in (
+Click to collapse
++ Thought: 8ms
+Local changes vs origin/qwen-onprem:
+File	Changes
+extractors/custom_spec/direct_mapping.py	Main fix: Added _term_match() with word-boundary regex to prevent false positive substring matches. Updated 5 matching functions.
+graph/sources/annual_report/llm_config.py	DEFAULT_LLM_MAX_TOKENS: 4096 → 2048
+graph/sources/annual_report/section_consolidator.py	Added _TABLE_VLM_SUBCATEGORIES set; auto-classifies text sections as table type for VLM extraction; fixed source/boundary logic
+graph/sources/annual_report/validation_engine.py	Fixed section type check to use section_type field instead of just category
+The direct_mapping.py change is the critical one fixing your false positive extraction results.
+

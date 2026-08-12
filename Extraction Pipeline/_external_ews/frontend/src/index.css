@@ -1,0 +1,254 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+:root {
+  /* Brand */
+  --deloitte-green: #86BC25;
+  --accessible-blue: #007CB0;
+  --accessible-green: #26890D;
+  --accessible-teal: #0D8390;
+  --red: #DA291C;
+ 
+  /* Neutrals */
+  --black: #000000;
+  --white: #FFFFFF;
+  --cool-gray-2: #D0D0CE;
+  --cool-gray-4: #BBBCBC;
+  --cool-gray-6: #A7A8AA;
+  --cool-gray-7: #97999B;
+  --cool-gray-9: #75787B;
+  --cool-gray-10: #63666A;
+  --cool-gray-11: #53565A;
+ 
+  /* Focus */
+  --focus-color: #005587;
+  --focus-width: 2px;
+  
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+  --space-5: 24px;
+
+  /* Typography */
+  --font-family: "Open Sans", sans-serif;
+  --body: 400 14px/20px var(--font-family);
+  --h1: 600 56px/72px var(--font-family);
+  --h3: 600 32px/40px var(--font-family);
+  
+  /* Borders & Radius */
+  --border-width: 1px;
+  --border-color: var(--cool-gray-2);
+  --radius: 4px;
+  --radius-lg: 6px;
+  
+  /* Shadows */
+  --shadow: 0 8px 16px rgba(0,0,0,.15);
+  
+  --transition: .15s;
+}
+
+body {
+  margin: 0;
+  font: var(--body);
+  background-color: #F8F9FA;
+  color: var(--cool-gray-11);
+}
+
+/* Button */
+.dds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: 600 14px/20px var(--font-family);
+  padding: 12px 16px;
+  border-radius: 0; /* Default DDS */
+  border: var(--border-width) solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  background: transparent;
+}
+.dds-btn_primary.dds-btn_green {
+  background-color: var(--accessible-green);
+  color: var(--white);
+  border-color: var(--accessible-green);
+}
+.dds-btn_primary.dds-btn_green:hover {
+  background-color: var(--deloitte-green);
+  border-color: var(--deloitte-green);
+}
+.dds-btn_secondary {
+  border-color: var(--cool-gray-11);
+  color: var(--cool-gray-11);
+}
+.dds-btn_secondary:hover {
+  background-color: var(--cool-gray-2);
+}
+.dds-btn_disabled, .dds-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Input / Textarea */
+.dds-input__header, .dds-textarea__header {
+  margin-bottom: var(--space-1);
+}
+.dds-input__label, .dds-textarea__label {
+  font: 600 12px/16px var(--font-family);
+  color: var(--cool-gray-11);
+}
+.dds-input__field, .dds-textarea__field {
+  width: 100%;
+  padding: 9px 16px;
+  font: var(--body);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0;
+  box-sizing: border-box;
+}
+.dds-input__field:focus, .dds-textarea__field:focus {
+  outline: none;
+  border-color: var(--focus-color);
+  box-shadow: inset 0 0 0 1px var(--focus-color);
+}
+.dds-textarea__field {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Header */
+.dds-header {
+  background: var(--white);
+  border-bottom: var(--border-width) solid var(--border-color);
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dds-header_inverse {
+  background: var(--black);
+  color: var(--white);
+  border-bottom-color: var(--cool-gray-10);
+}
+.dds-header__project-name {
+  font: 600 20px/28px var(--font-family);
+  margin-left: var(--space-2);
+}
+
+/* Container */
+.dds-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-5);
+}
+
+/* Table Block */
+.dds-table-block {
+  background: var(--white);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-5);
+}
+.dds-table-block__header {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-width) solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dds-table-block__title {
+  font: 600 18px/24px var(--font-family);
+  margin: 0;
+}
+.dds-table-block__content {
+  padding: var(--space-4);
+  overflow-x: auto;
+}
+
+/* Data Table */
+.dds-data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.dds-data-table__header-cell {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  background: var(--cool-gray-2);
+  font: 600 12px/16px var(--font-family);
+  color: var(--cool-gray-11);
+}
+.dds-data-table__cell {
+  padding: var(--space-3);
+  border-bottom: var(--border-width) solid var(--border-color);
+  font: var(--body);
+}
+
+/* Status Tag */
+.dds-status-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font: 600 11px/16px var(--font-family);
+  text-transform: uppercase;
+}
+.dds-status-tag_green { background: #E6F4EA; color: var(--accessible-green); }
+.dds-status-tag_red { background: #FCE8E6; color: var(--red); }
+.dds-status-tag_gray { background: var(--cool-gray-2); color: var(--cool-gray-11); }
+
+/* Modal */
+.dds-modal-overlay {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+.dds-modal-overlay.show {
+  display: flex;
+}
+.dds-modal {
+  background: var(--white);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+}
+.dds-modal__header {
+  padding: var(--space-4);
+  border-bottom: var(--border-width) solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dds-modal__title {
+  margin: 0;
+  font: var(--h3);
+}
+.dds-modal__close {
+  background: none; border: none; font-size: 24px; cursor: pointer; color: var(--cool-gray-9);
+}
+.dds-modal__body {
+  padding: var(--space-4);
+  overflow-y: auto;
+}
+
+/* Utility */
+.dds-mb-3 { margin-bottom: var(--space-3); }
+.dds-mt-4 { margin-top: var(--space-4); }
+.dds-flex { display: flex; }
+.dds-flex_column { flex-direction: column; }
+.dds-select { display: flex; flex-direction: column; gap: var(--space-1); }
+.dds-select select { padding: 9px 16px; border: var(--border-width) solid var(--border-color); width: 100%; font: var(--body); }

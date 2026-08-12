@@ -1,0 +1,56 @@
+# OS
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+env/
+venv/
+.venv/
+ENV/
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Virtualenv/site-packages (avoid committing installed deps)
+**/venv/
+**/.venv/
+**/Lib/site-packages/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Editors/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Large data folders (recommended to keep out of git)
+Databases and Data/
+"Early Warning System  (Sentinel)/"
+Touchless Valuation/
+Voice Agent for Dashverify/
+OneDrive_*/
+
+# Temp files
+*.tmp
+*.temp
+
+# Local git helper logs
+git_full_*.log
+git_add_errors.log
+git_staged_status.txt
+untracked_list.txt

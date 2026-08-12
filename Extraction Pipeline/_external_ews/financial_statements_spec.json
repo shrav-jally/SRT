@@ -1,0 +1,111 @@
+{
+  "spec_id": "financial_statements_spec",
+  "spec_name": "Financial Statements Only (BS, P&L, CF)",
+  "description": "Extracts both Standalone and Consolidated primary financial statements as structured tables.",
+  "fields": [
+    {
+      "field_id": "standalone_balance_sheet",
+      "category": "Financial Data",
+      "subcategory": "Balance Sheet",
+      "entity_name": "Standalone Balance Sheet Statement",
+      "entity_type": "table",
+      "description": "Standalone primary statement of financial position showing assets, liabilities, and equity.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "standalone balance sheet",
+        "standalone statement of financial position"
+      ],
+      "expected_section_types": ["balance_sheet", "financial_statements"],
+      "expected_value_type": "table",
+      "required": false,
+      "output_cardinality": "table"
+    },
+    {
+      "field_id": "consolidated_balance_sheet",
+      "category": "Financial Data",
+      "subcategory": "Balance Sheet",
+      "entity_name": "Consolidated Balance Sheet Statement",
+      "entity_type": "table",
+      "description": "Consolidated primary statement of financial position showing assets, liabilities, and equity.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "consolidated balance sheet",
+        "consolidated statement of financial position"
+      ],
+      "expected_section_types": ["balance_sheet", "financial_statements"],
+      "expected_value_type": "table",
+      "required": false,
+      "output_cardinality": "table"
+    },
+    {
+      "field_id": "standalone_profit_and_loss",
+      "category": "Financial Data",
+      "subcategory": "Profit & Loss Statement",
+      "entity_name": "Standalone Profit & Loss Statement",
+      "entity_type": "table",
+      "description": "Standalone statement of profit and loss / income statement showing revenue and expenses.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "standalone statement of profit and loss",
+        "standalone profit & loss account",
+        "standalone income statement"
+      ],
+      "expected_section_types": ["profit_and_loss", "financial_statements"],
+      "expected_value_type": "table",
+      "required": false,
+      "output_cardinality": "table"
+    },
+    {
+      "field_id": "consolidated_profit_and_loss",
+      "category": "Financial Data",
+      "subcategory": "Profit & Loss Statement",
+      "entity_name": "Consolidated Profit & Loss Statement",
+      "entity_type": "table",
+      "description": "Consolidated statement of profit and loss / income statement showing revenue and expenses.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "consolidated statement of profit and loss",
+        "consolidated profit & loss account",
+        "consolidated income statement"
+      ],
+      "expected_section_types": ["profit_and_loss", "financial_statements"],
+      "expected_value_type": "table",
+      "required": false,
+      "output_cardinality": "table"
+    },
+    {
+      "field_id": "standalone_cash_flow",
+      "category": "Financial Data",
+      "subcategory": "Cash Flow Statement",
+      "entity_name": "Standalone Cash Flow Statement",
+      "entity_type": "table",
+      "description": "Standalone statement of cash flows from operating, investing, and financing activities.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "standalone cash flow statement",
+        "standalone statement of cash flows"
+      ],
+      "expected_section_types": ["cash_flow", "financial_statements"],
+      "expected_value_type": "table",
+      "required": false,
+      "output_cardinality": "table"
+    },
+    {
+      "field_id": "consolidated_cash_flow",
+      "category": "Financial Data",
+      "subcategory": "Cash Flow Statement",
+      "entity_name": "Consolidated Cash Flow Statement",
+      "entity_type": "table",
+      "description": "Consolidated statement of cash flows from operating, investing, and financing activities.",
+      "extraction_mode": "DIRECT_MAPPING",
+      "synonyms": [
+        "consolidated cash flow statement",
+        "consolidated statement of cash flows"
+      ],
+      "expected_section_types": ["cash_flow", "financial_statements"],
+      "expected_value_type": "table",
+      "required": false,
+      "output_cardinality": "table"
+    }
+  ]
+}
