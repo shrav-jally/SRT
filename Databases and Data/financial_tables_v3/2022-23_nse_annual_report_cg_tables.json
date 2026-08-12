@@ -1,0 +1,4478 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmpexuc8nms/2022-23_nse_annual_report_cg.pdf",
+    "file_name": "2022-23_nse_annual_report_cg.pdf",
+    "financial_year": "2022-23",
+    "extraction_timestamp": "2026-07-02T14:46:30.573705+00:00",
+    "page_count": 152
+  },
+  "standalone": {
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 109,
+      "pages": [
+        109
+      ],
+      "title": "Deposits 6.14 5.63 Balance sheet profit and loss",
+      "currency": "as at 31 March, 2022 ` 0.01 crore",
+      "periods": [
+        "31.03.2023",
+        "31.03.2022"
+      ],
+      "column_headers": [
+        "2021-22"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Other receivable - 11.35",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expenses allowable on payment basis 42.43 43.04 0.61",
+          "note_no": null,
+          "values": {
+            "current_period": -9.42,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "13.33 28.04 Other items giving rise to temporary differences 17.05 18.05 1.00",
+          "note_no": null,
+          "values": {
+            "current_period": 15.13,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "* Deposits of ` 3.69 crores (as at 31 March, 2022 ` 0.01 crore) are held as margin money.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Accelerated depreciation for tax purposes (38.08) (41.94) (3.86)",
+          "note_no": null,
+          "values": {
+            "current_period": -4.38,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "8. TAXATION Fair valuation of property, plant and equipment (91.18) (95.42) (4.24)",
+          "note_no": null,
+          "values": {
+            "current_period": -68.73,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax recognised in statement of profit and loss: Provision and impairment of loans and receivables 57.97 53.35 (4.62)",
+          "note_no": null,
+          "values": {
+            "current_period": 31.18,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2022-23 2021-22 Provision for corporate guarantee obligation settlement - 31.46 31.46",
+          "note_no": null,
+          "values": {
+            "current_period": 33.5,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Consolidated statement of profit and loss: Unabsorbed losses and unabsorbed depreciation 445.32 613.35 170.68",
+          "note_no": null,
+          "values": {
+            "current_period": 113.99,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income Tax: Deferred tax asset / (liabilities) 433.51 621.89",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current period (continuing operations) 13.40 12.59 Net (income) / expense 191.03",
+          "note_no": null,
+          "values": {
+            "current_period": 111.27,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Previous period (continuing operations) - (2.26) Deferred tax expense / (benefit):",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current period (discontinued operations) 3.16 0.06 Relating to origination and reversal of temporary difference - continuing operation 191.03",
+          "note_no": null,
+          "values": {
+            "current_period": 111.27,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deferred tax: Total 191.03",
+          "note_no": null,
+          "values": {
+            "current_period": 111.27,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Relating to origination and reversal of temporary differences - continuing operations 192.41 111.93 The net deferred tax assets of ` 433.51 crores (as at 31 March, 2022 ` 621.89 crores) includes deferred tax assets of ` 445.32 crores (as at",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax recognised in consolidated statement of profit and loss 208.97 122.32",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "` 613.28 crores) related to tax losses of Parent Company. Based on the future forecast and current economic conditions in India, there is reasonable",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Consolidated statement of other comprehensive income the deferred tax assets on tax losses will be recovered on or before expiry of 8 years period.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deferred tax related to items recognised in other comprehensive income during the year (1.38) (0.66)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax recognised in other comprehensive income (1.38) (0.66) Reconciliation of deferred tax assets / (liabilities) net:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "As at 31-03-2023 As at Reconciliation of income tax expense and accounting profit multiplied by applicable income tax rate: Opening balance 621.89",
+          "note_no": null,
+          "values": {
+            "current_period": 733.27,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2022-23 2021-22 Tax expense during the year recognised in statement profit and loss from continuing operations (192.41)",
+          "note_no": null,
+          "values": {
+            "current_period": -111.93,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Accounting profit before tax from continuing operations 1002.14 751.87 Reduction on account of transferred to discontinued operation 2.79",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Accounting profit before tax from discontinued operations 169.80 283.52 Deferred tax on other comprehensive income 1.38",
+          "note_no": null,
+          "values": {
+            "current_period": 0.66,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Accounting profit before income tax 1171.94 1035.39 Exchange differences (0.14)",
+          "note_no": null,
+          "values": {
+            "current_period": -0.11,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Applicable tax rate 25.168% 25.168% Closing balance 433.51",
+          "note_no": null,
+          "values": {
+            "current_period": 621.89,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Computed tax expense 294.96 260.59",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income exempt from taxation (43.62) (65.46)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "9. NON-CURRENT ASSETS-OTHERS",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income / expense not deductible in determining taxable profits (39.38) 2.48",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "As at 31-03-2023 As at Deferred tax assets not recognised on account of lack of convincing evidence in respect of recognition - 22.24",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unsecured, considered good, unless otherwise stated:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Impact of deferred tax created at lower tax rate 8.97 (50.50)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Capital advances 7.48",
+          "note_no": null,
+          "values": {
+            "current_period": 4.96,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Impact of fair valuation of property, plant and equipment - (68.73)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Others",
+          "note_no": null,
+          "values": {
+            "current_period": 12.33,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other temporary differences (11.96) 21.70 Less: Provision for doubtful balances",
+          "note_no": null,
+          "values": {
+            "current_period": 12.33,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net income tax expense charged to consolidated statement of profit and loss 208.97 122.32",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax attributable to continuing operations 205.81 122.26 7.48",
+          "note_no": null,
+          "values": {
+            "current_period": 4.96,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax attributable to discontinued operations 3.16 0.06",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total 208.97 122.32",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Note:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Pursuant to restatement of books of account from financial year 2014-15 to 2018-19 by the Ministry of Corporate Affairs (‘MCA’) and taken on records by the Hon’ble National Company Law Tribunal, and consequential revision of books of account for financial year 2019-20 and 2020-21, the Parent Company had filed an",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "application with the Central Board of Direct Taxes (‘CBDT’) seeking its approval to revise the returns of income based on the recasted / revised books of account. The Parent Company’s application was rejected by the CBDT. Against this rejection the Parent Company has filed a writ petition before the Hon’ble Bombay High",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Court. The Hon’ble Bombay High Court has asked the Income tax department to file its affidavit in reply. Next date of hearing before the Hon’ble Bombay High Court is awaited.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "212 CG POWER AND INDUSTRIAL SOLUTIONS LIMITED 2022-23 Annual Report",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 46,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "profit_and_loss": {
+      "statement": "standalone_profit_and_loss",
+      "page": 118,
+      "pages": [
+        118
+      ],
+      "title": "IV Expenses recognised in the statement of profit and loss for the year",
+      "currency": "Previous year ` 37.33 crores",
+      "periods": [],
+      "column_headers": [
+        "2022-23",
+        "2021-22"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Expenses recognised in the statement of profit and loss for the year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Benefits (Contribution to) 2022-23 2021-22",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 Current service cost",
+          "note_no": null,
+          "values": {
+            "current_period": 2.74,
+            "previous_period": 2.63
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Provident fund 11.77 10.99",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2 Interest cost on benefit obligation (net)",
+          "note_no": null,
+          "values": {
+            "current_period": 0.4,
+            "previous_period": 0.47
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Superannuation fund 4.14 3.65",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3 Total expenses included in employee benefits expense",
+          "note_no": null,
+          "values": {
+            "current_period": 3.14,
+            "previous_period": 3.1
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Employee state insurance scheme 0.12 0.16",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Recognised in other comprehensive income for the year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Labour welfare scheme 0.01 0.02",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 Actuarial changes arising from changes in demographic assumptions",
+          "note_no": null,
+          "values": {
+            "current_period": 0.87,
+            "previous_period": 1.13
+          }
+        },
+        {
+          "section": null,
+          "line_item": "National pension scheme 1.24 0.99",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2 Actuarial changes arising from changes in financial assumptions",
+          "note_no": null,
+          "values": {
+            "current_period": 3.28,
+            "previous_period": 0.54
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Family pension 23.42 21.52",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3 Actuarial changes arising from changes in experience adjustments",
+          "note_no": null,
+          "values": {
+            "current_period": 1.91,
+            "previous_period": 0.9
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total 40.70 37.33",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "4 Return on plan assets excluding interest income",
+          "note_no": null,
+          "values": {
+            "current_period": 0.87,
+            "previous_period": 0.05
+          }
+        },
+        {
+          "section": null,
+          "line_item": "5 Recognised in other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": 6.93,
+            "previous_period": 2.62
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Defined benefit plans:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Maturity profile of defined benefit obligation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Gratuity:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 Within the next 12 months (next annual reporting period)",
+          "note_no": null,
+          "values": {
+            "current_period": 9.17,
+            "previous_period": 6.78
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Under the Gratuity plan operated by the Group, every employee who has completed at least five years of service gets a Gratuity on departure at 15 days on 2 Between 2 and 5 years",
+          "note_no": null,
+          "values": {
+            "current_period": 22.81,
+            "previous_period": 20.63
+          }
+        },
+        {
+          "section": null,
+          "line_item": "last drawn salary for each completed year of service as per Payment of Gratuity Act, 1972.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3 Between 6 and 10 years",
+          "note_no": null,
+          "values": {
+            "current_period": 20.7,
+            "previous_period": 17.5
+          }
+        },
+        {
+          "section": null,
+          "line_item": "The Group makes annual contributions to the CG Gratuity Fund, which is funded defined benefit plan for qualifying employees. The Board of Trustees of the VII Quantitative sensitivity analysis for significant assumption is as below: fund is entrusted with responsibility for the administration of the plan assets and for the investment strategy. 1 Increase / (decrease) in present value of defined benefits obligation at the end of the year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "One percentage point increase in discount rate",
+          "note_no": null,
+          "values": {
+            "current_period": -2.29,
+            "previous_period": -2.13
+          }
+        },
+        {
+          "section": null,
+          "line_item": "The following table summarizes the components of net benefit expense recognised in the consolidated statement of profit and loss and the funded status and amounts recognised in the Balance Sheet. (ii) One percentage point decrease in discount rate",
+          "note_no": null,
+          "values": {
+            "current_period": 2.54,
+            "previous_period": 2.38
+          }
+        },
+        {
+          "section": null,
+          "line_item": "One percentage point increase in rate of salary increase",
+          "note_no": null,
+          "values": {
+            "current_period": 2.56,
+            "previous_period": 2.43
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Gratuity (Funded) (ii) One percentage point decrease in rate of salary increase",
+          "note_no": null,
+          "values": {
+            "current_period": -2.34,
+            "previous_period": -2.21
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2022-23 2021-22 (i) One percentage point increase in employee turnover rate",
+          "note_no": null,
+          "values": {
+            "current_period": 0.21,
+            "previous_period": 0.45
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Change in present value of defined benefit obligation during the year (ii) One percentage point decrease in employee turnover rate",
+          "note_no": null,
+          "values": {
+            "current_period": -0.23,
+            "previous_period": -0.49
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 Present value of defined benefit obligation at the beginning of the year 44.68 45.28 2 Sensitivity Analysis Method",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2 Interest cost 3.12 3.11 Sensitivity analysis is determined based on the expected movement in liability if the assumptions were",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3 Current service cost 2.74 2.63 not proved to be true on different count.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "4 Benefits paid (5.73) (8.91) VIII The major categories of plan assets as a percentage of total plan assets",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "5 Actuarial changes arising from changes in demographic assumptions 0.87 1.13 Insurer managed funds",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "6 Actuarial changes arising from changes in financial assumptions 3.28 0.54 IX Weighted average duration of the defined benefit obligation (in years)",
+          "note_no": null,
+          "values": {
+            "current_period": 8,
+            "previous_period": 8
+          }
+        },
+        {
+          "section": null,
+          "line_item": "7 Actuarial changes arising from changes in experience adjustments 1.91 0.90 X Actuarial assumptions",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "8 Present value of defined benefit obligation at the end of the year 50.87 44.68 1 Discount rate",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Change in fair value of plan assets during the year 2 Salary escalation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 Fair value of plan assets at the beginning of the year 38.98 38.45 3 Mortality rate during employment",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2 Interest income 2.72 2.64",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3 Contributions paid by the employer 5.71 6.85",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "4 Rate of employee turnover",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "4 Benefits paid from the fund (5.73) (8.91)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "5 Return on plan assets excluding interest income (0.87) (0.05)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "6 Fair value of plan assets at the end of the year 40.81 38.98",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expected contribution to the defined benefit plan for the next annual reporting period",
+          "note_no": null,
+          "values": {
+            "current_period": 7.98,
+            "previous_period": 6.98
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net asset / (liability) recognised in the balance sheet",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 Present value of defined benefit obligation at the end of the year (50.87) (44.68) Notes :",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2 Fair value of plan assets at the end of the year 40.81 38.98 (i) The actuarial valuation of plan assets and the present value of the defined benefit obligation were carried out",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3 Amount recognised in the balance sheet (10.06) (5.70) The present value of the defined benefit obligation and the related current service cost and past service cost,",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Method.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "4 Net (liability) / asset- Current (8.02) (5.70)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Discount rate is based on the prevailing market yields of Indian Government securities as at the balance sheet",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net (liability) / asset- Non-current (2.04) - (iii) The salary escalation rate is arrived after taking into consideration the seniority, the promotion and other",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "employment market.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "230 CG POWER AND INDUSTRIAL SOLUTIONS LIMITED 2022-23",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 59,
+        "total_rows": 3
+      }
+    },
+    "cash_flow": {
+      "statement": "standalone_cash_flow",
+      "page": 60,
+      "pages": [
+        60
+      ],
+      "title": "STANDALONE STATEMENT OF CASH FLOWS FOR THE YEAR ENDED 31 MARCH, 2023 STANDALONE STATEMENT OF CASH FLOWS FOR THE YEAR ENDED 31 MARCH, 2023(Contd.)",
+      "currency": "reversal",
+      "periods": [],
+      "column_headers": [
+        "STANDALONE STATEMENT OF CASH FLOWS FOR THE YEAR ENDED 31 MARCH, 2023(Contd.)"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "[A] CASH FLOWS FROM OPERATING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit before tax from operations",
+          "note_no": null,
+          "values": {
+            "current_period": 983.07,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustments for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortisation expense",
+          "note_no": null,
+          "values": {
+            "current_period": 74.69,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Allowances for doubtful receivables",
+          "note_no": null,
+          "values": {
+            "current_period": 12.63,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Bad debts written off / (reversal) (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -7.64,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Gain) / loss arising on financial instruments designated as FVTPL",
+          "note_no": null,
+          "values": {
+            "current_period": -0.01,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Finance costs",
+          "note_no": null,
+          "values": {
+            "current_period": 14.56,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest income",
+          "note_no": null,
+          "values": {
+            "current_period": -28.42,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expense on employee stock options outstanding",
+          "note_no": null,
+          "values": {
+            "current_period": 4.42,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit on sale of investments (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -1.89,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unrealised exchange (gain) / loss (net)",
+          "note_no": null,
+          "values": {
+            "current_period": 2.74,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Profit) / loss on sale of property, plant and equipment (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -2.42,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Liabilities no longer required written back",
+          "note_no": null,
+          "values": {
+            "current_period": -29.05,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exceptional items (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -56.07,
+            "previous_period": -239.58
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Operating profit before working capital changes",
+          "note_no": null,
+          "values": {
+            "current_period": 966.61,
+            "previous_period": 603.38
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustments for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase) / Decrease in trade and other receivables",
+          "note_no": null,
+          "values": {
+            "current_period": -248.7,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase) / Decrease in inventories",
+          "note_no": null,
+          "values": {
+            "current_period": -43.69,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase / (Decrease) in trade and other payables",
+          "note_no": null,
+          "values": {
+            "current_period": 213.6,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase / (Decrease) in provisions",
+          "note_no": null,
+          "values": {
+            "current_period": 11.79,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash (used in) / from operations",
+          "note_no": null,
+          "values": {
+            "current_period": 899.61,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax refund / (paid) (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -9.2,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from operating activities [A]",
+          "note_no": null,
+          "values": {
+            "current_period": 890.41,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 24,
+        "total_rows": 0
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": "9",
+        "title": "of the standalone financial statements)",
+        "page": 55,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 2,
+        "rows": [
+          [
+            "Key audit matters",
+            "How our audit addressed the key audit matter"
+          ],
+          [
+            "Recognition of Deferred Tax Assets (as described in Note 9 of the standalone financial statements)",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": "9",
+        "title": "of the standalone financial statements)",
+        "page": 55,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 2,
+        "rows": [
+          [
+            "Key audit matters",
+            "How our audit addressed the key audit matter"
+          ],
+          [
+            "Revenue recognition (as described in Note 27 of the standalone financial statements)",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": "2022",
+        "title": "23 2021-22",
+        "page": 59,
+        "extraction_method": "pdfplumber",
+        "row_count": 39,
+        "column_count": 6,
+        "rows": [
+          [
+            "",
+            "Note No.",
+            "As at 31-03-2023",
+            "",
+            "As at 31-03-2022",
+            ""
+          ],
+          [
+            "ASSETS",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "745.09",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "18.01",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "25.74",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "11.03",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "302.76",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "-",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "13.29",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "434.17",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "7.45",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1557.54",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "490.46",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1229.72",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "633.55",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "21.34",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "18.59",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "78.94",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "188.28",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "2660.89",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "4218.43",
+            "",
+            ""
+          ],
+          [
+            "EQUITY AND LIABILITIES",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "305.43",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "2124.63",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "2430.06",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "2.87",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "10.91",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.75",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "15.53",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "42.66",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "3.23",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "82.46",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1170.47",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "89.43",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1345.59",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "236.97",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "147.62",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "4218.43",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": "2022",
+        "title": "23 2021-22",
+        "page": 59,
+        "extraction_method": "pdfplumber",
+        "row_count": 27,
+        "column_count": 6,
+        "rows": [
+          [
+            "",
+            "Note No.",
+            "2022-23",
+            "",
+            "2021-22",
+            ""
+          ],
+          [
+            "INCOME",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "6579.63",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "79.32",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "6658.95",
+            "",
+            ""
+          ],
+          [
+            "EXPENSES",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "4382.10",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "268.61",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.81",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "331.35",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "14.56",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "74.69",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "658.83",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "5731.95",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "927.00",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "56.07",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "983.07",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "7.81",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "189.90",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "197.71",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "785.36",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "(6.93)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.38",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(5.55)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "779.81",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "5.18",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "5.14",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": "18",
+        "title": "2.1 Basis of preparation:",
+        "page": 61,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 3,
+        "rows": [
+          [
+            "Balance as at 1-04-2022",
+            "Changes in equity share capital during the year*",
+            "Balance as at 31-03-2023"
+          ],
+          [
+            "288.37",
+            "17.06",
+            "305.43"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "18",
+        "title": "2.1 Basis of preparation:",
+        "page": 61,
+        "extraction_method": "pdfplumber",
+        "row_count": 10,
+        "column_count": 9,
+        "rows": [
+          [
+            "",
+            "Retained Earnings",
+            "General Reserve",
+            "Capital Reserve",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Share Warrants Money",
+            "Share Options Outstanding Account",
+            "Total Equity"
+          ],
+          [
+            "",
+            "(250.44)",
+            "415.89",
+            "672.49",
+            "12.95",
+            "660.04",
+            "18.24",
+            "1.78",
+            "1530.95"
+          ],
+          [
+            "",
+            "785.36",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "785.36"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "4.42",
+            "4.42"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "54.72",
+            "-",
+            "54.72"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "56.76",
+            "(72.96)",
+            "-",
+            "(16.20)"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "0.18",
+            "-",
+            "(0.18)",
+            "-"
+          ],
+          [
+            "",
+            "(5.55)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(5.55)"
+          ],
+          [
+            "",
+            "(229.07)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(229.07)"
+          ],
+          [
+            "",
+            "300.30",
+            "415.89",
+            "672.49",
+            "12.95",
+            "716.98",
+            "-",
+            "6.02",
+            "2124.63"
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 97,
+      "pages": [
+        97
+      ],
+      "title": "CONSOLIDATED BALANCE SHEET AS AT 31 MARCH, 2023 CONSOLIDATED STATEMENT OF PROFIT AND LOSS FOR THE YEAR ENDED 31 MARCH, 2023",
+      "currency": null,
+      "periods": [
+        "31.03.2023",
+        "31.03.2022"
+      ],
+      "column_headers": [
+        "2022-23",
+        "2021-22"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Note No. As at 31-03-2023 As at 31-03-2022",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "ASSETS INCOME",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(1) Non-current assets Revenue from operations",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Property, plant and equipment 4 762.50 869.89 Other income",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Capital work-in-progress 4 27.27 26.81 Total income",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Goodwill 5 162.14 152.37 EXPENSES",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Intangible assets 5 45.88 59.18",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cost of materials consumed",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Intangible assets under development 5 11.03 8.38",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Purchases of stock-in-trade",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "Changes in inventories of finished goods, work-in-progress and stock-in-trade",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "Investments 6 0.96 0.63",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "Employee benefits expense",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "Others 7 13.33 28.04",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "Finance costs",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "Deferred tax assets (net) 8 434.34 625.72",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "Depreciation and amortisation expense",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "Other non-current assets 9 7.48 4.96 Other expenses",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "1464.93 1775.98",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets",
+          "line_item": "Total expenses",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets",
+          "line_item": "Profit before exceptional items and tax",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets",
+          "line_item": "Inventories 10 541.18 512.35",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets",
+          "line_item": "Exceptional items (net)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Profit before tax",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Investments 11 0.01 40.62",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Tax expense:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Trade receivables 12 1297.12 943.66",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Cash and cash equivalents 13 681.78 395.07 Current tax",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Bank balances other than (iii) above 14 32.18 92.95 Deferred tax (net)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Others 15 147.48 139.50",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Current tax assets (net) 83.03 82.93 Profit from continuing operations after tax",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Other current assets 16 199.14 234.79 Profit from discontinued operations before tax",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "2981.92 2441.87 Tax expense on discontinued operations",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "(3) Assets classified as held for sale and discontinued operations 43 182.26 8.06 Profit from discontinued operations after tax",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "TOTAL ASSETS 4629.11 4225.91 Profit for the year",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Attributable to:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "EQUITY AND LIABILITIES Equity holders of the parent",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Current Assets > Financial Assets",
+          "line_item": "Non-controlling interests",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Financial Assets > Equity",
+          "line_item": "Equity share capital 17 305.43 288.37",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Other equity 18 1485.08 714.59 A (i) Items that will not be reclassified subsequently to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "1790.51 1002.96",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Remeasurement gain / (loss) on defined benefit plans",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Non-controlling interest 0.93 0.95 (ii) Income tax relating to items that will not be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "LIABILITIES B (i) Items that will be reclassified subsequently to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(1) Non-current liabilities Total other comprehensive income for the year",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Attributable to:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Borrowings 19 - 307.47",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Lease liabilities 38 12.06 6.86 Equity holders of the parent",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Other financial liabilities 20 1.85 14.16 Non-controlling interests",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "13.91 328.49",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Provisions 21 42.89 30.59",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Total comprehensive income for the year",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Deferred tax liabilities (net) 8 0.83 3.83",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Attributable to:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Other non-current liabilities 22 0.73 0.67",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Liabilities",
+          "line_item": "Equity holders of the parent",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities",
+          "line_item": "Non-controlling interests",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings 23 - 44.74",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "Lease liabilities 38 4.37 7.87 Earnings per share for continuing operations",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 48
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "Trade payables Basic (`)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "Total outstanding dues of micro enterprises and small enterprises; and 24 82.69 40.57 Diluted (`)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "(Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "Total outstanding dues of creditors other than micro enterprises and small enterprises 24 1189.97 1108.07",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial liabilities 25 659.64 Earnings per share for discontinued operations",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 48
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "334.08",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "1611.11 1860.89 Basic (`)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "Other current liabilities 26 297.53 817.24 Diluted (`)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions 27 156.96 171.45 (Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "(3) Liabilities associated with group of assets classified as held for sale and discontinued Earnings per share for total operations",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 48
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "operations 43 713.71 8.84 Basic (`)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "Diluted (`)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "TOTAL EQUITY AND LIABILITIES 4629.11 4225.91",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "(Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES 2 SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 2
+          }
+        },
+        {
+          "section": "Other Comprehensive Income > Current Liabilities > Financial Liabilities",
+          "line_item": "The accompanying notes form an integral part of consolidated financial statements The accompanying notes form an integral part of consolidated financial statements",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 75,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "cash_flow": {
+      "statement": "consolidated_cash_flow",
+      "page": 98,
+      "pages": [
+        98
+      ],
+      "title": "CONSOLIDATED STATEMENT OF CASH FLOWS FOR THE YEAR ENDED 31 MARCH, 2023 CONSOLIDATED STATEMENT OF CASH FLOWS FOR THE YEAR ENDED 31 MARCH, 2023(Contd.)",
+      "currency": "reversal",
+      "periods": [],
+      "column_headers": [
+        "CONSOLIDATED STATEMENT OF CASH FLOWS FOR THE YEAR ENDED 31 MARCH, 2023(Contd.)"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "[A] CASH FLOWS FROM OPERATING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit before tax from continuing operations",
+          "note_no": null,
+          "values": {
+            "current_period": 1002.14,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustments for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortisation expense",
+          "note_no": null,
+          "values": {
+            "current_period": 94.5,
+            "previous_period": 98.58
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Allowances for doubtful receivables",
+          "note_no": null,
+          "values": {
+            "current_period": 11.91,
+            "previous_period": 3.27
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Bad debts written off / (reversal) (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -7.64,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Gain arising on financial instruments designated as FVTPL",
+          "note_no": null,
+          "values": {
+            "current_period": -0.01,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Finance costs",
+          "note_no": null,
+          "values": {
+            "current_period": 16.2,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest income",
+          "note_no": null,
+          "values": {
+            "current_period": -28.92,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expense on employee stock options outstanding",
+          "note_no": null,
+          "values": {
+            "current_period": 4.42,
+            "previous_period": 1.78
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit on sale of investments (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -1.89,
+            "previous_period": -0.05
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unrealised exchange (gain) / loss (net)",
+          "note_no": null,
+          "values": {
+            "current_period": 1.77,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unrealised exchange gain / (loss) on consolidation (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -0.45,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Profit) / loss on sale of property, plant and equipment (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -2.41,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Liabilities no longer required written back",
+          "note_no": null,
+          "values": {
+            "current_period": -18.86,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exceptional items (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -51.76,
+            "previous_period": -247.77
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Operating profit before working capital changes",
+          "note_no": null,
+          "values": {
+            "current_period": 1019,
+            "previous_period": 657.94
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustments for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase) / Decrease in trade and other receivables",
+          "note_no": null,
+          "values": {
+            "current_period": -278.17,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase) / Decrease in inventories",
+          "note_no": null,
+          "values": {
+            "current_period": -48.62,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase / (Decrease) in trade and other payables",
+          "note_no": null,
+          "values": {
+            "current_period": 243.35,
+            "previous_period": 81.92
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase / (Decrease ) in provisions",
+          "note_no": null,
+          "values": {
+            "current_period": 12.03,
+            "previous_period": -35.9
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash (used in) / from operations",
+          "note_no": null,
+          "values": {
+            "current_period": 947.59,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax refund / (paid) (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -11.53,
+            "previous_period": 39.65
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Non-controlling interest in (profit) / loss",
+          "note_no": null,
+          "values": {
+            "current_period": 0.3,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing operating activities",
+          "note_no": null,
+          "values": {
+            "current_period": 936.36,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from discontinued operating activities",
+          "note_no": null,
+          "values": {
+            "current_period": 10.5,
+            "previous_period": 21.22
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing and discontinued operating activities [A]",
+          "note_no": null,
+          "values": {
+            "current_period": 946.86,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "[B] CASH FLOWS FROM INVESTING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add: Inflows from investing activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from sale of property, plant and equipment",
+          "note_no": null,
+          "values": {
+            "current_period": 3.67,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from sale of investments",
+          "note_no": null,
+          "values": {
+            "current_period": 134.5,
+            "previous_period": 1.29
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unrealised exchange gain / (loss) on consolidation (net)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 5.92
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest received",
+          "note_no": null,
+          "values": {
+            "current_period": 28.19,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Outflows from investing activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Purchase of property, plant and equipment (including capital work-in- progress and capital",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 36,
+        "total_rows": 0
+      }
+    },
+    "profit_and_loss": {
+      "statement": "consolidated_profit_and_loss",
+      "page": 117,
+      "pages": [
+        117
+      ],
+      "title": "(i) Group as a lessee Amounts recognized in the consolidated statement of profit and loss",
+      "currency": null,
+      "periods": [
+        "01.04.2021",
+        "31.03.2022"
+      ],
+      "column_headers": [
+        "2022-23",
+        "2021-22"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "30 to 99 years while furniture and building generally have lease terms between 2 to 9 years. The Group’s obligation under the lease is secured by the lessor’s Other expenses title to leased assets. Generally, the Group is restricted from assigning and subleasing the leased assets.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Short-term lease rent expense",
+          "note_no": null,
+          "values": {
+            "current_period": 3.61,
+            "previous_period": 4.89
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Set out below are the carrying amounts of right of use assets and lease liabilities included under financial liabilities and the movements during the year.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Low value asset lease rent expense",
+          "note_no": null,
+          "values": {
+            "current_period": 0.02,
+            "previous_period": 0.04
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Movement in carrying value of right of use assets",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Variable lease rent expense",
+          "note_no": null,
+          "values": {
+            "current_period": 0.16,
+            "previous_period": 0.21
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Fixture and Office Finance cost",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Land Building fittings equipments Vehicles Total",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest expense on lease liability",
+          "note_no": null,
+          "values": {
+            "current_period": 1.12,
+            "previous_period": 1.18
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Opening balances as at 01-04-2021 68.94 13.80 0.18 0.32 3.66 86.90",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortisation expense",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Addition / modification - 3.15 - 0.48 1.81 5.44",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation of ROU lease assets",
+          "note_no": null,
+          "values": {
+            "current_period": 9.24,
+            "previous_period": 10.4
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Deletion 5.43 0.08 - - - 5.51",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Depreciation 1.42 7.28 0.07 0.16 1.47 10.40 Amounts recognised in the consolidated statement of cash flows",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exchange differences - (0.22) - (0.02) (0.10) (0.34)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Closing balances as at 31-03-2022 62.09 9.37 0.11 0.62 3.90 76.09 Total cash outflow for leases",
+          "note_no": null,
+          "values": {
+            "current_period": 8.99,
+            "previous_period": 10.64
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Addition 1.50 9.39 - - 0.22 11.11",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Contractual maturities of lease liabilities on an undiscounted basis",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Deletion - 1.54 - - - 1.54",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Depreciation 1.36 6.44 0.11 0.16 1.17 9.24 As",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exchange differences Less than 1 year",
+          "note_no": null,
+          "values": {
+            "current_period": 6.33,
+            "previous_period": 8.62
+          }
+        },
+        {
+          "section": null,
+          "line_item": "- 0.52 - (0.33) (1.05) (0.86)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 - 5 years",
+          "note_no": null,
+          "values": {
+            "current_period": 11.57,
+            "previous_period": 6.27
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Closing balances as at 31-03-2023 62.23 11.30 - 0.13 1.90 75.56",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "More than 5 years",
+          "note_no": null,
+          "values": {
+            "current_period": 4.67,
+            "previous_period": 4.24
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Movement in lease liabilities during the year Total",
+          "note_no": null,
+          "values": {
+            "current_period": 22.57,
+            "previous_period": 19.13
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2022-23 2021-22",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Group as a lessor",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Opening balance 14.73 19.66",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Amounts recognised in the consolidated statement of profit and loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add: Addition 11.11 4.99",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add: Accretion of interest 1.12 1.18",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Payment (8.99) (10.64) Other Income",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Removal of assets (1.54) (0.07) Non-operating lease income",
+          "note_no": null,
+          "values": {
+            "current_period": 5.48,
+            "previous_period": 5.97
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Gain on removal of assets (0.49) (0.01)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Note:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exchange differences 0.49 (0.38)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Non-operating lease income is in respect of lease of land and / or building.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Closing balance 16.43 14.73",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Undiscounted future payment to be received",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Breakup of lease liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "As",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "As at 31-03-2023 As at 31-03-2022 Maturity analysis :",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Non-current lease liabilities 12.06 6.86 Less than 1 year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 0.33
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current lease liabilities 4.37 7.87 1 to 5 years",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total 16.43 14.73 More than 5 years",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 0.33
+          }
+        },
+        {
+          "section": null,
+          "line_item": "228 CG POWER AND INDUSTRIAL SOLUTIONS LIMITED 2022-23",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 49,
+        "total_rows": 5
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": "8",
+        "title": "of the consolidated financial statements)",
+        "page": 93,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 2,
+        "rows": [
+          [
+            "Key audit matters",
+            "How our audit addressed the key audit matter"
+          ],
+          [
+            "Recognition of Deferred Tax Asset (as described in Note 8 of the consolidated financial statements)",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": "8",
+        "title": "of the consolidated financial statements)",
+        "page": 93,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 2,
+        "rows": [
+          [
+            "Key audit matters",
+            "How our audit addressed the key audit matter"
+          ],
+          [
+            "Revenue recognition (as described in Note 28 of the consolidated financial statements)",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": "2022",
+        "title": "23 2021-22",
+        "page": 97,
+        "extraction_method": "pdfplumber",
+        "row_count": 45,
+        "column_count": 6,
+        "rows": [
+          [
+            "",
+            "Note No.",
+            "As at 31-03-2023",
+            "",
+            "As at 31-03-2022",
+            ""
+          ],
+          [
+            "ASSETS",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "762.50",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "27.27",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "162.14",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "45.88",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "11.03",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "0.96",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "13.33",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "434.34",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "7.48",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1464.93",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "541.18",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1297.12",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "681.78",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "32.18",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "147.48",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "83.03",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "199.14",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "2981.92",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "182.26",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "4629.11",
+            "",
+            ""
+          ],
+          [
+            "EQUITY AND LIABILITIES",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "305.43",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1485.08",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1790.51",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "0.93",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "-",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "12.06",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.85",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "13.91",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "42.89",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "0.83",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "0.73",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "-",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "4.37",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "82.69",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1189.97",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "334.08",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1611.11",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "297.53",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "156.96",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "713.71",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "4629.11",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": "2022",
+        "title": "23 2021-22",
+        "page": 97,
+        "extraction_method": "pdfplumber",
+        "row_count": 45,
+        "column_count": 6,
+        "rows": [
+          [
+            "",
+            "Note No.",
+            "2022-23",
+            "",
+            "2021-22",
+            ""
+          ],
+          [
+            "INCOME",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "6972.54",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "67.76",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "7040.30",
+            "",
+            ""
+          ],
+          [
+            "EXPENSES",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "4585.00",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "268.61",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "2.02",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "421.70",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "16.20",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "94.50",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "701.89",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "6089.92",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "950.38",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "51.76",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1002.14",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "13.40",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "192.41",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "205.81",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "796.33",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "169.80",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "3.16",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "166.64",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "962.97",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "962.67",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(0.30)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "962.97",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "(6.93)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.38",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "(4.76)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(10.31)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(10.31)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "0.00",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(10.31)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "952.66",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "952.36",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(0.30)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "952.66",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "5.25",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "5.21",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1.10",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1.09",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "6.35",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "6.30",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": "17",
+        "title": "2. SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES:",
+        "page": 99,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 3,
+        "rows": [
+          [
+            "Balance as at 01-04-2022",
+            "Changes in equity share capital during the year*",
+            "Balance as at 31-03-2023"
+          ],
+          [
+            "288.37",
+            "17.06",
+            "305.43"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "17",
+        "title": "2. SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES:",
+        "page": 99,
+        "extraction_method": "pdfplumber",
+        "row_count": 13,
+        "column_count": 12,
+        "rows": [
+          [
+            "",
+            "Retained Earnings",
+            "Effective Portion of Cash Flow Hedge",
+            "Foreign Currency Translation Reserve",
+            "General Reserve",
+            "Capital Reserve",
+            "Capital Reserve on Consolidation",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Share Options Outstanding Account",
+            "Share Warrant Money",
+            "Total Equity"
+          ],
+          [
+            "",
+            "(1037.47)",
+            "(0.05)",
+            "(34.60)",
+            "418.46",
+            "671.65",
+            "3.58",
+            "12.95",
+            "660.05",
+            "1.78",
+            "18.24",
+            "714.59"
+          ],
+          [
+            "",
+            "962.67",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "962.67"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "4.42",
+            "-",
+            "4.42"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "54.72",
+            "54.72"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "56.76",
+            "-",
+            "(72.96)",
+            "(16.20)"
+          ],
+          [
+            "",
+            "(0.05)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(0.05)"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "0.18",
+            "(0.18)",
+            "-",
+            "-"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "4.31",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "4.31"
+          ],
+          [
+            "",
+            "(5.55)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(5.55)"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "(4.76)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(4.76)"
+          ],
+          [
+            "",
+            "(229.07)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(229.07)"
+          ],
+          [
+            "",
+            "(309.47)",
+            "(0.05)",
+            "(35.05)",
+            "418.46",
+            "671.65",
+            "3.58",
+            "12.95",
+            "716.99",
+            "6.02",
+            "-",
+            "1485.08"
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,3494 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmp9blgakhr/2024-25_bse_annual_report_cox.pdf",
+    "file_name": "2024-25_bse_annual_report_cox.pdf",
+    "financial_year": "2024-25",
+    "extraction_timestamp": "2026-07-02T14:37:08.785360+00:00",
+    "page_count": 163
+  },
+  "standalone": {
+    "profit_and_loss": {
+      "statement": "standalone_profit_and_loss",
+      "page": 69,
+      "pages": [
+        69
+      ],
+      "title": "Standalone Statement of Profit and loss for the year ended 31st March, 2025",
+      "currency": "Face Value of Rs. 1/- each",
+      "periods": [
+        "14.05.2025"
+      ],
+      "column_headers": [
+        "2024-2025",
+        "2023-2024"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Revenue from operations 18",
+          "note_no": null,
+          "values": {
+            "current_period": 136268.94,
+            "previous_period": 25768.26
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other income 19",
+          "note_no": null,
+          "values": {
+            "current_period": 57046.8,
+            "previous_period": 36077.31
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total Income",
+          "note_no": null,
+          "values": {
+            "current_period": 193315.75,
+            "previous_period": 61845.57
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Purchases of Traded Goods 20",
+          "note_no": null,
+          "values": {
+            "current_period": 144754.31,
+            "previous_period": 23639.83
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Changes in Inventory 21",
+          "note_no": null,
+          "values": {
+            "current_period": -10889.27,
+            "previous_period": -948.4
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Employee benefit expenses 22",
+          "note_no": null,
+          "values": {
+            "current_period": 4515.81,
+            "previous_period": 3924.17
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Finance Cost 23",
+          "note_no": null,
+          "values": {
+            "current_period": 143.92,
+            "previous_period": 142.64
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Depreciation & amortization expenses 2",
+          "note_no": null,
+          "values": {
+            "current_period": 2258.23,
+            "previous_period": 1698.04
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Other Expenses 24",
+          "note_no": null,
+          "values": {
+            "current_period": 39486.44,
+            "previous_period": 18984.8
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Total Expenses",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit before exceptional items & tax",
+          "note_no": null,
+          "values": {
+            "current_period": 13046.3,
+            "previous_period": 14404.49
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Exceptional Items",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit/(Loss) before tax",
+          "note_no": null,
+          "values": {
+            "current_period": 13046.3,
+            "previous_period": 14404.49
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Less: Tax expenses",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "(1) Current tax of Current year",
+          "note_no": null,
+          "values": {
+            "current_period": 2040.7,
+            "previous_period": 2247.1
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "(2) Previous Year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 1520.51
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "MAT credit Entitlement",
+          "note_no": null,
+          "values": {
+            "current_period": -2040.7,
+            "previous_period": -2033.93
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "(2) Deferred tax",
+          "note_no": null,
+          "values": {
+            "current_period": 108.08,
+            "previous_period": 93.83
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit for the period A",
+          "note_no": null,
+          "values": {
+            "current_period": 12938.22,
+            "previous_period": 12576.97
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "A. (i) Items that will be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Income tax relating to items that will be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "B. (i) Items that will not be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Acturial Gain/(Loss )",
+          "note_no": null,
+          "values": {
+            "current_period": 111.84,
+            "previous_period": 241.29
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Tax effect on the measurement of defined benefit",
+          "note_no": null,
+          "values": {
+            "current_period": -27.96,
+            "previous_period": -60.32
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Income tax relating to items that will not be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "B",
+          "note_no": null,
+          "values": {
+            "current_period": 83.88,
+            "previous_period": 180.97
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total Comprehensive Income for the period (A+B)",
+          "note_no": null,
+          "values": {
+            "current_period": 13022.1,
+            "previous_period": 12757.94
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Earning per equity share (Face Value of Rs. 1/- each) 25",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(1) Basic",
+          "note_no": null,
+          "values": {
+            "current_period": 0.01,
+            "previous_period": 0.01
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(2) Diluted",
+          "note_no": null,
+          "values": {
+            "current_period": 0.01,
+            "previous_period": 0.01
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "The accompanying Notes 1 to 40 are integral part of these Financial Statements.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 31,
+        "total_rows": 3
+      }
+    },
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 68,
+      "pages": [
+        68
+      ],
+      "title": "STANDALONE BALANCE SHEET AS AT 31st March, 2025",
+      "currency": "Audit and Auditors",
+      "periods": [
+        "14.05.2025"
+      ],
+      "column_headers": [
+        "Note",
+        "No. As at",
+        "As at"
+      ],
+      "extraction_method": "word_position_clustering_llm_repair",
+      "rows": [
+        {
+          "section": "ASSETS",
+          "line_item": "(1) Non - Current Assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Property, Plant and Equipment",
+          "note_no": "2",
+          "values": {
+            "current_period": 93208.35,
+            "previous_period": 84372.96
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Capital work - in - progress",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Other Intangible Assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Intangible assets under development",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Investment In property",
+          "note_no": "3",
+          "values": {
+            "current_period": 518217.91,
+            "previous_period": 518642.91
+          }
+        },
+        {
+          "section": "ASSETS > Financial Assets",
+          "line_item": "Investments",
+          "note_no": "4",
+          "values": {
+            "current_period": 2235,
+            "previous_period": 2179
+          }
+        },
+        {
+          "section": "ASSETS > Financial Assets",
+          "line_item": "Other non - current assets",
+          "note_no": "5",
+          "values": {
+            "current_period": 196361.72,
+            "previous_period": 207061.74
+          }
+        },
+        {
+          "section": "ASSETS > Financial Assets",
+          "line_item": "Total Non - Current Assets (A)",
+          "note_no": "",
+          "values": {
+            "current_period": 810022.98,
+            "previous_period": 812256.61
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": "21",
+          "values": {
+            "current_period": 14806.49,
+            "previous_period": 3917.21
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Trade receivables",
+          "note_no": "6",
+          "values": {
+            "current_period": 36695.8,
+            "previous_period": 53607.47
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Cash and cash equivalents",
+          "note_no": "7",
+          "values": {
+            "current_period": 4217.79,
+            "previous_period": 13520.12
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Bank balances other than (ii) above",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Loans & Advances",
+          "note_no": "8",
+          "values": {
+            "current_period": 880347.83,
+            "previous_period": 843285.48
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other financial assets",
+          "note_no": "9",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other current assets",
+          "note_no": "10",
+          "values": {
+            "current_period": 33884.04,
+            "previous_period": 29386.14
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Total Current Assets (B)",
+          "note_no": "",
+          "values": {
+            "current_period": 969951.93,
+            "previous_period": 943716.42
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "TOTAL ASSETS (A+B)",
+          "note_no": "",
+          "values": {
+            "current_period": 1779974.91,
+            "previous_period": 1755973.03
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Equity share capital",
+          "note_no": "11",
+          "values": {
+            "current_period": 1410695.06,
+            "previous_period": 1410695.06
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Other Equity",
+          "note_no": "12",
+          "values": {
+            "current_period": 324891.26,
+            "previous_period": 311869.16
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Total Equity (A)",
+          "note_no": "",
+          "values": {
+            "current_period": 1735586.32,
+            "previous_period": 1722564.22
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES",
+          "line_item": "(1) Non Current Liabilities",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Financial Liabilities",
+          "line_item": "Borrowings",
+          "note_no": "13",
+          "values": {
+            "current_period": 7782.07,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Financial Liabilities",
+          "line_item": "Deffered tax Liability",
+          "note_no": "14",
+          "values": {
+            "current_period": 5166,
+            "previous_period": 5029.96
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Financial Liabilities",
+          "line_item": "Total Non Current Liabilities (B)",
+          "note_no": "",
+          "values": {
+            "current_period": 12948.07,
+            "previous_period": 5029.96
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings",
+          "note_no": "15",
+          "values": {
+            "current_period": 1644.21,
+            "previous_period": 396.5
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Trade payables",
+          "note_no": "16",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "total outstanding dues of micro enterprises and small enterprises",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "total outstanding dues of creditors micro enterprises and small enterprises",
+          "note_no": null,
+          "values": {
+            "current_period": 12148.39,
+            "previous_period": 21416.43
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions",
+          "note_no": "17",
+          "values": {
+            "current_period": 17647.92,
+            "previous_period": 6565.93
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Total Current Liabilities (c)",
+          "note_no": "",
+          "values": {
+            "current_period": 31440.52,
+            "previous_period": 28378.85
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "TOTAL EQUITY AND LIABILITIES (A+B+C)",
+          "note_no": "",
+          "values": {
+            "current_period": 1779974.91,
+            "previous_period": 1755973.03
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "The accompanying Notes 1 to 40 are integral part of these",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 33,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "cash_flow": {
+      "statement": "standalone_cash_flow",
+      "page": 4,
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "title": "Financial Statement",
+      "currency": "Rs. in Lakhs",
+      "periods": [],
+      "column_headers": [
+        "ANNUAL ANNUAL ANNUAL",
+        "REPORT REPORT REPORT 2024-2025 2024-2025 2024-2025"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Formerly Formerly Known Known as as Excel Excel Informways Informways Ltd. Ltd.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "DIRECTORS' REPORT",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Pursuant Crores) iii. the Equity Mr. directors to applicable Rajesh Shares have Kumar having provisions taken Agrawal proper face of value (DIN: the and Act of sufficient 07195960) Rs. and 1/- the care each Listing tendered for and the Regulations, Paid-up his",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "To,",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Remuneration Forty-One with with the Crore effect provisions Committee, Six from Lakh of April Ninety-Five this has 30, Act formulated 2024 for safeguarding Thousand due a to framework other and professional the Fifty-five assets containing, Only) of the The Members,",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "entire Crore other Six Board reasons Lakh irregularities; of Ninety-Five the for his Company, resignation Thousand its Committees other and than Fifty-five) those and individual provided Equity Shares in Excel Realty N Infra Limited",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "performance Stock evaluation Exchanges of the where Board the as shares a whole, of the its Committees Company are and (\"the Company\"/ \"Excel\")",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "6. (d) with NATURE the the framework. directors OF BUSINESS have The prepared details of the evaluation annual accounts process of on the a going Board",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Your including Directors The Independent take Board pleasure placed Directors in on presenting record has been its their appreciation disclosedin 23rd Directors' the for Corporate the Report together (e) Report. The with Company the Agrawal, directors, the Audited is engaged during have Financial laid his in down tenure Infrastructure Statement internal as Independent financial of business,IT Accounts controls Director for & March BPO to of be the 31,",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "controls are adequate and were operating effectively.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1. 7. Performance CHANGE FINANCIAL iv. During IN evaluation HIGHLIGHTS THE the year NATURE of under Independent OF review, BUSINESS Mr. Directors Subrata was Kumar done Dey by (DIN: the",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "evaluated. the Directors directors The Directors on have completion devised expressed proper of his satisfaction second sytems term to with ensure of the Office evaluation compliance as an As Particulars prescribed under Section 134(3) of the Act, there have Standalone been",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "such the systems closing were the business adequate hours and on operating March effectively. 31, 2025 and financial position of your Company which occurred between the end",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "The performance thereafter. assessment The same was of Non-Independent duly intimated For to the Stock Directors, year Exchanges Board report. ended",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "13. separate COMMITTEES meetings OF of THE Independent BOARD Directors. The same was also",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "March 31, 2025 The Board placed on record its appreciation for the contributions",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "8. MATERIAL CHANGES AND COMMITMENTS, AFFECTING THE During The Total Company Income the during reporting has his several tenure period, as committees, Independent no adverse which Director remarks have 1933.15 of been or the qualifications established Company",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "HAVE OCCURRED BETWEEN THE END OF THE FINANCIAL committees comply Profit before with and/or the Interest, requirements any Depreciation of the Directors'. of the relevant & Tax provisions 154.48 of applicable",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "FINANCIAL STATEMENTS RELATE AND THE DATE OF THE v. Director liable to Retire by Rotation: Pursuant to Section",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Interest 1.44",
+          "note_no": null,
+          "values": {
+            "current_period": 1.43,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "As Familiarization on March with 31, the Program 2025 Articles Company of for Association the has Independent Three of the Committees Company, Directors namely one-third Audit",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "There Less: Depreciation were no material changes and commitments, 22.58 affecting the and Stakeholders retire every Relationship year and, Committee. if eligible, may The offer details themselves of the composition for",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "between Profit / (Loss) the end Before of the Extraordinary financial year Items of the Company 130.46 to which the The of meetings Company Directors, held familiarizes and other attendance than the an Independent Independent of Directors Directors at Director such meetings with or Managing the are",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "for the one stated in this report.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Company, forms Add: Extraordinary part ensuing nature of the AGM. Annual of Items the Mr. industry Report Arpit Khurana, in and which is also the Whole- placed Company time on - Director the operates, Company's of programme Profit / (Loss) AGM at periodic and Before being Tax intervals. eligible, offer himself for 130.46 reappointment.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "9. DISCLOSURE RELATING TO SUBSIDIARIES, ASSOCIATES The Less: Directors Tax recommendation Expenses have devised of proper Nomination systems and and Remuneration processes Committee, for",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "In Standards compliance by issued the with members by the the requirements Institute of the Company of Company of SEBI at the (Listing Secretaries ensuing Obligations AGM. of India A As 1. Current on March Tax 31, of current 2025 the year Company has only one 20.40 subsidiary",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Company effectively. required has put under in place the a Act, Familiarization Regulation 36 Programme of the Listing for Independent Regulations",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2. Deferred tax 1.08",
+          "note_no": null,
+          "values": {
+            "current_period": 0.94,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "the The Company, Consolidated of Corporate their Financial roles, Affairs rights Statements related and to responsibilities the of Director the Company proposed vis-à-vis for the the to be year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3. Previous Year Taxes",
+          "note_no": null,
+          "values": {
+            "current_period": 15.2,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "14. business NOMINATION with the 23rd applicable model AGM. AND etc. Details provisions REMUNERATION of the of Familiarization the Companies COMMITTEE Programme Act, 2013, are and also MAT available Credit entitlement on the Company's website at http://www.excel-infoways.com. (20.40)",
+          "note_no": null,
+          "values": {
+            "current_period": -20.33,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Obligations and Disclosure Requirements) Regulations, 2015. The * A the Net Nomination Auditors' KEY Profit MANAGERIAL / (Loss) Report and Remuneration for thereon the PERSONNEL: year forms Committee part of the is in Annual existence 129.38 Report. in",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Board 178 of Diversity the Companies Act, 2013. Kindly refer section on 2. Remuneration STATE There OF is COMPANY'S no Committee' change in the AFFAIR for key matters managerial relating personnel to constitution, of the meetings",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Pursuant to Section 129(3) of the Companies Act, 2013, a Statement The Policy of the of Company on Subsidiary the appointment Company recognizes Company and and Mrs. and remuneration in embraces Nilam the prescribed Bihani of the Directors is importance Form the Company and AOC-1 Key of a Managerial is Secretary diverse",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "During the year under review the Company reported Total Income of Board Act, 2013 will and leverage SEBI differences (Listing Obligation in thought,perspective, and Disclosure knowledge, Requirement)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "in the previous year. Furthermore, the Company has earned profit of B) geographical website Declaration Pursuant www.excel-infoways.com. to by the background, an provisions Independent age, of Section ethnicity Director(s) 136 & gender, of and the re-appointment, which Companies will help Act,",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "of Rs. 125.76 Lakhs. of Company experts are inthe kept field for of inspection Finance, Corporate by the Members Governance, at the Registered Enterprise",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "15. Pursuant hasa AUDIT During a copy Woman the COMMITTEE of to the year the Financial Director under provisions on review Statements the of Board. the Section Company of its 149 Subsidiary has of the reported Act, Companies the Total to declarations to also Rs. available 599.82 to Lakhs on the the Company in website the previous that of the they year. Company meet Furthermore, the at criteria www.excel-infoways.com. of the independence Company",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "11. along An NUMBER loss Audit of with Rs. Committee Rules OF 96.78 MEETINGS framed Lakhs is in thereunder in existence OF the THE previous and in BOARD accordance Regulation year. OF DIRECTORS 16(1)(b) with the & provisions 25(8)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "10. continuing DIRECTORS as an AND Independent KEY MANAGERIAL Director of the PERSONAL Company. The Independent aware During The Your terms Company of the any of year reference, circumstance is under taking review, meetings all or the Four situation, necessary and (4) board attendance which steps meetings exists for have the or were been may advancement held be disclosed on",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Changes in Directors and Key Managerial Personnel ability and integral 17th to part discharge January, of this Report. their 2025. duties The All the with details recommendations an of objective the meetings independent made of by the the Board Audit",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3. DIVIDEND",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Governance of the Company. Report, whichforms an integral part of this Report.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "* DIRECTORS:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Further, in compliance with Rule 6(1) and 6(2) of the Companies In order to strengthen the financials position of the company and",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "12. 16. all DIRECTORS' CORPORATE of Directors Independent i. During of RESPONSIBILITY your SOCIAL the Directors year company, under RESPONSIBILITY of the has review, Company STATEMENT decided on the have that (CSR) recommendation registered it would be themselves prudent, of review.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "of Director's and on approval of Members in its meeting held",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Based The The Directors' Corporate on the disclosures Responsibility Social Responsibility received, Statement the as referred per Board Section is to of in 135 the clause opinion of the (c) of (DIN: 09607045) as an Independent Director of the Company,",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "4. specified 2013, Company. TRANSFER shall in state the TO Act RESERVES that- and Listing Regulations and are independent of period of 5 consecutive years w.e.f. May 10, 2024 upto",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "17. (a) Annual LISTING The Board in the Performance OF of preparation Directors SHARES Evaluation have of & the DEMATERIALISATION decided annual to accounts, retain the the entire applicable amount accounting of & Loss ii. as During at March the year 31, under 2025. review, on the recommendation of",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "explanation relating to material departures; of Director's and on approval of Members in its meeting held",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "In The terms Equity of Shares the provisions of the Company of the Companies are listed on Act, BSE 2013 Limited read ('BSE') with 5. SHARE (DIN CAPITAL No.: 08728819) as an Independent Director of the",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "and (b) with effect Disclosure the directors from August Requirement) have 03, selected 2009. Regulations, The such annual accounting 2015, listing the policies fees Board for FY and of a period of 5 consecutive years w.e.f. May 10, 2024 upto",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Remuneration i.e., During BSE estimates the and year NSE. Committee that under are review, reasonable have there evaluated and is no prudent the change effectiveness so in as the to give Share of a the true",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Company at the is end Rs. of 150,00,00,000/- the Finanicial Year (Rupees and One of the Hundred Profit and Fifty Loss Crores of",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 1
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 56,
+        "total_rows": 3
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 17,
+        "extraction_method": "pdfplumber",
+        "row_count": 6,
+        "column_count": 3,
+        "rows": [
+          [
+            "a",
+            "Name of the Related Party and Nature of Relationship",
+            "Ranjana Construction Private Limited, Entity in which Directors are Interested"
+          ],
+          [
+            "b",
+            "Nature of contracts/ arrangements/ transactions",
+            "Sale"
+          ],
+          [
+            "c",
+            "Duration of contracts/ arrangements/transactions",
+            "Till the end of the Financial Year 2026-2027"
+          ],
+          [
+            "d",
+            "Salient terms of the contracts or arrangements or transactions including the value, if any",
+            "Sales of Rs. 1,15,95,720/- to Ranjana Construction Private Limited"
+          ],
+          [
+            "e",
+            "Date(s) of approval by the Board, if any",
+            "NA (Resolution Approved by Members on September 20, 2022)"
+          ],
+          [
+            "f",
+            "Amount paid as advance, if any",
+            "2,93,00,000 (as Security Deposit)"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 51,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 3,
+        "rows": [
+          [
+            "Particulars",
+            "No.of Shares",
+            "%"
+          ],
+          [
+            "In Physical Form",
+            "3457800",
+            "0.25"
+          ],
+          [
+            "In Dematerialized Form",
+            "1407237255",
+            "99.75"
+          ],
+          [
+            "Total",
+            "1410695055",
+            "100.00"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 51,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 3,
+        "rows": [
+          [
+            "Particulars",
+            "No. of Shareholders",
+            "%"
+          ],
+          [
+            "In Physical Form",
+            "5",
+            "0.001"
+          ],
+          [
+            "In Dematerialized Form",
+            "420409",
+            "99.999"
+          ],
+          [
+            "Total",
+            "420414",
+            "100.00"
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "profit_and_loss": {
+      "statement": "consolidated_profit_and_loss",
+      "page": 109,
+      "pages": [
+        109
+      ],
+      "title": "Consolidated Statement of Profit and loss for the year ended 31st March, 2025",
+      "currency": "Face Value of Rs. 1/- each",
+      "periods": [
+        "14.05.2025"
+      ],
+      "column_headers": [
+        "2024-2025",
+        "2023-2024"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Revenue from operations 18",
+          "note_no": null,
+          "values": {
+            "current_period": 136268.94,
+            "previous_period": 25768.26
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other income 19",
+          "note_no": null,
+          "values": {
+            "current_period": 52160.46,
+            "previous_period": 34214.18
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total Income",
+          "note_no": null,
+          "values": {
+            "current_period": 188429.41,
+            "previous_period": 59982.44
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Purchases of Traded Goods 20",
+          "note_no": null,
+          "values": {
+            "current_period": 144754.31,
+            "previous_period": 23639.83
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Changes in Inventory 21",
+          "note_no": null,
+          "values": {
+            "current_period": -10889.27,
+            "previous_period": -948.4
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Employee benefit expenses 22",
+          "note_no": null,
+          "values": {
+            "current_period": 4984.81,
+            "previous_period": 4362.91
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Finance Cost 23",
+          "note_no": null,
+          "values": {
+            "current_period": 143.92,
+            "previous_period": 142.64
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Depreciation & amortization expenses 2",
+          "note_no": null,
+          "values": {
+            "current_period": 2258.23,
+            "previous_period": 1698.04
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Other Expenses 24",
+          "note_no": null,
+          "values": {
+            "current_period": 40155.7,
+            "previous_period": 19581.88
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Total Expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 181407.7,
+            "previous_period": 48476.9
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit before exceptional items & tax",
+          "note_no": null,
+          "values": {
+            "current_period": 7021.71,
+            "previous_period": 11505.54
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Exceptional Items",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit/(Loss) before tax",
+          "note_no": null,
+          "values": {
+            "current_period": 7021.71,
+            "previous_period": 11505.54
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Less: Tax expenses",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "(1) Current tax of Current year",
+          "note_no": null,
+          "values": {
+            "current_period": 2040.7,
+            "previous_period": 2247.1
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "(2) Previous Year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 1520.51
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "MAT credit Entitlement",
+          "note_no": null,
+          "values": {
+            "current_period": -2040.7,
+            "previous_period": -2033.93
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "(2) Deferred tax",
+          "note_no": null,
+          "values": {
+            "current_period": 108.08,
+            "previous_period": 93.83
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit for the period A",
+          "note_no": null,
+          "values": {
+            "current_period": 6913.63,
+            "previous_period": 9678.03
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "A. (i) Items that will be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": 6327.81,
+            "previous_period": 3184.41
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Income tax relating to items that will be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "B. (i) Items that will not be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Acturial Gain/(Loss )",
+          "note_no": null,
+          "values": {
+            "current_period": 111.84,
+            "previous_period": 241.29
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Tax effect on the measurement of defined benefit",
+          "note_no": null,
+          "values": {
+            "current_period": -27.96,
+            "previous_period": -60.32
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Income tax relating to items that will not be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "B",
+          "note_no": null,
+          "values": {
+            "current_period": 6411.69,
+            "previous_period": 3365.38
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total Comprehensive Income for the period (A+B)",
+          "note_no": null,
+          "values": {
+            "current_period": 13325.32,
+            "previous_period": 13043.4
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Earning per equity share (Face Value of Rs. 1/- each) 25",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(1) Basic",
+          "note_no": null,
+          "values": {
+            "current_period": 0.01,
+            "previous_period": 0.01
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(2) Diluted",
+          "note_no": null,
+          "values": {
+            "current_period": 0.01,
+            "previous_period": 0.01
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "The accompanying Notes 1 to 40 are integral part of these Financial Statements.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 31,
+        "total_rows": 3
+      }
+    },
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 108,
+      "pages": [
+        108
+      ],
+      "title": "CONSOLIDATED BALANCE SHEET AS AT 31st March, 2025",
+      "currency": null,
+      "periods": [
+        "14.05.2025"
+      ],
+      "column_headers": [
+        "Note",
+        "No. As at",
+        "As at"
+      ],
+      "extraction_method": "word_position_clustering_llm_repair",
+      "rows": [
+        {
+          "section": "ASSETS",
+          "line_item": "(1) Non - Current Assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Property, Plant and Equipment",
+          "note_no": "2",
+          "values": {
+            "current_period": 93208.35,
+            "previous_period": 84372.96
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Capital work - in - progress",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Other Intangible Assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Intangible assets under development",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS",
+          "line_item": "Investment In property",
+          "note_no": "3",
+          "values": {
+            "current_period": 518217.91,
+            "previous_period": 518642.91
+          }
+        },
+        {
+          "section": "ASSETS > Financial Assets",
+          "line_item": "Investments",
+          "note_no": "4",
+          "values": {
+            "current_period": 10,
+            "previous_period": 10
+          }
+        },
+        {
+          "section": "ASSETS > Financial Assets",
+          "line_item": "Other non - current assets",
+          "note_no": "5",
+          "values": {
+            "current_period": 196361.72,
+            "previous_period": 207061.74
+          }
+        },
+        {
+          "section": "ASSETS > Financial Assets",
+          "line_item": "Total Non - Current Assets (A)",
+          "note_no": "",
+          "values": {
+            "current_period": 807797.98,
+            "previous_period": 810087.61
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": "21",
+          "values": {
+            "current_period": 14806.49,
+            "previous_period": 3917.21
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Trade receivables",
+          "note_no": "6",
+          "values": {
+            "current_period": 36695.8,
+            "previous_period": 53607.47
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Cash and cash equivalents",
+          "note_no": "7",
+          "values": {
+            "current_period": 15173.87,
+            "previous_period": 23269.95
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Bank balances other than (ii) above",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Loans & Advances",
+          "note_no": "8",
+          "values": {
+            "current_period": 868523.56,
+            "previous_period": 836418.12
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other financial assets",
+          "note_no": "9",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other current assets",
+          "note_no": "10",
+          "values": {
+            "current_period": 33884.04,
+            "previous_period": 29386.14
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Total Current Assets (B)",
+          "note_no": "",
+          "values": {
+            "current_period": 969083.74,
+            "previous_period": 946598.89
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "TOTAL ASSETS (A+B)",
+          "note_no": "",
+          "values": {
+            "current_period": 1776881.72,
+            "previous_period": 1756686.5
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Equity share capital",
+          "note_no": "11",
+          "values": {
+            "current_period": 1410695.06,
+            "previous_period": 1410695.06
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Other Equity",
+          "note_no": "12",
+          "values": {
+            "current_period": 321760.84,
+            "previous_period": 312546.29
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Total Equity (A)",
+          "note_no": "",
+          "values": {
+            "current_period": 1732455.9,
+            "previous_period": 1723241.35
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES",
+          "line_item": "(1) Non Current Liabilities",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Financial Liabilities",
+          "line_item": "Borrowings",
+          "note_no": "13",
+          "values": {
+            "current_period": 7782.07,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Financial Liabilities",
+          "line_item": "Deffered tax Liability",
+          "note_no": "14",
+          "values": {
+            "current_period": 5166,
+            "previous_period": 5029.96
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Financial Liabilities",
+          "line_item": "Total Non Current Liabilities (B)",
+          "note_no": "",
+          "values": {
+            "current_period": 12948.07,
+            "previous_period": 5029.96
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings",
+          "note_no": "15",
+          "values": {
+            "current_period": 1644.21,
+            "previous_period": 396.5
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Trade payables",
+          "note_no": "16",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "total outstanding dues of micro enterprises small enterprises",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "total outstanding dues of creditors other micro enterprises and small enterprises",
+          "note_no": null,
+          "values": {
+            "current_period": 12185.62,
+            "previous_period": 21452.76
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions",
+          "note_no": "17",
+          "values": {
+            "current_period": 17647.92,
+            "previous_period": 6565.93
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Total Current Liabilities (c )",
+          "note_no": "",
+          "values": {
+            "current_period": 31477.75,
+            "previous_period": 28415.19
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "TOTAL EQUITY AND LIABILITIES (A+B+C)",
+          "note_no": "",
+          "values": {
+            "current_period": 1776881.72,
+            "previous_period": 1756686.5
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "The accompanying Notes 1 to 40 are integral part of these",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 33,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "cash_flow": {
+      "statement": "consolidated_cash_flow",
+      "page": 85,
+      "pages": [
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "title": "Financial Statement",
+      "currency": "Rs in 000",
+      "periods": [],
+      "column_headers": [
+        "ANNUAL ANNUAL ANNUAL",
+        "REPORT REPORT REPORT 2024-2025 2024-2025 2024-2025"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Formerly Formerly Formerly Known Known Known as as as Excel Excel Excel Informways Informways Informways Ltd. Ltd. Ltd.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "NOTES ON FINANCIAL STATEMENT FOR THE YEAR ENDED MARCH",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "NOTES NOTES NOTES ON ON ON FINANCIAL FINANCIAL FINANCIAL STATEMENT STATEMENT STATEMENT FOR FOR FOR THE THE THE YEAR YEAR YEAR ENDED ENDED ENDED MARCH MARCH MARCH",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "NOTES NOTES ON ON FINANCIAL FINANCIAL STATEMENT STATEMENT FOR FOR THE THE YEAR YEAR ENDED ENDED MARCH MARCH",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annexure 9: Maturity Profile of Defined Benefit Obligation c The Other Movement summary Comprehensive of in the (Deferred assumptions Income Tax for asset used the in )/ current Deferred the valuations period Tax Liability is given below:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annexure The summary 5: Reconciliation of the employee of net data defined used benefit for valuation liability is as follows:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expected Cashflows",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Financial Table Particulars Assumptions: 5: Summary Data",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Property Plant & Equipment Gratuity",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Table 9: Financial Assumptions",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars 31-Mar-25",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "As Particulars at 31st March 2024 4,496.87 (204.32)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Year Number Components 1 Cashflow of Employees of actuarial gain/losses on obligations: 6",
+          "note_no": null,
+          "values": {
+            "current_period": 6,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net opening provision in books of accounts",
+          "note_no": null,
+          "values": {
+            "current_period": 999167,
+            "previous_period": 757880
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Charged Discount / Rate (Credited) 93.82",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Distribution Total Due Transfer to Monthly Change in/(out) (%) Salary in obligation financial (Rs.) assumptions 3,05,900 - Salary To profit Growth or loss Rate",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Transfer (in)/out plan assets",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Year Average Due 2 to Cashflow change Monthly in Salary demographic (Rs.) assumption 50,983",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "As Rate Employee at of 31st Return March Benefit on 2025 Plan Expense Assets as per Annexure 2 4,590.69 (204.32) Not",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Distribution Average Due to experience Age (%) (Years) adjustments 41.92",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Charged Amounts / (Credited) recognized in Other Comprehensive (Income)",
+          "note_no": null,
+          "values": {
+            "current_period": 111837,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Table Year Return 10: 3 Withdrawal Cashflow on plan assets Rates excluding per annum amounts included in interest income",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "- Average To profit Past or loss Service (Years) 108.08 7.88",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Distribution Benefits paid (%) by the Company",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "As Age Average Amounts at Band 31st Future recognized March Service 2025 in (Years) Other Comprehensive 4,698.77 (Income) 23.08 / (204.32) Expense",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Year Contributions 4 Cashflow to plan assets",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "25 Weighted & Below Average Duration (Years) 11.14",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Distribution Closing provision (%) in books of accounts",
+          "note_no": null,
+          "values": {
+            "current_period": 1318910,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annexure 3: Reconciliation of defined benefit obligation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "33 Disclosure 25 to 35 required by Ind As 19- Employee Benefit",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Year 5 Cashflow",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 62836
+          }
+        },
+        {
+          "section": null,
+          "line_item": "After Annexure 35 performing to 6: 45 Composition the broad data of the consistency plan assets checks, we observed that there data. Table Distribution Particulars Hence, 1: Assets we (%) and have Liabilities considered the same data as received by the company",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "45 to 55",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Year 6 to Year 10 Cashflow",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars 55 & above",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Table Distribution 6: Data Reconcilation (%) with Previous Year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Defined Opening Benefit Defined Obligation Benefit Obligation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Mortality Rates: Indian Assured Lives Mortality (2012-14) Table The Fair future Particulars Transfer Government Value accrual in/(out) Of Plan of is obligation India not Assets considered Securities in arriving at the above cash-flows.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Employees from Previous Year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 6
+          }
+        },
+        {
+          "section": null,
+          "line_item": "The Net Expected Current State Liability(Asset) Government service contribution cost Securities for the next year is Rs. 69,504/- Table 11: Sample Rates per annum of Indian Assured Lives Mortality",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "New Interest High Employees quality cost corporate in the Current bonds Year The Weighted Average Duration (Years) as at valuation date is 11.14 years.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Table Age New Components 2: Equity Bifurcation (in Employees years) shares of actuarial of Of prior listed Liability to companies gain/losses the Current on Year obligations:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annexure Particulars 20 Left Due Property & to 10: Retired Change Sensitivity Employees in financial to key assumptions assumptions",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current 30 Due Special to Liability change Deposit in Scheme demographic assumption",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars Total Employees in Current Year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Non-Current Policy of insurance Liability",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "40 Due to experience adjustments",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net Bank Liability(Asset) Balance",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Below 50 Past is the service breakup cost of employee-count as per the age bands and service valuation. Discount Loss Other (gain) rate Investments Sensitivity on curtailments",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "60",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Table Increase 3: Total Income/Expenses by 0.5% Recognized during the period",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Liabilities extinguished on settlements",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Table (% Particulars 7: change) Age Band wise distribution of Employees",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Method Liabilities of Valuation: assumed in an amalgamation in the nature of purchase",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Decrease Employee by Benefit 0.5% Expense",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annexure Projected Exchange Unit 7: Bifurcation Credit differences (PUC) of on method liability foreign to as plans value per schedule the Defined III benefit obligation used.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(% Other change) Comprehensive Income",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Age Band 31-Mar-25",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Benefits paid",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Salary Particulars growth rate Sensitivity",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annexure Less than 1: Funded 25 status of the plan 0",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 0
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Key Assumptions Closing Defined Benefit Obligation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase by 0.5%",
+          "note_no": null,
+          "values": {
+            "current_period": 1332431,
+            "previous_period": 1031139
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars 25 Current to 35 Liability* 2",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(% change)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(12",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annexure Discount 35 Non-Current to 4: 45 Reconciliation Rate Liability of plan assets 2",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Decrease by 0.5%",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Withdrawal 45 Particulars to 55 Rates 1",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(% Present Net change) Liability value of unfunded obligations",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Withdrawal Present 55 & Above value rate (W.R.) of funded Sensitivity obligations 1",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "reducing",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "W.R. Fair * The value x 110% current of plan liability assets is calculated as expected benefits for the next 12",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Opening value of plan assets p.a%",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(% Net change) Liability (Asset)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Salary Growth Rate",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Table Annexure W.R. 8: Transfer Service x 8: 90% Principle in/(out) Band plan actuarial wise assets distribution assumptions of Employees",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annexure Interest 2: Profit Income and loss account for the period",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(% Table change) 4: Plan Features",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars Return on plan assets excluding amounts included in interest income",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Benefits Assets Service offered distributed Band on settlements 15/ 26 × Salary × Duration of Service",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Appendix A : Break-up of defined benefit obligation (12",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Discount Rate",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Salary Contributions 0-4 definition by employer Basic Salary including Dearness Allowance",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Service Salary cost: Growth Rate",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars Benefit Withdrawal Assets 4 to ceiling 10 acquired Rates in an amalgamation Benefit in ceiling the nature of Rs. of 20,00,000 purchase was applied",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current service cost",
+          "note_no": null,
+          "values": {
+            "current_period": 137539,
+            "previous_period": 84484
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Vested Vesting Exchange 10 conditions to 15 differences on foreign 5 plans years of continuous service (Not applicable",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Past service cost and loss/(gain) on curtailments and settlement",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Non-vested Benefit Benefits 15 eligibility & Above paid Upon Death or Resignation / Withdrawal reducing or Net interest cost",
+          "note_no": null,
+          "values": {
+            "current_period": 70367,
+            "previous_period": 55305
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total p.a%",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Retirement Closing value age of plan assets 65 Years",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total included in 'Employee Benefit Expense'",
+          "note_no": null,
+          "values": {
+            "current_period": 207906,
+            "previous_period": 139789
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Rate of Return on Plan Assets",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total Charge to P&L",
+          "note_no": null,
+          "values": {
+            "current_period": 207906,
+            "previous_period": 139789
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 99,
+        "total_rows": 6
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 3,
+        "extraction_method": "pdfplumber",
+        "row_count": 51,
+        "column_count": 7,
+        "rows": [
+          [
+            "",
+            "",
+            "CORPORATE INFORMATION",
+            "BOARD OF",
+            "DIRECTO",
+            "R",
+            "S"
+          ],
+          [
+            "Mr. Lakhmendra Khur",
+            "an",
+            "a",
+            "Chairman & Ma",
+            "naging Direct",
+            "or",
+            ""
+          ],
+          [
+            "Mrs. Ranjana Khuran",
+            "a",
+            "",
+            "Whole-time Dire",
+            "ctor",
+            "",
+            ""
+          ],
+          [
+            "Mr. Arpit Khurana",
+            "",
+            "",
+            "Whole-time Dire",
+            "ctor",
+            "",
+            ""
+          ],
+          [
+            "Mr. Subrata Kumar D",
+            "ey",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "(Retired w.e.f. March 3",
+            "1, 2",
+            "025)",
+            "Non- Executive",
+            "Independent",
+            "Di",
+            "rector"
+          ],
+          [
+            "Mr. Rajat Raja Kothar",
+            "i",
+            "",
+            "Non- Executive",
+            "Independent",
+            "Di",
+            "rector"
+          ],
+          [
+            "Mr. Rajesh Agrawal",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "(Resigned w.e.f. April 3",
+            "0,",
+            "2024)",
+            "Non- Executive",
+            "Independent",
+            "Di",
+            "rector"
+          ],
+          [
+            "Mr. Himanshu Gupta",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "(Appointed w.e.f. May 1",
+            "0,",
+            "2024)",
+            "Non-Executive I",
+            "ndependent D",
+            "ir",
+            "ector"
+          ],
+          [
+            "Mr. Shweta Mundra.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "(Appointed w.e.f. May 1",
+            "0,",
+            "2024)",
+            "Non-Executive I",
+            "ndependent D",
+            "ir",
+            "ector"
+          ],
+          [
+            "COMPANY SECRETR",
+            "AY",
+            "",
+            "CHIEF FINANC",
+            "IAL OFFICE",
+            "R",
+            ""
+          ],
+          [
+            "Ms. Nilam Bihani",
+            "",
+            "",
+            "Mr. Pramod Ko",
+            "kate",
+            "",
+            ""
+          ],
+          [
+            "STATUTORY AUDITO",
+            "RS",
+            "",
+            "SECRETARIAL",
+            "AUDITORS",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "M/s. S K JAIN",
+            "& CO.",
+            "",
+            ""
+          ],
+          [
+            "M/s. Bhatter & Co.",
+            "",
+            "",
+            "Company Secre",
+            "taries in Prac",
+            "tic",
+            "e"
+          ],
+          [
+            "Chartered Accountant",
+            "s",
+            "",
+            "11, Friend's Uni",
+            "on Premises",
+            "Co",
+            "-oper"
+          ],
+          [
+            "307, Tulsiani Chamber",
+            "s,",
+            "",
+            "2nd Floor, 227,",
+            "P.D' Mello Ro",
+            "ad",
+            ","
+          ],
+          [
+            "Nariman Point,",
+            "",
+            "",
+            "Beside Manama",
+            "Hotel,",
+            "",
+            ""
+          ],
+          [
+            "Mumbai- 400021",
+            "",
+            "",
+            "Opp St. George",
+            "Hospital, Mu",
+            "mb",
+            "ai-40"
+          ],
+          [
+            "",
+            "",
+            "",
+            "INTERNAL AUD",
+            "ITORS",
+            "",
+            ""
+          ],
+          [
+            "REGISTRARS AND",
+            "SH",
+            "ARE TRANSFER AGENT",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Malvika & Asso",
+            "ciates",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Chartered Acco",
+            "untants",
+            "",
+            ""
+          ],
+          [
+            "M/s MUFG Intime Ind",
+            "ia",
+            "Private Limited",
+            "302, Usha Sada",
+            "n CHS Ltd,",
+            "",
+            ""
+          ],
+          [
+            "(Formerly known as L",
+            "ink",
+            "Intime India Private Limited)",
+            "Marol Maroshi R",
+            "oad,",
+            "",
+            ""
+          ],
+          [
+            "Unit: C-101, 247 Park",
+            ", L.",
+            "B.S. Marg,",
+            "Andheri East, M",
+            "umbai- 40005",
+            "9",
+            ""
+          ],
+          [
+            "Vikhroli (West), Mumb",
+            "ai -",
+            "400083",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Phone : +91 22 4918",
+            "627",
+            "0",
+            "BANKERS",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Fax : +91 22 4918606",
+            "0",
+            "",
+            "ICICI BANK",
+            "",
+            "",
+            ""
+          ],
+          [
+            "E-mail : rnt.helpdesk@",
+            "in.",
+            "mpms.mufg.com",
+            "The Federal Ban",
+            "k Limited",
+            "",
+            ""
+          ],
+          [
+            "Website : www.in.mpm",
+            "s.m",
+            "ufg.com",
+            "State Bank India",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Union Bank of In",
+            "dia",
+            "",
+            ""
+          ],
+          [
+            "REGISTERED OFFIC",
+            "E",
+            "",
+            "Kotak Mahindra",
+            "Bank",
+            "",
+            ""
+          ],
+          [
+            "31 A, Laxmi Industrial",
+            "Es",
+            "tate",
+            "Bharat Co-opera",
+            "tive Bank (M",
+            "um",
+            "bai L"
+          ],
+          [
+            "",
+            "",
+            "",
+            "HDFC Bank Ltd",
+            "",
+            "",
+            ""
+          ],
+          [
+            "New Link Road, Andh",
+            "eri",
+            "(West)",
+            "IndusInd Bank L",
+            "td",
+            "",
+            ""
+          ],
+          [
+            "Mumbai - 400053",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "INDEX",
+            "",
+            "",
+            "",
+            "P",
+            "ag",
+            "e No."
+          ],
+          [
+            "Board of Directors' Re",
+            "po",
+            "rt",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          [
+            "Management Discussi",
+            "on",
+            "& Analysis Report",
+            "",
+            "",
+            "",
+            "21"
+          ],
+          [
+            "Corporate Governance",
+            "R",
+            "eport",
+            "",
+            "",
+            "",
+            "26"
+          ],
+          [
+            "Independent Auditors'",
+            "Re",
+            "port",
+            "",
+            "",
+            "",
+            "56"
+          ],
+          [
+            "Balance Sheet, State",
+            "men",
+            "t of Profit and Loss, Cash Flow Sta",
+            "tement",
+            "",
+            "",
+            "65"
+          ],
+          [
+            "Notes Forming Part of",
+            "Fi",
+            "nancial Statements",
+            "",
+            "",
+            "",
+            "68"
+          ],
+          [
+            "Significant Accounting",
+            "Po",
+            "licies",
+            "",
+            "",
+            "",
+            "89"
+          ],
+          [
+            "Consolidated Auditors",
+            "Re",
+            "port,",
+            "",
+            "",
+            "",
+            "99"
+          ],
+          [
+            "Balance Sheet, Profit",
+            "&",
+            "Loss account, Cash Flow Statement",
+            "",
+            "",
+            "",
+            "105"
+          ],
+          [
+            "Notes on Consolidated",
+            "Fi",
+            "nancial Statement",
+            "",
+            "",
+            "",
+            "108"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 4,
+        "extraction_method": "pdfplumber",
+        "row_count": 15,
+        "column_count": 5,
+        "rows": [
+          [
+            "Particulars Standalone Consolidated",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "For the year ended March 31, 2025",
+            "For the year ended March 31, 2024",
+            "For the year ended March 31, 2025",
+            "For the year ended March 31, 2024"
+          ],
+          [
+            "Total Income",
+            "1933.15",
+            "618.45",
+            "1884.29",
+            "599.82"
+          ],
+          [
+            "Profit before Interest, Depreciation & Tax",
+            "154.48",
+            "162.45",
+            "94.23",
+            "133.46"
+          ],
+          [
+            "Less: Interest",
+            "1.44",
+            "1.43",
+            "1.44",
+            "1.43"
+          ],
+          [
+            "Less: Depreciation",
+            "22.58",
+            "16.98",
+            "22.58",
+            "16.98"
+          ],
+          [
+            "Profit / (Loss) Before Extraordinary Items",
+            "130.46",
+            "144.04",
+            "70.21",
+            "115.05"
+          ],
+          [
+            "Add: Extraordinary Items",
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "Profit / (Loss) Before Tax",
+            "130.46",
+            "144.04",
+            "70.21",
+            "115.05"
+          ],
+          [
+            "Less: Tax Expenses",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "1. Current Tax of current year",
+            "20.40",
+            "22.47",
+            "20.40",
+            "22.47"
+          ],
+          [
+            "2. Deferred tax",
+            "1.08",
+            "0.94",
+            "1.08",
+            "0.94"
+          ],
+          [
+            "3. Previous Year Taxes",
+            "-",
+            "15.20",
+            "-",
+            "15.20"
+          ],
+          [
+            "MAT Credit entitlement",
+            "(20.40)",
+            "(20.33)",
+            "(20.40)",
+            "(20.34)"
+          ],
+          [
+            "Net Profit / (Loss) for the year",
+            "129.38",
+            "125.76",
+            "69.13",
+            "96.78"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 94,
+        "extraction_method": "pdfplumber",
+        "row_count": 7,
+        "column_count": 3,
+        "rows": [
+          [
+            "Asset",
+            "Management estimate of useful life",
+            "Useful life as per Schedule II of the Companies Act, 2013"
+          ],
+          [
+            "Plant & Machinery",
+            "20 years",
+            "20 years"
+          ],
+          [
+            "Building",
+            "30 years",
+            "30 years"
+          ],
+          [
+            "Office equipments and Air condition",
+            "5 years",
+            "5 years"
+          ],
+          [
+            "Furniture and fixtures",
+            "10 years",
+            "10 years"
+          ],
+          [
+            "Computers and Printers",
+            "3 years",
+            "3 years"
+          ],
+          [
+            "Vehicles- Motor car",
+            "8 years",
+            "8 years"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": null,
+        "title": null,
+        "page": 134,
+        "extraction_method": "pdfplumber",
+        "row_count": 7,
+        "column_count": 3,
+        "rows": [
+          [
+            "Asset",
+            "Management estimate of useful life",
+            "Useful life as per Schedule II of the Companies Act, 2013"
+          ],
+          [
+            "Plant & Machinery",
+            "20 years",
+            "20 years"
+          ],
+          [
+            "Building",
+            "30 years",
+            "30 years"
+          ],
+          [
+            "Office equipments and Air condition",
+            "5 years",
+            "5 years"
+          ],
+          [
+            "Furniture and fixtures",
+            "10 years",
+            "10 years"
+          ],
+          [
+            "Computers and Printers",
+            "3 years",
+            "3 years"
+          ],
+          [
+            "Vehicles- Motor car",
+            "8 years",
+            "8 years"
+          ]
+        ]
+      }
+    ]
+  }
+}

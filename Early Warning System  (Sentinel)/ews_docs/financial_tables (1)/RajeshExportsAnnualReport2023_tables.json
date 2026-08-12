@@ -1,0 +1,6370 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmpy8bztqw0/RajeshExportsAnnualReport2023.pdf",
+    "file_name": "RajeshExportsAnnualReport2023.pdf",
+    "financial_year": "2022-23",
+    "page_count": 116,
+    "total_chars": 314197,
+    "extraction_timestamp": "2026-07-01T14:14:00.540145+00:00"
+  },
+  "standalone": {
+    "cash_flow": {
+      "statement": "standalone_cash_flow",
+      "page": 58,
+      "pages": [
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "title": "STANDALONE CASH FLOW STATEMENT",
+      "currency": "Rs. in lakhs",
+      "periods": [],
+      "column_headers": [
+        "2022-2023",
+        "2021-2022"
+      ],
+      "extraction_method": "pdfplumber_table",
+      "rows": [
+        {
+          "section": "Operating Activities",
+          "line_item": "Profit before tax",
+          "note_no": null,
+          "values": {
+            "current_period": 3222.26,
+            "previous_period": 3029.8
+          },
+          "raw": [
+            "Profit before tax",
+            "3,222.26",
+            "3,029.80"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustments for: Depreciation and amortisation expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 68.73,
+            "previous_period": 90.95
+          },
+          "raw": [
+            "Adjustments for:",
+            "Depreciation and amortisation expenses",
+            "68.73",
+            "90.95"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Net (gain) / loss on sale of investments (Profit)/Loss on fixed assets sold, scrapped, etc. (net) Interest income Actuarial loss/(gain) forming part of other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": 19.08,
+            "previous_period": 8018.52
+          },
+          "raw": [
+            "Net (gain) / loss on sale of investments",
+            "-",
+            "-",
+            "(Profit)/Loss on fixed assets sold, scrapped, etc. (net)",
+            "-",
+            "-",
+            "Interest income",
+            "-",
+            "-",
+            "Actuarial loss/(gain) forming part of other comprehensive income",
+            "-",
+            "19.08",
+            "Bad debts/advances written off & provision made",
+            "-",
+            "-",
+            "Audit fees",
+            "-",
+            "-",
+            "Finance cost",
+            "8,018.52"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Rent received",
+          "note_no": null,
+          "values": {
+            "current_period": -129.83,
+            "previous_period": -74.64
+          },
+          "raw": [
+            "Rent received",
+            "(129.83)",
+            "(74.64)"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Profit on sale of Fixed assets",
+          "note_no": null,
+          "values": {
+            "current_period": -41.53,
+            "previous_period": 11179.68
+          },
+          "raw": [
+            "Profit on sale of Fixed assets",
+            "-",
+            "(41.53)",
+            "7,957.42 8,387.83",
+            "Cash Generated from operations before",
+            "working capital changes",
+            "11,179.68"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustments for: (Increase)/Decrease in Inventories",
+          "note_no": null,
+          "values": {
+            "current_period": 1482,
+            "previous_period": -5312.41
+          },
+          "raw": [
+            "Adjustments for:",
+            "(Increase)/Decrease in Inventories",
+            "1,482.00",
+            "(5,312.41)"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustments for Decrease/(increase) in Trade and - other receivables including Loans & Advances",
+          "note_no": null,
+          "values": {
+            "current_period": 96908.93,
+            "previous_period": -30118.58
+          },
+          "raw": [
+            "Adjustments for Decrease/(increase) in Trade and -",
+            "other receivables including Loans & Advances",
+            "96,908.93",
+            "(30,118.58)"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Increase/(Decrease) in Current - Non Current Liabilities & Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": -100874.2,
+            "previous_period": 35115.9
+          },
+          "raw": [
+            "Increase/(Decrease) in Current -",
+            "Non Current Liabilities & Provisions",
+            "(100,874.20)",
+            "35,115.90"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Cash generated from operations",
+          "note_no": null,
+          "values": {
+            "current_period": 8696.42,
+            "previous_period": 11102.54
+          },
+          "raw": [
+            "Cash generated from operations",
+            "8,696.42",
+            "11,102.54"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Taxes paid (net of refunds)",
+          "note_no": null,
+          "values": {
+            "current_period": -772.11,
+            "previous_period": -1095.29
+          },
+          "raw": [
+            "Taxes paid (net of refunds)",
+            "(772.11)",
+            "(1,095.29)"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Net cash generated from operating activities - [A]",
+          "note_no": null,
+          "values": {
+            "current_period": 7924.31,
+            "previous_period": 10007.25
+          },
+          "raw": [
+            "Net cash generated from operating activities - [A]",
+            "7,924.31",
+            "10,007.25"
+          ]
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Purchase of Fixed Assets Sale proceeds of Fixed Assets (DECREASE IN FIXED ASSETS} (Purchase)/ Sale proceeds of Investments",
+          "note_no": null,
+          "values": {
+            "current_period": -5,
+            "previous_period": -4175.89
+          },
+          "raw": [
+            "Purchase of Fixed Assets",
+            "-",
+            "-",
+            "Sale proceeds of Fixed Assets (DECREASE IN FIXED ASSETS}",
+            "-",
+            "-",
+            "(Purchase)/ Sale proceeds of Investments",
+            "(5.00)",
+            "(4,175.89)"
+          ]
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Rent received",
+          "note_no": null,
+          "values": {
+            "current_period": 129.83,
+            "previous_period": 74.64
+          },
+          "raw": [
+            "Rent received",
+            "129.83",
+            "74.64"
+          ]
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Net cash generated/(used in) from investing activities-[B]",
+          "note_no": null,
+          "values": {
+            "current_period": 124.83,
+            "previous_period": -4101.25
+          },
+          "raw": [
+            "Net cash generated/(used in) from investing activities-[B]",
+            "124.83",
+            "(4,101.25)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Increase/(Decrease) in Secured Loan",
+          "note_no": null,
+          "values": {
+            "current_period": -325.76,
+            "previous_period": -7687.63
+          },
+          "raw": [
+            "Increase/(Decrease) in Secured Loan",
+            "(325.76)",
+            "(7,687.63)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Increase/(Decrease) in Unsecured Loan",
+          "note_no": null,
+          "values": {
+            "current_period": 169.34,
+            "previous_period": 94.02
+          },
+          "raw": [
+            "Increase/(Decrease) in Unsecured Loan",
+            "169.34",
+            "94.02"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Interest paid",
+          "note_no": null,
+          "values": {
+            "current_period": -8018.52,
+            "previous_period": -8393.97
+          },
+          "raw": [
+            "Interest paid",
+            "(8,018.52)",
+            "(8,393.97)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Dividends paid",
+          "note_no": null,
+          "values": {
+            "current_period": -1356.76,
+            "previous_period": -2952.6
+          },
+          "raw": [
+            "Dividends paid",
+            "(1,356.76)",
+            "(2,952.60)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Net cash used in financing activities - [C]",
+          "note_no": null,
+          "values": {
+            "current_period": -9531.7,
+            "previous_period": -18940.18
+          },
+          "raw": [
+            "Net cash used in financing activities - [C]",
+            "(9,531.70)",
+            "(18,940.18)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Net increase/(decrease) in cash and cash equivalents - [A+B+C]",
+          "note_no": null,
+          "values": {
+            "current_period": -1482.56,
+            "previous_period": -13034.18
+          },
+          "raw": [
+            "Net increase/(decrease) in cash",
+            "and cash equivalents - [A+B+C]",
+            "(1,482.56)",
+            "(13,034.18)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Cash and cash equivalents at the beginning of the year",
+          "note_no": null,
+          "values": {
+            "current_period": 56224.99,
+            "previous_period": 69259.16
+          },
+          "raw": [
+            "Cash and cash equivalents at the beginning of the year",
+            "56,224.99",
+            "69,259.16"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Cash and cash equivalents at the end of the year",
+          "note_no": null,
+          "values": {
+            "current_period": 54742.42,
+            "previous_period": 56224.99
+          },
+          "raw": [
+            "Cash and cash equivalents at the end of the year",
+            "54,742.42",
+            "56,224.99"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Cash and cash equivalents comprise of: Cash on hand",
+          "note_no": null,
+          "values": {
+            "current_period": 3.46,
+            "previous_period": 2.9
+          },
+          "raw": [
+            "Cash and cash equivalents comprise of:",
+            "Cash on hand",
+            "3.46",
+            "2.90"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Balances with banks: In current accounts",
+          "note_no": null,
+          "values": {
+            "current_period": 3563.47,
+            "previous_period": 3538.05
+          },
+          "raw": [
+            "Balances with banks:",
+            "In current accounts",
+            "3,563.47",
+            "3,538.05"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Earmarked Balances with banks",
+          "note_no": null,
+          "values": {
+            "current_period": 644.89,
+            "previous_period": 431.06
+          },
+          "raw": [
+            "Earmarked Balances with banks",
+            "644.89",
+            "431.06"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Term deposits with original maturity of More than three months",
+          "note_no": null,
+          "values": {
+            "current_period": 50530.61,
+            "previous_period": 52252.97
+          },
+          "raw": [
+            "Term deposits with original maturity of",
+            "More than three months",
+            "50,530.61",
+            "52,252.97"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Amount a Equity share capital Equity share of Rs. 1 each, issued, subscribed and paid up capital 2,952.60 Balance as at 1 April",
+          "note_no": "2021",
+          "values": {
+            "current_period": 2952.6,
+            "previous_period": 2022
+          },
+          "raw": [
+            "Amount",
+            "a Equity share capital",
+            "Equity share of Rs. 1 each, issued, subscribed and paid up capital 2,952.60",
+            "Balance as at 1 April",
+            "2021",
+            "2,952.60",
+            "Changes in equity share capital during the year 2020-21 nil",
+            "Balance as at 31 March",
+            "2022"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Other Equity Particulars Reserves and Surplus Other comprehensive Total equity Security Income attributable to General Reserve Retained Earnings Premium Fair value of equity shareholders of instruments the company Balance as at 1 April",
+          "note_no": "2022",
+          "values": {
+            "current_period": 143500,
+            "previous_period": 288937.83
+          },
+          "raw": [
+            "b Other Equity",
+            "For the year ended 31 March 2023 (Rs. in lakhs)",
+            "Particulars Reserves and Surplus Other comprehensive Total equity",
+            "Security Income attributable to",
+            "General Reserve Retained Earnings Premium Fair value of equity shareholders of",
+            "instruments the company",
+            "Balance as at 1 April",
+            "2022",
+            "143,500.00",
+            "288,937.83"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Profit during the year",
+          "note_no": null,
+          "values": {
+            "current_period": 3038.2,
+            "previous_period": 3038.2
+          },
+          "raw": [
+            "Profit during the year",
+            "-",
+            "3,038.20",
+            "-",
+            "-",
+            "3,038.20"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "during the year",
+          "note_no": null,
+          "values": {
+            "current_period": 23.42,
+            "previous_period": 23.42
+          },
+          "raw": [
+            "during the year",
+            "-",
+            "-",
+            "-",
+            "23.42",
+            "23.42"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Dividend expense",
+          "note_no": null,
+          "values": {
+            "current_period": -1356.76,
+            "previous_period": -1356.76
+          },
+          "raw": [
+            "Dividend expense",
+            "-",
+            "(1,356.76)",
+            "-",
+            "-",
+            "(1,356.76)"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Corporate dividend tax Realised profits of equity instruments measured at FVOCI Balance as at 31 March",
+          "note_no": "2023",
+          "values": {
+            "current_period": 143500,
+            "previous_period": 290619.26
+          },
+          "raw": [
+            "Corporate dividend tax",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Realised profits of equity",
+            "instruments measured at FVOCI",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Balance as at 31 March",
+            "2023",
+            "143,500.00",
+            "290,619.26"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Particulars Reserves and Surplus Other comprehensive Total equity Security Income attributable to General Reserve Retained Earnings Premium Fair value of equity shareholders of instruments the company Balance as at 1 April",
+          "note_no": "2021",
+          "values": {
+            "current_period": 143500,
+            "previous_period": 289624.94
+          },
+          "raw": [
+            "Particulars Reserves and Surplus Other comprehensive Total equity",
+            "Security Income attributable to",
+            "General Reserve Retained Earnings Premium Fair value of equity shareholders of",
+            "instruments the company",
+            "Balance as at 1 April",
+            "2021",
+            "143,500.00",
+            "289,624.94"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Profit during the year",
+          "note_no": null,
+          "values": {
+            "current_period": 2265.49,
+            "previous_period": 2265.49
+          },
+          "raw": [
+            "Profit during the year",
+            "-",
+            "2,265.49",
+            "-",
+            "-",
+            "2,265.49"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "during the year",
+          "note_no": null,
+          "values": {
+            "current_period": 19.08,
+            "previous_period": 19.08
+          },
+          "raw": [
+            "during the year",
+            "-",
+            "-",
+            "-",
+            "19.08",
+            "19.08"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Dividend expense",
+          "note_no": null,
+          "values": {
+            "current_period": -2952.6,
+            "previous_period": -2952.6
+          },
+          "raw": [
+            "Dividend expense",
+            "-",
+            "(2,952.60)",
+            "-",
+            "-",
+            "(2,952.60)"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Corporate dividend tax Realised profits of equity instruments measured at FVOCI Balance as at 31 March",
+          "note_no": "2022",
+          "values": {
+            "current_period": 143500,
+            "previous_period": 288937.83
+          },
+          "raw": [
+            "Corporate dividend tax",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Realised profits of equity",
+            "instruments measured at FVOCI",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Balance as at 31 March",
+            "2022",
+            "143,500.00",
+            "288,937.83"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "RAJESH EXPORTS LIMITED NOTES ON STANDALONE FINANCIAL STATEMENTS Gross block / Original cost Accumulated depreciation Net block Particulars As at Additions Disposals/ As at As at Charge for Disposals/ As at As at As at 31.03.2022 Transfers 31.03.2023 31.03.2022 the year Transfers 31.03.2023 31.03.2023 31.03.2022 A. BUSINESS ASSETS Land",
+          "note_no": null,
+          "values": {
+            "current_period": 369.24,
+            "previous_period": 369.24
+          },
+          "raw": [
+            "RAJESH EXPORTS LIMITED",
+            "NOTES ON STANDALONE FINANCIAL STATEMENTS",
+            "FOR THE YEAR ENDED 31.03.2023",
+            "Note - 2 : PROPERTY, PLANT AND EQUIPMENTS (Rs. in lakhs)",
+            "Gross block / Original cost Accumulated depreciation Net block",
+            "Particulars As at Additions Disposals/ As at As at Charge for Disposals/ As at As at As at",
+            "31.03.2022 Transfers 31.03.2023 31.03.2022 the year Transfers 31.03.2023 31.03.2023 31.03.2022",
+            "A. BUSINESS ASSETS",
+            "Land",
+            "369.24",
+            "-",
+            "-",
+            "369.24"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Building",
+          "note_no": null,
+          "values": {
+            "current_period": 3286.91,
+            "previous_period": 3286.91
+          },
+          "raw": [
+            "Building",
+            "3,286.91",
+            "-",
+            "-",
+            "3,286.91"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Plant & Machinery",
+          "note_no": null,
+          "values": {
+            "current_period": 866.87,
+            "previous_period": 866.87
+          },
+          "raw": [
+            "Plant & Machinery",
+            "866.87",
+            "-",
+            "-",
+            "866.87"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Generator",
+          "note_no": null,
+          "values": {
+            "current_period": 32.95,
+            "previous_period": 32.95
+          },
+          "raw": [
+            "Generator",
+            "32.95",
+            "-",
+            "-",
+            "32.95"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Furniture & Fixtures",
+          "note_no": null,
+          "values": {
+            "current_period": 190.45,
+            "previous_period": 190.45
+          },
+          "raw": [
+            "Furniture & Fixtures",
+            "190.45",
+            "-",
+            "-",
+            "190.45"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Office Equipments",
+          "note_no": null,
+          "values": {
+            "current_period": 84.34,
+            "previous_period": 84.34
+          },
+          "raw": [
+            "Office Equipments",
+            "84.34",
+            "-",
+            "-",
+            "84.34"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Computer and Software",
+          "note_no": null,
+          "values": {
+            "current_period": 50.55,
+            "previous_period": 50.55
+          },
+          "raw": [
+            "Computer and Software",
+            "50.55",
+            "-",
+            "-",
+            "50.55"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Weighing Scale",
+          "note_no": null,
+          "values": {
+            "current_period": 34.27,
+            "previous_period": 34.27
+          },
+          "raw": [
+            "Weighing Scale",
+            "34.27",
+            "-",
+            "-",
+            "34.27"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Borewell",
+          "note_no": null,
+          "values": {
+            "current_period": 1.48,
+            "previous_period": 1.48
+          },
+          "raw": [
+            "Borewell",
+            "1.48",
+            "-",
+            "-",
+            "1.48"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Technical Knowhow",
+          "note_no": null,
+          "values": {
+            "current_period": 6.7,
+            "previous_period": 6.7
+          },
+          "raw": [
+            "Technical Knowhow",
+            "6.70",
+            "-",
+            "-",
+            "6.70"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Motor Vehicle",
+          "note_no": null,
+          "values": {
+            "current_period": 157.53,
+            "previous_period": 157.53
+          },
+          "raw": [
+            "Motor Vehicle",
+            "157.53",
+            "-",
+            "-",
+            "157.53"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "WIP Whitefield",
+          "note_no": null,
+          "values": {
+            "current_period": 35.05,
+            "previous_period": 35.05
+          },
+          "raw": [
+            "WIP Whitefield",
+            "35.05",
+            "-",
+            "-",
+            "35.05"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Sub Total",
+          "note_no": null,
+          "values": {
+            "current_period": 5116.33,
+            "previous_period": 5116.33
+          },
+          "raw": [
+            "Sub Total",
+            "5,116.33",
+            "-",
+            "-",
+            "5,116.33"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "B. OTHER IMMOVABLE PROPERTIES Sujatha Complex Building",
+          "note_no": null,
+          "values": {
+            "current_period": 205.05,
+            "previous_period": 205.05
+          },
+          "raw": [
+            "B. OTHER IMMOVABLE PROPERTIES",
+            "Sujatha Complex Building",
+            "205.05",
+            "-",
+            "-",
+            "205.05"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Mohan Building",
+          "note_no": null,
+          "values": {
+            "current_period": 977.16,
+            "previous_period": 977.16
+          },
+          "raw": [
+            "Mohan Building",
+            "977.16",
+            "-",
+            "-",
+            "977.16"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Volga Hotel Building",
+          "note_no": null,
+          "values": {
+            "current_period": 26.09,
+            "previous_period": 26.09
+          },
+          "raw": [
+            "Volga Hotel Building",
+            "26.09",
+            "-",
+            "-",
+            "26.09"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Land At Kumbalgod",
+          "note_no": null,
+          "values": {
+            "current_period": 200.23,
+            "previous_period": 200.23
+          },
+          "raw": [
+            "Land At Kumbalgod",
+            "200.23",
+            "-",
+            "-",
+            "200.23"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Land At Akkupette",
+          "note_no": null,
+          "values": {
+            "current_period": 111.95,
+            "previous_period": 111.95
+          },
+          "raw": [
+            "Land At Akkupette",
+            "111.95",
+            "-",
+            "-",
+            "111.95"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Property In Kerla",
+          "note_no": null,
+          "values": {
+            "current_period": 314.19,
+            "previous_period": 314.19
+          },
+          "raw": [
+            "Property In Kerla",
+            "314.19",
+            "-",
+            "-",
+            "314.19"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Property At Nandi",
+          "note_no": null,
+          "values": {
+            "current_period": 121.74,
+            "previous_period": 121.74
+          },
+          "raw": [
+            "Property At Nandi",
+            "121.74",
+            "-",
+            "-",
+            "121.74"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Land At Peenya",
+          "note_no": null,
+          "values": {
+            "current_period": 13.68,
+            "previous_period": 13.68
+          },
+          "raw": [
+            "Land At Peenya",
+            "13.68",
+            "-",
+            "-",
+            "13.68"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Jayashree Complex",
+          "note_no": null,
+          "values": {
+            "current_period": 131.83,
+            "previous_period": 131.83
+          },
+          "raw": [
+            "Jayashree Complex",
+            "131.83",
+            "-",
+            "-",
+            "131.83"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Property At Commercial Street",
+          "note_no": null,
+          "values": {
+            "current_period": 882.64,
+            "previous_period": 882.64
+          },
+          "raw": [
+            "Property At",
+            "Commercial Street",
+            "882.64",
+            "-",
+            "-",
+            "882.64"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Malleshwaram",
+          "note_no": null,
+          "values": {
+            "current_period": 372.13,
+            "previous_period": 372.13
+          },
+          "raw": [
+            "Malleshwaram",
+            "372.13",
+            "-",
+            "-",
+            "372.13"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Magadi Road Prop",
+          "note_no": null,
+          "values": {
+            "current_period": 40.04,
+            "previous_period": 40.04
+          },
+          "raw": [
+            "Magadi Road Prop",
+            "40.04",
+            "-",
+            "-",
+            "40.04"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Mg Road Property",
+          "note_no": null,
+          "values": {
+            "current_period": 294.55,
+            "previous_period": 294.55
+          },
+          "raw": [
+            "Mg Road Property",
+            "294.55",
+            "-",
+            "-",
+            "294.55"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "TOTAL FIXED ASSETS",
+          "note_no": null,
+          "values": {
+            "current_period": 8807.62,
+            "previous_period": 8807.62
+          },
+          "raw": [
+            "TOTAL FIXED ASSETS",
+            "8,807.62",
+            "-",
+            "-",
+            "8,807.62"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Previous Year",
+          "note_no": null,
+          "values": {
+            "current_period": 9039.98,
+            "previous_period": 232.37
+          },
+          "raw": [
+            "Previous Year",
+            "9,039.98",
+            "-",
+            "232.37"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "INVESTMENT PROPERTY AMOUNT RECOGNISED IN PROFIT AND LOSS ACCOUNT Opening balance 1,087.69 1,087.69 Particulars As at 31st March 2023 As a 31st March 2022 Add: Additions Rental Income from",
+          "note_no": null,
+          "values": {
+            "current_period": 129.83,
+            "previous_period": 74.64
+          },
+          "raw": [
+            "INVESTMENT PROPERTY AMOUNT RECOGNISED IN PROFIT AND LOSS ACCOUNT",
+            "Particulars As at 31st March 2023 As a 31st March 2022 Particulars as on 31st March 2023",
+            "Opening balance 1,087.69 1,087.69 Particulars As at 31st March 2023 As a 31st March 2022",
+            "Add: Additions",
+            "-",
+            "-",
+            "Rental Income from",
+            "129.83",
+            "74.64"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Less : Deletions - - investment property Closing balance 1,087.69 1,087.69 Direct Expenses Accumulated Depreciations Profit",
+          "note_no": null,
+          "values": {
+            "current_period": 129.83,
+            "previous_period": 74.64
+          },
+          "raw": [
+            "Less : Deletions - - investment property",
+            "Closing balance 1,087.69 1,087.69 Direct Expenses",
+            "-",
+            "-",
+            "Accumulated Depreciations Profit",
+            "129.83",
+            "74.64"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Opening balance - - Less : Depreciation Add: Charged for the year - - Profit from investment",
+          "note_no": null,
+          "values": {
+            "current_period": 129.83,
+            "previous_period": 74.64
+          },
+          "raw": [
+            "Opening balance - - Less : Depreciation",
+            "-",
+            "-",
+            "Add: Charged for the year - - Profit from investment",
+            "129.83",
+            "74.64"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Less: Deletion - - properties before indirect expenses Closing balance Net carrying Amount",
+          "note_no": null,
+          "values": {
+            "current_period": 1087.69,
+            "previous_period": 1087.69
+          },
+          "raw": [
+            "Less: Deletion - - properties before",
+            "indirect expenses",
+            "Closing balance",
+            "-",
+            "-",
+            "Net carrying Amount",
+            "1,087.69",
+            "1,087.69"
+          ]
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortisation expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 68.73,
+            "previous_period": 90.95
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Actuarial loss forming part of other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": -19.08,
+            "previous_period": null
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Finance cost",
+          "note_no": null,
+          "values": {
+            "current_period": 8018.52,
+            "previous_period": 8393.97
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "working capital changes",
+          "note_no": null,
+          "values": {
+            "current_period": 11179.68,
+            "previous_period": 11417.63
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Increase in Inventories",
+          "note_no": null,
+          "values": {
+            "current_period": 1482,
+            "previous_period": -5312.41
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "other receivables including Loans & Advances",
+          "note_no": null,
+          "values": {
+            "current_period": 96908.93,
+            "previous_period": -30118.58
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Non Current Liabilities & Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": 35115.9,
+            "previous_period": -100874.2
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Purchase/Sale proceeds of Investments",
+          "note_no": null,
+          "values": {
+            "current_period": -4175.89,
+            "previous_period": -5
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "cash equivalents",
+          "note_no": null,
+          "values": {
+            "current_period": -1482.56,
+            "previous_period": -13034.18
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Cash on hand",
+          "note_no": null,
+          "values": {
+            "current_period": 3.46,
+            "previous_period": 2.9
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "In current accounts",
+          "note_no": null,
+          "values": {
+            "current_period": 3563.47,
+            "previous_period": 3538.05
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "More than three months",
+          "note_no": null,
+          "values": {
+            "current_period": 50530.61,
+            "previous_period": 52252.97
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        }
+      ],
+      "validation": {
+        "row_count": 81,
+        "total_rows": 4
+      }
+    },
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 56,
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "title": "STANDALONE BALANCE SHEET AS AT MARCH 31, 2023",
+      "currency": "Rs. in lakhs",
+      "periods": [
+        "31.03.2023",
+        "31.03.2022"
+      ],
+      "column_headers": [
+        "Note No.",
+        "Current Period",
+        "Previous Period"
+      ],
+      "extraction_method": "text_reconstruction",
+      "rows": [
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Property, plant & equipment",
+          "note_no": "2",
+          "values": {
+            "current_period": 5893.88,
+            "previous_period": 5962.61
+          },
+          "raw": [
+            "(a) Property, plant & equipment",
+            "2",
+            "5,893.88",
+            "5,962.61"
+          ]
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Capital Work-in-Progress",
+          "note_no": "2",
+          "values": {
+            "current_period": 35.05,
+            "previous_period": 35.05
+          },
+          "raw": [
+            "(b) Capital Work-in-Progress",
+            "2",
+            "35.05",
+            "35.05"
+          ]
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Investments",
+          "note_no": "3",
+          "values": {
+            "current_period": 255374.69,
+            "previous_period": 255369.69
+          },
+          "raw": [
+            "(i) Investments",
+            "3",
+            "255,374.69",
+            "255,369.69"
+          ]
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Loans",
+          "note_no": "4",
+          "values": {
+            "current_period": 4979.2,
+            "previous_period": 4979.2
+          },
+          "raw": [
+            "(ii) Loans",
+            "4",
+            "4,979.20",
+            "4,979.20"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": "5",
+          "values": {
+            "current_period": 37793.95,
+            "previous_period": 39275.96
+          },
+          "raw": [
+            "(a) Inventories",
+            "5",
+            "37,793.95",
+            "39,275.96"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Trade Receivables",
+          "note_no": "6",
+          "values": {
+            "current_period": 399050.64,
+            "previous_period": 489431.51
+          },
+          "raw": [
+            "(i) Trade Receivables",
+            "6",
+            "399,050.64",
+            "489,431.51"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Cash and Cash Equivalents",
+          "note_no": "7(a)",
+          "values": {
+            "current_period": 3566.93,
+            "previous_period": 3540.95
+          },
+          "raw": [
+            "(ii) Cash and Cash Equivalents",
+            "7(a)",
+            "3,566.93",
+            "3,540.95"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Bank balances other than(ii) above",
+          "note_no": "7(b)",
+          "values": {
+            "current_period": 51175.49,
+            "previous_period": 52684.03
+          },
+          "raw": [
+            "(iii) Bank balances other than(ii) above",
+            "7(b)",
+            "51,175.49",
+            "52,684.03"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Loans",
+          "note_no": "8",
+          "values": {
+            "current_period": 37440.72,
+            "previous_period": 43771.61
+          },
+          "raw": [
+            "(iv) Loans",
+            "8",
+            "37,440.72",
+            "43,771.61"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other Financial Assets",
+          "note_no": "9",
+          "values": {
+            "current_period": 60704.65,
+            "previous_period": 60901.82
+          },
+          "raw": [
+            "(v) Other Financial Assets",
+            "9",
+            "60,704.65",
+            "60,901.82"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "TOTAL",
+          "note_no": null,
+          "values": {
+            "current_period": 856015.2,
+            "previous_period": 955952.43
+          },
+          "raw": [
+            "TOTAL",
+            "856,015.20",
+            "955,952.43"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Equity Share Capital",
+          "note_no": "10",
+          "values": {
+            "current_period": 2952.6,
+            "previous_period": 2952.6
+          },
+          "raw": [
+            "(a) Equity Share Capital",
+            "10",
+            "2,952.60",
+            "2,952.60"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Other equity",
+          "note_no": "11",
+          "values": {
+            "current_period": 498682.68,
+            "previous_period": 496977.83
+          },
+          "raw": [
+            "(b) Other equity",
+            "11",
+            "498,682.68",
+            "496,977.83"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Other Financial Liabilities",
+          "note_no": "12",
+          "values": {
+            "current_period": 631.84,
+            "previous_period": 631.84
+          },
+          "raw": [
+            "(i) Other Financial Liabilities",
+            "12",
+            "631.84",
+            "631.84"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Non-Current Liabilities",
+          "line_item": "Deferred tax liabilities (net)",
+          "note_no": "13",
+          "values": {
+            "current_period": 375.61,
+            "previous_period": 413.21
+          },
+          "raw": [
+            "(b) Deferred tax liabilities (net)",
+            "13",
+            "375.61",
+            "413.21"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Non-Current Liabilities",
+          "line_item": "Provisions",
+          "note_no": "14",
+          "values": {
+            "current_period": 44.84,
+            "previous_period": 55.93
+          },
+          "raw": [
+            "(c) Provisions",
+            "14",
+            "44.84",
+            "55.93"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings",
+          "note_no": "15",
+          "values": {
+            "current_period": 62422.35,
+            "previous_period": 62578.77
+          },
+          "raw": [
+            "(i) Borrowings",
+            "15",
+            "62,422.35",
+            "62,578.77"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Trade Payables",
+          "note_no": "16",
+          "values": {
+            "current_period": 289134.62,
+            "previous_period": 390520.08
+          },
+          "raw": [
+            "(ii) Trade Payables",
+            "16",
+            "289,134.62",
+            "390,520.08"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial Liabilities",
+          "note_no": "17",
+          "values": {
+            "current_period": 746.25,
+            "previous_period": 505.42
+          },
+          "raw": [
+            "(iii) Other financial Liabilities",
+            "17",
+            "746.25",
+            "505.42"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities",
+          "line_item": "Other Current Liabilities",
+          "note_no": "18",
+          "values": {
+            "current_period": 802.75,
+            "previous_period": 546.83
+          },
+          "raw": [
+            "(b) Other Current Liabilities",
+            "18",
+            "802.75",
+            "546.83"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities",
+          "line_item": "Provisions",
+          "note_no": "19",
+          "values": {
+            "current_period": 221.66,
+            "previous_period": 769.92
+          },
+          "raw": [
+            "(c) Provisions",
+            "19",
+            "221.66",
+            "769.92"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities",
+          "line_item": "TOTAL",
+          "note_no": null,
+          "values": {
+            "current_period": 856015.2,
+            "previous_period": 955952.43
+          },
+          "raw": [
+            "TOTAL",
+            "856,015.20",
+            "955,952.43"
+          ]
+        }
+      ],
+      "validation": {
+        "row_count": 22,
+        "total_rows": 2,
+        "current_period_balanced": true,
+        "previous_period_balanced": true,
+        "current_period_total": 856015.2,
+        "previous_period_total": 955952.43
+      }
+    },
+    "profit_and_loss": {
+      "statement": "standalone_profit_and_loss",
+      "page": 57,
+      "pages": [
+        57
+      ],
+      "title": "STATEMENT OF STANDALONE PROFIT AND LOSS ACCOUNT",
+      "currency": "Rs. in lakhs",
+      "periods": [
+        "31.03.2023",
+        "31.03.2022"
+      ],
+      "column_headers": [
+        "Note No.",
+        "As on 31.03.2023",
+        "As on 31.03.2022"
+      ],
+      "extraction_method": "text_reconstruction",
+      "rows": [
+        {
+          "section": "Revenue",
+          "line_item": "Revenue from Operations",
+          "note_no": "20",
+          "values": {
+            "current_period": 576154.6,
+            "previous_period": 623649.99
+          },
+          "raw": [
+            "Revenue from Operations",
+            "20",
+            "576,154.60",
+            "623,649.99"
+          ]
+        },
+        {
+          "section": "Revenue",
+          "line_item": "Other Income",
+          "note_no": "21",
+          "values": {
+            "current_period": 926.28,
+            "previous_period": 1188.43
+          },
+          "raw": [
+            "Other Income",
+            "21",
+            "926.28",
+            "1,188.43"
+          ]
+        },
+        {
+          "section": "Revenue",
+          "line_item": "TOTAL REVENUE",
+          "note_no": null,
+          "values": {
+            "current_period": 577080.88,
+            "previous_period": 624838.42
+          },
+          "raw": [
+            "TOTAL REVENUE",
+            "577,080.88",
+            "624,838.42"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Cost of Materials Consumed",
+          "note_no": "22",
+          "values": {
+            "current_period": 565228.32,
+            "previous_period": 606479.41
+          },
+          "raw": [
+            "Cost of Materials Consumed",
+            "22",
+            "565,228.32",
+            "606,479.41"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Employee Benefit Expenses",
+          "note_no": "23",
+          "values": {
+            "current_period": 308.21,
+            "previous_period": 265.12
+          },
+          "raw": [
+            "Employee Benefit Expenses",
+            "23",
+            "308.21",
+            "265.12"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Selling, Administrative and Other Expenses",
+          "note_no": "24",
+          "values": {
+            "current_period": 221.03,
+            "previous_period": 6579.16
+          },
+          "raw": [
+            "Selling, Administrative and Other Expenses",
+            "24",
+            "221.03",
+            "6,579.16"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Finance Costs",
+          "note_no": "25",
+          "values": {
+            "current_period": 8032.33,
+            "previous_period": 8393.97
+          },
+          "raw": [
+            "Finance Costs",
+            "25",
+            "8,032.33",
+            "8,393.97"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Depreciation and Amortization Expenses",
+          "note_no": "2",
+          "values": {
+            "current_period": 68.73,
+            "previous_period": 90.95
+          },
+          "raw": [
+            "Depreciation and Amortization Expenses",
+            "2",
+            "68.73",
+            "90.95"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "TOTAL EXPENSES",
+          "note_no": null,
+          "values": {
+            "current_period": 573858.62,
+            "previous_period": 621808.62
+          },
+          "raw": [
+            "TOTAL EXPENSES",
+            "573,858.62",
+            "621,808.62"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit Before Tax - PBT",
+          "note_no": null,
+          "values": {
+            "current_period": 3222.26,
+            "previous_period": 3029.8
+          },
+          "raw": [
+            "Profit Before Tax - PBT",
+            "3,222.26",
+            "3,029.80"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Tax expense: Current tax expense for current year",
+          "note_no": null,
+          "values": {
+            "current_period": 221.66,
+            "previous_period": 769.92
+          },
+          "raw": [
+            "Tax expense:",
+            "Current tax expense for current year",
+            "221.66",
+            "769.92"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Deferred tax expense / (income)",
+          "note_no": null,
+          "values": {
+            "current_period": -37.6,
+            "previous_period": -5.62
+          },
+          "raw": [
+            "Deferred tax expense / (income)",
+            "(37.60)",
+            "(5.62)"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "PROFIT FOR THE YEAR",
+          "note_no": null,
+          "values": {
+            "current_period": 3038.2,
+            "previous_period": 2265.49
+          },
+          "raw": [
+            "PROFIT FOR THE YEAR",
+            "3,038.20",
+            "2,265.49"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Items that will not be reclassified to the statement of profit and loss",
+          "note_no": null,
+          "values": {
+            "current_period": 23.42,
+            "previous_period": 19.08
+          },
+          "raw": [
+            "(i) Items that will not be reclassified to the",
+            "statement of profit and loss",
+            "23.42",
+            "19.08"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Items that will be reclassified to the statement of profit and loss Total other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": 23.42,
+            "previous_period": 19.08
+          },
+          "raw": [
+            "(ii) Items that will be reclassified to the",
+            "statement of profit and loss",
+            "-",
+            "-",
+            "Total other comprehensive income",
+            "23.42",
+            "19.08"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total comprehensive income (IX+X)",
+          "note_no": null,
+          "values": {
+            "current_period": 3061.61,
+            "previous_period": 2284.58
+          },
+          "raw": [
+            "Total comprehensive income (IX+X)",
+            "3,061.61",
+            "2,284.58"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Earning Per Share (Re. 1 Per Share for Each) Basic",
+          "note_no": null,
+          "values": {
+            "current_period": 1.04,
+            "previous_period": 0.77
+          },
+          "raw": [
+            "Earning Per Share (Re. 1 Per Share for Each)",
+            "Basic",
+            "1.04",
+            "0.77"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Diluted",
+          "note_no": null,
+          "values": {
+            "current_period": 1.04,
+            "previous_period": 0.77
+          },
+          "raw": [
+            "Diluted",
+            "1.04",
+            "0.77"
+          ]
+        },
+        {
+          "section": null,
+          "line_item": "Current tax expense for current year",
+          "note_no": null,
+          "values": {
+            "current_period": 769.92,
+            "previous_period": 221.66
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "statement of profit and loss",
+          "note_no": null,
+          "values": {
+            "current_period": 23.42,
+            "previous_period": 19.08
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Total other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": 23.42,
+            "previous_period": 19.08
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Basic",
+          "note_no": null,
+          "values": {
+            "current_period": 1.04,
+            "previous_period": 0.77
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        }
+      ],
+      "validation": {
+        "row_count": 22,
+        "total_rows": 5
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 59,
+        "extraction_method": "pdfplumber",
+        "row_count": 9,
+        "column_count": 4,
+        "rows": [
+          [
+            "Reserves and Surplus",
+            "",
+            "Security Premium",
+            "Other comprehensive Income"
+          ],
+          [
+            "General Reserve",
+            "Retained Earnings",
+            "",
+            "Fair value of equity instruments"
+          ],
+          [
+            "143,500.00",
+            "288,937.83",
+            "64,492.95",
+            "47.04"
+          ],
+          [
+            "-",
+            "3,038.20",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "23.42"
+          ],
+          [
+            "-",
+            "(1,356.76)",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "143,500.00",
+            "290,619.26",
+            "64,492.95",
+            "70.46"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 59,
+        "extraction_method": "pdfplumber",
+        "row_count": 9,
+        "column_count": 4,
+        "rows": [
+          [
+            "Reserves and Surplus",
+            "",
+            "Security Premium",
+            "Other comprehensive Income"
+          ],
+          [
+            "General Reserve",
+            "Retained Earnings",
+            "",
+            "Fair value of equity instruments"
+          ],
+          [
+            "143,500.00",
+            "289,624.94",
+            "64,492.95",
+            "27.96"
+          ],
+          [
+            "-",
+            "2,265.49",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "19.08"
+          ],
+          [
+            "-",
+            "(2,952.60)",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "143,500.00",
+            "288,937.83",
+            "64,492.95",
+            "47.04"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 68,
+        "extraction_method": "pdfplumber",
+        "row_count": 22,
+        "column_count": 8,
+        "rows": [
+          [
+            "",
+            "Gross block / Original cost",
+            "",
+            "",
+            "Accumulated depreciation",
+            "",
+            "Net block",
+            ""
+          ],
+          [
+            "Particulars",
+            "As at Additions Disposals/ As at 31.03.2022 Transfers 31.03.2023",
+            "",
+            "",
+            "As at Charge for Disposals/ As at 31.03.2022 the year Transfers 31.03.2023",
+            "",
+            "As at As at 31.03.2023 31.03.2022",
+            ""
+          ],
+          [
+            "A. BUSINESS ASSETS Land Building Plant & Machinery Generator Furniture & Fixtures Office Equipments Computer and Software Weighing Scale Borewell Technical Knowhow Motor Vehicle WIP Whitefield",
+            "369.24 - - 369.24 3,286.91 - - 3,286.91 866.87 - - 866.87 32.95 - - 32.95 190.45 - - 190.45 84.34 - - 84.34 50.55 - - 50.55 34.27 - - 34.27 1.48 - - 1.48 6.70 - - 6.70 157.53 - - 157.53",
+            "",
+            "",
+            "- - - - 1,587.18 37.04 - 1,624.22 723.54 17.77 - 741.30 30.46 0.24 - 30.69 190.03 0.07 - 190.11 72.18 2.93 - 75.11 50.38 0.01 - 50.39 22.12 1.62 - 23.74 0.46 0.02 - 0.48 6.70 - - 6.70 126.91 9.03 - 135.94",
+            "",
+            "369.24 369.24 1,662.70 1,699.74 125.57 143.34 2.25 2.49 0.34 0.41 9.23 12.16 0.16 0.17 10.52 12.14 1.00 1.02 - - 21.59 30.62",
+            ""
+          ],
+          [
+            "",
+            "5,081.29 - - 5,081.29 35.05 - - 35.05",
+            "",
+            "",
+            "2,809.96 68.73 - 2,878.69 - - - -",
+            "",
+            "2,202.60 2,271.33 35.05 35.05",
+            ""
+          ],
+          [
+            "Sub Total",
+            "5,116.33 - - 5,116.33",
+            "",
+            "",
+            "2,809.96 68.73 - 2,878.69",
+            "",
+            "2,237.65 2,306.38",
+            ""
+          ],
+          [
+            "B. OTHER IMMOVABLE PROPERTIES",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Sujatha Complex Building Mohan Building Volga Hotel Building Land At Kumbalgod Land At Akkupette Property In Kerla Property At Nandi Land At Peenya Jayashree Complex Property At Commercial Street Malleshwaram Magadi Road Prop Mg Road Property",
+            "205.05 - - 205.05 977.16 - - 977.16 26.09 - - 26.09 200.23 - - 200.23 111.95 - - 111.95 314.19 - - 314.19 121.74 - - 121.74 13.68 - - 13.68 131.83 - - 131.83 882.64 - - 882.64 372.13 - - 372.13 40.04 - - 40.04 294.55 - - 294.55",
+            "",
+            "",
+            "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -",
+            "",
+            "205.05 205.05 977.16 977.16 26.09 26.09 200.23 200.23 111.95 111.95 314.19 314.19 121.74 121.74 13.68 13.68 131.83 131.83 882.64 882.64 372.13 372.13 40.04 40.04 294.55 294.55",
+            ""
+          ],
+          [
+            "",
+            "3,691.28 - - 3,691.28",
+            "",
+            "",
+            "- - - -",
+            "",
+            "3,691.28 3,691.28",
+            ""
+          ],
+          [
+            "TOTAL FIXED ASSETS",
+            "8,807.62 - - 8,807.62",
+            "",
+            "",
+            "2,809.96 68.73 - 2,878.69",
+            "",
+            "5,928.93 5,997.66",
+            ""
+          ],
+          [
+            "Previous Year",
+            "9,039.98 - 232.37 8,807.61",
+            "",
+            "",
+            "2,758.84 90.95 39.83 2,809.96",
+            "",
+            "5,997.66 6,281.14",
+            ""
+          ],
+          [
+            "INVESTMENT PROPERTY",
+            "",
+            "",
+            "",
+            "AMOUNT RECOGNISED IN PROFIT AND LOSS ACCOUNT",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Particulars",
+            "",
+            "As at 31st March 2023",
+            "As a 31st March 2022",
+            "Particulars as on 31st March 2023",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Opening balance",
+            "",
+            "1,087.69",
+            "1,087.69",
+            "Particulars",
+            "As at 31st March 2023",
+            "",
+            "As a 31st March 2022"
+          ],
+          [
+            "Add: Additions",
+            "",
+            "-",
+            "-",
+            "Rental Income from investment property",
+            "129.83",
+            "",
+            "74.64"
+          ],
+          [
+            "Less : Deletions",
+            "",
+            "-",
+            "-",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Closing balance",
+            "",
+            "1,087.69",
+            "1,087.69",
+            "Direct Expenses",
+            "-",
+            "",
+            "-"
+          ],
+          [
+            "Accumulated Depreciations",
+            "",
+            "",
+            "",
+            "Profit",
+            "129.83",
+            "",
+            "74.64"
+          ],
+          [
+            "Opening balance",
+            "",
+            "-",
+            "-",
+            "Less : Depreciation",
+            "-",
+            "",
+            "-"
+          ],
+          [
+            "Add: Charged for the year",
+            "",
+            "-",
+            "-",
+            "Profit from investment properties before indirect expenses",
+            "129.83",
+            "",
+            "74.64"
+          ],
+          [
+            "Less: Deletion",
+            "",
+            "-",
+            "-",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Closing balance",
+            "",
+            "-",
+            "-",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Net carrying Amount",
+            "",
+            "1,087.69",
+            "1,087.69",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": "6",
+        "title": "TRADE RECEIVABLES",
+        "page": 70,
+        "extraction_method": "pdfplumber",
+        "row_count": 13,
+        "column_count": 10,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "",
+            "",
+            "As on 31.03.2023 Rs. in lakhs",
+            "",
+            "",
+            "As on 31.03.2022 Rs. in lakhs",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "TRADE RECEIVABLES a. Trade Receivables b. Sundry Debtors on Interest Accrued on ICD’s Total Trade Recievables",
+            "",
+            "",
+            "398,488.45 562.19 399,050.64",
+            "",
+            "",
+            "488,869.32 562.19 489,431.51",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Trade Receivables Ageing :",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "Outstanding for following periods from due date of payment*",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total"
+          ],
+          [
+            "",
+            "Particulars",
+            "Less than 6 months",
+            "6 months- 1 year",
+            "",
+            "1-2 years",
+            "2-3 years",
+            "",
+            "More than 3 years",
+            ""
+          ],
+          [
+            "",
+            "As at 31st March, 2023 : (i) Undisputed Trade Receivables - considered good (ii) Undisputed Trade Receivables-which have significant increase in credit risk (iii) Undisputed Trade Receivables - credit impaired (iv) Disputed Trade Receivables-considered good (v) Disputed Trade Receivables-which have significant increase in credit risk (vi) Disputed Trade Receivables-credit impaired",
+            "2411.24 - - - - -",
+            "- - - - - -",
+            "",
+            "182.95 - - - - -",
+            "396,184.90 - - - - -",
+            "",
+            "271.55 - - - - -",
+            "399,050.64 - - - - -"
+          ],
+          [
+            "",
+            "Total",
+            "2411.24",
+            "-",
+            "",
+            "182.95",
+            "396,184.90",
+            "",
+            "271.55",
+            "399,050.64"
+          ],
+          [
+            "",
+            "* Net of provision.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "Outstanding for following periods from due date of payment*",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total"
+          ],
+          [
+            "",
+            "Particulars",
+            "Less than 6 months",
+            "6 months- 1 year",
+            "",
+            "1-2 years",
+            "2-3 years",
+            "",
+            "More than 3 years",
+            ""
+          ],
+          [
+            "",
+            "As at 31st March, 2022 : (i) Undisputed Trade Receivables - considered good (ii) Undisputed Trade Receivables-which have significant increase in credit risk (iii) Undisputed Trade Receivables - credit impaired (iv) Disputed Trade Receivables-considered good (v) Disputed Trade Receivables-which have significant increase in credit risk (vi) Disputed Trade Receivables-credit impaired",
+            "31,561.01 - - - - -",
+            "28,651.33 - - - - -",
+            "",
+            "428,770.54 - - - - -",
+            "448.63 - - - - -",
+            "",
+            "- - - - - -",
+            "489,431.51 - - - - -"
+          ],
+          [
+            "",
+            "Total",
+            "31,561.01",
+            "28,651.33",
+            "",
+            "428,770.54",
+            "448.63",
+            "",
+            "-",
+            "489,431.51"
+          ],
+          [
+            "",
+            "* Net of provision.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": "7(a)",
+        "title": "CASH AND CASH EQUIVALENTS",
+        "page": 71,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 4,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "As on 31.03.2023 Rs. in lakhs",
+            "As on 31.03.2022 Rs. in lakhs"
+          ],
+          [
+            "7(a)",
+            "CASH AND CASH EQUIVALENTS (i) Bank Balances in Current Accounts (ii) Cash on hand Total Cash and Cash Equivalents",
+            "3,563.47 3.46 3,566.93",
+            "3,538.05 2.90 3,540.95"
+          ],
+          [
+            "7(b)",
+            "Bank balances other than 7(a) above (i) Unpaid Dividend Bank Accounts (ii) Fixed Deposits with banks Total Other Bank Balances",
+            "644.89 50,530.61 51,175.49",
+            "431.06 52,252.97 52,684.03"
+          ],
+          [
+            "8",
+            "SHORT TERM LOANS AND ADVANCES (i) Advances Recoverable in Normal Course of Business (ii) Advances to employees (iii) Inter Corporate Deposits Total Short term Loans and Advances",
+            "14,549.10 3.02 22,888.60 37,440.72",
+            "19,733.49 13.02 24,025.10 43,771.61"
+          ],
+          [
+            "9",
+            "OTHER FINANCIAL ASSETS (i) Balances with Govt departments (ii) Other Receivables Total Other Financial Assets",
+            "60,664.11 40.54 60,704.65",
+            "60,792.66 109.15 60,901.82"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "10",
+        "title": "SHARE CAPITAL",
+        "page": 72,
+        "extraction_method": "pdfplumber",
+        "row_count": 11,
+        "column_count": 11,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "",
+            "As on 31.03.2023",
+            "",
+            "",
+            "",
+            "As on 31.03.2022",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Number",
+            "",
+            "Rs. in lakhs",
+            "",
+            "Number",
+            "",
+            "",
+            "Rs. in lakhs"
+          ],
+          [
+            "10",
+            "SHARE CAPITAL Authorised Share Capital 30,00,00,000 Equity Shares of Re.1/- each Issued, Subscribed & Paidup Share Capital 295259959 equity shares of Re.1/- each",
+            "",
+            "3,000.00 2,952.60",
+            "",
+            "3,000.00 2,952.60",
+            "",
+            "3,000.00 2,952.60",
+            "",
+            "",
+            "3,000.00 2,952.60"
+          ],
+          [
+            "Reconciliation of number of Equity Shares and amount outstanding Shares outstanding at the beginning of the year Shares issued during the year Total Less : Shares issued to ESOP Trust as Treasury Stock Shares outstanding at the end of the year",
+            "",
+            "",
+            "2,952.60 - 2,952.60 2,952.60",
+            "",
+            "2,952.60 - 2,952.60 - 2,952.60",
+            "",
+            "2,952.60 2,952.60 2,952.60",
+            "",
+            "",
+            "2,952.60 - 2,952.60 - 2,952.60"
+          ],
+          [
+            "Number of shares held by each shareholder holding more than 5 percent of the Equity Shares of the Company are as follows:",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Name of the shareholder",
+            "",
+            "As at 31st March, 2023",
+            "",
+            "",
+            "",
+            "As at 31st March, 2022",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "No. of Shares held",
+            "% of Holding",
+            "",
+            "",
+            "No. of Shares held",
+            "",
+            "",
+            "% of Holding",
+            ""
+          ],
+          [
+            "Mr.Rajesh J Mehta Mr.Prashanth J Mehta M/s.Life Insurance Corporation M/s.Bridge India Fund Mr.Mahesh J Mehta",
+            "",
+            "884.92 371.62 325.89 280.75 240.41",
+            "29.97% 12.58% 11.04% 9.51% 8.14%",
+            "",
+            "",
+            "884.92 371.62 331.30 284.95 240.41",
+            "",
+            "",
+            "29.97% 12.58% 11.22% 9.65% 8.14%",
+            ""
+          ],
+          [
+            "i) Aggregate number and class of shares allotted as fully paid up pursuant to contract(s) without payment being received in cash - NIL (Previous Year - NIL) ii) Aggregate number and class of shares allotted as fully paid up by way of bonus shares - NIL (Previous Year - NIL) iii) Aggregate number and class of shares bought back - NIL (Previous Year - NIL) iv) Each Equity Share entitles the holder to one vote and carries an equal right to dividend.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Note No.",
+            "Particulars",
+            "",
+            "",
+            "As on 31.03.2023 Rs. in lakhs",
+            "",
+            "",
+            "",
+            "As on 31.03.2022 Rs. in lakhs",
+            "",
+            ""
+          ],
+          [
+            "11",
+            "OTHER EQUITY (A) Securities Premium Reserve (i) As per last Balance Sheet Total Securities Premium Reserve (B) General Reserve: (i) As per last Balance Sheet Total General Reserve (C) Surplus in Statement of Profit and Loss (i) As per last Balance Sheet (ii) Add: Profit for the year Less: Appropriations a) Dividend on equity shares Available Surplus in Statement of Profit and Loss (D) Total Other Equity",
+            "",
+            "",
+            "64,492.95 64,492.95 143,500.00 143,500.00 288,984.88 3,061.61 292,046.49 (1,356.76) 290,689.72 498,682.68",
+            "",
+            "",
+            "",
+            "64,492.95 64,492.95 143,500.00 143,500.00 289,652.90 2,284.58 291,937.48 (2,952.60) 288,984.88 496,977.83",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_7",
+        "note_no": "26",
+        "title": null,
+        "page": 73,
+        "extraction_method": "pdfplumber",
+        "row_count": 12,
+        "column_count": 9,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "",
+            "",
+            "As on 31.03.2023 Rs. in lakhs",
+            "",
+            "",
+            "As on 31.03.2022 Rs. in lakhs",
+            ""
+          ],
+          [
+            "12",
+            "OTHER LONG TERM FINANCIAL LIABILITIES (i) Franchise Deposit Received (ii) Rent Advance Total Other Long Term Financial Liabilities",
+            "",
+            "",
+            "376.22 255.62 631.84",
+            "",
+            "",
+            "376.22 255.62 631.84",
+            ""
+          ],
+          [
+            "13",
+            "DEFERRED TAX LIABILITIES (NET) Deferred Tax Liabilities Deferred Tax Liabilities ( Net )",
+            "",
+            "",
+            "375.61 375.61",
+            "",
+            "",
+            "413.21 413.21",
+            ""
+          ],
+          [
+            "14",
+            "LONG-TERM PROVISIONS Provision for gratuity (Refer Note 26) Total Long Term Provisions",
+            "",
+            "",
+            "44.84 44.84",
+            "",
+            "",
+            "55.93 55.93",
+            ""
+          ],
+          [
+            "15",
+            "SHORT TERM BORROWINGS (a) Secured (i) Working Capital Loans (secured against stocks, book debts, - Immoveable properties and export bills and guaranteed by Chairman and MD) (ii) Loans against Company’s own - - Fixed deposits with Banks (b) Unsecured (i) From Directors (ii) From Others Total Short Term Borrowings",
+            "",
+            "",
+            "- 54,594.26 9.61 7,818.48 62,422.35",
+            "",
+            "",
+            "11,048.37 43,871.65 144.02 7514.73 62,578.77",
+            ""
+          ],
+          [
+            "16",
+            "TRADE PAYABLES (i) Trade Payables Total Trade Payables",
+            "",
+            "",
+            "289,134.62 289,134.62",
+            "",
+            "",
+            "390,520.08 390,520.08",
+            ""
+          ],
+          [
+            "",
+            "Trade Payables Ageing :",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "Outstanding for following periods from due date of payment",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total"
+          ],
+          [
+            "",
+            "Particulars",
+            "Less than 1 year",
+            "1-2 years",
+            "",
+            "2-3 years",
+            "More than 3 years",
+            "",
+            ""
+          ],
+          [
+            "",
+            "As at 31st March, 2023 :",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "(i) MSME (ii) Others (iii) Disputed dues - MSME (iv) Disputed dues - Others",
+            "- 3,423.61 - -",
+            "- 2,423.57 - -",
+            "",
+            "- 210,926.88 - -",
+            "- 72,360.56 - -",
+            "",
+            "- 289,134.62 - -"
+          ],
+          [
+            "",
+            "Total",
+            "3,423.61",
+            "2,423.57",
+            "",
+            "210,926.88",
+            "72,360.56",
+            "",
+            "289,134.62"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_8",
+        "note_no": null,
+        "title": null,
+        "page": 74,
+        "extraction_method": "pdfplumber",
+        "row_count": 11,
+        "column_count": 9,
+        "rows": [
+          [
+            "Note No.",
+            "",
+            "Outstanding for following periods from due date of payment",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total"
+          ],
+          [
+            "",
+            "Particulars",
+            "Less than 1 year",
+            "1-2 years",
+            "",
+            "2-3 years",
+            "More than 3 years",
+            "",
+            ""
+          ],
+          [
+            "",
+            "As at 31st March, 2022 :",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "(i) MSME (ii) Others (iii) Disputed dues - MSME (iv) Disputed dues - Others",
+            "- 18,941.95 - -",
+            "- 204,742.84 - -",
+            "",
+            "- 34,662.19 - -",
+            "- 132,173.10 - -",
+            "",
+            "- 390,520.08 - -"
+          ],
+          [
+            "",
+            "Total",
+            "18,941.95",
+            "204,742.84",
+            "",
+            "34,662.19",
+            "132,173.10",
+            "",
+            "390,520.08"
+          ],
+          [
+            "17",
+            "Particulars",
+            "",
+            "",
+            "As on 31.03.2023 Rs. in lakhs",
+            "",
+            "",
+            "As on 31.03.2022 Rs. in lakhs",
+            ""
+          ],
+          [
+            "",
+            "OTHER FINANCIAL LIABILITIES (i) Unpaid Dividend* (ii) Other Payables Total Other Financial Liabilities * Unpaid dividend/ unclaimed dividend kept in separate bank accounts.",
+            "",
+            "",
+            "644.89 101.36 746.25",
+            "",
+            "",
+            "431.06 74.36 505.42",
+            ""
+          ],
+          [
+            "18",
+            "OTHER CURRENT LIABILITIES (i) Advance Received From Customers Total Other Current Liabilities",
+            "",
+            "",
+            "802.75 802.75",
+            "",
+            "",
+            "546.83 546.83",
+            ""
+          ],
+          [
+            "19",
+            "SHORT-TERM PROVISIONS Provision for income tax Total Short Term Provisions",
+            "",
+            "",
+            "221.66 221.66",
+            "",
+            "",
+            "769.92 769.92",
+            ""
+          ],
+          [
+            "20",
+            "REVENUE FROM OPERATIONS (i) Revenue from operations* Total Revenue from Operations *includes interest received on fixed deposits & Mutual Funds made for margin purposes for the sake of procurement of Raw Materials (Buyers Credit)",
+            "",
+            "",
+            "576,154.60 576,154.60",
+            "",
+            "",
+            "623,649.99 623,649.99",
+            ""
+          ],
+          [
+            "21",
+            "OTHER INCOME (i) Interest on ICD’s (ii) Rent received Total Other Income",
+            "",
+            "",
+            "796.45 129.83 926.28",
+            "",
+            "",
+            "1,113.79 74.64 1,188.43",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_9",
+        "note_no": "22",
+        "title": "COST OF MATERIAL CONSUMED",
+        "page": 75,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 4,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "As on 31.03.2023 Rs. in lakhs",
+            "As on 31.03.2022 Rs. in lakhs"
+          ],
+          [
+            "22",
+            "COST OF MATERIAL CONSUMED (i) Raw material consumed Opening stock Add: Purchases Less: Closing Stock Total Cost of Material Consumed",
+            "39,275.96 563,746.32 (37,793.95) 565,228.32",
+            "33,963.55 611,791.82 (39,275.96) 606,479.41"
+          ],
+          [
+            "23",
+            "EMPLOYEE BENEFIT EXPENSES (i) Salaries and wages (ii) Contribution to Pf and ESIC (iii) Staff Welfare Expenses Total Employee Benefit Expenses",
+            "175.47 18.09 114.65 308.21",
+            "226.52 22.42 16.18 265.12"
+          ],
+          [
+            "24",
+            "SELLING & ADMINISTRATION, OTHER EXPENSES Rent Repairs & Maintenance Legal, Professional and consultancy charges Loss on sale of property Postage, Telegrams &Telephones Insurance Rates, Taxes & Octrai Charges Auditors Fees Advertisement, Publicity and others Travelling and Conveyance Freight Charges Printing & Stationery Membership Fees Donation Commission and other Misc expenses Other Manufacturing and Processing Expenses Bad Debts Total S&A and Other Expenses",
+            "7.18 14.52 42.24 - 1.55 37.06 13.69 14.52 10.09 2.02 19.83 0.70 9.85 1.61 17.19 28.98 - 221.03",
+            "37.15 3.54 48.34 41.53 4.49 42.69 19.02 13.07 10.33 1.34 24.01 0.77 0.07 0.89 98.78 32.83 6,200.31 6,579.16"
+          ],
+          [
+            "25",
+            "FINANCE COST (i) Bank charges (ii) Interest on working capital Total Finance Costs",
+            "13.81 8,018.52 8,032.33",
+            "655.45 7,738.52 8,393.97"
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 90,
+      "pages": [
+        88,
+        89,
+        90
+      ],
+      "title": "CONSOLIDATED BALANCE SHEET AS AT MARCH 31, 2023",
+      "currency": "Rs. in lakhs",
+      "periods": [
+        "31.03.2023",
+        "31.03.2022"
+      ],
+      "column_headers": [
+        "Note No.",
+        "Current Period",
+        "Previous Period"
+      ],
+      "extraction_method": "text_reconstruction",
+      "rows": [
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Property, plant & equipment",
+          "note_no": "2",
+          "values": {
+            "current_period": 119232.88,
+            "previous_period": 67451.48
+          },
+          "raw": [
+            "(a) Property, plant & equipment",
+            "2",
+            "119,232.88",
+            "67,451.48"
+          ]
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Capital Work-in-Progress",
+          "note_no": "2",
+          "values": {
+            "current_period": 3818.13,
+            "previous_period": 582.57
+          },
+          "raw": [
+            "(b) Capital Work-in-Progress",
+            "2",
+            "3,818.13",
+            "582.57"
+          ]
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible Assets",
+          "note_no": "2",
+          "values": {
+            "current_period": 84603.37,
+            "previous_period": 77488.23
+          },
+          "raw": [
+            "(c) Intangible Assets",
+            "2",
+            "84,603.37",
+            "77,488.23"
+          ]
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Investments",
+          "note_no": "3",
+          "values": {
+            "current_period": 124090.13,
+            "previous_period": 111271.53
+          },
+          "raw": [
+            "(i) Investments",
+            "3",
+            "124,090.13",
+            "111,271.53"
+          ]
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Loans",
+          "note_no": "4",
+          "values": {
+            "current_period": 5949.57,
+            "previous_period": 5757.65
+          },
+          "raw": [
+            "(ii) Loans",
+            "4",
+            "5,949.57",
+            "5,757.65"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": "5",
+          "values": {
+            "current_period": 604871.37,
+            "previous_period": 766902.2
+          },
+          "raw": [
+            "(a) Inventories",
+            "5",
+            "604,871.37",
+            "766,902.20"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Trade Receivables",
+          "note_no": "6",
+          "values": {
+            "current_period": 1035638.58,
+            "previous_period": 1070859.51
+          },
+          "raw": [
+            "(i) Trade Receivables",
+            "6",
+            "1,035,638.58",
+            "1,070,859.51"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Cash and Cash Equivalents",
+          "note_no": "7(a)",
+          "values": {
+            "current_period": 101622.33,
+            "previous_period": 74019.76
+          },
+          "raw": [
+            "(ii) Cash and Cash Equivalents",
+            "7(a)",
+            "101,622.33",
+            "74,019.76"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Bank Fixed Deposits",
+          "note_no": "7(b)",
+          "values": {
+            "current_period": 108012.75,
+            "previous_period": 106853.31
+          },
+          "raw": [
+            "(iii) Bank Fixed Deposits",
+            "7(b)",
+            "108,012.75",
+            "106,853.31"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Loans",
+          "note_no": "8",
+          "values": {
+            "current_period": 37860.73,
+            "previous_period": 47957.02
+          },
+          "raw": [
+            "(iv) Loans",
+            "8",
+            "37,860.73",
+            "47,957.02"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other Financial Assets",
+          "note_no": "9",
+          "values": {
+            "current_period": 61766.97,
+            "previous_period": 62417.3
+          },
+          "raw": [
+            "(v) Other Financial Assets",
+            "9",
+            "61,766.97",
+            "62,417.30"
+          ]
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "TOTAL",
+          "note_no": null,
+          "values": {
+            "current_period": 2287466.81,
+            "previous_period": 2391560.55
+          },
+          "raw": [
+            "TOTAL",
+            "2,287,466.81",
+            "2,391,560.55"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Equity Share Capital",
+          "note_no": "10",
+          "values": {
+            "current_period": 2952.6,
+            "previous_period": 2952.6
+          },
+          "raw": [
+            "(a) Equity Share Capital",
+            "10",
+            "2,952.60",
+            "2,952.60"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Other equity",
+          "note_no": "11",
+          "values": {
+            "current_period": 1469410.15,
+            "previous_period": 1241620.61
+          },
+          "raw": [
+            "(b) Other equity",
+            "11",
+            "1,469,410.15",
+            "1,241,620.61"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Other Financial Liabilities",
+          "note_no": "12",
+          "values": {
+            "current_period": 631.84,
+            "previous_period": 631.84
+          },
+          "raw": [
+            "(i) Other Financial Liabilities",
+            "12",
+            "631.84",
+            "631.84"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Non-Current Liabilities",
+          "line_item": "Deferred tax liabilities (net)",
+          "note_no": "13",
+          "values": {
+            "current_period": 10261.24,
+            "previous_period": 7176.47
+          },
+          "raw": [
+            "(b) Deferred tax liabilities (net)",
+            "13",
+            "10,261.24",
+            "7,176.47"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Non-Current Liabilities",
+          "line_item": "Provisions",
+          "note_no": "14",
+          "values": {
+            "current_period": 291,
+            "previous_period": 275.21
+          },
+          "raw": [
+            "(c) Provisions",
+            "14",
+            "291.00",
+            "275.21"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings",
+          "note_no": "15",
+          "values": {
+            "current_period": 72329.83,
+            "previous_period": 81459.85
+          },
+          "raw": [
+            "(i) Borrowings",
+            "15",
+            "72,329.83",
+            "81,459.85"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Trade Payables",
+          "note_no": "16",
+          "values": {
+            "current_period": 715729.27,
+            "previous_period": 1042100.41
+          },
+          "raw": [
+            "(ii) Trade Payables",
+            "16",
+            "715,729.27",
+            "1,042,100.41"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial Liabilities",
+          "note_no": "17",
+          "values": {
+            "current_period": 3039.9,
+            "previous_period": 975.34
+          },
+          "raw": [
+            "(iii) Other financial Liabilities",
+            "17",
+            "3,039.90",
+            "975.34"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities",
+          "line_item": "Other Current Liabilities",
+          "note_no": "18",
+          "values": {
+            "current_period": 802.75,
+            "previous_period": 551.38
+          },
+          "raw": [
+            "(b) Other Current Liabilities",
+            "18",
+            "802.75",
+            "551.38"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities",
+          "line_item": "Provisions",
+          "note_no": "19",
+          "values": {
+            "current_period": 12018.24,
+            "previous_period": 13816.84
+          },
+          "raw": [
+            "(c) Provisions",
+            "19",
+            "12,018.24",
+            "13,816.84"
+          ]
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > LIABILITIES > Current Liabilities",
+          "line_item": "TOTAL",
+          "note_no": null,
+          "values": {
+            "current_period": 2287466.81,
+            "previous_period": 2391560.55
+          },
+          "raw": [
+            "TOTAL",
+            "2,287,466.81",
+            "2,391,560.55"
+          ]
+        }
+      ],
+      "validation": {
+        "row_count": 23,
+        "total_rows": 2,
+        "current_period_balanced": true,
+        "previous_period_balanced": true,
+        "current_period_total": 2287466.81,
+        "previous_period_total": 2391560.55
+      }
+    },
+    "profit_and_loss": {
+      "statement": "consolidated_profit_and_loss",
+      "page": 91,
+      "pages": [
+        91
+      ],
+      "title": "CONSOLIDATED STATEMENT OF PROFIT AND LOSS ACCOUNT",
+      "currency": "Rs. in lakhs",
+      "periods": [
+        "31.03.2023",
+        "31.03.2022"
+      ],
+      "column_headers": [
+        "Note No.",
+        "As on 31.03.2023",
+        "As on 31.03.2022"
+      ],
+      "extraction_method": "text_reconstruction",
+      "rows": [
+        {
+          "section": "Revenue",
+          "line_item": "Revenue from Operations",
+          "note_no": "20",
+          "values": {
+            "current_period": 33968950.55,
+            "previous_period": 24312793.66
+          },
+          "raw": [
+            "Revenue from Operations",
+            "20",
+            "33,968,950.55",
+            "24,312,793.66"
+          ]
+        },
+        {
+          "section": "Revenue",
+          "line_item": "Other Income",
+          "note_no": "21",
+          "values": {
+            "current_period": 2421.77,
+            "previous_period": 4025.91
+          },
+          "raw": [
+            "Other Income",
+            "21",
+            "2,421.77",
+            "4,025.91"
+          ]
+        },
+        {
+          "section": "Revenue",
+          "line_item": "TOTAL REVENUE",
+          "note_no": null,
+          "values": {
+            "current_period": 33971372.32,
+            "previous_period": 24316819.57
+          },
+          "raw": [
+            "TOTAL REVENUE",
+            "33,971,372.32",
+            "24,316,819.57"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Cost of Materials Consumed",
+          "note_no": "22",
+          "values": {
+            "current_period": 33759990.14,
+            "previous_period": 24150966.54
+          },
+          "raw": [
+            "Cost of Materials Consumed",
+            "22",
+            "33,759,990.14",
+            "24,150,966.54"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Employee Benefit Expenses",
+          "note_no": "23",
+          "values": {
+            "current_period": 21506.3,
+            "previous_period": 17589.1
+          },
+          "raw": [
+            "Employee Benefit Expenses",
+            "23",
+            "21,506.30",
+            "17,589.10"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Selling, Administrative and Other Expenses",
+          "note_no": "24",
+          "values": {
+            "current_period": 23877.82,
+            "previous_period": 26346.6
+          },
+          "raw": [
+            "Selling, Administrative and Other Expenses",
+            "24",
+            "23,877.82",
+            "26,346.60"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Finance Costs",
+          "note_no": "25",
+          "values": {
+            "current_period": 8095.23,
+            "previous_period": 8997.12
+          },
+          "raw": [
+            "Finance Costs",
+            "25",
+            "8,095.23",
+            "8,997.12"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Depreciation and Amortization Expenses",
+          "note_no": "2",
+          "values": {
+            "current_period": 10057.51,
+            "previous_period": 9087.41
+          },
+          "raw": [
+            "Depreciation and Amortization Expenses",
+            "2",
+            "10,057.51",
+            "9,087.41"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "TOTAL EXPENSES",
+          "note_no": null,
+          "values": {
+            "current_period": 33823527.01,
+            "previous_period": 24212986.77
+          },
+          "raw": [
+            "TOTAL EXPENSES",
+            "33,823,527.01",
+            "24,212,986.77"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit Before Tax - PBT",
+          "note_no": null,
+          "values": {
+            "current_period": 147845.31,
+            "previous_period": 103832.79
+          },
+          "raw": [
+            "Profit Before Tax - PBT",
+            "147,845.31",
+            "103,832.79"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Tax expense: Current tax expense for current year",
+          "note_no": null,
+          "values": {
+            "current_period": 2261.09,
+            "previous_period": 4291.14
+          },
+          "raw": [
+            "Tax expense:",
+            "Current tax expense for current year",
+            "2,261.09",
+            "4,291.14"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Deferred tax expense / (income)",
+          "note_no": null,
+          "values": {
+            "current_period": 2356.35,
+            "previous_period": -1376.59
+          },
+          "raw": [
+            "Deferred tax expense / (income)",
+            "2,356.35",
+            "(1,376.59)"
+          ]
+        },
+        {
+          "section": "Expenses",
+          "line_item": "PROFIT FOR THE YEAR",
+          "note_no": null,
+          "values": {
+            "current_period": 143227.87,
+            "previous_period": 100918.25
+          },
+          "raw": [
+            "PROFIT FOR THE YEAR",
+            "143,227.87",
+            "100,918.25"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Items that will not be reclassified to the statement of profit and loss",
+          "note_no": null,
+          "values": {
+            "current_period": 23.42,
+            "previous_period": 19.08
+          },
+          "raw": [
+            "(i) Items that will not be reclassified to the",
+            "statement of profit and loss",
+            "23.42",
+            "19.08"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Items that will be reclassified to the statement of profit and loss Total other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": 23.42,
+            "previous_period": 19.08
+          },
+          "raw": [
+            "(ii) Items that will be reclassified to the",
+            "statement of profit and loss",
+            "-",
+            "-",
+            "Total other comprehensive income",
+            "23.42",
+            "19.08"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total comprehensive income (IX+X)",
+          "note_no": null,
+          "values": {
+            "current_period": 143251.29,
+            "previous_period": 100937.33
+          },
+          "raw": [
+            "Total comprehensive income (IX+X)",
+            "143,251.29",
+            "100,937.33"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Earning Per Share (Re. 1 Per Share for Each) Basic",
+          "note_no": null,
+          "values": {
+            "current_period": 48.52,
+            "previous_period": 34.19
+          },
+          "raw": [
+            "Earning Per Share (Re. 1 Per Share for Each)",
+            "Basic",
+            "48.52",
+            "34.19"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Diluted",
+          "note_no": null,
+          "values": {
+            "current_period": 48.52,
+            "previous_period": 34.19
+          },
+          "raw": [
+            "Diluted",
+            "48.52",
+            "34.19"
+          ]
+        },
+        {
+          "section": null,
+          "line_item": "Current tax expense for current year",
+          "note_no": null,
+          "values": {
+            "current_period": 2261.09,
+            "previous_period": 4291.14
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "statement of profit and loss",
+          "note_no": null,
+          "values": {
+            "current_period": 23.42,
+            "previous_period": 19.08
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Total other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": 23.42,
+            "previous_period": 19.08
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Basic",
+          "note_no": null,
+          "values": {
+            "current_period": 48.52,
+            "previous_period": 34.19
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        }
+      ],
+      "validation": {
+        "row_count": 22,
+        "total_rows": 5
+      }
+    },
+    "cash_flow": {
+      "statement": "consolidated_cash_flow",
+      "page": 92,
+      "pages": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ],
+      "title": "CONSOLIDATED CASH FLOW STATEMENT",
+      "currency": "Rs. in lakhs",
+      "periods": [],
+      "column_headers": [
+        "2022-2023",
+        "2021-2022"
+      ],
+      "extraction_method": "pdfplumber_table",
+      "rows": [
+        {
+          "section": "Operating Activities",
+          "line_item": "Profit before tax",
+          "note_no": null,
+          "values": {
+            "current_period": 147845.31,
+            "previous_period": 103832.79
+          },
+          "raw": [
+            "Profit before tax",
+            "147,845.31",
+            "103,832.79"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustments for: Depreciation and amortisation expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 10057.51,
+            "previous_period": 9087.41
+          },
+          "raw": [
+            "Adjustments for:",
+            "Depreciation and amortisation expenses",
+            "10,057.51",
+            "9,087.41"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Net (gain) / loss on sale of investments Actuarial loss/(gain) forming part of other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": 19.08,
+            "previous_period": 8095.23
+          },
+          "raw": [
+            "Net (gain) / loss on sale of investments",
+            "-",
+            "-",
+            "Actuarial loss/(gain) forming part of other comprehensive income",
+            "-",
+            "19.08",
+            "Finance cost",
+            "8,095.23"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Rent received",
+          "note_no": null,
+          "values": {
+            "current_period": -129.83,
+            "previous_period": -74.64
+          },
+          "raw": [
+            "Rent received",
+            "(129.83)",
+            "(74.64)"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Profit on sale of Fixed assets 18,022.92 18,028.98 Cash Generated from operations before working capital changes",
+          "note_no": null,
+          "values": {
+            "current_period": 165868.23,
+            "previous_period": 121861.77
+          },
+          "raw": [
+            "Profit on sale of Fixed assets",
+            "-",
+            "-",
+            "18,022.92 18,028.98",
+            "Cash Generated from operations before",
+            "working capital changes",
+            "165,868.23",
+            "121,861.77"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustments for: (Increase)/Decrease in Inventories",
+          "note_no": null,
+          "values": {
+            "current_period": 162030.83,
+            "previous_period": -26159.39
+          },
+          "raw": [
+            "Adjustments for:",
+            "(Increase)/Decrease in Inventories",
+            "162,030.83",
+            "(26,159.39)"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Adjustments for Decrease/(increase) in Trade and - other receivables including Loans & Advances",
+          "note_no": null,
+          "values": {
+            "current_period": 45775.62,
+            "previous_period": -35708.64
+          },
+          "raw": [
+            "Adjustments for Decrease/(increase) in Trade and -",
+            "other receivables including Loans & Advances",
+            "45,775.62",
+            "(35,708.64)"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Increase/(Decrease) in Current - Non Current Liabilities & Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": -324357.78,
+            "previous_period": -57517.28
+          },
+          "raw": [
+            "Increase/(Decrease) in Current -",
+            "Non Current Liabilities & Provisions",
+            "(324,357.78)",
+            "(57,517.28)"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Cash generated from operations",
+          "note_no": null,
+          "values": {
+            "current_period": 49316.9,
+            "previous_period": 2476.46
+          },
+          "raw": [
+            "Cash generated from operations",
+            "49,316.90",
+            "2,476.46"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Taxes paid (net of refunds)",
+          "note_no": null,
+          "values": {
+            "current_period": -2989.5,
+            "previous_period": -2914.55
+          },
+          "raw": [
+            "Taxes paid (net of refunds)",
+            "(2,989.50)",
+            "(2,914.55)"
+          ]
+        },
+        {
+          "section": "Operating Activities",
+          "line_item": "Net cash generated from operating activities - [A]",
+          "note_no": null,
+          "values": {
+            "current_period": 46327.4,
+            "previous_period": -438.09
+          },
+          "raw": [
+            "Net cash generated from operating activities - [A]",
+            "46,327.40",
+            "(438.09)"
+          ]
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Purchase)/Sale of Fixed Assets",
+          "note_no": null,
+          "values": {
+            "current_period": -72189.61,
+            "previous_period": -8764.83
+          },
+          "raw": [
+            "(Purchase)/Sale of Fixed Assets",
+            "(72,189.61)",
+            "(8,764.83)"
+          ]
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Purchase)/ Sale proceeds of Investments",
+          "note_no": null,
+          "values": {
+            "current_period": -12818.6,
+            "previous_period": -7157.95
+          },
+          "raw": [
+            "(Purchase)/ Sale proceeds of Investments",
+            "(12,818.60)",
+            "(7,157.95)"
+          ]
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Rent received",
+          "note_no": null,
+          "values": {
+            "current_period": 129.83,
+            "previous_period": 74.64
+          },
+          "raw": [
+            "Rent received",
+            "129.83",
+            "74.64"
+          ]
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Net cash generated/(used in) from investing activities - [B]",
+          "note_no": null,
+          "values": {
+            "current_period": -84878.39,
+            "previous_period": -15848.15
+          },
+          "raw": [
+            "Net cash generated/(used in) from investing activities - [B]",
+            "(84,878.39)",
+            "(15,848.15)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Increase/(Decrease) in Secured Loan",
+          "note_no": null,
+          "values": {
+            "current_period": -16814.09,
+            "previous_period": -20730.28
+          },
+          "raw": [
+            "Increase/(Decrease) in Secured Loan",
+            "(16,814.09)",
+            "(20,730.28)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Increase/(Decrease) in Unsecured Loan",
+          "note_no": null,
+          "values": {
+            "current_period": 7684.07,
+            "previous_period": 94.02
+          },
+          "raw": [
+            "Increase/(Decrease) in Unsecured Loan",
+            "7,684.07",
+            "94.02"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Finance Cost",
+          "note_no": null,
+          "values": {
+            "current_period": -8095.23,
+            "previous_period": -8997.12
+          },
+          "raw": [
+            "Finance Cost",
+            "(8,095.23)",
+            "(8,997.12)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Dividends paid",
+          "note_no": null,
+          "values": {
+            "current_period": -1356.76,
+            "previous_period": -2952.6
+          },
+          "raw": [
+            "Dividends paid",
+            "(1,356.76)",
+            "(2,952.60)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Net cash used in financing activities - [C]",
+          "note_no": null,
+          "values": {
+            "current_period": -18582.02,
+            "previous_period": -32585.98
+          },
+          "raw": [
+            "Net cash used in financing activities - [C]",
+            "(18,582.02)",
+            "(32,585.98)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Effect of Exchange fluctuation on translation Reserve",
+          "note_no": null,
+          "values": {
+            "current_period": 85895.02,
+            "previous_period": 24450.42
+          },
+          "raw": [
+            "D Effect of Exchange fluctuation on translation Reserve",
+            "85,895.02",
+            "24,450.42"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Net increase/(decrease) in cash and cash equivalents - [A+B+C+D]",
+          "note_no": null,
+          "values": {
+            "current_period": 28762.01,
+            "previous_period": -24421.8
+          },
+          "raw": [
+            "Net increase/(decrease) in cash",
+            "and cash equivalents - [A+B+C+D]",
+            "28,762.01",
+            "(24,421.80)"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Cash and cash equivalents at the beginning of the year",
+          "note_no": null,
+          "values": {
+            "current_period": 180873.07,
+            "previous_period": 205294.87
+          },
+          "raw": [
+            "Cash and cash equivalents at the beginning of the year",
+            "180,873.07",
+            "205,294.87"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Cash and cash equivalents at the end of the year",
+          "note_no": null,
+          "values": {
+            "current_period": 209635.07,
+            "previous_period": 180873.07
+          },
+          "raw": [
+            "Cash and cash equivalents at the end of the year",
+            "209,635.07",
+            "180,873.07"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Cash and cash equivalents comprise of: Cash on hand",
+          "note_no": null,
+          "values": {
+            "current_period": 101.79,
+            "previous_period": 42.13
+          },
+          "raw": [
+            "Cash and cash equivalents comprise of:",
+            "Cash on hand",
+            "101.79",
+            "42.13"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Balances with banks: In current accounts",
+          "note_no": null,
+          "values": {
+            "current_period": 101520.54,
+            "previous_period": 73977.62
+          },
+          "raw": [
+            "Balances with banks:",
+            "In current accounts",
+            "101,520.54",
+            "73,977.62"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Earmarked Balances with banks",
+          "note_no": null,
+          "values": {
+            "current_period": 644.89,
+            "previous_period": 431.06
+          },
+          "raw": [
+            "Earmarked Balances with banks",
+            "644.89",
+            "431.06"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Term deposits with original maturity of More than three months",
+          "note_no": null,
+          "values": {
+            "current_period": 107367.86,
+            "previous_period": 106422.25
+          },
+          "raw": [
+            "Term deposits with original maturity of",
+            "More than three months",
+            "107,367.86",
+            "106,422.25"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Total",
+          "note_no": null,
+          "values": {
+            "current_period": 209635.07,
+            "previous_period": 180873.07
+          },
+          "raw": [
+            "Total",
+            "209,635.07",
+            "180,873.07"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Date : May 30, 2023 DIN : 071460 Chief Financial Officer M.No. 209054 CONSOLIDATED STATEMENT IN CHANGE OF EQUITY Amount a Equity share capital Equity share of Rs. 1 each, issued, subscribed and paid up capital 2,952.60 Balance as at 1 April",
+          "note_no": "92",
+          "values": {
+            "current_period": 2021,
+            "previous_period": 2952.6
+          },
+          "raw": [
+            "Date : May 30, 2023 DIN : 071460 Chief Financial Officer M.No. 209054",
+            "92",
+            "CONSOLIDATED STATEMENT IN CHANGE OF EQUITY",
+            "(Rs. in lakhs)",
+            "Amount",
+            "a Equity share capital",
+            "Equity share of Rs. 1 each, issued, subscribed and paid up capital 2,952.60",
+            "Balance as at 1 April",
+            "2021",
+            "2,952.60"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Changes in equity share capital during the year 2020-21 nil Balance as at 31 March",
+          "note_no": "2022",
+          "values": {
+            "current_period": 2952.6,
+            "previous_period": 2023
+          },
+          "raw": [
+            "Changes in equity share capital during the year 2020-21 nil",
+            "Balance as at 31 March",
+            "2022",
+            "2,952.60",
+            "Changes in equity share capital during the year 2021-22 nil",
+            "Balance as at 31 March",
+            "2023"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Other Equity Particulars Reserves and Surplus Other comprehensive Total equity Security Income attributable to General Reserve Retained Earnings Premium Fair value of equity shareholders of instruments the company Balance as at 1 April",
+          "note_no": "2022",
+          "values": {
+            "current_period": 143500,
+            "previous_period": 899339.54
+          },
+          "raw": [
+            "b Other Equity",
+            "For the year ended 31 March 2023 (Rs. in lakhs)",
+            "Particulars Reserves and Surplus Other comprehensive Total equity",
+            "Security Income attributable to",
+            "General Reserve Retained Earnings Premium Fair value of equity shareholders of",
+            "instruments the company",
+            "Balance as at 1 April",
+            "2022",
+            "143,500.00",
+            "899,339.54"
+          ]
+        },
+        {
+          "section": "Financing Activities",
+          "line_item": "Profit during the year",
+          "note_no": null,
+          "values": {
+            "current_period": 143251.29,
+            "previous_period": 143251.29
+          },
+          "raw": [
+            "Profit during the year",
+            "-",
+            "143,251.29",
+            "-",
+            "-",
+            "143,251.29"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "during the year Dividend expense",
+          "note_no": null,
+          "values": {
+            "current_period": -1356.76,
+            "previous_period": -1356.76
+          },
+          "raw": [
+            "during the year",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Dividend expense",
+            "-",
+            "(1,356.76)",
+            "-",
+            "-",
+            "(1,356.76)"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Corporate dividend tax Realised profits of equity instruments measured at FVOCI Balance as at 31 March",
+          "note_no": "2023",
+          "values": {
+            "current_period": 143500,
+            "previous_period": 1041234.07
+          },
+          "raw": [
+            "Corporate dividend tax",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Realised profits of equity",
+            "instruments measured at FVOCI",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Balance as at 31 March",
+            "2023",
+            "143,500.00",
+            "1,041,234.07"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Particulars Reserves and Surplus Other comprehensive Total equity Security Income attributable to General Reserve Retained Earnings Premium Fair value of equity shareholders of instruments the company Balance as at 1 April",
+          "note_no": "2021",
+          "values": {
+            "current_period": 143500,
+            "previous_period": 801354.81
+          },
+          "raw": [
+            "Particulars Reserves and Surplus Other comprehensive Total equity",
+            "Security Income attributable to",
+            "General Reserve Retained Earnings Premium Fair value of equity shareholders of",
+            "instruments the company",
+            "Balance as at 1 April",
+            "2021",
+            "143,500.00",
+            "801,354.81"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Profit during the year",
+          "note_no": null,
+          "values": {
+            "current_period": 100937.33,
+            "previous_period": 100937.33
+          },
+          "raw": [
+            "Profit during the year",
+            "-",
+            "100,937.33",
+            "-",
+            "-",
+            "100,937.33"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "during the year Dividend expense",
+          "note_no": null,
+          "values": {
+            "current_period": -2952.6,
+            "previous_period": -2952.6
+          },
+          "raw": [
+            "during the year",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Dividend expense",
+            "-",
+            "(2,952.60)",
+            "-",
+            "-",
+            "(2,952.60)"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Corporate dividend tax Realised profits of equity instruments measured at FVOCI Balance as at 31 March",
+          "note_no": "2022",
+          "values": {
+            "current_period": 143500,
+            "previous_period": 899339.54
+          },
+          "raw": [
+            "Corporate dividend tax",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Realised profits of equity",
+            "instruments measured at FVOCI",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "Balance as at 31 March",
+            "2022",
+            "143,500.00",
+            "899,339.54"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "NOTES ON CONSOLIDATED FINANCIAL STATEMENTS Gross block / Original cost Accumulated depreciation Net block Particulars As at Additions/ Disposals/ As at As at Charge for the Disposals/ As at As at As at 31.03.2022 Exchange Transfers 31.03.2023 31.03.2022 year & Exchange Transfers 31.03.2023 31.03.2023 31.03.2022 A. BUSINESS ASSETS Land",
+          "note_no": null,
+          "values": {
+            "current_period": 3348.43,
+            "previous_period": 289.47
+          },
+          "raw": [
+            "NOTES ON CONSOLIDATED FINANCIAL STATEMENTS",
+            "FOR THE YEAR ENDED 31.03.2023",
+            "Note - 2 : PROPERTY, PLANT AND EQUIPMENTS (Rs. in lakhs)",
+            "Gross block / Original cost Accumulated depreciation Net block",
+            "Particulars As at Additions/ Disposals/ As at As at Charge for the Disposals/ As at As at As at",
+            "31.03.2022 Exchange Transfers 31.03.2023 31.03.2022 year & Exchange Transfers 31.03.2023 31.03.2023 31.03.2022",
+            "A. BUSINESS ASSETS",
+            "Land",
+            "3,348.43",
+            "289.47"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Building",
+          "note_no": null,
+          "values": {
+            "current_period": 54185.27,
+            "previous_period": 18272.52
+          },
+          "raw": [
+            "Building",
+            "54,185.27",
+            "18,272.52"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Plant & Machinery",
+          "note_no": null,
+          "values": {
+            "current_period": 99633.28,
+            "previous_period": 51009.64
+          },
+          "raw": [
+            "Plant & Machinery",
+            "99,633.28",
+            "51,009.64"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Generator",
+          "note_no": null,
+          "values": {
+            "current_period": 32.95,
+            "previous_period": 32.95
+          },
+          "raw": [
+            "Generator",
+            "32.95",
+            "-",
+            "-",
+            "32.95"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Furniture & Fixtures",
+          "note_no": null,
+          "values": {
+            "current_period": 699.31,
+            "previous_period": 296.07
+          },
+          "raw": [
+            "Furniture & Fixtures",
+            "699.31",
+            "296.07"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Office Equipments",
+          "note_no": null,
+          "values": {
+            "current_period": 3886.65,
+            "previous_period": 440.82
+          },
+          "raw": [
+            "Office Equipments",
+            "3,886.65",
+            "440.82"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Computer and Software",
+          "note_no": null,
+          "values": {
+            "current_period": 1640.75,
+            "previous_period": 274.1
+          },
+          "raw": [
+            "Computer and Software",
+            "1,640.75",
+            "274.10"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Weighing Scale",
+          "note_no": null,
+          "values": {
+            "current_period": 34.27,
+            "previous_period": 34.27
+          },
+          "raw": [
+            "Weighing Scale",
+            "34.27",
+            "-",
+            "-",
+            "34.27"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Borewell",
+          "note_no": null,
+          "values": {
+            "current_period": 1.48,
+            "previous_period": 1.48
+          },
+          "raw": [
+            "Borewell",
+            "1.48",
+            "-",
+            "-",
+            "1.48"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Technical Knowhow",
+          "note_no": null,
+          "values": {
+            "current_period": 6.7,
+            "previous_period": 6.7
+          },
+          "raw": [
+            "Technical Knowhow",
+            "6.70",
+            "-",
+            "-",
+            "6.70"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Motor Vehicle",
+          "note_no": null,
+          "values": {
+            "current_period": 618.23,
+            "previous_period": 187.46
+          },
+          "raw": [
+            "Motor Vehicle",
+            "618.23",
+            "187.46"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": ",17,157.79",
+          "note_no": null,
+          "values": {
+            "current_period": 115541.61,
+            "previous_period": 63760.19
+          },
+          "raw": [
+            ",17,157.79",
+            "1,15,541.61",
+            "63,760.19"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Work in Progress",
+          "note_no": null,
+          "values": {
+            "current_period": 582.57,
+            "previous_period": 3510.54
+          },
+          "raw": [
+            "Work in Progress",
+            "582.57",
+            "3,510.54"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "SUB TOTAL 1,64,669.89 74,280.63 (2,432.98) 2,36,517.53 90,069.86 28,998.69 (1,910.76) 1 ,17,157.79",
+          "note_no": null,
+          "values": {
+            "current_period": 119359.74,
+            "previous_period": 64342.76
+          },
+          "raw": [
+            "SUB TOTAL 1,64,669.89 74,280.63 (2,432.98) 2,36,517.53 90,069.86 28,998.69 (1,910.76) 1 ,17,157.79",
+            "1,19,359.74",
+            "64,342.76"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "B. OTHER IMMOVABLE PROPERTIES Sujatha Complex Building",
+          "note_no": null,
+          "values": {
+            "current_period": 205.05,
+            "previous_period": 205.05
+          },
+          "raw": [
+            "B. OTHER IMMOVABLE PROPERTIES",
+            "Sujatha Complex Building",
+            "205.05",
+            "-",
+            "-",
+            "205.05"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Mohan Building",
+          "note_no": null,
+          "values": {
+            "current_period": 977.16,
+            "previous_period": 977.16
+          },
+          "raw": [
+            "Mohan Building",
+            "977.16",
+            "-",
+            "-",
+            "977.16"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Volga Hotel Building",
+          "note_no": null,
+          "values": {
+            "current_period": 26.09,
+            "previous_period": 26.09
+          },
+          "raw": [
+            "Volga Hotel Building",
+            "26.09",
+            "-",
+            "-",
+            "26.09"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Land At Kumbalgod",
+          "note_no": null,
+          "values": {
+            "current_period": 200.23,
+            "previous_period": 200.23
+          },
+          "raw": [
+            "Land At Kumbalgod",
+            "200.23",
+            "-",
+            "-",
+            "200.23"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Land At Akkupette",
+          "note_no": null,
+          "values": {
+            "current_period": 111.95,
+            "previous_period": 111.95
+          },
+          "raw": [
+            "Land At Akkupette",
+            "111.95",
+            "-",
+            "-",
+            "111.95"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Property In Kerla",
+          "note_no": null,
+          "values": {
+            "current_period": 314.19,
+            "previous_period": 314.19
+          },
+          "raw": [
+            "Property In Kerla",
+            "314.19",
+            "-",
+            "-",
+            "314.19"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Property At Nandi",
+          "note_no": null,
+          "values": {
+            "current_period": 121.74,
+            "previous_period": 121.74
+          },
+          "raw": [
+            "Property At Nandi",
+            "121.74",
+            "-",
+            "-",
+            "121.74"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Land At Peenya",
+          "note_no": null,
+          "values": {
+            "current_period": 13.68,
+            "previous_period": 13.68
+          },
+          "raw": [
+            "Land At Peenya",
+            "13.68",
+            "-",
+            "-",
+            "13.68"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Jayashree Complex",
+          "note_no": null,
+          "values": {
+            "current_period": 131.83,
+            "previous_period": 131.83
+          },
+          "raw": [
+            "Jayashree Complex",
+            "131.83",
+            "-",
+            "-",
+            "131.83"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Property At Commercial Street",
+          "note_no": null,
+          "values": {
+            "current_period": 882.64,
+            "previous_period": 882.64
+          },
+          "raw": [
+            "Property At",
+            "Commercial Street",
+            "882.64",
+            "-",
+            "-",
+            "882.64"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Malleshwaram",
+          "note_no": null,
+          "values": {
+            "current_period": 372.13,
+            "previous_period": 372.13
+          },
+          "raw": [
+            "Malleshwaram",
+            "372.13",
+            "-",
+            "-",
+            "372.13"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Magadi Road Prop",
+          "note_no": null,
+          "values": {
+            "current_period": 40.04,
+            "previous_period": 40.04
+          },
+          "raw": [
+            "Magadi Road Prop",
+            "40.04",
+            "-",
+            "-",
+            "40.04"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Mg Road Property",
+          "note_no": null,
+          "values": {
+            "current_period": 294.55,
+            "previous_period": 294.55
+          },
+          "raw": [
+            "Mg Road Property",
+            "294.55",
+            "-",
+            "-",
+            "294.55"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "TOTAL FIXED ASSETS",
+          "note_no": null,
+          "values": {
+            "current_period": 168361.17,
+            "previous_period": 74280.63
+          },
+          "raw": [
+            "TOTAL FIXED ASSETS",
+            "1,68,361.17",
+            "74,280.63"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Previous Year",
+          "note_no": null,
+          "values": {
+            "current_period": 161706.85,
+            "previous_period": 8392.15
+          },
+          "raw": [
+            "Previous Year",
+            "161706.85",
+            "8392.15"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "INVESTMENT PROPERTY AMOUNT RECOGNISED IN PROFIT AND LOSS ACCOUNT Opening balance 1,087.69 1,087.69 Particulars As at 31st March 2023 As a 31st March 2022 Add: Additions Rental Income from",
+          "note_no": null,
+          "values": {
+            "current_period": 129.83,
+            "previous_period": 74.64
+          },
+          "raw": [
+            "INVESTMENT PROPERTY AMOUNT RECOGNISED IN PROFIT AND LOSS ACCOUNT",
+            "Particulars As at 31st March 2023 As a 31st March 2022 Particulars as on 31st March 2023",
+            "Opening balance 1,087.69 1,087.69 Particulars As at 31st March 2023 As a 31st March 2022",
+            "Add: Additions",
+            "-",
+            "-",
+            "Rental Income from",
+            "129.83",
+            "74.64"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Less : Deletions - - investment property Closing balance 1,087.69 1,087.69 Direct Expenses Accumulated Depreciations Profit",
+          "note_no": null,
+          "values": {
+            "current_period": 129.83,
+            "previous_period": 74.64
+          },
+          "raw": [
+            "Less : Deletions - - investment property",
+            "Closing balance 1,087.69 1,087.69 Direct Expenses",
+            "-",
+            "-",
+            "Accumulated Depreciations Profit",
+            "129.83",
+            "74.64"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Opening balance - - Less : Depreciation Add: Charged for the year - - Profit from investment",
+          "note_no": null,
+          "values": {
+            "current_period": 129.83,
+            "previous_period": 74.64
+          },
+          "raw": [
+            "Opening balance - - Less : Depreciation",
+            "-",
+            "-",
+            "Add: Charged for the year - - Profit from investment",
+            "129.83",
+            "74.64"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Less: Deletion - - properties before indirect expenses Closing balance Net carrying Amount",
+          "note_no": null,
+          "values": {
+            "current_period": 1087.69,
+            "previous_period": 1087.69
+          },
+          "raw": [
+            "Less: Deletion - - properties before",
+            "indirect expenses",
+            "Closing balance",
+            "-",
+            "-",
+            "Net carrying Amount",
+            "1,087.69",
+            "1,087.69"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Note : Investment property comprises of commercial property which is business property, since it is not used for business purposes, it has been leased to third party. The lease contains an initial and non cancellable period. It can be brought back to business purpose as and when required. RAJESH EXPORTS LIMITED 3 INVESTMENTS (i) Investment in Equity instruments(Unquoted)",
+          "note_no": "101",
+          "values": {
+            "current_period": 20541.17,
+            "previous_period": 20541.17
+          },
+          "raw": [
+            "Note : Investment property comprises of commercial property which is business property, since it is not used for business purposes, it has been leased to third party.",
+            "The lease contains an initial and non cancellable period. It can be brought back to business purpose as and when required.",
+            "101",
+            "RAJESH EXPORTS LIMITED",
+            "Note Particulars As on 31.03.2023 As on 31.03.2022",
+            "No. Rs. in lakhs Rs. in lakhs",
+            "3 INVESTMENTS",
+            "(i) Investment in Equity instruments(Unquoted)",
+            "20,541.17",
+            "20,541.17"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets > Financial Liabilities",
+          "line_item": "Investments in Government or Trust - securities and others",
+          "note_no": null,
+          "values": {
+            "current_period": 22.36,
+            "previous_period": 22.36
+          },
+          "raw": [
+            "(ii) Investments in Government or Trust -",
+            "securities and others",
+            "22.36",
+            "22.36"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets > Financial Liabilities",
+          "line_item": "Other Non- Current Investments",
+          "note_no": null,
+          "values": {
+            "current_period": 103526.6,
+            "previous_period": 90708
+          },
+          "raw": [
+            "(iii) Other Non- Current Investments",
+            "103,526.60",
+            "90,708.00"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Total Non Current Investments",
+          "note_no": null,
+          "values": {
+            "current_period": 124090.13,
+            "previous_period": 111271.53
+          },
+          "raw": [
+            "Total Non Current Investments",
+            "124,090.13",
+            "111,271.53"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "4 LOANS Security Deposits Furnished",
+          "note_no": null,
+          "values": {
+            "current_period": 4155.52,
+            "previous_period": 4933.97
+          },
+          "raw": [
+            "4 LOANS",
+            "Security Deposits Furnished",
+            "4,155.52",
+            "4,933.97"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Capital Advances",
+          "note_no": null,
+          "values": {
+            "current_period": 1794.05,
+            "previous_period": 823.68
+          },
+          "raw": [
+            "Capital Advances",
+            "1,794.05",
+            "823.68"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Total Long Term Loans and Advances",
+          "note_no": null,
+          "values": {
+            "current_period": 5949.57,
+            "previous_period": 5757.65
+          },
+          "raw": [
+            "Total Long Term Loans and Advances",
+            "5,949.57",
+            "5,757.65"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "5 INVENTORIES Raw materials",
+          "note_no": null,
+          "values": {
+            "current_period": 43142.23,
+            "previous_period": 70002.39
+          },
+          "raw": [
+            "5 INVENTORIES",
+            "Raw materials",
+            "43,142.23",
+            "70,002.39"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Work In Progress",
+          "note_no": null,
+          "values": {
+            "current_period": 389282.49,
+            "previous_period": 466800.49
+          },
+          "raw": [
+            "Work In Progress",
+            "389,282.49",
+            "466,800.49"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Finished goods",
+          "note_no": null,
+          "values": {
+            "current_period": 172446.65,
+            "previous_period": 230099.32
+          },
+          "raw": [
+            "Finished goods",
+            "172,446.65",
+            "230,099.32"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Total Inventories",
+          "note_no": null,
+          "values": {
+            "current_period": 604871.37,
+            "previous_period": 766902.2
+          },
+          "raw": [
+            "Total Inventories",
+            "604,871.37",
+            "766,902.20"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "TRADE RECEIVABLES Unsecured, a. Trade receivables",
+          "note_no": null,
+          "values": {
+            "current_period": 1035076.39,
+            "previous_period": 1070297.32
+          },
+          "raw": [
+            "TRADE RECEIVABLES",
+            "Unsecured,",
+            "a. Trade receivables",
+            "1,035,076.39",
+            "1,070,297.32"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "b. Sundry Debtors on Interest Accrued on ICD’s",
+          "note_no": null,
+          "values": {
+            "current_period": 562.19,
+            "previous_period": 562.19
+          },
+          "raw": [
+            "b. Sundry Debtors on Interest Accrued on ICD’s",
+            "562.19",
+            "562.19"
+          ]
+        },
+        {
+          "section": "Other Comprehensive Income > Financial Assets",
+          "line_item": "Total Trade Receivables",
+          "note_no": null,
+          "values": {
+            "current_period": 1035638.58,
+            "previous_period": 1070859.51
+          },
+          "raw": [
+            "Total Trade Receivables",
+            "1,035,638.58",
+            "1,070,859.51"
+          ]
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortisation expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 10057.51,
+            "previous_period": 9087.41
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Actuarial loss forming part of other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": -19.08,
+            "previous_period": null
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "working capital changes",
+          "note_no": null,
+          "values": {
+            "current_period": 165868.23,
+            "previous_period": 121861.77
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Increase in Inventories",
+          "note_no": null,
+          "values": {
+            "current_period": 162030.83,
+            "previous_period": -26159.39
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "other receivables including Loans & Advances",
+          "note_no": null,
+          "values": {
+            "current_period": 45775.62,
+            "previous_period": -35708.64
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Non Current Liabilities & Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": -324357.78,
+            "previous_period": -57517.28
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Cash and cash equivalents - [A+B+C+D]",
+          "note_no": null,
+          "values": {
+            "current_period": 28762.01,
+            "previous_period": -24421.8
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Cash on hand",
+          "note_no": null,
+          "values": {
+            "current_period": 101.79,
+            "previous_period": 42.13
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "In current accounts",
+          "note_no": null,
+          "values": {
+            "current_period": 101520.54,
+            "previous_period": 73977.62
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "More than three months",
+          "note_no": null,
+          "values": {
+            "current_period": 107367.86,
+            "previous_period": 106422.25
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        },
+        {
+          "section": null,
+          "line_item": "Balance as at 1 April 2021",
+          "note_no": null,
+          "values": {
+            "current_period": 2952.6,
+            "previous_period": null
+          },
+          "extraction_method": "llm_repair",
+          "confidence": 1
+        }
+      ],
+      "validation": {
+        "row_count": 97,
+        "total_rows": 9
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 93,
+        "extraction_method": "pdfplumber",
+        "row_count": 9,
+        "column_count": 4,
+        "rows": [
+          [
+            "Reserves and Surplus",
+            "",
+            "Security Premium",
+            "Other comprehensive Income"
+          ],
+          [
+            "General Reserve",
+            "Retained Earnings",
+            "",
+            "Fair value of equity instruments"
+          ],
+          [
+            "143,500.00",
+            "899,339.54",
+            "64,492.95",
+            "-"
+          ],
+          [
+            "-",
+            "143,251.29",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "(1,356.76)",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "143,500.00",
+            "1,041,234.07",
+            "64,492.95",
+            "-"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 93,
+        "extraction_method": "pdfplumber",
+        "row_count": 9,
+        "column_count": 4,
+        "rows": [
+          [
+            "Reserves and Surplus",
+            "",
+            "Security Premium",
+            "Other comprehensive Income"
+          ],
+          [
+            "General Reserve",
+            "Retained Earnings",
+            "",
+            "Fair value of equity instruments"
+          ],
+          [
+            "143,500.00",
+            "801,354.81",
+            "64,492.95",
+            "-"
+          ],
+          [
+            "-",
+            "100,937.33",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "(2,952.60)",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "143,500.00",
+            "899,339.54",
+            "64,492.95",
+            "-"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 101,
+        "extraction_method": "pdfplumber",
+        "row_count": 22,
+        "column_count": 8,
+        "rows": [
+          [
+            "",
+            "Gross block / Original cost",
+            "",
+            "",
+            "Accumulated depreciation",
+            "",
+            "",
+            "Net block"
+          ],
+          [
+            "Particulars",
+            "As at Additions/ Disposals/ As at 31.03.2022 Exchange Transfers 31.03.2023",
+            "",
+            "",
+            "As at Charge for the Disposals/ As at 31.03.2022 year & Exchange Transfers 31.03.2023",
+            "",
+            "",
+            "As at As at 31.03.2023 31.03.2022"
+          ],
+          [
+            "A. BUSINESS ASSETS Land Building Plant & Machinery Generator Furniture & Fixtures Office Equipments Computer and Software Weighing Scale Borewell Technical Knowhow Motor Vehicle Work in Progress",
+            "3,348.43 289.47 - 3,637.90 54,185.27 18,272.52 (1,080.49) 71,377.31 99,633.28 51,009.64 (1,005.15) 1,49,637.77 32.95 - - 32.95 699.31 296.07 - 995.38 3,886.65 440.82 (10.68) 4,316.79 1,640.75 274.10 (61.69) 1,853.16 34.27 - - 34.27 1.48 - - 1.48 6.70 - - 6.70 618.23 187.46 - 805.69",
+            "",
+            "",
+            "- - - - 32,746.65 8,841.36 (847.56) 40,740.45 52,933.74 19,182.29 (767.69) 71,348.34 30.46 0.24 - 30.69 583.68 257.85 (109.32) 732.21 2,344.83 567.20 (186.20) 2,725.83 936.71 9.55 - 946.26 22.12 1.62 - 23.74 0.46 0.02 - 0.48 6.70 - - 6.70 464.51 138.58 - 603.09",
+            "",
+            "",
+            "3,637.90 3,348.43 30,636.87 17,989.13 78,289.43 39,726.66 2.25 2.49 263.17 50.02 1,590.96 1,586.29 906.91 948.31 10.52 12.14 1.00 1.02 - - 202.60 95.69"
+          ],
+          [
+            "",
+            "1,64,087.32 70,770.09 (2,158.00) 2,32,699.40 582.57 3,510.54 (274.98) 3,818.13",
+            "",
+            "",
+            "90,069.86 28,998.69 (1,910.76) 1 ,17,157.79 - - - -",
+            "",
+            "",
+            "1,15,541.61 63,760.19 3,818.13 582.57"
+          ],
+          [
+            "SUB TOTAL",
+            "1,64,669.89 74,280.63 (2,432.98) 2,36,517.53",
+            "",
+            "",
+            "90,069.86 28,998.69 (1,910.76) 1 ,17,157.79",
+            "",
+            "",
+            "1,19,359.74 64,342.76"
+          ],
+          [
+            "B. OTHER IMMOVABLE PROPERTIES",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Sujatha Complex Building Mohan Building Volga Hotel Building Land At Kumbalgod Land At Akkupette Property In Kerla Property At Nandi Land At Peenya Jayashree Complex Property At Commercial Street Malleshwaram Magadi Road Prop Mg Road Property",
+            "205.05 - - 205.05 977.16 - - 977.16 26.09 - - 26.09 200.23 - - 200.23 111.95 - - 111.95 314.19 - - 314.19 121.74 - - 121.74 13.68 - - 13.68 131.83 - - 131.83 882.64 - - 882.64 372.13 - - 372.13 40.04 - - 40.04 294.55 - - 294.55",
+            "",
+            "",
+            "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -",
+            "",
+            "",
+            "205.05 205.05 977.16 977.16 26.09 26.09 200.23 200.23 111.95 111.95 314.19 314.19 121.74 121.74 13.68 13.68 131.83 131.83 882.64 882.64 372.13 372.13 40.04 40.04 294.55 294.55"
+          ],
+          [
+            "",
+            "3,691.28 - - 3,691.28",
+            "",
+            "",
+            "- - - -",
+            "",
+            "",
+            "3,691.28 3,691.28"
+          ],
+          [
+            "TOTAL FIXED ASSETS",
+            "1,68,361.17 74,280.63 (2,432.98) 2,40,208.81",
+            "",
+            "",
+            "90,069.86 28,998.69 (1,910.76) 1,17,157.79",
+            "",
+            "",
+            "1,23,051.02 68,034.04"
+          ],
+          [
+            "Previous Year",
+            "161706.85 8392.15 (1737.83) 168361.17",
+            "",
+            "",
+            "90018.74 11375.68 (1067.30) 100327.12",
+            "",
+            "",
+            "68034.05 72985.02"
+          ],
+          [
+            "INVESTMENT PROPERTY",
+            "",
+            "",
+            "",
+            "AMOUNT RECOGNISED IN PROFIT AND LOSS ACCOUNT",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Particulars",
+            "",
+            "As at 31st March 2023",
+            "As a 31st March 2022",
+            "Particulars as on 31st March 2023",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Opening balance",
+            "",
+            "1,087.69",
+            "1,087.69",
+            "Particulars",
+            "As at 31st March 2023",
+            "As a 31st March 2022",
+            ""
+          ],
+          [
+            "Add: Additions",
+            "",
+            "-",
+            "-",
+            "Rental Income from investment property",
+            "129.83",
+            "74.64",
+            ""
+          ],
+          [
+            "Less : Deletions",
+            "",
+            "-",
+            "-",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Closing balance",
+            "",
+            "1,087.69",
+            "1,087.69",
+            "Direct Expenses",
+            "-",
+            "-",
+            ""
+          ],
+          [
+            "Accumulated Depreciations",
+            "",
+            "",
+            "",
+            "Profit",
+            "129.83",
+            "74.64",
+            ""
+          ],
+          [
+            "Opening balance",
+            "",
+            "-",
+            "-",
+            "Less : Depreciation",
+            "-",
+            "-",
+            ""
+          ],
+          [
+            "Add: Charged for the year",
+            "",
+            "-",
+            "-",
+            "Profit from investment properties before indirect expenses",
+            "129.83",
+            "74.64",
+            ""
+          ],
+          [
+            "Less: Deletion",
+            "",
+            "-",
+            "-",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Closing balance",
+            "",
+            "-",
+            "-",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Net carrying Amount",
+            "",
+            "1,087.69",
+            "1,087.69",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": "3",
+        "title": "INVESTMENTS",
+        "page": 102,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 4,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "As on 31.03.2023 Rs. in lakhs",
+            "As on 31.03.2022 Rs. in lakhs"
+          ],
+          [
+            "3",
+            "INVESTMENTS (i) Investment in Equity instruments(Unquoted) (ii) Investments in Government or Trust - securities and others (iii) Other Non- Current Investments Total Non Current Investments",
+            "20,541.17 22.36 103,526.60 124,090.13",
+            "20,541.17 - 22.36 90,708.00 111,271.53"
+          ],
+          [
+            "4",
+            "LOANS Security Deposits Furnished Capital Advances Total Long Term Loans and Advances",
+            "4,155.52 1,794.05 5,949.57",
+            "4,933.97 823.68 5,757.65"
+          ],
+          [
+            "5",
+            "INVENTORIES Raw materials Work In Progress Finished goods Total Inventories",
+            "43,142.23 389,282.49 172,446.65 604,871.37",
+            "70,002.39 466,800.49 230,099.32 766,902.20"
+          ],
+          [
+            "6",
+            "TRADE RECEIVABLES Unsecured, a. Trade receivables b. Sundry Debtors on Interest Accrued on ICD’s Total Trade Receivables",
+            "1,035,076.39 562.19 1,035,638.58",
+            "1,070,297.32 562.19 1,070,859.51"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": null,
+        "title": null,
+        "page": 103,
+        "extraction_method": "pdfplumber",
+        "row_count": 13,
+        "column_count": 10,
+        "rows": [
+          [
+            "Note No.",
+            "Trade Receivables Ageing :",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7(a)",
+            "",
+            "Outstanding for following periods from due date of payment*",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total"
+          ],
+          [
+            "",
+            "Particulars",
+            "Less than 6 months",
+            "6 months- 1 year",
+            "",
+            "1-2 years",
+            "2-3 years",
+            "",
+            "More than 3 years",
+            ""
+          ],
+          [
+            "",
+            "As at 31st March, 2023 : (i) Undisputed Trade Receivables - considered good (ii) Undisputed Trade Receivables-which have significant increase in credit risk (iii) Undisputed Trade Receivables - credit impaired (iv) Disputed Trade Receivables-considered good (v) Disputed Trade Receivables-which have significant increase in credit risk (vi) Disputed Trade Receivables-credit impaired",
+            "334,108.29 - - - - -",
+            "353,715.63 - - - - -",
+            "",
+            "225,710.24 - - - - -",
+            "108,777.71 - - - - -",
+            "",
+            "13,326.71 - - - - -",
+            "1,035,638.58 - - - - -"
+          ],
+          [
+            "",
+            "Total",
+            "334,108.29",
+            "353,715.63",
+            "",
+            "225,710.24",
+            "108,777.71",
+            "",
+            "13,326.71",
+            "1,035,638.58"
+          ],
+          [
+            "",
+            "* Net of provision.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "Outstanding for following periods from due date of payment*",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total"
+          ],
+          [
+            "",
+            "Particulars",
+            "Less than 6 months",
+            "6 months- 1 year",
+            "",
+            "1-2 years",
+            "2-3 years",
+            "",
+            "More than 3 years",
+            ""
+          ],
+          [
+            "",
+            "As at 31st March, 2022 : (i) Undisputed Trade Receivables - considered good (ii) Undisputed Trade Receivables-which have significant increase in credit risk (iii) Undisputed Trade Receivables - credit impaired (iv) Disputed Trade Receivables-considered good (v) Disputed Trade Receivables-which have significant increase in credit risk (vi) Disputed Trade Receivables-credit impaired",
+            "580,634.98 - - - - -",
+            "103,679.03 - - - - -",
+            "",
+            "364,195.79 - - - - -",
+            "8,006.41 - - - - -",
+            "",
+            "14,343.30 - - - - -",
+            "1,070,859.51 - - - - -"
+          ],
+          [
+            "",
+            "Total",
+            "580,634.98",
+            "103,679.03",
+            "",
+            "364,195.79",
+            "8,006.41",
+            "",
+            "14,343.30",
+            "1,070,859.51"
+          ],
+          [
+            "",
+            "* Net of provision.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Particulars",
+            "",
+            "",
+            "As on 31.03.2023 Rs. in lakhs",
+            "",
+            "",
+            "As on 31.03.2022 Rs. in lakhs",
+            "",
+            ""
+          ],
+          [
+            "",
+            "CASH AND CASH EQUIVALENTS (i) Bank Balances in Current Accounts (ii) Cash on hand Total Cash and Cash Equivalents",
+            "",
+            "",
+            "101,520.54 101.79 101,622.33",
+            "",
+            "",
+            "73,977.62 42.13 74,019.76",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "7(b)",
+        "title": "Bank balances other than 7(a) above",
+        "page": 104,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "As on 31.03.2023 Rs. in lakhs",
+            "As on 31.03.2022 Rs. in lakhs"
+          ],
+          [
+            "7(b)",
+            "Bank balances other than 7(a) above (i) Unpaid Dividend Bank Accounts (ii) Fixed Deposits with banks Total Cash and Cash Equivalents",
+            "644.89 107,367.86 108,012.75",
+            "431.06 106,422.25 106,853.31"
+          ],
+          [
+            "8",
+            "SHORT TERM LOANS AND ADVANCES (i) Advances Recoverable In Normal Course Of Business (ii) Advances to employees (iii) Inter Corporate Deposits Total Short term Loans and Advances",
+            "14,969.11 3.02 22,888.60 37,860.73",
+            "23,918.90 13.02 24,025.10 47,957.02"
+          ],
+          [
+            "9",
+            "OTHER FINANCIAL ASSETS (i) Balances with Govt. departments (ii) Other Receivables Total Other Financial Assets",
+            "60,664.11 1,102.86 61,766.97",
+            "60,792.66 1,624.64 62,417.30"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_7",
+        "note_no": "7(b)",
+        "title": "Bank balances other than 7(a) above",
+        "page": 104,
+        "extraction_method": "pdfplumber",
+        "row_count": 9,
+        "column_count": 9,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "",
+            "As on 31.03.2023",
+            "",
+            "",
+            "As on 31.03.2022",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Number",
+            "Rs. in lakhs",
+            "",
+            "Number",
+            "",
+            "Rs. in lakhs"
+          ],
+          [
+            "10",
+            "SHARE CAPITAL Authorised Share Capital 30,00,00,000 Equity Shares of Re.1/- each Issued, Subscribed & Paidup Share Capital 295259959 equity shares of Re.1/- each",
+            "",
+            "3,000.00 2,952.60",
+            "3,000.00 2,952.60",
+            "",
+            "3,000.00 2,952.60",
+            "",
+            "3,000.00 2,952.60"
+          ],
+          [
+            "Reconciliation of number of Equity Shares and amount outstanding Shares outstanding at the beginning of the year Shares issued during the year Total Less : Shares issued to ESOP Trust as Treasury Stock Shares outstanding at the end of the year",
+            "",
+            "",
+            "2,952.60 - 2,952.60 2,952.60",
+            "2,952.60 - 2,952.60 - 2,952.60",
+            "",
+            "2,952.60 2,952.60 2,952.60",
+            "",
+            "2,952.60 - 2,952.60 - 2,952.60"
+          ],
+          [
+            "Number of shares held by each shareholder holding more than 5 percent of the Equity Shares of the Company are as follows:",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Name of the shareholder",
+            "",
+            "As at 31st March, 2023",
+            "",
+            "",
+            "As at 31st March, 2022",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "No. of Shares held",
+            "% of Holding",
+            "",
+            "No. of Shares held",
+            "",
+            "% of Holding",
+            ""
+          ],
+          [
+            "Mr.Rajesh J Mehta Mr.Prashanth J Mehta M/s.Life Insurance Corporation M/s.Bridge India Fund Mr.Mahesh J Mehta",
+            "",
+            "884.92 371.62 325.89 280.75 240.41",
+            "29.97% 12.58% 11.04% 9.51% 8.14%",
+            "",
+            "884.92 371.62 331.30 284.95 240.41",
+            "",
+            "29.97% 12.58% 11.22% 9.65% 8.14%",
+            ""
+          ],
+          [
+            "i) Aggregate number and class of shares allotted as fully paid up pursuant to contract(s) without payment being received in cash - NIL (Previous Year - NIL) ii) Aggregate number and class of shares allotted as fully paid up by way of bonus shares - NIL (Previous Year - NIL) iii) Aggregate number and class of shares bought back - NIL (Previous Year - NIL) iv) Each Equity Share entitles the holder to one vote and carries an equal right to dividend.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_8",
+        "note_no": "11",
+        "title": "OTHER EQUITY",
+        "page": 105,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "As on 31.03.2023 Rs. in lakhs",
+            "As on 31.03.2022 Rs. in lakhs"
+          ],
+          [
+            "11",
+            "OTHER EQUITY (A) Securities Premium Reserve (i) As per last Balance Sheet Total Securities Premium Reserve (B) General Reserve: (i) As per last Balance Sheet Total General Reserve (C) Surplus in Statement of Profit and Loss (i) As per last Balance Sheet (ii) Add: Profit for the year Less: Appropriations a) Dividend Paid Available Surplus in Statement of Profit and Loss (D) FCTR a) FCTR Total FCTR (E) Total Other Equity",
+            "64,492.95 64,492.95 143,500.00 143,500.00 899,339.54 143,251.29 1,042,590.83 (1,356.76) 1,041,234.06 220,183.13 220,183.13 1,469,410.15",
+            "64,492.95 64,492.95 143,500.00 143,500.00 801,354.81 100,937.33 902,292.14 (2,952.60) 899,339.54 134,288.11 134,288.11 1,241,620.61"
+          ],
+          [
+            "12",
+            "OTHER FINANCIAL LIABILITIES (i) Franchise Deposit Received (ii) Rent Advance Total Other Financial Liabilities",
+            "376.22 255.62 631.84",
+            "376.22 255.62 631.84"
+          ],
+          [
+            "13",
+            "DEFERRED TAX LIABILITIES (NET) Deferred Tax Liabilities Deferred Tax liabilities ( Net )",
+            "10,261.24 10,261.24",
+            "7,176.47 7,176.47"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_9",
+        "note_no": "14",
+        "title": "LONG-TERM PROVISIONS",
+        "page": 106,
+        "extraction_method": "pdfplumber",
+        "row_count": 15,
+        "column_count": 9,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "",
+            "",
+            "As on 31.03.2023 Rs. in lakhs",
+            "",
+            "",
+            "As on 31.03.2022 Rs. in lakhs",
+            ""
+          ],
+          [
+            "14",
+            "LONG-TERM PROVISIONS (i) Other Provisions (ii) Provision for gratuity Total Long Term Provisions",
+            "",
+            "",
+            "246.15 44.84 291.00",
+            "",
+            "",
+            "219.29 55.93 275.21",
+            ""
+          ],
+          [
+            "15",
+            "SHORT TERM BORROWINGS (a) Secured (i) Working Capital Loans (secured against stocks, book debts, - - Immoveable properties and export bills) (ii) Loans against Company’s own - - Fixed deposits with Banks (iii) Bank Borrowing (b) Unsecured (i) From Directors (ii) From Others Total Short Term Borrowings",
+            "",
+            "",
+            "- 64,501.74 - 9.61 7,818.48 72,329.83",
+            "",
+            "",
+            "11,048.37 43,871.65 18,881.08 144.02 7,514.73 81,459.85",
+            ""
+          ],
+          [
+            "16",
+            "TRADE PAYABLES (i) Trade Payables Total Trade Payables",
+            "",
+            "",
+            "715,729.27 715,729.27",
+            "",
+            "",
+            "1,042,100.41 1,042,100.41",
+            ""
+          ],
+          [
+            "",
+            "Trade Payables Ageing :",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "Outstanding for following periods from due date of payment",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total"
+          ],
+          [
+            "",
+            "Particulars",
+            "Less than 1 year",
+            "1-2 years",
+            "",
+            "2-3 years",
+            "More than 3 years",
+            "",
+            ""
+          ],
+          [
+            "",
+            "As at 31st March, 2023 :",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "(i) MSME (ii) Others (iii) Disputed dues - MSME (iv) Disputed dues - Others",
+            "- 497,162.68 - -",
+            "- 129,241.83 - -",
+            "",
+            "- 89,234.18 - -",
+            "- 90.58 - -",
+            "",
+            "- 715,729.27 - -"
+          ],
+          [
+            "",
+            "Total",
+            "497,162.68",
+            "129,241.83",
+            "",
+            "89,234.18",
+            "90.58",
+            "",
+            "715,729.27"
+          ],
+          [
+            "",
+            "",
+            "Outstanding for following periods from due date of payment",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total"
+          ],
+          [
+            "",
+            "Particulars",
+            "Less than 1 year",
+            "1-2 years",
+            "",
+            "2-3 years",
+            "More than 3 years",
+            "",
+            ""
+          ],
+          [
+            "",
+            "As at 31st March, 2022 :",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "(i) MSME (ii) Others (iii) Disputed dues - MSME (iv) Disputed dues - Others",
+            "- 832,302.37 - -",
+            "- 208,849.19 - -",
+            "",
+            "- 760.42 - -",
+            "- 188.43 - -",
+            "",
+            "- 1,042,100.41 - -"
+          ],
+          [
+            "",
+            "Total",
+            "832,302.37",
+            "208,849.19",
+            "",
+            "760.42",
+            "188.43",
+            "",
+            "1,042,100.41"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_10",
+        "note_no": "17",
+        "title": "OTHER FINANCIAL LIABILITIES",
+        "page": 107,
+        "extraction_method": "pdfplumber",
+        "row_count": 7,
+        "column_count": 4,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "As on 31.03.2023 Rs. in lakhs",
+            "As on 31.03.2022 Rs. in lakhs"
+          ],
+          [
+            "17",
+            "OTHER FINANCIAL LIABILITIES (i) Unpaid Dividend* (ii) Other Payables Total Other Current Liabilities *Unclaimed Dividend kept in separate bank accounts",
+            "644.89 2,395.02 3,039.90",
+            "431.06 544.28 975.34"
+          ],
+          [
+            "18",
+            "OTHER CURRENT LIABILITIES (i) VAT (ii) Advance Received From Customers Total Other Current Liabilities",
+            "- 802.75 802.75",
+            "4.55 546.83 551.38"
+          ],
+          [
+            "19",
+            "SHORT-TERM PROVISIONS (i) Provision for income tax (ii) Short term provisions Total Short Term Provisions",
+            "6,974.72 5,043.52 12,018.24",
+            "8,925.91 4,890.92 13,816.84"
+          ],
+          [
+            "20",
+            "REVENUE FROM OPERATIONS Revenue from operations* Total Revenue from Operations *includes interest received on fixed deposits & Mutual Funds made for margin purposes for the sake of procurement of Raw Materials (Buyers Credit)",
+            "33,968,950.55 33,968,950.55",
+            "24,312,793.66 24,312,793.66"
+          ],
+          [
+            "21",
+            "OTHER INCOME (i) Interest on ICD’s (ii) Other Miscellaneous income (iii) Rent received Total Other Income",
+            "796.45 1,495.49 129.83 2,421.77",
+            "1113.79 2837.48 74.64 4,025.91"
+          ],
+          [
+            "22",
+            "COST OF MATERIAL CONSUMED (i) Raw material consumed Opening stock Add: Purchases Less: Closing Stock Total Cost of Material Consumed",
+            "766,902.20 33,597,959.31 (604,871.37) 33,759,990.14",
+            "740,742.81 24,177,125.93 (766,902.20) 24,150,966.54"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_11",
+        "note_no": "23",
+        "title": "EMPLOYEE BENEFIT EXPENSES",
+        "page": 108,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "Note No.",
+            "Particulars",
+            "As on 31.03.2023 Rs. in lakhs",
+            "As on 31.03.2022 Rs. in lakhs"
+          ],
+          [
+            "23",
+            "EMPLOYEE BENEFIT EXPENSES (i) Salaries and wages (ii) Contribution to PF, ESIC and gratuity (iii) Staff Welfare Expenses Total Employee Benefit Expenses",
+            "18,450.07 18.09 3,038.14 21,506.30",
+            "15,010.86 22.42 2,555.82 17,589.10"
+          ],
+          [
+            "24",
+            "SELLING & ADMINISTRATION, OTHER EXPENSES Rent Repairs & Maintenance Legal, Professional and consultancy charges Loss on sale of property Postage & Telegrams & Telephones Insurance Rates, Taxes & Octrai Charges Auditors Fees Advertisement, Publicity and others Travelling and Conveyance Hedging fees and Charges Freight Charges Printing & Stationery Membership Fees Donation Commission and other Misc expenses Other Manufacturing and Processing Expenses Bad debts written off Total S&A and Other Expenses",
+            "285.96 1,831.27 1,109.78 - 46.81 4,235.35 42.81 227.15 353.15 251.17 4,845.24 1,965.44 7.94 207.13 52.79 5,343.10 2,746.52 326.22 23,877.82",
+            "275.85 1466.78 1066.64 41.53 43.31 3044.41 51.59 219.24 359.13 106.30 4823.78 1048.68 19.01 385.68 43.73 4576.42 2328.30 6446.22 26,346.60"
+          ],
+          [
+            "25",
+            "FINANCE COST (i) Bank charges (ii) Interest on working capital Total Finance Costs",
+            "71.40 8,023.84 8,095.23",
+            "695.27 8,301.85 8,997.12"
+          ]
+        ]
+      }
+    ]
+  },
+  "cross_validation": {
+    "standalone": {
+      "rule_based": {
+        "bs_balance": {
+          "status": "skip",
+          "detail": "Total Assets == Total Equity & Liabilities"
+        },
+        "pl_revenue_total": {
+          "status": "pass",
+          "detail": "value=577080.88"
+        },
+        "bs_cf_cash_match": {
+          "status": "fail",
+          "detail": "expected=3566.93, actual=129.83; diff=3437.1"
+        },
+        "bs_row_count": {
+          "status": "pass",
+          "detail": "value=22"
+        },
+        "p&l_row_count": {
+          "status": "pass",
+          "detail": "value=22"
+        },
+        "cf_row_count": {
+          "status": "pass",
+          "detail": "value=81"
+        }
+      }
+    },
+    "consolidated": {
+      "rule_based": {
+        "bs_balance": {
+          "status": "skip",
+          "detail": "Total Assets == Total Equity & Liabilities"
+        },
+        "pl_revenue_total": {
+          "status": "pass",
+          "detail": "value=33971372.32"
+        },
+        "bs_cf_cash_match": {
+          "status": "fail",
+          "detail": "expected=101622.33, actual=129.83; diff=101492.5"
+        },
+        "bs_row_count": {
+          "status": "pass",
+          "detail": "value=23"
+        },
+        "p&l_row_count": {
+          "status": "pass",
+          "detail": "value=22"
+        },
+        "cf_row_count": {
+          "status": "pass",
+          "detail": "value=97"
+        }
+      }
+    },
+    "overall_score": 0.667,
+    "anomalies": [
+      "[standalone] BS Cash & Cash Equivalents == CF Closing Balance: expected=3566.93, actual=129.83, diff=3437.1",
+      "[consolidated] BS Cash & Cash Equivalents == CF Closing Balance: expected=101622.33, actual=129.83, diff=101492.5"
+    ],
+    "llm_insights": "### Analysis of Extracted Financial Data\n\n#### 1. Cross-Statement Inconsistencies\n\n**Balance Sheet vs. Profit and Loss:**\n- **Retained Earnings Movement:** The movement in retained earnings from the balance sheet does not align with the profit figures reported in the profit and loss statement. The balance sheet shows a retained earnings balance of 143,500 for both the current and previous years, while the profit and loss statement indicates a profit of 3,038.2 for the current year and 2,265.49 for the previous year. This discrepancy suggests that there might be unrecorded transactions or adjustments affecting retained earnings, such as dividends paid, share buybacks, or other non-cash adjustments.\n\n**Cash and Cash Equivalents:**\n- **Closing Balance Mismatch:** There is a significant mismatch between the closing balances of cash and cash equivalents reported in the balance sheet and the cash flow statement. The balance sheet shows a closing balance of 54,742.42 for the current year, whereas the cash flow statement indicates a net decrease in cash and cash equivalents of 1,482.56, leading to a closing balance of 54,742.42. However, the cash flow statement also shows a beginning balance of 56,224.99, which, when adjusted for the net cash flows, should result in a different ending balance. This inconsistency needs further investigation to determine if it is due to errors in the cash flow statement or misreporting in the balance sheet.\n\n#### 2. Unreasonable Amounts\n\n- **Investments:** The investment figures show a very small change from 255,369.69 to 255,374.69, which seems unusual given the scale of the company's operations. Such a minor change could indicate either a lack of significant investment activity or potential rounding errors in the reporting.\n\n- **Provisions:** The provision figure has dropped significantly from 769.92 to 221.66, which is a substantial reduction. While this could be due to improved financial health or changes in the nature of provisions, it would be prudent to review the underlying reasons for this change to ensure it is accurate and justified.\n\n#### 3. Missing Key Line Items\n\n- **Detailed Breakdown of Non-Recurring Items:** The profit and loss statement includes \"Items that will not be reclassified to the statement of profit and loss\" and \"Total other comprehensive income,\" but these categories do not provide detailed breakdowns. It would be beneficial to have more granular information about these items to understand their impact on the financial statements.\n\n- **Dividend Payments and Share Buybacks:** The balance sheet and profit and loss statement do not provide details on dividend payments or share buybacks, which can significantly affect retained earnings and cash flows. These details should be included to provide a complete picture of the company’s financial activities.\n\n#### 4. Other Anomalies or Data Quality Issues\n\n- **Net Cash Flows from Investing Activities:** The net cash flows from investing activities show a positive value of 124.83 for the current year, which is unusual given the significant decrease in cash and cash equivalents. This could indicate that the company has received proceeds from investments or divested assets, but further verification is needed to confirm the accuracy of this figure.\n\n- **Net Cash Flows from Financing Activities:** The net cash flows from financing activities show a smaller outflow (-9,531.7) compared to the previous year (-18,940.18), which is a significant improvement. This could be due to reduced debt repayments or increased share buybacks, but it would be important to verify the exact nature of these activities.\n\nIn conclusion, the primary concerns are the discrepancies in retained earnings and cash balances, the minor changes in investment figures, and the lack of detailed information on non-recurring items and specific financial activities. These issues need to be addressed to ensure the accuracy and completeness of the financial statements."
+  }
+}

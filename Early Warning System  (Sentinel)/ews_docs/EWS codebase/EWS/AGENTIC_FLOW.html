@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EWS — Agentic Workflow Diagram</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    min-height: 100vh;
+  }
+  .page-header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-bottom: 2px solid #334155;
+    padding: 24px 40px;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 6px;
+  }
+  .page-header p {
+    font-size: 14px;
+    color: #94a3b8;
+  }
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+
+  /* Legend */
+  .legend {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px 28px;
+    margin-bottom: 30px;
+  }
+  .legend h2 {
+    font-size: 16px;
+    color: #f8fafc;
+    margin-bottom: 12px;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #cbd5e1;
+  }
+  .legend-swatch {
+    width: 28px;
+    height: 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .legend-line {
+    width: 28px;
+    height: 3px;
+    flex-shrink: 0;
+    border-radius: 2px;
+  }
+
+  /* Agent Cards */
+  .agent-section {
+    margin-bottom: 24px;
+  }
+  .agent-card {
+    background: #1e293b;
+    border: 2px solid;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .agent-header {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .agent-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .agent-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+  .agent-subtitle {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 2px;
+  }
+  .agent-body {
+    padding: 0 20px 18px 20px;
+  }
+  .agent-responsibilities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .resp-item {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #cbd5e1;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .resp-item .bullet {
+    color: #60a5fa;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Annotation boxes */
+  .annotations {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .anno-box {
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .anno-box.why {
+    background: #172554;
+    border: 1px solid #1e40af;
+    color: #93c5fd;
+  }
+  .anno-box.how {
+    background: #2e1065;
+    border: 1px solid #6d28d9;
+    color: #c4b5fd;
+  }
+  .anno-box.standard {
+    background: #422006;
+    border: 1px solid #b45309;
+    color: #fcd34d;
+  }
+  .anno-label {
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  /* Handoff arrows between agents */
+  .handoff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+    gap: 10px;
+  }
+  .handoff-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .handoff-arrow .arrow-line {
+    width: 3px;
+    height: 28px;
+    border-radius: 2px;
+  }
+  .handoff-arrow .arrow-head {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+  }
+  .handoff-label {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 11px;
+    color: #94a3b8;
+    max-width: 500px;
+    text-align: center;
+  }
+  .handoff-label .data-type {
+    color: #60a5fa;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .handoff-label .data-detail {
+    color: #64748b;
+    font-size: 10px;
+    margin-top: 2px;
+  }
+
+  /* LLM callout */
+  .llm-callout {
+    background: #1e1b4b;
+    border: 2px dashed #6366f1;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .llm-callout .llm-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .llm-callout .llm-text {
+    font-size: 11px;
+    color: #a5b4fc;
+    line-height: 1.5;
+  }
+  .llm-callout .llm-trigger {
+    color: #818cf8;
+    font-weight: 600;
+  }
+
+  /* Decision diamond */
+  .decision-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 0;
+  }
+  .diamond {
+    width: 140px;
+    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .diamond-inner {
+    width: 100px;
+    height: 50px;
+    background: #1e293b;
+    border: 2px solid #f59e0b;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .diamond-text {
+    transform: rotate(-45deg);
+    font-size: 10px;
+    font-weight: 600;
+    color: #fbbf24;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .decision-branch {
+    font-size: 11px;
+    color: #94a3b8;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 6px 10px;
+    max-width: 200px;
+  }
+  .decision-branch .branch-label {
+    font-weight: 700;
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  .decision-branch.yes .branch-label { color: #34d399; }
+  .decision-branch.no .branch-label { color: #f87171; }
+
+  /* Pattern badges */
+  .pattern-section {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px 28px;
+    margin-top: 30px;
+  }
+  .pattern-section h2 {
+    font-size: 16px;
+    color: #f8fafc;
+    margin-bottom: 14px;
+  }
+  .pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+  }
+  .pattern-card {
+    background: #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    border-left: 4px solid;
+  }
+  .pattern-card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .pattern-card p {
+    font-size: 11px;
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+  .pattern-card .pattern-example {
+    font-size: 10px;
+    color: #64748b;
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* Agent color themes */
+  .agent-api { border-color: #06b6d4; }
+  .agent-api .agent-icon { background: #164e63; }
+  .agent-api .agent-header { background: linear-gradient(90deg, #164e63 0%, #1e293b 100%); }
+
+  .agent-orchestrator { border-color: #f59e0b; }
+  .agent-orchestrator .agent-icon { background: #78350f; }
+  .agent-orchestrator .agent-header { background: linear-gradient(90deg, #78350f 0%, #1e293b 100%); }
+
+  .agent-finder { border-color: #10b981; }
+  .agent-finder .agent-icon { background: #064e3b; }
+  .agent-finder .agent-header { background: linear-gradient(90deg, #064e3b 0%, #1e293b 100%); }
+
+  .agent-extractor { border-color: #3b82f6; }
+  .agent-extractor .agent-icon { background: #1e3a5f; }
+  .agent-extractor .agent-header { background: linear-gradient(90deg, #1e3a5f 0%, #1e293b 100%); }
+
+  .agent-mapper { border-color: #8b5cf6; }
+  .agent-mapper .agent-icon { background: #2e1065; }
+  .agent-mapper .agent-header { background: linear-gradient(90deg, #2e1065 0%, #1e293b 100%); }
+
+  .agent-writer { border-color: #ec4899; }
+  .agent-writer .agent-icon { background: #831843; }
+  .agent-writer .agent-header { background: linear-gradient(90deg, #831843 0%, #1e293b 100%); }
+
+  .agent-llm { border-color: #6366f1; border-style: dashed; }
+  .agent-llm .agent-icon { background: #1e1b4b; }
+  .agent-llm .agent-header { background: linear-gradient(90deg, #1e1b4b 0%, #1e293b 100%); }
+
+  /* SVG diagram section */
+  .svg-section {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+  }
+  .svg-section h2 {
+    font-size: 16px;
+    color: #f8fafc;
+    margin-bottom: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>🤖 EWS Agentic Workflow</h1>
+  <p>How specialized agents collaborate to extract financial data from Indian annual report PDFs</p>
+</div>
+
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- LEGEND -->
+<!-- ============================================================ -->
+<div class="legend">
+  <h2>📋 Legend</h2>
+  <div class="legend-grid">
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:#06b6d4;"></div>
+      <span><strong>API Layer</strong> — Entry point (app.py)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:#f59e0b;"></div>
+      <span><strong>Orchestrator</strong> — Coordinates all agents</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:#10b981;"></div>
+      <span><strong>Page Finder</strong> — Identifies statement pages</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:#3b82f6;"></div>
+      <span><strong>Extractor</strong> — Parses PDF text into rows</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:#8b5cf6;"></div>
+      <span><strong>Mapper</strong> — Maps rows to template</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:#ec4899;"></div>
+      <span><strong>Writer</strong> — Outputs Excel file</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:#6366f1; border: 1px dashed #6366f1;"></div>
+      <span><strong>LLM Assistant</strong> — On-demand LLM calls</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-line" style="background:#f59e0b;"></div>
+      <span><strong>Data handoff</strong> — Agent → Agent</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-line" style="background:#6366f1; border-top: 2px dashed #6366f1; height:0;"></div>
+      <span><strong>LLM primary/fallback</strong> — LLM as primary or fallback</span>
+    </div>
+    <div class="legend-item">
+      <div class="anno-box why" style="padding:4px 8px; font-size:10px;">WHY</div>
+      <span><strong>Why box</strong> — Rationale for this step</span>
+    </div>
+    <div class="legend-item">
+      <div class="anno-box how" style="padding:4px 8px; font-size:10px;">HOW</div>
+      <span><strong>How box</strong> — Implementation details</span>
+    </div>
+    <div class="legend-item">
+      <div class="anno-box standard" style="padding:4px 8px; font-size:10px;">STD</div>
+      <span><strong>Standard box</strong> — Indian financial std</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MASTER SVG FLOW DIAGRAM -->
+<!-- ============================================================ -->
+<div class="svg-section">
+  <h2>🔄 Master Agentic Flow — End to End</h2>
+  <svg viewBox="0 0 1400 520" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:900px;">
+    <defs>
+      <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+      </marker>
+      <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+      </marker>
+      <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+      </marker>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+
+    <!-- Background -->
+    <rect x="0" y="0" width="1400" height="520" rx="12" fill="#0f172a"/>
+
+    <!-- API Layer -->
+    <rect x="20" y="200" width="120" height="80" rx="12" fill="#164e63" stroke="#06b6d4" stroke-width="2"/>
+    <text x="80" y="235" text-anchor="middle" fill="#06b6d4" font-size="11" font-weight="700">API Layer</text>
+    <text x="80" y="252" text-anchor="middle" fill="#94a3b8" font-size="9">app.py</text>
+    <text x="80" y="268" text-anchor="middle" fill="#64748b" font-size="8">FastAPI</text>
+
+    <!-- Arrow: API → Orchestrator -->
+    <line x1="140" y1="240" x2="185" y2="240" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowOrange)"/>
+    <text x="162" y="232" text-anchor="middle" fill="#94a3b8" font-size="8">PDF path</text>
+
+    <!-- Orchestrator -->
+    <rect x="190" y="170" width="150" height="140" rx="14" fill="#78350f" stroke="#f59e0b" stroke-width="2.5" filter="url(#glow)"/>
+    <text x="265" y="200" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700">Orchestrator</text>
+    <text x="265" y="218" text-anchor="middle" fill="#94a3b8" font-size="9">SmartExtractionAgent</text>
+    <text x="265" y="236" text-anchor="middle" fill="#64748b" font-size="8">smart_agent.py</text>
+    <line x1="205" y1="248" x2="325" y2="248" stroke="#92400e" stroke-width="1"/>
+    <text x="265" y="265" text-anchor="middle" fill="#d97706" font-size="8">• Coordinates all agents</text>
+    <text x="265" y="278" text-anchor="middle" fill="#d97706" font-size="8">• Year & type detection</text>
+    <text x="265" y="291" text-anchor="middle" fill="#d97706" font-size="8">• Progress reporting</text>
+
+    <!-- Arrow: Orchestrator → Page Finder -->
+    <line x1="340" y1="210" x2="400" y2="120" stroke="#10b981" stroke-width="2" marker-end="url(#arrowGreen)"/>
+    <text x="365" y="155" text-anchor="middle" fill="#94a3b8" font-size="8" transform="rotate(-30,365,155)">find_pages()</text>
+
+    <!-- Page Finder -->
+    <rect x="405" y="60" width="150" height="110" rx="12" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+    <text x="480" y="90" text-anchor="middle" fill="#34d399" font-size="11" font-weight="700">Page Finder</text>
+    <text x="480" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">table_finder.py</text>
+    <line x1="420" y1="115" x2="540" y2="115" stroke="#065f46" stroke-width="1"/>
+    <text x="480" y="130" text-anchor="middle" fill="#a78bfa" font-size="8">• ★ LLM page ID (PRIMARY)</text>
+    <text x="480" y="143" text-anchor="middle" fill="#6ee7b7" font-size="8">• Deterministic validation</text>
+    <text x="480" y="156" text-anchor="middle" fill="#6ee7b7" font-size="8">• Notes detection</text>
+
+    <!-- LLM callout from Page Finder — NOW PRIMARY -->
+    <line x1="555" y1="90" x2="620" y2="50" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrowPurple)"/>
+    <rect x="625" y="15" width="145" height="65" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+    <text x="697" y="35" text-anchor="middle" fill="#818cf8" font-size="9" font-weight="700">🧠 LLM Assistant</text>
+    <text x="697" y="50" text-anchor="middle" fill="#c4b5fd" font-size="8" font-weight="600">★ PRIMARY PAGE ID</text>
+    <text x="697" y="65" text-anchor="middle" fill="#a5b4fc" font-size="8">find_pages_by_llm()</text>
+    <text x="697" y="77" text-anchor="middle" fill="#6366f1" font-size="7">+ statement_type detection</text>
+
+    <!-- Arrow: Page Finder → Orchestrator (return) -->
+    <path d="M405,130 L370,130 L370,220 L340,220" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="358" y="180" text-anchor="middle" fill="#34d399" font-size="8" transform="rotate(-90,358,180)">FinancialStatementPages</text>
+
+    <!-- Arrow: Orchestrator → Extractor -->
+    <line x1="340" y1="240" x2="405" y2="240" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowOrange)"/>
+    <text x="372" y="232" text-anchor="middle" fill="#94a3b8" font-size="8">extract()</text>
+
+    <!-- Extractor -->
+    <rect x="410" y="190" width="150" height="110" rx="12" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+    <text x="485" y="220" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="700">Extractor</text>
+    <text x="485" y="237" text-anchor="middle" fill="#94a3b8" font-size="9">text_table_extractor.py</text>
+    <line x1="425" y1="245" x2="545" y2="245" stroke="#1e3a8a" stroke-width="1"/>
+    <text x="485" y="260" text-anchor="middle" fill="#93c5fd" font-size="8">• Line-by-line parsing</text>
+    <text x="485" y="273" text-anchor="middle" fill="#93c5fd" font-size="8">• Section tracking</text>
+    <text x="485" y="286" text-anchor="middle" fill="#93c5fd" font-size="8">• Unit detection</text>
+
+    <!-- Arrow: Extractor → Orchestrator (return) -->
+    <path d="M410,270 L380,270 L380,260 L340,260" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+    <text x="388" y="282" text-anchor="middle" fill="#60a5fa" font-size="7">ExtractedTable</text>
+
+    <!-- Arrow: Orchestrator → Mapper -->
+    <line x1="340" y1="280" x2="405" y2="350" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="365" y="325" text-anchor="middle" fill="#94a3b8" font-size="8" transform="rotate(30,365,325)">map()</text>
+
+    <!-- Mapper -->
+    <rect x="410" y="320" width="170" height="130" rx="12" fill="#2e1065" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="495" y="350" text-anchor="middle" fill="#a78bfa" font-size="11" font-weight="700">Mapper</text>
+    <text x="495" y="367" text-anchor="middle" fill="#94a3b8" font-size="9">data_mapper.py</text>
+    <line x1="425" y1="375" x2="565" y2="375" stroke="#4c1d95" stroke-width="1"/>
+    <text x="495" y="390" text-anchor="middle" fill="#c4b5fd" font-size="8">• Keyword aliases (30+ BS)</text>
+    <text x="495" y="403" text-anchor="middle" fill="#a78bfa" font-size="8">• ★ LLM mapping (PRIMARY)</text>
+    <text x="495" y="416" text-anchor="middle" fill="#c4b5fd" font-size="8">• Fuzzy matching (FALLBACK)</text>
+    <text x="495" y="429" text-anchor="middle" fill="#c4b5fd" font-size="8">• 3-way merge: alias→LLM→fuzzy</text>
+    <text x="495" y="442" text-anchor="middle" fill="#c4b5fd" font-size="8">• Default zeros & derived</text>
+
+    <!-- LLM callout from Mapper — NOW PRIMARY -->
+    <line x1="580" y1="380" x2="620" y2="360" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrowPurple)"/>
+    <rect x="625" y="325" width="145" height="75" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+    <text x="697" y="345" text-anchor="middle" fill="#818cf8" font-size="9" font-weight="700">🧠 LLM Assistant</text>
+    <text x="697" y="360" text-anchor="middle" fill="#c4b5fd" font-size="8" font-weight="600">★ PRIMARY MAPPER</text>
+    <text x="697" y="375" text-anchor="middle" fill="#a5b4fc" font-size="8">map_by_llm() — semantic</text>
+    <text x="697" y="388" text-anchor="middle" fill="#6366f1" font-size="7">After alias, before fuzzy</text>
+
+    <!-- Arrow: Mapper → Orchestrator (return) -->
+    <path d="M410,400 L370,400 L370,300 L340,300" fill="none" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+    <text x="358" y="360" text-anchor="middle" fill="#a78bfa" font-size="7" transform="rotate(-90,358,360)">list[MappingResult]</text>
+
+    <!-- Arrow: Orchestrator → Writer -->
+    <line x1="340" y1="240" x2="790" y2="240" stroke="#ec4899" stroke-width="2" marker-end="url(#arrowOrange)" opacity="0.4"/>
+    <path d="M340,240 Q600,240 790,240" fill="none" stroke="#ec4899" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+    <!-- Writer -->
+    <rect x="795" y="190" width="150" height="110" rx="12" fill="#831843" stroke="#ec4899" stroke-width="2"/>
+    <text x="870" y="220" text-anchor="middle" fill="#f472b6" font-size="11" font-weight="700">Writer</text>
+    <text x="870" y="237" text-anchor="middle" fill="#94a3b8" font-size="9">excel_writer.py</text>
+    <line x1="810" y1="245" x2="930" y2="245" stroke="#9d174d" stroke-width="1"/>
+    <text x="870" y="260" text-anchor="middle" fill="#fbcfe8" font-size="8">• 7 Excel sheets</text>
+    <text x="870" y="273" text-anchor="middle" fill="#fbcfe8" font-size="8">• Formula application</text>
+    <text x="870" y="286" text-anchor="middle" fill="#fbcfe8" font-size="8">• Raw data sheets</text>
+
+    <!-- Arrow: Writer → Output -->
+    <line x1="945" y1="240" x2="1000" y2="240" stroke="#ec4899" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+    <!-- Output -->
+    <rect x="1005" y="205" width="120" height="70" rx="12" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <text x="1065" y="232" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="700">📊 Excel</text>
+    <text x="1065" y="250" text-anchor="middle" fill="#94a3b8" font-size="9">.xlsx output</text>
+    <text x="1065" y="265" text-anchor="middle" fill="#64748b" font-size="8">7 sheets</text>
+
+    <!-- LLM Assistant (Year) from Orchestrator -->
+    <line x1="265" y1="170" x2="265" y2="100" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+    <rect x="195" y="30" width="140" height="60" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="265" y="50" text-anchor="middle" fill="#818cf8" font-size="9" font-weight="700">🧠 LLM Assistant</text>
+    <text x="265" y="65" text-anchor="middle" fill="#a5b4fc" font-size="8">Year verification</text>
+    <text x="265" y="78" text-anchor="middle" fill="#6366f1" font-size="7">Low-confidence only</text>
+
+    <!-- Data flow labels on main path -->
+    <rect x="590" y="218" width="190" height="44" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="685" y="234" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">MappingResults + ExtractedTables</text>
+    <text x="685" y="250" text-anchor="middle" fill="#64748b" font-size="8">BS + P&L + CF + Notes mappings</text>
+
+    <!-- Step numbers -->
+    <circle cx="155" cy="240" r="10" fill="#f59e0b"/>
+    <text x="155" y="244" text-anchor="middle" fill="#0f172a" font-size="9" font-weight="700">1</text>
+
+    <circle cx="375" cy="120" r="10" fill="#10b981"/>
+    <text x="375" y="124" text-anchor="middle" fill="#0f172a" font-size="9" font-weight="700">2</text>
+
+    <circle cx="375" cy="240" r="10" fill="#3b82f6"/>
+    <text x="375" y="244" text-anchor="middle" fill="#0f172a" font-size="9" font-weight="700">3</text>
+
+    <circle cx="375" cy="350" r="10" fill="#8b5cf6"/>
+    <text x="375" y="354" text-anchor="middle" fill="#0f172a" font-size="9" font-weight="700">4</text>
+
+    <circle cx="770" cy="240" r="10" fill="#ec4899"/>
+    <text x="770" y="244" text-anchor="middle" fill="#0f172a" font-size="9" font-weight="700">5</text>
+
+    <circle cx="975" cy="240" r="10" fill="#64748b"/>
+    <text x="975" y="244" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="700">6</text>
+
+    <!-- Title -->
+    <text x="1100" y="40" fill="#475569" font-size="10" font-weight="600">AGENTIC FLOW — 6 AGENTS, LLM-PRIMARY EVERYWHERE</text>
+    <text x="1100" y="58" fill="#334155" font-size="9">Page ID: LLM (primary) → Deterministic (validation)</text>
+    <text x="1100" y="73" fill="#334155" font-size="9">Mapping: Alias → LLM (primary) → Fuzzy (fallback)</text>
+
+    <!-- Key insight box -->
+    <rect x="1100" y="80" width="280" height="120" rx="10" fill="#172554" stroke="#1e40af" stroke-width="1"/>
+    <text x="1240" y="102" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="700">KEY INSIGHT</text>
+    <text x="1240" y="120" text-anchor="middle" fill="#60a5fa" font-size="9">Each agent is independently testable</text>
+    <text x="1240" y="138" text-anchor="middle" fill="#93c5fd" font-size="8">and has a clear input/output contract.</text>
+    <line x1="1115" y1="148" x2="1365" y2="148" stroke="#1e40af" stroke-width="0.5"/>
+    <text x="1240" y="165" text-anchor="middle" fill="#60a5fa" font-size="9">Orchestrator delegates, never executes</text>
+    <text x="1240" y="180" text-anchor="middle" fill="#93c5fd" font-size="8">domain logic itself — only coordinates.</text>
+
+    <!-- Indian Standards box -->
+    <rect x="1100" y="220" width="280" height="100" rx="10" fill="#422006" stroke="#b45309" stroke-width="1"/>
+    <text x="1240" y="242" text-anchor="middle" fill="#fcd34d" font-size="10" font-weight="700">INDIAN STANDARDS</text>
+    <text x="1240" y="260" text-anchor="middle" fill="#fbbf24" font-size="9">Schedule III → Template structure</text>
+    <text x="1240" y="278" text-anchor="middle" fill="#fcd34d" font-size="8">Ind AS 1 → Presentation format</text>
+    <text x="1240" y="296" text-anchor="middle" fill="#fcd34d" font-size="8">Ind AS 7 → Cash Flow classification</text>
+    <text x="1240" y="310" text-anchor="middle" fill="#b45309" font-size="8">Enables deterministic validation</text>
+
+    <!-- LLM Usage Summary -->
+    <rect x="1100" y="340" width="280" height="155" rx="10" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="1240" y="362" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="700">LLM USAGE SUMMARY</text>
+    <text x="1240" y="382" text-anchor="middle" fill="#a5b4fc" font-size="9">Model: Qwen2.5-7B-Instruct (local)</text>
+    <line x1="1115" y1="392" x2="1365" y2="392" stroke="#6366f1" stroke-width="0.5"/>
+    <text x="1240" y="410" text-anchor="middle" fill="#c4b5fd" font-size="8" font-weight="600">★ find_pages_by_llm() — PRIMARY page ID</text>
+    <text x="1240" y="426" text-anchor="middle" fill="#c4b5fd" font-size="8" font-weight="600">★ map_by_llm() — PRIMARY mapper</text>
+    <text x="1240" y="442" text-anchor="middle" fill="#818cf8" font-size="8">① Year verification (low confidence)</text>
+    <text x="1240" y="458" text-anchor="middle" fill="#818cf8" font-size="8">② Mapping verification (conf < 0.7)</text>
+    <text x="1240" y="475" text-anchor="middle" fill="#6366f1" font-size="7">All via llm_utils.py with retry + JSON parse</text>
+    <text x="1240" y="490" text-anchor="middle" fill="#4338ca" font-size="7">Quick deterministic check skips LLM for standard PDFs</text>
+  </svg>
+</div>
+
+<!-- ============================================================ -->
+<!-- AGENT 1: API LAYER -->
+<!-- ============================================================ -->
+<div class="agent-section">
+  <div class="agent-card agent-api">
+    <div class="agent-header">
+      <div class="agent-icon">🌐</div>
+      <div>
+        <div class="agent-title">API Layer</div>
+        <div class="agent-subtitle">app.py — FastAPI application, entry point for PDF uploads</div>
+      </div>
+    </div>
+    <div class="agent-body">
+      <div class="agent-responsibilities">
+        <div class="resp-item"><span class="bullet">→</span> Receive PDF upload via HTTP endpoint</div>
+        <div class="resp-item"><span class="bullet">→</span> Extract year from filename (5 patterns)</div>
+        <div class="resp-item"><span class="bullet">→</span> Initialize LLM (Qwen2.5-7B-Instruct)</div>
+        <div class="resp-item"><span class="bullet">→</span> Instantiate SmartExtractionAgent</div>
+        <div class="resp-item"><span class="bullet">→</span> Call agent.run() with PDF + template paths</div>
+        <div class="resp-item"><span class="bullet">→</span> Return Excel file as HTTP download</div>
+      </div>
+      <div class="annotations">
+        <div class="anno-box why">
+          <div class="anno-label">Why</div>
+          Decouples web interface from extraction logic. The API layer knows nothing about financial statements — it just passes files to the Orchestrator.
+        </div>
+        <div class="anno-box how">
+          <div class="anno-label">How</div>
+          FastAPI with UploadFile. Year extracted from filename using 5 ordered regex patterns: "2022-2023", "2017-18", "202021", "FY2024", single year.
+        </div>
+        <div class="anno-box standard">
+          <div class="anno-label">Standard</div>
+          Indian FY convention: "2017-18" = year ending March 31, 2018. The API extracts the ENDING year for column selection downstream.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Handoff: API → Orchestrator -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#f59e0b;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #f59e0b;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">pdf_path, template_path, output_path, year (optional)</div>
+    <div class="data-detail">API Layer delegates ALL extraction logic to the Orchestrator agent</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- AGENT 2: ORCHESTRATOR -->
+<!-- ============================================================ -->
+<div class="agent-section">
+  <div class="agent-card agent-orchestrator">
+    <div class="agent-header">
+      <div class="agent-icon">🎯</div>
+      <div>
+        <div class="agent-title">Orchestrator Agent</div>
+        <div class="agent-subtitle">SmartExtractionAgent (smart_agent.py) — Coordinates all agents, manages state, makes high-level decisions</div>
+      </div>
+    </div>
+    <div class="agent-body">
+      <div class="agent-responsibilities">
+        <div class="resp-item"><span class="bullet">→</span> Call Page Finder (★ LLM-first) to identify BS/P&L/CF/Notes pages</div>
+        <div class="resp-item"><span class="bullet">→</span> Auto-detect financial year (filename → page text → LLM)</div>
+        <div class="resp-item"><span class="bullet">→</span> Use statement_type from Page Finder (★ LLM-detected, fallback to keyword scan)</div>
+        <div class="resp-item"><span class="bullet">→</span> Filter to prefer Standalone pages over Consolidated</div>
+        <div class="resp-item"><span class="bullet">→</span> Call Extractor for each statement (BS, P&L, CF, Notes)</div>
+        <div class="resp-item"><span class="bullet">→</span> Convert ExtractedTable → tabular format for Mapper</div>
+        <div class="resp-item"><span class="bullet">→</span> Call Mapper for each statement with target_year</div>
+        <div class="resp-item"><span class="bullet">→</span> Apply default zeros, compute derived items</div>
+        <div class="resp-item"><span class="bullet">→</span> Smart merge: Notes values override default_zero CF items</div>
+        <div class="resp-item"><span class="bullet">→</span> Call Writer with all MappingResults + raw tables</div>
+        <div class="resp-item"><span class="bullet">→</span> Compute completeness percentages</div>
+        <div class="resp-item"><span class="bullet">→</span> Write Meta Data sheet with extraction stats</div>
+      </div>
+      <div class="annotations">
+        <div class="anno-box why">
+          <div class="anno-label">Why</div>
+          Single point of coordination ensures consistent state (year, statement type, pages) across all agents. No agent needs to know about other agents — only the Orchestrator knows the full pipeline.
+        </div>
+        <div class="anno-box how">
+          <div class="anno-label">How</div>
+          run() method executes 7 sequential steps. Progress reported via callback for real-time UI updates. Year threaded as target_year through all Mapper calls. Section maps (BS_SECTION_MAP, etc.) bridge Extractor ↔ Mapper.
+        </div>
+        <div class="anno-box standard">
+          <div class="anno-label">Standard</div>
+          Schedule III defines the section structure: NC Assets, Current Assets, Equity, NC Liabilities, Current Liabilities. The Orchestrator's section maps align PDF sections to template sections for disambiguation.
+        </div>
+      </div>
+
+      <!-- LLM callout: Year verification -->
+      <div class="llm-callout">
+        <div class="llm-icon">🧠</div>
+        <div class="llm-text">
+          <span class="llm-trigger">LLM FALLBACK — Year Verification:</span>
+          When year is detected from a low-confidence source (single year from filename, FY prefix, or default current year), the Orchestrator calls <code>_verify_year_with_llm()</code>. The LLM reads the first financial statement page and confirms/corrects the year. Only triggered for 3 of 7 detection methods.
+        </div>
+      </div>
+
+      <!-- LLM callout: Mapping verification -->
+      <div class="llm-callout">
+        <div class="llm-icon">🧠</div>
+        <div class="llm-text">
+          <span class="llm-trigger">LLM FALLBACK — Mapping Verification:</span>
+          When <code>verify_with_llm=True</code>, the Orchestrator calls <code>_verify_mappings_with_llm()</code> for each statement. Only checks mappings with confidence < 0.7. The LLM can CORRECT or confirm low-confidence mappings. Off by default.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Decision: Year Detection -->
+<div class="decision-row">
+  <div class="diamond">
+    <div class="diamond-inner">
+      <div class="diamond-text">Year confidence<br>low?</div>
+    </div>
+  </div>
+  <div class="decision-branch yes">
+    <div class="branch-label">✅ YES</div>
+    <div>Call LLM to verify year from page text. Methods: filename_single_year, filename_fy_prefix, default_current</div>
+  </div>
+  <div class="decision-branch no">
+    <div class="branch-label">❌ NO</div>
+    <div>Use detected year directly. Methods: filename_full_range, filename_2digit_suffix, filename_compact6, page_text</div>
+  </div>
+</div>
+
+<!-- Handoff: Orchestrator → Page Finder -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#10b981;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #10b981;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">pdf_path, llm (optional), use_llm flag</div>
+    <div class="data-detail">Orchestrator delegates page identification to the Page Finder agent. Passes LLM instance only if use_llm=True.</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- AGENT 3: PAGE FINDER -->
+<!-- ============================================================ -->
+<div class="agent-section">
+  <div class="agent-card agent-finder">
+    <div class="agent-header">
+      <div class="agent-icon">🔍</div>
+      <div>
+        <div class="agent-title">Page Finder Agent</div>
+        <div class="agent-subtitle">table_finder.py — ★ LLM-first page identification with deterministic validation. Identifies BS, P&L, CF, Notes pages + statement type</div>
+      </div>
+    </div>
+    <div class="agent-body">
+      <div class="agent-responsibilities">
+        <div class="resp-item"><span class="bullet">→</span> ★ Quick deterministic check (cost optimization, ~70% skip LLM)</div>
+        <div class="resp-item"><span class="bullet">→</span> ★ find_pages_by_llm() — PRIMARY page identification</div>
+        <div class="resp-item"><span class="bullet">→</span> ★ LLM detects statement_type (Standalone/Consolidated) in same call</div>
+        <div class="resp-item"><span class="bullet">→</span> _validate_with_deterministic() — SECONDARY validation</div>
+        <div class="resp-item"><span class="bullet">→</span> Union merge: LLM pages ∪ deterministic pages (no loss)</div>
+        <div class="resp-item"><span class="bullet">→</span> Continuation page expansion (up to 4 pages ahead)</div>
+        <div class="resp-item"><span class="bullet">→</span> Cross-validate statement type (LLM vs keyword scan)</div>
+        <div class="resp-item"><span class="bullet">→</span> Notes page detection (always deterministic, broad search)</div>
+        <div class="resp-item"><span class="bullet">→</span> Deterministic-only fallback when LLM unavailable</div>
+        <div class="resp-item"><span class="bullet">→</span> detection_method: llm_primary | llm_primary_validated | quick_deterministic | deterministic_fallback</div>
+      </div>
+      <div class="annotations">
+        <div class="anno-box why">
+          <div class="anno-label">Why</div>
+          LLM understands page context semantically — it can identify a Balance Sheet even with non-standard titles, CID-fragmented text, or bilingual headers. Deterministic title scanning misses these cases. LLM-first ensures highest accuracy; deterministic validation catches any LLM hallucinations.
+        </div>
+        <div class="anno-box how">
+          <div class="anno-label">How</div>
+          3-step LLM-first cascade: (1) _quick_deterministic_check() — if standard Schedule III titles find all 3 statements with confidence ≥ 1.0, skip LLM (cost savings ~70%), (2) find_pages_by_llm() — sends page snippets to LLM with optional deterministic hints, gets page numbers + statement_type, (3) _validate_with_deterministic() — runs full deterministic scan, merges pages (union), expands continuations, cross-validates statement type.
+        </div>
+        <div class="anno-box standard">
+          <div class="anno-label">Standard</div>
+          Schedule III mandates specific titles: "Balance Sheet as at March 31", "Statement of Profit and Loss for the year ended". These enable the quick deterministic check to skip LLM for standard PDFs. Non-standard PDFs (merged reports, bilingual) require LLM's semantic understanding.
+        </div>
+      </div>
+
+      <!-- LLM callout — NOW PRIMARY -->
+      <div class="llm-callout" style="border-color: #818cf8; border-style: solid; border-width: 2px;">
+        <div class="llm-icon">🧠</div>
+        <div class="llm-text">
+          <span class="llm-trigger" style="color: #c4b5fd;">★ LLM PRIMARY — find_pages_by_llm():</span>
+          Sends text snippets from sampled pages to the LLM with an optional hint from the quick deterministic check. The LLM returns page numbers for BS/P&L/CF/CoE AND the statement_type (Standalone/Consolidated) in a single call — no extra cost. Results are then validated by <code>_validate_with_deterministic()</code> which runs a full deterministic scan and merges pages (union). <strong>Always enabled</strong> when LLM is available, unless quick deterministic check finds all 3 statements with standard titles.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Decision: Quick Deterministic Check Sufficient? -->
+<div class="decision-row">
+  <div class="diamond">
+    <div class="diamond-inner">
+      <div class="diamond-text">Quick det check<br>complete?</div>
+    </div>
+  </div>
+  <div class="decision-branch yes">
+    <div class="branch-label">✅ YES (all 3 found, conf ≥ 1.0)</div>
+    <div>Skip LLM — return quick_deterministic result. ~70% of standard PDFs. Cost optimization.</div>
+  </div>
+  <div class="decision-branch no">
+    <div class="branch-label">❌ NO (incomplete or low conf)</div>
+    <div>Call find_pages_by_llm() → then _validate_with_deterministic(). LLM is PRIMARY, deterministic is VALIDATION.</div>
+  </div>
+</div>
+
+<!-- Handoff: Page Finder → Orchestrator (return) -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#10b981;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #10b981;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">FinancialStatementPages</div>
+    <div class="data-detail">balance_sheet: [pg], profit_and_loss: [pg], cash_flow: [pg], notes_pages: [pg], statement_type: str, detection_method, confidence</div>
+  </div>
+</div>
+
+<!-- Handoff: Orchestrator → Extractor -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#3b82f6;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #3b82f6;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">pdf (open pdfplumber.PDF), page_numbers: list[int], statement_type: str</div>
+    <div class="data-detail">Orchestrator calls extract_table_from_pages() for BS, P&L, CF and extract_notes_from_pages() for Notes. Passes the already-open PDF object.</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- AGENT 4: EXTRACTOR -->
+<!-- ============================================================ -->
+<div class="agent-section">
+  <div class="agent-card agent-extractor">
+    <div class="agent-header">
+      <div class="agent-icon">📄</div>
+      <div>
+        <div class="agent-title">Extractor Agent</div>
+        <div class="agent-subtitle">text_table_extractor.py — Converts PDF text into structured row data using deterministic line-by-line parsing</div>
+      </div>
+    </div>
+    <div class="agent-body">
+      <div class="agent-responsibilities">
+        <div class="resp-item"><span class="bullet">→</span> Extract text lines from each PDF page</div>
+        <div class="resp-item"><span class="bullet">→</span> Find statement start (skip auditor's report)</div>
+        <div class="resp-item"><span class="bullet">→</span> Parse each line: label + note_ref + values</div>
+        <div class="resp-item"><span class="bullet">→</span> Detect indent level (leading spaces, (i)/(A) prefixes)</div>
+        <div class="resp-item"><span class="bullet">→</span> Track section headers (ASSETS, LIABILITIES, etc.)</div>
+        <div class="resp-item"><span class="bullet">→</span> Merge fragmented rows (label-only + values-only)</div>
+        <div class="resp-item"><span class="bullet">→</span> Split inline section headers</div>
+        <div class="resp-item"><span class="bullet">→</span> Detect unit (₹ in Lakhs/Crores/Millions)</div>
+        <div class="resp-item"><span class="bullet">→</span> Deduplicate across pages</div>
+        <div class="resp-item"><span class="bullet">→</span> Return ExtractedTable with rows + year_headers + unit</div>
+      </div>
+      <div class="annotations">
+        <div class="anno-box why">
+          <div class="anno-label">Why</div>
+          Indian AR PDFs have no visible table borders (gridless). pdfplumber.extract_tables() fails. But extract_text() produces well-structured lines with labels on the left and numbers on the right — perfect for regex parsing.
+        </div>
+        <div class="anno-box how">
+          <div class="anno-label">How</div>
+          Right-to-left token scan separates values from labels. Note references (small integers 1-3 digits) distinguished from financial values (have commas/decimals). CID font placeholders stripped via regex. Fragmented rows merged (label-only + values-only lines).
+        </div>
+        <div class="anno-box standard">
+          <div class="anno-label">Standard</div>
+          Ind AS 1 prescribes line-item presentation format: (a), (b), (i), (ii) sub-item numbering. The Extractor detects these prefixes to set indent_level, which the Mapper uses for section-aware matching.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Handoff: Extractor → Orchestrator (return) -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#3b82f6;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #3b82f6;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">ExtractedTable</div>
+    <div class="data-detail">statement_type, rows: list[ExtractedRow] (label, note_ref, values, indent_level, is_section_header, is_total), year_headers, unit</div>
+  </div>
+</div>
+
+<!-- Orchestrator internal step: Convert to tabular -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#f59e0b;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #f59e0b;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">Orchestrator internal: _convert_extracted_table_to_tabular()</div>
+    <div class="data-detail">Bridges Extractor → Mapper format. Adds "Section" column from section tracking. Headers: Label | Section | Note | Current Year | Previous Year</div>
+  </div>
+</div>
+
+<!-- Handoff: Orchestrator → Mapper -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#8b5cf6;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #8b5cf6;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">table_headers: list[str], table_rows: list[list[str]], target_year: int</div>
+    <div class="data-detail">Orchestrator calls map_balance_sheet(), map_profit_and_loss(), map_cash_flow(), map_notes_to_other_financial_info() — each with target_year for correct column selection</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- AGENT 5: MAPPER -->
+<!-- ============================================================ -->
+<div class="agent-section">
+  <div class="agent-card agent-mapper">
+    <div class="agent-header">
+      <div class="agent-icon">🗺️</div>
+      <div>
+        <div class="agent-title">Mapper Agent</div>
+        <div class="agent-subtitle">data_mapper.py — Maps extracted row data to Excel template using keyword aliases → ★ LLM (primary) → fuzzy matching (fallback) + 3-way merge</div>
+      </div>
+    </div>
+    <div class="agent-body">
+      <div class="agent-responsibilities">
+        <div class="resp-item"><span class="bullet">→</span> Keyword alias pre-pass (30+ BS, 10+ P&L, 50+ Notes aliases)</div>
+        <div class="resp-item"><span class="bullet">→</span> ★ LLM mapping via map_by_llm() — PRIMARY method</div>
+        <div class="resp-item"><span class="bullet">→</span> Fuzzy matching — FALLBACK only (when LLM unavailable/misses)</div>
+        <div class="resp-item"><span class="bullet">→</span> 3-way merge: alias > LLM > fuzzy (_merge_alias_llm_and_fuzzy)</div>
+        <div class="resp-item"><span class="bullet">→</span> Section-aware scoring (+15 same section, −20 cross-section)</div>
+        <div class="resp-item"><span class="bullet">→</span> Year column auto-detection (_detect_year_column)</div>
+        <div class="resp-item"><span class="bullet">→</span> CF structural matching (Net cash rows in order)</div>
+        <div class="resp-item"><span class="bullet">→</span> CF phrase + anchor alias matching (CID-tolerant)</div>
+        <div class="resp-item"><span class="bullet">→</span> Notes → OFI 4-phase mapping (alias → context → ★ LLM → fuzzy)</div>
+        <div class="resp-item"><span class="bullet">→</span> Parent-child dedup across all 3 sources (alias/LLM/fuzzy)</div>
+        <div class="resp-item"><span class="bullet">→</span> Default zeros for commonly absent items</div>
+        <div class="resp-item"><span class="bullet">→</span> Derived items (residual computation)</div>
+      </div>
+      <div class="annotations">
+        <div class="anno-box why">
+          <div class="anno-label">Why</div>
+          Fuzzy matching measures character similarity but misses semantic equivalence. "Right of use assets" ≈ "Others (NC assets)" — fuzzy score = 0, but LLM understands the accounting context. LLM also handles abbreviations (CWIP, PPE), CID-fragmented text, and section disambiguation that fuzzy cannot.
+        </div>
+        <div class="anno-box how">
+          <div class="anno-label">How</div>
+          Three-tier cascade: (1) keyword aliases for deterministic exact matches, (2) map_by_llm() sends unmapped items + PDF rows to LLM, gets JSON mappings with confidence, (3) fuzzy matching as fallback for anything LLM missed. 3-way merge with priority: alias > LLM > fuzzy. Parent-child dedup across all sources.
+        </div>
+        <div class="anno-box standard">
+          <div class="anno-label">Standard</div>
+          Schedule III defines the exact template structure. Items like "(A) total outstanding dues of micro enterprises and small enterprises" are statutory requirements from MSME Act, Section 15. Keyword aliases encode standard names; LLM handles the non-standard variations.
+        </div>
+      </div>
+
+      <!-- LLM callout — NOW PRIMARY -->
+      <div class="llm-callout" style="border-color: #818cf8; border-style: solid; border-width: 2px;">
+        <div class="llm-icon">🧠</div>
+        <div class="llm-text">
+          <span class="llm-trigger" style="color: #c4b5fd;">★ LLM PRIMARY — map_by_llm():</span>
+          After keyword alias pre-pass, <code>map_by_llm()</code> is called for each statement (BS, P&L, CF, Notes→OFI). It receives unmapped template items (with sections) + all PDF rows (with values and sections), and returns structured JSON mappings. LLM-matched row indices are excluded from the fuzzy fallback pass. Confidence capped at 0.90, method = "llm". <strong>Always enabled</strong> when LLM is available.
+        </div>
+      </div>
+
+      <!-- LLM callout — verification (secondary) -->
+      <div class="llm-callout">
+        <div class="llm-icon">🧠</div>
+        <div class="llm-text">
+          <span class="llm-trigger">LLM SECONDARY — Mapping Verification:</span>
+          When <code>verify_with_llm=True</code>, the Orchestrator calls <code>_verify_mappings_with_llm()</code> which checks only mappings with confidence < 0.7. The LLM can mark mappings as CORRECT or WRONG + suggest the correct template item. Runs AFTER primary mapping is complete.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Handoff: Mapper → Orchestrator (return) -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#8b5cf6;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #8b5cf6;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">list[MappingResult]</div>
+    <div class="data-detail">Each result: template_item, section, pdf_row_label, value, confidence (0-1), method (alias/llm/fuzzy/keyword_alias/structural/notes_alias/derived_residual/default_zero)</div>
+  </div>
+</div>
+
+<!-- Orchestrator internal: Smart Merge -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#f59e0b;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #f59e0b;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">Orchestrator internal: Smart Merge (Notes → CF)</div>
+    <div class="data-detail">Notes values OVERRIDE default_zero CF items (e.g., if CF has Contingent Liabilities = 0 as default, but Notes found actual value, Notes wins). Real CF values are NOT overridden.</div>
+  </div>
+</div>
+
+<!-- Handoff: Orchestrator → Writer -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#ec4899;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #ec4899;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">bs_results, pl_results, cf_results: list[MappingResult], year: int, bs_table, pl_table, cf_table: ExtractedTable</div>
+    <div class="data-detail">Orchestrator passes both mapped results AND raw extracted tables. Writer uses MappingResults for values, ExtractedTables for raw data sheets.</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- AGENT 6: WRITER -->
+<!-- ============================================================ -->
+<div class="agent-section">
+  <div class="agent-card agent-writer">
+    <div class="agent-header">
+      <div class="agent-icon">📊</div>
+      <div>
+        <div class="agent-title">Writer Agent</div>
+        <div class="agent-subtitle">excel_writer.py — Writes mapped data to Excel template with formulas, raw data sheets, and metadata</div>
+      </div>
+    </div>
+    <div class="agent-body">
+      <div class="agent-responsibilities">
+        <div class="resp-item"><span class="bullet">→</span> Write BS values to column C with section-based row finding</div>
+        <div class="resp-item"><span class="bullet">→</span> Write P&L values to column C</div>
+        <div class="resp-item"><span class="bullet">→</span> Write CF + OFI values to column C</div>
+        <div class="resp-item"><span class="bullet">→</span> Apply Excel formulas for computed rows (totals, EBITDA)</div>
+        <div class="resp-item"><span class="bullet">→</span> Apply default zeros for empty cells in known rows</div>
+        <div class="resp-item"><span class="bullet">→</span> Write "Raw BS", "Raw P&L", "Raw CF" sheets (transparency)</div>
+        <div class="resp-item"><span class="bullet">→</span> Write "Meta Data" sheet (extraction stats)</div>
+        <div class="resp-item"><span class="bullet">→</span> Format numbers as #,##0.00</div>
+      </div>
+      <div class="annotations">
+        <div class="anno-box why">
+          <div class="anno-label">Why</div>
+          Formulas ensure computed rows (Total Assets, EBITDA, etc.) auto-calculate from their components. This prevents inconsistencies where an extracted total doesn't match the sum of its parts. Raw data sheets provide auditability.
+        </div>
+        <div class="anno-box how">
+          <div class="anno-label">How</div>
+          Section-based row finding: each MappingResult has a "section" field. The Writer searches within the section's row range first, then falls back to full-column search. Formulas overwrite extracted values in formula rows to prevent double-counting.
+        </div>
+        <div class="anno-box standard">
+          <div class="anno-label">Standard</div>
+          BS formula: Total Assets = NC Assets + Current Assets. P&L formula: EBITDA = PBT + D&A + Finance costs. These follow standard financial analysis definitions used in Indian credit analysis.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Handoff: Writer → Output -->
+<div class="handoff">
+  <div class="handoff-arrow">
+    <div class="arrow-line" style="background:#ec4899;"></div>
+    <div class="arrow-head" style="border-top: 10px solid #ec4899;"></div>
+  </div>
+  <div class="handoff-label">
+    <div class="data-type">Excel file (.xlsx) — 7 sheets</div>
+    <div class="data-detail">Balance Sheet | P&L | Cash Flow | Raw BS | Raw P&L | Raw CF | Meta Data</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- AGENT 7: LLM ASSISTANT -->
+<!-- ============================================================ -->
+<div class="agent-section">
+  <div class="agent-card agent-llm">
+    <div class="agent-header">
+      <div class="agent-icon">🧠</div>
+      <div>
+        <div class="agent-title">LLM Assistant</div>
+        <div class="agent-subtitle">llm_utils.py — On-demand LLM capabilities with retry logic, JSON parsing, and response validation</div>
+      </div>
+    </div>
+    <div class="agent-body">
+      <div class="agent-responsibilities">
+        <div class="resp-item"><span class="bullet">→</span> llm_call_with_retry(): Exponential backoff (2s, 4s, 8s)</div>
+        <div class="resp-item"><span class="bullet">→</span> extract_json_from_response(): 4-parse strategy</div>
+        <div class="resp-item"><span class="bullet">→</span> validate_classification_response(): Type normalization</div>
+        <div class="resp-item"><span class="bullet">→</span> validate_mapping_response(): Structure validation</div>
+        <div class="resp-item"><span class="bullet">→</span> build_table_summary(): Compact table for prompts</div>
+        <div class="resp-item"><span class="bullet">→</span> build_template_items_list(): Template for prompts</div>
+      </div>
+      <div class="annotations">
+        <div class="anno-box why">
+          <div class="anno-label">Why</div>
+          All LLM calls go through this module to ensure consistent error handling, retry behavior, and output parsing. No agent calls the LLM directly — they all use llm_utils functions. This makes LLM usage observable and debuggable.
+        </div>
+        <div class="anno-box how">
+          <div class="anno-label">How</div>
+          JSON extraction uses 4 strategies: (1) direct parse, (2) markdown code block extraction, (3) bracket matching for embedded JSON, (4) common fix (single quotes → double, trailing commas). Retry with exponential backoff: 2s → 4s → 8s.
+        </div>
+        <div class="anno-box standard">
+          <div class="anno-label">Standard</div>
+          LLM is the PRIMARY method for both page finding and mapping. For page ID: find_pages_by_llm() understands non-standard titles, CID-fragmented text, and bilingual headers. For mapping: map_by_llm() understands semantic equivalence, section context, and abbreviations. Deterministic methods serve as validation/fallback. Schedule III enables quick deterministic check (cost savings ~70%) and keyword alias matching; LLM handles the rest.
+        </div>
+      </div>
+
+      <!-- 5 LLM call points -->
+      <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr 1fr 1fr; gap:8px;">
+        <div style="background:#0f172a; border:2px solid #818cf8; border-radius:8px; padding:10px;">
+          <div style="color:#c4b5fd; font-size:10px; font-weight:700; margin-bottom:4px;">★ PRIMARY PAGE ID</div>
+          <div style="color:#a5b4fc; font-size:10px; line-height:1.4;">find_pages_by_llm() called by Page Finder. Sends page snippets, gets page numbers + statement_type. Skipped if quick deterministic check succeeds.</div>
+          <div style="color:#818cf8; font-size:9px; margin-top:4px;">Trigger: ~30% of PDFs (non-standard)</div>
+        </div>
+        <div style="background:#0f172a; border:2px solid #818cf8; border-radius:8px; padding:10px;">
+          <div style="color:#c4b5fd; font-size:10px; font-weight:700; margin-bottom:4px;">★ PRIMARY MAPPING</div>
+          <div style="color:#a5b4fc; font-size:10px; line-height:1.4;">map_by_llm() called by Mapper for BS, P&L, CF, Notes→OFI. Receives unmapped items + PDF rows, returns JSON mappings with confidence.</div>
+          <div style="color:#818cf8; font-size:9px; margin-top:4px;">Trigger: ALWAYS (when LLM available)</div>
+        </div>
+        <div style="background:#0f172a; border:1px solid #4338ca; border-radius:8px; padding:10px;">
+          <div style="color:#818cf8; font-size:10px; font-weight:700; margin-bottom:4px;">① YEAR VERIFICATION</div>
+          <div style="color:#a5b4fc; font-size:10px; line-height:1.4;">Called by Orchestrator for low-confidence year detections. LLM reads first statement page and confirms/corrects the year.</div>
+          <div style="color:#6366f1; font-size:9px; margin-top:4px;">Trigger: 3 of 7 detection methods</div>
+        </div>
+        <div style="background:#0f172a; border:1px solid #4338ca; border-radius:8px; padding:10px;">
+          <div style="color:#818cf8; font-size:10px; font-weight:700; margin-bottom:4px;">② MAPPING VERIFICATION</div>
+          <div style="color:#a5b4fc; font-size:10px; line-height:1.4;">Called by Orchestrator (optional) for low-confidence mappings. LLM reviews mappings with conf < 0.7 and can correct them.</div>
+          <div style="color:#6366f1; font-size:9px; margin-top:4px;">Trigger: After primary mapping</div>
+        </div>
+        <div style="background:#0f172a; border:1px solid #4338ca; border-radius:8px; padding:10px;">
+          <div style="color:#818cf8; font-size:10px; font-weight:700; margin-bottom:4px;">③ STATEMENT TYPE</div>
+          <div style="color:#a5b4fc; font-size:10px; line-height:1.4;">Detected by find_pages_by_llm() in the same call as page ID — zero extra cost. Cross-validated by deterministic keyword scan.</div>
+          <div style="color:#6366f1; font-size:9px; margin-top:4px;">Trigger: With page ID (~30% of PDFs)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- AGENTIC PATTERNS -->
+<!-- ============================================================ -->
+<div class="pattern-section">
+  <h2>🧩 Agentic Patterns Used</h2>
+  <div class="pattern-grid">
+
+    <div class="pattern-card" style="border-left-color: #f59e0b;">
+      <h3 style="color: #fbbf24;">🎯 Orchestration Pattern</h3>
+      <p>A single Orchestrator agent coordinates all other agents. It knows the full pipeline but executes no domain logic itself. Each agent is independently testable with clear input/output contracts.</p>
+      <div class="pattern-example">SmartExtractionAgent.run() calls find_financial_statements(), extract_table_from_pages(), map_balance_sheet(), write_all_sheets() — but never parses a PDF line or matches a keyword itself.</div>
+    </div>
+
+    <div class="pattern-card" style="border-left-color: #10b981;">
+      <h3 style="color: #34d399;">🔄 LLM-First with Deterministic Validation</h3>
+      <p>LLM is the PRIMARY method for both page finding and mapping. Deterministic approaches serve as validation/fallback. For page finding: quick deterministic check (cost optimization) → LLM page ID (primary) → deterministic validation. For mapping: keyword aliases → LLM mapping (primary) → fuzzy matching (fallback). This ensures highest accuracy while maintaining cost efficiency.</p>
+      <div class="pattern-example">Page Finder: quick_det_check → ★ find_pages_by_llm() → _validate_with_deterministic(). Mapper: keyword aliases → ★ map_by_llm() → fuzzy matching (fallback). Statement type: LLM-detected with page ID → cross-validated by keyword scan.</div>
+    </div>
+
+    <div class="pattern-card" style="border-left-color: #6366f1;">
+      <h3 style="color: #818cf8;">🧠 LLM as Primary Mapper, Fuzzy as Fallback</h3>
+      <p>The LLM is the PRIMARY mapping method after keyword aliases. It understands semantic equivalence ("Right of use assets" ≈ "Others"), section context, and abbreviations that fuzzy matching misses. Fuzzy matching is the fallback — only used when LLM is unavailable or returns no results for an item.</p>
+      <div class="pattern-example">BS mapping: alias finds "CWIP" → "(b) Capital work-in-progress". LLM finds "Right of use assets" → "(iv) Others (NC assets)" (fuzzy score would be 0). Fuzzy catches any remaining items LLM missed. 3-way merge: alias > LLM > fuzzy.</div>
+    </div>
+
+    <div class="pattern-card" style="border-left-color: #3b82f6;">
+      <h3 style="color: #60a5fa;">📐 Section-Aware Disambiguation</h3>
+      <p>The same label can appear in multiple sections (e.g., "Borrowings" in both NC and Current liabilities). Agents use section context to disambiguate: the Extractor tracks sections, the Mapper uses section-aware scoring, the Writer searches within section row ranges.</p>
+      <div class="pattern-example">Mapper: +15 bonus for same-section match, −20 penalty for cross-section. Writer: searches NC liabilities rows (42-50) before Current liabilities rows (53-59) for NC "Borrowings".</div>
+    </div>
+
+    <div class="pattern-card" style="border-left-color: #ec4899;">
+      <h3 style="color: #f472b6;">🔀 Smart Merge with Override</h3>
+      <p>When multiple sources provide values for the same template item, the Orchestrator applies intelligent merge logic: Notes values override default_zero items but NOT real extracted values. This ensures the most specific data wins.</p>
+      <div class="pattern-example">CF has "Contingent Liabilities = 0" (default_zero). Notes extraction finds "Contingent Liabilities = 2,315.59" (notes_alias). Smart merge: Notes value wins → 2,315.59. But if CF had a real extracted value, it would be kept.</div>
+    </div>
+
+    <div class="pattern-card" style="border-left-color: #06b6d4;">
+      <h3 style="color: #22d3ee;">📊 Progress Reporting</h3>
+      <p>The Orchestrator reports progress at each step via a callback function. This enables real-time UI updates without coupling the agents to the web interface. Agents don't know about HTTP or SSE — they just call the callback.</p>
+      <div class="pattern-example">_report_progress("Extracting Balance Sheet", "active", 0, "Extracting from pages [5, 6]...") → callback → SSE event → browser progress bar update.</div>
+    </div>
+
+    <div class="pattern-card" style="border-left-color: #8b5cf6;">
+      <h3 style="color: #a78bfa;">🏷️ Two-Pass Optimal Assignment</h3>
+      <p>The Mapper collects ALL candidates before assigning any. This prevents greedy first-come-first-served mismatches. Candidates are sorted by adjusted score (fuzzy + section bonus) and assigned optimally — the best match always wins.</p>
+      <div class="pattern-example">"Borrowings" appears in both NC and Current sections. Without two-pass, the first "Borrowings" might steal the NC template slot. With two-pass, section-aware scoring ensures NC "Borrowings" → NC template, Current "Borrowings" → Current template.</div>
+    </div>
+
+    <div class="pattern-card" style="border-left-color: #ef4444;">
+      <h3 style="color: #f87171;">🛡️ Formula Row Protection</h3>
+      <p>Template items that are computed by Excel formulas (totals, subtotals, EBITDA) are NEVER mapped from extracted data. The Mapper skips them, and the Writer overwrites them with formulas. This prevents double-counting.</p>
+      <div class="pattern-example">BS: "(h) Financial Assets" is a formula row = sum of (i)+(ii)+(iii)+(iv). If the Mapper mapped a PDF value here AND to the sub-items, the Writer's SUM formula would double-count. FORMULA_TEMPLATE_ITEMS set prevents this.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- DATA FLOW SUMMARY TABLE -->
+<!-- ============================================================ -->
+<div class="pattern-section">
+  <h2>📦 Data Handoff Summary</h2>
+  <div style="overflow-x: auto;">
+    <table style="width:100%; border-collapse:collapse; font-size:12px;">
+      <thead>
+        <tr style="background:#0f172a;">
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">Step</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">From Agent</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">To Agent</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">Data Passed</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">Data Structure</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#06b6d4;">1</td>
+          <td style="padding:8px 12px; color:#06b6d4;">API Layer</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">pdf_path, template_path, output_path, year</td>
+          <td style="padding:8px 12px; color:#64748b;">str, str, str, Optional[int]</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#10b981;">2</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#10b981;">Page Finder</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">pdf_path, llm, use_llm</td>
+          <td style="padding:8px 12px; color:#64748b;">str, ChatOpenAI, bool</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#10b981;">2R</td>
+          <td style="padding:8px 12px; color:#10b981;">Page Finder</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">FinancialStatementPages</td>
+          <td style="padding:8px 12px; color:#64748b;">bs: [int], pl: [int], cf: [int], notes: [int], statement_type: str, method, confidence</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#3b82f6;">3</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#3b82f6;">Extractor</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">pdf, page_numbers, statement_type</td>
+          <td style="padding:8px 12px; color:#64748b;">pdfplumber.PDF, list[int], str</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#3b82f6;">3R</td>
+          <td style="padding:8px 12px; color:#3b82f6;">Extractor</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">ExtractedTable (×4: BS, P&L, CF, Notes)</td>
+          <td style="padding:8px 12px; color:#64748b;">rows: [ExtractedRow], year_headers, unit</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#f59e0b;">3.5</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator (internal)</td>
+          <td style="padding:8px 12px; color:#f59e0b;">—</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">Convert ExtractedTable → tabular format</td>
+          <td style="padding:8px 12px; color:#64748b;">headers: [str], rows: [[str]] with Section column</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#8b5cf6;">4</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#8b5cf6;">Mapper</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">headers, rows, target_year, llm</td>
+          <td style="padding:8px 12px; color:#64748b;">list[str], list[[str]], int, ChatOpenAI</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#8b5cf6;">4R</td>
+          <td style="padding:8px 12px; color:#8b5cf6;">Mapper</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">list[MappingResult] (×4: BS, P&L, CF, Notes→OFI)</td>
+          <td style="padding:8px 12px; color:#64748b;">template_item, section, value, confidence, method</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#f59e0b;">4.5</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator (internal)</td>
+          <td style="padding:8px 12px; color:#f59e0b;">—</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">Apply default zeros, derived items, smart merge</td>
+          <td style="padding:8px 12px; color:#64748b;">Extends MappingResult lists</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#ec4899;">5</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#ec4899;">Writer</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">bs/pl/cf results, year, bs/pl/cf tables</td>
+          <td style="padding:8px 12px; color:#64748b;">list[MappingResult], int, ExtractedTable</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px; color:#64748b;">6</td>
+          <td style="padding:8px 12px; color:#ec4899;">Writer</td>
+          <td style="padding:8px 12px; color:#64748b;">Output</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">Excel file (.xlsx)</td>
+          <td style="padding:8px 12px; color:#64748b;">7 sheets: BS, P&L, CF, Raw BS, Raw P&L, Raw CF, Meta Data</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LLM INVOCATION DETAIL -->
+<!-- ============================================================ -->
+<div class="pattern-section">
+  <h2>🧠 LLM Invocation Detail</h2>
+  <div style="overflow-x: auto;">
+    <table style="width:100%; border-collapse:collapse; font-size:12px;">
+      <thead>
+        <tr style="background:#0f172a;">
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">#</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">Call Point</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">Caller</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">Trigger Condition</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">Input to LLM</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">Expected Output</th>
+          <th style="padding:10px 12px; text-align:left; color:#94a3b8; border-bottom:1px solid #334155;">Frequency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #1e293b; background:#1e1b4b;">
+          <td style="padding:8px 12px; color:#c4b5fd; font-weight:700;">★</td>
+          <td style="padding:8px 12px; color:#e2e8f0; font-weight:600;">Primary Page ID (find_pages_by_llm)</td>
+          <td style="padding:8px 12px; color:#10b981;">Page Finder</td>
+          <td style="padding:8px 12px; color:#34d399;">Quick deterministic check incomplete or low confidence</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">Text snippets from sampled pages + optional deterministic hints (found pages, missing statements)</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">JSON: {balance_sheet: [pg], profit_and_loss: [pg], cash_flow: [pg], statement_type: "Standalone"|"Consolidated"}</td>
+          <td style="padding:8px 12px; color:#818cf8; font-weight:600;">~30% of PDFs (non-standard)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b; background:#1e1b4b;">
+          <td style="padding:8px 12px; color:#c4b5fd; font-weight:700;">★</td>
+          <td style="padding:8px 12px; color:#e2e8f0; font-weight:600;">Primary Mapping (map_by_llm)</td>
+          <td style="padding:8px 12px; color:#8b5cf6;">Mapper</td>
+          <td style="padding:8px 12px; color:#34d399;">ALWAYS — after alias pre-pass, before fuzzy fallback</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">Unmapped template items (with sections) + PDF rows (with values + sections) + already_mapped items + exclude_row_indices</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">JSON: {mappings: [{template_item, row_number, value, confidence}]}</td>
+          <td style="padding:8px 12px; color:#818cf8; font-weight:600;">4× per PDF (BS, P&L, CF, Notes)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#818cf8;">①</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">Year Verification</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#fbbf24;">Year from low-confidence method (single_year, fy_prefix, default_current)</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">First 1500 chars of first financial statement page + detected year</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">JSON: {year: int, confidence: "high"|"medium"|"low", reasoning: str}</td>
+          <td style="padding:8px 12px; color:#6366f1;">3 of 7 methods</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1e293b;">
+          <td style="padding:8px 12px; color:#818cf8;">②</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">Mapping Verification</td>
+          <td style="padding:8px 12px; color:#f59e0b;">Orchestrator</td>
+          <td style="padding:8px 12px; color:#fbbf24;">verify_with_llm=True AND mappings with confidence < 0.7 exist</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">Extracted rows summary + low-confidence mapping list</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">CORRECT|item|conf OR WRONG|item|correct_item</td>
+          <td style="padding:8px 12px; color:#6366f1;">After primary mapping</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px; color:#818cf8;">③</td>
+          <td style="padding:8px 12px; color:#e2e8f0;">Statement Type Detection</td>
+          <td style="padding:8px 12px; color:#10b981;">Page Finder</td>
+          <td style="padding:8px 12px; color:#34d399;">Detected in same LLM call as page ID (zero extra cost)</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">Same page snippets as find_pages_by_llm()</td>
+          <td style="padding:8px 12px; color:#cbd5e1;">Included in page ID JSON: statement_type field. Cross-validated by deterministic keyword scan.</td>
+          <td style="padding:8px 12px; color:#6366f1;">With page ID (~30% of PDFs)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+</body>
+</html>

@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EWS — Functional Design Document</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2b6cb0;
+            --accent: #3182ce;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --warning: #d69e2e;
+            --danger: #e53e3e;
+            --code-bg: #edf2f7;
+            --llm: #805ad5;
+            --det: #2b6cb0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 260px;
+            height: 100vh;
+            background: var(--primary);
+            color: #fff;
+            overflow-y: auto;
+            z-index: 100;
+            padding: 24px 0;
+        }
+        .sidebar h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #90cdf4;
+            padding: 0 24px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 12px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 8px 24px;
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+        .sidebar a:hover {
+            background: rgba(255,255,255,0.08);
+            border-left-color: var(--accent);
+            color: #fff;
+        }
+        .sidebar a.sub { padding-left: 36px; font-size: 12px; color: #a0aec0; }
+        .sidebar a.sub2 { padding-left: 48px; font-size: 11px; color: #8a9ab5; }
+        .main {
+            margin-left: 260px;
+            padding: 40px 48px;
+            max-width: 1020px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            padding: 48px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(26,54,93,0.3);
+        }
+        .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { font-size: 16px; opacity: 0.85; }
+        .header .meta { margin-top: 20px; display: flex; gap: 32px; font-size: 13px; opacity: 0.7; }
+        .header .meta span { display: flex; align-items: center; gap: 6px; }
+        h2 {
+            font-size: 22px;
+            color: var(--primary);
+            margin: 48px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+        }
+        h3 { font-size: 17px; color: var(--secondary); margin: 28px 0 12px; }
+        h4 { font-size: 14px; color: var(--text); margin: 20px 0 8px; font-weight: 600; }
+        p { margin-bottom: 12px; }
+        ul, ol { margin: 8px 0 16px 24px; }
+        li { margin-bottom: 6px; }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 16px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .card-grid .card { margin: 0; }
+        .card h4 { margin-top: 0; color: var(--secondary); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 13px;
+        }
+        th {
+            background: var(--primary);
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+        tr:nth-child(even) td { background: #f7fafc; }
+        tr:hover td { background: #ebf8ff; }
+        code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 12px;
+            color: var(--secondary);
+        }
+        pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        pre code { background: none; color: inherit; padding: 0; }
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge-green { background: #c6f6d5; color: #22543d; }
+        .badge-yellow { background: #fefcbf; color: #744210; }
+        .badge-red { background: #fed7d7; color: #822727; }
+        .badge-blue { background: #bee3f8; color: #2a4365; }
+        .badge-gray { background: #e2e8f0; color: #4a5568; }
+        .badge-llm { background: #e9d8fd; color: #44337a; }
+        .badge-purple { background: #e9d8fd; color: #44337a; }
+        .badge-det { background: #bee3f8; color: #2a4365; }
+        .note {
+            background: #ebf8ff;
+            border-left: 4px solid var(--accent);
+            padding: 14px 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .note strong { color: var(--secondary); }
+        .warning {
+            background: #fffff0;
+            border-left: 4px solid var(--warning);
+            padding: 14px 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .definition {
+            background: #f0fff4;
+            border-left: 4px solid var(--success);
+            padding: 14px 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .definition em { color: var(--success); font-weight: 600; }
+        .toc-num { color: var(--accent); font-weight: 600; margin-right: 6px; }
+
+        /* Flowchart styles */
+        .flowchart-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .flowchart-container svg { display: block; margin: 0 auto; }
+        .fc-label { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12px; fill: #2d3748; }
+        .fc-label-white { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12px; fill: #fff; font-weight: 600; }
+        .fc-label-sm { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 10px; fill: #718096; }
+        .fc-label-badge { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 9px; fill: #fff; font-weight: 700; }
+
+        /* Case table */
+        .case-table { margin: 12px 0 20px; }
+        .case-table td:first-child { font-weight: 600; white-space: nowrap; width: 140px; color: var(--secondary); }
+
+        @media print {
+            .sidebar { display: none; }
+            .main { margin-left: 0; padding: 20px; }
+        }
+        @media (max-width: 900px) {
+            .sidebar { display: none; }
+            .main { margin-left: 0; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="sidebar">
+    <h2>Navigation</h2>
+    <a href="#sec1">1. Introduction</a>
+    <a href="#sec2">2. System Overview</a>
+    <a href="#sec3">3. Pipeline Flowchart</a>
+    <a href="#sec4">4. Step Definitions & Cases</a>
+    <a href="#sec4a" class="sub">4.1 Find Pages</a>
+    <a href="#sec4a1" class="sub2">4.1.1 Title Pattern Matching</a>
+    <a href="#sec4a2" class="sub2">4.1.2 ★ LLM Primary Page ID</a>
+    <a href="#sec4a3" class="sub2">4.1.3 Notes Detection</a>
+    <a href="#sec4b" class="sub">4.2 Detect Year</a>
+    <a href="#sec4b1" class="sub2">4.2.1 Filename Patterns</a>
+    <a href="#sec4b2" class="sub2">4.2.2 Page Text Scan</a>
+    <a href="#sec4b3" class="sub2">4.2.3 LLM Verification</a>
+    <a href="#sec4c" class="sub">4.3 Statement Type</a>
+    <a href="#sec4c1" class="sub2">4.3.1 Page Filtering</a>
+    <a href="#sec4c2" class="sub2">4.3.2 Type Detection</a>
+    <a href="#sec4c3" class="sub2">4.3.3 Why Standalone First</a>
+    <a href="#sec4d" class="sub">4.4 Table Extraction</a>
+    <a href="#sec4e" class="sub">4.5 Data Mapping</a>
+    <a href="#sec4e1" class="sub2">4.5.1 BS & P&L Mapping</a>
+    <a href="#sec4e2" class="sub2">4.5.2 Cash Flow Mapping</a>
+    <a href="#sec4e3" class="sub2">4.5.3 Notes → OFI</a>
+    <a href="#sec4e4" class="sub2">4.5.4 Default Zeros & Derived</a>
+    <a href="#sec4f" class="sub">4.6 Excel Output</a>
+    <a href="#sec5">5. API Specification</a>
+    <a href="#sec6">6. Input / Output Specs</a>
+    <a href="#sec7">7. LLM Usage Policy</a>
+    <a href="#sec8">8. Error Handling</a>
+    <a href="#sec9">9. Glossary</a>
+    <a href="#sec10">10. Indian Financial Reporting Standards</a>
+    <a href="#sec10a" class="sub">10.1 Schedule III — Companies Act, 2013</a>
+    <a href="#sec10b" class="sub">10.2 Ind AS — Indian Accounting Standards</a>
+    <a href="#sec10c" class="sub">10.3 Standards → System Alignment</a>
+    <a href="#sec10d" class="sub">10.4 Why LLM-First Works</a>
+</nav>
+
+<div class="main">
+
+<!-- HEADER -->
+<div class="header">
+    <h1>EWS Annual Report Extraction Agent</h1>
+    <div class="subtitle">Functional Design Document (FDD)</div>
+    <div class="meta">
+        <span>📄 Version 1.0</span>
+        <span>📅 June 2026</span>
+        <span>👤 EWS Team</span>
+    </div>
+</div>
+
+<!-- 1. INTRODUCTION -->
+<h2 id="sec1"><span class="toc-num">1</span> Introduction</h2>
+
+<h3>1.1 Purpose</h3>
+<p>This document defines the functional design of the <strong>EWS Annual Report Extraction Agent</strong> — a system that automatically extracts structured financial data from Indian annual report PDFs and populates a predefined Excel template with Balance Sheet, Profit & Loss, and Cash Flow data.</p>
+
+<h3>1.2 Design Philosophy</h3>
+<div class="card">
+    <p><strong>LLM-first, deterministic-validation architecture</strong> — the system uses the on-prem LLM (Qwen2.5-7B-Instruct) as the primary method for page identification, statement type detection, and data mapping. Deterministic algorithms (pattern matching, fuzzy string matching, text parsing) serve as validation and fallback, ensuring robustness when LLM is unavailable.</p>
+</div>
+
+<div class="definition">
+    <em>Definition — LLM-first:</em> An architecture where the LLM is the primary processing path for critical decisions (page identification, statement type detection, data mapping). Deterministic methods validate and supplement LLM results, catching errors and expanding coverage. A quick deterministic check skips the LLM call when standard titles find all statements (~70% of cases), optimising cost.
+</div>
+
+<div class="definition">
+    <em>Definition — Deterministic-validation:</em> Deterministic algorithms serve as <strong>validation</strong> (cross-checking LLM results, expanding continuation pages) and <strong>fallback</strong> (when LLM is unavailable or returns invalid results). They are NOT the primary method — they ensure the LLM's probabilistic output is grounded in rule-based verification.
+</div>
+
+<!-- 2. SYSTEM OVERVIEW -->
+<h2 id="sec2"><span class="toc-num">2</span> System Overview</h2>
+
+<h3>2.1 Technology Stack</h3>
+<table>
+    <tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr>
+    <tr><td>Web Framework</td><td>FastAPI + Uvicorn</td><td>REST API + async background tasks</td></tr>
+    <tr><td>PDF Parsing</td><td>pdfplumber</td><td>Text extraction (gridless tables)</td></tr>
+    <tr><td>Fuzzy Matching</td><td>rapidfuzz</td><td>Token-sort ratio for label matching</td></tr>
+    <tr><td>Excel Output</td><td>openpyxl</td><td>Template writing + formulas</td></tr>
+    <tr><td>LLM</td><td>Qwen2.5-7B-Instruct (on-prem)</td><td>★ Primary page ID + mapping + year verification</td></tr>
+    <tr><td>Frontend</td><td>Vanilla HTML/CSS/JS</td><td>Drag-and-drop upload UI</td></tr>
+</table>
+
+<h3>2.2 Project Structure</h3>
+<pre><code>EWS/
+├── app.py                        # FastAPI application
+├── ews_agent/
+│   ├── smart_agent.py            # Main orchestrator (7-step pipeline)
+│   ├── table_finder.py           # Page identification
+│   ├── text_table_extractor.py   # Deterministic text parsing
+│   ├── data_mapper.py            # Mapping engine (fuzzy + aliases)
+│   ├── excel_writer.py           # Excel output
+│   └── llm_utils.py             # LLM utility
+├── static/index.html             # Web UI
+├── Entities for extraction.xlsx  # Excel template
+├── FDD.html                      # This document
+└── METHODOLOGY.md                # Detailed methodology</code></pre>
+
+<!-- 3. PIPELINE FLOWCHART -->
+<h2 id="sec3"><span class="toc-num">3</span> Pipeline Flowchart</h2>
+
+<p>The following flowchart shows the complete 7-step extraction pipeline with the <strong>LLM-first architecture</strong> — LLM is primary for page identification, statement type detection, and data mapping; deterministic methods validate and supplement:</p>
+
+<div class="flowchart-container">
+<svg width="720" height="960" viewBox="0 0 720 960">
+    <!-- Step 1a: Quick Deterministic Check -->
+    <rect x="220" y="10" width="280" height="50" rx="8" fill="#2b6cb0"/>
+    <text x="360" y="32" text-anchor="middle" class="fc-label-white">Step 1a: Quick Det Check</text>
+    <text x="360" y="48" text-anchor="middle" class="fc-label-badge">TITLE-AREA SCAN · COST OPTIMISATION</text>
+
+    <!-- Diamond: All 3 found + standard? -->
+    <polygon points="360,80 470,120 360,160 250,120" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="360" y="118" text-anchor="middle" class="fc-label">All 3 found</text>
+    <text x="360" y="130" text-anchor="middle" class="fc-label">+ standard?</text>
+
+    <!-- Yes → Skip LLM (~70%) -->
+    <line x1="470" y1="120" x2="560" y2="120" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="500" y="114" class="fc-label-sm" fill="#38a169">Yes (~70%)</text>
+    <rect x="560" y="100" width="130" height="40" rx="6" fill="#38a169"/>
+    <text x="625" y="117" text-anchor="middle" class="fc-label-white">Skip LLM ✓</text>
+    <text x="625" y="131" text-anchor="middle" class="fc-label-badge">quick_deterministic</text>
+
+    <!-- No → LLM Primary -->
+    <line x1="360" y1="160" x2="360" y2="190" stroke="#805ad5" stroke-width="2" marker-end="url(#arrowPurple)"/>
+    <text x="370" y="178" class="fc-label-sm" fill="#805ad5">No (~30%)</text>
+
+    <!-- Step 1b: ★ LLM Page ID (PRIMARY) -->
+    <rect x="220" y="190" width="280" height="50" rx="8" fill="#805ad5"/>
+    <text x="360" y="212" text-anchor="middle" class="fc-label-white">Step 1b: ★ LLM Page ID</text>
+    <text x="360" y="228" text-anchor="middle" class="fc-label-badge">PRIMARY · PAGES + STATEMENT TYPE</text>
+
+    <line x1="360" y1="240" x2="360" y2="270" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Step 1c: Det Validation (SECONDARY) -->
+    <rect x="220" y="270" width="280" height="50" rx="8" fill="#2b6cb0"/>
+    <text x="360" y="292" text-anchor="middle" class="fc-label-white">Step 1c: Det Validation</text>
+    <text x="360" y="308" text-anchor="middle" class="fc-label-badge">SECONDARY · MERGE + EXPAND + CROSS-CHECK</text>
+
+    <line x1="360" y1="320" x2="360" y2="350" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Step 2: Detect Year -->
+    <rect x="240" y="350" width="240" height="50" rx="8" fill="#2b6cb0"/>
+    <text x="360" y="372" text-anchor="middle" class="fc-label-white">Step 2: Detect Year</text>
+    <text x="360" y="388" text-anchor="middle" class="fc-label-badge">5 FILENAME PATTERNS</text>
+
+    <!-- Diamond: High confidence? -->
+    <polygon points="360,420 460,455 360,490 260,455" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="360" y="459" text-anchor="middle" class="fc-label">High conf?</text>
+
+    <!-- LLM Verify branch -->
+    <rect x="500" y="435" width="180" height="40" rx="6" fill="#805ad5"/>
+    <text x="590" y="453" text-anchor="middle" class="fc-label-white">LLM Verify Year</text>
+    <text x="590" y="467" text-anchor="middle" class="fc-label-badge">★ LLM</text>
+    <line x1="460" y1="455" x2="500" y2="455" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+    <text x="475" y="449" class="fc-label-sm" fill="#805ad5">Low</text>
+
+    <!-- Yes arrow down -->
+    <line x1="360" y1="490" x2="360" y2="520" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="370" y="508" class="fc-label-sm" fill="#38a169">High</text>
+
+    <!-- Step 2b: Statement Type -->
+    <rect x="220" y="520" width="280" height="50" rx="8" fill="#805ad5"/>
+    <text x="360" y="542" text-anchor="middle" class="fc-label-white">Step 2b: ★ LLM-Detected Type</text>
+    <text x="360" y="558" text-anchor="middle" class="fc-label-badge">WITH PAGE ID + DET CROSS-VALIDATION</text>
+
+    <line x1="360" y1="570" x2="360" y2="600" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Step 3: Extract Tables -->
+    <rect x="240" y="600" width="240" height="50" rx="8" fill="#2b6cb0"/>
+    <text x="360" y="622" text-anchor="middle" class="fc-label-white">Step 3: Extract Tables</text>
+    <text x="360" y="638" text-anchor="middle" class="fc-label-badge">PDFPLUMBER TEXT PARSING</text>
+
+    <line x1="360" y1="650" x2="360" y2="680" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Step 3b: Extract Notes -->
+    <rect x="240" y="680" width="240" height="50" rx="8" fill="#2b6cb0"/>
+    <text x="360" y="702" text-anchor="middle" class="fc-label-white">Step 3b: Extract Notes</text>
+    <text x="360" y="718" text-anchor="middle" class="fc-label-badge">ALL LINES PARSED</text>
+
+    <line x1="360" y1="730" x2="360" y2="760" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Step 4: Map to Template -->
+    <rect x="220" y="760" width="280" height="50" rx="8" fill="#805ad5"/>
+    <text x="360" y="782" text-anchor="middle" class="fc-label-white">Step 4: ★ Map to Template</text>
+    <text x="360" y="798" text-anchor="middle" class="fc-label-badge">ALIAS → LLM (PRIMARY) → FUZZY · 3-WAY MERGE</text>
+
+    <line x1="360" y1="810" x2="360" y2="840" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Step 4b-d: Notes + Defaults + Derived -->
+    <rect x="220" y="840" width="280" height="50" rx="8" fill="#2b6cb0"/>
+    <text x="360" y="862" text-anchor="middle" class="fc-label-white">Steps 4b-d: Notes OFI + Defaults + Derived</text>
+    <text x="360" y="878" text-anchor="middle" class="fc-label-badge">3-PHASE + SMART MERGE + RESIDUAL</text>
+
+    <line x1="360" y1="890" x2="360" y2="920" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Step 5: Write Excel -->
+    <rect x="240" y="920" width="240" height="50" rx="8" fill="#2b6cb0"/>
+    <text x="360" y="942" text-anchor="middle" class="fc-label-white">Step 5: Write Excel</text>
+    <text x="360" y="958" text-anchor="middle" class="fc-label-badge">7 SHEETS + FORMULAS</text>
+
+    <!-- Arrow markers -->
+    <defs>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#2b6cb0"/>
+        </marker>
+        <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#805ad5"/>
+        </marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#38a169"/>
+        </marker>
+    </defs>
+
+    <!-- Legend -->
+    <rect x="20" y="920" width="16" height="16" rx="3" fill="#805ad5"/>
+    <text x="42" y="933" class="fc-label">★ LLM-primary step</text>
+    <rect x="20" y="940" width="16" height="16" rx="3" fill="#2b6cb0"/>
+    <text x="42" y="953" class="fc-label">Deterministic step (validation/extraction)</text>
+</svg>
+</div>
+
+<!-- 4. STEP DEFINITIONS & CASES -->
+<h2 id="sec4"><span class="toc-num">4</span> Step Definitions & Cases</h2>
+
+<p>Each step below includes: <strong>definition</strong>, <strong>flowchart with decision branches</strong>, and <strong>case tables</strong> describing what happens in each scenario.</p>
+
+<!-- 4.1 FIND PAGES -->
+<h3 id="sec4a">4.1 Step 1 — Find Financial Statement Pages</h3>
+
+<div class="definition">
+    <em>Definition — Find Pages:</em> The process of scanning every page of a PDF to identify which pages contain the Balance Sheet, Statement of Profit & Loss, and Cash Flow Statement. This is the most critical step — wrong pages lead to wrong data extraction.
+</div>
+
+<div class="definition">
+    <em>Definition — Title Pattern:</em> A regex pattern that matches the title of a financial statement (e.g., <code>balance\s+sheet</code>, <code>statement\s+of\s+profit</code>). Patterns are applied in two tiers: strict (Pass 1) and lenient with context (Pass 2).
+</div>
+
+<div class="definition">
+    <em>Definition — Line-by-line Validation:</em> A filter that ensures a pattern match is a <strong>title</strong> (not a reference like "see the Balance Sheet on page 47"). A match is a title if it starts within the first 5 chars, the line is ≤ 70 chars, or the match is within the first 40% of the line.
+</div>
+
+<!-- Flowchart for Step 1 (LLM-First) -->
+<div class="flowchart-container">
+<svg width="680" height="560" viewBox="0 0 680 560">
+    <!-- Step 1a: Quick Deterministic Check -->
+    <rect x="180" y="10" width="320" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="30" text-anchor="middle" class="fc-label-white">1a: Quick Deterministic Check</text>
+    <text x="340" y="44" text-anchor="middle" class="fc-label-badge">TITLE-AREA SCAN (PASS 1 ONLY) · COST OPT</text>
+
+    <line x1="340" y1="54" x2="340" y2="80" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Diamond: All 3 found + standard titles? -->
+    <polygon points="340,80 450,120 340,160 230,120" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="340" y="118" text-anchor="middle" class="fc-label">All 3 found</text>
+    <text x="340" y="130" text-anchor="middle" class="fc-label">+ standard?</text>
+
+    <!-- Yes → Done (skip LLM) -->
+    <line x1="450" y1="120" x2="560" y2="120" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="490" y="114" class="fc-label-sm" fill="#38a169">Yes (~70%)</text>
+    <rect x="560" y="100" width="100" height="40" rx="6" fill="#38a169"/>
+    <text x="610" y="119" text-anchor="middle" class="fc-label-white">Done ✓</text>
+    <text x="610" y="133" text-anchor="middle" class="fc-label-badge">quick_deterministic</text>
+
+    <!-- No → LLM Primary -->
+    <line x1="340" y1="160" x2="340" y2="190" stroke="#805ad5" stroke-width="2" marker-end="url(#arrowPurple)"/>
+    <text x="350" y="178" class="fc-label-sm" fill="#805ad5">No (~30%)</text>
+
+    <!-- Step 1b: ★ LLM Page ID (PRIMARY) -->
+    <rect x="180" y="190" width="320" height="44" rx="8" fill="#805ad5"/>
+    <text x="340" y="210" text-anchor="middle" class="fc-label-white">1b: ★ LLM Page Identification</text>
+    <text x="340" y="224" text-anchor="middle" class="fc-label-badge">PRIMARY · PAGES + STATEMENT TYPE IN ONE CALL</text>
+
+    <line x1="340" y1="234" x2="340" y2="260" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+    <!-- Diamond: LLM returned results? -->
+    <polygon points="340,260 440,295 340,330 240,295" fill="#edf2f7" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="340" y="299" text-anchor="middle" class="fc-label">LLM results?</text>
+
+    <!-- No → Deterministic fallback -->
+    <line x1="240" y1="295" x2="100" y2="295" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#arrowYellow)"/>
+    <text x="180" y="289" class="fc-label-sm" fill="#d69e2e">No/Invalid</text>
+    <rect x="10" y="275" width="110" height="40" rx="6" fill="#d69e2e"/>
+    <text x="65" y="292" text-anchor="middle" class="fc-label-white">Det Fallback</text>
+    <text x="65" y="306" text-anchor="middle" class="fc-label-badge">3-PASS DET ONLY</text>
+
+    <!-- Yes → Deterministic Validation -->
+    <line x1="340" y1="330" x2="340" y2="358" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="350" y="348" class="fc-label-sm" fill="#38a169">Yes</text>
+
+    <!-- Step 1c: Deterministic Validation (SECONDARY) -->
+    <rect x="180" y="358" width="320" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="378" text-anchor="middle" class="fc-label-white">1c: Deterministic Validation</text>
+    <text x="340" y="392" text-anchor="middle" class="fc-label-badge">SECONDARY · FULL 3-PASS + MERGE + EXPAND</text>
+
+    <line x1="340" y1="402" x2="340" y2="430" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Merge box -->
+    <rect x="180" y="430" width="320" height="44" rx="8" fill="#1a365d"/>
+    <text x="340" y="450" text-anchor="middle" class="fc-label-white">Merge: LLM ∪ Deterministic (union)</text>
+    <text x="340" y="464" text-anchor="middle" class="fc-label-badge">EXPAND CONTINUATIONS · CROSS-VALIDATE TYPE</text>
+
+    <line x1="340" y1="474" x2="340" y2="502" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+    <!-- Result -->
+    <rect x="220" y="502" width="240" height="44" rx="8" fill="#38a169"/>
+    <text x="340" y="522" text-anchor="middle" class="fc-label-white">FinancialStatementPages ✓</text>
+    <text x="340" y="536" text-anchor="middle" class="fc-label-badge">llm_primary_validated</text>
+
+    <defs>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#38a169"/>
+        </marker>
+        <marker id="arrowYellow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#d69e2e"/>
+        </marker>
+    </defs>
+</svg>
+</div>
+
+<h4 id="sec4a1">4.1.1 Title Pattern Matching — Cases</h4>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th><th>Example</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>Strict pattern match in first 10 lines, line-by-line validation passes</td>
+        <td><span class="badge badge-green">Pass 1 Hit</span> Page added to statement list</td>
+        <td><code>"Balance Sheet"</code> on line 2</td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>Strict pattern match but line-by-line validation fails (match too far into line)</td>
+        <td><span class="badge badge-yellow">Pass 1 Miss</span> Rejected as reference, not title</td>
+        <td><code>"Refer to the Balance Sheet on page 47"</code></td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>Lenient pattern match with context (e.g., "Standalone" prefix or "As at" suffix)</td>
+        <td><span class="badge badge-blue">Pass 2 Hit</span> Page added after context verification</td>
+        <td><code>"Standalone Balance Sheet as at March 31"</code></td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td>No title match but page has high content score (≥ 0.3)</td>
+        <td><span class="badge badge-yellow">Pass 3 Hit</span> Page added based on content analysis</td>
+        <td>Page with BS numeric data but no clear title</td>
+    </tr>
+    <tr>
+        <td>Case E</td>
+        <td>Company name prefixed before title</td>
+        <td><span class="badge badge-green">Pass 1 Hit</span> Match within first 40% of line</td>
+        <td><code>"Rajesh Exports Ltd Balance Sheet"</code></td>
+    </tr>
+    <tr>
+        <td>Case F</td>
+        <td>Statement spans multiple pages</td>
+        <td>Continuation detection adds up to 4 pages ahead</td>
+        <td>BS starts on page 47, continues to 48, 49</td>
+    </tr>
+</table>
+
+<h4 id="sec4a2">4.1.2 ★ LLM Primary Page Identification — Cases</h4>
+
+<div class="definition">
+    <em>Definition — LLM Primary Page ID:</em> The on-prem LLM (Qwen2.5-7B-Instruct) is the <strong>primary</strong> method for identifying financial statement pages. It receives page text snippets (first 800 chars of every 3rd page) plus optional deterministic hints, and returns JSON with page numbers for BS/P&L/CF/CoE AND the statement type — all in a single LLM call. A quick deterministic check can skip this step (~70% of cases) when standard Schedule III titles find all 3 statements.
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>Quick det check finds all 3 with standard titles</td>
+        <td><span class="badge badge-green">Skip LLM</span> Return quick_deterministic result; no LLM call needed (~70% of cases)</td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>Quick det check incomplete → LLM called</td>
+        <td><span class="badge badge-llm">★ LLM Primary</span> LLM returns pages + statement_type; result = llm_primary</td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>LLM returns results → deterministic validation merges</td>
+        <td><span class="badge badge-det">Det Validation</span> Union of LLM + det pages; expand continuations; cross-validate type; result = llm_primary_validated</td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td>LLM unavailable or returns invalid JSON</td>
+        <td><span class="badge badge-yellow">Det Fallback</span> Full 3-pass deterministic scan; result = deterministic_fallback</td>
+    </tr>
+    <tr>
+        <td>Case E</td>
+        <td>LLM returns pages but statement_type = "Not specified"</td>
+        <td>Fallback to <code>_detect_statement_type()</code> deterministic keyword scan for type labelling</td>
+    </tr>
+</table>
+
+<h4 id="sec4a3">4.1.3 Notes to Accounts Detection — Cases</h4>
+
+<div class="definition">
+    <em>Definition — Notes to Accounts:</em> Supplementary disclosures after the financial statements that provide detail on line items. These notes contain "Other Financial Information" (OFI) items like Contingent Liabilities, Related Party data, and Auditors' Remuneration that are NOT in the Cash Flow statement itself.
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>"Notes to Financial Statements" title found after last statement page</td>
+        <td><span class="badge badge-green">Found</span> Pages included until end pattern (Auditor's Report, etc.)</td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>Notes title not found after statements</td>
+        <td>Broad search: 60 pages forward, 50 pages backward, full PDF scan</td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>No notes pages found at all</td>
+        <td><span class="badge badge-yellow">Skip</span> OFI items remain as <code>default_zero</code> or unmapped</td>
+    </tr>
+</table>
+
+<!-- 4.2 DETECT YEAR -->
+<h3 id="sec4b">4.2 Step 2 — Detect Financial Year</h3>
+
+<div class="definition">
+    <em>Definition — Financial Year (FY):</em> Indian financial year runs April 1 to March 31. FY "2017-18" means the year <strong>ending</strong> March 31, 2018. The system always returns the <strong>ending year</strong> (2018, not 2017) because that is the year used in column headers like "As at March 31, 2018".
+</div>
+
+<div class="definition">
+    <em>Definition — target_year:</em> The detected ending year passed through the entire mapping pipeline to ensure the correct data column is selected when headers contain multiple years (current year vs. previous year).
+</div>
+
+<!-- Flowchart for Step 2 -->
+<div class="flowchart-container">
+<svg width="680" height="580" viewBox="0 0 680 580">
+    <!-- Filename patterns -->
+    <rect x="180" y="10" width="320" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="30" text-anchor="middle" class="fc-label-white">Filename Pattern Matching</text>
+    <text x="340" y="44" text-anchor="middle" class="fc-label-badge">5 ORDERED PATTERNS</text>
+
+    <line x1="340" y1="54" x2="340" y2="80" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Diamond: Year found? -->
+    <polygon points="340,80 430,115 340,150 250,115" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="340" y="119" text-anchor="middle" class="fc-label">Year found?</text>
+
+    <!-- High confidence → Done -->
+    <line x1="430" y1="115" x2="540" y2="115" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="470" y="109" class="fc-label-sm" fill="#38a169">High conf</text>
+    <rect x="540" y="95" width="120" height="40" rx="6" fill="#38a169"/>
+    <text x="600" y="112" text-anchor="middle" class="fc-label-white">Return year</text>
+    <text x="600" y="126" text-anchor="middle" class="fc-label-badge">METHOD TAGGED</text>
+
+    <!-- Low/No → Page text -->
+    <line x1="340" y1="150" x2="340" y2="178" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="350" y="168" class="fc-label-sm" fill="#d69e2e">Low / None</text>
+
+    <!-- Page text scan -->
+    <rect x="180" y="178" width="320" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="198" text-anchor="middle" class="fc-label-white">Page Text Scan</text>
+    <text x="340" y="212" text-anchor="middle" class="fc-label-badge">MARCH/APRIL YYYY PATTERNS</text>
+
+    <line x1="340" y1="222" x2="340" y2="248" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Diamond: Year from text? -->
+    <polygon points="340,248 430,283 340,318 250,283" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="340" y="287" text-anchor="middle" class="fc-label">Year from text?</text>
+
+    <!-- Yes → Return -->
+    <line x1="430" y1="283" x2="540" y2="283" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="470" y="277" class="fc-label-sm" fill="#38a169">Yes</text>
+    <rect x="540" y="263" width="120" height="40" rx="6" fill="#38a169"/>
+    <text x="600" y="280" text-anchor="middle" class="fc-label-white">Return year</text>
+    <text x="600" y="294" text-anchor="middle" class="fc-label-badge">page_text</text>
+
+    <!-- No → Default current year -->
+    <line x1="340" y1="318" x2="340" y2="346" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="350" y="336" class="fc-label-sm" fill="#d69e2e">No</text>
+
+    <rect x="220" y="346" width="240" height="44" rx="8" fill="#d69e2e"/>
+    <text x="340" y="366" text-anchor="middle" class="fc-label-white">Default: Current Year</text>
+    <text x="340" y="380" text-anchor="middle" class="fc-label-badge">LOW CONFIDENCE</text>
+
+    <line x1="340" y1="390" x2="340" y2="420" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+    <!-- Diamond: Low confidence method? -->
+    <polygon points="340,420 440,455 340,490 240,455" fill="#edf2f7" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="340" y="452" text-anchor="middle" class="fc-label">Low conf</text>
+    <text x="340" y="464" text-anchor="middle" class="fc-label">method?</text>
+
+    <!-- Yes → LLM verify -->
+    <line x1="440" y1="455" x2="500" y2="455" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+    <text x="460" y="449" class="fc-label-sm" fill="#805ad5">Yes</text>
+    <rect x="500" y="435" width="160" height="40" rx="6" fill="#805ad5"/>
+    <text x="580" y="452" text-anchor="middle" class="fc-label-white">★ LLM Verify</text>
+    <text x="580" y="466" text-anchor="middle" class="fc-label-badge">MAY CORRECT YEAR</text>
+
+    <!-- No → Return as-is -->
+    <line x1="340" y1="490" x2="340" y2="520" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="350" y="508" class="fc-label-sm" fill="#38a169">No (high conf)</text>
+
+    <rect x="260" y="520" width="160" height="40" rx="6" fill="#38a169"/>
+    <text x="340" y="544" text-anchor="middle" class="fc-label-white">Return year ✓</text>
+</svg>
+</div>
+
+<h4 id="sec4b1">4.2.1 Filename Pattern Cases</h4>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Pattern</th><th>Example Filename</th><th>Result</th><th>Method</th><th>Confidence</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td><code>2022-2023</code></td>
+        <td><code>Annual-Report-2022-2023.pdf</code></td>
+        <td>2023</td>
+        <td><code>filename_full_range</code></td>
+        <td><span class="badge badge-green">High</span></td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td><code>2017-18</code></td>
+        <td><code>REL_AnnualReport2017-18.pdf</code></td>
+        <td>2018</td>
+        <td><code>filename_2digit_suffix</code></td>
+        <td><span class="badge badge-green">High</span></td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td><code>202021</code></td>
+        <td><code>RajeshExportsAR202021.pdf</code></td>
+        <td>2021</td>
+        <td><code>filename_compact6</code></td>
+        <td><span class="badge badge-green">High</span></td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td><code>FY2024</code></td>
+        <td><code>Report_FY2024.pdf</code></td>
+        <td>2024</td>
+        <td><code>filename_fy_prefix</code></td>
+        <td><span class="badge badge-yellow">Medium</span></td>
+    </tr>
+    <tr>
+        <td>Case E</td>
+        <td><code>2023</code> (single)</td>
+        <td><code>2023_Annual_Report.pdf</code></td>
+        <td>2023*</td>
+        <td><code>filename_single_year</code></td>
+        <td><span class="badge badge-red">Low</span></td>
+    </tr>
+    <tr>
+        <td>Case F</td>
+        <td>Validation fails</td>
+        <td><code>Report-2020-15.pdf</code></td>
+        <td>Rejected</td>
+        <td>—</td>
+        <td><span class="badge badge-red">Invalid</span></td>
+    </tr>
+</table>
+
+<p>*Case E tries page text first before falling back to the single filename year.</p>
+
+<h4 id="sec4b2">4.2.2 Page Text Scan — Cases</h4>
+
+<div class="definition">
+    <em>Definition — Page Text Scan:</em> Scans the text of detected financial statement pages for date patterns like <code>(March|April) \d{1,2},? (20\d{2})</code>. Returns the latest year found. Used when filename has no year pattern, or as a higher-confidence override when filename only has a single 4-digit year.
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>Header contains <code>"As at March 31, 2024"</code></td>
+        <td><span class="badge badge-green">Found</span> Returns 2024, method = <code>page_text</code></td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>Multiple years in headers (current + previous)</td>
+        <td>Returns the <strong>latest</strong> year found across all scanned pages</td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>CID-font text — date is garbled</td>
+        <td><span class="badge badge-yellow">Miss</span> Pattern not matched; falls to default or LLM</td>
+    </tr>
+</table>
+
+<h4 id="sec4b3">4.2.3 LLM Verification — Cases</h4>
+
+<div class="definition">
+    <em>Definition — LLM Year Verification:</em> For low-confidence detections (methods: <code>filename_single_year</code>, <code>filename_fy_prefix</code>, <code>default_current</code>), the system sends the first 1500 characters of the first financial statement page to the LLM. The LLM returns JSON: <code>{"year": int, "confidence": "high"|"medium"|"low", "reasoning": str}</code>.
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>LLM agrees with detected year</td>
+        <td>Year confirmed; method unchanged</td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>LLM returns a different year</td>
+        <td><span class="badge badge-yellow">Corrected</span> Year updated; method = <code>llm_verified</code></td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>LLM unavailable</td>
+        <td>Proceed with detected year; no verification</td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td>Detection method is high-confidence (e.g., <code>filename_full_range</code>)</td>
+        <td><span class="badge badge-green">Skip LLM</span> No verification needed</td>
+    </tr>
+</table>
+
+<!-- 4.3 STATEMENT TYPE -->
+<h3 id="sec4c">4.3 Step 2b — Statement Type Detection & Page Filtering</h3>
+
+<p>Indian annual reports that include subsidiaries present <strong>two versions</strong> of each financial statement — Standalone and Consolidated. The system must (a) detect which type each page belongs to, (b) filter to a single type, and (c) label the result. This is a two-phase process: <strong>Phase 1 — Page Filtering</strong> (<code>_prefer_standalone()</code>) runs before extraction to select which pages to parse; <strong>Phase 2 — Type Detection</strong> (<code>_detect_statement_type()</code>) runs after to label the result.</p>
+
+<div class="definition">
+    <em>Definition — Standalone:</em> Financial statements representing only the parent company (not including subsidiaries). Required by Schedule III of the Companies Act, 2013. Most Indian companies present standalone statements first, followed by consolidated.
+</div>
+
+<div class="definition">
+    <em>Definition — Consolidated:</em> Financial statements combining the parent company and all its subsidiaries into a single economic entity. Also required by Schedule III when the company has subsidiaries. Consolidated statements aggregate all group entities as if they were a single reporting entity.
+</div>
+
+<div class="definition">
+    <em>Definition — Statement Type Auto-Detection:</em> A two-layer detection process. <strong>Primary:</strong> The LLM detects statement type as part of the page identification call (<code>find_pages_by_llm()</code> returns <code>statement_type</code> alongside page numbers — no extra LLM cost). <strong>Secondary/validation:</strong> The deterministic <code>_detect_statement_type()</code> scans each financial statement page's title area (first 10 lines) for "Standalone" or "Consolidated" keywords, counts indicators, and cross-validates the LLM result. When both exist, standalone is preferred. If LLM type is "Not specified", deterministic result is used.
+</div>
+
+<div class="definition">
+    <em>Definition — Title Area:</em> The first 10 lines of text on a PDF page. Indian annual reports typically place the statement type label ("Standalone" or "Consolidated") in the title area, often as a prefix to the statement name — e.g., <code>"Standalone Balance Sheet"</code> or <code>"Consolidated Statement of Profit and Loss"</code>.
+</div>
+
+<!-- 4.3.1 Page Filtering -->
+<h4 id="sec4c1">4.3.1 Phase 1 — Page Filtering (<code>_prefer_standalone</code>)</h4>
+
+<p>Runs <strong>before</strong> table extraction. For each statement type (BS, P&L, CF), if multiple pages were found, this function classifies each page as Standalone or Consolidated and filters to keep only standalone pages. This prevents the system from extracting data from consolidated statements when standalone is available.</p>
+
+<div class="flowchart-container">
+<svg width="700" height="520" viewBox="0 0 700 520">
+    <!-- Start: Input page list -->
+    <rect x="220" y="10" width="260" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="350" y="30" text-anchor="middle" class="fc-label-white">Input: Page list (e.g., BS pages)</text>
+    <text x="350" y="44" text-anchor="middle" class="fc-label-badge">FROM STEP 1: find_financial_statements()</text>
+
+    <line x1="350" y1="54" x2="350" y2="80" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Diamond: Only 1 page? -->
+    <polygon points="350,80 450,115 350,150 250,115" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="350" y="119" text-anchor="middle" class="fc-label">≤ 1 page?</text>
+
+    <!-- Yes → Return as-is -->
+    <line x1="450" y1="115" x2="560" y2="115" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="490" y="109" class="fc-label-sm" fill="#38a169">Yes</text>
+    <rect x="560" y="95" width="120" height="40" rx="6" fill="#38a169"/>
+    <text x="620" y="112" text-anchor="middle" class="fc-label-white">Return as-is</text>
+    <text x="620" y="126" text-anchor="middle" class="fc-label-badge">NO FILTERING</text>
+
+    <!-- No → Classify each page -->
+    <line x1="350" y1="150" x2="350" y2="178" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="360" y="168" class="fc-label-sm" fill="#d69e2e">No (multiple)</text>
+
+    <rect x="180" y="178" width="340" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="350" y="198" text-anchor="middle" class="fc-label-white">For each page: Read first 10 lines</text>
+    <text x="350" y="212" text-anchor="middle" class="fc-label-badge">pdfplumber.extract_text() → title_area</text>
+
+    <line x1="350" y1="222" x2="350" y2="248" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Classify -->
+    <rect x="180" y="248" width="340" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="350" y="268" text-anchor="middle" class="fc-label-white">Classify: "standalone" or "consolidated"</text>
+    <text x="350" y="282" text-anchor="middle" class="fc-label-badge">KEYWORD SEARCH IN title_area.lower()</text>
+
+    <line x1="350" y1="292" x2="200" y2="320" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <line x1="350" y1="292" x2="500" y2="320" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Standalone bucket -->
+    <rect x="100" y="320" width="200" height="50" rx="6" fill="#38a169"/>
+    <text x="200" y="340" text-anchor="middle" class="fc-label-white">Standalone bucket</text>
+    <text x="200" y="358" text-anchor="middle" class="fc-label-badge">+ UNLABELLED PAGES</text>
+
+    <!-- Consolidated bucket -->
+    <rect x="400" y="320" width="200" height="50" rx="6" fill="#805ad5"/>
+    <text x="500" y="340" text-anchor="middle" class="fc-label-white">Consolidated bucket</text>
+    <text x="500" y="358" text-anchor="middle" class="fc-label-badge">EXPLICIT "CONSOLIDATED" ONLY</text>
+
+    <line x1="200" y1="370" x2="200" y2="400" stroke="#38a169" stroke-width="1.5"/>
+    <line x1="500" y1="370" x2="500" y2="400" stroke="#805ad5" stroke-width="1.5"/>
+
+    <!-- Diamond: Standalone bucket empty? -->
+    <polygon points="350,400 460,440 350,480 240,440" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="350" y="438" text-anchor="middle" class="fc-label">Standalone</text>
+    <text x="350" y="452" text-anchor="middle" class="fc-label">bucket empty?</text>
+
+    <!-- Yes → Return all pages -->
+    <line x1="460" y1="440" x2="560" y2="440" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+    <text x="495" y="434" class="fc-label-sm" fill="#805ad5">Yes</text>
+    <rect x="560" y="420" width="120" height="40" rx="6" fill="#805ad5"/>
+    <text x="620" y="437" text-anchor="middle" class="fc-label-white">Return all</text>
+    <text x="620" y="451" text-anchor="middle" class="fc-label-badge">FALLBACK</text>
+
+    <!-- No → Return standalone only -->
+    <line x1="350" y1="480" x2="350" y2="500" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="360" y="494" class="fc-label-sm" fill="#38a169">No</text>
+    <rect x="260" y="500" width="180" height="16" rx="4" fill="#38a169"/>
+    <text x="350" y="512" text-anchor="middle" class="fc-label-badge">RETURN STANDALONE PAGES ONLY</text>
+</svg>
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th><th>Example</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>Only 1 page found for a statement</td>
+        <td><span class="badge badge-green">Skip</span> No filtering needed; return page as-is</td>
+        <td>BS found on page 47 only</td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>Multiple pages; some labelled "Standalone", some "Consolidated"</td>
+        <td><span class="badge badge-green">Filter</span> Keep standalone pages; discard consolidated</td>
+        <td>BS pages: [47, 48, 49, 50] → standalone: [47, 48] → return [47, 48]</td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>Multiple pages; ALL labelled "Consolidated"</td>
+        <td><span class="badge badge-yellow">Fallback</span> Standalone bucket empty → return all pages</td>
+        <td>Only consolidated BS found → use it</td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td>Page has no "Standalone"/"Consolidated" keyword in title area</td>
+        <td><span class="badge badge-blue">Assume standalone</span> Unlabelled pages go to standalone bucket</td>
+        <td>Page 47 says "Balance Sheet" with no prefix → treated as standalone</td>
+    </tr>
+    <tr>
+        <td>Case E</td>
+        <td>PDF read error on a page</td>
+        <td><span class="badge badge-yellow">Graceful</span> Exception caught; return original unfiltered list</td>
+        <td>Corrupt page → no filtering applied</td>
+    </tr>
+</table>
+
+<!-- 4.3.2 Type Detection -->
+<h4 id="sec4c2">4.3.2 Phase 2 — Type Detection (<code>_detect_statement_type</code>)</h4>
+
+<p>Runs <strong>after</strong> page filtering. Scans the filtered pages to determine and label the statement type. This label is stored in <code>ExtractionResult.statement_type</code> and written to the Meta Data sheet. It is a <strong>metadata label only</strong> — it does not affect which pages are extracted (that was already decided in Phase 1).</p>
+
+<div class="flowchart-container">
+<svg width="700" height="480" viewBox="0 0 700 480">
+    <!-- Start -->
+    <rect x="200" y="10" width="300" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="350" y="30" text-anchor="middle" class="fc-label-white">Collect all filtered pages (BS+P&L+CF)</text>
+    <text x="350" y="44" text-anchor="middle" class="fc-label-badge">DEDUPLICATED · UP TO 6 PAGES CHECKED</text>
+
+    <line x1="350" y1="54" x2="350" y2="80" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Diamond: Any pages? -->
+    <polygon points="350,80 440,110 350,140 260,110" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="350" y="114" text-anchor="middle" class="fc-label">Any pages?</text>
+
+    <!-- No → Not specified -->
+    <line x1="260" y1="110" x2="120" y2="110" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#arrowYellow)"/>
+    <text x="200" y="104" class="fc-label-sm" fill="#d69e2e">No</text>
+    <rect x="10" y="90" width="110" height="40" rx="6" fill="#d69e2e"/>
+    <text x="65" y="107" text-anchor="middle" class="fc-label-white">Not specified</text>
+    <text x="65" y="121" text-anchor="middle" class="fc-label-badge">NO PAGES</text>
+
+    <!-- Yes → Scan -->
+    <line x1="350" y1="140" x2="350" y2="168" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="360" y="158" class="fc-label-sm" fill="#38a169">Yes</text>
+
+    <rect x="180" y="168" width="340" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="350" y="188" text-anchor="middle" class="fc-label-white">Scan first 6 pages: count keywords</text>
+    <text x="350" y="202" text-anchor="middle" class="fc-label-badge">standalone_count vs consolidated_count</text>
+
+    <line x1="350" y1="212" x2="350" y2="248" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Decision matrix -->
+    <polygon points="350,248 480,298 350,348 220,298" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="350" y="294" text-anchor="middle" class="fc-label">Compare counts</text>
+    <text x="350" y="308" text-anchor="middle" class="fc-label">SA vs CO</text>
+
+    <!-- SA > 0, CO = 0 -->
+    <line x1="220" y1="298" x2="60" y2="298" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="150" y="292" class="fc-label-sm" fill="#38a169">SA>0, CO=0</text>
+    <rect x="10" y="278" width="110" height="40" rx="6" fill="#38a169"/>
+    <text x="65" y="295" text-anchor="middle" class="fc-label-white">Standalone</text>
+    <text x="65" y="309" text-anchor="middle" class="fc-label-badge">EXPLICIT</text>
+
+    <!-- CO > 0, SA = 0 -->
+    <line x1="480" y1="298" x2="580" y2="298" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+    <text x="520" y="292" class="fc-label-sm" fill="#805ad5">CO>0, SA=0</text>
+    <rect x="580" y="278" width="110" height="40" rx="6" fill="#805ad5"/>
+    <text x="635" y="295" text-anchor="middle" class="fc-label-white">Consolidated</text>
+    <text x="635" y="309" text-anchor="middle" class="fc-label-badge">EXPLICIT</text>
+
+    <!-- SA > CO -->
+    <line x1="280" y1="348" x2="160" y2="388" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="210" y="372" class="fc-label-sm" fill="#38a169">SA>CO</text>
+    <rect x="60" y="378" width="130" height="40" rx="6" fill="#38a169"/>
+    <text x="125" y="395" text-anchor="middle" class="fc-label-white">Standalone</text>
+    <text x="125" y="409" text-anchor="middle" class="fc-label-badge">MAJORITY</text>
+
+    <!-- CO > SA -->
+    <line x1="420" y1="348" x2="540" y2="388" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+    <text x="470" y="372" class="fc-label-sm" fill="#805ad5">CO>SA</text>
+    <rect x="510" y="378" width="130" height="40" rx="6" fill="#805ad5"/>
+    <text x="575" y="395" text-anchor="middle" class="fc-label-white">Consolidated</text>
+    <text x="575" y="409" text-anchor="middle" class="fc-label-badge">MAJORITY</text>
+
+    <!-- SA == CO (tie) -->
+    <line x1="350" y1="348" x2="350" y2="388" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#arrowYellow)"/>
+    <text x="360" y="372" class="fc-label-sm" fill="#d69e2e">Tie</text>
+    <rect x="270" y="388" width="160" height="40" rx="6" fill="#d69e2e"/>
+    <text x="350" y="405" text-anchor="middle" class="fc-label-white">Standalone</text>
+    <text x="350" y="419" text-anchor="middle" class="fc-label-badge">DEFAULT ON TIE</text>
+
+    <!-- Arrow marker for yellow -->
+    <defs>
+        <marker id="arrowYellow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#d69e2e"/>
+        </marker>
+    </defs>
+</svg>
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>standalone_count</th><th>consolidated_count</th><th>Result</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>Only standalone keywords found across pages</td>
+        <td>> 0</td>
+        <td>= 0</td>
+        <td><span class="badge badge-green">Standalone</span> (explicit)</td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>Only consolidated keywords found across pages</td>
+        <td>= 0</td>
+        <td>> 0</td>
+        <td><span class="badge badge-llm">Consolidated</span> (explicit)</td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>Both found; standalone pages outnumber consolidated</td>
+        <td>3</td>
+        <td>1</td>
+        <td><span class="badge badge-green">Standalone</span> (majority)</td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td>Both found; consolidated pages outnumber standalone</td>
+        <td>1</td>
+        <td>3</td>
+        <td><span class="badge badge-llm">Consolidated</span> (majority)</td>
+    </tr>
+    <tr>
+        <td>Case E</td>
+        <td>Both found; equal counts (tie)</td>
+        <td>2</td>
+        <td>2</td>
+        <td><span class="badge badge-yellow">Standalone</span> (default on tie)</td>
+    </tr>
+    <tr>
+        <td>Case F</td>
+        <td>No pages found at all</td>
+        <td>0</td>
+        <td>0</td>
+        <td><span class="badge badge-gray">Not specified</span></td>
+    </tr>
+    <tr>
+        <td>Case G</td>
+        <td>PDF read error</td>
+        <td>—</td>
+        <td>—</td>
+        <td><span class="badge badge-gray">Not specified</span> (exception caught)</td>
+    </tr>
+</table>
+
+<!-- 4.3.3 Why Standalone First -->
+<h4 id="sec4c3">4.3.3 Why Standalone is Preferred</h4>
+
+<div class="definition">
+    <em>Definition — Standalone Preference:</em> When both standalone and consolidated versions of a financial statement exist, the system extracts from the standalone version by default. This is a design choice, not a limitation — the user can choose to process consolidated statements by modifying the filtering logic.
+</div>
+
+<div class="card">
+    <h4>Reasons for Standalone Preference</h4>
+    <table>
+        <tr><th>#</th><th>Reason</th><th>Explanation</th></tr>
+        <tr>
+            <td>1</td>
+            <td><strong>Regulatory focus</strong></td>
+            <td>Most Indian financial analysis (RBI, SEBI, MCA filings) requires standalone data. Credit assessments, ratio analysis, and compliance checks typically use standalone figures.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><strong>Data cleanliness</strong></td>
+            <td>Standalone statements have simpler structures — no inter-company eliminations, no minority interest lines, no associate/JV adjustments. This means fewer mapping ambiguities.</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><strong>Template alignment</strong></td>
+            <td>The Excel template is designed for Schedule III standalone format. Consolidated statements have extra line items (Minority Interest, Share of Associates, etc.) that don't map to the current template.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><strong>Consistency</strong></td>
+            <td>Companies without subsidiaries only have standalone statements. Preferring standalone ensures consistent output format regardless of whether the company has subsidiaries.</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><strong>Ordering convention</strong></td>
+            <td>Indian annual reports present standalone statements <strong>before</strong> consolidated. The first match in Step 1 (Find Pages) is typically standalone, so the default page list already leans standalone.</td>
+        </tr>
+    </table>
+</div>
+
+<div class="warning">
+    <strong>Limitation:</strong> If a company has <strong>only consolidated statements</strong> (rare but possible for holding companies), the system will correctly detect and use consolidated data. However, the template may not have rows for consolidated-specific items like "Non-controlling interest" or "Share of profit of associates". These items will appear in the Raw sheets but not in the mapped output.
+</div>
+
+<div class="flowchart-container">
+<svg width="700" height="260" viewBox="0 0 700 260">
+    <!-- Two paths -->
+    <rect x="200" y="10" width="300" height="44" rx="8" fill="#1a365d"/>
+    <text x="350" y="30" text-anchor="middle" class="fc-label-white">Both Standalone & Consolidated Found</text>
+    <text x="350" y="44" text-anchor="middle" class="fc-label-badge">COMPANY HAS SUBSIDIARIES</text>
+
+    <line x1="300" y1="54" x2="140" y2="90" stroke="#38a169" stroke-width="2" marker-end="url(#arrowGreen)"/>
+    <line x1="400" y1="54" x2="560" y2="90" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+    <!-- Standalone path (preferred) -->
+    <rect x="40" y="90" width="200" height="60" rx="8" fill="#38a169"/>
+    <text x="140" y="110" text-anchor="middle" class="fc-label-white">✓ Standalone (Default)</text>
+    <text x="140" y="126" text-anchor="middle" class="fc-label-badge">SIMPLER · CLEANER · TEMPLATE-ALIGNED</text>
+    <text x="140" y="140" text-anchor="middle" class="fc-label-badge">NO INTER-COMPANY ELIMINATIONS</text>
+
+    <!-- Consolidated path (alternative) -->
+    <rect x="460" y="90" width="200" height="60" rx="8" fill="#805ad5" stroke="#e9d8fd" stroke-width="2" stroke-dasharray="4,3"/>
+    <text x="560" y="110" text-anchor="middle" class="fc-label-white">Consolidated (Alt)</text>
+    <text x="560" y="126" text-anchor="middle" class="fc-label-badge">EXTRA ITEMS: MINORITY INT, ASSOC</text>
+    <text x="560" y="140" text-anchor="middle" class="fc-label-badge">MAY NOT MAP TO TEMPLATE</text>
+
+    <!-- Arrows down -->
+    <line x1="140" y1="150" x2="140" y2="180" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <line x1="560" y1="150" x2="560" y2="180" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+    <!-- Results -->
+    <rect x="40" y="180" width="200" height="60" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+    <text x="140" y="198" text-anchor="middle" class="fc-label" style="fill:#22543d; font-weight:600;">High completeness</text>
+    <text x="140" y="214" text-anchor="middle" class="fc-label-sm" style="fill:#38a169;">All template items map cleanly</text>
+    <text x="140" y="228" text-anchor="middle" class="fc-label-sm" style="fill:#38a169;">No unmapped consolidated items</text>
+
+    <rect x="460" y="180" width="200" height="60" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="560" y="198" text-anchor="middle" class="fc-label" style="fill:#44337a; font-weight:600;">Partial completeness</text>
+    <text x="560" y="214" text-anchor="middle" class="fc-label-sm" style="fill:#805ad5;">Minority Interest, Associates → unmapped</text>
+    <text x="560" y="228" text-anchor="middle" class="fc-label-sm" style="fill:#805ad5;">Extra items in Raw sheet only</text>
+</svg>
+</div>
+
+<!-- 4.4 TABLE EXTRACTION -->
+<h3 id="sec4d">4.4 Step 3 — Extract Financial Statement Tables</h3>
+
+<div class="definition">
+    <em>Definition — Gridless Table:</em> A table in a PDF that has no visible borders or grid lines. Indian annual reports typically use gridless tables where columns are implied by spatial positioning. <code>pdfplumber.extract_tables()</code> returns empty for these, but <code>extract_text()</code> works perfectly.
+</div>
+
+<div class="definition">
+    <em>Definition — Line-by-line Parsing:</em> Each text line is scanned right-to-left for numeric values. Everything before the first numeric value is the label. This handles the common Indian annual report format where labels are left-aligned and values are right-aligned.
+</div>
+
+<!-- Flowchart for Extraction -->
+<div class="flowchart-container">
+<svg width="680" height="440" viewBox="0 0 680 440">
+    <!-- Start -->
+    <rect x="200" y="10" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="30" text-anchor="middle" class="fc-label-white">pdfplumber.extract_text()</text>
+    <text x="340" y="44" text-anchor="middle" class="fc-label-badge">PER PAGE</text>
+
+    <line x1="340" y1="54" x2="340" y2="80" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Find statement start -->
+    <rect x="200" y="80" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="100" text-anchor="middle" class="fc-label-white">Find statement start line</text>
+    <text x="340" y="114" text-anchor="middle" class="fc-label-badge">TWO-TIER PATTERN MATCH</text>
+
+    <line x1="340" y1="124" x2="340" y2="150" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Parse each line -->
+    <rect x="200" y="150" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="170" text-anchor="middle" class="fc-label-white">Parse each line (right-to-left scan)</text>
+    <text x="340" y="184" text-anchor="middle" class="fc-label-badge">LABEL · NOTE REF · VALUES · INDENT</text>
+
+    <line x1="340" y1="194" x2="340" y2="220" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Section tracking -->
+    <rect x="200" y="220" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="240" text-anchor="middle" class="fc-label-white">Section tracking</text>
+    <text x="340" y="254" text-anchor="middle" class="fc-label-badge">"NON-CURRENT ASSETS" → SECTION HEADER</text>
+
+    <line x1="340" y1="264" x2="340" y2="290" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Unit detection -->
+    <rect x="200" y="290" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="310" text-anchor="middle" class="fc-label-white">Unit detection</text>
+    <text x="340" y="324" text-anchor="middle" class="fc-label-badge">30+ PATTERNS: ₹ IN LAKHS, CRORES, ETC.</text>
+
+    <line x1="340" y1="334" x2="340" y2="360" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Post-processing -->
+    <rect x="200" y="360" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="380" text-anchor="middle" class="fc-label-white">Post-processing</text>
+    <text x="340" y="394" text-anchor="middle" class="fc-label-badge">DEDUP · CONTINUATION · YEAR HEADERS</text>
+
+    <line x1="340" y1="404" x2="340" y2="420" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <rect x="280" y="420" width="120" height="16" rx="4" fill="#38a169"/>
+    <text x="340" y="432" text-anchor="middle" class="fc-label-badge">ExtractedTable</text>
+</svg>
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>Normal line: <code>"Inventories 2  1,234.56  1,100.00"</code></td>
+        <td>Label = "Inventories 2", note_ref = "2", values = [1234.56, 1100.00]</td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>Negative value: <code>"Finance costs  (567.89)  (450.00)"</code></td>
+        <td>Parentheses → negative: values = [-567.89, -450.00]</td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>Section header: <code>"Non-current assets"</code></td>
+        <td>Marked as <code>is_section_header=True</code>; subsequent rows assigned to this section</td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td>Total row: <code>"Total Assets  10,000.00  9,500.00"</code></td>
+        <td>Marked as <code>is_total=True</code>; excluded from mapping (not a leaf item)</td>
+    </tr>
+    <tr>
+        <td>Case E</td>
+        <td>CID-font text: <code>"[CID:12]alance [CID:45]heet"</code></td>
+        <td>CID placeholders stripped before matching; fuzzy matching handles fragments</td>
+    </tr>
+    <tr>
+        <td>Case F</td>
+        <td>Continuation page (no statement title)</td>
+        <td>All lines parsed; section tracking persists from previous page</td>
+    </tr>
+</table>
+
+<!-- 4.5 DATA MAPPING -->
+<h3 id="sec4e">4.5 Step 4 — Map Extracted Data to Template</h3>
+
+<div class="definition">
+    <em>Definition — Keyword Alias:</em> An explicit mapping from a PDF row label to a template item, used when fuzzy matching would fail. Example: <code>"right of use assets"</code> → <code>"(iv) Others (to be specified)"</code> in Non-current assets. Aliases handle company-specific terminology.
+</div>
+
+<div class="definition">
+    <em>Definition — Fuzzy Matching (token_sort_ratio):</em> A string similarity algorithm that sorts tokens (words) in both strings before comparing. This handles word reordering — e.g., <code>"Assets Tangible"</code> still matches <code>"Tangible Assets"</code>. Score range: 0–100.
+</div>
+
+<div class="definition">
+    <em>Definition — Section-aware Scoring:</em> A bonus/penalty system in fuzzy matching. If the PDF row and template item are in the same section (e.g., both "Non-current assets"), the match score gets +15. If they're in different sections, the score gets −20. This prevents cross-section mismapping.
+</div>
+
+<div class="definition">
+    <em>Definition — Two-pass Optimal Assignment:</em> Pass 1 collects ALL (pdf_row, template_item, score) candidates. Pass 2 assigns optimally by processing in descending score order (greedy), ensuring each PDF row and template item is used at most once.
+</div>
+
+<h4 id="sec4e1">4.5.1 BS & P&L Mapping — Flowchart (3-Tier: Alias → ★ LLM → Fuzzy)</h4>
+
+<div class="flowchart-container">
+<svg width="680" height="480" viewBox="0 0 680 480">
+    <!-- Tier 1: Keyword aliases -->
+    <rect x="200" y="10" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="30" text-anchor="middle" class="fc-label-white">Tier 1: Keyword Alias Pre-pass</text>
+    <text x="340" y="44" text-anchor="middle" class="fc-label-badge">30+ BS ALIASES · 10+ P&L ALIASES</text>
+
+    <line x1="340" y1="54" x2="340" y2="80" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+    <!-- Tier 2: ★ LLM Mapping (PRIMARY) -->
+    <rect x="200" y="80" width="280" height="44" rx="8" fill="#805ad5"/>
+    <text x="340" y="100" text-anchor="middle" class="fc-label-white">Tier 2: ★ LLM Mapping (PRIMARY)</text>
+    <text x="340" y="114" text-anchor="middle" class="fc-label-badge">map_by_llm() · TABLE SUMMARY + TEMPLATE ITEMS</text>
+
+    <line x1="340" y1="124" x2="340" y2="150" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Tier 3: Fuzzy (FALLBACK) -->
+    <rect x="200" y="150" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="170" text-anchor="middle" class="fc-label-white">Tier 3: Fuzzy Matching (FALLBACK)</text>
+    <text x="340" y="184" text-anchor="middle" class="fc-label-badge">TWO-PASS OPTIMAL + SECTION-AWARE</text>
+
+    <line x1="340" y1="194" x2="340" y2="220" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- 3-Way Merge -->
+    <rect x="180" y="220" width="320" height="44" rx="8" fill="#1a365d"/>
+    <text x="340" y="240" text-anchor="middle" class="fc-label-white">3-Way Merge: Alias > LLM > Fuzzy</text>
+    <text x="340" y="254" text-anchor="middle" class="fc-label-badge">_merge_alias_llm_and_fuzzy() · PARENT-CHILD DEDUP</text>
+
+    <line x1="340" y1="264" x2="340" y2="300" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Diamond: Parent-child conflict? -->
+    <polygon points="340,300 450,340 340,380 230,340" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="340" y="338" text-anchor="middle" class="fc-label">Parent-child</text>
+    <text x="340" y="352" text-anchor="middle" class="fc-label">conflict?</text>
+
+    <!-- Yes → Keep child -->
+    <line x1="450" y1="340" x2="540" y2="340" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="480" y="334" class="fc-label-sm" fill="#38a169">Yes</text>
+    <rect x="540" y="320" width="120" height="40" rx="6" fill="#38a169"/>
+    <text x="600" y="337" text-anchor="middle" class="fc-label-white">Keep child</text>
+    <text x="600" y="351" text-anchor="middle" class="fc-label-badge">DISCARD PARENT</text>
+
+    <!-- No → Keep both -->
+    <line x1="340" y1="380" x2="340" y2="420" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="350" y="408" class="fc-label-sm" fill="#38a169">No</text>
+    <rect x="260" y="420" width="160" height="40" rx="6" fill="#38a169"/>
+    <text x="340" y="444" text-anchor="middle" class="fc-label-white">Mapping done ✓</text>
+</svg>
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th><th>Example</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>Alias matches a PDF row</td>
+        <td><span class="badge badge-green">Direct map</span> Highest priority in 3-way merge</td>
+        <td><code>"cwip"</code> → <code>"(b) Capital work-in-progress"</code></td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>★ LLM maps a PDF row to template item</td>
+        <td><span class="badge badge-purple">★ LLM Primary</span> Second priority after alias; captures semantic matches</td>
+        <td>LLM maps <code>"Goodwill on consolidation"</code> → <code>"(c) Goodwill"</code></td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>LLM maps a row that fuzzy missed</td>
+        <td><span class="badge badge-purple">★ LLM advantage</span> LLM catches paraphrased items fuzzy can't match</td>
+        <td><code>"Expenditure on exploration of mineral resources"</code> → NC intangible (fuzzy score < 50)</td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td>Alias overrides LLM for same template item</td>
+        <td><span class="badge badge-green">Alias wins</span> Alias > LLM priority in 3-way merge</td>
+        <td>Alias <code>"ppe"</code> → PPE, LLM also → PPE; alias value kept</td>
+    </tr>
+    <tr>
+        <td>Case E</td>
+        <td>Fuzzy score ≥ 70, same section (no alias or LLM match)</td>
+        <td><span class="badge badge-blue">Fuzzy fallback</span> Lowest priority; only used when alias + LLM both miss</td>
+        <td><code>"Tangible assets"</code> → <code>"(a) Property, Plant and Equipment"</code></td>
+    </tr>
+    <tr>
+        <td>Case F</td>
+        <td>Fuzzy score ≥ 70, different section</td>
+        <td><span class="badge badge-yellow">Penalised</span> Score reduced by −20; may fall below threshold</td>
+        <td>NC asset row matching CA template item</td>
+    </tr>
+    <tr>
+        <td>Case G</td>
+        <td>Alias + LLM + Fuzzy all match same template item</td>
+        <td>3-way merge: alias value wins; parent-child dedup applied</td>
+        <td><code>"PPE"</code> (alias) vs LLM match vs <code>"Tangible assets"</code> (fuzzy)</td>
+    </tr>
+    <tr>
+        <td>Case H</td>
+        <td>Template item is a formula item</td>
+        <td><span class="badge badge-gray">Skip</span> Never matched — computed by Excel formula</td>
+        <td>"Total Non-current Assets"</td>
+    </tr>
+    <tr>
+        <td>Case I</td>
+        <td>PDF row is a total row</td>
+        <td><span class="badge badge-gray">Skip</span> Excluded from mapping</td>
+        <td><code>"Total Assets"</code></td>
+    </tr>
+</table>
+
+<h4 id="sec4e2">4.5.2 Cash Flow Mapping — Flowchart</h4>
+
+<div class="flowchart-container">
+<svg width="680" height="340" viewBox="0 0 680 340">
+    <!-- Phase 0: Structural -->
+    <rect x="200" y="10" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="30" text-anchor="middle" class="fc-label-white">Phase 0: Structural Match</text>
+    <text x="340" y="44" text-anchor="middle" class="fc-label-badge">FIND "NET CASH" ROWS → ASSIGN IN ORDER</text>
+
+    <line x1="340" y1="54" x2="340" y2="80" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Diamond: 3 summaries found? -->
+    <polygon points="340,80 440,115 340,150 240,115" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="340" y="119" text-anchor="middle" class="fc-label">3 found?</text>
+
+    <!-- Yes → Done with summaries -->
+    <line x1="440" y1="115" x2="540" y2="115" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <text x="475" y="109" class="fc-label-sm" fill="#38a169">Yes</text>
+    <rect x="540" y="95" width="120" height="40" rx="6" fill="#38a169"/>
+    <text x="600" y="112" text-anchor="middle" class="fc-label-white">Ops → Inv → Fin</text>
+    <text x="600" y="126" text-anchor="middle" class="fc-label-badge">ASSIGNED</text>
+
+    <!-- No → Phase 1 -->
+    <line x1="340" y1="150" x2="340" y2="178" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="350" y="168" class="fc-label-sm" fill="#d69e2e">No</text>
+
+    <rect x="200" y="178" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="198" text-anchor="middle" class="fc-label-white">Phase 1: Phrase + Anchor Aliases</text>
+    <text x="340" y="212" text-anchor="middle" class="fc-label-badge">CF_PHRASE_ALIASES + CF_ANCHOR_ALIASES</text>
+
+    <line x1="340" y1="222" x2="340" y2="260" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Phase 2: Fuzzy for OFI -->
+    <rect x="200" y="260" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="280" text-anchor="middle" class="fc-label-white">Phase 2: Fuzzy for OFI Items</text>
+    <text x="340" y="294" text-anchor="middle" class="fc-label-badge">19 "OTHER FINANC INFORMATION" ITEMS</text>
+</svg>
+</div>
+
+<h4 id="sec4e3">4.5.3 Notes → OFI Mapping — Flowchart</h4>
+
+<div class="definition">
+    <em>Definition — OFI (Other Financial Information):</em> A section in the Cash Flow template containing 19 items that are NOT in the Cash Flow statement itself but come from Notes to Accounts — e.g., Contingent Liabilities, Auditors' Remuneration, Related Party data.
+</div>
+
+<div class="flowchart-container">
+<svg width="680" height="380" viewBox="0 0 680 380">
+    <!-- Phase 1: Keyword alias -->
+    <rect x="200" y="10" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="30" text-anchor="middle" class="fc-label-white">Phase 1: Keyword Alias</text>
+    <text x="340" y="44" text-anchor="middle" class="fc-label-badge">50+ NOTES_KEYWORD_ALIASES</text>
+
+    <line x1="340" y1="54" x2="340" y2="80" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Phase 2: Context-aware total -->
+    <rect x="200" y="80" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="100" text-anchor="middle" class="fc-label-white">Phase 2: Context-aware Total</text>
+    <text x="340" y="114" text-anchor="middle" class="fc-label-badge">FIND "TOTAL" ROWS IN SPECIFIC NOTE CONTEXTS</text>
+
+    <line x1="340" y1="124" x2="340" y2="150" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Phase 3: Fuzzy fallback -->
+    <rect x="200" y="150" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="170" text-anchor="middle" class="fc-label-white">Phase 3: Fuzzy Fallback</text>
+    <text x="340" y="184" text-anchor="middle" class="fc-label-badge">TOKEN_SORT_RATIO ≥ 65</text>
+
+    <line x1="340" y1="194" x2="340" y2="220" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Smart Merge -->
+    <rect x="180" y="220" width="320" height="50" rx="8" fill="#38a169"/>
+    <text x="340" y="240" text-anchor="middle" class="fc-label-white">Smart Merge into CF Mappings</text>
+    <text x="340" y="258" text-anchor="middle" class="fc-label-badge">NEW → ADD · DEFAULT_ZERO → OVERRIDE · REAL → KEEP</text>
+
+    <line x1="340" y1="270" x2="340" y2="300" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Cases -->
+    <rect x="120" y="300" width="180" height="60" rx="6" fill="#edf2f7" stroke="#38a169" stroke-width="1"/>
+    <text x="210" y="318" text-anchor="middle" class="fc-label">New item</text>
+    <text x="210" y="334" text-anchor="middle" class="fc-label-sm" fill="#38a169">→ Add directly</text>
+    <text x="210" y="350" text-anchor="middle" class="fc-label-sm">(not in CF)</text>
+
+    <rect x="320" y="300" width="180" height="60" rx="6" fill="#edf2f7" stroke="#d69e2e" stroke-width="1"/>
+    <text x="410" y="318" text-anchor="middle" class="fc-label">default_zero item</text>
+    <text x="410" y="334" text-anchor="middle" class="fc-label-sm" fill="#d69e2e">→ Override with notes</text>
+    <text x="410" y="350" text-anchor="middle" class="fc-label-sm">(smart override)</text>
+
+    <rect x="520" y="300" width="140" height="60" rx="6" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="590" y="318" text-anchor="middle" class="fc-label">Real value item</text>
+    <text x="590" y="334" text-anchor="middle" class="fc-label-sm" fill="#2b6cb0">→ Keep CF value</text>
+    <text x="590" y="350" text-anchor="middle" class="fc-label-sm">(CF is primary)</text>
+</svg>
+</div>
+
+<h4 id="sec4e4">4.5.4 Default Zeros & Derived Items</h4>
+
+<div class="definition">
+    <em>Definition — Default Zero:</em> A value of 0 automatically assigned to template items that are commonly absent in Indian annual reports (e.g., Goodwill, Biological Assets, Discontinued Operations). These can be overridden by notes extraction via the smart merge mechanism.
+</div>
+
+<div class="definition">
+    <em>Definition — Derived Item:</em> A catch-all/residual template item computed as <code>parent_total − sum(known_leaf_sub_items)</code>. Example: "Other NC liabilities" = Total NC Liabilities − Borrowings − Trade Payables − Other fin liab − Provisions − Deferred tax. Only LEAF items are subtracted to prevent double-counting.
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>Item is in default-zero list AND not found by mapping</td>
+        <td>Value = 0, method = <code>default_zero</code></td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>Item is in default-zero list BUT notes found a real value</td>
+        <td>Smart merge overrides 0 with notes value</td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>Derived item: parent total and all sub-items known</td>
+        <td>Computed: <code>parent − sum(leaves)</code></td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td>Derived item: parent total missing</td>
+        <td>Cannot compute; item left empty</td>
+    </tr>
+</table>
+
+<!-- 4.6 EXCEL OUTPUT -->
+<h3 id="sec4f">4.6 Step 5 — Write Excel Output</h3>
+
+<div class="flowchart-container">
+<svg width="680" height="340" viewBox="0 0 680 340">
+    <!-- Write values -->
+    <rect x="200" y="10" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="30" text-anchor="middle" class="fc-label-white">Write mapped values to Column C</text>
+    <text x="340" y="44" text-anchor="middle" class="fc-label-badge">#,##0.00 FORMAT</text>
+
+    <line x1="340" y1="54" x2="340" y2="80" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Apply formulas -->
+    <rect x="200" y="80" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="100" text-anchor="middle" class="fc-label-white">Apply Excel Formulas</text>
+    <text x="340" y="114" text-anchor="middle" class="fc-label-badge">BS: 15 · P&L: 9 · CF: 0</text>
+
+    <line x1="340" y1="124" x2="340" y2="150" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Write raw sheets -->
+    <rect x="200" y="150" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="170" text-anchor="middle" class="fc-label-white">Write Raw Data Sheets</text>
+    <text x="340" y="184" text-anchor="middle" class="fc-label-badge">RAW BS · RAW P&L · RAW CF</text>
+
+    <line x1="340" y1="194" x2="340" y2="220" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Compute completeness -->
+    <rect x="200" y="220" width="280" height="44" rx="8" fill="#2b6cb0"/>
+    <text x="340" y="240" text-anchor="middle" class="fc-label-white">Compute Completeness</text>
+    <text x="340" y="254" text-anchor="middle" class="fc-label-badge">ITEMS_WRITTEN / LEAF_ITEMS_COUNT</text>
+
+    <line x1="340" y1="264" x2="340" y2="290" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Write Meta Data -->
+    <rect x="200" y="290" width="280" height="44" rx="8" fill="#38a169"/>
+    <text x="340" y="310" text-anchor="middle" class="fc-label-white">Write Meta Data Sheet</text>
+    <text x="340" y="324" text-anchor="middle" class="fc-label-badge">UNIT · TYPE · PAGES · STATS · COMPLETENESS</text>
+</svg>
+</div>
+
+<table class="case-table">
+    <tr><th>Case</th><th>Condition</th><th>Behaviour</th></tr>
+    <tr>
+        <td>Case A</td>
+        <td>Mapping has a value for a template row</td>
+        <td>Write numeric value to column C</td>
+    </tr>
+    <tr>
+        <td>Case B</td>
+        <td>Template row is a formula item (e.g., "Total Assets")</td>
+        <td>Write Excel formula (e.g., <code>=SUM(C5:C15)</code>)</td>
+    </tr>
+    <tr>
+        <td>Case C</td>
+        <td>Template row has no mapping and no formula</td>
+        <td>Cell left empty (will show as blank in Excel)</td>
+    </tr>
+    <tr>
+        <td>Case D</td>
+        <td>Raw sheet writing</td>
+        <td>All extracted rows written as-is (including totals, section headers) for verification</td>
+    </tr>
+</table>
+
+<!-- 5. API SPECIFICATION -->
+<h2 id="sec5"><span class="toc-num">5</span> API Specification</h2>
+
+<table>
+    <tr><th>Endpoint</th><th>Method</th><th>Purpose</th><th>Input</th><th>Output</th></tr>
+    <tr><td><code>/</code></td><td>GET</td><td>Web UI</td><td>—</td><td>HTML page</td></tr>
+    <tr><td><code>/extract</code></td><td>POST</td><td>Upload PDF(s)</td><td><code>files</code> + optional <code>years</code></td><td><code>202 Accepted</code> + <code>job_id</code></td></tr>
+    <tr><td><code>/status/{job_id}</code></td><td>GET</td><td>Check progress</td><td>Path: <code>job_id</code></td><td>JSON: status, step, results</td></tr>
+    <tr><td><code>/download/{job_id}</code></td><td>GET</td><td>Download Excel</td><td>Path: <code>job_id</code></td><td>XLSX file (7 sheets)</td></tr>
+    <tr><td><code>/health</code></td><td>GET</td><td>Health check</td><td>—</td><td><code>{"status": "ok"}</code></td></tr>
+    <tr><td><code>/jobs</code></td><td>GET</td><td>List all jobs</td><td>—</td><td>JSON array</td></tr>
+</table>
+
+<h3>5.1 Example API Usage</h3>
+<pre><code># Upload PDF (year auto-detected)
+curl -X POST http://localhost:8080/extract \
+  -F "files=@Annual_Report_2022-2023.pdf"
+
+# Upload with explicit year
+curl -X POST http://localhost:8080/extract \
+  -F "files=@report.pdf" -F "years=2023"
+
+# Check status
+curl http://localhost:8080/status/abc123
+
+# Download result
+curl -O http://localhost:8080/download/abc123</code></pre>
+
+<!-- 6. INPUT / OUTPUT SPECS -->
+<h2 id="sec6"><span class="toc-num">6</span> Input / Output Specifications</h2>
+
+<h3>6.1 Output Excel (7 Sheets)</h3>
+<table>
+    <tr><th>Sheet</th><th>Content</th><th>Purpose</th></tr>
+    <tr><td>Meta Data</td><td>Filename, year, unit, statement type, pages, stats, completeness, year_detection_method</td><td>Audit & traceability</td></tr>
+    <tr><td>Balance Sheet</td><td>Template with values in column C + 15 Excel formulas</td><td>Primary output</td></tr>
+    <tr><td>P&L</td><td>Template with values in column C + 9 Excel formulas</td><td>Primary output</td></tr>
+    <tr><td>Cash Flow</td><td>Template with values in column C</td><td>Primary output</td></tr>
+    <tr><td>Raw BS</td><td>All extracted rows from all detected BS pages</td><td>Verification</td></tr>
+    <tr><td>Raw P&L</td><td>All extracted rows from all detected P&L pages</td><td>Verification</td></tr>
+    <tr><td>Raw CF</td><td>All extracted rows from all detected CF pages</td><td>Verification</td></tr>
+</table>
+
+<!-- 7. LLM USAGE POLICY -->
+<h2 id="sec7"><span class="toc-num">7</span> LLM Usage Policy</h2>
+
+<div class="note">
+    <strong>Principle:</strong> The LLM is the <strong>primary</strong> method for page identification, statement type detection, and data mapping. Deterministic algorithms validate and supplement LLM results. A quick deterministic check can skip the LLM call when standard titles find all statements (~70% of cases), optimising cost without sacrificing accuracy.
+</div>
+
+<table>
+    <tr><th>Scenario</th><th>LLM Role</th><th>Deterministic Role</th><th>When LLM Unavailable</th></tr>
+    <tr><td>Page identification</td><td><span class="badge badge-llm">★ PRIMARY</span> <code>find_pages_by_llm()</code></td><td>Quick check (cost opt) + validation <code>_validate_with_deterministic()</code></td><td>Full 3-pass deterministic scan</td></tr>
+    <tr><td>Statement type</td><td><span class="badge badge-llm">★ PRIMARY</span> (with page ID, no extra cost)</td><td>Cross-validation via <code>_detect_statement_type()</code></td><td>Deterministic keyword scan only</td></tr>
+    <tr><td>Year detection</td><td><span class="badge badge-llm">Verification</span> (low-confidence only)</td><td>5 filename patterns + page text (primary)</td><td>Pattern + text (no verification)</td></tr>
+    <tr><td>Table extraction</td><td><span class="badge badge-red">Never</span></td><td>pdfplumber text parsing</td><td>N/A — always deterministic</td></tr>
+    <tr><td>Data mapping</td><td><span class="badge badge-llm">★ PRIMARY</span> <code>map_by_llm()</code> (Tier 2)</td><td>Alias (Tier 1) + Fuzzy (Tier 3 fallback)</td><td>Alias + Fuzzy only (2-tier)</td></tr>
+    <tr><td>Notes extraction</td><td><span class="badge badge-red">Never</span></td><td>Keyword alias + context + fuzzy</td><td>N/A — always deterministic</td></tr>
+    <tr><td>Excel writing</td><td><span class="badge badge-red">Never</span></td><td>openpyxl</td><td>N/A — always deterministic</td></tr>
+</table>
+
+<div class="definition">
+    <em>Definition — Quick Deterministic Check:</em> A cost-optimisation step (<code>_quick_deterministic_check()</code>) that runs only Pass 1 (title-area scan). If all 3 statements are found with standard Schedule III titles and confidence ≥ 1.0, the LLM call is skipped. This applies to ~70% of Indian annual reports that follow standard naming. The remaining ~30% (non-standard titles, missing statements) proceed to LLM primary page identification.
+</div>
+
+<div class="definition">
+    <em>Definition — detection_method values:</em> Each page-finding result is tagged with its detection method: <code>quick_deterministic</code> (LLM skipped), <code>llm_primary</code> (LLM found pages, no validation yet), <code>llm_primary_validated</code> (LLM + deterministic merged), <code>deterministic_fallback</code> (LLM failed, det only), <code>title</code> (det pass 1), <code>content</code> (det pass 3).
+</div>
+
+<!-- 8. ERROR HANDLING -->
+<h2 id="sec8"><span class="toc-num">8</span> Error Handling</h2>
+
+<table>
+    <tr><th>Scenario</th><th>Behaviour</th><th>User Impact</th></tr>
+    <tr><td>PDF has no detectable financial statements</td><td>Extraction completes with 0% completeness</td><td>Excel with empty sheets; Meta Data shows 0%</td></tr>
+    <tr><td>Year cannot be detected</td><td>Defaults to current year; LLM verification attempted</td><td>Meta Data: <code>year_detection_method: "default_current"</code></td></tr>
+    <tr><td>LLM unavailable</td><td>All LLM steps gracefully degrade</td><td>Pattern-only detection; no year verification</td></tr>
+    <tr><td>CID-font PDF</td><td>CID placeholders stripped; fuzzy handles fragments</td><td>Slightly lower confidence; still functional</td></tr>
+    <tr><td>Both Standalone & Consolidated</td><td>Standalone preferred automatically</td><td>Meta Data: <code>statement_type: "Standalone"</code></td></tr>
+    <tr><td>Wrong year column</td><td><code>target_year</code> ensures correct column; fallback with warning</td><td>Log warning; Meta Data shows method</td></tr>
+    <tr><td>Notes not found</td><td>OFI items remain as <code>default_zero</code></td><td>Lower CF completeness</td></tr>
+</table>
+
+<!-- 9. GLOSSARY -->
+<h2 id="sec9"><span class="toc-num">9</span> Glossary</h2>
+
+<table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td>BS</td><td>Balance Sheet</td></tr>
+    <tr><td>P&L</td><td>Profit and Loss Statement</td></tr>
+    <tr><td>CF</td><td>Cash Flow Statement</td></tr>
+    <tr><td>OFI</td><td>Other Financial Information — CF template section for notes-derived items</td></tr>
+    <tr><td>CID</td><td>Character ID — font-internal identifiers without Unicode mapping</td></tr>
+    <tr><td>FY</td><td>Financial Year — Indian FY "2017-18" = year ending March 31, 2018</td></tr>
+    <tr><td>NC / CA / CL</td><td>Non-Current / Current Assets / Current Liabilities</td></tr>
+    <tr><td>PPE</td><td>Property, Plant and Equipment</td></tr>
+    <tr><td>CWIP</td><td>Capital Work-in-Progress</td></tr>
+    <tr><td>RP</td><td>Related Party</td></tr>
+    <tr><td>Leaf Item</td><td>Template row that is not a section header, total, or formula</td></tr>
+    <tr><td>target_year</td><td>Detected financial year threaded through mapping to select correct data column</td></tr>
+    <tr><td>token_sort_ratio</td><td>Fuzzy matching algorithm that sorts tokens before comparing</td></tr>
+    <tr><td>Standalone</td><td>Financial statements of the parent company only (no subsidiaries)</td></tr>
+    <tr><td>Consolidated</td><td>Financial statements combining parent + all subsidiaries</td></tr>
+    <tr><td>Gridless Table</td><td>PDF table with no visible borders — columns implied by positioning</td></tr>
+    <tr><td>Smart Merge</td><td>Notes values override <code>default_zero</code> CF items but not real CF values</td></tr>
+</table>
+
+<!-- 10. INDIAN FINANCIAL REPORTING STANDARDS -->
+<h2 id="sec10"><span class="toc-num">10</span> Indian Financial Reporting Standards</h2>
+
+<p>The EWS extraction system is designed specifically for <strong>Indian annual reports</strong>. Its LLM-first architecture is enhanced <em>because</em> Indian financial reporting is governed by a highly standardised framework — <strong>Schedule III of the Companies Act, 2013</strong> and the <strong>Indian Accounting Standards (Ind AS)</strong>. This section explains how these standards underpin every step of the pipeline.</p>
+
+<div class="note">
+    <strong>Key Insight:</strong> Schedule III and Ind AS provide the standardised vocabulary that makes both LLM and deterministic methods effective. The LLM understands financial terminology <em>because</em> it's trained on standard reports; fuzzy matching and keyword aliases work <em>precisely because</em> the terminology, structure, and ordering of line items are prescribed by law. The standards are the hidden foundation that makes the system reliable — and the LLM-first approach leverages this standardisation for even higher accuracy.
+</div>
+
+<!-- 10.1 Schedule III -->
+<h3 id="sec10a">10.1 Schedule III — Companies Act, 2013</h3>
+
+<div class="definition">
+    <em>Definition — Schedule III:</em> A schedule appended to the Companies Act, 2013 that prescribes the <strong>exact format</strong> of the Balance Sheet and Statement of Profit & Loss for every company registered in India. It mandates the order of line items, their grouping (Non-current vs Current), and the minimum disclosures required. All Indian companies (except banking, insurance, and Section 8 companies) must follow this format.
+</div>
+
+<h4>10.1.1 Balance Sheet Format (Schedule III, Part I)</h4>
+<p>Schedule III prescribes the Balance Sheet in this exact structure:</p>
+
+<div class="flowchart-container">
+<svg width="700" height="520" viewBox="0 0 700 520">
+    <!-- Root -->
+    <rect x="260" y="10" width="180" height="36" rx="6" fill="#1a365d"/>
+    <text x="350" y="32" text-anchor="middle" class="fc-label-white">Balance Sheet</text>
+
+    <line x1="310" y1="46" x2="160" y2="70" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <line x1="390" y1="46" x2="540" y2="70" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Equity -->
+    <rect x="60" y="70" width="200" height="36" rx="6" fill="#2b6cb0"/>
+    <text x="160" y="92" text-anchor="middle" class="fc-label-white">I. Equity & Liabilities</text>
+
+    <!-- Assets -->
+    <rect x="440" y="70" width="200" height="36" rx="6" fill="#2b6cb0"/>
+    <text x="540" y="92" text-anchor="middle" class="fc-label-white">II. Assets</text>
+
+    <!-- Equity sub-items -->
+    <line x1="100" y1="106" x2="60" y2="130" stroke="#2b6cb0" stroke-width="1"/>
+    <line x1="130" y1="106" x2="160" y2="130" stroke="#2b6cb0" stroke-width="1"/>
+    <line x1="190" y1="106" x2="260" y2="130" stroke="#2b6cb0" stroke-width="1"/>
+
+    <rect x="10" y="130" width="100" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="60" y="148" text-anchor="middle" class="fc-label-sm">(a) Shareholders' Funds</text>
+
+    <rect x="120" y="130" width="80" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="160" y="148" text-anchor="middle" class="fc-label-sm">(b) Share App.</text>
+
+    <rect x="210" y="130" width="100" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="260" y="148" text-anchor="middle" class="fc-label-sm">(c) NC Liabilities</text>
+
+    <!-- More equity items -->
+    <rect x="10" y="166" width="100" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="60" y="184" text-anchor="middle" class="fc-label-sm">(d) CL</text>
+
+    <rect x="120" y="166" width="80" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="160" y="184" text-anchor="middle" class="fc-label-sm">(e) TP</text>
+
+    <!-- Assets sub-items -->
+    <line x1="480" y1="106" x2="440" y2="130" stroke="#2b6cb0" stroke-width="1"/>
+    <line x1="540" y1="106" x2="540" y2="130" stroke="#2b6cb0" stroke-width="1"/>
+    <line x1="600" y1="106" x2="640" y2="130" stroke="#2b6cb0" stroke-width="1"/>
+
+    <rect x="390" y="130" width="100" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="440" y="148" text-anchor="middle" class="fc-label-sm">(a) NC Assets</text>
+
+    <rect x="500" y="130" width="80" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="540" y="148" text-anchor="middle" class="fc-label-sm">(b) C Assets</text>
+
+    <rect x="590" y="130" width="100" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="640" y="148" text-anchor="middle" class="fc-label-sm">(c) C Investments</text>
+
+    <!-- NC Assets detail -->
+    <rect x="340" y="174" width="200" height="24" rx="4" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="440" y="190" text-anchor="middle" class="fc-label-sm">NC Assets: PPE → CWIP → Intangible → FV → Others</text>
+
+    <!-- NC Liabilities detail -->
+    <rect x="60" y="210" width="200" height="24" rx="4" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="160" y="226" text-anchor="middle" class="fc-label-sm">NC Liab: Borrowings → Trade Pay → Other Fin → Provisions</text>
+
+    <!-- Template alignment note -->
+    <rect x="100" y="260" width="500" height="50" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+    <text x="350" y="278" text-anchor="middle" class="fc-label" style="font-weight:600; fill:#22543d;">↑ This exact structure is mirrored in the Excel template</text>
+    <text x="350" y="296" text-anchor="middle" class="fc-label-sm" style="fill:#38a169;">Section headers, item ordering, and (a)(b)(c) numbering match Schedule III</text>
+
+    <!-- P&L Format -->
+    <rect x="200" y="330" width="300" height="36" rx="6" fill="#1a365d"/>
+    <text x="350" y="352" text-anchor="middle" class="fc-label-white">Statement of P&L (Schedule III, Part II)</text>
+
+    <line x1="280" y1="366" x2="140" y2="390" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <line x1="350" y1="366" x2="350" y2="390" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <line x1="420" y1="366" x2="560" y2="390" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <rect x="60" y="390" width="160" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="140" y="408" text-anchor="middle" class="fc-label-sm">I. Revenue from Operations</text>
+
+    <rect x="240" y="390" width="220" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="350" y="408" text-anchor="middle" class="fc-label-sm">II. Other Income → III. Expenses</text>
+
+    <rect x="480" y="390" width="160" height="28" rx="4" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1"/>
+    <text x="560" y="408" text-anchor="middle" class="fc-label-sm">IV→VII: Tax, Extra, P&L</text>
+
+    <!-- Prescribed ordering note -->
+    <rect x="100" y="440" width="500" height="60" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+    <text x="350" y="458" text-anchor="middle" class="fc-label" style="font-weight:600; fill:#22543d;">Schedule III mandates Roman numeral ordering (I through VII)</text>
+    <text x="350" y="476" text-anchor="middle" class="fc-label-sm" style="fill:#38a169;">This is why section-aware scoring works — "Revenue from Operations" is always Section I</text>
+    <text x="350" y="490" text-anchor="middle" class="fc-label-sm" style="fill:#38a169;">and "Other Income" is always Section II, regardless of company</text>
+</svg>
+</div>
+
+<h4>10.1.2 What Schedule III Prescribes</h4>
+<table>
+    <tr><th>Aspect</th><th>Schedule III Requirement</th><th>Impact on EWS System</th></tr>
+    <tr>
+        <td><strong>Line item order</strong></td>
+        <td>Exact sequence: Equity → NC Liabilities → CL → NC Assets → CA</td>
+        <td>Section-aware scoring uses this order; template mirrors it exactly</td>
+    </tr>
+    <tr>
+        <td><strong>Section headers</strong></td>
+        <td>Must show "Non-current assets", "Current assets", etc. as headers</td>
+        <td>Section tracking in text_table_extractor.py identifies these headers</td>
+    </tr>
+    <tr>
+        <td><strong>(a)(b)(c) numbering</strong></td>
+        <td>Sub-items under each section must use (a), (b), (c) numbering</td>
+        <td>Template uses this numbering; fuzzy matching strips it for comparison</td>
+    </tr>
+    <tr>
+        <td><strong>Comparative figures</strong></td>
+        <td>Must show current year + previous year side-by-side</td>
+        <td>Two-column extraction; <code>target_year</code> selects correct column</td>
+    </tr>
+    <tr>
+        <td><strong>"As at" date format</strong></td>
+        <td>BS headers must say "As at March 31, YYYY"</td>
+        <td>Year detection regex: <code>(March|April) \d{1,2},? (20\d{2})</code></td>
+    </tr>
+    <tr>
+        <td><strong>Unit disclosure</strong></td>
+        <td>Must state "₹ in Lakhs/Crores" or similar</td>
+        <td>Unit detection: 30+ patterns for Indian unit conventions</td>
+    </tr>
+    <tr>
+        <td><strong>Standalone + Consolidated</strong></td>
+        <td>Both must be presented if company has subsidiaries</td>
+        <td>Statement type auto-detection; standalone preferred</td>
+    </tr>
+    <tr>
+        <td><strong>Notes to Accounts</strong></td>
+        <td>Must disclose details of each line item in numbered notes</td>
+        <td>Notes extraction pipeline; note_ref tracking per row</td>
+    </tr>
+</table>
+
+<!-- 10.2 Ind AS -->
+<h3 id="sec10b">10.2 Ind AS — Indian Accounting Standards</h3>
+
+<div class="definition">
+    <em>Definition — Ind AS:</em> Indian Accounting Standards, converged with IFRS (International Financial Reporting Standards). Mandatory for listed companies and large unlisted companies (net worth ≥ ₹250 crore) since April 2017. Ind AS governs <strong>recognition, measurement, and disclosure</strong> of financial items — while Schedule III governs <strong>presentation format</strong>.
+</div>
+
+<h4>10.2.1 Key Ind AS Standards Affecting the System</h4>
+
+<div class="card-grid">
+    <div class="card">
+        <h4>Ind AS 1 — Presentation of Financial Statements</h4>
+        <p><strong>What it prescribes:</strong></p>
+        <ul>
+            <li>Minimum line items on the face of BS and P&L</li>
+            <li>Current/non-current classification</li>
+            <li>Comparative information (previous year)</li>
+            <li>Notes structure and cross-referencing</li>
+        </ul>
+        <p><strong>System impact:</strong> The template's minimum line items are derived from Ind AS 1's requirements. The "default zero" items (Goodwill, Biological Assets, etc.) exist because Ind AS 1 requires their disclosure even when zero.</p>
+    </div>
+    <div class="card">
+        <h4>Ind AS 7 — Statement of Cash Flows</h4>
+        <p><strong>What it prescribes:</strong></p>
+        <ul>
+            <li>Three-activity classification: Operating, Investing, Financing</li>
+            <li>Net cash from each activity must be shown</li>
+            <li>Reconciliation of cash and cash equivalents</li>
+        </ul>
+        <p><strong>System impact:</strong> Cash Flow mapping Phase 0 (structural match) relies on the three "Net Cash" summary rows that Ind AS 7 mandates. The Ops → Inv → Fin ordering is standardised.</p>
+    </div>
+    <div class="card">
+        <h4>Ind AS 16 — Property, Plant and Equipment</h4>
+        <p><strong>What it prescribes:</strong></p>
+        <ul>
+            <li>PPE must be classified as a separate NC asset category</li>
+            <li>Disclose: cost, accumulated depreciation, impairment</li>
+            <li>CWIP shown separately under NC assets</li>
+        </ul>
+        <p><strong>System impact:</strong> Template item "(a) Property, Plant and Equipment" and "(b) Capital work-in-progress" are always present. Keyword alias <code>"cwip"</code> maps to CWIP because Ind AS 16 mandates this line item.</p>
+    </div>
+    <div class="card">
+        <h4>Ind AS 36 — Impairment of Assets</h4>
+        <p><strong>What it prescribes:</strong></p>
+        <ul>
+            <li>Impairment losses must be recognised when carrying amount > recoverable amount</li>
+            <li>Disclosed separately in notes</li>
+        </ul>
+        <p><strong>System impact:</strong> "Impairment" is a <code>default_zero</code> item — most companies don't have impairments every year, but Ind AS 36 requires the line item to exist. When present, notes extraction picks it up.</p>
+    </div>
+    <div class="card">
+        <h4>Ind AS 109 — Financial Instruments</h4>
+        <p><strong>What it prescribes:</strong></p>
+        <ul>
+            <li>Financial Assets and Financial Liabilities as separate categories</li>
+            <li>Sub-classification: amortised cost, FVOCI, FVTPL</li>
+            <li>Disclose fair value hierarchy in notes</li>
+        </ul>
+        <p><strong>System impact:</strong> Template has "Other financial assets" and "Other financial liabilities" as distinct line items under both NC and Current sections. Keyword aliases handle company-specific names like "FVOCI investments" or "Derivatives".</p>
+    </div>
+    <div class="card">
+        <h4>Ind AS 112 — Disclosure of Interests in Other Entities</h4>
+        <p><strong>What it prescribes:</strong></p>
+        <ul>
+            <li>Disclose interests in subsidiaries, associates, JVs</li>
+            <li>Related party disclosures (cross-ref Ind AS 24)</li>
+        </ul>
+        <p><strong>System impact:</strong> OFI item "Related Party Disclosures" is extracted from Notes. The notes keyword alias <code>"related party"</code> maps to this template item. Ind AS 112/24 mandate this disclosure.</p>
+    </div>
+    <div class="card">
+        <h4>Ind AS 101–103 — First-time Adoption, Changes, Events</h4>
+        <p><strong>What they prescribe:</strong></p>
+        <ul>
+            <li>Ind AS 101: First-time adoption transitions</li>
+            <li>Ind AS 102: Share-based payments</li>
+            <li>Ind AS 103: Business combinations</li>
+        </ul>
+        <p><strong>System impact:</strong> "Goodwill" (from Ind AS 103 business combinations) is a <code>default_zero</code> item. "Other equity" captures Ind AS 101 transition adjustments. These are rare but standardised.</p>
+    </div>
+    <div class="card">
+        <h4>Ind AS 12 — Income Taxes</h4>
+        <p><strong>What it prescribes:</strong></p>
+        <ul>
+            <li>Current tax + deferred tax must be shown separately</li>
+            <li>Deferred tax assets (NC) and deferred tax liabilities (NC)</li>
+        </ul>
+        <p><strong>System impact:</strong> Template has "Deferred tax assets (net)" under NC Assets and "Deferred tax" under NC Liabilities. These are always-present items per Ind AS 12.</p>
+    </div>
+</div>
+
+<!-- 10.3 Standards → System Alignment -->
+<h3 id="sec10c">10.3 Standards → System Alignment Map</h3>
+
+<p>The following table shows how each pipeline step relies on a specific standardisation guarantee from Schedule III or Ind AS:</p>
+
+<table>
+    <tr><th>Pipeline Step</th><th>Standardisation Guarantee</th><th>Source</th><th>What Breaks Without It</th></tr>
+    <tr>
+        <td><strong>Step 1: Find Pages</strong></td>
+        <td>BS/P&L/CF titles use standard names: "Balance Sheet", "Statement of Profit and Loss", "Cash Flow Statement"</td>
+        <td>Schedule III (prescribed titles)</td>
+        <td>Title pattern matching would fail; every company could use different names</td>
+    </tr>
+    <tr>
+        <td><strong>Step 2: Detect Year</strong></td>
+        <td>Headers say "As at March 31, YYYY" or "For the year ended March 31, YYYY"</td>
+        <td>Schedule III (date format) + Indian FY convention</td>
+        <td>Year regex patterns would not match; no consistent date format</td>
+    </tr>
+    <tr>
+        <td><strong>Step 2b: Statement Type</strong></td>
+        <td>Pages are labelled "Standalone" or "Consolidated"</td>
+        <td>Schedule III (requires both when subsidiaries exist)</td>
+        <td>Cannot distinguish parent-only from group statements</td>
+    </tr>
+    <tr>
+        <td><strong>Step 3: Extract Tables</strong></td>
+        <td>Line items follow prescribed order with (a)(b)(c) numbering; section headers are standard</td>
+        <td>Schedule III (item ordering + numbering)</td>
+        <td>Section tracking would fail; no predictable structure for parsing</td>
+    </tr>
+    <tr>
+        <td><strong>Step 3: Unit Detection</strong></td>
+        <td>"₹ in Lakhs" / "₹ in Crores" / "₹ in Millions" — standard Indian unit conventions</td>
+        <td>Schedule III (unit disclosure requirement)</td>
+        <td>Cannot normalise values; 1000 could mean 1000 or 1000 crores</td>
+    </tr>
+    <tr>
+        <td><strong>Step 4: Map to Template</strong></td>
+        <td>Template items match Schedule III line items; PDF labels use similar terminology</td>
+        <td>Schedule III (prescribed labels) + Ind AS (recognition criteria)</td>
+        <td>Fuzzy matching would have no common vocabulary; scores would be too low</td>
+    </tr>
+    <tr>
+        <td><strong>Step 4: Keyword Aliases</strong></td>
+        <td>Company-specific names still refer to standard Ind AS concepts (e.g., "ROU assets" = Ind AS 116 leases)</td>
+        <td>Ind AS 116, 109, 36, etc. (standardised concepts)</td>
+        <td>Aliases would be company-specific, not industry-wide</td>
+    </tr>
+    <tr>
+        <td><strong>Step 4: Section-aware Scoring</strong></td>
+        <td>NC Assets, CA, NC Liabilities, CL sections are universal</td>
+        <td>Schedule III (4-section BS structure)</td>
+        <td>Cannot apply +15/−20 bonus/penalty; cross-section mismaps would be common</td>
+    </tr>
+    <tr>
+        <td><strong>Step 4: Default Zeros</strong></td>
+        <td>Certain Ind AS items are rare but required (Goodwill, Biological Assets, Impairment)</td>
+        <td>Ind AS 103, 41, 36 (recognition triggers)</td>
+        <td>Would need to guess whether missing = zero or missing = not applicable</td>
+    </tr>
+    <tr>
+        <td><strong>Step 4: Notes → OFI</strong></td>
+        <td>Notes are numbered and cross-referenced; specific disclosures mandated (Contingent Liabilities, Related Party, Auditor Remuneration)</td>
+        <td>Ind AS 1, 24, 37 + Companies Act Sec 211</td>
+        <td>Cannot find OFI items in notes; no predictable note structure</td>
+    </tr>
+    <tr>
+        <td><strong>Step 5: Excel Formulas</strong></td>
+        <td>Totals are sums of prescribed sub-items (e.g., Total NC Assets = PPE + CWIP + Intangible + ...)</td>
+        <td>Schedule III (prescribed aggregation)</td>
+        <td>Formula structure would differ per company; no universal formula possible</td>
+    </tr>
+</table>
+
+<!-- 10.4 Why LLM-First Works -->
+<h3 id="sec10d">10.4 Why LLM-First Works for Indian Reports</h3>
+
+<div class="flowchart-container">
+<svg width="700" height="400" viewBox="0 0 700 400">
+    <!-- The foundation -->
+    <rect x="200" y="10" width="300" height="50" rx="8" fill="#1a365d"/>
+    <text x="350" y="30" text-anchor="middle" class="fc-label-white">Schedule III + Ind AS</text>
+    <text x="350" y="48" text-anchor="middle" class="fc-label-badge">LEGAL STANDARDISATION FRAMEWORK</text>
+
+    <line x1="350" y1="60" x2="350" y2="90" stroke="#2b6cb0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+    <!-- Guarantees -->
+    <rect x="120" y="90" width="460" height="50" rx="8" fill="#2b6cb0"/>
+    <text x="350" y="110" text-anchor="middle" class="fc-label-white">Standardised Terminology + Structure + Ordering + Disclosures</text>
+    <text x="350" y="128" text-anchor="middle" class="fc-label-badge">SAME VOCABULARY ACROSS ALL INDIAN COMPANIES</text>
+
+    <line x1="350" y1="140" x2="200" y2="180" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+    <line x1="350" y1="140" x2="500" y2="180" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+    <!-- Left: LLM Primary (now the main method) -->
+    <rect x="60" y="180" width="280" height="50" rx="8" fill="#805ad5"/>
+    <text x="200" y="200" text-anchor="middle" class="fc-label-white">★ LLM Primary Methods</text>
+    <text x="200" y="218" text-anchor="middle" class="fc-label-badge">PAGE ID · STATEMENT TYPE · MAPPING</text>
+
+    <line x1="200" y1="230" x2="200" y2="260" stroke="#805ad5" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+    <rect x="80" y="260" width="240" height="50" rx="8" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="200" y="278" text-anchor="middle" class="fc-label" style="fill:#44337a; font-weight:600;">★ Primary for all core steps</text>
+    <text x="200" y="296" text-anchor="middle" class="fc-label-sm" style="fill:#805ad5;">page ID + type + mapping driven by LLM</text>
+
+    <!-- Right: Deterministic Validation (now the backup) -->
+    <rect x="360" y="180" width="280" height="50" rx="8" fill="#38a169"/>
+    <text x="500" y="200" text-anchor="middle" class="fc-label-white">Deterministic Validation</text>
+    <text x="500" y="218" text-anchor="middle" class="fc-label-badge">CROSS-CHECK · EXPAND · FALLBACK</text>
+
+    <line x1="500" y1="230" x2="500" y2="260" stroke="#38a169" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+    <rect x="380" y="260" width="240" height="50" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+    <text x="500" y="278" text-anchor="middle" class="fc-label" style="fill:#22543d; font-weight:600;">Validates + expands LLM results</text>
+    <text x="500" y="296" text-anchor="middle" class="fc-label-sm" style="fill:#38a169;">alias + fuzzy + continuation pages</text>
+
+    <!-- Synergy arrow -->
+    <line x1="320" y1="285" x2="380" y2="285" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="350" y="278" text-anchor="middle" class="fc-label-sm" style="fill:#2b6cb0; font-weight:600;">∪ UNION</text>
+
+    <!-- Contrast: Non-Indian -->
+    <rect x="100" y="330" width="500" height="55" rx="8" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.5"/>
+    <text x="350" y="348" text-anchor="middle" class="fc-label" style="fill:#822727; font-weight:600;">⚠ Without Schedule III/Ind AS: LLM still works as primary, but deterministic validation becomes unreliable</text>
+    <text x="350" y="366" text-anchor="middle" class="fc-label-sm" style="fill:#e53e3e;">(Standardisation makes BOTH LLM and deterministic methods effective — LLM understands the vocabulary, deterministic validates it)</text>
+</svg>
+</div>
+
+<h4>10.4.1 The Standardisation Advantage — Quantified</h4>
+<table>
+    <tr><th>Metric</th><th>With Schedule III + Ind AS (LLM-First)</th><th>Without Standardisation</th></tr>
+    <tr>
+        <td>LLM page identification accuracy</td>
+        <td><span class="badge badge-green">~95%</span> — LLM recognises standard Schedule III page titles</td>
+        <td><span class="badge badge-yellow">~70%</span> — non-standard titles confuse LLM too</td>
+    </tr>
+    <tr>
+        <td>LLM mapping accuracy</td>
+        <td><span class="badge badge-green">~90%</span> — LLM maps standard terminology reliably</td>
+        <td><span class="badge badge-red">~50%</span> — no shared vocabulary for LLM to leverage</td>
+    </tr>
+    <tr>
+        <td>Deterministic validation coverage</td>
+        <td><span class="badge badge-green">~85%</span> — fuzzy + alias cross-validate LLM results effectively</td>
+        <td><span class="badge badge-red">~30%</span> — deterministic methods can't validate what they can't match</td>
+    </tr>
+    <tr>
+        <td>Keyword alias coverage</td>
+        <td><span class="badge badge-green">~40 aliases</span> cover 95% of company-specific names</td>
+        <td><span class="badge badge-red">1000+ aliases</span> needed; company-specific, not scalable</td>
+    </tr>
+    <tr>
+        <td>Section-aware accuracy</td>
+        <td><span class="badge badge-green">+15/−20 bonus</span> works because sections are universal</td>
+        <td><span class="badge badge-red">No sections</span> — cannot apply bonus/penalty</td>
+    </tr>
+    <tr>
+        <td>Default zero reliability</td>
+        <td><span class="badge badge-green">High</span> — Ind AS mandates these items; absence ≈ zero</td>
+        <td><span class="badge badge-red">Low</span> — absence could mean "not applicable" or "not disclosed"</td>
+    </tr>
+    <tr>
+        <td>LLM dependency</td>
+        <td><span class="badge badge-purple">★ Primary</span> — page ID + type + mapping (validated by deterministic)</td>
+        <td><span class="badge badge-red">60%+</span> — LLM primary but no reliable deterministic validation</td>
+    </tr>
+    <tr>
+        <td>Year detection from headers</td>
+        <td><span class="badge badge-green">~95%</span> — "As at March 31, YYYY" is standard</td>
+        <td><span class="badge badge-red">~40%</span> — no standard date format</td>
+    </tr>
+</table>
+
+<div class="warning">
+    <strong>Important Limitation:</strong> The system is designed for <strong>Indian annual reports following Schedule III + Ind AS</strong>. It will NOT work correctly for: (1) US 10-K filings (US GAAP), (2) UK annual reports (IFRS without Schedule III structure), (3) Banking/insurance companies (different format per RBI/IRDAI regulations), or (4) Pre-Ind AS reports (pre-2017 format). Supporting these would require a different template and mapping dictionary for each regulatory framework.
+</div>
+
+<p style="margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text-light); font-size: 12px;">
+    EWS Annual Report Extraction Agent — Functional Design Document v1.0 — June 2026
+</p>
+
+</div>
+</body>
+</html>

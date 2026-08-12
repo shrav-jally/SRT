@@ -1,0 +1,7539 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmpqine1dqj/2021-22_nse_annual_report_brig.pdf",
+    "file_name": "2021-22_nse_annual_report_brig.pdf",
+    "financial_year": "2021-22",
+    "extraction_timestamp": "2026-07-02T15:02:06.016507+00:00",
+    "page_count": 175
+  },
+  "standalone": {
+    "profit_and_loss": {
+      "statement": "standalone_profit_and_loss",
+      "page": 87,
+      "pages": [
+        87,
+        88,
+        89
+      ],
+      "title": "Statement of Profit and Loss for the year ended 31st March'2022",
+      "currency": "Amount INR in Lakh",
+      "periods": [
+        "30.05.2022"
+      ],
+      "column_headers": [
+        "FY FY 2021-22 2021-22 FY 2021-22"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Statement of Profit and Loss for the year ended 31st March'2022",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "For the Particulars Note",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "31st",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "I. Revenue from operations 24",
+          "note_no": "",
+          "values": {
+            "current_period": 36681.09,
+            "previous_period": 36598.06
+          }
+        },
+        {
+          "section": null,
+          "line_item": "II. other income 25",
+          "note_no": "",
+          "values": {
+            "current_period": -226.08,
+            "previous_period": 2094.2
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Ill. Total income (1+11)",
+          "note_no": "",
+          "values": {
+            "current_period": 36455.01,
+            "previous_period": 38692.26
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IV. EXPENSES",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Purchase / Cost of Revenue 26",
+          "note_no": "",
+          "values": {
+            "current_period": 28517.19,
+            "previous_period": 29929.08
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Employee Benefit expenses 27",
+          "note_no": "",
+          "values": {
+            "current_period": 3834.47,
+            "previous_period": 3859.31
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other Operating Expenses 28",
+          "note_no": "",
+          "values": {
+            "current_period": 3676.15,
+            "previous_period": 3652.98
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Financial costs 29",
+          "note_no": "",
+          "values": {
+            "current_period": 31.27,
+            "previous_period": 9.54
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortization expense 3",
+          "note_no": "",
+          "values": {
+            "current_period": 18.87,
+            "previous_period": 23.15
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total expenses (IV)",
+          "note_no": "",
+          "values": {
+            "current_period": 36077.95,
+            "previous_period": 37474.06
+          }
+        },
+        {
+          "section": null,
+          "line_item": "V. Profit/(loss) before tax (Ill-IV)",
+          "note_no": "",
+          "values": {
+            "current_period": 377.06,
+            "previous_period": 1218.2
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VI. Tax expense current tax",
+          "note_no": "",
+          "values": {
+            "current_period": 125.88,
+            "previous_period": 406.68
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deferred tax",
+          "note_no": "",
+          "values": {
+            "current_period": 79.61,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VII. Profit/(loss) for the period (v-vl)",
+          "note_no": "",
+          "values": {
+            "current_period": 171.57,
+            "previous_period": 822.31
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VIII. Other comprehensive income",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Items that will not be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Remeasurement of the defined benefit plan(net of tax)",
+          "note_no": "",
+          "values": {
+            "current_period": -2.12,
+            "previous_period": 2.65
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax relating to items that will not be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exchange difference in translation of foreign operatins",
+          "note_no": "",
+          "values": {
+            "current_period": 173.32,
+            "previous_period": -162.72
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IX. Total comprehensive income for the period (Vll+VIII)",
+          "note_no": "",
+          "values": {
+            "current_period": 342.76,
+            "previous_period": 662.25
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "a)Basic (in Rs.)",
+          "note_no": "",
+          "values": {
+            "current_period": 0.009,
+            "previous_period": 0.16
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "b)Diluted (in Rs.)",
+          "note_no": "",
+          "values": {
+            "current_period": 0.009,
+            "previous_period": 0.16
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 26,
+        "total_rows": 3
+      }
+    },
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 86,
+      "pages": [
+        86
+      ],
+      "title": "Financial Statement",
+      "currency": "Amount INR in Lakh",
+      "periods": [
+        "30.05.2022"
+      ],
+      "column_headers": [
+        "Note",
+        "As at 31st March'2022 As at 31st March 2021"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Property, plant and equipment",
+          "note_no": "3",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Investment property Other intangible assets",
+          "note_no": "3",
+          "values": {
+            "current_period": 0.52,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "-Investments -Loans",
+          "note_no": "5",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "-Others financial assets",
+          "note_no": "7",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Deferred tax assets (net)",
+          "note_no": "8",
+          "values": {
+            "current_period": 212.84,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Non-Current tax assets (net)",
+          "note_no": "9",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Total Non-current assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Currant assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "-Trade receivables -Cash and cash equivalents",
+          "note_no": "10",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "-Other bank balances -Loans",
+          "note_no": "12",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "-Other Financial Assets Other current assets",
+          "note_no": "14",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Total Currant assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Total assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Equity",
+          "line_item": "Equity Share capital Other equity",
+          "note_no": "16",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Equity",
+          "line_item": "Total Equity",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Equity",
+          "line_item": "Llabllltlas",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Liabilities",
+          "line_item": "Financial llabllltlas -Borrowings",
+          "note_no": "18",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Liabilities",
+          "line_item": "Provisions",
+          "note_no": "19",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Liabilities",
+          "line_item": "Deferred tax liability (net)",
+          "note_no": "8",
+          "values": {
+            "current_period": 66.9,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Liabilities",
+          "line_item": "Total Non-currant llabllltlas",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Liabilities",
+          "line_item": "Financial llabllltlas -Trade payables",
+          "note_no": "20",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Liabilities",
+          "line_item": "-Others financial liabilities Other current liabilities",
+          "note_no": "21",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Liabilities",
+          "line_item": "Provisions",
+          "note_no": "23",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Liabilities",
+          "line_item": "Total Current liabilities",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Liabilities",
+          "line_item": "Total equity and llabllltlas",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 25,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "cash_flow": {
+      "statement": "standalone_cash_flow",
+      "page": 100,
+      "pages": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      "title": "Financial Statement",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "FY FY FY FY FY FY 2021-22 2021-22 2021-22 2021-22 2021-22 2021-22"
+      ],
+      "extraction_method": "word_position_clustering_llm_repair",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Note No: 18 Notes Equity forming share part capital of Standalone",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "NOTE S.No. NOTE NOTE NO. NO. NO. 4: 18: 9: INVESTMENT NON-CURRENT BORROWINGS PROPERTY -NON TAX",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "S.No. S.No. S.No. Equity share capital",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Authorized Non-Current",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Borrowings Land at",
+          "note_no": null,
+          "values": {
+            "current_period": 21.95,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "From",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 21.95
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Issued , Subscribed",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 52.04
+          }
+        },
+        {
+          "section": null,
+          "line_item": "From",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "NOTE NOTE NO. NO. 5: 10: INVESTMENTS TRADE RECEIVABLES -NON Loans",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Raconclllatlon",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "S.No. S.No.",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Number of Shares",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 955.93
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Shares Trade Investments outstanding",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add: Issued (a) and Shares outstanding",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Rights, Preferences Notes",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(a} The In determining the",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "each. Each",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 5178.81
+          }
+        },
+        {
+          "section": null,
+          "line_item": "NOTE NO. 19: PROVISIONS expedient (b) -NON by In the",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "S.No. provision be matrix. entitled The to",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "adjusted preferential for forward",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "equity Provisions-Non shares",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 4174.9
+          }
+        },
+        {
+          "section": null,
+          "line_item": "the receivables that",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Shares held",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 18266.39
+          }
+        },
+        {
+          "section": null,
+          "line_item": "The details",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Please",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "NOTE NO. II: CASH AND CASH M. Suresh",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No. Number",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Cash % of and NOTE NO. 20: TRADE PAYABLES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Vijay Kumar",
+          "note_no": null,
+          "values": {
+            "current_period": 16886.81,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Number",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No.",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Note No: 17 Other equity % of NOTE NO. 6: LOANS -NON ARADHANA CURRENT Trade",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 0.04
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No. Total Number",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 19.8
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Total Other Loans % of",
+          "note_no": null,
+          "values": {
+            "current_period": 2362.29,
+            "previous_period": 2847.79
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "SARITA enterprises (i) Unsecured, Reserves",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "NOTE NO. 12: OTHER BANK BALANCES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Number",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No.",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Please a).Capltal % of",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 19.91
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "other bank The details",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 41678.12
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "NOTE NOTE NO. NO. 21: 7: OTHER OTHER FINANCIAL FINANCIAL ASSETS",
+          "note_no": null,
+          "values": {
+            "current_period": 2.45,
+            "previous_period": 2.62
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No. S.No. ARADHANA",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 2.94
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "SARITA other b).Sacurltlas other",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 5.58
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "KALPANA",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 171.04
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "SHALINI",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "NOTE NO. 13: LOANS -CURRENT",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "SURESH",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 107.5
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No.",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "NOTE NO. 22: OTHER CURRENT VIJAY LIABILITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 2512
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Loans",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 164.45
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "VIJAY c).General KUMAR",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "RAJYALAXMI",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 398.17
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "NOTE NO. 8: DEFERRED TAX other ASSETS",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "M. GANGI",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "M. SUBHADRA",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 398.17
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Deferred",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 6753.24
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "PALLE d).Surplus SUGUNA",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "KMOHAN",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 6479.56
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "NOTE NO. 23: PROVISIONS -CURRENT VENKATESWARA",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "MUTHUKURU",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "NOTE NO. 14: OTHER FINANCIAL FINGROWlH ASSETS",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No. PROBUS",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": -16.36
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "MUNDI Other",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "TOTAL e) .Foreign",
+          "note_no": null,
+          "values": {
+            "current_period": 32.57,
+            "previous_period": 32.57
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "\"Note:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 10.17
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "% Change",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 57.36
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "the form of resulted in",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "NOTE NO. 15: OTHER CURRENT There ASSETS was",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "S.No. preferential",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "Hundred and Other",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "preferential",
+          "note_no": null,
+          "values": {
+            "current_period": 4326.17,
+            "previous_period": 2600.62
+          }
+        },
+        {
+          "section": "Equity",
+          "line_item": "allotment of",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 2600.62
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 77,
+        "total_rows": 3
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 96,
+        "extraction_method": "pdfplumber",
+        "row_count": 6,
+        "column_count": 3,
+        "rows": [
+          [
+            "Type of asset",
+            "Method",
+            "Useful lives"
+          ],
+          [
+            "Computer equipment",
+            "Straight line",
+            "3 years"
+          ],
+          [
+            "Office equipment’s",
+            "Straight line",
+            "5 years"
+          ],
+          [
+            "Furniture and fixtures",
+            "Straight line",
+            "10 years"
+          ],
+          [
+            "Electrical installations",
+            "Straight line",
+            "10 years"
+          ],
+          [
+            "Vehicles",
+            "Straight line",
+            "8 years"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": "4",
+        "title": "INVESTMENT PROPERTY",
+        "page": 100,
+        "extraction_method": "pdfplumber",
+        "row_count": 52,
+        "column_count": 14,
+        "rows": [
+          [
+            "Notes f",
+            "orm",
+            "ing part",
+            "of Standalo",
+            "ne Financial Sta",
+            "tements",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "NOTE N",
+            "O. 4",
+            ": INVEST",
+            "MENT PROPE",
+            "RTY",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "Partic",
+            "ulars",
+            "As",
+            "at",
+            "31st Marc",
+            "h'2022",
+            "As",
+            "at 31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Land",
+            "at cast",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "21.95",
+            "",
+            "",
+            "21.95"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total Investm",
+            "ent Property",
+            "",
+            "",
+            "",
+            "21.95",
+            "",
+            "",
+            "21.95"
+          ],
+          [
+            "NOTE N",
+            "O. 5",
+            ": INVEST",
+            "MENTS -NON",
+            "CURRENT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "Partic",
+            "ulars",
+            "As",
+            "at",
+            "31st Marc",
+            "h'2022",
+            "As",
+            "at 31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Inve",
+            "stments -Non-",
+            "Current",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(a)",
+            "Investment in E",
+            "quity lnstruements",
+            "at cost",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(I) Subsidi",
+            "aries (unquoted)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Frantier Dat",
+            "a Management Inc.",
+            "USA",
+            "",
+            "",
+            "",
+            "12,9B4.77",
+            "",
+            "",
+            "12,9B4.77"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "lnternatian",
+            "al Expressians Inc. U",
+            "SA",
+            "",
+            "",
+            "",
+            "10A53.63",
+            "",
+            "",
+            "10A53.63"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Online Med",
+            "ia Salutians Limited",
+            ", Israel",
+            "",
+            "",
+            "",
+            "5,178.81",
+            "",
+            "",
+            "5,178.81"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Ybrant Med",
+            "ia Acquisitian Inc. U",
+            "SA",
+            "",
+            "",
+            "",
+            "12,652.40",
+            "",
+            "",
+            "12,652.40"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Dream Ad",
+            "Graup",
+            "",
+            "",
+            "",
+            "",
+            "5A32.40",
+            "",
+            "",
+            "5A32.40"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Max Interac",
+            "tive Ply Ltd., Australi",
+            "a",
+            "",
+            "",
+            "",
+            "4,174.90",
+            "",
+            "",
+            "4,174.90"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Dyama Car",
+            "paratian .USA",
+            "",
+            "",
+            "",
+            "",
+            "4.67",
+            "",
+            "",
+            "4.67"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Ybrant Digit",
+            "al Services De Publi",
+            "cidade Ltda,Brasil",
+            "",
+            "",
+            "",
+            "2.66",
+            "",
+            "",
+            "2.66"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Ybrant Digit",
+            "al (Brasil) Ltd., Singa",
+            "pare",
+            "",
+            "",
+            "",
+            "0.00",
+            "",
+            "",
+            "0.00"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "LGS Global",
+            "FZE, UAE",
+            "",
+            "",
+            "",
+            "",
+            "2.44",
+            "",
+            "",
+            "2.44"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "LIL Projects",
+            "Private Limited",
+            "",
+            "",
+            "",
+            "",
+            "1.00",
+            "",
+            "",
+            "1.00"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Yreach Me",
+            "dia Pvt.Ltd",
+            "",
+            "",
+            "",
+            "",
+            "0.99",
+            "",
+            "",
+            "0.99"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "vuchi Med",
+            "ia Pvt ltd",
+            "",
+            "",
+            "",
+            "",
+            "16,886.81",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total Investmen",
+            "ts Non-Current",
+            "",
+            "",
+            "8",
+            "7,775.49",
+            "",
+            "5",
+            "0,888.88"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "6: LOANS",
+            "-NON CURR",
+            "ENT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "Partic",
+            "ulars",
+            "As",
+            "at",
+            "31st Marc",
+            "h'2022",
+            "As",
+            "at 31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Loan",
+            "s -Non-Curre",
+            "nt",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "U",
+            "nsecured, Cons",
+            "idered Good",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(a) Security",
+            "deposits",
+            "",
+            "",
+            "",
+            "",
+            "10.37",
+            "",
+            "",
+            "19.91"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total Loon",
+            "s -Non-Current",
+            "",
+            "",
+            "",
+            "",
+            "10.37",
+            "",
+            "",
+            "19.91"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "7: OTHER",
+            "FINANCIAL A",
+            "SSETS -NON CU",
+            "RRENT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "Partic",
+            "ulars",
+            "As",
+            "at",
+            "31st Marc",
+            "h'2022",
+            "As",
+            "at 31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "othe",
+            "r financial asse",
+            "ts -Non-Current",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Unsecure",
+            "d Considered Good",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Advanc",
+            "es to related parties",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "- Ybra",
+            "nt Employees Welfar",
+            "e Trust",
+            "",
+            "",
+            "",
+            "107.50",
+            "",
+            "",
+            "107.50"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "- LGSL",
+            "Foundation Trust",
+            "",
+            "",
+            "",
+            "",
+            "56.95",
+            "",
+            "",
+            "56.95"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "To",
+            "tal other financial a",
+            "ssets -Non-Current",
+            "",
+            "",
+            "",
+            "164.45",
+            "",
+            "",
+            "164.45"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "8: DEFER",
+            "RED TAX ASS",
+            "ETS (NET)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "Partic",
+            "ulars",
+            "As",
+            "at",
+            "31st Marc",
+            "h'2022",
+            "As",
+            "at31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Defe",
+            "rred tax assets",
+            "(net)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Deferred ta",
+            "x liability",
+            "",
+            "",
+            "",
+            "",
+            "482.31",
+            "",
+            "",
+            "505.83"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Allowance",
+            "s for bad and doubt",
+            "ful debts",
+            "",
+            "",
+            "",
+            "66.43",
+            "",
+            "",
+            "(24.85)"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Acturail gai",
+            "n or loss of gratutity",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1.32"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Deferred t",
+            "ax assets",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Opening",
+            "Deferred tax assets",
+            "",
+            "",
+            "",
+            "",
+            "695.15",
+            "",
+            "",
+            "709.20"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-Fixed As",
+            "sets",
+            "",
+            "",
+            "",
+            "",
+            "(14.47)",
+            "",
+            "",
+            "(16.36)"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-Provision",
+            "for gratuity and co",
+            "mpensated absences",
+            "",
+            "",
+            "",
+            "1.29",
+            "",
+            "",
+            "2.31"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Allowances",
+            "for bad and doubtf",
+            "ul debts",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Acturail gai",
+            "n or loss of gratutity",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "MAT Credit",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "(200.12)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Deferred tax",
+            "assets (net)",
+            "",
+            "",
+            "",
+            "(66.90)",
+            "",
+            "",
+            "212.84"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": "9",
+        "title": "NON-CURRENT TAX ASSETS (NET)",
+        "page": 101,
+        "extraction_method": "pdfplumber",
+        "row_count": 55,
+        "column_count": 15,
+        "rows": [
+          [
+            "NOTE",
+            "NO",
+            ". 9: NON-C",
+            "URRENT TAX ASS",
+            "ETS (NET)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Particulars",
+            "",
+            "As",
+            "at 31st",
+            "Ma",
+            "rch'2022",
+            "As a",
+            "t 31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Non-Curr",
+            "ent tax as-(",
+            "net)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-TDS Receivabl",
+            "es",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "57.05",
+            "",
+            "",
+            "52.04"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Tot",
+            "al Non-",
+            "Current tax as",
+            "sets (net)",
+            "",
+            "",
+            "",
+            "57.05",
+            "",
+            "",
+            "52.04"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "10: TRADE",
+            "RECEIVABLES",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Particulars",
+            "",
+            "As",
+            "at 31st",
+            "Ma",
+            "rch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Trade rece",
+            "ivables",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(i) unsecured c",
+            "onsidere",
+            "d good",
+            "",
+            "",
+            "",
+            "",
+            "1BA92.44",
+            "",
+            "",
+            "18,980.15"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Less: Allowance",
+            "s for ba",
+            "d and doubtful",
+            "debts",
+            "",
+            "",
+            "",
+            "514.73",
+            "",
+            "",
+            "713.75"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Notes",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "In d",
+            "etermining the a",
+            "llowances for",
+            "doubtfu",
+            "l trade receiv",
+            "ables the company has used",
+            "a",
+            "practic",
+            "al",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "expe",
+            "dient by comp",
+            "uting the expe",
+            "cted cr",
+            "edit loss allo",
+            "wance for trade receivables",
+            "bas",
+            "ed on",
+            "a",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "provi",
+            "sion matrix. The",
+            "provision mat",
+            "rix take",
+            "s into account",
+            "historical credit loss experie",
+            "nc",
+            "e and",
+            "is",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "adju",
+            "sted for forward",
+            "looking inform",
+            "ation. Th",
+            "e expected cr",
+            "edit loss allowance is based on t",
+            "he",
+            "ageing",
+            "of",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "the r",
+            "eceivables that a",
+            "re due and rate",
+            "s used i",
+            "n the provision",
+            "matrix.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total",
+            "Trade receivab",
+            "les",
+            "",
+            "",
+            "",
+            "17,977.71",
+            "",
+            "",
+            "18,266.39"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Please ref",
+            "er note no.44",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "II: CASH A",
+            "ND CASH EQUIVA",
+            "LENTS",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Particulars",
+            "",
+            "As",
+            "at 31st",
+            "Ma",
+            "rch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Cash and",
+            "cash equivalen",
+            "ts",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Balances with b",
+            "anks",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(i) Current acco",
+            "unts",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "571.ll",
+            "",
+            "",
+            "19.76"
+          ],
+          [
+            "",
+            "",
+            "",
+            "(i",
+            "i) Cheques, dra",
+            "fts on ha",
+            "nd",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(i",
+            "ii) Cash on han",
+            "d",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            "0.04"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "To",
+            "tal Cash",
+            "and cash equ",
+            "ivalents",
+            "",
+            "",
+            "",
+            "571.12",
+            "",
+            "",
+            "19.80"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "12: OTHER",
+            "BANK BALANCES",
+            "-CURRENT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Particulars",
+            "",
+            "As",
+            "at 31st",
+            "Ma",
+            "rch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "other ban",
+            "k balances -Cu",
+            "rrent",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(i) Earmarked",
+            "balance",
+            "s with Banks",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-Unpaid Divid",
+            "end",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "2.45",
+            "",
+            "",
+            "2.62"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(ii) Balances wit",
+            "h bank",
+            "held as Margin",
+            "Money",
+            "",
+            "",
+            "",
+            "2.94",
+            "",
+            "",
+            "2.94"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Tota",
+            "l other",
+            "bank balances",
+            "-Current",
+            "",
+            "",
+            "",
+            "5.39",
+            "",
+            "",
+            "5.58"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "13: LOANS",
+            "-CURRENT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Particulars",
+            "",
+            "As",
+            "at 31st",
+            "Mar",
+            "ch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Loans -cu",
+            "rrent",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "U",
+            "nsecured Cons",
+            "idered G",
+            "ood",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(",
+            "a) Loans to rela",
+            "ted par",
+            "ties",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "L",
+            "IL Projects Priva",
+            "te Limite",
+            "d",
+            "",
+            "",
+            "",
+            "",
+            "5,220.28",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Yreach Media P",
+            "vt.Ltd",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "19,519.12",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-Advances to",
+            "Employe",
+            "es",
+            "",
+            "",
+            "",
+            "",
+            "211.72",
+            "",
+            "",
+            "1,018.59"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(b) other Adva",
+            "nces",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "62,933.15",
+            "",
+            "",
+            "10,501.40"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total",
+            "Loans -Curre",
+            "nt",
+            "",
+            "",
+            "",
+            "87,884.27",
+            "",
+            "",
+            "11,519.99"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "14: OTHER",
+            "FINANCIAL ASSET",
+            "S -CURRENT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Particulars",
+            "",
+            "As",
+            "at 31st",
+            "Mar",
+            "ch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Other llna",
+            "nclal asset-Cu",
+            "rrent",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(",
+            "a) Security dep",
+            "osits",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "- Rental depo",
+            "sits",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "32.57",
+            "",
+            "",
+            "32.57"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "- Other depo",
+            "sits",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "29.21",
+            "",
+            "",
+            "24.79"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total",
+            "Other Fi",
+            "nancial Assets",
+            "-Current",
+            "",
+            "",
+            "",
+            "61.78",
+            "",
+            "",
+            "57.36"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "15: OTHER",
+            "CURRENT ASSETS",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Particulars",
+            "",
+            "As",
+            "at 31st",
+            "Mar",
+            "ch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Other Cur",
+            "rent Assets",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "o",
+            "ther current As",
+            "sets",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "4,326.17",
+            "",
+            "",
+            "2,600.62"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total Ot",
+            "her Current As",
+            "sets",
+            "",
+            "",
+            "",
+            "4,326.17",
+            "",
+            "",
+            "2,600.62"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": null,
+        "title": null,
+        "page": 102,
+        "extraction_method": "pdfplumber",
+        "row_count": 63,
+        "column_count": 10,
+        "rows": [
+          [
+            "",
+            "Particul",
+            "ars",
+            "",
+            "",
+            "As a",
+            "t 31st",
+            "March 2022 As at 3",
+            "1st March",
+            "2021"
+          ],
+          [
+            "uity share capital",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Authorized",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "(2,250,000,000 Eq",
+            "uity Shares of R",
+            "s.2/-e",
+            "ach)",
+            "",
+            "",
+            "45,000.00",
+            "19,5",
+            "00.00"
+          ],
+          [
+            "Issued , Subscribed a",
+            "nd Paid Up",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "(2,017,921,873 Equit",
+            "y Shares Rs.2/-",
+            "each",
+            ")",
+            "",
+            "",
+            "40,358.44",
+            "10,1",
+            "53.03"
+          ],
+          [
+            ") Raconclllatlon of the",
+            "shares outstand",
+            "ing at the begi",
+            "nning",
+            "and at the en",
+            "d of the",
+            "repor",
+            "ting period:",
+            "",
+            ""
+          ],
+          [
+            "Number of Shares",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Shares outstanding",
+            "at the beginning",
+            "of the year",
+            "",
+            "",
+            "",
+            "",
+            "50,76,51,499",
+            "47,62,5",
+            "1,499"
+          ],
+          [
+            "Add: Issued and all",
+            "otted during the y",
+            "ear",
+            "",
+            "",
+            "",
+            "",
+            "1,51,02,70,374",
+            "3,14,0",
+            "0,000"
+          ],
+          [
+            "Shares outstanding",
+            "at the end of the",
+            "year",
+            "",
+            "",
+            "",
+            "",
+            "2,01,79,21,873",
+            "50,76,5",
+            "1,499"
+          ],
+          [
+            "Rights, Preferences a",
+            "nd restrictions atta",
+            "ched to the eq",
+            "uity sh",
+            "ares:",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "(a} The Compan",
+            "y has only one clas",
+            "s of equity shares",
+            "havin",
+            "g par value of",
+            "�2",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "each. Each shareh",
+            "older is eligible for o",
+            "ne vote per share",
+            "held.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "(b) In the event o",
+            "f liquidation of the C",
+            "ompany, the hol",
+            "ders of",
+            "equity shares",
+            "will",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "be entitled to rec",
+            "eive remaining asse",
+            "ts of the Compan",
+            "y, afte",
+            "r distribution of",
+            "all",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "preferential amo",
+            "unts. The distributio",
+            "n will be in prop",
+            "ortion",
+            "to the number",
+            "of",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "equity shares held",
+            "by equity sharehold",
+            "ers.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Shares held by",
+            "holding Compan",
+            "y",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            ") The details of s",
+            "hareholders holdi",
+            "ng more than 5",
+            "% sha",
+            "res in the com",
+            "pany",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "(a) Equity Sha",
+            "res",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "M. Suresh Kum",
+            "ar Reddy",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Number of",
+            "equity shares",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "7,50,8",
+            "4,653"
+          ],
+          [
+            "% of holdin",
+            "g",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "14.83%"
+          ],
+          [
+            "Vijay Kumar Ka",
+            "ncharla (HUF)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Number of",
+            "equity shares",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "6,20,4",
+            "4,564"
+          ],
+          [
+            "% of holdin",
+            "g",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "12.22%"
+          ],
+          [
+            "ARADHANA CO",
+            "MMOSALES LLP",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Number of",
+            "equity shares",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "10,41,66,666",
+            "",
+            ""
+          ],
+          [
+            "% of holdin",
+            "g",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "5.16%",
+            "",
+            ""
+          ],
+          [
+            "SARITA COMM",
+            "OSALES LLP",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Number of",
+            "equity shares",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "10,41,66,666",
+            "",
+            ""
+          ],
+          [
+            "% of holdin",
+            "g",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "5.16%",
+            "",
+            ""
+          ],
+          [
+            "The details of",
+            "shareholding of p",
+            "romoters as at",
+            "31st M",
+            "arch 2022",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Promo",
+            "ter Name",
+            "",
+            "",
+            "",
+            "No of",
+            "Shares % of",
+            "Total Sha",
+            "res"
+          ],
+          [
+            "ARADHANA COM",
+            "MOSALES LLP",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "10,41,66,666",
+            "",
+            "5.16%"
+          ],
+          [
+            "SARITA COMM",
+            "OSALES LLP",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "10,41,66,666",
+            "",
+            "5.16%"
+          ],
+          [
+            "KALPANA COM",
+            "MOSALES LLP",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "5,20,83,333",
+            "",
+            "2.58%"
+          ],
+          [
+            "SHALINI SALES L",
+            "LP",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "4,16,66,666",
+            "",
+            "2.06%"
+          ],
+          [
+            "M SURESH KUM",
+            "AR REDDY",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1,73,02,725",
+            "",
+            "0.86%"
+          ],
+          [
+            "VIJAY KANCHA",
+            "RLA",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "53,93,295",
+            "",
+            "0.27%"
+          ],
+          [
+            "VIJAY KUMAR K",
+            "ANCHARLA HUF",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "3,22,54,890",
+            "",
+            "1.60%"
+          ],
+          [
+            "S V RAJYALAXM",
+            "I REDDY",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "31,95,833",
+            "",
+            "0.16%"
+          ],
+          [
+            "M. GANGI REDD",
+            "Y",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "24,10,000",
+            "",
+            "0.12%"
+          ],
+          [
+            "M. SUBHADRA R",
+            "EDDY",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "2,99,458",
+            "",
+            "0.01%"
+          ],
+          [
+            "PALLE SUGUNA",
+            "REDDY",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "43,77,416",
+            "",
+            "0.22%"
+          ],
+          [
+            "KMOHAN RAO",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "3,750",
+            "",
+            "0.00%"
+          ],
+          [
+            "VENKATESWAR",
+            "A RAO",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "14,87,421",
+            "",
+            "0.07%"
+          ],
+          [
+            "MUTHUKURU SH",
+            "ASHIDHAR REDDY",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "27,93,750",
+            "",
+            "0.14%"
+          ],
+          [
+            "FINGROWlH C",
+            "O. LTD",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "10,71,945",
+            "",
+            "0.05%"
+          ],
+          [
+            "PROBUS CAPIT",
+            "AL LIMITED",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "10,416",
+            "",
+            "0.00%"
+          ],
+          [
+            "MUNDI ENTERPR",
+            "ISE LIMITED",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1,18,750",
+            "",
+            "0.01%"
+          ],
+          [
+            "TOTAL",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "37,28,02,980",
+            "",
+            "18.47%"
+          ],
+          [
+            "\"Note:",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "% Change During",
+            "the yea....-between",
+            "FY 2020-21 &. FY 2",
+            "021-22",
+            "is not shown fo",
+            "r the curr",
+            "ent ye",
+            "ar as there were many co",
+            "rporate ac",
+            "tions in"
+          ],
+          [
+            "the form of Prefer",
+            "ential Issue of Warra",
+            "nts convertible in",
+            "to equ",
+            "ity shares, Prefe",
+            "rential Iss",
+            "ue of E",
+            "quity Shares, two-time B",
+            "onus Issue",
+            "s which"
+          ],
+          [
+            "resulted in dilution",
+            "of share capital of t",
+            "he Company.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "There was allotm",
+            "ent of 32,56,55,000",
+            "(Thirty-Two Crore",
+            "Fifty-",
+            "Six Lakh and Fift",
+            "y-Five Th",
+            "ousan",
+            "d) equity shares agains",
+            "t the warr",
+            "ants on"
+          ],
+          [
+            "preferential basis,",
+            "Bonus issue in the r",
+            "atio of 1:4 with all",
+            "otmen",
+            "t of 20,83,26,625",
+            "(Twenty",
+            "Crore",
+            "Eighty-Three Laich Twenty",
+            "-Six Thous",
+            "and Six"
+          ],
+          [
+            "Hundred and Twe",
+            "nty-Five) equity sha",
+            "res, allotment of 1",
+            "4,00,5",
+            "0,000 equity sha",
+            "res and 1",
+            ",50,00,",
+            "000 equity shares agains",
+            "t the warr",
+            "ants on"
+          ],
+          [
+            "preferential basis",
+            ", allotment of 1,40,7",
+            "0,000 equity sha",
+            "res ag",
+            "ainst the propo",
+            "sed acq",
+            "uisition",
+            "and Bonus issue in the",
+            "ratio of",
+            "2:3 with"
+          ],
+          [
+            "allotment of 80,71,",
+            "68,749 (Eighty Crore",
+            "Seventy-One Lakh",
+            "Sixty-",
+            "Eight Thousand",
+            "Seven Hu",
+            "ndred",
+            "and Forty-Nine only) equ",
+            "ity shares.",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "102",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": null,
+        "title": null,
+        "page": 103,
+        "extraction_method": "pdfplumber",
+        "row_count": 46,
+        "column_count": 5,
+        "rows": [
+          [
+            "shareholding of pro",
+            "moters as a",
+            "t 31st March 2021",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "FY",
+            "202"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "-"
+          ],
+          [
+            "her equity",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            ".",
+            "",
+            "Particulars As at 31st Mar",
+            "ch 2022 As at 31st March",
+            "2021"
+          ],
+          [
+            "Other eq",
+            "uity",
+            "",
+            "",
+            ""
+          ],
+          [
+            "(i) Reser",
+            "ves & Surpl",
+            "us",
+            "",
+            ""
+          ],
+          [
+            "a).Caplt",
+            "al reserve",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Opening ba",
+            "lance",
+            "41,678.12 41,6",
+            "78.12"
+          ],
+          [
+            "",
+            "Add:During",
+            "the year",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "41,878.12 41,8",
+            "78.12"
+          ],
+          [
+            "b).Sacurl",
+            "tlas Premiu",
+            "m",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Opening ba",
+            "lance",
+            "2,512.00",
+            ""
+          ],
+          [
+            "",
+            "Add:During",
+            "the year",
+            "90,629.13 2,51",
+            "2.00"
+          ],
+          [
+            "",
+            "Less: Bouns",
+            "shares issued",
+            "20,309.91",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "72,831.23 2,51",
+            "2.00"
+          ],
+          [
+            "c).Gener",
+            "al reserve",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Opening ba",
+            "lance",
+            "398.17 3",
+            "98.17"
+          ],
+          [
+            "",
+            "Add:During",
+            "the year",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "398.17 39",
+            "8.17"
+          ],
+          [
+            "d).Surplu",
+            "s",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Opening ba",
+            "lance",
+            "7,050.70 6,47",
+            "9.56"
+          ],
+          [
+            "",
+            "Add: Pro",
+            "fit for the year",
+            "171.57 8",
+            "22.31"
+          ],
+          [
+            "",
+            "Add: Re",
+            "measurement of the defined benefit plan",
+            "(2.12)",
+            "2.65"
+          ],
+          [
+            "",
+            "Less: Divide",
+            "nd issued",
+            "520.82 25",
+            "3.83"
+          ],
+          [
+            "",
+            "",
+            "",
+            "8,899.33 7,05",
+            "0.70"
+          ],
+          [
+            "e) .Foreig",
+            "n currency",
+            "translation reserve",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Opening ba",
+            "lance",
+            "(162.72)",
+            ""
+          ],
+          [
+            "",
+            "Add:During",
+            "the year",
+            "173.32 (16",
+            "2.72"
+          ],
+          [
+            "",
+            "",
+            "",
+            "10.60 (16",
+            "2.72"
+          ],
+          [
+            "",
+            "Total",
+            "1,",
+            "21,817. 44 51,47",
+            "8.27"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "18",
+        "title": "BORROWINGS -NON CURRENT",
+        "page": 104,
+        "extraction_method": "pdfplumber",
+        "row_count": 50,
+        "column_count": 13,
+        "rows": [
+          [
+            "NOTE NO.",
+            "18: BORROWING",
+            "S -",
+            "NON CURRE",
+            "NT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Particulars",
+            "",
+            "As at",
+            "31st Mar",
+            "ch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "Bo",
+            "rrowings -",
+            "Non-Current",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(i) From ba",
+            "nks-secured",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(ii) From ot",
+            "her parties-Unsecu",
+            "red",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Loans from",
+            "Related parties",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Dre",
+            "am Ad, Panama -Lo",
+            "an",
+            "",
+            "",
+            "",
+            "833.91",
+            "",
+            "",
+            "808.50"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Fron",
+            "tier Data Managem",
+            "ent -Loan",
+            "",
+            "",
+            "",
+            "985.97",
+            "",
+            "",
+            "955.93"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Inte",
+            "rnational Expression",
+            "s",
+            "",
+            "",
+            "",
+            "797.31",
+            "",
+            "",
+            "773.01"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Onli",
+            "ne Media -Loan",
+            "",
+            "",
+            "",
+            "",
+            "1,195.52",
+            "",
+            "",
+            "1,159.10"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Ybr",
+            "ant Media Inc -Loan",
+            "",
+            "",
+            "",
+            "",
+            "6,180.14",
+            "",
+            "",
+            "5,991.83"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total Long ter",
+            "m Borrowing",
+            "s Non-Current",
+            "",
+            "",
+            "9,992.88",
+            "",
+            "",
+            "9,688.36"
+          ],
+          [
+            "NOTE NO.",
+            "19: PROVISIONS",
+            "-N",
+            "ON CURREN",
+            "T",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Particulars",
+            "",
+            "As at",
+            "31st Mar",
+            "ch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "Pr",
+            "ovisions-N",
+            "on Current",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Provi",
+            "sion for employee b",
+            "enefits",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(a ) Gratuity",
+            "",
+            "",
+            "",
+            "",
+            "52.48",
+            "",
+            "",
+            "45.12"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(b) Leave encashm",
+            "ent",
+            "",
+            "",
+            "",
+            "16.91",
+            "",
+            "",
+            "16.91"
+          ],
+          [
+            "",
+            "",
+            "",
+            "othe",
+            "r Provisions",
+            "",
+            "",
+            "",
+            "",
+            "436.19",
+            "",
+            "",
+            "383.47"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total pr",
+            "ovisions Non",
+            "current",
+            "",
+            "",
+            "505.59",
+            "",
+            "",
+            "445.51"
+          ],
+          [
+            "NOTE NO.",
+            "20: TRADE PAYA",
+            "BLE",
+            "S -CURREN",
+            "T",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Porticulors",
+            "",
+            "As at",
+            "31st Mar",
+            "ch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "Tra",
+            "de payabl",
+            "es",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "Tot",
+            "al outstand",
+            "ing dues of micro en",
+            "terprises an",
+            "d small enterprises",
+            "",
+            "",
+            "0.19",
+            "",
+            "",
+            "0.29"
+          ],
+          [
+            "",
+            "",
+            "Tot",
+            "al outstand",
+            "ing dues of creditor",
+            "s other than",
+            "micro enterprises and small",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "2,362.29",
+            "",
+            "",
+            "2,847.79"
+          ],
+          [
+            "",
+            "",
+            "ent",
+            "erprises",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total Trad",
+            "e payables",
+            "-Current",
+            "",
+            "",
+            "2,362.48",
+            "",
+            "",
+            "2,848.08"
+          ],
+          [
+            "",
+            "",
+            "Ple",
+            "ase refer n",
+            "ote no.45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "NOTE NO.",
+            "21: OTHER FINAN",
+            "CIA",
+            "L LIABILITIE",
+            "S -CURRENT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Portlculars",
+            "",
+            "As at",
+            "31st Mar",
+            "ch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "ot",
+            "her financia",
+            "l liabilities -Curren",
+            "t",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "others",
+            "",
+            "",
+            "",
+            "",
+            "110.73",
+            "",
+            "",
+            "171.04"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total other fin",
+            "ancial liabil",
+            "ities -Current",
+            "",
+            "",
+            "110.73",
+            "",
+            "",
+            "171.04"
+          ],
+          [
+            "NOTE NO.",
+            "22: OTHER CURR",
+            "ENT",
+            "LIABILITIES",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Portlculars",
+            "",
+            "As at",
+            "31st Mar",
+            "ch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "ot",
+            "her current",
+            "liabilities",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Unpaid dividend",
+            "",
+            "",
+            "",
+            "",
+            "1,301.08",
+            "",
+            "",
+            "1,220.78"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "other Current Liabili",
+            "ties",
+            "",
+            "",
+            "",
+            "1,742.97",
+            "",
+            "",
+            "6,753.24"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total oth",
+            "er current ll",
+            "abllltles",
+            "",
+            "",
+            "3,044.04",
+            "",
+            "",
+            "7,974.02"
+          ],
+          [
+            "OTE NO. 2",
+            "3: PROVISIONS -",
+            "CU",
+            "RRENT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "S.No.",
+            "",
+            "",
+            "",
+            "Porticulors",
+            "",
+            "As at",
+            "31st Mar",
+            "ch 2022",
+            "As at",
+            "31st Ma",
+            "rch 2021"
+          ],
+          [
+            "",
+            "",
+            "Pro",
+            "visions -C",
+            "urrent",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(i)",
+            "Provision for emplo",
+            "yee benefit",
+            "s",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Emp",
+            "loyee benefit payab",
+            "le",
+            "",
+            "",
+            "",
+            "207.3B",
+            "",
+            "",
+            "185.9B"
+          ],
+          [
+            "",
+            "",
+            "",
+            "(ii)",
+            "others",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(a) Provisions for ex",
+            "penses",
+            "",
+            "",
+            "",
+            "B.95",
+            "",
+            "",
+            "10.17"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(b) Other Provisions",
+            "",
+            "",
+            "",
+            "",
+            "505.73",
+            "",
+            "",
+            "53B.0B"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(c)Tax",
+            "",
+            "",
+            "",
+            "",
+            "125.BB",
+            "",
+            "",
+            "406.6B"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total Pr",
+            "ovisions -C",
+            "urrant",
+            "",
+            "",
+            "847.94",
+            "",
+            "",
+            "1,140.91"
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "profit_and_loss": {
+      "statement": "consolidated_profit_and_loss",
+      "page": 128,
+      "pages": [
+        128
+      ],
+      "title": "Statement of Consolidated Profit and Loss for the year ended 31st March 2022",
+      "currency": "in Rs.",
+      "periods": [
+        "31.03.2022",
+        "31.03.2021"
+      ],
+      "column_headers": [
+        "Note",
+        "31-03-2022",
+        "31-03-2021"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "INCOME",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "I. Revenue from operations",
+          "note_no": "26",
+          "values": {
+            "current_period": 501958.77,
+            "previous_period": 285579.82
+          }
+        },
+        {
+          "section": null,
+          "line_item": "II. Other income",
+          "note_no": "27",
+          "values": {
+            "current_period": -222.42,
+            "previous_period": 2081.86
+          }
+        },
+        {
+          "section": null,
+          "line_item": "III. Total Income (I+II)",
+          "note_no": "",
+          "values": {
+            "current_period": 501736.35,
+            "previous_period": 287661.68
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IV. EXPENSES",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Purchase / Cost of Revenue",
+          "note_no": "28",
+          "values": {
+            "current_period": 291411.22,
+            "previous_period": 160683.89
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Employee Benefit expenses",
+          "note_no": "29",
+          "values": {
+            "current_period": 27251.15,
+            "previous_period": 16573.62
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other Operating Expenses",
+          "note_no": "30",
+          "values": {
+            "current_period": 32608.57,
+            "previous_period": 21783.82
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Financial costs",
+          "note_no": "31",
+          "values": {
+            "current_period": 31.43,
+            "previous_period": 10.61
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortization expense",
+          "note_no": "3",
+          "values": {
+            "current_period": 24623.7,
+            "previous_period": 22609.24
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total expenses (IV)",
+          "note_no": "",
+          "values": {
+            "current_period": 375926.07,
+            "previous_period": 221661.18
+          }
+        },
+        {
+          "section": null,
+          "line_item": "V. Profit/(loss) before tax (III-IV)",
+          "note_no": "",
+          "values": {
+            "current_period": 125810.28,
+            "previous_period": 66000.5
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VI. Tax expense",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current tax",
+          "note_no": "",
+          "values": {
+            "current_period": 34627.45,
+            "previous_period": 17754.19
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deferred tax",
+          "note_no": "",
+          "values": {
+            "current_period": -37.22,
+            "previous_period": -54.49
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VII. Profit/(loss) for the period (V-VI)",
+          "note_no": "",
+          "values": {
+            "current_period": 91220.05,
+            "previous_period": 48300.8
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VIII. Other comprehensive income",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Items that will not be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Remeasurement of the defined benefit plan (net of tax)",
+          "note_no": "",
+          "values": {
+            "current_period": 253.12,
+            "previous_period": -194.83
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Items that will be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exchange differences on translation of foreign operations",
+          "note_no": "",
+          "values": {
+            "current_period": 12011.3,
+            "previous_period": -7677.42
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IX. Total comprehensive income for the period (VII+VIII)",
+          "note_no": "",
+          "values": {
+            "current_period": 103484.47,
+            "previous_period": 40428.56
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "(1) Basic (in Rs.)",
+          "note_no": "",
+          "values": {
+            "current_period": 4.52,
+            "previous_period": 9.51
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "(2) Diluted (in Rs.)",
+          "note_no": "",
+          "values": {
+            "current_period": 4.52,
+            "previous_period": 9.51
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 24,
+        "total_rows": 3
+      }
+    },
+    "cash_flow": {
+      "statement": "consolidated_cash_flow",
+      "page": 129,
+      "pages": [
+        129
+      ],
+      "title": "Consolidated Cash flow Statement for the year ended 31st March 2022",
+      "currency": null,
+      "periods": [
+        "30.05.2022"
+      ],
+      "column_headers": [
+        "31st March 2022",
+        "31st March 2021"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "A. Cash Flow from Operating Activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit Before Tax",
+          "note_no": null,
+          "values": {
+            "current_period": 125810.28,
+            "previous_period": 66000.5
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustment for :",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add: Depreciation and amortisation expense",
+          "note_no": null,
+          "values": {
+            "current_period": 24623.7,
+            "previous_period": 22609.24
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Allowance for doubtful trade receivables",
+          "note_no": null,
+          "values": {
+            "current_period": -153.62,
+            "previous_period": -34.65
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Operating Profit before Working Capital Changes",
+          "note_no": null,
+          "values": {
+            "current_period": 150280.36,
+            "previous_period": 88575.09
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustment for Working Capital Changes:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase/(Decrease) in Short term Borrowings",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": -3602.05
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase/(Decrease) in Trade Payables",
+          "note_no": null,
+          "values": {
+            "current_period": 6154.99,
+            "previous_period": 1502.35
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase/(Decrease) in other Current Liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 4962.38,
+            "previous_period": -250.47
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase/(Decrease) in Others financial liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": -60.31,
+            "previous_period": -719.65
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase/(Decrease) in Short-Term Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": -797.15,
+            "previous_period": 733.98
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Decrease/(Increase) in Trade Receivables",
+          "note_no": null,
+          "values": {
+            "current_period": -76071.3,
+            "previous_period": -14407.19
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Decrease/(Increase) in Short-Term Loans and Advances",
+          "note_no": null,
+          "values": {
+            "current_period": -31253.67,
+            "previous_period": -7633.48
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase)/Decrease in Other Financial Assets",
+          "note_no": null,
+          "values": {
+            "current_period": -4.42,
+            "previous_period": -24.79
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase)/Decrease in other Current Assets",
+          "note_no": null,
+          "values": {
+            "current_period": -404.61,
+            "previous_period": -1311.76
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash Flow from Operating Activities",
+          "note_no": null,
+          "values": {
+            "current_period": 52806.27,
+            "previous_period": 62862.03
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Taxes paid",
+          "note_no": null,
+          "values": {
+            "current_period": 24072.29,
+            "previous_period": 16865.9
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net Cash Flow from Operating Activities (A)",
+          "note_no": null,
+          "values": {
+            "current_period": 28733.98,
+            "previous_period": 45996.13
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Purchase/(Increase) of Fixed Assets",
+          "note_no": null,
+          "values": {
+            "current_period": -2638.84,
+            "previous_period": -443.22
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Increase)/Decrease in Non-Current Investments",
+          "note_no": null,
+          "values": {
+            "current_period": -1117.7,
+            "previous_period": -10448.56
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Increase)/Decrease in Intangibles under development",
+          "note_no": null,
+          "values": {
+            "current_period": -9738.42,
+            "previous_period": -14657.33
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Increase)/Decrease in Capital Work in Progress",
+          "note_no": null,
+          "values": {
+            "current_period": -8196.29,
+            "previous_period": -17530.88
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Net cash Flow from investing activities (B)",
+          "note_no": null,
+          "values": {
+            "current_period": -21691.25,
+            "previous_period": -43079.99
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "C. Cash Flows from Financing Activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Increase /(Decrease) in Foreign Currency Fluctuation Reserve",
+          "note_no": null,
+          "values": {
+            "current_period": 9131.43,
+            "previous_period": -5466.22
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Increase /(Decrease) in Share capital",
+          "note_no": null,
+          "values": {
+            "current_period": 9614.1,
+            "previous_period": 628
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Increase/(Decrease) in Share premium",
+          "note_no": null,
+          "values": {
+            "current_period": 74023.72,
+            "previous_period": 2512
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Increase/(Decrease) in long term provision",
+          "note_no": null,
+          "values": {
+            "current_period": 332.9,
+            "previous_period": -218.49
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Increase)/Decrease in Deffered tax Asset(Net)",
+          "note_no": null,
+          "values": {
+            "current_period": 329.02,
+            "previous_period": 18.28
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Increase/(Decrease) in Deffered tax Liabilities(Net)",
+          "note_no": null,
+          "values": {
+            "current_period": 64.41,
+            "previous_period": -19.75
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Increase)/Decrease in Long term loans and advances",
+          "note_no": null,
+          "values": {
+            "current_period": -296.45,
+            "previous_period": 251.11
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Increase)/Decrease in advances",
+          "note_no": null,
+          "values": {
+            "current_period": -38250,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Increase)/Decrease in other financial assets",
+          "note_no": null,
+          "values": {
+            "current_period": -218.19,
+            "previous_period": 209.86
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Increase)/Decrease in Non- Current tax assets (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -5.01,
+            "previous_period": 16.32
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "(Increase)/Decrease in Other Non - Current Assets",
+          "note_no": null,
+          "values": {
+            "current_period": 78.18,
+            "previous_period": -95.3
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Net cash Flow from financing activities (C)",
+          "note_no": null,
+          "values": {
+            "current_period": 54804.11,
+            "previous_period": -2164.18
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Cash and cash equivalents at beginning of year",
+          "note_no": null,
+          "values": {
+            "current_period": 12651.79,
+            "previous_period": 11899.84
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Net change in cash ( A+B+C)",
+          "note_no": null,
+          "values": {
+            "current_period": 61846.84,
+            "previous_period": 751.95
+          }
+        },
+        {
+          "section": "Investing Activities",
+          "line_item": "Cash and cash equivalents at year ended 31st Mar 2022",
+          "note_no": null,
+          "values": {
+            "current_period": 74498.63,
+            "previous_period": 12651.79
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 40,
+        "total_rows": 0
+      }
+    },
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 80,
+      "pages": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "title": "Financial Statement",
+      "currency": "Rs.",
+      "periods": [],
+      "column_headers": [
+        "FY FY FY FY FY FY 2021-22 2021-22 2021-22 2021-22 2021-22 2021-22"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Preferential allotment - I",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Class of For Date P C of N Allotment & Associates Name of the Allottee",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "instrument",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "July 01, 2021 PANKTI COMMOSALES LLP Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 10000000,
+            "previous_period": 77000000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "xi. Judgment, Chartered (a) Preferential Based including Accountants on examination the allotment assessment - II of books of the risk and of records material of misstatement the Company of and the July 01, 2021 ANKIT KUMAR ALYA Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 4000000,
+            "previous_period": 30800000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "FRN: 016016S Date of Class of fraud explanations or July error. 01, 2021 given to GAUTAM us, no Name material GOPIKISHAN of the fraud Allottee by MAKHARIA the Company or Equity on the Shares",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Allotment instrument during K Gopala July the 01, Krishna year. 2021 PUNEET GOPIKISHAN MAKHARIA Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 2500000,
+            "previous_period": 19250000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Jan 23, 2022 Shikha Samit Bhartia Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 2000000,
+            "previous_period": 75540000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "July 01, 2021 SANJIB HIRENDRA CHAKRABORTY Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 2500000,
+            "previous_period": 19250000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "We believe that the audit evidence we have obtained is sufficient and appropriate",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Jan 23, 2022 Shilpi Dixit Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 1000000,
+            "previous_period": 37770000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "July 01, 2021 RUSHIDA RAHUL MEHTA Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 1500000,
+            "previous_period": 11550000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(b)According to the information and explanations given to us, no report opinion Partner and the company’s Internal Financial Control system over financial reporting.",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "ANNEXURE July Jan “B” 23, 01, TO 2022 2021 THE Vikas INDEPENDENT POOJA Dixit RAJENDRA AUDITOR’S PRASAD REPORT PODDAR Equity Equity Shares Shares of the Companies Act has been filed in form ADT- 4 as prescribed under",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "M.No:203605 July Jan 23, 01, 2022 2021 VAISHNAVA RAJENDRA PRIYA PRASAD VEERAMISTI PODDAR Equity Equity Shares Shares",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Referred to in paragraph 1(f) under ‘Report on Other Legal and Regulatory",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Meaning UDIN: Auditors) July Jan of 23, Internal 01, Rules, 2022 2021 Financial 2014 NIKHIL SUSHILA with TYAGI the Controls Central DEVI PODDAR over Government, Financial during Reporting the Equity Equity year and Shares Shares up report to the 22203605AONXKI1809 Members of BRIGHTCOM GROUP LIMITED of even date",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "July Jan 23, 01, 2022 2021 Arunangshu ASIF ISMAIL Ghosh ATHANIYA Equity Equity Shares Shares",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "July Jan As 23, 01, represented 2022 2021 Dipankar SIDDHARTH to us Bonnerjee by the DUBEY management, there are Equity Equity no whistle Shares Shares A Company’s internal financial control over financial reporting is a process",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Report Place: on company July Jan the Hyderabad 23, 01, Internal 2022 2021 during Parul Financial the LORIYA Moondhra year. Controls MOHSIN over RAFIK Financial Reporting Equity Equity under Shares Shares assurance regarding the reliability of financial reporting and the preparation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Of Sub-section July Jan 23, 01, 2022 2021 3 of Maninder Section MEGHNA 143 SINGH of KAUSTUBH the SAHNI Companies KULKARNI Act, 2013 (“the Equity Equity Act”) Shares Shares",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Date: 30/05/2022 purposes July Jan in 23, accordance 01, 2022 2021 SUMITA with KAUSTUBH generally ACHARYA BALCHANDRA accepted accounting KULKARNI principles. Equity Equity Shares A Shares",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "xii. As the Company is not a Nidhi Company and the Nidhi Rules, 2014 are not financial July Jan reporting 23, 01, 2022 2021 includes AASHIKA PONNA these GLOBAL policies BHUVANESWARI FINANCE and procedures PVT LTD that Equity Equity Shares Shares",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "We have July audited 01, 2021 the internal SHIVKRISHNA financial HARAKCHAND controls over DAMANI financial reporting Equity Shares of xiii. In our Jan opinion 23, 2022 and Parul according Sunil Chawda to the information and explanations Equity given Shares",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(“the Company”) July 01, 2021 as of MANJU March SHIVKRISHNA 31, 2022 in conjunction DAMANI with our Equity audit Shares of 1) Pertain Jan 23, 2022 to the Manoj maintenance Sunil Chawda of records that, in reasonable Equity detailed, Shares",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "with Section 177 and 188 of the Companies Act, 2013 where applicable, for all statements July of 01, the 2021 Company VARUN for the SHIVKRISHNA year ended DAMANI on that date. Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 1000000,
+            "previous_period": 7700000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Jan 23, 2022 Aakanksha M Chawda Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 160000,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "and transactions July the 01, details 2021 of and related dispositions PRERNA party VARUN transactions of the DAMANI assets have of the been company disclosed Equity in Shares the Jan 23, 2022 Hardik Sunil Chawda Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 160000,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "required July 01, by 2021 the applicable MOHAMED accounting MAJID standards. M SIDDIQUI Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 500000,
+            "previous_period": 3850000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Management’s Jan 23, 2022 Responsibility RITIKA RANJAN for Internal Financial Controls Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 150000,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2) Provide July 23, reasonable 2021 MANGAL assurance COMPUSOLUTION that transactions PVT are LTD recorded Equity as necessary Shares",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Jan 23, 2022 GOONJAN DHAR Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 100000,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "xiv. (a) In July our 23, opinion 2021 and based TALISMAN on our SECURITIES examination, PVT the company LTD has Equity an adequate Shares statements Jan 23, 2022 in accordance SONA KUMAR with SAMPAT generally accepted principles, Equity and Shares that",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "The Company’s July 23, management 2021 PALACE is responsible HEIGHTS for AVENUES establishing LLP and maintaining Equity Shares with made Jan the 23, size only 2022 and in nature accordance RAGHAV of its MALLIK business. with authorization of management Equity and Shares directors",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 3777000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "internal control July 23, over 2021 financial Y SURYANARAYANA reporting criteria established RAJU by the company Equity Shares",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Jan 23, 2022 RAJEEV KUMAR Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 100000,
+            "previous_period": 3777000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "July 23, 2021 CHERUKURU SRINIVASA RAO Equity Shares",
+          "note_no": "",
+          "values": {
+            "current_period": 1500000,
+            "previous_period": 11550000
+          }
+        },
+        {
+          "section": null,
+          "line_item": "internal (b)We control have considered stated in the the Guidance internal audit Note reports on Audit for the of year Internal under Financial audit, issued Controls to 3) Provide July Jan 23, 23, reasonable 2022 2021 TARUN AYAZ assurance BHANDARI AMIR MANJEE regarding prevention or timely Equity Equity detection Shares Shares",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 38,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": "1",
+        "title": "July 01, 2021 3,42,00,000 August 11, 2021",
+        "page": 39,
+        "extraction_method": "pdfplumber",
+        "row_count": 7,
+        "column_count": 4,
+        "rows": [
+          [
+            "Sl. No.",
+            "Date of Allotment",
+            "No. of Shares",
+            "Effective date of Listing"
+          ],
+          [
+            "1",
+            "July 01, 2021",
+            "3,42,00,000",
+            "August 11, 2021"
+          ],
+          [
+            "2",
+            "July 23, 2021",
+            "5,89,30,000",
+            "August 23, 2021"
+          ],
+          [
+            "3",
+            "July 28, 2021",
+            "14,55,00,000",
+            "August 25, 2021"
+          ],
+          [
+            "4",
+            "July 30, 2021",
+            "8,32,00,000",
+            "August 26, 2021"
+          ],
+          [
+            "5",
+            "August 12, 2021",
+            "38,25,000",
+            "August 26, 2021"
+          ],
+          [
+            "Total Shares",
+            "",
+            "32,56,55,000",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": "1",
+        "title": "July 01, 2021 3,42,00,000 August 11, 2021",
+        "page": 39,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "Sl. No.",
+            "Date of Allotment",
+            "No. of Shares",
+            "Effective date of Listing"
+          ],
+          [
+            "1",
+            "January 23, 2022",
+            "80,50,000",
+            "April 01, 2022"
+          ],
+          [
+            "2",
+            "January 25, 2022",
+            "13,20,00,000",
+            "April 01, 2022"
+          ],
+          [
+            "Total Shares",
+            "",
+            "14,00,50,000",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 132,
+        "extraction_method": "pdfplumber",
+        "row_count": 18,
+        "column_count": 5,
+        "rows": [
+          [
+            "Name of Investee",
+            "Principal activities",
+            "Country of incorporation",
+            "Percentage of ownership/ voting rights",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "31/Mar/22",
+            "31/Mar/21"
+          ],
+          [
+            "Ybrant Media Acquisition Inc",
+            "Digital Marketing",
+            "USA",
+            "100",
+            "100"
+          ],
+          [
+            "Online Media Solutions Limited",
+            "Digital Marketing",
+            "Israel",
+            "100",
+            "100"
+          ],
+          [
+            "International Expressions Inc",
+            "Digital Marketing",
+            "USA",
+            "100",
+            "100"
+          ],
+          [
+            "Dream AD SA Panama",
+            "Digital Marketing",
+            "Panama",
+            "100",
+            "100"
+          ],
+          [
+            "Ybrant Digital Servicos De Publicidade Ltd",
+            "Digital Marketing",
+            "Brazil",
+            "100",
+            "100"
+          ],
+          [
+            "LGS Global FZE",
+            "Digital Marketing",
+            "UAE",
+            "100",
+            "100"
+          ],
+          [
+            "Ybrant Digital (Brasil) Limited",
+            "Digital Marketing",
+            "Singapore",
+            "100",
+            "100"
+          ],
+          [
+            "Frontier Data Management Inc",
+            "Digital Marketing",
+            "USA",
+            "100",
+            "100"
+          ],
+          [
+            "Dream AD SA Argentina",
+            "Digital Marketing",
+            "Argentina",
+            "100",
+            "100"
+          ],
+          [
+            "Dyomo Corporation",
+            "Digital Marketing",
+            "USA",
+            "100",
+            "100"
+          ],
+          [
+            "Get Media Mexico Socidadanonima De Capital Variable, Mexico",
+            "Digital Marketing",
+            "Mexico",
+            "100",
+            "100"
+          ],
+          [
+            "Dream AD SA Chile",
+            "Digital Marketing",
+            "Chile",
+            "100",
+            "100"
+          ],
+          [
+            "Dream AD SA Uruguay",
+            "Digital Marketing",
+            "Uruguay",
+            "100",
+            "100"
+          ],
+          [
+            "Max Interactive Pty Ltd",
+            "Digital Marketing",
+            "Australia",
+            "100",
+            "100"
+          ],
+          [
+            "LIL Projects Private Limited",
+            "Digital Marketing/ Software Development",
+            "India",
+            "100",
+            "100"
+          ],
+          [
+            "YReach Media Private Limited",
+            "Digital Marketing/ Software Development",
+            "India",
+            "100",
+            "100"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": null,
+        "title": null,
+        "page": 140,
+        "extraction_method": "pdfplumber",
+        "row_count": 6,
+        "column_count": 3,
+        "rows": [
+          [
+            "Type of asset",
+            "Method",
+            "Useful lives"
+          ],
+          [
+            "Computer equipment",
+            "Straight line",
+            "3 years"
+          ],
+          [
+            "Office equipment’s",
+            "Straight line",
+            "5 years"
+          ],
+          [
+            "Furniture and fixtures",
+            "Straight line",
+            "10 years"
+          ],
+          [
+            "Electrical installations",
+            "Straight line",
+            "10 years"
+          ],
+          [
+            "Vehicles",
+            "Straight line",
+            "8 years"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": "3",
+        "title": "PROPERTY, PLANT AND EQUIPMENT & INTANGIBLE ASSETS AS AT 31-03-2022",
+        "page": 143,
+        "extraction_method": "pdfplumber",
+        "row_count": 28,
+        "column_count": 21,
+        "rows": [
+          [
+            "RIG",
+            "HTC",
+            "OM GROUP",
+            "LIMITED",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "FY 2021-2",
+            "2"
+          ],
+          [
+            "TE N",
+            "O 3 :",
+            "PROPERTY, PL",
+            "ANT AND EQUIPMENT &",
+            "INTANGIBLE ASSE",
+            "TS AS AT 31-",
+            "03-2022",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Gross B",
+            "lock",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Deprec",
+            "iation/ Amo",
+            "rtisation",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Foreig",
+            "n",
+            "Sale",
+            "/",
+            "",
+            "",
+            "",
+            "",
+            "F",
+            "oreign",
+            "Sale /",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Ad",
+            "ditions",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Transf",
+            "ered",
+            "Net Blo",
+            "ck as on Net",
+            "Block as on"
+          ],
+          [
+            "No.",
+            "",
+            "Particula",
+            "rs As o",
+            "n 1st April,",
+            "",
+            "curren",
+            "cy De",
+            "letio",
+            "ns",
+            "As on",
+            "Dep.",
+            "As on D ep",
+            "recia",
+            "tion/A cu",
+            "rrency De",
+            "letions",
+            "",
+            "Total",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "dur",
+            "ing the",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "to Reta",
+            "ined",
+            "31st Ma",
+            "rch 2022 31st",
+            "March,2021"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "2021",
+            "",
+            "transala",
+            "ton dur",
+            "ing",
+            "the 31st M",
+            "arch, 2022 1s",
+            "t Apr",
+            "il, 2021 mo",
+            "rtisat",
+            "ion for tran",
+            "salaton d",
+            "uring",
+            "Dep",
+            "reciation",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "year",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Earni",
+            "ngs",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "reserv",
+            "e",
+            "year",
+            "",
+            "",
+            "",
+            "",
+            "the y",
+            "ear re",
+            "serve th",
+            "e year",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "I",
+            "PROP",
+            "ERTY, PLANT AND",
+            "EQUIPMENT",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "1",
+            "",
+            "Electrical Equipm",
+            "ent",
+            "2 59.89",
+            "-",
+            "",
+            "-",
+            "",
+            "-",
+            "2 59.89",
+            "",
+            "2 42.92",
+            "",
+            "0 .32",
+            "-",
+            "-",
+            "-",
+            "2 43.24",
+            "1 6.65",
+            "1 6.97"
+          ],
+          [
+            "2",
+            "",
+            "Office Equipment",
+            "",
+            "9 83.18",
+            "2 92.52",
+            "",
+            "1 8.51",
+            "",
+            "-",
+            "1 ,294.20",
+            "",
+            "7 74.16",
+            "",
+            "1 01.27",
+            "9 .61",
+            "-",
+            "-",
+            "8 85.04",
+            "4 09.17",
+            "2 09.02"
+          ],
+          [
+            "3",
+            "",
+            "Air Conditioners",
+            "",
+            "7 5.34",
+            "-",
+            "",
+            "-",
+            "",
+            "-",
+            "7 5.34",
+            "",
+            "6 4.55",
+            "",
+            "4 .56",
+            "-",
+            "-",
+            "-",
+            "6 9.11",
+            "6 .22",
+            "1 0.79"
+          ],
+          [
+            "4",
+            "",
+            "Computers",
+            "",
+            "1 0,270.12",
+            "1 ,607.80",
+            "1",
+            "99.61",
+            "",
+            "-",
+            "1 2,077.53",
+            "",
+            "9,514.07",
+            "5",
+            "75.69",
+            "1 62.96",
+            "-",
+            "-",
+            "1 0,252.71",
+            "1 ,824.82",
+            "7 56.06"
+          ],
+          [
+            "5",
+            "",
+            "Furniture",
+            "",
+            "1 ,638.14",
+            "3 11.45",
+            "2",
+            "4.45",
+            "",
+            "-",
+            "1 ,974.04",
+            "",
+            "1 ,251.88",
+            "",
+            "8 8.04",
+            "8 .63",
+            "-",
+            "-",
+            "1 ,348.55",
+            "6 25.49",
+            "3 86.26"
+          ],
+          [
+            "6",
+            "",
+            "Property & Equip",
+            "ment",
+            "3 ,180.06",
+            "4 27.07",
+            "7",
+            "0.27",
+            "",
+            "-",
+            "3 ,677.40",
+            "2",
+            ",636.05",
+            "",
+            "212.85",
+            "4 9.86",
+            "-",
+            "-",
+            "2 ,898.77",
+            "7 78.63",
+            "5 44.02"
+          ],
+          [
+            "7",
+            "",
+            "Vehicles",
+            "",
+            "1 0.78",
+            "-",
+            "",
+            "-",
+            "",
+            "-",
+            "1 0.78",
+            "",
+            "1 0.78",
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "1 0.78",
+            "-",
+            "-"
+          ],
+          [
+            "",
+            "Total",
+            "",
+            "",
+            "1 6,417.52 2",
+            ",638.84",
+            "3 1",
+            "2.84",
+            "",
+            "-",
+            "1 9,369.19",
+            "1 4",
+            ",494.41",
+            "9",
+            "82.74",
+            "2 31.06",
+            "-",
+            "-",
+            "1 5,708.21",
+            "3,660.98",
+            "1 ,923.11"
+          ],
+          [
+            "II",
+            "Intan",
+            "gibe Fixed Assets",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "1",
+            "Int",
+            "angible Assets",
+            "",
+            "1 ,50,733.58 3",
+            "2,188.22",
+            "5 ,43",
+            "5.72",
+            "",
+            "-",
+            "1 ,88,357.51",
+            "8",
+            "0,767.71",
+            "2 3,6",
+            "40.44",
+            "2,637.62",
+            "-",
+            "-",
+            "1 ,07,045.78",
+            "8 1,311.73",
+            "6 9,965.87"
+          ],
+          [
+            "2",
+            "Co",
+            "mputer Products",
+            "/ Rights",
+            "2 63.07",
+            "-",
+            "",
+            "-",
+            "",
+            "-",
+            "2 63.07",
+            "",
+            "2 62.55",
+            "",
+            "0 .52",
+            "-",
+            "-",
+            "-",
+            "2 63.07",
+            "-",
+            "0 .52"
+          ],
+          [
+            "",
+            "Total",
+            "",
+            "1",
+            ",50,996.65 3",
+            "2,188.22",
+            "5 ,43",
+            "5.72",
+            "",
+            "- 1",
+            ",88,620.58",
+            "8 1",
+            ",030.26",
+            "2 3,6",
+            "40.96 2",
+            ",637.62",
+            "-",
+            "- 1",
+            ",07,308.85",
+            "8 1,311.73",
+            "6 9,966.39"
+          ],
+          [
+            "III",
+            "Good",
+            "Will On Consolid",
+            "ation",
+            "-",
+            "-",
+            "",
+            "-",
+            "",
+            "-",
+            "-",
+            "",
+            "-",
+            "",
+            "-",
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "IV",
+            "Capit",
+            "al Work In Progre",
+            "ss( note no-48)",
+            "1 7,530.88",
+            "8 ,196.29",
+            "",
+            "-",
+            "1 7,53",
+            "0.88",
+            "8 ,196.29",
+            "",
+            "-",
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "8 ,196.29",
+            "1 7,530.88"
+          ],
+          [
+            "I",
+            "ntang",
+            "ible Assets unde",
+            "r development (",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "n",
+            "ote n",
+            "o- 49)",
+            "",
+            "1 4,657.33",
+            "9,738.42",
+            "",
+            "-",
+            "14,6",
+            "57.33",
+            "9 ,738.42",
+            "",
+            "-",
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "9 ,738.42",
+            "1 4,657.33"
+          ],
+          [
+            "",
+            "TOTA",
+            "L",
+            "1",
+            ",99,602.38 5",
+            "2,761.76",
+            "5 ,74",
+            "8.55 3",
+            "2,18",
+            "8.22 2",
+            ",25,924.48",
+            "9 5",
+            ",524.67",
+            "2 4,6",
+            "23.70 2",
+            ",868.68",
+            "-",
+            "-",
+            "1 ,23,017.06 1 ,0",
+            "2,907.42",
+            "1 ,04,077.71"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "26",
+        "title": "REVENUE FROM OPERATIONS",
+        "page": 151,
+        "extraction_method": "pdfplumber",
+        "row_count": 36,
+        "column_count": 9,
+        "rows": [
+          [
+            "Notes",
+            "for",
+            "mi",
+            "ng",
+            "part of",
+            "consolidated",
+            "financial statements",
+            "",
+            ""
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "26",
+            ":",
+            "REVENUE",
+            "FROM OPERA",
+            "TIONS",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Year",
+            "Ending Y",
+            "ear Ending"
+          ],
+          [
+            "S.",
+            "No.",
+            "",
+            "",
+            "",
+            "Part",
+            "iculars",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "31-",
+            "03-2022",
+            "31-03-202"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(a)Sale",
+            "of Services Do",
+            "mestic",
+            "9 .23",
+            "3 .54"
+          ],
+          [
+            "",
+            "I",
+            "",
+            "",
+            "(b)Sale",
+            "of Services Ex",
+            "ports 4 ,6",
+            "5,268.46",
+            "2 ,48,978.23"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(c)Sale",
+            "of Software Ex",
+            "ports 3",
+            "6,681.09",
+            "3 6,598.06"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total R",
+            "evenue from O",
+            "perations 5 ,0",
+            "1,958.77 2",
+            ",85,579.82"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "27",
+            ":",
+            "OTHER IN",
+            "COME",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Year",
+            "Ending Y",
+            "ear Ending"
+          ],
+          [
+            "S.",
+            "No.",
+            "",
+            "",
+            "",
+            "Part",
+            "iculars",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "31-",
+            "03-2022",
+            "31-03-202"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(a)Inter",
+            "est income",
+            "",
+            "0 .17",
+            "0 .10"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(b)Net g",
+            "ain/(loss) on",
+            "foreign currency",
+            "",
+            ""
+          ],
+          [
+            "",
+            "I",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "translati",
+            "on and transa",
+            "ction",
+            "(222.59)",
+            "148.28"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Other",
+            "Income",
+            "",
+            "-",
+            "1,933.48"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total O",
+            "ther Income",
+            "",
+            "( 222.42)",
+            "2,081.86"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "28",
+            ":",
+            "PURCHA",
+            "SE/COST OF R",
+            "EVENUE",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Year",
+            "Ending Y",
+            "ear Ending"
+          ],
+          [
+            "S.",
+            "No.",
+            "",
+            "",
+            "",
+            "Part",
+            "iculars",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "31-",
+            "03-2022",
+            "31-03-202"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(a)Medi",
+            "a Cost",
+            "2 ,1",
+            "8,742.34",
+            "1 ,10,465.85"
+          ],
+          [
+            "",
+            "I",
+            "",
+            "",
+            "(b)Inter",
+            "net,cloud and",
+            "Infrastructure",
+            "34,692.17",
+            "16,107.7"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(c)Synd",
+            "ication Cost",
+            "",
+            "9,459.53",
+            "4,181.2"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(d)Softw",
+            "are Purchase",
+            "& Sub Contractors Cost",
+            "28,517.19",
+            "29,929.0"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total P",
+            "urchase/Cost",
+            "of Revenue 2 ,",
+            "91,411.22 1",
+            ",60,683.89"
+          ],
+          [
+            "NOTE",
+            "NO.",
+            "29",
+            ":",
+            "EMPLOYE",
+            "E BENEFIT EXP",
+            "ENSES",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Year",
+            "Ending Y",
+            "ear Ending"
+          ],
+          [
+            "S.",
+            "No.",
+            "",
+            "",
+            "",
+            "Part",
+            "iculars",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "31-",
+            "03-2022",
+            "31-03-202"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(a)Salar",
+            "ies,wages an",
+            "d allowances",
+            "27,238.75",
+            "16,560.5"
+          ],
+          [
+            "",
+            "I",
+            "",
+            "",
+            "(b)Cont",
+            "ribution to pro",
+            "vident and other fund",
+            "11.37",
+            "12.7"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "(c)Staff",
+            "Welfare Expen",
+            "ses",
+            "1.03",
+            "0.3"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Total E",
+            "mployee Bene",
+            "fit Expenses 2",
+            "7,251.15",
+            "16,573.62"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_7",
+        "note_no": "30",
+        "title": "OTHER OPERATING EXPENSES",
+        "page": 152,
+        "extraction_method": "pdfplumber",
+        "row_count": 39,
+        "column_count": 5,
+        "rows": [
+          [
+            "M GROU",
+            "P LIMITED",
+            "",
+            "FY",
+            "2021-22"
+          ],
+          [
+            "NO. 30 : O",
+            "THER OPERATI",
+            "NG EXPENSES",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "Yea",
+            "r Ending Year",
+            "Ending"
+          ],
+          [
+            "No.",
+            "",
+            "Particulars",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "31",
+            "-03-2022 31-",
+            "03-2021"
+          ],
+          [
+            "",
+            "Power & Fuel",
+            "",
+            "5 16.30",
+            "2 11.54"
+          ],
+          [
+            "",
+            "Rent",
+            "",
+            "3 ,790.28",
+            "3 ,215.10"
+          ],
+          [
+            "",
+            "Repairs & Main",
+            "tenance",
+            "8 03.52",
+            "4 96.80"
+          ],
+          [
+            "",
+            "Insurance",
+            "",
+            "5 59.10",
+            "4 41.20"
+          ],
+          [
+            "",
+            "Rates & Taxes",
+            "(excluding Income Tax)",
+            "7 36.96",
+            "5 36.45"
+          ],
+          [
+            "I",
+            "Miscellaneous",
+            "Expenses",
+            "5 42.09",
+            "2 75.85"
+          ],
+          [
+            "",
+            "Payment to Au",
+            "ditors:",
+            "-",
+            "-"
+          ],
+          [
+            "",
+            "(i) As Auditor",
+            "fee",
+            "3 24.67",
+            "1 32.97"
+          ],
+          [
+            "",
+            "(ii) For Tax Au",
+            "dit fee",
+            "8 .45",
+            "6 .49"
+          ],
+          [
+            "",
+            "(iii) For Other",
+            "Audit related Services",
+            "3 3.70",
+            "2 3.65"
+          ],
+          [
+            "",
+            "Ins Fee",
+            "",
+            "3 5.48",
+            "2 5.40"
+          ],
+          [
+            "",
+            "Telephone, Po",
+            "stage and Others",
+            "6 98.51",
+            "4 79.03"
+          ],
+          [
+            "",
+            "Business Prom",
+            "otion Expenses",
+            "1 0,591.40 8",
+            ",463.34"
+          ],
+          [
+            "",
+            "Travelling and",
+            "Conveyance",
+            "3 32.49",
+            "1 28.90"
+          ],
+          [
+            "",
+            "Office Mainten",
+            "ance",
+            "1 ,628.04",
+            "1,077.54"
+          ],
+          [
+            "",
+            "Printing & Stat",
+            "ionery Expenses",
+            "4 4.79",
+            "1 02.87"
+          ],
+          [
+            "",
+            "Security Charg",
+            "es",
+            "8 9.02",
+            "2 4.14"
+          ],
+          [
+            "",
+            "Consultancy C",
+            "harges",
+            "1 ,578.42",
+            "6 59.75"
+          ],
+          [
+            "",
+            "Event Sponsor",
+            "ship & Seminar Fee",
+            "2 0.00",
+            "2 3.73"
+          ],
+          [
+            "",
+            "Web Developm",
+            "ent Expenses",
+            "1 ,891.54",
+            "7 36.51"
+          ],
+          [
+            "",
+            "Professional C",
+            "harges",
+            "2 ,716.58",
+            "9 25.11"
+          ],
+          [
+            "",
+            "Sales and Mar",
+            "keting Expenses",
+            "4 ,102.73 2",
+            ",295.93"
+          ],
+          [
+            "",
+            "Books & Subsc",
+            "riptions",
+            "2 9.82",
+            "4 5.79"
+          ],
+          [
+            "",
+            "Proivision for I",
+            "mpairment of Debtors",
+            "( 153.62)",
+            "( 34.65)"
+          ],
+          [
+            "",
+            "Other Expense",
+            "s",
+            "1 ,678.70 1",
+            ",490.37"
+          ],
+          [
+            "",
+            "CSR Expenditu",
+            "re",
+            "9 .59",
+            "-"
+          ],
+          [
+            "",
+            "Total Other O",
+            "perating Expenses 3",
+            "2,608.57 2 1",
+            ",783.82"
+          ],
+          [
+            "NO. 31 : FI",
+            "NANCE COSTS",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "Yea",
+            "r Ending Year",
+            "Ending"
+          ],
+          [
+            "No.",
+            "",
+            "Particulars",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "31",
+            "-03-2022 31-",
+            "03-2021"
+          ],
+          [
+            "I I",
+            "nterest on Ter",
+            "m Loan",
+            "-",
+            "9.23"
+          ],
+          [
+            "",
+            "Loan processin",
+            "g Charges & Bank Charges",
+            "31.43",
+            "1.38"
+          ],
+          [
+            "",
+            "Total Finance",
+            "Costs",
+            "3 1.43",
+            "1 0.61"
+          ]
+        ]
+      }
+    ]
+  }
+}

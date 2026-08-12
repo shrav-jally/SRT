@@ -1,0 +1,2737 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmp6c3fiqan/2023-24_nse_annual_report_gen.pdf",
+    "file_name": "2023-24_nse_annual_report_gen.pdf",
+    "financial_year": "2023-24",
+    "extraction_timestamp": "2026-07-02T14:28:53.806125+00:00",
+    "page_count": 292
+  },
+  "standalone": {
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 242,
+      "pages": [
+        242
+      ],
+      "title": "(Deficit) / Surplus amount of obligation recognised in Balance Sheet 1.96 0.83",
+      "currency": "in Crore",
+      "periods": [],
+      "column_headers": [
+        "2023-24",
+        "2022-23"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Exchange differences on foreign plans",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Benefits paid",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Fair value of Plan Assets at year end",
+          "note_no": null,
+          "values": {
+            "current_period": 0,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "III. Reconciliation of net defined benefit liability",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Defined Benefit Obligation at year end",
+          "note_no": null,
+          "values": {
+            "current_period": 1.97,
+            "previous_period": 0.83
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Fair value of Plan Assets at year end",
+          "note_no": null,
+          "values": {
+            "current_period": 0.01,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Deficit) / Surplus amount of obligation recognised in Balance Sheet",
+          "note_no": null,
+          "values": {
+            "current_period": 1.96,
+            "previous_period": 0.83
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IV. Expenses recognized in the Statement of Profit & Loss account / Other Comprehensive Income for the year ended",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current service cost",
+          "note_no": null,
+          "values": {
+            "current_period": 0.53,
+            "previous_period": 0.28
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest cost",
+          "note_no": null,
+          "values": {
+            "current_period": 0.09,
+            "previous_period": 0.05
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expected return on plan assets",
+          "note_no": null,
+          "values": {
+            "current_period": 0,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Actuarial (gain) / Losses",
+          "note_no": null,
+          "values": {
+            "current_period": 0.19,
+            "previous_period": -0.13
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Past service cost vested",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less :",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustment on account of business combination",
+          "note_no": null,
+          "values": {
+            "current_period": -0.19,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Others",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": -0.05
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 0.62,
+            "previous_period": 0.15
+          }
+        },
+        {
+          "section": null,
+          "line_item": "V. Balance Sheet reconciliation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Opening net liability /(asset)",
+          "note_no": null,
+          "values": {
+            "current_period": 0.83,
+            "previous_period": 0.74
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Defined Benefit Obligation through business combination",
+          "note_no": null,
+          "values": {
+            "current_period": 0.37,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expenses as above",
+          "note_no": null,
+          "values": {
+            "current_period": 0.62,
+            "previous_period": 0.15
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustments : On account of business combination",
+          "note_no": null,
+          "values": {
+            "current_period": 0.19,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Others",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 0.05
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Employer contribution",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Benefits paid directly by the Group",
+          "note_no": null,
+          "values": {
+            "current_period": -0.04,
+            "previous_period": -0.11
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Amount recognized in the Balance Sheet",
+          "note_no": null,
+          "values": {
+            "current_period": 1.97,
+            "previous_period": 0.83
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VI. Actuarial assumptions",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "for all group Companies except Scorpius Trackers Private Limited",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Discount rate",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Rate of return on plan assets Not",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Salary Escalation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Mortality Indian",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Lives",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "For Scorpius Trackers Private Limited",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Discount rate",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Rate of return on plan assets",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Salary Escalation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Mortality Indian",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Lives",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VII. Amount for the current period and previous period are as under :",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Gratuity",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Defined Benefit Obligation",
+          "note_no": null,
+          "values": {
+            "current_period": 1.97,
+            "previous_period": 0.83
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Plan Assets",
+          "note_no": null,
+          "values": {
+            "current_period": 0,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Surplus / (deficit)",
+          "note_no": null,
+          "values": {
+            "current_period": 1.96,
+            "previous_period": 0.83
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Experience adjustment on plan liability (Gain) / Loss",
+          "note_no": null,
+          "values": {
+            "current_period": 0.14,
+            "previous_period": -0.11
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Actuarial Loss /(Gain) due to change in Financial assumption",
+          "note_no": null,
+          "values": {
+            "current_period": 0.05,
+            "previous_period": -0.02
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Experience adjustment on plan assets",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "252",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 48,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "profit_and_loss": {
+      "statement": "standalone_profit_and_loss",
+      "page": 143,
+      "pages": [
+        143,
+        144
+      ],
+      "title": "Financial Statement",
+      "currency": "in Crore",
+      "periods": [
+        "03.03.2022",
+        "15.02.2022"
+      ],
+      "column_headers": [
+        "Assets for F.Y.2023-24",
+        "and F.Y.2022-23"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(2) (n) Motor Vehicle (Hypothecation) and Movable NA property - Others",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net Deferred Tax (Assets) / Liabilities at the beginning (A)",
+          "note_no": "",
+          "values": {
+            "current_period": 11.39,
+            "previous_period": 1.99
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(2) (o) Motor Vehicle (Hypothecation) NA",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Tax Expenses / (Income) recognised in :",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(2) (p)to(r) Motor Vehicle (Hypothecation) NA",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Standalone Statement of Profit and Loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(2) (s) Motor Vehicle (Hypothecation) NA",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Lease Liability",
+          "note_no": "",
+          "values": {
+            "current_period": -7.02,
+            "previous_period": -13.47
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unabsorbed Depreciation / Business Losses",
+          "note_no": "",
+          "values": {
+            "current_period": -0.99,
+            "previous_period": -1.84
+          }
+        },
+        {
+          "section": null,
+          "line_item": "24 Deferred Non Current Revenue Lease - Sale Liability of Service - O&M",
+          "note_no": "",
+          "values": {
+            "current_period": 0.02,
+            "previous_period": 0.1
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Provision for Gratuity",
+          "note_no": "",
+          "values": {
+            "current_period": -0.05,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Assets : Impact of difference between carrying value and tax",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars Depreciable assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other tax assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Lease Liability (Refer Note No.55)",
+          "note_no": null,
+          "values": {
+            "current_period": 35.02,
+            "previous_period": 12.06
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total recognised in profit & loss (B)",
+          "note_no": "",
+          "values": {
+            "current_period": 27.56,
+            "previous_period": 9.4
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total",
+          "note_no": null,
+          "values": {
+            "current_period": 35.02,
+            "previous_period": 12.06
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Employee Benefits Liability",
+          "note_no": "",
+          "values": {
+            "current_period": 0,
+            "previous_period": 0
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "25 Total Other recognised Non Current in other Financial comprehensive Liabilities income (C)",
+          "note_no": "",
+          "values": {
+            "current_period": 0,
+            "previous_period": 0
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Net Deferred Tax (Assets) / Liabilities at the end (A+B+C)",
+          "note_no": "",
+          "values": {
+            "current_period": 38.95,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Particulars",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "28 Current Borrowings",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Car Deposits",
+          "note_no": null,
+          "values": {
+            "current_period": 100.08,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Advance Lease Rentals",
+          "note_no": null,
+          "values": {
+            "current_period": 44.1,
+            "previous_period": 8.16
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Office Rent Deposit",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Particulars",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Working Capital Loan from Bank",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Secured",
+          "note_no": null,
+          "values": {
+            "current_period": 19.86,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "26 Non Current Provisions",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Unsecured",
+          "note_no": null,
+          "values": {
+            "current_period": 0.05,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Working Capital Loan from Other Parties",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Particulars Secured",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Unsecured",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Provision for Employee Benefits(Refer Note No. 45)",
+          "note_no": null,
+          "values": {
+            "current_period": 0.65,
+            "previous_period": 0.52
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Subsidiary",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total",
+          "note_no": null,
+          "values": {
+            "current_period": 0.65,
+            "previous_period": 0.52
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Bank Overdraft",
+          "note_no": null,
+          "values": {
+            "current_period": 5.04,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Current maturities of long term borrowings(Refer Note No.23)",
+          "note_no": null,
+          "values": {
+            "current_period": 51.07,
+            "previous_period": 2.42
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total",
+          "note_no": null,
+          "values": {
+            "current_period": 76.02,
+            "previous_period": 42.47
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "27 Deferred Tax Liabilities (Net)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 43,
+        "total_rows": 6
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 94,
+        "extraction_method": "text_reconstruction",
+        "row_count": 68,
+        "column_count": 1,
+        "rows": [
+          [
+            "GENSOL ENGINEERING LIMITED | ANNUAL REPORT 2023-24"
+          ],
+          [
+            "Independent Auditor’s Report"
+          ],
+          [
+            "To"
+          ],
+          [
+            "The Members of"
+          ],
+          [
+            "GENSOL ENGINEERING LIMITED"
+          ],
+          [
+            "Report on the Audit of the Standalone Financial accordance with the code of Ethics issued by the Institute"
+          ],
+          [
+            "Statements of Chartered Accountants of India (ICAI) together with the"
+          ],
+          [
+            "ethical requirements that are relevant to our audit of the"
+          ],
+          [
+            "Opinion"
+          ],
+          [
+            "standalone financial statements under the provisions of"
+          ],
+          [
+            "We have audited the accompanying standalone financial the Companies Act, 2013 and the Rules made there under,"
+          ],
+          [
+            "statements of GENSOL ENGINEERING LIMITED (“the and we have fulfilled our other ethical responsibilities in"
+          ],
+          [
+            "Company”), which comprise the Balance Sheet as at 31st accordance with these requirements and the ICAI’s Code"
+          ],
+          [
+            "March 2024, the Statement of Profit and Loss (including of Ethics. We believe that the audit evidence obtained by"
+          ],
+          [
+            "Other Comprehensive Income), Statement of Changes in us is sufficient and appropriate to provide a basis for our"
+          ],
+          [
+            "Equity and the Statement of Cash Flows for the year then audit opinion on the standalone financial statements."
+          ],
+          [
+            "ended and notes to the financial statements, including"
+          ],
+          [
+            "a summary of significant accounting policies and other"
+          ],
+          [
+            "Key Audit Matters"
+          ],
+          [
+            "explanatory information."
+          ],
+          [
+            "Key audit matters are those matters that, in our"
+          ],
+          [
+            "In our opinion and to the best of our information and"
+          ],
+          [
+            "professional judgment, were of most significance in your"
+          ],
+          [
+            "according to the explanations given to us, the aforesaid"
+          ],
+          [
+            "audit of the standalone financial statements for the"
+          ],
+          [
+            "standalone Ind AS financial statements give the information"
+          ],
+          [
+            "financial year ended March 31, 2024. These matters were"
+          ],
+          [
+            "required by the Companies Act, 2013 (“the Act”) in the manner"
+          ],
+          [
+            "addressed in the context of our audit of the standalone"
+          ],
+          [
+            "so required and give a true and fair view in conformity"
+          ],
+          [
+            "financial statements as a whole and in forming our"
+          ],
+          [
+            "with the Indian Accounting Standards prescribed under"
+          ],
+          [
+            "opinion thereon, and we do not provide a separate"
+          ],
+          [
+            "section 133 of the Act read with the Companies (Indian"
+          ],
+          [
+            "opinion on these matters."
+          ],
+          [
+            "Accounting Standards) Rules, 2015, as amended, (“Ind AS”)"
+          ],
+          [
+            "and accounting principles generally accepted in India, of the We have determined the matters described below to be"
+          ],
+          [
+            "state of affairs of the Company as at 31st March 2024, and its the key audit matters to be communicated in our report."
+          ],
+          [
+            "profit, other comprehensive income, the changes in equity We have fulfilled the responsibilities described in the"
+          ],
+          [
+            "and its cash flows for the year ended on that date. Auditor’s responsibilities for the audit of the standalone"
+          ],
+          [
+            "financial statements section of our report, including in"
+          ],
+          [
+            "Basis for Opinion relation to these matters. Accordingly, our audit included"
+          ],
+          [
+            "We conducted our audit of the standalone Ind AS the performance of procedures designed to respond to"
+          ],
+          [
+            "financial statements in accordance with the Standards our assessment of the risks of material misstatement of"
+          ],
+          [
+            "on Auditing specified (SAs) under section 143(10) of the the standalone financial statements. The results of our"
+          ],
+          [
+            "Act. Our responsibilities under those Standards are audit procedures, including the procedures performed"
+          ],
+          [
+            "further described in the Auditor’s Responsibility for the to address the matters below, provide the basis for"
+          ],
+          [
+            "Audit of the Standalone Financial Statements section our audit opinion on the accompanying standalone"
+          ],
+          [
+            "of our report. We are independent of the Company in financial statements."
+          ],
+          [
+            "Key audit matters How our audit addressed the key audit matter"
+          ],
+          [
+            "Revenue Recognition: Refer note-k of Accounting Policy:"
+          ],
+          [
+            "There are significant accounting judgements including Our procedures included :"
+          ],
+          [
+            "estimation of costs to complete, determining the stage of"
+          ],
+          [
+            "- Testing of the design and implementation of controls"
+          ],
+          [
+            "completion and the timing of revenue recognition."
+          ],
+          [
+            "involved for the determination of the estimates used"
+          ],
+          [
+            "The company recognizes revenue and profit/loss on the as well as their operating effectiveness;"
+          ],
+          [
+            "basis of stage of completion based on the proportion of"
+          ],
+          [
+            "− We selected a sample of contracts to test, using a risk"
+          ],
+          [
+            "contract costs incurred at balance sheet date."
+          ],
+          [
+            "based criteria which included individual contracts with:"
+          ],
+          [
+            "− significant revenue recognised during the year or"
+          ],
+          [
+            "− significant accrued value of work done balances"
+          ],
+          [
+            "held at the year-end"
+          ],
+          [
+            "− Obtained an understanding of management’s"
+          ],
+          [
+            "process for reviewing long term contracts, the risk"
+          ],
+          [
+            "associated with the contract and any key judgments;"
+          ],
+          [
+            "104"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 114,
+        "extraction_method": "text_reconstruction",
+        "row_count": 85,
+        "column_count": 1,
+        "rows": [
+          [
+            "GENSOL ENGINEERING LIMITED | ANNUAL REPORT 2023-24"
+          ],
+          [
+            "Notes to the Standalone Financial Statements"
+          ],
+          [
+            "for the year ended March 31, 2024"
+          ],
+          [
+            "- a present obligation arising from past events, 3.13 Revenue from Contracts with Customers"
+          ],
+          [
+            "when no reliable estimate is possible."
+          ],
+          [
+            "The Company recognizes revenue to depict the"
+          ],
+          [
+            "transfer of promised goods or services to customers"
+          ],
+          [
+            "Contingent liabilities are disclosed in the Financial"
+          ],
+          [
+            "in an amount that reflects the consideration to which"
+          ],
+          [
+            "Statements by way of notes to accounts, unless"
+          ],
+          [
+            "the Company expects to be entitled in exchange"
+          ],
+          [
+            "possibility of an outflow of resources embodying"
+          ],
+          [
+            "for those goods or services. Further, the Company"
+          ],
+          [
+            "economic benefit is remote. Contingent liabilities"
+          ],
+          [
+            "evaluates the performance obligations, being"
+          ],
+          [
+            "are disclosed on the basis of judgment of the"
+          ],
+          [
+            "distinct, to enable separate recognition and can"
+          ],
+          [
+            "management/independent experts. These are"
+          ],
+          [
+            "impact timing of recognition of certain elements of"
+          ],
+          [
+            "reviewed at each balance sheet date and are adjusted"
+          ],
+          [
+            "multiple element arrangements."
+          ],
+          [
+            "to reflect the current management estimate."
+          ],
+          [
+            "Revenue from contracts with customers is recognized"
+          ],
+          [
+            "Contingent assets are neither recognised nor"
+          ],
+          [
+            "at the point in time when the Company satisfies a"
+          ],
+          [
+            "disclosed in the Financial Statements."
+          ],
+          [
+            "performance obligation by transferring control of"
+          ],
+          [
+            "3.11 Earnings Per Share a promised product or service to a customer at an"
+          ],
+          [
+            "amount that reflects the consideration to which the"
+          ],
+          [
+            "Basic earnings per equity share is calculated"
+          ],
+          [
+            "Company expects to be entitled in exchange for"
+          ],
+          [
+            "by dividing the net profit after tax for the year"
+          ],
+          [
+            "the sale of products and service, net of discount,"
+          ],
+          [
+            "attributable to equity shareholders of the Company"
+          ],
+          [
+            "taxes or duties. Any retrospective revision in prices is"
+          ],
+          [
+            "by the weighted average number of equity shares"
+          ],
+          [
+            "accounted for in the year of such revision."
+          ],
+          [
+            "outstanding during the year."
+          ],
+          [
+            "Sale of Goods (Solar Power Generating System)"
+          ],
+          [
+            "Diluted earnings per equity share is computed by"
+          ],
+          [
+            "dividing adjusted net profit after tax by the aggregate The Company’s revenue is derived from selling goods"
+          ],
+          [
+            "of weighted average number of equity shares and which are used in the solar panel installation at site,"
+          ],
+          [
+            "dilutive potential equity shares during the year. with revenue recognised at a point in time when"
+          ],
+          [
+            "control of the goods is transferred to the customer"
+          ],
+          [
+            "3.12 Foreign Currency Transactions and Translations and the company retains none of the significant risks"
+          ],
+          [
+            "(i) Initial Recognition and rewards of ownership in the goods transferred."
+          ],
+          [
+            "The Company’s financial statements are"
+          ],
+          [
+            "The Company recognises revenue from the sale of"
+          ],
+          [
+            "presented in INR, which is also the Company’s"
+          ],
+          [
+            "goods measured at the fair value of the consideration"
+          ],
+          [
+            "functional currency. Transactions in foreign"
+          ],
+          [
+            "received or receivable, net of returns and allowances,"
+          ],
+          [
+            "currencies are recorded on initial recognition in"
+          ],
+          [
+            "trade discounts and volume rebates."
+          ],
+          [
+            "the functional currency at the exchange rates"
+          ],
+          [
+            "prevailing on the date of the transaction. As per Ind AS 115, the Company determines whether"
+          ],
+          [
+            "there is a significant financing component in its"
+          ],
+          [
+            "(ii) Measurement at the Balance Sheet Date contracts. However, the Company has decided to"
+          ],
+          [
+            "Foreign Currency monetary items of the use practical expedient provided in Ind AS 115 and"
+          ],
+          [
+            "Company, outstanding at the Balance Sheet not to adjust the promised amount of consideration"
+          ],
+          [
+            "date are restated at the year-end rates. Non- for the effects of a significant financing components"
+          ],
+          [
+            "monetary items which are carried at historical in the contracts, where the Company expects, at"
+          ],
+          [
+            "cost denominated in a foreign currency are contract inception that the period of completion of"
+          ],
+          [
+            "reported using the exchange rate at the date of contract terms are one year or less."
+          ],
+          [
+            "the transaction. Non-monetary items measured"
+          ],
+          [
+            "Rendering of Services"
+          ],
+          [
+            "at fair value in a foreign currency are translated"
+          ],
+          [
+            "using the exchange rates at the date when the - Related to Solar Power System"
+          ],
+          [
+            "fair value is determined."
+          ],
+          [
+            "The Company also renders services of"
+          ],
+          [
+            "installation of solar panels at site for its solar"
+          ],
+          [
+            "(iii) Treatment of exchange difference"
+          ],
+          [
+            "projects along with the goods, and Operation"
+          ],
+          [
+            "Exchange differences on monetary items that"
+          ],
+          [
+            "and Maintenance services after insallation"
+          ],
+          [
+            "arise, on settlement or, due to a different closing"
+          ],
+          [
+            "of solar panels. The after sales services is"
+          ],
+          [
+            "rate at Balance Sheet date, are recognised"
+          ],
+          [
+            "rendered against independent contracts with"
+          ],
+          [
+            "as income or expenses in the period in"
+          ],
+          [
+            "customers or against assurance type warranty"
+          ],
+          [
+            "which they arise."
+          ],
+          [
+            "for goods sold. Revenue from sale of services is"
+          ],
+          [
+            "recognised at an amount entitled in exchange"
+          ],
+          [
+            "124"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 122,
+        "extraction_method": "text_reconstruction",
+        "row_count": 98,
+        "column_count": 1,
+        "rows": [
+          [
+            "GENSOL ENGINEERING LIMITED | ANNUAL REPORT 2023-24"
+          ],
+          [
+            "Notes to the Standalone Financial Statements"
+          ],
+          [
+            "for the year ended March 31, 2024"
+          ],
+          [
+            "issued by subsidiaries & joint ventures, such 4.1 Critical Judgments in applying accounting policies"
+          ],
+          [
+            "Investment in CCDs and OCDs are recognized at"
+          ],
+          [
+            "In the process of applying the Company’s accounting"
+          ],
+          [
+            "fair value. The difference between the carrying"
+          ],
+          [
+            "policies, management has made the following"
+          ],
+          [
+            "value of the Investment in CCDs and OCDs and"
+          ],
+          [
+            "judgments, which have the most significant effect on"
+          ],
+          [
+            "fair value of such Investment in CCDs and OCDs"
+          ],
+          [
+            "the amounts recognised in the financial statements."
+          ],
+          [
+            "is credited to the carrying value of Investments"
+          ],
+          [
+            "in CCDs and OCDs with a corresponding debit (a) Classification of Investments"
+          ],
+          [
+            "to Deemed Investment. The Investment in"
+          ],
+          [
+            "Judgement is required in assessing the level"
+          ],
+          [
+            "CCDs and OCDs are subsequently measured"
+          ],
+          [
+            "of control obtained in a transaction to acquire"
+          ],
+          [
+            "at amortized cost. The Deemed Investment is"
+          ],
+          [
+            "an interest in another entity; depending"
+          ],
+          [
+            "added to the carrying amount of investment in"
+          ],
+          [
+            "upon the facts and circumstances in each"
+          ],
+          [
+            "subsidiaries or joint ventures and carried at cost."
+          ],
+          [
+            "case, the Company may obtain control, joint"
+          ],
+          [
+            "control or significant influence over the entity"
+          ],
+          [
+            "3.23 Government Grants"
+          ],
+          [
+            "or arrangement. Transactions which give the"
+          ],
+          [
+            "Government grants are recognised at their fair value"
+          ],
+          [
+            "Company control of a business are business"
+          ],
+          [
+            "where there is reasonable assurance that the grant"
+          ],
+          [
+            "combinations. If the Company obtains joint"
+          ],
+          [
+            "will be received and all attached conditions will"
+          ],
+          [
+            "control of an arrangement, judgement is also"
+          ],
+          [
+            "be complied with."
+          ],
+          [
+            "required to assess whether the arrangement"
+          ],
+          [
+            "is a joint operation or a joint venture. If the"
+          ],
+          [
+            "When the grant relates to an expense item, it"
+          ],
+          [
+            "Company has neither control nor joint control,"
+          ],
+          [
+            "is deferred and recognised as income in the"
+          ],
+          [
+            "it may be in a position to exercise significant"
+          ],
+          [
+            "Statement of Profit and Loss on a systematic"
+          ],
+          [
+            "influence over the entity, which is then classified"
+          ],
+          [
+            "basis over the periods necessary to match the related"
+          ],
+          [
+            "as an associate."
+          ],
+          [
+            "costs, which they are intended to compensate."
+          ],
+          [
+            "(b) Determining whether an arrangement contain"
+          ],
+          [
+            "When the grant relates to an asset or a non-monetary"
+          ],
+          [
+            "leases and classification of leases"
+          ],
+          [
+            "item, it is reduced from the gross amount of the asset to"
+          ],
+          [
+            "calculate book value. This signifies that the grant is being The Company enters into hiring/service"
+          ],
+          [
+            "recognized in profit and loss account as a reduced arrangements for various assets/services."
+          ],
+          [
+            "charge of depreciation over the life of such asset. The Company evaluates whether a contract"
+          ],
+          [
+            "contains a lease or not, in accordance with the"
+          ],
+          [
+            "principles of Ind AS 116. This requires significant"
+          ],
+          [
+            "Note - 4 Critical Accounting Judgments,"
+          ],
+          [
+            "judgements including but not limited to,"
+          ],
+          [
+            "Assumptions and Key Sources of Estimation"
+          ],
+          [
+            "whether asset is implicitly identified, substantive"
+          ],
+          [
+            "Uncertainty"
+          ],
+          [
+            "substitution rights available with the supplier,"
+          ],
+          [
+            "The preparation of the Company’s financial statements"
+          ],
+          [
+            "decision making rights with respect to how"
+          ],
+          [
+            "requires management to make judgments, estimates"
+          ],
+          [
+            "the underlying asset will be used, economic"
+          ],
+          [
+            "and assumptions that affect the reported amounts"
+          ],
+          [
+            "substance of the arrangement, etc."
+          ],
+          [
+            "of revenues, expenses, assets and liabilities, the"
+          ],
+          [
+            "accompanying disclosures, and the disclosure of Determining lease term (including extension"
+          ],
+          [
+            "contingent liabilities at the date of the financial and termination options)"
+          ],
+          [
+            "statements. Estimates and assumptions are continuously"
+          ],
+          [
+            "The Company considers the lease term as the"
+          ],
+          [
+            "evaluated and are based on management’s experience"
+          ],
+          [
+            "non-cancellable period of a lease adjusted"
+          ],
+          [
+            "and other factors, including expectations of future"
+          ],
+          [
+            "with any option to extend or terminate the"
+          ],
+          [
+            "events that are believed to be reasonable under the"
+          ],
+          [
+            "lease, if the use of such option is reasonably"
+          ],
+          [
+            "circumstances. Uncertainty about these assumptions"
+          ],
+          [
+            "certain. Assessment of extension/termination"
+          ],
+          [
+            "and estimates could result in outcomes that require a"
+          ],
+          [
+            "options is made on lease by lease basis, on the"
+          ],
+          [
+            "material adjustment to the carrying amount of assets or"
+          ],
+          [
+            "basis of relevant facts and circumstances. The"
+          ],
+          [
+            "liabilities affected in future periods."
+          ],
+          [
+            "lease term is reassessed if an option is actually"
+          ],
+          [
+            "exercised. In case of contracts. where the"
+          ],
+          [
+            "In particular, the Company has identified the following"
+          ],
+          [
+            "Company has the option to hire and de-hire the"
+          ],
+          [
+            "areas where significant judgments, estimates and"
+          ],
+          [
+            "underlying asset in some circumstances (such"
+          ],
+          [
+            "assumptions are required. Further information on each of"
+          ],
+          [
+            "as operational requirements), the lease term is"
+          ],
+          [
+            "these areas and how they impact the various accounting"
+          ],
+          [
+            "considered to be initial contract period."
+          ],
+          [
+            "policies are described below and also in the relevant"
+          ],
+          [
+            "notes to the financial statements. Changes in estimates"
+          ],
+          [
+            "are accounted for prospectively."
+          ],
+          [
+            "132"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": null,
+        "title": null,
+        "page": 197,
+        "extraction_method": "text_reconstruction",
+        "row_count": 93,
+        "column_count": 1,
+        "rows": [
+          [
+            "02-25 26-103 104-277"
+          ],
+          [
+            "CORPORATE OVERVIEW STATUTORY REPORTS FINANCIAL STATEMENTS"
+          ],
+          [
+            "Notes to the Consolidated Financial Statements"
+          ],
+          [
+            "for the year ended March 31, 2024"
+          ],
+          [
+            "The transition to Ind AS has resulted in changes circumstances and are presented to the extent"
+          ],
+          [
+            "in the presentation of the Financial Statements, possible, in the same manner as the company’s"
+          ],
+          [
+            "disclosures in the notes thereto and accounting standalone financial statements except otherwise"
+          ],
+          [
+            "policies and principles. stated. when necessary, adjustments are made to"
+          ],
+          [
+            "the financial statements of subsidiaries to bring their"
+          ],
+          [
+            "In accordance with the amendments to the ind as"
+          ],
+          [
+            "accounting policies in line with the group’s material"
+          ],
+          [
+            "effective april 1, 2023, the group is disclosing material"
+          ],
+          [
+            "accounting policies."
+          ],
+          [
+            "accounting policies information in its financial"
+          ],
+          [
+            "statements, instead of significant accounting Consolidation Procedure"
+          ],
+          [
+            "policies as required previously. This change aligns"
+          ],
+          [
+            "(a) Consolidated Financial Statements have been"
+          ],
+          [
+            "the group's disclosure practices with the updated"
+          ],
+          [
+            "prepared by combining the financial statements"
+          ],
+          [
+            "ind as framework and all other amendments do not"
+          ],
+          [
+            "of the company and its subsidiaries on a line-"
+          ],
+          [
+            "have material impact on the financial statements."
+          ],
+          [
+            "by-line basis by adding the book values of"
+          ],
+          [
+            "like items of assets, liabilities, equity, income,"
+          ],
+          [
+            "The material accounting policy information related to"
+          ],
+          [
+            "expenses and cash flow after eliminating the"
+          ],
+          [
+            "preparation of the consolidated financial statements"
+          ],
+          [
+            "full intra-group transactions, balances and"
+          ],
+          [
+            "have been discussed in the respective notes."
+          ],
+          [
+            "unrealized profits. Unrealized losses are also"
+          ],
+          [
+            "3.2 Basis of preparation eliminated unless the transaction provides"
+          ],
+          [
+            "evidence of an impairment of the asset"
+          ],
+          [
+            "The consolidated financial statements have been"
+          ],
+          [
+            "transferred. Such unrealized profits/losses are"
+          ],
+          [
+            "prepared on going concern basis on the historical"
+          ],
+          [
+            "fully attributed to the Company."
+          ],
+          [
+            "cost convention using accrual system of accounting"
+          ],
+          [
+            "except for certain assets and liabilities such as"
+          ],
+          [
+            "(b) Offset (eliminate) the carrying amount of the"
+          ],
+          [
+            "debentures and gratuity which are measured at"
+          ],
+          [
+            "company's investment in each subsidiary and"
+          ],
+          [
+            "fair value/amortised cost/net present value at the"
+          ],
+          [
+            "the parent’s portion of equity of each subsidiary."
+          ],
+          [
+            "end of each reporting period, as explained in the"
+          ],
+          [
+            "accounting policies. Profit or loss and each component of other"
+          ],
+          [
+            "comprehensive income are attributed to the owners"
+          ],
+          [
+            "Accounting policies have been consistently applied"
+          ],
+          [
+            "of the Company and to the non-controlling interests."
+          ],
+          [
+            "except where a newly issued ind as is initially adopted"
+          ],
+          [
+            "Total comprehensive income is attributed to the"
+          ],
+          [
+            "or a revision to an existing accounting standard"
+          ],
+          [
+            "owners of the Company and to the non-controlling"
+          ],
+          [
+            "requires a change in the accounting policy hitherto"
+          ],
+          [
+            "interests even if this results in the non-controlling"
+          ],
+          [
+            "in use. the methods used to measure fair values are"
+          ],
+          [
+            "interests having a deficit balance."
+          ],
+          [
+            "disclosed in notes to the financial statements."
+          ],
+          [
+            "Changes in the Group’s ownership interests in"
+          ],
+          [
+            "The consolidated financial statements are presented"
+          ],
+          [
+            "subsidiaries that do not result in the Group losing"
+          ],
+          [
+            "H"
+          ],
+          [
+            "in indian rupees ( ) and all values are rounded off"
+          ],
+          [
+            "control over the subsidiaries are accounted for as"
+          ],
+          [
+            "to the nearest two decimal crores, except unless"
+          ],
+          [
+            "equity transactions. The carrying amounts of the"
+          ],
+          [
+            "otherwise indicated and accordingly amounts less"
+          ],
+          [
+            "Group’s interests and the non-controlling interests"
+          ],
+          [
+            "H"
+          ],
+          [
+            "than 50,000/- is reflacted as \"0.00\"."
+          ],
+          [
+            "are adjusted to reflect the changes in their relative"
+          ],
+          [
+            "interests in the subsidiaries. Any difference between"
+          ],
+          [
+            "3.3 Principles of consolidation"
+          ],
+          [
+            "the amount by which the non-controlling interests"
+          ],
+          [
+            "The consolidated financial statements incorporate are adjusted and the fair value of the consideration"
+          ],
+          [
+            "the financial statements of the company and paid or received is recognized directly in equity and"
+          ],
+          [
+            "entities controlled by the company (its subsidiaries) attributed to the owners of the Company."
+          ],
+          [
+            "collectively referred as “the group”."
+          ],
+          [
+            "When the Group loses control of a subsidiary, a gain"
+          ],
+          [
+            "The company controls an entity when it is exposed or loss is recognized in the Consolidated Statement"
+          ],
+          [
+            "or has rights to variable returns from its involvement of Profit and Loss and is calculated as the difference"
+          ],
+          [
+            "with the entity and has the ability to affect those between (i) the aggregate of the fair value of the"
+          ],
+          [
+            "returns through its power over the entity. consideration received and the fair value of any"
+          ],
+          [
+            "retained interest and (ii) the previous carrying"
+          ],
+          [
+            "Subsidiaries are consolidated from the date on which"
+          ],
+          [
+            "amount of the assets (including goodwill) less"
+          ],
+          [
+            "the company obtains control and continue to be"
+          ],
+          [
+            "liabilities of the subsidiary and any non-controlling"
+          ],
+          [
+            "consolidated until the date that such control ceases."
+          ],
+          [
+            "interests. All amounts previously recognized in"
+          ],
+          [
+            "The consolidated financial statements are prepared other comprehensive income in relation to that"
+          ],
+          [
+            "using uniform accounting policies consistently subsidiary are accounted for as if the Group had"
+          ],
+          [
+            "for like transactions and other events in similar directly disposed of the related assets or liabilities of"
+          ],
+          [
+            "207"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": null,
+        "title": null,
+        "page": 198,
+        "extraction_method": "text_reconstruction",
+        "row_count": 95,
+        "column_count": 1,
+        "rows": [
+          [
+            "GENSOL ENGINEERING LIMITED | ANNUAL REPORT 2023-24"
+          ],
+          [
+            "Notes to the Consolidated Financial Statements"
+          ],
+          [
+            "for the year ended March 31, 2024"
+          ],
+          [
+            "the subsidiary (i.e. reclassified to the Consolidated recognises it in other comprehensive income and"
+          ],
+          [
+            "Statement of Profit and Loss or transferred to another accumulates the same in equity as capital reserve."
+          ],
+          [
+            "category of equity as specified/permitted by This gain is attributed to the acquirer. If there does"
+          ],
+          [
+            "applicable Ind AS). The fair value of any investment not exist clear evidence of the underlying reasons for"
+          ],
+          [
+            "retained in the former subsidiary at the date when classifying the business combination as a bargain"
+          ],
+          [
+            "control is lost is regarded as the fair value on initial purchase, the Group recognises the gain, after"
+          ],
+          [
+            "recognition for subsequent accounting under Ind AS reassessing and reviewing (as described above),"
+          ],
+          [
+            "109, or the cost on initial recognition as investment in directly in equity as capital reserve. Acquisition"
+          ],
+          [
+            "an associates or a joint ventures, when applicable. related costs are recognised in Consolidated"
+          ],
+          [
+            "Statement of Profit and Loss as incurred."
+          ],
+          [
+            "3.4 Business combination"
+          ],
+          [
+            "When a business combination is achieved in stages,"
+          ],
+          [
+            "The Group accounts for its business combinations"
+          ],
+          [
+            "the Group’s previously held equity interest in the"
+          ],
+          [
+            "under acquisition method of accounting. At the"
+          ],
+          [
+            "acquiree is remeasured to its acquisition date fair"
+          ],
+          [
+            "acquisition date, the identifiable assets acquired"
+          ],
+          [
+            "value and the resulting gain or loss, if any, is recognized"
+          ],
+          [
+            "and the liabilities assumed are recognized"
+          ],
+          [
+            "in the Consolidated Statement of Profit and Loss."
+          ],
+          [
+            "at their fair value that meet the condition for"
+          ],
+          [
+            "Amounts arising from interests in the acquiree"
+          ],
+          [
+            "recognition, except that :"
+          ],
+          [
+            "prior to the acquisition date that have previously"
+          ],
+          [
+            "(a) Deferred tax assets or liabilities, and assets been recognized in other comprehensive income"
+          ],
+          [
+            "or liabilities related to employee benefit are reclassified to the Consolidated Statement of"
+          ],
+          [
+            "arrangements are recognized and measured Profit and Loss where such treatment would be"
+          ],
+          [
+            "in accordance with Ind AS 12 Income Taxes and appropriate if that interest were disposed of."
+          ],
+          [
+            "Ind AS 19 Employee Benefits respectively;"
+          ],
+          [
+            "3.5 Non-controlling interests"
+          ],
+          [
+            "(b) Assets (or disposal groups) that are classified as"
+          ],
+          [
+            "Non-controlling interests represent the proportion"
+          ],
+          [
+            "held for sale in accordance with Ind AS 105 Non-"
+          ],
+          [
+            "of income, other comprehensive income and net"
+          ],
+          [
+            "current Assets Held for Sale and Discontinued"
+          ],
+          [
+            "assets in subsidiaries that is not attributable to the"
+          ],
+          [
+            "Operations are measured in accordance"
+          ],
+          [
+            "Company's shareholders."
+          ],
+          [
+            "with that Standard."
+          ],
+          [
+            "Non-controlling interests are initially measured"
+          ],
+          [
+            "Purchase consideration paid in excess of the fair"
+          ],
+          [
+            "either at fair value or at non-controlling interests’"
+          ],
+          [
+            "value of net assets acquired is recognised as"
+          ],
+          [
+            "proportionate share of the recognized amounts of"
+          ],
+          [
+            "goodwill. Where the fair value of identifiable assets"
+          ],
+          [
+            "the acquiree’s identifiable net assets. Subsequent to"
+          ],
+          [
+            "and liabilities exceed the cost of acquisition, after"
+          ],
+          [
+            "acquisition, the carrying amount of non-controlling"
+          ],
+          [
+            "reassessing the fair values of the net assets and"
+          ],
+          [
+            "interests is the amount of the interest at initial"
+          ],
+          [
+            "contingent liabilities, the excess is recognised as"
+          ],
+          [
+            "recognition plus the non-controlling interests’ share"
+          ],
+          [
+            "gain on bargain purchase."
+          ],
+          [
+            "of subsequent changes in equity."
+          ],
+          [
+            "The interest of non-controlling shareholders is"
+          ],
+          [
+            "3.6 Goodwill on consolidation"
+          ],
+          [
+            "initially measured either at fair value or at the non-"
+          ],
+          [
+            "Goodwill arising on an acquisition of a business"
+          ],
+          [
+            "controlling interests’ proportionate share of the"
+          ],
+          [
+            "is carried at cost as established at the date of"
+          ],
+          [
+            "acquiree’s identifiable net assets. The choice of"
+          ],
+          [
+            "acquisition of the business less accumulated"
+          ],
+          [
+            "measurement basis is made on an acquisition-by-"
+          ],
+          [
+            "impairment losses, if any."
+          ],
+          [
+            "acquisition basis."
+          ],
+          [
+            "Goodwill is tested for impairment annually and"
+          ],
+          [
+            "In case of a bargain purchase, before recognising"
+          ],
+          [
+            "whenever circumstances indicate that it may be"
+          ],
+          [
+            "a gain in respect thereof, the Group determines"
+          ],
+          [
+            "impaired. For the purposes of impairment testing,"
+          ],
+          [
+            "whether there exists clear evidence of the underlying"
+          ],
+          [
+            "goodwill is allocated to each of the Group’s cash-"
+          ],
+          [
+            "reasons for classifying the business combination"
+          ],
+          [
+            "generating units (or groups of cash-generating"
+          ],
+          [
+            "as a bargain purchase. Thereafter, the Group"
+          ],
+          [
+            "units) that is expected to benefit from the synergies"
+          ],
+          [
+            "reassesses whether it has correctly identified all of"
+          ],
+          [
+            "of the combination."
+          ],
+          [
+            "the assets acquired and all of the liabilities assumed"
+          ],
+          [
+            "and recognises any additional assets or liabilities"
+          ],
+          [
+            "A cash-generating unit to which goodwill has been"
+          ],
+          [
+            "that are identified in that reassessment. The Group"
+          ],
+          [
+            "allocated is tested for impairment annually, or"
+          ],
+          [
+            "then reviews the procedures used to measure the"
+          ],
+          [
+            "more frequently when there is an indication that"
+          ],
+          [
+            "amounts that Ind AS requires for the purposes of"
+          ],
+          [
+            "the cash generating unit may be impaired. If the"
+          ],
+          [
+            "calculating the bargain purchase. If the gain remains"
+          ],
+          [
+            "recoverable amount of the cash-generating unit is"
+          ],
+          [
+            "after this reassessment and review, the Group"
+          ],
+          [
+            "less than its carrying amount, the impairment loss"
+          ],
+          [
+            "208"
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 182,
+        "extraction_method": "text_reconstruction",
+        "row_count": 68,
+        "column_count": 1,
+        "rows": [
+          [
+            "GENSOL ENGINEERING LIMITED | ANNUAL REPORT 2023-24"
+          ],
+          [
+            "Independent Auditor’s Report"
+          ],
+          [
+            "To"
+          ],
+          [
+            "The Members of"
+          ],
+          [
+            "GENSOL ENGINEERING LIMITED"
+          ],
+          [
+            "Report on the Audit of the Consolidated Audit of the Consolidated Financial Statements section"
+          ],
+          [
+            "Financial Statements of our report. We are independent of the Group in"
+          ],
+          [
+            "accordance with the Code of Ethics issued by the Institute"
+          ],
+          [
+            "Opinion"
+          ],
+          [
+            "of Chartered Accountants of India (ICAI) together with the"
+          ],
+          [
+            "We have audited the accompanying consolidated financial ethical requirements that are relevant to our audit of the"
+          ],
+          [
+            "statements of Gensol Engineering Limited (hereinafter Consolidated financial statements under the provisions"
+          ],
+          [
+            "referred to as “the Holding Company”), its subsidiaries (the of the Companies Act, 2013 and the Rules made there"
+          ],
+          [
+            "Holding Company and its subsidiaries together referred under. We believe that the audit evidence obtained by"
+          ],
+          [
+            "to as “the Group”) the consolidated Balance Sheet as us is sufficient and appropriate to provide a basis for our"
+          ],
+          [
+            "at March 31, 2024, the consolidated Statement of Profit audit opinion on the consolidated financial statements."
+          ],
+          [
+            "and Loss, including other comprehensive income, the"
+          ],
+          [
+            "consolidated Cash Flow Statement and the consolidated"
+          ],
+          [
+            "Key Audit Matters"
+          ],
+          [
+            "Statement of Changes in Equity for the year then ended,"
+          ],
+          [
+            "and notes to the consolidated financial statements, Key audit matters are those matters that, in our professional"
+          ],
+          [
+            "including a summary of significant accounting policies judgment, were of most significance in our audit of the"
+          ],
+          [
+            "and other explanatory information (hereinafter referred to consolidated financial statements for the financial year"
+          ],
+          [
+            "as “the consolidated financial statements”). ended March 31, 2024. These matters were addressed"
+          ],
+          [
+            "in the context of our audit of the consolidated financial"
+          ],
+          [
+            "In our opinion and to the best of our information and"
+          ],
+          [
+            "statements as a whole, and in forming our opinion thereon,"
+          ],
+          [
+            "according to the explanations given to us and based"
+          ],
+          [
+            "and we do not provide a separate opinion on these"
+          ],
+          [
+            "on the consideration of reports of other auditors on"
+          ],
+          [
+            "matters. For each matter below, our description of how our"
+          ],
+          [
+            "separate audited financial statements and other"
+          ],
+          [
+            "audit addressed the matter is provided in that context."
+          ],
+          [
+            "financial information of the subsidiaries, the aforesaid"
+          ],
+          [
+            "consolidated financial statements give the information We have determined the matters described below to be"
+          ],
+          [
+            "required by the Companies Act, 2013, as amended (“the the key audit matters to be communicated in our report."
+          ],
+          [
+            "Act”) in the manner so required and give a true and fair We have fulfilled the responsibilities described in the"
+          ],
+          [
+            "view in conformity with the accounting principles generally Auditor’s responsibilities for the audit of the consolidated"
+          ],
+          [
+            "accepted in India, of the consolidated state of affairs of financial statements section of our report, including in"
+          ],
+          [
+            "the Company as at March 31, 2024, their consolidated relation to these matters. Accordingly, our audit included"
+          ],
+          [
+            "profit including other comprehensive income, their the performance of procedures designed to respond to"
+          ],
+          [
+            "consolidated cash flows and the consolidated statement our assessment of the risks of material misstatement"
+          ],
+          [
+            "of changes in equity for the year ended on that date. of the consolidated financial statements. The results of"
+          ],
+          [
+            "audit procedures performed by us and by other auditors"
+          ],
+          [
+            "Basis for Opinion"
+          ],
+          [
+            "of components not audited by us, as reported by them in"
+          ],
+          [
+            "We conducted our audit of the Consolidated financial their audit reports furnished to us by the management,"
+          ],
+          [
+            "statements in accordance with the Standards on Auditing including those procedures performed to address the"
+          ],
+          [
+            "specified (SAs) under section 143(10) of the Companies matters below, provide the basis for our audit opinion on"
+          ],
+          [
+            "Act, 2013. Our responsibilities under those Standards are the accompanying consolidated financial statements."
+          ],
+          [
+            "further described in the Auditor’s Responsibility for the"
+          ],
+          [
+            "Key audit matters in respect of holding company How our audit addressed the key audit matter"
+          ],
+          [
+            "Revenue Recognition: Refer Note – I of Accounting Policy:"
+          ],
+          [
+            "There are significant accounting judgements including Our procedures included :"
+          ],
+          [
+            "estimation of costs to complete, determining the stage - Testing of the design and implementation of controls"
+          ],
+          [
+            "of completion and the timing of revenue recognition. involved for the determination of the estimates used as"
+          ],
+          [
+            "well as their operating effectiveness;"
+          ],
+          [
+            "The company recognises revenue and profit/loss on the"
+          ],
+          [
+            "basis of stage of completion based on the proportion of − We selected a sample of contracts to test, using a risk"
+          ],
+          [
+            "based criteria which included individual contracts with:"
+          ],
+          [
+            "contract costs incurred at balance sheet date."
+          ],
+          [
+            "− significant revenue recognised during the year or"
+          ],
+          [
+            "− significant accrued value of work done balances held"
+          ],
+          [
+            "at the year-end"
+          ],
+          [
+            "− Obtained an understanding of management’s process"
+          ],
+          [
+            "for reviewing long term contracts, the risk associated with"
+          ],
+          [
+            "the contract and any key judgments;"
+          ],
+          [
+            "192"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 202,
+        "extraction_method": "text_reconstruction",
+        "row_count": 85,
+        "column_count": 1,
+        "rows": [
+          [
+            "GENSOL ENGINEERING LIMITED | ANNUAL REPORT 2023-24"
+          ],
+          [
+            "Notes to the Consolidated Financial Statements"
+          ],
+          [
+            "for the year ended March 31, 2024"
+          ],
+          [
+            "3.13 Statement of cash flow attributable to equity shareholders of the Company"
+          ],
+          [
+            "by the weighted average number of equity shares"
+          ],
+          [
+            "Cash flows are reported using the indirect method"
+          ],
+          [
+            "outstanding during the year."
+          ],
+          [
+            "whereby the profit before tax is adjusted for the"
+          ],
+          [
+            "effect of the transactions of a non cash nature, any"
+          ],
+          [
+            "Diluted earnings per equity share is computed by"
+          ],
+          [
+            "deferrals or accruals of past and future operating"
+          ],
+          [
+            "dividing adjusted net profit after tax by the aggregate"
+          ],
+          [
+            "cash receipts or payments and items of income"
+          ],
+          [
+            "of weighted average number of equity shares and"
+          ],
+          [
+            "or expenses associated with investing or financing"
+          ],
+          [
+            "dilutive potential equity shares during the year."
+          ],
+          [
+            "cash flows. The cash flows from operating, investing"
+          ],
+          [
+            "and financing activities of the Group are segregated. 3.16 Foreign currency transactions and translations"
+          ],
+          [
+            "(i) Initial recognition"
+          ],
+          [
+            "3.14 Provisions, contingent liabilities and"
+          ],
+          [
+            "contingent assets The Company’s financial statements are"
+          ],
+          [
+            "presented in INR, which is also the Company’s"
+          ],
+          [
+            "Provisions are recognised when the Company"
+          ],
+          [
+            "functional currency. Transactions in foreign"
+          ],
+          [
+            "has a present obligation (legal or constructive)"
+          ],
+          [
+            "currencies are recorded on initial recognition in"
+          ],
+          [
+            "as a result of a past events and it is probable that"
+          ],
+          [
+            "the functional currency at the exchange rates"
+          ],
+          [
+            "an outflow of resources embodying economic"
+          ],
+          [
+            "prevailing on the date of the transaction."
+          ],
+          [
+            "benefits will be required to settle the obligation and"
+          ],
+          [
+            "a reliable estimate can be made of the amount of"
+          ],
+          [
+            "(ii) Measurement at the balance sheet date"
+          ],
+          [
+            "the obligation."
+          ],
+          [
+            "Foreign Currency monetary items of the"
+          ],
+          [
+            "The amount recognised as a provision is the best Company, outstanding at the Balance Sheet"
+          ],
+          [
+            "estimate of the consideration required to settle the date are restated at the year-end rates. Non-"
+          ],
+          [
+            "present obligation at the end of the reporting period, monetary items which are carried at historical"
+          ],
+          [
+            "taking into account the risks and uncertainties cost denominated in a foreign currency are"
+          ],
+          [
+            "surrounding the obligation. If the effect of the time reported using the exchange rate at the date of"
+          ],
+          [
+            "value of money is material, provisions are discounted the transaction. Non-monetary items measured"
+          ],
+          [
+            "using a current pre-tax rate that reflects, when at fair value in a foreign currency are translated"
+          ],
+          [
+            "appropriate, the risks specific to the liability. When using the exchange rates at the date when the"
+          ],
+          [
+            "discounting is used, the increase in the provision due fair value is determined."
+          ],
+          [
+            "to the passage of time is recognised as a finance"
+          ],
+          [
+            "cost. Provisions are reviewed at each Balance (iii) Treatment of exchange difference"
+          ],
+          [
+            "Sheet date and adjusted to reflect the current Exchange differences on monetary items that"
+          ],
+          [
+            "best estimates. arise, on settlement or, due to a different closing"
+          ],
+          [
+            "rate at Balance Sheet date, are recognised"
+          ],
+          [
+            "Contingent liability is disclosed in the case of :"
+          ],
+          [
+            "as income or expenses in the period in"
+          ],
+          [
+            "which they arise."
+          ],
+          [
+            "- a present obligation arising from past events,"
+          ],
+          [
+            "when it is not probable that an outflow of"
+          ],
+          [
+            "(iv) Group Companies"
+          ],
+          [
+            "resources will be required to settle the obligation."
+          ],
+          [
+            "On consolidation, the assets and liabilities"
+          ],
+          [
+            "- a present obligation arising from past events, of foreign operations are translated at the"
+          ],
+          [
+            "when no reliable estimate is possible. exchange rate prevailing at the reporting"
+          ],
+          [
+            "date and their statements of profit and"
+          ],
+          [
+            "Contingent liabilities are disclosed in the Financial"
+          ],
+          [
+            "loss are translated using average rate"
+          ],
+          [
+            "Statements by way of notes to accounts, unless"
+          ],
+          [
+            "of exchange prevailing during the year,"
+          ],
+          [
+            "possibility of an outflow of resources embodying"
+          ],
+          [
+            "which approximates to the exchange rate"
+          ],
+          [
+            "economic benefit is remote. Contingent liabilities"
+          ],
+          [
+            "prevailing at the transaction date. All resulting"
+          ],
+          [
+            "are disclosed on the basis of judgment of the"
+          ],
+          [
+            "exchange differences arising on translation for"
+          ],
+          [
+            "management/independent experts. These are"
+          ],
+          [
+            "consolidation are recognised in OCI."
+          ],
+          [
+            "reviewed at each balance sheet date and are adjusted"
+          ],
+          [
+            "to reflect the current management estimate. 3.17 Revenue from contracts with customers"
+          ],
+          [
+            "The Company recognizes revenue to depict the"
+          ],
+          [
+            "Contingent assets are neither recognised nor"
+          ],
+          [
+            "transfer of promised goods or services to customers"
+          ],
+          [
+            "disclosed in the Financial Statements."
+          ],
+          [
+            "in an amount that reflects the consideration to which"
+          ],
+          [
+            "3.15 Earnings per share the Company expects to be entitled in exchange"
+          ],
+          [
+            "for those goods or services. Further, the Company"
+          ],
+          [
+            "Basic earnings per equity share is calculated"
+          ],
+          [
+            "evaluates the performance obligations, being"
+          ],
+          [
+            "by dividing the net profit after tax for the year"
+          ],
+          [
+            "212"
+          ]
+        ]
+      }
+    ]
+  }
+}

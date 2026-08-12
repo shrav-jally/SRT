@@ -1,0 +1,294 @@
+"""Chunker implementation leveraging the document structure."""
+
+from __future__ import annotations
+
+import logging
+from collections.abc import Iterator
+from typing import Annotated, Any, Optional, Union
+
+import pandas as pd
+from pydantic import ConfigDict, Field
+from typing_extensions import override
+
+from docling_core.transforms.chunker import BaseChunk, BaseChunker
+from docling_core.transforms.chunker.code_chunking.base_code_chunking_strategy import (
+    BaseCodeChunkingStrategy,
+)
+from docling_core.transforms.chunker.doc_chunk import DocChunk, DocMeta
+from docling_core.transforms.serializer.base import (
+    BaseDocSerializer,
+    BaseSerializerProvider,
+    BaseTableSerializer,
+    SerializationResult,
+)
+from docling_core.transforms.serializer.common import DocSerializer, create_ser_result
+from docling_core.transforms.serializer.markdown import (
+    MarkdownDocSerializer,
+    MarkdownParams,
+)
+from docling_core.types import DoclingDocument as DLDocument
+from docling_core.types.doc.base import ImageRefMode
+from docling_core.types.doc.document import (
+    CodeItem,
+    DocItem,
+    DoclingDocument,
+    InlineGroup,
+    LevelNumber,
+    ListGroup,
+    SectionHeaderItem,
+    TableItem,
+    TitleItem,
+)
+
+_logger = logging.getLogger(__name__)
+
+
+class TripletTableSerializer(BaseTableSerializer):
+    """Triplet-based table item serializer."""
+
+    @staticmethod
+    def _flatten_table_text(table_df: pd.DataFrame) -> str:
+        """Last-resort fallback that turns a table into plain text.
+
+        The preferred output of this serializer is the triplet form
+        'row, column = value'. When that comes out empty - for example on
+        single-cell RichTableCell layout tables where the header and row
+        labels are blank - we fall back to this helper so the table still
+        contributes something chunkable and does not end up consuming its
+        sibling refs.
+
+        Cells are read row by row, blanks are skipped, and the remaining
+        values are joined with '. '. So a table like [['A', ''], ['B', 'C']]
+        becomes 'A. B. C'.
+        """
+        return ". ".join(
+            text for row in table_df.itertuples(index=False, name=None) for value in row if (text := str(value).strip())
+        )
+
+    @override
+    def serialize(
+        self,
+        *,
+        item: TableItem,
+        doc_serializer: BaseDocSerializer,
+        doc: DoclingDocument,
+        **kwargs,
+    ) -> SerializationResult:
+        """Serializes the passed item."""
+        parts: list[SerializationResult] = []
+        shared_visited = kwargs.get("visited")
+
+        cap_res = doc_serializer.serialize_captions(
+            item=item,
+            **kwargs,
+        )
+        if cap_res.text:
+            parts.append(cap_res)
+
+        if item.self_ref not in doc_serializer.get_excluded_refs(**kwargs):
+            table_text = ""
+            local_kwargs = {**kwargs, "visited": set(shared_visited)} if shared_visited is not None else kwargs
+            table_df = item._export_to_dataframe_with_options(
+                doc,
+                doc_serializer=doc_serializer,
+                **local_kwargs,
+            )
+
+            # Header-only tables produce a dataframe with 0 rows. Emit the
+            # header text directly instead of dropping the table on the floor.
+            if table_df.shape[0] == 0 and len(table_df.columns) > 0:
+                table_text = ". ".join(text for col in table_df.columns if (text := str(col).strip()))
+
+            if table_df.shape[0] >= 1 and table_df.shape[1] >= 1:
+                fallback_df = table_df
+                # Handle single-column tables
+                if table_df.shape[1] == 1:
+                    # For single-column tables, use first row as column name
+                    # and remaining rows as values
+                    col_name = str(table_df.iloc[0, 0]).strip()
+                    values = [str(val).strip() for val in table_df.iloc[1:, 0].to_list()]
+                    if values:
+                        table_text_parts = [f"{col_name} = {val}" for val in values]
+                        table_text = ". ".join(table_text_parts)
+                    else:
+                        # Single-row single-column table: emit the cell text
+                        table_text = col_name
+                else:
+                    # For multi-column tables
+                    # copy header as first row and shift all rows by one
+                    triplet_df = table_df.copy()
+                    triplet_df.loc[-1] = triplet_df.columns  # type: ignore[call-overload]
+                    triplet_df.index = triplet_df.index + 1
+                    triplet_df = triplet_df.sort_index()
+
+                    rows = [str(item).strip() for item in triplet_df.iloc[:, 0].to_list()]
+                    cols = [str(item).strip() for item in triplet_df.iloc[0, :].to_list()]
+
+                    nrows = triplet_df.shape[0]
+                    ncols = triplet_df.shape[1]
+                    table_text_parts = [
+                        f"{rows[i]}, {cols[j]} = {str(triplet_df.iloc[i, j]).strip()}"
+                        for i in range(1, nrows)
+                        for j in range(1, ncols)
+                    ]
+                    table_text = ". ".join(table_text_parts)
+
+                if not table_text:
+                    table_text = self._flatten_table_text(fallback_df)
+
+            if table_text:
+                if shared_visited is not None:
+                    shared_visited.update(local_kwargs["visited"])
+                parts.append(create_ser_result(text=table_text, span_source=item))
+
+        text_res = "\n\n".join([r.text for r in parts])
+
+        return create_ser_result(text=text_res, span_source=parts)
+
+
+class ChunkingDocSerializer(MarkdownDocSerializer):
+    """Doc serializer used for chunking purposes."""
+
+    table_serializer: BaseTableSerializer = TripletTableSerializer()
+    params: MarkdownParams = MarkdownParams(
+        image_mode=ImageRefMode.PLACEHOLDER,
+        image_placeholder="",
+        escape_underscores=False,
+        escape_html=False,
+    )
+
+
+class ChunkingSerializerProvider(BaseSerializerProvider):
+    """Serializer provider used for chunking purposes."""
+
+    @override
+    def get_serializer(self, doc: DoclingDocument) -> BaseDocSerializer:
+        """Get the associated serializer."""
+        return ChunkingDocSerializer(doc=doc)
+
+
+class HierarchicalChunker(BaseChunker):
+    r"""Chunker implementation leveraging the document layout.
+
+    Args:
+        merge_list_items (bool): Whether to merge successive list items.
+            Defaults to True.
+        delim (str): Delimiter to use for merging text. Defaults to "\n".
+        code_chunking_strategy (CodeChunkingStrategy): Optional strategy for chunking code items.
+            If provided, code items will be processed using this strategy instead of being
+            treated as regular text. Defaults to None (no special code processing).
+        always_emit_headings (bool): Whether to emit headings even for empty sections. Defaults to False.
+    """
+
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+
+    serializer_provider: BaseSerializerProvider = ChunkingSerializerProvider()
+    code_chunking_strategy: Optional[BaseCodeChunkingStrategy] = Field(default=None)
+    always_emit_headings: bool = False
+
+    # deprecated:
+    merge_list_items: Annotated[bool, Field(deprecated=True)] = True
+
+    def chunk(
+        self,
+        dl_doc: DLDocument,
+        **kwargs: Any,
+    ) -> Iterator[BaseChunk]:
+        r"""Chunk the provided document.
+
+        Args:
+            dl_doc (DLDocument): document to chunk
+
+        Yields:
+            Iterator[Chunk]: iterator over extracted chunks
+        """
+        my_doc_ser = self.serializer_provider.get_serializer(doc=dl_doc)
+        heading_by_level: dict[LevelNumber, Union[TitleItem, SectionHeaderItem]] = {}
+        heading_emitted: set[str] = set()
+        visited: set[str] = set()
+        ser_res = create_ser_result()
+        excluded_refs = my_doc_ser.get_excluded_refs(**kwargs)
+        traverse_pictures = my_doc_ser.params.traverse_pictures if isinstance(my_doc_ser, DocSerializer) else False
+        for item, level in dl_doc.iterate_items(
+            with_groups=True,
+            traverse_pictures=traverse_pictures,
+        ):
+            if item.self_ref in excluded_refs:
+                continue
+            if isinstance(item, TitleItem | SectionHeaderItem):
+                level = item.level if isinstance(item, SectionHeaderItem) else 0
+
+                # prepare to remove shadowed headings as they just went out of scope
+                sorted_keys = sorted(heading_by_level)
+                keys_to_del = [k for k in sorted_keys if k >= level]
+
+                # before removing, check if headings need to be emitted
+                if (
+                    keys_to_del
+                    and self.always_emit_headings
+                    and (leaf_ref := heading_by_level[sorted_keys[-1]].self_ref) not in heading_emitted
+                ):
+                    yield DocChunk(
+                        text="",
+                        meta=DocMeta(
+                            doc_items=[heading_by_level[k] for k in sorted_keys],
+                            headings=[heading_by_level[k].text for k in sorted_keys],
+                        ),
+                    )
+                    heading_emitted.add(leaf_ref)
+
+                # actually remove shadowed headings
+                for k in keys_to_del:
+                    heading_by_level.pop(k, None)
+
+                # capture current heading
+                heading_by_level[level] = item
+
+                continue
+            elif isinstance(item, ListGroup | InlineGroup | DocItem) and item.self_ref not in visited:
+                if self.code_chunking_strategy is not None and isinstance(item, CodeItem):
+                    yield from self.code_chunking_strategy.chunk_code_item(
+                        item=item,
+                        doc=dl_doc,
+                        doc_serializer=my_doc_ser,
+                        visited=visited,
+                        **kwargs,
+                    )
+                    continue
+
+                ser_res = my_doc_ser.serialize(item=item, visited=visited)
+            else:
+                continue
+
+            if not ser_res.text:
+                continue
+            if doc_items := [u.item for u in ser_res.spans]:
+                sorted_keys = sorted(heading_by_level)
+                headings = [heading_by_level[k].text for k in sorted_keys] or None
+                c = DocChunk(
+                    text=ser_res.text,
+                    meta=DocMeta(
+                        doc_items=doc_items,
+                        headings=headings,
+                        origin=dl_doc.origin,
+                    ),
+                )
+                if self.always_emit_headings and headings:
+                    leaf_ref = heading_by_level[sorted_keys[-1]].self_ref
+                    heading_emitted.add(leaf_ref)
+                yield c
+
+        # if applicable, emit any remaining headings
+        if (
+            self.always_emit_headings
+            and (sorted_keys := sorted(heading_by_level))
+            and ((leaf_ref := heading_by_level[sorted_keys[-1]].self_ref) not in heading_emitted)
+        ):
+            yield DocChunk(
+                text="",
+                meta=DocMeta(
+                    doc_items=[heading_by_level[k] for k in sorted_keys],
+                    headings=[heading_by_level[k].text for k in sorted_keys],
+                ),
+            )
+            heading_emitted.add(leaf_ref)

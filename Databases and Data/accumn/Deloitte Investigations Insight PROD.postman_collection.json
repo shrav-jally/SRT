@@ -1,0 +1,169 @@
+{
+  "info": {
+    "_postman_id": "b03f970b-fc8d-4da5-9aa9-44f9d82be632",
+    "name": "Deloitte Investigations Insight PROD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14965954",
+    "_collection_link": "https://go.postman.co/collection/14965954-b03f970b-fc8d-4da5-9aa9-44f9d82be632?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"request\": \"login\",\n    \"param\": {\n        \"emailId\": \"pgrewal@deloitte.com\",\n        \"password\": \"Deloitte@7890\"\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://unicore-api.accumn.ai/los/api/v1/api-details",
+          "protocol": "https",
+          "host": [
+            "unicore-api",
+            "accumn",
+            "ai"
+          ],
+          "path": [
+            "los",
+            "api",
+            "v1",
+            "api-details"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "client-security-token",
+            "value": "R3m4hSAvbNZTgCsAmP926nPrbmjdHkkH"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"request\": \"create-order\",\n    \"param\": {\n        \"lenderInfo\": {\n            \"lender_referenceNumber\": \"TestOrder03434v23415\",\n            \"lender_source\": \"los\",\n            \"lender_name\": \"DELOITTE_INVESTIGATIONS\"\n        },\n        \"requestorInfo\": {\n            \"requestor_division\": \"DELOITTE_INVESTIGATIONS\",\n            \"requestor_branch\": \"DELOITTE_INVESTIGATIONS\",\n            \"requestor_name\": \"Puneet\",\n            \"requestor_email\": \"pgrewal@deloitte.com\",\n            \"requestor_phone\": \"9876543210\"\n        },\n        \"borrowerInfo\": {\n            \"borrower_name\": \"TestOrder04Nov25\"\n        },\n        \"dataRelatedInfo\": {\n            \"insightsInfo\": {\n                \"identifier\": \"CIN\",\n                \"value\": \"U74999RJ2018PTC063218\"\n            }\n        },\n        \"orderInfo\": {\n            \"product_name\": \"INSIGHTS\",\n            \"assistanceBy\": \"Lender Assisted\"\n        },\n        \"otherInfo\": {\n            \"send_consent_borrower\": false,\n            \"redirect_url_success\": null,\n            \"redirect_url_fail\": null,\n            \"client_ref_details\": \"\"\n        },\n        \"webhook_urls\": [\n            {\n                \"webhook_url\": \"https://domain.com/1.0/webhook_report/token/value\",\n                \"key_name\": \"token_name\",\n                \"key_value\": \"token_value\"\n            }\n        ]\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://unicore-api.accumn.ai/los/api/v1/api-details",
+          "protocol": "https",
+          "host": [
+            "unicore-api",
+            "accumn",
+            "ai"
+          ],
+          "path": [
+            "los",
+            "api",
+            "v1",
+            "api-details"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'https://unicore-api.finfort.ind.in/los/api/v1/api-details' \\\n--header 'client-security-token: pZtavqEIkVRjCFp2KkSSEh99PsJHcV6X' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"request\": \"create-order\",\n    \"param\": {\n        \"lenderInfo\": {\n            \"lender_referenceNumber\": \"TestOrder03434v234\",\n            \"lender_source\": \"los\",\n            \"lender_name\": \"Bluevine\"\n        },\n        \"requestorInfo\": {\n            \"requestor_division\": \"Insight_Testing\",\n            \"requestor_branch\": \"Insight_Testing\",\n            \"requestor_name\": \"XYZ\",\n            \"requestor_email\": \"priyal.kansara@corpository.com\",\n            \"requestor_phone\": \"9978324652\"\n        },\n        \"borrowerInfo\": {\n            \"borrower_name\": \"TestOrder04Nov25\",\n            \"borrower_DOIB\": \"01/01/2000\",\n            \"borrower_pan\": \"AAEFF6629E\",\n            \"borrower_email\": \"vidhi.dave@corpository.com\",\n            \"borrower_phone\": \"9924629606\",\n            \"borrower_language\": \"Gujarati\",\n            \"borrower_state\": \"Gujarat112\",\n            \"borrower_country\": \"India2212\",\n            \"borrower_street\": \"Street\",\n            \"borrower_city\": \"Ahmedabad\",\n            \"borrower_pincode\": \"380013\",\n            \"borrower_additional_email\": \"\",\n            \"borrower_additional_mobile\": \"\",\n            \"borrower_additional_info\": \"\",\n            \"borrower_cinLlpin\": \"cinLlpin\"\n        },\n        \"dataRelatedInfo\": {\n            \"itrInfo\": [\n                \"AAEFF6629E\"\n            ],\n            \"gstInfo\": [\n                \"24AAGCB4819F1ZW\"\n            ],\n            \"insightsInfo\": {\n                \"identifier\": \"CIN\",\n                \"value\": \"U67190MH1982PLC140380\"\n            }\n        },\n        \"orderInfo\": {\n            \"product_name\": \"INSIGHTS\",\n            \"assistanceBy\": \"CSR Assisted\"\n        },\n        \"otherInfo\": {\n            \"send_consent_borrower\": true,\n            \"redirect_url_success\": null,\n            \"redirect_url_fail\": null,\n            \"client_ref_details\": \"\"\n        },\n        \"webhook_urls\": [\n            {\n                \"webhook_url\": \"https://domain.com/1.0/webhook_report/token/value\",\n                \"key_name\": \"webhook_value\",\n                \"key_value\": \"webhook_token\"\n            }\n        ]\n    }\n}'"
+      },
+      "response": []
+    },
+    {
+      "name": "Order Status",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "client-security-token",
+            "value": "R3m4hSAvbNZTgCsAmP926nPrbmjdHkkH"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"request\": \"check-order-status\",\n    \"param\": {\n        \"ffOrderId\":\"FF26062905578\"\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://unicore-api.accumn.ai/los/api/v1/api-details",
+          "protocol": "https",
+          "host": [
+            "unicore-api",
+            "accumn",
+            "ai"
+          ],
+          "path": [
+            "los",
+            "api",
+            "v1",
+            "api-details"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'https://test-unicore-api.finfort.ind.in/los/api/v1/api-details' \\\n--header 'client-security-token: pZtavqEIkVRjCFp2KkSSEh99PsJHcV6X' \\\n--header 'Content-Type: application/json' \\\n--data '{\n    \"request\": \"check-order-status\",\n    \"param\": {\n        \"ffOrderId\":\"FF24112104809\"\n    }\n}'"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Files",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "client-security-token",
+            "value": "R3m4hSAvbNZTgCsAmP926nPrbmjdHkkH"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"request\": \"get-file-details\",\n    \"param\": {\n        \"ffOrderId\": \"FF26062905578\",\n        \"incremental\": false\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://unicore-api.accumn.ai/los/api/v1/api-details",
+          "protocol": "https",
+          "host": [
+            "unicore-api",
+            "accumn",
+            "ai"
+          ],
+          "path": [
+            "los",
+            "api",
+            "v1",
+            "api-details"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'https://test-unicore-api.finfort.ind.in/los/api/v1/api-details' \\\n--header 'client-security-token: VIgzoWtU0kC3abbz8x0xhMv8oHtYF73c' \\\n--header 'Content-Type: application/json' \\\n--data '{\n    \"request\": \"get-file-details\",\n    \"param\": {\n        \"ffOrderId\": \"FU24101700051\",\n        \"incremental\": false\n    }\n}'"
+      },
+      "response": []
+    }
+  ]
+}

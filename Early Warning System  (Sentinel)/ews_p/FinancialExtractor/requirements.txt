@@ -1,0 +1,12 @@
+docling
+langchain
+langchain-openai
+langchain-community
+faiss-cpu
+openai
+python-dotenv
+openpyxl
+pydantic
+pandas
+tiktoken
+requests

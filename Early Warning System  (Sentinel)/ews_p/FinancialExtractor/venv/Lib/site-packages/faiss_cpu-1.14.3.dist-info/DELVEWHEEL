@@ -1,0 +1,2 @@
+Version: 1.13.0
+Arguments: ['C:\\Users\\runneradmin\\AppData\\Local\\Temp\\cibw-run-pmmnlhix\\cp312-win_amd64\\build\\venv\\Scripts\\delvewheel', 'repair', '-w', 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\cibw-run-pmmnlhix\\cp312-win_amd64\\repaired_wheel', 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\cibw-run-pmmnlhix\\cp312-win_amd64\\built_wheel\\faiss_cpu-1.14.3-cp312-cp312-win_amd64.whl', '--add-path', 'C:/openblas/bin', '--ignore-in-wheel']

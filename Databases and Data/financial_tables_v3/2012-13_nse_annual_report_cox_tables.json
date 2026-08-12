@@ -1,0 +1,1954 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmpikrkhrgs/2012-13_nse_annual_report_cox.pdf",
+    "file_name": "2012-13_nse_annual_report_cox.pdf",
+    "financial_year": "2012-13",
+    "extraction_timestamp": "2026-07-02T14:31:12.364088+00:00",
+    "page_count": 133
+  },
+  "standalone": {
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 55,
+      "pages": [
+        55
+      ],
+      "title": "Balance Sheet",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "Note",
+        "As at"
+      ],
+      "extraction_method": "word_position_clustering_llm_repair",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Shareholder’s Funds",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Share Capital",
+          "note_no": "1",
+          "values": {
+            "current_period": 6826,
+            "previous_period": 6826
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES",
+          "line_item": "Reserves and Surplus",
+          "note_no": "2",
+          "values": {
+            "current_period": 107056,
+            "previous_period": 103310
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities",
+          "line_item": "Long-term borrowings",
+          "note_no": "3",
+          "values": {
+            "current_period": 30722,
+            "previous_period": 90326
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities",
+          "line_item": "Deferred tax liability (Net)",
+          "note_no": "4",
+          "values": {
+            "current_period": 1040,
+            "previous_period": 154
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities",
+          "line_item": "Long term provisions",
+          "note_no": "5",
+          "values": {
+            "current_period": null,
+            "previous_period": 90
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Short-term borrowings",
+          "note_no": "6",
+          "values": {
+            "current_period": 22005,
+            "previous_period": 25500
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Trade payables",
+          "note_no": "7",
+          "values": {
+            "current_period": 10641,
+            "previous_period": 7120
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Other current liabilities",
+          "note_no": "8",
+          "values": {
+            "current_period": 23434,
+            "previous_period": 12535
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Short-term provisions",
+          "note_no": "9",
+          "values": {
+            "current_period": 1900,
+            "previous_period": 1698
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities",
+          "line_item": "Total",
+          "note_no": "",
+          "values": {
+            "current_period": 202624,
+            "previous_period": 247559
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Fixed assets",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Tangible assets",
+          "note_no": "10",
+          "values": {
+            "current_period": 7165,
+            "previous_period": 5857
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets",
+          "note_no": "11",
+          "values": {
+            "current_period": 2666,
+            "previous_period": 1085
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Capital work-in-progress",
+          "note_no": "",
+          "values": {
+            "current_period": 239,
+            "previous_period": 1112
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets under development",
+          "note_no": "",
+          "values": {
+            "current_period": 6278,
+            "previous_period": 4778
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Non-current investments",
+          "note_no": "12",
+          "values": {
+            "current_period": 11520,
+            "previous_period": 9712
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Long term loans and advances",
+          "note_no": "13",
+          "values": {
+            "current_period": 1513,
+            "previous_period": 101478
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Current investments",
+          "note_no": "14",
+          "values": {
+            "current_period": 2807,
+            "previous_period": 2807
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": "15",
+          "values": {
+            "current_period": 615,
+            "previous_period": 507
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Trade receivables",
+          "note_no": "16",
+          "values": {
+            "current_period": 47379,
+            "previous_period": 37415
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Cash and Bank Balance",
+          "note_no": "17",
+          "values": {
+            "current_period": 27082,
+            "previous_period": 32190
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Short-term loans and advances",
+          "note_no": "18",
+          "values": {
+            "current_period": 95360,
+            "previous_period": 50618
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Total",
+          "note_no": "",
+          "values": {
+            "current_period": 202624,
+            "previous_period": 247559
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 25,
+        "total_rows": 2,
+        "current_period_balanced": true,
+        "previous_period_balanced": true
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 43,
+        "extraction_method": "pdfplumber",
+        "row_count": 14,
+        "column_count": 4,
+        "rows": [
+          [
+            "Month",
+            "BSE",
+            "",
+            "NSE"
+          ],
+          [
+            "",
+            "High Price",
+            "Low Price",
+            "High Price"
+          ],
+          [
+            "",
+            "169.80",
+            "122.50",
+            "169.9"
+          ],
+          [
+            "",
+            "160.70",
+            "135.15",
+            "160.75"
+          ],
+          [
+            "",
+            "150.50",
+            "119.00",
+            "150.5"
+          ],
+          [
+            "",
+            "143.00",
+            "121.65",
+            "143.25"
+          ],
+          [
+            "",
+            "156.00",
+            "123.75",
+            "155.00"
+          ],
+          [
+            "",
+            "147.00",
+            "126.50",
+            "146.9"
+          ],
+          [
+            "",
+            "145.90",
+            "136.10",
+            "145.8"
+          ],
+          [
+            "",
+            "153.00",
+            "133.05",
+            "151.00"
+          ],
+          [
+            "",
+            "149.35",
+            "134.00",
+            "149.3"
+          ],
+          [
+            "",
+            "139.15",
+            "130.10",
+            "140.00"
+          ],
+          [
+            "",
+            "136.30",
+            "121.00",
+            "136.4"
+          ],
+          [
+            "",
+            "147.05",
+            "120.45",
+            "146.40"
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 74,
+      "pages": [
+        74,
+        75
+      ],
+      "title": "The amounts to be recognised in the balance sheet and statements of profit and loss.",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "results 2012-13 of return",
+        "on 2011-12 plan assets and 2012-13 the Company’s 2011-12 policy"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "for plan assets management.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Fair value of plan asset at beginning of year",
+          "note_no": null,
+          "values": {
+            "current_period": 367,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "23. Finance Expected Cost return on plan asset",
+          "note_no": null,
+          "values": {
+            "current_period": 36,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Contribution",
+          "note_no": null,
+          "values": {
+            "current_period": 39,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Benefits Paid",
+          "note_no": null,
+          "values": {
+            "current_period": -23,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Actuarial gain/(loss) on plan asset",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars Fair value of plan assets at the end of year",
+          "note_no": null,
+          "values": {
+            "current_period": 420,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "The amounts to be recognised in the balance sheet",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest expense",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other borrowing costs",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Present value of obligation as at the end of year",
+          "note_no": null,
+          "values": {
+            "current_period": 395,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "23.1 Expenditure In Foreign Currency",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Fair value of plan assets as at the end of the year",
+          "note_no": null,
+          "values": {
+            "current_period": 420,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Funded status asset/(liability)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net asset/(liability) recognised in balance sheet",
+          "note_no": null,
+          "values": {
+            "current_period": 25,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expenses recognised in statement of profit and loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Travelling, Hotel & Lodging",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Professional Fees",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Salary",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current Service Cost",
+          "note_no": null,
+          "values": {
+            "current_period": 77,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Subscription",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest Cost",
+          "note_no": null,
+          "values": {
+            "current_period": 29,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Advertisement",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expected return on plan asset",
+          "note_no": null,
+          "values": {
+            "current_period": -35,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest on Term Loan",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net Actuarial (gain)/loss recognised in the year",
+          "note_no": null,
+          "values": {
+            "current_period": -33,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other matters",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Expenses recognised in statement of profit and loss",
+          "note_no": null,
+          "values": {
+            "current_period": 38,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Actuarial Assumption",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Particulars",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Assumption Discount Rate",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Salary Escalation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "72 Cox & Kings Limited",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 38,
+        "total_rows": 2,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 3,
+        "extraction_method": "text_reconstruction",
+        "row_count": 61,
+        "column_count": 1,
+        "rows": [
+          [
+            "A Successful Business"
+          ],
+          [
+            "Transformation for"
+          ],
+          [
+            "Sustainable Growth"
+          ],
+          [
+            "Cox & Kings has a strong legacy of delivering value for over 250 years. In our"
+          ],
+          [
+            "pursuit to build a business that can stand the test of time, we have been"
+          ],
+          [
+            "maintaining our focus on growth, profitability and sustainability, thus"
+          ],
+          [
+            "Contents"
+          ],
+          [
+            "creating value for our stakeholders along the way. We have consistently and"
+          ],
+          [
+            "strategically deepened our business model, which will enable us to grow"
+          ],
+          [
+            "! faster, and sustain a longer journey. The acquisition of Holidaybreak (HBR), a"
+          ],
+          [
+            "A Successful Business Transformation for"
+          ],
+          [
+            "leading European Education activity and Leisure specialist travel company,"
+          ],
+          [
+            "Sustainable Growth 01"
+          ],
+          [
+            "! has brought along deep synergies in the form of our expanded market"
+          ],
+          [
+            "Making travel an all season business 02"
+          ],
+          [
+            "! reach, cross selling opportunities and a more resilient business model. The"
+          ],
+          [
+            "Making travel integral to living 04"
+          ],
+          [
+            "! acquisition also brings in a unique mix of fast growing & defensive business"
+          ],
+          [
+            "Making travel an all region business 06"
+          ],
+          [
+            "! Chairman's Message 08 segments like leisure & education. For Cox & Kings Group, we now have a"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Board of Directors 10 great mix of fast growing markets like India, Australia, New Zealand &"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Financial Highlights of Consolidated Accounts 12 Middle East alongside mature markets of Europe."
+          ],
+          [
+            "!"
+          ],
+          [
+            "Corporate Information 13"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Management Discussion & Analysis 14 HBR's leadership position in niche travel segments, such as education travel"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Directors' Report 24 and camping business, have a transformational impact on our business. The"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Report on Corporate Governance 31 Education landscape, in each of our focused markets, is undergoing a rapid"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Corporate Social Responsibility Report 45"
+          ],
+          [
+            "shift and has seen considerable investment from both government and"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Independent Auditor's Report 49"
+          ],
+          [
+            "! private players despite the macro-economic challenges. We believe that"
+          ],
+          [
+            "Balance Sheet 52"
+          ],
+          [
+            "! HBR's well-established brands will help us position favorably in the fast"
+          ],
+          [
+            "Statement of Profit and Loss 53"
+          ],
+          [
+            "! growing markets like India and Australia. In addition, HBR's wide spectrum"
+          ],
+          [
+            "Cash Flow Statement 54"
+          ],
+          [
+            "! of leisure product portfolio further consolidates our position as an"
+          ],
+          [
+            "Significant Accounting Policies 56"
+          ],
+          [
+            "! integrated global tour operator, with a leadership position in India."
+          ],
+          [
+            "Financial Information of Subsidiary Companies 85"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Statement regarding subsidiary Company"
+          ],
+          [
+            "Pursuant to Section 212 of the companies 89 This, along with our earlier acquisitions, enables backward integration in our"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Independent Auditor's Report 95 focused markets; along with considerable cost advantage through"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Consolidated Balance Sheet 96 consolidation of technology and product development. By consolidating our"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Consolidated Statement of Profit and Loss 97 product sourcing operations globally, we enjoy significant bargaining power"
+          ],
+          [
+            "!"
+          ],
+          [
+            "Consolidated Cash Flow Statement 98 with suppliers, making our offering more competitive, yet highly profitable."
+          ],
+          [
+            "!"
+          ],
+          [
+            "Significant Accounting Policies 100"
+          ],
+          [
+            "Annual Report 2012-13 1"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 4,
+        "extraction_method": "text_reconstruction",
+        "row_count": 31,
+        "column_count": 1,
+        "rows": [
+          [
+            "A Successful Business"
+          ],
+          [
+            "Transformation for"
+          ],
+          [
+            "Sustainable Growth"
+          ],
+          [
+            "Cox & Kings has a strong legacy of delivering value for over 250 years. In our"
+          ],
+          [
+            "pursuit to build a business that can stand the test of time, we have been"
+          ],
+          [
+            "maintaining our focus on growth, profitability and sustainability, thus"
+          ],
+          [
+            "creating value for our stakeholders along the way. We have consistently and"
+          ],
+          [
+            "strategically deepened our business model, which will enable us to grow"
+          ],
+          [
+            "faster, and sustain a longer journey. The acquisition of Holidaybreak (HBR), a"
+          ],
+          [
+            "leading European Education activity and Leisure specialist travel company,"
+          ],
+          [
+            "has brought along deep synergies in the form of our expanded market"
+          ],
+          [
+            "reach, cross selling opportunities and a more resilient business model. The"
+          ],
+          [
+            "acquisition also brings in a unique mix of fast growing & defensive business"
+          ],
+          [
+            "segments like leisure & education. For Cox & Kings Group, we now have a"
+          ],
+          [
+            "great mix of fast growing markets like India, Australia, New Zealand &"
+          ],
+          [
+            "Middle East alongside mature markets of Europe."
+          ],
+          [
+            "HBR's leadership position in niche travel segments, such as education travel"
+          ],
+          [
+            "and camping business, have a transformational impact on our business. The"
+          ],
+          [
+            "Education landscape, in each of our focused markets, is undergoing a rapid"
+          ],
+          [
+            "shift and has seen considerable investment from both government and"
+          ],
+          [
+            "private players despite the macro-economic challenges. We believe that"
+          ],
+          [
+            "HBR's well-established brands will help us position favorably in the fast"
+          ],
+          [
+            "growing markets like India and Australia. In addition, HBR's wide spectrum"
+          ],
+          [
+            "of leisure product portfolio further consolidates our position as an"
+          ],
+          [
+            "integrated global tour operator, with a leadership position in India."
+          ],
+          [
+            "This, along with our earlier acquisitions, enables backward integration in our"
+          ],
+          [
+            "focused markets; along with considerable cost advantage through"
+          ],
+          [
+            "consolidation of technology and product development. By consolidating our"
+          ],
+          [
+            "product sourcing operations globally, we enjoy significant bargaining power"
+          ],
+          [
+            "with suppliers, making our offering more competitive, yet highly profitable."
+          ],
+          [
+            "Annual Report 2012-13 1"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": "2",
+        "title": "Cox & Kings Limited",
+        "page": 5,
+        "extraction_method": "text_reconstruction",
+        "row_count": 3,
+        "column_count": 1,
+        "rows": [
+          [
+            "Making travel an"
+          ],
+          [
+            "all season business"
+          ],
+          [
+            "2 Cox & Kings Limited"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": null,
+        "title": null,
+        "page": 98,
+        "extraction_method": "text_reconstruction",
+        "row_count": 85,
+        "column_count": 1,
+        "rows": [
+          [
+            "Business Overview | Management Discussion & Analysis | Statutory Reports | Financial Statements"
+          ],
+          [
+            "Independent Auditor’s Report"
+          ],
+          [
+            "To the Board of Directors of Cox & Kings Limited the consideration of the reports of the other auditors"
+          ],
+          [
+            "on the financial statements of the subsidiaries and"
+          ],
+          [
+            "We have audited the accompanying consolidated financial"
+          ],
+          [
+            "joint ventures and the accounts of the subsidiaries joint"
+          ],
+          [
+            "statements of Cox & Kings Limited (the Company) and its"
+          ],
+          [
+            "ventures approved by Board of Directors as noted below,"
+          ],
+          [
+            "Subsidiaries and its joint ventures (collectively referred to"
+          ],
+          [
+            "the consolidated financial statements give a true and"
+          ],
+          [
+            "as “the Group”) as at 31st March, 2013, which comprise"
+          ],
+          [
+            "fair view in conformity with the accounting principles"
+          ],
+          [
+            "the consolidated Balance Sheet as at March 31, 2013,"
+          ],
+          [
+            "generally accepted in India:"
+          ],
+          [
+            "and the consolidated Statement of Profit and Loss and"
+          ],
+          [
+            "the consolidated Cash Flow Statement for the year then (a) in the case of the consolidated Balance Sheet, of the"
+          ],
+          [
+            "ended, and a summary of significant accounting policies state of affairs of the Company as at March 31, 2013;"
+          ],
+          [
+            "and other explanatory information."
+          ],
+          [
+            "(b) in the case of the consolidated Statement of Profit and"
+          ],
+          [
+            "Management’s Responsibility for the Consolidated Loss, of the loss for the year ended on that date; and"
+          ],
+          [
+            "Financial Statements (c) in the case of the consolidated Cash Flow Statement,"
+          ],
+          [
+            "Management is responsible for the preparation of these of the cash flows for the year ended on that date."
+          ],
+          [
+            "consolidated financial statements that give a true and fair Other Matter"
+          ],
+          [
+            "view of the consolidated financial position, consolidated"
+          ],
+          [
+            "1. We did not audit the financial statements of all"
+          ],
+          [
+            "financial performance and consolidated cash flows of"
+          ],
+          [
+            "subsidiaries, whose financial statements/consolidated"
+          ],
+          [
+            "the Company in accordance with accounting principles"
+          ],
+          [
+            "generally accepted in India. This responsibility includes financial statements reflects total assets of ` 908,496"
+          ],
+          [
+            "the design, implementation and maintenance of internal Lacs as at 31st March, 2013, total revenue of"
+          ],
+          [
+            "control relevant to the preparation and presentation of ` 147,175 Lacs and net cash inflows amounting to"
+          ],
+          [
+            "the consolidated financial statements that give a true ` 30,522 Lacs for the year then ended and the"
+          ],
+          [
+            "and fair view and are free from material misstatement, financial statements of associates wherein the"
+          ],
+          [
+            "whether due to fraud or error. Group’s share of profit is ` 4,035 lacs. These financial"
+          ],
+          [
+            "statements and other financial information have"
+          ],
+          [
+            "Auditor’s Responsibility"
+          ],
+          [
+            "been audited by other auditors whose reports have"
+          ],
+          [
+            "Our responsibility is to express an opinion on these been furnished to us, and our opinion is based solely"
+          ],
+          [
+            "consolidated financial statements based on our audit. We on the report of other auditors."
+          ],
+          [
+            "conducted our audit in accordance with the Standards on"
+          ],
+          [
+            "2. In addition to above, we draw attention to note no."
+          ],
+          [
+            "Auditing issued by the Institute of Chartered Accountants of"
+          ],
+          [
+            "34(b). The financials of the joint venture for the year"
+          ],
+          [
+            "India. Those Standards require that we comply with ethical"
+          ],
+          [
+            "ended 31st March, 2013, could not be finalized for the"
+          ],
+          [
+            "requirements and plan and perform the audit to obtain"
+          ],
+          [
+            "reasons stated therein. The company has consolidated"
+          ],
+          [
+            "reasonable assurance about whether the consolidated"
+          ],
+          [
+            "the unaudited financials of the joint venture for the"
+          ],
+          [
+            "financial statements are free from material misstatement."
+          ],
+          [
+            "year ended 31st March, 2011. We have relied on"
+          ],
+          [
+            "An audit involves performing procedures to obtain audit this unaudited financial statement which reflects"
+          ],
+          [
+            "evidence about the amounts and disclosures in the total assets of ` 2425 Lacs as at 31st March, 2011,"
+          ],
+          [
+            "consolidated financial statements. The procedures selected"
+          ],
+          [
+            "total revenue of ` 297 Lacs and net cash inflows"
+          ],
+          [
+            "depend on the auditor’s judgment, including the assessment"
+          ],
+          [
+            "amounting to ` 150 Lacs for the year then ended."
+          ],
+          [
+            "of the risks of material misstatement of the consolidated"
+          ],
+          [
+            "These unaudited financial statements as approved by"
+          ],
+          [
+            "financial statements, whether due to fraud or error. In"
+          ],
+          [
+            "the Board of Directors of the joint venture have been"
+          ],
+          [
+            "making those risk assessments, the auditor considers"
+          ],
+          [
+            "furnished to us by the Management and our report in"
+          ],
+          [
+            "internal control relevant to the Company’s preparation and"
+          ],
+          [
+            "so far as it relates to the amounts included in respect"
+          ],
+          [
+            "presentation of the consolidated financial statements that"
+          ],
+          [
+            "of the joint venture is based solely on such approved"
+          ],
+          [
+            "give a true and fair view in order to design audit procedures"
+          ],
+          [
+            "unaudited financial statements."
+          ],
+          [
+            "that are appropriate in the circumstances. An audit also"
+          ],
+          [
+            "includes evaluating the appropriateness of accounting Our opinion in not qualified in respect of the other matters."
+          ],
+          [
+            "policies used and the reasonableness of the accounting"
+          ],
+          [
+            "For Chaturvedi & Shah"
+          ],
+          [
+            "estimates made by management, as well as evaluating the"
+          ],
+          [
+            "Firm Registration No. 101720W"
+          ],
+          [
+            "overall presentation of the consolidated financial statements."
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "We believe that the audit evidence we have obtained is"
+          ],
+          [
+            "sufficient and appropriate to provide a basis for our audit Amit Chaturvedi"
+          ],
+          [
+            "opinion. Partner"
+          ],
+          [
+            "Membership No.: 103141"
+          ],
+          [
+            "Opinion"
+          ],
+          [
+            "In our opinion and to the best of our information and Place: Mumbai"
+          ],
+          [
+            "according to the explanations given to us, and based on Date: 30th May, 2013"
+          ],
+          [
+            "Annual Report 2012-13 95"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": null,
+        "title": null,
+        "page": 99,
+        "extraction_method": "text_reconstruction",
+        "row_count": 60,
+        "column_count": 1,
+        "rows": [
+          [
+            "Consolidated Balance Sheet"
+          ],
+          [
+            "as at 31st March, 2013"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "As at"
+          ],
+          [
+            "Note As at"
+          ],
+          [
+            "Particulars 31st March,"
+          ],
+          [
+            "No. 31st March, 2013"
+          ],
+          [
+            "2012"
+          ],
+          [
+            "EQUITY AND LIABILITIES"
+          ],
+          [
+            "Shareholder’s Funds"
+          ],
+          [
+            "Share Capital 1 6,826 6,826"
+          ],
+          [
+            "Reserves and Surplus 2 125,769 112,412"
+          ],
+          [
+            "132,595 119,238"
+          ],
+          [
+            "Minoirty Interest 54,219 -"
+          ],
+          [
+            "Non-Current Liabilities"
+          ],
+          [
+            "Long-term borrowings 3 391,816 345,117"
+          ],
+          [
+            "Deferred tax liabilities (Net) 4 7,464 7,663"
+          ],
+          [
+            "Long term provisions 5 1,015 2,657"
+          ],
+          [
+            "400,295 355,437"
+          ],
+          [
+            "Current Liabilities"
+          ],
+          [
+            "Short-term borrowings 6 25,636 25,500"
+          ],
+          [
+            "Trade payables 7 46,997 42,492"
+          ],
+          [
+            "Other current liabilities 8 171,671 217,162"
+          ],
+          [
+            "Short-term provisions 9 3,765 5,156"
+          ],
+          [
+            "248,069 290,310"
+          ],
+          [
+            "Total 835,178 764,985"
+          ],
+          [
+            "ASSETS"
+          ],
+          [
+            "Non-current assets"
+          ],
+          [
+            "Fixed assets"
+          ],
+          [
+            "Tangible assets 10 187,768 184,609"
+          ],
+          [
+            "Intangible assets 11 8,393 6,864"
+          ],
+          [
+            "Capital work-in-progress 10 1,151 4,864"
+          ],
+          [
+            "Intangible assets under development 11 13,193 7,511"
+          ],
+          [
+            "Goodwill on Consolidation 273,329 266,289"
+          ],
+          [
+            "483,834 470,137"
+          ],
+          [
+            "Non-current investments 12 43,831 27,610"
+          ],
+          [
+            "Deferred tax Assets (Net) 4 666 172"
+          ],
+          [
+            "Long term loans and advances 13 - 3,416"
+          ],
+          [
+            "- -"
+          ],
+          [
+            "44,497 31,198"
+          ],
+          [
+            "Current assets"
+          ],
+          [
+            "Current investments 14 2,809 2,807"
+          ],
+          [
+            "Inventories 15 1,859 1,726"
+          ],
+          [
+            "Trade receivables 16 90,540 71,506"
+          ],
+          [
+            "Cash and Cash Equivalents 17 126,925 105,328"
+          ],
+          [
+            "Short-term loans and advances 18 84,383 82,119"
+          ],
+          [
+            "Other current assets 19 331 165"
+          ],
+          [
+            "306,847 263,650"
+          ],
+          [
+            "Total 835,178 764,985"
+          ],
+          [
+            "Significant accounting policies and notes to the financial statements - 1 to 34"
+          ],
+          [
+            "As per our report of even date"
+          ],
+          [
+            "For Chaturvedi & Shah For and on behalf of the Board"
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "Firm Registration No. 101720W"
+          ],
+          [
+            "Amit Chaturvedi Urrshila Kerkar Peter Kerkar"
+          ],
+          [
+            "Partner Director Director"
+          ],
+          [
+            "Membership No. 103141"
+          ],
+          [
+            "Date: 30th May, 2013 Rashmi Jain"
+          ],
+          [
+            "Place: Mumbai Company Secretary"
+          ],
+          [
+            "96 Cox & Kings Limited"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": null,
+        "title": null,
+        "page": 100,
+        "extraction_method": "text_reconstruction",
+        "row_count": 45,
+        "column_count": 1,
+        "rows": [
+          [
+            "Business Overview | Management Discussion & Analysis | Statutory Reports | Financial Statements"
+          ],
+          [
+            "Consolidated Statement of Profit and Loss"
+          ],
+          [
+            "for the period ended 31st March, 2013"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "For the year For the year"
+          ],
+          [
+            "Note"
+          ],
+          [
+            "Particulars ended 31st ended 31st"
+          ],
+          [
+            "No."
+          ],
+          [
+            "March, 2013 March, 2012"
+          ],
+          [
+            "INCOME : -"
+          ],
+          [
+            "Revenue from operations 20 180,874 83,795"
+          ],
+          [
+            "Other Income 21 5,879 3,556"
+          ],
+          [
+            "Total Revenue 186,752 87,351"
+          ],
+          [
+            "EXPENDITURE : -"
+          ],
+          [
+            "Employee benefit expenses 22 69,576 38,516"
+          ],
+          [
+            "Finance costs 23 37,054 18,429"
+          ],
+          [
+            "Depreciation and amortization expense 10 & 11 14,736 4,913"
+          ],
+          [
+            "Other expenses 24 39,491 15,500"
+          ],
+          [
+            "Total Expenses 160,857 77,358"
+          ],
+          [
+            "Profit before exceptional items and tax 25,895 9,993"
+          ],
+          [
+            "Less: Exceptional Items 34(c) 6,208 3,118"
+          ],
+          [
+            "Add: Profit on Disposal of Subsidiary 772 -"
+          ],
+          [
+            "Profit before tax 20,458 6,875"
+          ],
+          [
+            "Tax Expenses:"
+          ],
+          [
+            "Current tax 6,030 3,766"
+          ],
+          [
+            "Deferred tax (273) 198"
+          ],
+          [
+            "Current tax expenses relating to prior years (548) 212"
+          ],
+          [
+            "Profit after tax for the year 15,249 2,699"
+          ],
+          [
+            "Add : Share of Income/(Loss) from Investment in Associates 4,035 1,462"
+          ],
+          [
+            "Share of Minority Interest (5,559) -"
+          ],
+          [
+            "Profit after Minority Interest 24,842 4,161"
+          ],
+          [
+            "Earnings each per equity share (Face Value per share ` 5 each): 28"
+          ],
+          [
+            "Basic (In `) 18.20 3.05"
+          ],
+          [
+            "Diluted (In `) 18.20 3.05"
+          ],
+          [
+            "Significant accounting policies and notes to the financial statements - 1 to 34"
+          ],
+          [
+            "As per our report of even date"
+          ],
+          [
+            "For Chaturvedi & Shah For and on behalf of the Board"
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "Firm Registration No. 101720W"
+          ],
+          [
+            "Amit Chaturvedi Urrshila Kerkar Peter Kerkar"
+          ],
+          [
+            "Partner Director Director"
+          ],
+          [
+            "Membership No. 103141"
+          ],
+          [
+            "Date: 30th May, 2013 Rashmi Jain"
+          ],
+          [
+            "Place: Mumbai Company Secretary"
+          ],
+          [
+            "Annual Report 2012-13 97"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_7",
+        "note_no": "17",
+        "title": "to the financial",
+        "page": 102,
+        "extraction_method": "text_reconstruction",
+        "row_count": 33,
+        "column_count": 1,
+        "rows": [
+          [
+            "Business Overview | Management Discussion & Analysis | Statutory Reports | Financial Statements"
+          ],
+          [
+            "(` in Lacs)"
+          ],
+          [
+            "For the year For the year"
+          ],
+          [
+            "Particular ended 31st ended 31st"
+          ],
+          [
+            "March,2013 March,2012"
+          ],
+          [
+            "Cash Flow from Financing Activities"
+          ],
+          [
+            "Proceeds of Long Term Borrowing 135,641 249,918"
+          ],
+          [
+            "Repayment of Long Term Borrowing (134,334) (10,000)"
+          ],
+          [
+            "Movements of Short Term Borrowing 137 25,500"
+          ],
+          [
+            "Proceed from Issue of Preference Shares in Subsidiary 64,990 -"
+          ],
+          [
+            "Expenses for Issue of Shares - (1,766)"
+          ],
+          [
+            "Dividend Paid (1,588) (795)"
+          ],
+          [
+            "Interest Paid (39,170) (14,492)"
+          ],
+          [
+            "Net cash flow from financing activities C 25,675 248,365"
+          ],
+          [
+            "Net Increase in cash and Cash equivalents (A+B+C) 25,007 (31,332)"
+          ],
+          [
+            "Cash and Cash equivalents"
+          ],
+          [
+            "at the beginning of the period 101,441 96,080"
+          ],
+          [
+            "as part of acquired subsidiary 36,692"
+          ],
+          [
+            "at the end of the period 126,448 101,440"
+          ],
+          [
+            "Net Increase in cash and Cash equivalents 25,007 (31,332)"
+          ],
+          [
+            "Cash and cash equivalents are as per Note 17 to the financial"
+          ],
+          [
+            "statements (adjusted for the Book Overdraft as per Note 8)"
+          ],
+          [
+            "Significant accounting policies and notes to the financial statements - 1 to 34"
+          ],
+          [
+            "As per our report of even date"
+          ],
+          [
+            "For Chaturvedi & Shah For and on behalf of the Board"
+          ],
+          [
+            "Chartered Accountants"
+          ],
+          [
+            "Firm Registration No.101720W"
+          ],
+          [
+            "Amit Chaturvedi Urrshila Kerkar Peter Kerkar"
+          ],
+          [
+            "Partner Director Director"
+          ],
+          [
+            "Membership No.103141"
+          ],
+          [
+            "Place: Mumbai Rashmi Jain"
+          ],
+          [
+            "Date: 30th May, 2013 Company Secretary"
+          ],
+          [
+            "Annual Report 2012-13 99"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_8",
+        "note_no": null,
+        "title": null,
+        "page": 103,
+        "extraction_method": "text_reconstruction",
+        "row_count": 62,
+        "column_count": 1,
+        "rows": [
+          [
+            "Significant Accounting Policies"
+          ],
+          [
+            "A. Principles of consolidation attributable to the associates' profit and loss account"
+          ],
+          [
+            "and through its reserves for the balance, based on"
+          ],
+          [
+            "a. The financial statements of the Company and its"
+          ],
+          [
+            "available information."
+          ],
+          [
+            "subsidiary companies (which are not in the nature"
+          ],
+          [
+            "of joint ventures) are combined on a line-by-line h. The difference between the cost of investment in the"
+          ],
+          [
+            "basis by adding together the book values of like associates and the share of net assets at the time"
+          ],
+          [
+            "items of assets, liabilities, income and expenses, of acquisition of shares in the associates is identified"
+          ],
+          [
+            "after fully eliminating intra-group balances and in the financial statements as Goodwill or Capital"
+          ],
+          [
+            "intra-group transactions resulting in unrealised Reserve as the case may be."
+          ],
+          [
+            "profits or losses in accordance with Accounting"
+          ],
+          [
+            "i. In case of joint venture companies (JVC’s), the"
+          ],
+          [
+            "Standard (AS) 21 - \"Consolidated Financial"
+          ],
+          [
+            "consolidated financial statements include the interest"
+          ],
+          [
+            "Statements\"."
+          ],
+          [
+            "of the company in JVC’s, which has been accounted"
+          ],
+          [
+            "b. In case of foreign subsidiaries, being non-integral for using the proportionate consolidation method of"
+          ],
+          [
+            "foreign operations, revenue items are consolidated accounting and reporting whereby the Company’s"
+          ],
+          [
+            "at the average rate prevailing during the period. All share of each of the assets, liabilities, income and"
+          ],
+          [
+            "assets and liabilities are converted at rates prevailing expenses of a jointly controlled entity is considered"
+          ],
+          [
+            "at the end of the period. Any exchange difference as separate line items in the Consolidated Financial"
+          ],
+          [
+            "arising on consolidation is recognised in the foreign Statements."
+          ],
+          [
+            "exchange translation reserve."
+          ],
+          [
+            "j. As far as possible, the consolidated financial"
+          ],
+          [
+            "c. The difference between the costs of investment in statements are prepared using uniform accounting"
+          ],
+          [
+            "the subsidiaries, over the net assets at the time of policies for like transactions and other events in similar"
+          ],
+          [
+            "acquisition of shares in the subsidiaries is recognised circumstances and are presented in the same manner"
+          ],
+          [
+            "in the financial statements as Goodwill or Capital as the Company's separate financial statements."
+          ],
+          [
+            "Reserve as the case may be."
+          ],
+          [
+            "k. Investments other than in subsidiaries and associates"
+          ],
+          [
+            "d. Minority Interest’s share of net profit of consolidated have been accounted as per Accounting Standard"
+          ],
+          [
+            "subsidiaries for the year is identified and adjusted (AS) 13 “Accounting for Investments”."
+          ],
+          [
+            "against the income of the group in order to arrive"
+          ],
+          [
+            "at the net income attributable to shareholders of the B. Other significant accounting policies"
+          ],
+          [
+            "Company. a. Basis of accounting:"
+          ],
+          [
+            "e. Minority Interest’s share of net assets of consolidated The financial statements of the parent company"
+          ],
+          [
+            "subsidiaries is identified and presented in the are prepared as per historical cost convention on"
+          ],
+          [
+            "consolidated balance sheet separate from liabilities accrual basis except certain fixed assets which are"
+          ],
+          [
+            "and the equity of the Company’s shareholders. stated at fair value and comply with the generally"
+          ],
+          [
+            "accepted accounting principles in India and the"
+          ],
+          [
+            "f. In case of associates where the company directly"
+          ],
+          [
+            "applicable accounting standards. The financial"
+          ],
+          [
+            "or indirectly through subsidiaries holds more than"
+          ],
+          [
+            "statements of the foreign subsidiaries are prepared"
+          ],
+          [
+            "20% of equity, Investments in associates are"
+          ],
+          [
+            "as per the Financial Reporting Standards prevalent"
+          ],
+          [
+            "accounted for using equity method in accordance"
+          ],
+          [
+            "in respective countries. Accordingly, United Kingdom"
+          ],
+          [
+            "with Accounting Standard (AS) 23 - \"Accounting for"
+          ],
+          [
+            "based subsidiaries are prepared in accordance with"
+          ],
+          [
+            "investments in associates in consolidated financial"
+          ],
+          [
+            "the UK financial reporting standards, UAE based"
+          ],
+          [
+            "statements\"."
+          ],
+          [
+            "subsidiary company are prepared in accordance"
+          ],
+          [
+            "g. The Company accounts for its share in the change in with International Financial Reporting Standards,"
+          ],
+          [
+            "the net assets of the associates, post acquisition, after Singapore based subsidiaries are prepared in"
+          ],
+          [
+            "eliminating unrealized profits and losses resulting accordance with the Singapore Financial Reporting"
+          ],
+          [
+            "from transactions between the Company and its Standards and Australia based subsidiaries are"
+          ],
+          [
+            "associates to the extent of its share, through its prepared in accordance with the Australia Financial"
+          ],
+          [
+            "profit and loss account to the extent such change is Reporting Standards."
+          ],
+          [
+            "100 Cox & Kings Limited"
+          ]
+        ]
+      }
+    ]
+  }
+}

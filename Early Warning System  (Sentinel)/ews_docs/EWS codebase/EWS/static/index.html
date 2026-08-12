@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EWS Annual Report Extraction</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #dbeafe;
+            --success: #16a34a;
+            --success-light: #dcfce7;
+            --warning: #d97706;
+            --warning-light: #fef3c7;
+            --error: #dc2626;
+            --error-light: #fee2e2;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --radius: 12px;
+            --rag-primary: #7c3aed;
+            --rag-primary-dark: #6d28d9;
+            --rag-primary-light: #ede9fe;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 24px 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .header h1 { font-size: 24px; font-weight: 700; }
+        .header p { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+        
+        /* Cards */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .card h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h2 .icon { font-size: 20px; }
+        
+        /* Upload Area */
+        .upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #f0f7ff;
+        }
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: var(--primary);
+            background: #e0efff;
+        }
+        .upload-zone .icon { font-size: 48px; margin-bottom: 12px; }
+        .upload-zone p { color: var(--text-muted); font-size: 14px; }
+        .upload-zone .browse { color: var(--primary); font-weight: 600; text-decoration: underline; }
+        
+        /* RAG upload zone variant */
+        .upload-zone.rag-zone {
+            background: #f5f3ff;
+        }
+        .upload-zone.rag-zone:hover, .upload-zone.rag-zone.dragover {
+            border-color: var(--rag-primary);
+            background: #ede9fe;
+        }
+        
+        /* File List */
+        .file-list { margin-top: 16px; }
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .file-item .file-icon { font-size: 20px; }
+        .file-item .file-name { flex: 1; font-weight: 500; font-size: 14px; }
+        .file-item .file-size { color: var(--text-muted); font-size: 12px; }
+        .file-item .remove-btn {
+            background: none;
+            border: none;
+            color: var(--error);
+            cursor: pointer;
+            font-size: 18px;
+            padding: 4px;
+        }
+        
+        /* Form Controls */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+        
+        /* Toggle */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .toggle {
+            position: relative;
+            width: 48px;
+            height: 26px;
+            background: #cbd5e1;
+            border-radius: 13px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .toggle.active { background: var(--primary); }
+        .toggle::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.2s;
+        }
+        .toggle.active::after { transform: translateX(22px); }
+        .toggle-label { font-size: 14px; font-weight: 500; }
+        
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-primary:disabled { background: #94a3b8; cursor: not-allowed; }
+        .btn-secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .btn-success { background: var(--success); color: white; }
+        .btn-success:hover { background: #15803d; }
+        .btn-rag { background: var(--rag-primary); color: white; }
+        .btn-rag:hover { background: var(--rag-primary-dark); }
+        .btn-rag:disabled { background: #94a3b8; cursor: not-allowed; }
+        .btn-danger { background: var(--error); color: white; }
+        .btn-danger:hover { background: #b91c1c; }
+        .btn-sm { padding: 6px 14px; font-size: 13px; }
+        
+        .actions { display: flex; gap: 12px; margin-top: 20px; }
+        
+        /* Overall Progress */
+        .overall-progress {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            color: white;
+        }
+        .overall-progress .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .overall-progress .progress-header .file-name {
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        .overall-progress .progress-header .pct {
+            font-size: 28px;
+            font-weight: 800;
+        }
+        .overall-progress .progress-bar-bg {
+            height: 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .overall-progress .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4ade80, #22c55e);
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+        
+        /* Step Logs */
+        .step-logs { margin-top: 8px; }
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            animation: fadeIn 0.3s ease;
+        }
+        .step-item:last-child { border-bottom: none; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .step-icon {
+            width: 28px; height: 28px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; flex-shrink: 0; margin-top: 2px;
+        }
+        .step-icon.pending { background: #f1f5f9; color: #94a3b8; }
+        .step-icon.active { background: var(--primary-light); color: var(--primary); animation: pulse 1.5s ease infinite; }
+        .step-icon.completed { background: var(--success-light); color: var(--success); }
+        .step-icon.failed { background: var(--error-light); color: var(--error); }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37,99,235,0.3); }
+            50% { box-shadow: 0 0 0 6px rgba(37,99,235,0); }
+        }
+        .step-content { flex: 1; min-width: 0; }
+        .step-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+        .step-name.pending { color: var(--text-muted); }
+        .step-name.active { color: var(--primary); }
+        .step-name.completed { color: var(--success); }
+        .step-name.failed { color: var(--error); }
+        .step-message {
+            font-size: 12px; color: var(--text-muted); margin-bottom: 6px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .step-progress-bar { height: 4px; background: #e2e8f0; border-radius: 2px; overflow: hidden; }
+        .step-progress-fill { height: 100%; border-radius: 2px; transition: width 0.4s ease; }
+        .step-progress-fill.active { background: var(--primary); }
+        .step-progress-fill.completed { background: var(--success); }
+        .step-progress-fill.failed { background: var(--error); }
+        .step-pct {
+            font-size: 11px; color: var(--text-muted); font-weight: 600;
+            margin-left: 8px; flex-shrink: 0; min-width: 36px; text-align: right;
+        }
+        
+        /* Spinner */
+        .spinner {
+            width: 20px; height: 20px;
+            border: 3px solid rgba(0,0,0,0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .stat-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        .stat-card .stat-value { font-size: 28px; font-weight: 700; color: var(--primary); }
+        .stat-card .stat-label {
+            font-size: 12px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;
+        }
+        
+        /* Completeness bars */
+        .completeness-item { margin-bottom: 12px; }
+        .completeness-item .label-row {
+            display: flex; justify-content: space-between;
+            font-size: 13px; margin-bottom: 4px;
+        }
+        .completeness-item .label-row .name { font-weight: 600; }
+        .completeness-item .label-row .pct { color: var(--text-muted); }
+        .progress-bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+        .progress-bar .fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+        .fill.high { background: var(--success); }
+        .fill.medium { background: var(--warning); }
+        .fill.low { background: var(--error); }
+        
+        /* Job History */
+        .job-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .job-table th {
+            text-align: left; padding: 10px 12px; background: var(--bg);
+            font-weight: 600; color: var(--text-muted); font-size: 12px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border);
+        }
+        .job-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+        .job-table tr:hover td { background: #f0f7ff; }
+        
+        .badge {
+            display: inline-block; padding: 3px 10px;
+            border-radius: 12px; font-size: 12px; font-weight: 600;
+        }
+        .badge-pending { background: #fef3c7; color: #92400e; }
+        .badge-processing { background: #dbeafe; color: #1e40af; }
+        .badge-completed { background: #dcfce7; color: #166534; }
+        .badge-failed { background: #fee2e2; color: #991b1b; }
+        
+        .hidden { display: none !important; }
+        
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr; }
+            .container { padding: 16px; }
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex; gap: 4px; margin-bottom: 20px;
+            border-bottom: 2px solid var(--border); padding-bottom: 0;
+        }
+        .tab {
+            padding: 10px 20px; font-size: 14px; font-weight: 500;
+            cursor: pointer; border: none; background: none;
+            color: var(--text-muted); border-bottom: 2px solid transparent;
+            margin-bottom: -2px; transition: all 0.2s;
+        }
+        .tab:hover { color: var(--text); }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .download-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--primary); text-decoration: none;
+            font-weight: 500; font-size: 14px;
+        }
+        .download-link:hover { text-decoration: underline; }
+        
+        /* ===== RAG-SPECIFIC STYLES ===== */
+        
+        /* Chat */
+        .chat-container {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            background: #fafafa;
+        }
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        .chat-msg {
+            margin-bottom: 12px;
+            animation: fadeIn 0.3s ease;
+        }
+        .chat-msg.user {
+            text-align: right;
+        }
+        .chat-msg .msg-bubble {
+            display: inline-block;
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: left;
+            white-space: pre-wrap;
+        }
+        .chat-msg.user .msg-bubble {
+            background: var(--rag-primary);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-msg.assistant .msg-bubble {
+            background: white;
+            border: 1px solid var(--border);
+            border-bottom-left-radius: 4px;
+        }
+        .chat-msg .msg-sources {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .chat-input-row {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            border-top: 1px solid var(--border);
+            background: white;
+            border-radius: 0 0 8px 8px;
+        }
+        .chat-input-row input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .chat-input-row input:focus {
+            outline: none;
+            border-color: var(--rag-primary);
+        }
+        
+        /* RAG PDF list */
+        .rag-pdf-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .rag-pdf-item .pdf-icon { font-size: 24px; }
+        .rag-pdf-item .pdf-info { flex: 1; }
+        .rag-pdf-item .pdf-name { font-weight: 600; font-size: 14px; }
+        .rag-pdf-item .pdf-meta { font-size: 12px; color: var(--text-muted); }
+        
+        /* RAG validation results */
+        .rag-result-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 13px;
+        }
+        .rag-result-item:last-child { border-bottom: none; }
+        .rag-action-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            min-width: 70px;
+            text-align: center;
+        }
+        .rag-action-verified { background: #dbeafe; color: #1e40af; }
+        .rag-action-changed { background: #fef3c7; color: #92400e; }
+        .rag-action-filled { background: #dcfce7; color: #166534; }
+        .rag-action-not_found { background: #f1f5f9; color: #64748b; }
+        .rag-action-skipped { background: #f1f5f9; color: #94a3b8; }
+        
+        /* Color legend */
+        .color-legend {
+            display: flex;
+            gap: 16px;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        .color-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .color-swatch {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            border: 1px solid #d1d5db;
+        }
+        .swatch-yellow { background: #FFFF00; }
+        .swatch-green { background: #92D050; }
+        .swatch-blue { background: #DCE6F1; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 EWS Annual Report Extraction</h1>
+        <p>Extract financial data from annual report PDFs into Excel templates • RAG-powered Q/A & CA Validation</p>
+    </div>
+    
+    <div class="container">
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('extract')">📤 Extract</button>
+            <button class="tab" onclick="switchTab('rag')">🧠 RAG Knowledge Base</button>
+            <button class="tab" onclick="switchTab('jobs')">📋 Job History</button>
+        </div>
+        
+        <!-- ==================== EXTRACT TAB ==================== -->
+        <div id="tab-extract" class="tab-content active">
+            <div class="card">
+                <h2><span class="icon">📄</span> Upload Annual Reports</h2>
+                
+                <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()">
+                    <div class="icon">📁</div>
+                    <p>Drag & drop PDF files here or <span class="browse">browse</span></p>
+                    <p style="margin-top:8px; font-size:12px;">Supports multiple PDFs • Max 500MB per file</p>
+                </div>
+                <input type="file" id="fileInput" multiple accept=".pdf" style="display:none" onchange="handleFiles(this.files)">
+                
+                <div class="file-list" id="fileList"></div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Financial Year (optional)</label>
+                        <input type="text" id="yearInput" placeholder="Auto-detect from PDF filename">
+                        <span style="font-size:11px; color:var(--text-muted);">Leave empty to auto-detect from filename</span>
+                    </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="toggle-row">
+                            <div class="toggle active" id="llmToggle" onclick="this.classList.toggle('active')"></div>
+                            <span class="toggle-label">★ Enable LLM (primary for page ID + mapping)</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="toggle-row">
+                            <div class="toggle" id="ragLeverageToggle" onclick="this.classList.toggle('active')"></div>
+                            <span class="toggle-label">🧠 Leverage RAG CA Agent after extraction</span>
+                        </div>
+                        <span style="font-size:11px; color:var(--text-muted);">Runs Extra CA validation via RAG after pipeline completes</span>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button class="btn btn-primary" id="extractBtn" onclick="startExtraction()" disabled>
+                        🚀 Start Extraction
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearFiles()">
+                        🗑️ Clear
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card hidden" id="statusCard">
+                <h2><span class="icon">⏳</span> Extraction Progress</h2>
+                <div id="statusContent"></div>
+            </div>
+            
+            <div class="card hidden" id="resultsCard">
+                <h2><span class="icon">✅</span> Extraction Results</h2>
+                <div id="resultsContent"></div>
+            </div>
+            
+            <!-- RAG Validation Results (shown after extraction if RAG leverage enabled) -->
+            <div class="card hidden" id="ragValidationCard">
+                <h2><span class="icon">🧠</span> RAG CA Agent — Validation & Filling Results</h2>
+                <div class="color-legend">
+                    <div class="color-legend-item">
+                        <div class="color-swatch swatch-yellow"></div>
+                        <span>Changed value (RAG found different value)</span>
+                    </div>
+                    <div class="color-legend-item">
+                        <div class="color-swatch swatch-green"></div>
+                        <span>Filled empty cell (RAG found new data)</span>
+                    </div>
+                    <div class="color-legend-item">
+                        <div class="color-swatch swatch-blue"></div>
+                        <span>Verified match (RAG confirmed value)</span>
+                    </div>
+                </div>
+                <div id="ragValidationContent"></div>
+            </div>
+        </div>
+        
+        <!-- ==================== RAG TAB ==================== -->
+        <div id="tab-rag" class="tab-content">
+            <!-- RAG Status -->
+            <div class="card">
+                <h2><span class="icon">🧠</span> RAG Knowledge Base</h2>
+                <p style="color:var(--text-muted); font-size:14px; margin-bottom:16px;">
+                    Upload PDFs to build a searchable knowledge base. Ask questions or let the Extra CA agent validate extraction results.
+                </p>
+                <div id="ragStatus">
+                    <div class="spinner" style="display:inline-block;"></div> Checking RAG service...
+                </div>
+            </div>
+            
+            <!-- Upload to RAG -->
+            <div class="card">
+                <h2><span class="icon">📤</span> Upload PDFs to Vector Store</h2>
+                
+                <div class="upload-zone rag-zone" id="ragUploadZone" onclick="document.getElementById('ragFileInput').click()">
+                    <div class="icon">📚</div>
+                    <p>Drag & drop PDF files to add to knowledge base or <span class="browse">browse</span></p>
+                    <p style="margin-top:8px; font-size:12px;">PDFs are parsed page-by-page and stored as searchable chunks</p>
+                </div>
+                <input type="file" id="ragFileInput" multiple accept=".pdf" style="display:none" onchange="handleRagUpload(this.files)">
+                
+                <div id="ragUploadProgress" class="hidden" style="margin-top:12px;">
+                    <div class="spinner" style="display:inline-block;"></div>
+                    <span style="font-size:14px; margin-left:8px;">Uploading and indexing...</span>
+                </div>
+            </div>
+            
+            <!-- Stored PDFs -->
+            <div class="card">
+                <h2><span class="icon">📂</span> Stored PDFs</h2>
+                <div id="ragPdfList">
+                    <p style="color:var(--text-muted)">Loading...</p>
+                </div>
+            </div>
+            
+            <!-- Q/A Chatbot -->
+            <div class="card">
+                <h2><span class="icon">💬</span> Q/A Chatbot</h2>
+                <p style="color:var(--text-muted); font-size:13px; margin-bottom:12px;">
+                    Ask questions about the uploaded annual reports. The chatbot uses RAG to find relevant pages and generate answers.
+                </p>
+                
+                <div class="form-group" style="margin-bottom:12px;">
+                    <label>Filter by PDF (optional)</label>
+                    <select id="ragFilterPdf" style="padding:8px 12px; border:1px solid var(--border); border-radius:6px; font-size:13px;">
+                        <option value="">All PDFs</option>
+                    </select>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-msg assistant">
+                            <div class="msg-bubble">Hello! I'm your financial report assistant. Upload some PDFs above, then ask me anything about the annual reports. I'll search the knowledge base and provide answers with source references.</div>
+                        </div>
+                    </div>
+                    <div class="chat-input-row">
+                        <input type="text" id="chatInput" placeholder="Ask a question about the annual reports..." 
+                               onkeypress="if(event.key==='Enter')sendChatMessage()">
+                        <button class="btn btn-rag btn-sm" onclick="sendChatMessage()">Send</button>
+                        <button class="btn btn-secondary btn-sm" onclick="clearChat()">Clear</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CA RAG Validation -->
+            <div class="card">
+                <h2><span class="icon">👔</span> Extra CA Agent — RAG Validation</h2>
+                <p style="color:var(--text-muted); font-size:13px; margin-bottom:12px;">
+                    Validate and fill extraction results using RAG. The CA agent checks each value against the knowledge base and fills empty cells.
+                </p>
+                
+                <div class="form-row" style="grid-template-columns: 2fr 1fr;">
+                    <div class="form-group">
+                        <label>Extraction Excel Path</label>
+                        <input type="text" id="ragValidatePath" placeholder="Path to extracted Excel file (e.g., api_output/Report_2023_extracted.xlsx)">
+                    </div>
+                    <div class="form-group">
+                        <label>Filter by PDF (optional)</label>
+                        <select id="ragValidatePdf" style="padding:8px 12px; border:1px solid var(--border); border-radius:6px; font-size:13px;">
+                            <option value="">All PDFs</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button class="btn btn-rag" id="ragValidateBtn" onclick="runRagValidation()">
+                        👔 Run CA RAG Validation
+                    </button>
+                    <a class="btn btn-secondary" href="/rag/prompt-excel" target="_blank" style="text-decoration:none;">
+                        📋 Download Prompt Excel
+                    </a>
+                </div>
+                <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">
+                    📋 <strong>Prompt Excel</strong> shows the exact questions the CA RAG agent will ask for each template item — download it to review what RAG validates & fills before running.
+                </p>
+                
+                <div id="ragValidateResults" class="hidden" style="margin-top:16px;"></div>
+            </div>
+        </div>
+        
+        <!-- ==================== JOBS TAB ==================== -->
+        <div id="tab-jobs" class="tab-content">
+            <div class="card">
+                <h2><span class="icon">📋</span> Job History</h2>
+                <div id="jobsContent">
+                    <p style="color:var(--text-muted)">Loading jobs...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ===== STATE =====
+        let selectedFiles = [];
+        let currentJobId = null;
+        let pollInterval = null;
+        let chatSessionId = 'web_' + Date.now();
+        
+        // ===== DRAG & DROP (Extract Tab) =====
+        const uploadZone = document.getElementById('uploadZone');
+        uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+        uploadZone.addEventListener('dragleave', () => { uploadZone.classList.remove('dragover'); });
+        uploadZone.addEventListener('drop', (e) => { e.preventDefault(); uploadZone.classList.remove('dragover'); handleFiles(e.dataTransfer.files); });
+        
+        // ===== DRAG & DROP (RAG Tab) =====
+        const ragUploadZone = document.getElementById('ragUploadZone');
+        ragUploadZone.addEventListener('dragover', (e) => { e.preventDefault(); ragUploadZone.classList.add('dragover'); });
+        ragUploadZone.addEventListener('dragleave', () => { ragUploadZone.classList.remove('dragover'); });
+        ragUploadZone.addEventListener('drop', (e) => { e.preventDefault(); ragUploadZone.classList.remove('dragover'); handleRagUpload(e.dataTransfer.files); });
+        
+        // ===== EXTRACT TAB FUNCTIONS =====
+        function handleFiles(files) {
+            for (const file of files) {
+                if (file.type === 'application/pdf' && !selectedFiles.find(f => f.name === file.name)) {
+                    selectedFiles.push(file);
+                }
+            }
+            renderFileList();
+            updateExtractBtn();
+        }
+        
+        function removeFile(name) {
+            selectedFiles = selectedFiles.filter(f => f.name !== name);
+            renderFileList();
+            updateExtractBtn();
+        }
+        
+        function clearFiles() {
+            selectedFiles = [];
+            renderFileList();
+            updateExtractBtn();
+        }
+        
+        function formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+            return (bytes/(1024*1024)).toFixed(1) + ' MB';
+        }
+        
+        function renderFileList() {
+            const list = document.getElementById('fileList');
+            if (selectedFiles.length === 0) { list.innerHTML = ''; return; }
+            list.innerHTML = selectedFiles.map(f => `
+                <div class="file-item">
+                    <span class="file-icon">📕</span>
+                    <span class="file-name">${f.name}</span>
+                    <span class="file-size">${formatSize(f.size)}</span>
+                    <button class="remove-btn" onclick="removeFile('${f.name}')" title="Remove">✕</button>
+                </div>
+            `).join('');
+        }
+        
+        function updateExtractBtn() {
+            document.getElementById('extractBtn').disabled = selectedFiles.length === 0;
+        }
+        
+        // ===== TAB SWITCHING =====
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tab).classList.add('active');
+            if (tab === 'jobs') loadJobs();
+            if (tab === 'rag') { checkRagHealth(); loadRagPdfs(); }
+        }
+        
+        // ===== EXTRACTION =====
+        async function startExtraction() {
+            const btn = document.getElementById('extractBtn');
+            btn.disabled = true;
+            btn.textContent = '⏳ Uploading...';
+            
+            const year = document.getElementById('yearInput').value.trim();
+            const useLlm = document.getElementById('llmToggle').classList.contains('active');
+            
+            const formData = new FormData();
+            selectedFiles.forEach(f => formData.append('files', f));
+            formData.append('years', year);
+            formData.append('use_llm', useLlm ? 'true' : 'false');
+            
+            try {
+                const resp = await fetch('/extract', { method: 'POST', body: formData });
+                const data = await resp.json();
+                
+                if (resp.status !== 202) {
+                    alert('Error: ' + (data.detail || 'Unknown error'));
+                    btn.disabled = false;
+                    btn.textContent = '🚀 Start Extraction';
+                    return;
+                }
+                
+                currentJobId = data.job_id;
+                document.getElementById('statusCard').classList.remove('hidden');
+                document.getElementById('resultsCard').classList.add('hidden');
+                document.getElementById('ragValidationCard').classList.add('hidden');
+                
+                pollStatus();
+                pollInterval = setInterval(pollStatus, 1500);
+                
+            } catch (err) {
+                alert('Network error: ' + err.message);
+            }
+            
+            btn.disabled = false;
+            btn.textContent = '🚀 Start Extraction';
+        }
+        
+        async function pollStatus() {
+            if (!currentJobId) return;
+            try {
+                const resp = await fetch('/status/' + currentJobId);
+                const data = await resp.json();
+                renderStatus(data);
+                
+                if (data.status === 'completed' || data.status === 'failed') {
+                    clearInterval(pollInterval);
+                    pollInterval = null;
+                    
+                    if (data.status === 'completed') {
+                        renderResults(data);
+                        document.getElementById('resultsCard').classList.remove('hidden');
+                        
+                        // Check if RAG leverage is enabled
+                        const ragLeverage = document.getElementById('ragLeverageToggle').classList.contains('active');
+                        if (ragLeverage && data.output_files && data.output_files.length > 0) {
+                            runRagLeverageAfterExtraction(data);
+                        }
+                    }
+                }
+            } catch (err) {
+                console.error('Poll error:', err);
+            }
+        }
+        
+        function renderStatus(data) {
+            const el = document.getElementById('statusContent');
+            const steps = data.steps || [];
+            const overallPct = data.overall_progress || 0;
+            const currentFile = data.current_file || '';
+            
+            let html = `
+                <div class="overall-progress">
+                    <div class="progress-header">
+                        <div>
+                            <div style="font-size:12px; opacity:0.7; margin-bottom:2px;">Processing</div>
+                            <div class="file-name">📕 ${currentFile || 'Preparing...'}</div>
+                        </div>
+                        <div class="pct">${Math.round(overallPct)}%</div>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: ${overallPct}%"></div>
+                    </div>
+                </div>
+            `;
+            
+            if (steps.length > 0) {
+                html += '<div class="step-logs">';
+                steps.forEach(step => {
+                    const iconMap = { pending: '⏳', active: '⚙️', completed: '✅', failed: '❌' };
+                    const icon = iconMap[step.status] || '•';
+                    html += `
+                        <div class="step-item">
+                            <div class="step-icon ${step.status}">${icon}</div>
+                            <div class="step-content">
+                                <div class="step-name ${step.status}">${step.step}</div>
+                                ${step.message ? `<div class="step-message" title="${step.message}">${step.message}</div>` : ''}
+                                <div class="step-progress-bar">
+                                    <div class="step-progress-fill ${step.status}" style="width: ${step.progress}%"></div>
+                                </div>
+                            </div>
+                            <div class="step-pct">${step.status === 'completed' ? '100' : step.status === 'pending' ? '0' : Math.round(step.progress)}%</div>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            } else if (data.status === 'pending') {
+                html += `
+                    <div style="text-align:center; padding:20px; color:var(--text-muted);">
+                        <div class="spinner" style="margin: 0 auto 12px;"></div>
+                        <div>Queued for processing...</div>
+                    </div>
+                `;
+            }
+            
+            if (data.results && data.results.length > 0) {
+                html += '<div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border);">';
+                data.results.forEach(r => {
+                    const icon = r.success ? '✅' : '❌';
+                    html += `<div style="margin-bottom:8px; font-size:14px;">${icon} <strong>${r.filename}</strong> (year ${r.year}) — ${r.success ? 'Success' : 'Failed: ' + r.error}</div>`;
+                });
+                html += '</div>';
+            }
+            
+            el.innerHTML = html;
+        }
+        
+        function renderResults(data) {
+            const el = document.getElementById('resultsContent');
+            if (!data.results || data.results.length === 0) {
+                el.innerHTML = '<p>No results available.</p>';
+                return;
+            }
+            
+            let html = '';
+            data.results.forEach(r => {
+                if (!r.success) return;
+                const comp = r.completeness || {};
+                const pd = r.page_detection || {};
+                const es = r.extraction_stats || {};
+                const ms = r.mapping_stats || {};
+                const ws = r.writing_stats || {};
+                const totalWritten = (ws.bs_written || 0) + (ws.pl_written || 0) + (ws.cf_written || 0);
+                const totalExtracted = (es.bs_rows_extracted || 0) + (es.pl_rows_extracted || 0) + (es.cf_rows_extracted || 0);
+                
+                html += `
+                    <div style="margin-bottom:24px;">
+                        <h3 style="font-size:16px; margin-bottom:12px;">📕 ${r.filename} (FY ${r.year})</h3>
+                        <div class="results-grid">
+                            <div class="stat-card"><div class="stat-value">${totalExtracted}</div><div class="stat-label">Rows Extracted</div></div>
+                            <div class="stat-card"><div class="stat-value">${totalWritten}</div><div class="stat-label">Values Written</div></div>
+                            <div class="stat-card"><div class="stat-value">${comp.overall || '0%'}</div><div class="stat-label">Overall Completeness</div></div>
+                        </div>
+                        <h4 style="font-size:14px; margin: 16px 0 8px; font-weight:600;">📊 Completeness</h4>
+                `;
+                
+                [
+                    { name: 'Balance Sheet', pct: parseFloat(comp.bs) || 0 },
+                    { name: 'Profit & Loss', pct: parseFloat(comp.pl) || 0 },
+                    { name: 'Cash Flow', pct: parseFloat(comp.cf) || 0 },
+                ].forEach(item => {
+                    const cls = item.pct >= 70 ? 'high' : item.pct >= 40 ? 'medium' : 'low';
+                    html += `
+                        <div class="completeness-item">
+                            <div class="label-row"><span class="name">${item.name}</span><span class="pct">${item.pct.toFixed(1)}%</span></div>
+                            <div class="progress-bar"><div class="fill ${cls}" style="width: ${item.pct}%"></div></div>
+                        </div>
+                    `;
+                });
+                
+                html += `
+                    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; font-size:13px; margin-top:12px;">
+                        <div style="background:var(--bg); padding:10px; border-radius:6px; text-align:center;">
+                            <div style="font-weight:700; font-size:18px; color:var(--primary);">${ms.bs_mapped || 0}</div>
+                            <div style="color:var(--text-muted);">BS Mapped → ${ws.bs_written || 0} Written</div>
+                        </div>
+                        <div style="background:var(--bg); padding:10px; border-radius:6px; text-align:center;">
+                            <div style="font-weight:700; font-size:18px; color:var(--primary);">${ms.pl_mapped || 0}</div>
+                            <div style="color:var(--text-muted);">P&L Mapped → ${ws.pl_written || 0} Written</div>
+                        </div>
+                        <div style="background:var(--bg); padding:10px; border-radius:6px; text-align:center;">
+                            <div style="font-weight:700; font-size:18px; color:var(--primary);">${ms.cf_mapped || 0}</div>
+                            <div style="color:var(--text-muted);">CF Mapped → ${ws.cf_written || 0} Written</div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
+            
+            html += `
+                <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border);">
+                    <h4 style="font-size:14px; margin-bottom:12px; font-weight:600;">📥 Download Results</h4>
+                    <a class="download-link" href="/download/${currentJobId}" target="_blank">📥 Download Excel File</a>
+                </div>
+            `;
+            
+            el.innerHTML = html;
+        }
+        
+        // ===== RAG LEVERAGE AFTER EXTRACTION =====
+        let ragPollInterval = null;
+        let ragSessionId = null;
+        
+        async function runRagLeverageAfterExtraction(jobData) {
+            const card = document.getElementById('ragValidationCard');
+            const content = document.getElementById('ragValidationContent');
+            card.classList.remove('hidden');
+            content.innerHTML = '<div class="spinner" style="display:inline-block;"></div> <span>🧠 Checking RAG Knowledge Base for matching document...</span>';
+            
+            // Get the first successful result
+            const firstResult = jobData.results.find(r => r.success && r.output_path);
+            if (!firstResult || !firstResult.output_path) {
+                content.innerHTML = '<p style="color:var(--error);">No output files to validate.</p>';
+                return;
+            }
+            
+            // The PDF filename from the extraction — this is the key to look up in RAG vector store
+            const pdfFilename = firstResult.filename;
+            
+            try {
+                // Step 1: Check if this PDF filename exists in the RAG vector store
+                const listResp = await fetch('/rag/list');
+                const listData = await listResp.json();
+                const storedPdfs = listData.pdfs || [];
+                const matchedPdf = storedPdfs.find(p => p.filename === pdfFilename);
+                
+                if (!matchedPdf) {
+                    // Document NOT found in RAG vector store
+                    content.innerHTML = `
+                        <div style="padding:20px; text-align:center; background:#fef3c7; border-radius:8px; border:1px solid #fbbf24;">
+                            <div style="font-size:32px; margin-bottom:8px;">📭</div>
+                            <h3 style="color:#92400e; margin-bottom:8px;">Document not found for RAG leverage</h3>
+                            <p style="color:#78350f; font-size:14px;">
+                                The PDF <strong>"${pdfFilename}"</strong> has not been uploaded to the RAG Knowledge Base.<br>
+                                Please upload it in the <strong>🧠 RAG Knowledge Base</strong> tab first, then run RAG leverage again.
+                            </p>
+                            <p style="color:#92400e; font-size:12px; margin-top:12px;">
+                                Stored PDFs: ${storedPdfs.length > 0 ? storedPdfs.map(p => '"' + p.filename + '"').join(', ') : 'None'}
+                            </p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Step 2: Document found — start RAG validation (background) with progress polling
+                ragSessionId = 'rag_' + Date.now();
+                content.innerHTML = `
+                    <div style="padding:12px 16px; background:#f5f3ff; border:1px solid #ddd6fe; border-radius:8px; margin-bottom:16px; display:flex; align-items:center; gap:12px;">
+                        <span style="font-size:20px;">📚</span>
+                        <div>
+                            <div style="font-weight:600; font-size:14px; color:var(--rag-primary);">RAG Source: ${pdfFilename}</div>
+                            <div style="font-size:12px; color:var(--text-muted);">${matchedPdf.num_chunks} chunks • Only this document will be used for validation</div>
+                        </div>
+                    </div>
+                    <div id="ragProgressArea">
+                        <div class="spinner" style="display:inline-block;"></div> <span>Starting CA RAG Agent validation...</span>
+                    </div>
+                `;
+                
+                const resp = await fetch('/rag/validate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        extraction_excel_path: firstResult.output_path,
+                        pdf_filename: pdfFilename,
+                        statement_types: ['balance_sheet', 'profit_and_loss', 'cash_flow'],
+                        session_id: ragSessionId,
+                    }),
+                });
+                
+                const data = await resp.json();
+                
+                if (resp.status !== 200) {
+                    content.innerHTML = `<p style="color:var(--error);">RAG validation failed: ${data.detail || 'Unknown error'}</p>`;
+                    return;
+                }
+                
+                // Start polling for progress
+                ragPollInterval = setInterval(pollRagProgress, 1500);
+                
+            } catch (err) {
+                content.innerHTML = `<p style="color:var(--error);">RAG validation error: ${err.message}</p>`;
+            }
+        }
+        
+        async function pollRagProgress() {
+            if (!ragSessionId) return;
+            try {
+                const resp = await fetch('/rag/progress/' + ragSessionId);
+                const data = await resp.json();
+                renderRagProgress(data);
+                
+                if (data.status === 'completed') {
+                    clearInterval(ragPollInterval);
+                    ragPollInterval = null;
+                    // Show final results
+                    const content = document.getElementById('ragValidationContent');
+                    if (data.result) {
+                        data.result._rag_filename = data.result._rag_filename || '';
+                        renderRagValidationResults(data.result, content);
+                    }
+                } else if (data.status === 'failed') {
+                    clearInterval(ragPollInterval);
+                    ragPollInterval = null;
+                    const content = document.getElementById('ragValidationContent');
+                    content.innerHTML = `<p style="color:var(--error);">RAG validation failed: ${data.error || 'Unknown error'}</p>`;
+                }
+            } catch (err) {
+                console.error('RAG progress poll error:', err);
+            }
+        }
+        
+        function renderRagProgress(data) {
+            const area = document.getElementById('ragProgressArea');
+            if (!area) return;
+            
+            const progress = data.progress || 0;
+            const step = data.current_step || 'Preparing...';
+            const total = data.total_items || 0;
+            const completed = data.completed_items || 0;
+            const details = data.details || [];
+            
+            let html = `
+                <div class="overall-progress" style="background:linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);">
+                    <div class="progress-header">
+                        <div>
+                            <div style="font-size:12px; opacity:0.7; margin-bottom:2px;">CA RAG Agent</div>
+                            <div class="file-name">🧠 ${step}</div>
+                        </div>
+                        <div class="pct">${Math.round(progress)}%</div>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: ${progress}%"></div>
+                    </div>
+                    ${total > 0 ? `<div style="font-size:12px; opacity:0.8; margin-top:8px;">${completed} / ${total} items validated</div>` : ''}
+                </div>
+            `;
+            
+            // Show detail logs (last 15)
+            if (details.length > 0) {
+                const recentDetails = details.slice(-15);
+                html += '<div style="max-height:200px; overflow-y:auto; border:1px solid var(--border); border-radius:8px; margin-top:12px; padding:8px; font-size:12px; font-family:monospace; background:#fafafa;">';
+                recentDetails.forEach(d => {
+                    let color = 'var(--text-muted)';
+                    if (d.includes('[changed]')) color = '#92400e';
+                    else if (d.includes('[filled]')) color = '#166534';
+                    else if (d.includes('[verified]')) color = '#1e40af';
+                    else if (d.includes('ERROR')) color = 'var(--error)';
+                    html += `<div style="padding:2px 0; color:${color};">${d}</div>`;
+                });
+                html += '</div>';
+            }
+            
+            area.innerHTML = html;
+        }
+        
+        function renderRagValidationResults(data, el) {
+            const summary = data.summary || {};
+            const results = data.results || [];
+            const outputPath = data.output_path || '';
+            const ragFilename = data._rag_filename || '';
+            const ragChunks = data._rag_chunks || '';
+            
+            let html = '';
+            
+            // Show RAG source document info
+            if (ragFilename) {
+                html += `
+                    <div style="padding:12px 16px; background:#f5f3ff; border:1px solid #ddd6fe; border-radius:8px; margin-bottom:16px; display:flex; align-items:center; gap:12px;">
+                        <span style="font-size:20px;">📚</span>
+                        <div>
+                            <div style="font-weight:600; font-size:14px; color:var(--rag-primary);">RAG Source: ${ragFilename}</div>
+                            <div style="font-size:12px; color:var(--text-muted);">${ragChunks} chunks searched • Only this document was used for validation</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            html += `
+                <div class="results-grid" style="grid-template-columns: repeat(5, 1fr);">
+                    <div class="stat-card"><div class="stat-value" style="color:var(--rag-primary);">${summary.total_items || 0}</div><div class="stat-label">Total Items</div></div>
+                    <div class="stat-card"><div class="stat-value" style="color:#1e40af;">${summary.verified || 0}</div><div class="stat-label">Verified ✓</div></div>
+                    <div class="stat-card"><div class="stat-value" style="color:#92400e;">${summary.changed || 0}</div><div class="stat-label">Changed ✏️</div></div>
+                    <div class="stat-card"><div class="stat-value" style="color:#166534;">${summary.filled || 0}</div><div class="stat-label">Filled ✨</div></div>
+                    <div class="stat-card"><div class="stat-value" style="color:var(--text-muted);">${summary.not_found || 0}</div><div class="stat-label">Not Found</div></div>
+                </div>
+            `;
+            
+            // Show changed and filled items
+            const interesting = results.filter(r => r.action === 'changed' || r.action === 'filled');
+            if (interesting.length > 0) {
+                html += '<h4 style="font-size:14px; margin:16px 0 8px; font-weight:600;">📝 Changes & New Data</h4>';
+                html += '<div style="max-height:300px; overflow-y:auto; border:1px solid var(--border); border-radius:8px;">';
+                interesting.forEach(r => {
+                    const badgeCls = 'rag-action-' + r.action;
+                    html += `
+                        <div class="rag-result-item">
+                            <span class="rag-action-badge ${badgeCls}">${r.action.toUpperCase()}</span>
+                            <span style="flex:1; font-weight:500;">${r.item}</span>
+                            <span style="color:var(--text-muted); font-size:12px;">${r.original_value || '(empty)'}</span>
+                            <span style="font-weight:600;">→</span>
+                            <span style="font-weight:600; color:${r.action === 'filled' ? '#166534' : '#92400e'};">${r.rag_value || '?'}</span>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            
+            if (outputPath) {
+                const ragFilename = outputPath.split('/').pop();
+                html += `
+                    <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border);">
+                        <h4 style="font-size:14px; margin-bottom:8px; font-weight:600;">📥 Download RAG-Validated Excel</h4>
+                        <p style="font-size:13px; color:var(--text-muted); margin-bottom:8px;">
+                            File: <code>${ragFilename}</code>
+                        </p>
+                        <a class="download-link" href="/rag/download/${encodeURIComponent(ragFilename)}" target="_blank"
+                           style="color:var(--rag-primary);">
+                            📥 Download RAG-Validated Excel
+                        </a>
+                    </div>
+                `;
+            }
+            
+            el.innerHTML = html;
+        }
+        
+        // ===== RAG TAB FUNCTIONS =====
+        
+        async function checkRagHealth() {
+            const el = document.getElementById('ragStatus');
+            try {
+                const resp = await fetch('/rag/health');
+                const data = await resp.json();
+                if (data.status === 'ok') {
+                    el.innerHTML = `
+                        <div style="display:flex; gap:16px; align-items:center;">
+                            <span class="badge badge-completed">● RAG Service Online</span>
+                            <span style="font-size:13px; color:var(--text-muted);">${data.total_chunks || 0} chunks from ${data.total_pdfs || 0} PDFs</span>
+                        </div>
+                    `;
+                } else {
+                    el.innerHTML = `<span class="badge badge-failed">● RAG Service: ${data.status}</span>
+                        <p style="font-size:13px; color:var(--text-muted); margin-top:8px;">${data.message || ''}</p>`;
+                }
+            } catch (err) {
+                el.innerHTML = `<span class="badge badge-failed">● RAG Service Unavailable</span>
+                    <p style="font-size:13px; color:var(--text-muted); margin-top:8px;">
+                        Start the RAG service: <code>python -m uvicorn rag_app:app --port 8081 &</code>
+                    </p>`;
+            }
+        }
+        
+        async function handleRagUpload(files) {
+            const progress = document.getElementById('ragUploadProgress');
+            progress.classList.remove('hidden');
+            
+            for (const file of files) {
+                if (file.type !== 'application/pdf') continue;
+                
+                try {
+                    const formData = new FormData();
+                    formData.append('file', file);
+                    
+                    const resp = await fetch('/rag/upload', { method: 'POST', body: formData });
+                    const data = await resp.json();
+                    
+                    if (resp.status === 200) {
+                        alert(`✅ ${file.name}: ${data.num_chunks} chunks indexed from ${data.num_pages} pages`);
+                    } else {
+                        alert(`❌ ${file.name}: ${data.detail || 'Upload failed'}`);
+                    }
+                } catch (err) {
+                    alert(`❌ ${file.name}: Network error - ${err.message}`);
+                }
+            }
+            
+            progress.classList.add('hidden');
+            loadRagPdfs();
+            checkRagHealth();
+        }
+        
+        async function loadRagPdfs() {
+            const el = document.getElementById('ragPdfList');
+            try {
+                const resp = await fetch('/rag/list');
+                const data = await resp.json();
+                
+                if (!data.pdfs || data.pdfs.length === 0) {
+                    el.innerHTML = '<p style="color:var(--text-muted)">No PDFs stored. Upload some PDFs above!</p>';
+                    updateRagFilterDropdowns([]);
+                    return;
+                }
+                
+                el.innerHTML = data.pdfs.map(pdf => `
+                    <div class="rag-pdf-item">
+                        <span class="pdf-icon">📕</span>
+                        <div class="pdf-info">
+                            <div class="pdf-name">${pdf.filename}</div>
+                            <div class="pdf-meta">${pdf.num_chunks} chunks • Pages: ${pdf.pages.join(', ')}</div>
+                        </div>
+                        <button class="btn btn-danger btn-sm" onclick="deleteRagPdf('${pdf.filename}')">🗑️ Delete</button>
+                    </div>
+                `).join('');
+                
+                updateRagFilterDropdowns(data.pdfs);
+                
+            } catch (err) {
+                el.innerHTML = '<p style="color:var(--text-muted)">Could not load PDF list. RAG service may be offline.</p>';
+            }
+        }
+        
+        function updateRagFilterDropdowns(pdfs) {
+            const options = '<option value="">All PDFs</option>' + 
+                pdfs.map(p => `<option value="${p.filename}">${p.filename}</option>`).join('');
+            document.getElementById('ragFilterPdf').innerHTML = options;
+            document.getElementById('ragValidatePdf').innerHTML = options;
+        }
+        
+        async function deleteRagPdf(filename) {
+            if (!confirm(`Delete "${filename}" from the knowledge base?`)) return;
+            
+            try {
+                const resp = await fetch('/rag/delete?filename=' + encodeURIComponent(filename), { method: 'DELETE' });
+                const data = await resp.json();
+                
+                if (resp.status === 200) {
+                    alert(`✅ Deleted ${data.num_chunks_deleted} chunks for ${filename}`);
+                } else {
+                    alert(`❌ ${data.detail || 'Delete failed'}`);
+                }
+            } catch (err) {
+                alert(`❌ Network error: ${err.message}`);
+            }
+            
+            loadRagPdfs();
+            checkRagHealth();
+        }
+        
+        // ===== CHAT =====
+        async function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const question = input.value.trim();
+            if (!question) return;
+            
+            input.value = '';
+            
+            // Add user message to chat
+            addChatMessage('user', question);
+            
+            // Add typing indicator
+            const typingId = addChatMessage('assistant', 'Thinking...');
+            
+            try {
+                const filterPdf = document.getElementById('ragFilterPdf').value;
+                const resp = await fetch('/rag/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        question: question,
+                        session_id: chatSessionId,
+                        filter_filename: filterPdf || null,
+                        top_k: 5,
+                    }),
+                });
+                
+                const data = await resp.json();
+                
+                // Remove typing indicator
+                removeChatMessage(typingId);
+                
+                if (data.answer) {
+                    const sources = (data.sources || []).map(s => `p${s.page} (${s.filename})`).join(', ');
+                    addChatMessage('assistant', data.answer, sources);
+                } else {
+                    addChatMessage('assistant', 'Sorry, I could not generate an answer. Please make sure PDFs are uploaded to the knowledge base.');
+                }
+                
+            } catch (err) {
+                removeChatMessage(typingId);
+                addChatMessage('assistant', `Error: ${err.message}. Is the RAG service running?`);
+            }
+        }
+        
+        let chatMsgCounter = 0;
+        
+        function addChatMessage(role, text, sources = '') {
+            const container = document.getElementById('chatMessages');
+            const msgId = 'chat-msg-' + (++chatMsgCounter);
+            
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'chat-msg ' + role;
+            msgDiv.id = msgId;
+            msgDiv.innerHTML = `
+                <div class="msg-bubble">${text}</div>
+                ${sources ? `<div class="msg-sources">📎 Sources: ${sources}</div>` : ''}
+            `;
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+            return msgId;
+        }
+        
+        function removeChatMessage(msgId) {
+            const el = document.getElementById(msgId);
+            if (el) el.remove();
+        }
+        
+        async function clearChat() {
+            document.getElementById('chatMessages').innerHTML = `
+                <div class="chat-msg assistant">
+                    <div class="msg-bubble">Chat cleared. Ask me anything about the uploaded annual reports.</div>
+                </div>
+            `;
+            chatSessionId = 'web_' + Date.now();
+            try {
+                await fetch('/rag/clear-chat?session_id=' + chatSessionId, { method: 'POST' });
+            } catch (err) { /* ignore */ }
+        }
+        
+        // ===== RAG VALIDATION (Manual) =====
+        async function runRagValidation() {
+            const btn = document.getElementById('ragValidateBtn');
+            const excelPath = document.getElementById('ragValidatePath').value.trim();
+            const filterPdf = document.getElementById('ragValidatePdf').value;
+            const resultsEl = document.getElementById('ragValidateResults');
+            
+            if (!excelPath) {
+                alert('Please enter the extraction Excel path.');
+                return;
+            }
+            
+            // If a specific PDF is selected, verify it exists in the RAG vector store
+            if (filterPdf) {
+                btn.disabled = true;
+                btn.textContent = '⏳ Checking...';
+                resultsEl.classList.remove('hidden');
+                resultsEl.innerHTML = '<div class="spinner" style="display:inline-block;"></div> <span>Checking if document exists in RAG Knowledge Base...</span>';
+                
+                try {
+                    const listResp = await fetch('/rag/list');
+                    const listData = await listResp.json();
+                    const storedPdfs = listData.pdfs || [];
+                    const matchedPdf = storedPdfs.find(p => p.filename === filterPdf);
+                    
+                    if (!matchedPdf) {
+                        resultsEl.innerHTML = `
+                            <div style="padding:20px; text-align:center; background:#fef3c7; border-radius:8px; border:1px solid #fbbf24;">
+                                <div style="font-size:32px; margin-bottom:8px;">📭</div>
+                                <h3 style="color:#92400e; margin-bottom:8px;">Document not found for RAG leverage</h3>
+                                <p style="color:#78350f; font-size:14px;">
+                                    The PDF <strong>"${filterPdf}"</strong> has not been uploaded to the RAG Knowledge Base.<br>
+                                    Please upload it in the <strong>Upload PDFs to Vector Store</strong> section above first.
+                                </p>
+                            </div>
+                        `;
+                        btn.disabled = false;
+                        btn.textContent = '👔 Run CA RAG Validation';
+                        return;
+                    }
+                } catch (err) {
+                    resultsEl.innerHTML = `<p style="color:var(--error);">Error checking RAG store: ${err.message}</p>`;
+                    btn.disabled = false;
+                    btn.textContent = '👔 Run CA RAG Validation';
+                    return;
+                }
+            }
+            
+            btn.disabled = true;
+            btn.textContent = '⏳ Starting...';
+            resultsEl.classList.remove('hidden');
+            
+            // Show RAG source info if filter selected
+            let sourceInfo = '';
+            if (filterPdf) {
+                sourceInfo = `
+                    <div style="padding:12px 16px; background:#f5f3ff; border:1px solid #ddd6fe; border-radius:8px; margin-bottom:16px; display:flex; align-items:center; gap:12px;">
+                        <span style="font-size:20px;">📚</span>
+                        <div>
+                            <div style="font-weight:600; font-size:14px; color:var(--rag-primary);">RAG Source: ${filterPdf}</div>
+                            <div style="font-size:12px; color:var(--text-muted);">Only this document will be used for validation</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            resultsEl.innerHTML = sourceInfo + '<div id="ragManualProgressArea"><div class="spinner" style="display:inline-block;"></div> <span>Starting CA RAG Agent validation...</span></div>';
+            
+            try {
+                const manualSessionId = 'rag_manual_' + Date.now();
+                const resp = await fetch('/rag/validate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        extraction_excel_path: excelPath,
+                        pdf_filename: filterPdf || null,
+                        statement_types: ['balance_sheet', 'profit_and_loss', 'cash_flow'],
+                        session_id: manualSessionId,
+                    }),
+                });
+                
+                const data = await resp.json();
+                
+                if (resp.status !== 200) {
+                    resultsEl.innerHTML = `<p style="color:var(--error);">Validation failed: ${data.detail || 'Unknown error'}</p>`;
+                    btn.disabled = false;
+                    btn.textContent = '👔 Run CA RAG Validation';
+                    return;
+                }
+                
+                // Poll for progress
+                btn.textContent = '⏳ Running...';
+                const manualPoll = setInterval(async () => {
+                    try {
+                        const pResp = await fetch('/rag/progress/' + manualSessionId);
+                        const pData = await pResp.json();
+                        
+                        // Render progress in the manual progress area
+                        const area = document.getElementById('ragManualProgressArea');
+                        if (area) {
+                            const progress = pData.progress || 0;
+                            const step = pData.current_step || 'Preparing...';
+                            const total = pData.total_items || 0;
+                            const completed = pData.completed_items || 0;
+                            const details = pData.details || [];
+                            
+                            let html = `
+                                <div class="overall-progress" style="background:linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);">
+                                    <div class="progress-header">
+                                        <div>
+                                            <div style="font-size:12px; opacity:0.7; margin-bottom:2px;">CA RAG Agent</div>
+                                            <div class="file-name">🧠 ${step}</div>
+                                        </div>
+                                        <div class="pct">${Math.round(progress)}%</div>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: ${progress}%"></div>
+                                    </div>
+                                    ${total > 0 ? `<div style="font-size:12px; opacity:0.8; margin-top:8px;">${completed} / ${total} items validated</div>` : ''}
+                                </div>
+                            `;
+                            
+                            if (details.length > 0) {
+                                const recentDetails = details.slice(-15);
+                                html += '<div style="max-height:200px; overflow-y:auto; border:1px solid var(--border); border-radius:8px; margin-top:12px; padding:8px; font-size:12px; font-family:monospace; background:#fafafa;">';
+                                recentDetails.forEach(d => {
+                                    let color = 'var(--text-muted)';
+                                    if (d.includes('[changed]')) color = '#92400e';
+                                    else if (d.includes('[filled]')) color = '#166534';
+                                    else if (d.includes('[verified]')) color = '#1e40af';
+                                    else if (d.includes('ERROR')) color = 'var(--error)';
+                                    html += `<div style="padding:2px 0; color:${color};">${d}</div>`;
+                                });
+                                html += '</div>';
+                            }
+                            
+                            area.innerHTML = html;
+                        }
+                        
+                        if (pData.status === 'completed') {
+                            clearInterval(manualPoll);
+                            if (pData.result) {
+                                if (filterPdf) pData.result._rag_filename = filterPdf;
+                                renderRagValidationResults(pData.result, resultsEl);
+                            }
+                            btn.disabled = false;
+                            btn.textContent = '👔 Run CA RAG Validation';
+                        } else if (pData.status === 'failed') {
+                            clearInterval(manualPoll);
+                            resultsEl.innerHTML = `<p style="color:var(--error);">RAG validation failed: ${pData.error || 'Unknown error'}</p>`;
+                            btn.disabled = false;
+                            btn.textContent = '👔 Run CA RAG Validation';
+                        }
+                    } catch (err) {
+                        console.error('RAG progress poll error:', err);
+                    }
+                }, 1500);
+                
+            } catch (err) {
+                resultsEl.innerHTML = `<p style="color:var(--error);">Error: ${err.message}</p>`;
+                btn.disabled = false;
+                btn.textContent = '👔 Run CA RAG Validation';
+            }
+        }
+        
+        // ===== JOBS =====
+        async function loadJobs() {
+            try {
+                const resp = await fetch('/jobs');
+                const data = await resp.json();
+                renderJobs(data);
+            } catch (err) {
+                document.getElementById('jobsContent').innerHTML = '<p style="color:var(--error)">Failed to load jobs.</p>';
+            }
+        }
+        
+        function renderJobs(data) {
+            const el = document.getElementById('jobsContent');
+            if (!data.jobs || data.jobs.length === 0) {
+                el.innerHTML = '<p style="color:var(--text-muted)">No jobs yet. Upload a PDF to get started!</p>';
+                return;
+            }
+            
+            let html = `
+                <table class="job-table">
+                    <thead><tr><th>Job ID</th><th>Status</th><th>Files</th><th>Created</th><th>Actions</th></tr></thead>
+                    <tbody>
+            `;
+            
+            data.jobs.forEach(job => {
+                const badgeCls = 'badge-' + job.status;
+                const created = new Date(job.created_at).toLocaleString();
+                const files = job.output_files || [];
+                
+                html += `
+                    <tr>
+                        <td><code>${job.job_id}</code></td>
+                        <td><span class="badge ${badgeCls}">${job.status}</span></td>
+                        <td>${job.file_count} file(s)${files.length > 0 ? ' → ' + files.join(', ') : ''}</td>
+                        <td>${created}</td>
+                        <td>
+                            ${job.status === 'completed' && files.length > 0 ? `
+                                <a class="download-link" href="/download/${job.job_id}" target="_blank">📥 Download</a>
+                            ` : ''}
+                            ${job.status === 'completed' || job.status === 'failed' ? `
+                                <button class="btn btn-secondary" style="padding:4px 10px; font-size:12px; margin-left:8px;" 
+                                    onclick="deleteJob('${job.job_id}')">🗑️</button>
+                            ` : ''}
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += '</tbody></table>';
+            el.innerHTML = html;
+        }
+        
+        async function deleteJob(jobId) {
+            if (!confirm('Delete job ' + jobId + '?')) return;
+            try {
+                await fetch('/jobs/' + jobId, { method: 'DELETE' });
+                loadJobs();
+            } catch (err) {
+                alert('Failed to delete job.');
+            }
+        }
+        
+        // ===== INIT =====
+        loadJobs();
+    </script>
+</body>
+</html>

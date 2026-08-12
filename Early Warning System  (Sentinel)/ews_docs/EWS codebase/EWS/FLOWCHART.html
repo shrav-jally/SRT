@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EWS — Master Pipeline Flowchart (LLM-First)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f7fafc;
+            color: #2d3748;
+            overflow: auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #44337a, #805ad5);
+            color: #fff;
+            padding: 32px 48px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(68,51,122,0.3);
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+        .header .subtitle { font-size: 14px; opacity: 0.85; }
+        .legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 14px;
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 72px;
+            z-index: 99;
+            flex-wrap: wrap;
+        }
+        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; }
+        .legend-swatch { width: 18px; height: 12px; border-radius: 3px; }
+        .chart-container { padding: 40px 20px; display: flex; justify-content: center; }
+        .chart-container svg { display: block; }
+
+        .fc { font-family: 'Segoe UI', system-ui, sans-serif; }
+        .fc-title { font-size: 13px; fill: #fff; font-weight: 700; }
+        .fc-sub { font-size: 9px; fill: rgba(255,255,255,0.85); font-weight: 600; letter-spacing: 0.5px; }
+        .fc-label { font-size: 11px; fill: #2d3748; font-weight: 500; }
+        .fc-sm { font-size: 9px; fill: #718096; }
+        .fc-yes { font-size: 9px; fill: #38a169; font-weight: 700; }
+        .fc-no { font-size: 9px; fill: #d69e2e; font-weight: 700; }
+        .fc-llm { font-size: 9px; fill: #805ad5; font-weight: 700; }
+        .fc-white { font-size: 10px; fill: #fff; font-weight: 600; }
+        .fc-badge { font-size: 8px; fill: rgba(255,255,255,0.9); font-weight: 700; letter-spacing: 0.3px; }
+        .fc-step { font-size: 10px; fill: #1a365d; font-weight: 700; }
+        .fc-why-title { font-size: 10px; fill: #2a4365; font-weight: 700; }
+        .fc-why-body { font-size: 8.5px; fill: #2c5282; }
+        .fc-how-title { font-size: 10px; fill: #44337a; font-weight: 700; }
+        .fc-how-body { font-size: 8.5px; fill: #553c9a; }
+        .fc-std-title { font-size: 10px; fill: #975a16; font-weight: 700; }
+        .fc-std-body { font-size: 8.5px; fill: #975a16; }
+
+        @media print { .header, .legend { position: static; } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>EWS Annual Report Extraction Agent</h1>
+    <div class="subtitle">Master Pipeline Flowchart — LLM-First Architecture with Why, How & Financial Standards</div>
+</div>
+
+<div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:#805ad5"></div> ★ LLM Primary</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#2b6cb0"></div> Deterministic Step</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#38a169"></div> Success</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#d69e2e"></div> Warning / Fallback</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#e53e3e"></div> Error</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#edf2f7; border:1px solid #2b6cb0"></div> Decision</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#ebf8ff; border:1px solid #2b6cb0"></div> WHY box</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#e9d8fd; border:1px solid #805ad5"></div> HOW box</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#fefcbf; border:1px solid #d69e2e"></div> STANDARD box</div>
+</div>
+
+<div class="chart-container">
+<svg width="1400" height="5400" viewBox="0 0 1400 5400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <marker id="aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2b6cb0"/></marker>
+        <marker id="aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#38a169"/></marker>
+        <marker id="aP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#805ad5"/></marker>
+        <marker id="aY" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#d69e2e"/></marker>
+        <marker id="aR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#e53e3e"/></marker>
+        <filter id="sh" x="-2%" y="-2%" width="104%" height="104%"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.08"/></filter>
+    </defs>
+
+    <!-- ================================================================ -->
+    <!-- PDF INPUT                                                        -->
+    <!-- ================================================================ -->
+    <rect x="500" y="20" width="300" height="50" rx="25" fill="#1a365d" filter="url(#sh)"/>
+    <text x="650" y="42" text-anchor="middle" class="fc-title">PDF Upload</text>
+    <text x="650" y="58" text-anchor="middle" class="fc-badge">ANNUAL REPORT PDF</text>
+    <line x1="650" y1="70" x2="650" y2="100" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 1: FIND PAGES — LLM-FIRST                                  -->
+    <!-- ================================================================ -->
+    <rect x="440" y="100" width="420" height="56" rx="8" fill="#805ad5" filter="url(#sh)"/>
+    <text x="650" y="122" text-anchor="middle" class="fc-title">Step 1: Find Financial Statement Pages</text>
+    <text x="650" y="140" text-anchor="middle" class="fc-badge">★ LLM PAGE ID (PRIMARY) + DETERMINISTIC VALIDATION (SECONDARY)</text>
+
+    <!-- WHY box -->
+    <rect x="920" y="90" width="260" height="76" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="106" class="fc-why-title">❓ WHY — Find Pages</text>
+    <text x="930" y="120" class="fc-why-body">Wrong pages → wrong data. Must identify</text>
+    <text x="930" y="132" class="fc-why-body">BS, P&L, CF pages before any extraction.</text>
+    <text x="930" y="146" class="fc-why-body">Indian ARs are 100+ pages; only 3-12</text>
+    <text x="930" y="158" class="fc-why-body">contain the financial statements.</text>
+    <line x1="860" y1="128" x2="920" y2="128" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- HOW box -->
+    <rect x="1200" y="90" width="190" height="76" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="1210" y="106" class="fc-how-title">⚙️ HOW — LLM-First</text>
+    <text x="1210" y="120" class="fc-how-body">1. Quick det check (cost opt)</text>
+    <text x="1210" y="132" class="fc-how-body">2. ★ LLM page ID (primary)</text>
+    <text x="1210" y="144" class="fc-how-body">3. Det validation (secondary)</text>
+    <text x="1210" y="158" class="fc-how-body">4. Notes (always det)</text>
+    <line x1="1180" y1="128" x2="1200" y2="128" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- STANDARD box -->
+    <rect x="80" y="90" width="280" height="76" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="90" y="106" class="fc-std-title">📜 STANDARD — Schedule III</text>
+    <text x="90" y="120" class="fc-std-body">Prescribes exact titles: "Balance Sheet",</text>
+    <text x="90" y="132" class="fc-std-body">"Statement of Profit and Loss",</text>
+    <text x="90" y="144" class="fc-std-body">"Cash Flow Statement". Standard titles</text>
+    <text x="90" y="158" class="fc-std-body">enable quick det check to skip LLM ~70%.</text>
+    <line x1="360" y1="128" x2="440" y2="128" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="156" x2="650" y2="186" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- Sub-step 1a: Quick Deterministic Check -->
+    <rect x="470" y="186" width="360" height="44" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="204" text-anchor="middle" class="fc-white">1a. Quick Deterministic Check</text>
+    <text x="650" y="218" text-anchor="middle" class="fc-badge">COST OPTIMIZATION · PASS 1 TITLE-AREA SCAN ONLY</text>
+
+    <!-- WHY for quick check -->
+    <rect x="920" y="186" width="260" height="44" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="202" class="fc-why-title">❓ WHY — Quick Det Check First?</text>
+    <text x="930" y="216" class="fc-why-body">~70% of Indian ARs use exact Schedule III</text>
+    <text x="930" y="228" class="fc-why-body">titles → no LLM needed → saves cost & time.</text>
+    <line x1="830" y1="208" x2="920" y2="208" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="230" x2="650" y2="258" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Diamond: All 3 found with standard titles? -->
+    <polygon points="650,258 770,298 650,338 530,298" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="650" y="296" text-anchor="middle" class="fc-label">All 3 found?</text>
+    <text x="650" y="310" text-anchor="middle" class="fc-sm">confidence ≥ 1.0?</text>
+
+    <!-- Yes → skip LLM (cost optimization) -->
+    <line x1="770" y1="298" x2="870" y2="298" stroke="#38a169" stroke-width="1.5"/>
+    <text x="810" y="292" class="fc-yes">Yes (~70%)</text>
+    <rect x="870" y="280" width="200" height="36" rx="6" fill="#38a169"/>
+    <text x="970" y="298" text-anchor="middle" class="fc-white">Skip LLM ✓</text>
+    <text x="970" y="310" text-anchor="middle" class="fc-badge">quick_deterministic</text>
+    <line x1="970" y1="316" x2="970" y2="490" stroke="#38a169" stroke-width="1.5"/>
+    <line x1="970" y1="490" x2="650" y2="490" stroke="#38a169" stroke-width="1.5" marker-end="url(#aG)"/>
+
+    <!-- No → LLM Primary -->
+    <line x1="650" y1="338" x2="650" y2="366" stroke="#805ad5" stroke-width="2" marker-end="url(#aP)"/>
+    <text x="660" y="356" class="fc-llm">No (~30%)</text>
+
+    <!-- Sub-step 1b: ★ LLM Page Identification (PRIMARY) -->
+    <rect x="460" y="366" width="380" height="50" rx="8" fill="#805ad5" filter="url(#sh)"/>
+    <text x="650" y="386" text-anchor="middle" class="fc-title">1b. ★ LLM Page Identification (PRIMARY)</text>
+    <text x="650" y="404" text-anchor="middle" class="fc-badge">SEND PAGE SNIPPETS → QWEN2.5 → PAGES + STATEMENT_TYPE</text>
+
+    <!-- HOW for LLM page ID -->
+    <rect x="920" y="360" width="260" height="62" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="376" class="fc-how-title">⚙️ HOW — LLM Page ID</text>
+    <text x="930" y="390" class="fc-how-body">Prompt: "Which pages contain BS/P&L/CF?"</text>
+    <text x="930" y="402" class="fc-how-body">Returns: {"balance_sheet": [47,48],</text>
+    <text x="930" y="414" class="fc-how-body"> "profit_and_loss": [50,51], "statement_type":</text>
+    <text x="930" y="426" class="fc-how-body"> "Standalone", "cash_flow": [55]}</text>
+    <line x1="840" y1="391" x2="920" y2="391" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- WHY for LLM primary -->
+    <rect x="1200" y="360" width="190" height="62" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="1210" y="376" class="fc-why-title">❓ WHY — LLM Primary</text>
+    <text x="1210" y="390" class="fc-why-body">Non-standard titles, OCR</text>
+    <text x="1210" y="402" class="fc-why-body">errors, bilingual headers,</text>
+    <text x="1210" y="414" class="fc-why-body">CID-fragmented text — LLM</text>
+    <text x="1210" y="426" class="fc-why-body">reads context to infer pages.</text>
+    <line x1="1180" y1="391" x2="1200" y2="391" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- LLM error path -->
+    <line x1="460" y1="391" x2="380" y2="391" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="400" y="383" class="fc-sm" fill="#e53e3e">LLM fail</text>
+    <rect x="200" y="373" width="180" height="36" rx="6" fill="#fed7d7" stroke="#e53e3e" stroke-width="1"/>
+    <text x="290" y="391" text-anchor="middle" class="fc-sm" fill="#822727" style="font-weight:600">Full Deterministic Fallback</text>
+    <text x="290" y="403" text-anchor="middle" class="fc-badge" fill="#822727">3-pass title scan (old method)</text>
+    <line x1="290" y1="409" x2="290" y2="490" stroke="#d69e2e" stroke-width="1.5"/>
+    <line x1="290" y1="490" x2="500" y2="490" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#aY)"/>
+
+    <line x1="650" y1="416" x2="650" y2="444" stroke="#805ad5" stroke-width="1.5" marker-end="url(#aP)"/>
+
+    <!-- Sub-step 1c: Deterministic Validation (SECONDARY) -->
+    <rect x="460" y="444" width="380" height="44" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="462" text-anchor="middle" class="fc-white">1c. Deterministic Validation (SECONDARY)</text>
+    <text x="650" y="476" text-anchor="middle" class="fc-badge">MERGE LLM+DET PAGES (UNION) · EXPAND CONTINUATIONS · CROSS-VALIDATE TYPE</text>
+
+    <!-- HOW for validation -->
+    <rect x="920" y="444" width="260" height="44" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="460" class="fc-how-title">⚙️ HOW — Det Validation</text>
+    <text x="930" y="474" class="fc-how-body">Full 3-pass scan → union with LLM pages</text>
+    <text x="930" y="486" class="fc-how-body">→ expand continuations → cross-validate type</text>
+    <line x1="840" y1="466" x2="920" y2="466" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- WHY for validation -->
+    <rect x="1200" y="444" width="190" height="44" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="1210" y="460" class="fc-why-title">❓ WHY — Det Validation?</text>
+    <text x="1210" y="474" class="fc-why-body">Catches LLM hallucinations,</text>
+    <text x="1210" y="486" class="fc-why-body">adds missed continuation pages.</text>
+    <line x1="1180" y1="466" x2="1200" y2="466" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="488" x2="650" y2="520" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- Notes detection (always deterministic) -->
+    <rect x="470" y="520" width="360" height="44" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="538" text-anchor="middle" class="fc-white">1d. Detect Notes to Accounts Pages</text>
+    <text x="650" y="552" text-anchor="middle" class="fc-badge">ALWAYS DETERMINISTIC · "NOTES TO FINANCIAL STATEMENTS" → SEARCH</text>
+
+    <!-- WHY for Notes -->
+    <rect x="920" y="520" width="260" height="44" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="536" class="fc-why-title">❓ WHY — Notes Detection</text>
+    <text x="930" y="550" class="fc-why-body">OFI items (Contingent Liabilities,</text>
+    <text x="930" y="562" class="fc-why-body">Related Party, Auditor Remuneration)</text>
+    <text x="930" y="574" class="fc-why-body">are ONLY in Notes, not in CF statement.</text>
+    <line x1="830" y1="542" x2="920" y2="542" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- STANDARD for Notes -->
+    <rect x="80" y="520" width="280" height="44" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="90" y="536" class="fc-std-title">📜 STANDARD — Ind AS 1 + Sec 211</text>
+    <text x="90" y="550" class="fc-std-body">Ind AS 1 mandates numbered notes</text>
+    <text x="90" y="562" class="fc-std-body">cross-referenced from BS/P&L/CF.</text>
+    <line x1="360" y1="542" x2="470" y2="542" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="564" x2="650" y2="610" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 2: DETECT YEAR                                             -->
+    <!-- ================================================================ -->
+    <rect x="470" y="610" width="360" height="56" rx="8" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="632" text-anchor="middle" class="fc-title">Step 2: Detect Financial Year</text>
+    <text x="650" y="650" text-anchor="middle" class="fc-badge">5 FILENAME PATTERNS → PAGE TEXT → LLM VERIFY</text>
+
+    <!-- WHY -->
+    <rect x="920" y="610" width="260" height="56" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="626" class="fc-why-title">❓ WHY — Year Detection</text>
+    <text x="930" y="640" class="fc-why-body">Headers have 2 year columns (current +</text>
+    <text x="930" y="652" class="fc-why-body">previous). Must pick correct column.</text>
+    <text x="930" y="664" class="fc-why-body">Wrong year → wrong data column → all values off.</text>
+    <line x1="830" y1="638" x2="920" y2="638" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- STANDARD -->
+    <rect x="80" y="610" width="280" height="56" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="90" y="626" class="fc-std-title">📜 STANDARD — Schedule III + FY Conv</text>
+    <text x="90" y="640" class="fc-std-body">BS: "As at March 31, YYYY"</text>
+    <text x="90" y="652" class="fc-std-body">P&L: "For the year ended March 31, YYYY"</text>
+    <text x="90" y="664" class="fc-std-body">Indian FY: Apr 1 → Mar 31 (ending year)</text>
+    <line x1="360" y1="638" x2="470" y2="638" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="666" x2="650" y2="690" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- Filename patterns -->
+    <rect x="480" y="690" width="340" height="110" rx="6" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5" filter="url(#sh)"/>
+    <text x="650" y="708" text-anchor="middle" class="fc-step">Filename Pattern Matching (5 ordered)</text>
+    <text x="500" y="726" class="fc-sm">① <tspan font-weight="600">2022-2023</tspan> → 2023 (full range, HIGH)</text>
+    <text x="500" y="742" class="fc-sm">② <tspan font-weight="600">2017-18</tspan> → 2018 (2-digit suffix, HIGH)</text>
+    <text x="500" y="758" class="fc-sm">③ <tspan font-weight="600">202021</tspan> → 2021 (compact 6-digit, HIGH)</text>
+    <text x="500" y="774" class="fc-sm">④ <tspan font-weight="600">FY2024</tspan> → 2024 (FY prefix, MED)</text>
+    <text x="500" y="790" class="fc-sm">⑤ <tspan font-weight="600">2023</tspan> → 2023 (single year, LOW → try page text first)</text>
+
+    <!-- HOW for filename -->
+    <rect x="920" y="690" width="260" height="110" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="706" class="fc-how-title">⚙️ HOW — Filename Patterns</text>
+    <text x="930" y="720" class="fc-how-body">regex: (20\d{2})\s*[-_]\s*(20\d{2})</text>
+    <text x="930" y="734" class="fc-how-body">regex: (20\d{2})\s*[-_]\s*(\d{2})</text>
+    <text x="930" y="748" class="fc-how-body">regex: (20\d{2})(\d{2}) compact</text>
+    <text x="930" y="762" class="fc-how-body">regex: FY\s*(20\d{2})</text>
+    <text x="930" y="776" class="fc-how-body">regex: (20\d{2}) single</text>
+    <text x="930" y="792" class="fc-how-body">Validation: year2 == year1 + 1</text>
+    <line x1="820" y1="745" x2="920" y2="745" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="800" x2="650" y2="828" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Diamond: High confidence? -->
+    <polygon points="650,828 750,864 650,900 550,864" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="650" y="868" text-anchor="middle" class="fc-label">High confidence?</text>
+
+    <!-- Yes -->
+    <line x1="750" y1="864" x2="850" y2="864" stroke="#38a169" stroke-width="1.5" marker-end="url(#aG)"/>
+    <text x="790" y="858" class="fc-yes">High</text>
+    <rect x="850" y="844" width="180" height="40" rx="6" fill="#38a169"/>
+    <text x="940" y="861" text-anchor="middle" class="fc-white">Return (year, method)</text>
+    <text x="940" y="875" text-anchor="middle" class="fc-badge">e.g. filename_full_range</text>
+    <line x1="940" y1="884" x2="940" y2="940" stroke="#38a169" stroke-width="1.5"/>
+    <line x1="940" y1="940" x2="650" y2="940" stroke="#38a169" stroke-width="1.5" marker-end="url(#aG)"/>
+
+    <!-- Low → Page text -->
+    <line x1="650" y1="900" x2="650" y2="920" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#aY)"/>
+    <text x="660" y="914" class="fc-no">Low</text>
+
+    <rect x="500" y="920" width="300" height="40" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="938" text-anchor="middle" class="fc-white">Page Text Scan</text>
+    <text x="650" y="952" text-anchor="middle" class="fc-badge">(MARCH|APRIL) DD,? YYYY → LATEST YEAR</text>
+
+    <!-- HOW for page text -->
+    <rect x="920" y="920" width="260" height="40" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="936" class="fc-how-title">⚙️ HOW — Page Text</text>
+    <text x="930" y="950" class="fc-how-body">regex: (March|April)\s+\d{1,2},?\s*(20\d{2})</text>
+    <line x1="800" y1="940" x2="920" y2="940" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="960" x2="650" y2="984" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Diamond -->
+    <polygon points="650,984 740,1016 650,1048 560,1016" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="650" y="1020" text-anchor="middle" class="fc-label">Year found?</text>
+
+    <line x1="740" y1="1016" x2="820" y2="1016" stroke="#38a169" stroke-width="1.5"/>
+    <text x="770" y="1010" class="fc-yes">Yes</text>
+    <line x1="820" y1="1016" x2="820" y2="1080" stroke="#38a169" stroke-width="1.5"/>
+    <line x1="820" y1="1080" x2="650" y2="1080" stroke="#38a169" stroke-width="1.5" marker-end="url(#aG)"/>
+
+    <line x1="650" y1="1048" x2="650" y2="1072" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#aY)"/>
+    <text x="660" y="1064" class="fc-no">No</text>
+
+    <rect x="520" y="1072" width="260" height="36" rx="6" fill="#d69e2e" filter="url(#sh)"/>
+    <text x="650" y="1090" text-anchor="middle" class="fc-white">Default: Current Year (LOW CONF)</text>
+
+    <line x1="650" y1="1108" x2="650" y2="1132" stroke="#805ad5" stroke-width="1.5" marker-end="url(#aP)"/>
+
+    <!-- Diamond: Low conf? -->
+    <polygon points="650,1132 750,1168 650,1204 550,1168" fill="#edf2f7" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="650" y="1164" text-anchor="middle" class="fc-label">Low conf</text>
+    <text x="650" y="1178" text-anchor="middle" class="fc-label">method?</text>
+
+    <!-- Yes → LLM -->
+    <line x1="750" y1="1168" x2="850" y2="1168" stroke="#805ad5" stroke-width="1.5" marker-end="url(#aP)"/>
+    <text x="790" y="1162" class="fc-llm">Yes</text>
+
+    <rect x="850" y="1148" width="240" height="40" rx="6" fill="#805ad5" filter="url(#sh)"/>
+    <text x="970" y="1166" text-anchor="middle" class="fc-white">★ LLM Verify Year</text>
+    <text x="970" y="1180" text-anchor="middle" class="fc-badge">MAY CORRECT → llm_verified</text>
+
+    <!-- HOW for LLM verify -->
+    <rect x="1180" y="1138" width="200" height="60" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="1190" y="1154" class="fc-how-title">⚙️ HOW — LLM Year Verify</text>
+    <text x="1190" y="1168" class="fc-how-body">Sends first 1500 chars of</text>
+    <text x="1190" y="1180" class="fc-how-body">first FS page to LLM.</text>
+    <text x="1190" y="1192" class="fc-how-body">Returns: {"year": int,</text>
+    <text x="1190" y="1204" class="fc-how-body"> "confidence": "high"}</text>
+    <line x1="1090" y1="1168" x2="1180" y2="1168" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- WHY for LLM verify -->
+    <rect x="1180" y="1080" width="200" height="50" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="1190" y="1096" class="fc-why-title">❓ WHY — LLM Verify</text>
+    <text x="1190" y="1110" class="fc-why-body">Single year from filename could be</text>
+    <text x="1190" y="1122" class="fc-why-body">start or end of FY. LLM reads the</text>
+    <text x="1190" y="1134" class="fc-why-body">actual page to confirm.</text>
+    <line x1="1090" y1="1105" x2="1180" y2="1105" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- LLM error -->
+    <line x1="970" y1="1188" x2="970" y2="1212" stroke="#e53e3e" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="980" y="1204" class="fc-sm" fill="#e53e3e">fail</text>
+    <rect x="900" y="1212" width="140" height="28" rx="4" fill="#fed7d7" stroke="#e53e3e" stroke-width="1"/>
+    <text x="970" y="1230" text-anchor="middle" class="fc-sm" fill="#822727">Keep detected year</text>
+
+    <!-- No (high conf) -->
+    <line x1="650" y1="1204" x2="650" y2="1240" stroke="#38a169" stroke-width="1.5" marker-end="url(#aG)"/>
+    <text x="660" y="1226" class="fc-yes">No (high)</text>
+
+    <!-- Year result -->
+    <rect x="530" y="1240" width="240" height="36" rx="6" fill="#38a169" filter="url(#sh)"/>
+    <text x="650" y="1258" text-anchor="middle" class="fc-white">Year Detected ✓</text>
+    <text x="650" y="1270" text-anchor="middle" class="fc-badge">target_year THREADED THROUGH PIPELINE</text>
+
+    <line x1="650" y1="1276" x2="650" y2="1320" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 2b: STATEMENT TYPE — LLM-DETECTED                          -->
+    <!-- ================================================================ -->
+    <rect x="440" y="1320" width="420" height="56" rx="8" fill="#805ad5" filter="url(#sh)"/>
+    <text x="650" y="1342" text-anchor="middle" class="fc-title">Step 2b: Statement Type Detection</text>
+    <text x="650" y="1360" text-anchor="middle" class="fc-badge">★ LLM-DETECTED (WITH PAGE ID) + DETERMINISTIC CROSS-VALIDATION</text>
+
+    <!-- WHY -->
+    <rect x="920" y="1320" width="260" height="56" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="1336" class="fc-why-title">❓ WHY — Statement Type</text>
+    <text x="930" y="1350" class="fc-why-body">Same item (e.g., "Borrowings") has</text>
+    <text x="930" y="1362" class="fc-why-body">different values in SA vs CO. Must</text>
+    <text x="930" y="1374" class="fc-why-body">extract from one version consistently.</text>
+    <line x1="860" y1="1348" x2="920" y2="1348" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- STANDARD -->
+    <rect x="80" y="1320" width="280" height="56" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="90" y="1336" class="fc-std-title">📜 STANDARD — Schedule III</text>
+    <text x="90" y="1350" class="fc-std-body">Requires both Standalone + Consolidated</text>
+    <text x="90" y="1362" class="fc-std-body">when company has subsidiaries.</text>
+    <text x="90" y="1374" class="fc-std-body">SA presented first → preferred by default.</text>
+    <line x1="360" y1="1348" x2="440" y2="1348" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="1376" x2="650" y2="1400" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- LLM-detected type -->
+    <rect x="470" y="1400" width="360" height="40" rx="6" fill="#805ad5" filter="url(#sh)"/>
+    <text x="650" y="1418" text-anchor="middle" class="fc-white">★ LLM: statement_type from page ID call</text>
+    <text x="650" y="1432" text-anchor="middle" class="fc-badge">SAME LLM CALL → NO EXTRA COST · "Standalone" / "Consolidated"</text>
+
+    <!-- HOW -->
+    <rect x="920" y="1400" width="260" height="40" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="1416" class="fc-how-title">⚙️ HOW — LLM Type Detection</text>
+    <text x="930" y="1430" class="fc-how-body">LLM returns statement_type with page nums</text>
+    <text x="930" y="1442" class="fc-how-body">→ zero additional LLM cost</text>
+    <line x1="830" y1="1420" x2="920" y2="1420" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="1440" x2="650" y2="1464" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Diamond: LLM type available? -->
+    <polygon points="650,1464 750,1498 650,1532 550,1498" fill="#edf2f7" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="650" y="1502" text-anchor="middle" class="fc-label">LLM type</text>
+    <text x="650" y="1514" text-anchor="middle" class="fc-label">available?</text>
+
+    <!-- Yes -->
+    <line x1="750" y1="1498" x2="850" y2="1498" stroke="#805ad5" stroke-width="1.5" marker-end="url(#aP)"/>
+    <text x="790" y="1492" class="fc-llm">Yes</text>
+    <rect x="850" y="1480" width="200" height="36" rx="6" fill="#805ad5"/>
+    <text x="950" y="1498" text-anchor="middle" class="fc-white">Use LLM-detected type</text>
+    <text x="950" y="1510" text-anchor="middle" class="fc-badge">Cross-validate with det keywords</text>
+    <line x1="950" y1="1516" x2="950" y2="1560" stroke="#805ad5" stroke-width="1.5"/>
+    <line x1="950" y1="1560" x2="650" y2="1560" stroke="#805ad5" stroke-width="1.5" marker-end="url(#aP)"/>
+
+    <!-- No → deterministic fallback -->
+    <line x1="650" y1="1532" x2="650" y2="1552" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#aY)"/>
+    <text x="660" y="1546" class="fc-no">No</text>
+
+    <rect x="470" y="1552" width="360" height="40" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="1570" text-anchor="middle" class="fc-white">Deterministic: _detect_statement_type()</text>
+    <text x="650" y="1584" text-anchor="middle" class="fc-badge">COUNT KEYWORDS → MAJORITY WINS → LABEL</text>
+
+    <line x1="650" y1="1592" x2="650" y2="1620" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- _prefer_standalone -->
+    <rect x="470" y="1620" width="360" height="40" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="1638" text-anchor="middle" class="fc-white">_prefer_standalone() Page Filtering</text>
+    <text x="650" y="1652" text-anchor="middle" class="fc-badge">SCAN FIRST 10 LINES → CLASSIFY → FILTER</text>
+
+    <!-- HOW -->
+    <rect x="920" y="1620" width="260" height="40" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="1636" class="fc-how-title">⚙️ HOW — Page Filtering</text>
+    <text x="930" y="1650" class="fc-how-body">"standalone" in title_area.lower()</text>
+    <text x="930" y="1662" class="fc-how-body">"consolidated" in title_area.lower()</text>
+    <line x1="830" y1="1640" x2="920" y2="1640" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="1660" x2="650" y2="1684" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Diamond -->
+    <polygon points="650,1684 750,1718 650,1752 550,1718" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="650" y="1722" text-anchor="middle" class="fc-label">Both types found?</text>
+
+    <!-- SA only -->
+    <line x1="550" y1="1718" x2="420" y2="1718" stroke="#38a169" stroke-width="1.5" marker-end="url(#aG)"/>
+    <text x="495" y="1712" class="fc-yes">SA only</text>
+    <rect x="280" y="1700" width="140" height="36" rx="6" fill="#38a169"/>
+    <text x="350" y="1717" text-anchor="middle" class="fc-white">Use all SA pages</text>
+
+    <!-- CO only -->
+    <line x1="750" y1="1718" x2="880" y2="1718" stroke="#805ad5" stroke-width="1.5" marker-end="url(#aP)"/>
+    <text x="805" y="1712" class="fc-llm">CO only</text>
+    <rect x="880" y="1700" width="140" height="36" rx="6" fill="#805ad5"/>
+    <text x="950" y="1717" text-anchor="middle" class="fc-white">Use all CO pages</text>
+
+    <!-- Both -->
+    <line x1="650" y1="1752" x2="650" y2="1776" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+    <text x="660" y="1768" class="fc-no">Both</text>
+
+    <rect x="500" y="1776" width="300" height="40" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="1794" text-anchor="middle" class="fc-white">Keep Standalone Pages Only</text>
+    <text x="650" y="1808" text-anchor="middle" class="fc-badge">UNLABELLED → ASSUMED STANDALONE</text>
+
+    <line x1="650" y1="1816" x2="650" y2="1860" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 3: EXTRACT TABLES                                          -->
+    <!-- ================================================================ -->
+    <rect x="470" y="1860" width="360" height="56" rx="8" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="1882" text-anchor="middle" class="fc-title">Step 3: Extract Financial Statement Tables</text>
+    <text x="650" y="1900" text-anchor="middle" class="fc-badge">PDFPLUMBER TEXT PARSING · LINE-BY-LINE</text>
+
+    <!-- WHY -->
+    <rect x="920" y="1860" width="260" height="56" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="1876" class="fc-why-title">❓ WHY — Text Parsing (not extract_tables)</text>
+    <text x="930" y="1890" class="fc-why-body">Indian ARs use gridless tables (no</text>
+    <text x="930" y="1902" class="fc-why-body">borders). pdfplumber.extract_tables()</text>
+    <text x="930" y="1914" class="fc-why-body">returns empty. extract_text() works.</text>
+    <line x1="830" y1="1888" x2="920" y2="1888" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- STANDARD -->
+    <rect x="80" y="1860" width="280" height="56" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="90" y="1876" class="fc-std-title">📜 STANDARD — Schedule III</text>
+    <text x="90" y="1890" class="fc-std-body">(a)(b)(c) numbering → section tracking</text>
+    <text x="90" y="1902" class="fc-std-body">"₹ in Lakhs/Crores" → unit detection</text>
+    <text x="90" y="1914" class="fc-std-body">Prescribed order → predictable parsing</text>
+    <line x1="360" y1="1888" x2="470" y2="1888" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="1916" x2="650" y2="1940" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Sub-steps -->
+    <rect x="500" y="1940" width="300" height="36" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="1958" text-anchor="middle" class="fc-white">pdfplumber.extract_text() per page</text>
+    <line x1="650" y1="1976" x2="650" y2="1996" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <rect x="500" y="1996" width="300" height="36" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="2014" text-anchor="middle" class="fc-white">Right-to-left value scan per line</text>
+    <text x="650" y="2026" text-anchor="middle" class="fc-badge">LABEL · NOTE_REF · VALUES · INDENT</text>
+
+    <!-- HOW -->
+    <rect x="920" y="1996" width="260" height="36" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="2012" class="fc-how-title">⚙️ HOW — Value Parsing</text>
+    <text x="930" y="2026" class="fc-how-body">(567.89) → -567.89 · 1,234 → 1234</text>
+    <line x1="800" y1="2014" x2="920" y2="2014" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="2032" x2="650" y2="2052" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <rect x="500" y="2052" width="300" height="36" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="2070" text-anchor="middle" class="fc-white">Section tracking + Unit detection</text>
+    <text x="650" y="2082" text-anchor="middle" class="fc-badge">30+ UNIT PATTERNS · SECTION HEADERS</text>
+    <line x1="650" y1="2088" x2="650" y2="2108" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Notes -->
+    <rect x="500" y="2108" width="300" height="36" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="2126" text-anchor="middle" class="fc-white">Step 3b: Extract Notes to Accounts</text>
+    <text x="650" y="2138" text-anchor="middle" class="fc-badge">ALL LINES PARSED · NOTE_REFS TRACKED</text>
+
+    <line x1="650" y1="2144" x2="650" y2="2190" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 4: MAP TO TEMPLATE — LLM-PRIMARY                          -->
+    <!-- ================================================================ -->
+    <rect x="440" y="2190" width="420" height="56" rx="8" fill="#805ad5" filter="url(#sh)"/>
+    <text x="650" y="2212" text-anchor="middle" class="fc-title">Step 4: Map Extracted Data to Template</text>
+    <text x="650" y="2230" text-anchor="middle" class="fc-badge">★ ALIAS → LLM (PRIMARY) → FUZZY (FALLBACK) · 3-WAY MERGE</text>
+
+    <!-- WHY -->
+    <rect x="920" y="2190" width="260" height="70" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="2206" class="fc-why-title">❓ WHY — Mapping Needed</text>
+    <text x="930" y="2220" class="fc-why-body">PDF labels ≠ template labels. Same item</text>
+    <text x="930" y="2232" class="fc-why-body">has different names across companies.</text>
+    <text x="930" y="2244" class="fc-why-body">e.g., "Tangible Assets" vs "Property,</text>
+    <text x="930" y="2256" class="fc-why-body">Plant and Equipment" — same thing.</text>
+    <line x1="860" y1="2218" x2="920" y2="2218" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- STANDARD -->
+    <rect x="80" y="2190" width="280" height="70" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="90" y="2206" class="fc-std-title">📜 STANDARD — Schedule III + Ind AS</text>
+    <text x="90" y="2220" class="fc-std-body">Schedule III: prescribed labels → common</text>
+    <text x="90" y="2232" class="fc-std-body">vocabulary for alias matching.</text>
+    <text x="90" y="2244" class="fc-std-body">Ind AS 109: "Other financial assets/liab"</text>
+    <text x="90" y="2256" class="fc-std-body">Ind AS 116: "Right of use assets" → alias</text>
+    <line x1="360" y1="2225" x2="440" y2="2225" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="2246" x2="650" y2="2270" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Tier 1: Keyword aliases -->
+    <rect x="470" y="2270" width="360" height="40" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="2288" text-anchor="middle" class="fc-white">Tier 1: Keyword Alias Pre-pass</text>
+    <text x="650" y="2302" text-anchor="middle" class="fc-badge">30+ BS · 10+ P&L · 50+ NOTES ALIASES · EXACT MATCH</text>
+
+    <!-- HOW for aliases -->
+    <rect x="920" y="2270" width="260" height="56" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="2286" class="fc-how-title">⚙️ HOW — Keyword Aliases</text>
+    <text x="930" y="2300" class="fc-how-body">"cwip" → "(b) Capital work-in-progress"</text>
+    <text x="930" y="2312" class="fc-how-body">"rou assets" → "(iv) Others" (Ind AS 116)</text>
+    <text x="930" y="2324" class="fc-how-body">"fvoci" → "Other financial assets"</text>
+    <line x1="830" y1="2290" x2="920" y2="2290" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="2310" x2="650" y2="2334" stroke="#805ad5" stroke-width="1.5" marker-end="url(#aP)"/>
+
+    <!-- Tier 2: ★ LLM Mapping (PRIMARY) -->
+    <rect x="460" y="2334" width="380" height="44" rx="6" fill="#805ad5" filter="url(#sh)"/>
+    <text x="650" y="2352" text-anchor="middle" class="fc-white">Tier 2: ★ LLM Mapping (PRIMARY)</text>
+    <text x="650" y="2366" text-anchor="middle" class="fc-badge">SEND TABLE SUMMARY + TEMPLATE → QWEN2.5 → MAPPING JSON</text>
+
+    <!-- HOW for LLM mapping -->
+    <rect x="920" y="2334" width="260" height="44" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="2350" class="fc-how-title">⚙️ HOW — LLM Mapping</text>
+    <text x="930" y="2364" class="fc-how-body">build_table_summary() → prompt → JSON</text>
+    <text x="930" y="2376" class="fc-how-body">validate_mapping_response() → MappingResult</text>
+    <line x1="840" y1="2356" x2="920" y2="2356" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- WHY for LLM mapping -->
+    <rect x="1200" y="2334" width="190" height="44" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="1210" y="2350" class="fc-why-title">❓ WHY — LLM Mapping</text>
+    <text x="1210" y="2364" class="fc-why-body">Semantic understanding: "Right of</text>
+    <text x="1210" y="2376" class="fc-why-body">use assets" → "Others (NC assets)"</text>
+    <line x1="1180" y1="2356" x2="1200" y2="2356" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="2378" x2="650" y2="2402" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#aY)"/>
+
+    <!-- Tier 3: Fuzzy (FALLBACK) -->
+    <rect x="470" y="2402" width="360" height="40" rx="6" fill="#d69e2e" filter="url(#sh)"/>
+    <text x="650" y="2420" text-anchor="middle" class="fc-white">Tier 3: Fuzzy Matching (FALLBACK)</text>
+    <text x="650" y="2434" text-anchor="middle" class="fc-badge">TOKEN_SORT_RATIO ≥ 70 · TWO-PASS OPTIMAL · SECTION-AWARE</text>
+
+    <!-- HOW for fuzzy -->
+    <rect x="920" y="2402" width="260" height="56" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="2418" class="fc-how-title">⚙️ HOW — Fuzzy + Section-aware</text>
+    <text x="930" y="2432" class="fc-how-body">rapidfuzz.token_sort_ratio()</text>
+    <text x="930" y="2444" class="fc-how-body">Same section: +15 bonus</text>
+    <text x="930" y="2456" class="fc-how-body">Diff section: −20 penalty</text>
+    <line x1="830" y1="2422" x2="920" y2="2422" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="2442" x2="650" y2="2466" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- 3-way merge -->
+    <rect x="460" y="2466" width="380" height="44" rx="8" fill="#38a169" filter="url(#sh)"/>
+    <text x="650" y="2484" text-anchor="middle" class="fc-title">3-Way Merge: Alias > LLM > Fuzzy</text>
+    <text x="650" y="2500" text-anchor="middle" class="fc-badge">_merge_alias_llm_and_fuzzy() · PARENT-CHILD DEDUP</text>
+
+    <!-- HOW for merge -->
+    <rect x="920" y="2466" width="260" height="44" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="2482" class="fc-how-title">⚙️ HOW — 3-Way Merge</text>
+    <text x="930" y="2496" class="fc-how-body">Alias wins over LLM wins over fuzzy</text>
+    <text x="930" y="2508" class="fc-how-body">Parent-child dedup across all 3 sources</text>
+    <line x1="840" y1="2488" x2="920" y2="2488" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="2510" x2="650" y2="2534" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Year column -->
+    <rect x="500" y="2534" width="300" height="40" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="2552" text-anchor="middle" class="fc-white">Year Column Selection</text>
+    <text x="650" y="2566" text-anchor="middle" class="fc-badge">_detect_year_column(headers, target_year)</text>
+
+    <line x1="650" y1="2574" x2="650" y2="2598" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Diamond -->
+    <polygon points="650,2598 750,2632 650,2666 550,2632" fill="#edf2f7" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="650" y="2636" text-anchor="middle" class="fc-label">target_year col found?</text>
+
+    <line x1="750" y1="2632" x2="850" y2="2632" stroke="#38a169" stroke-width="1.5" marker-end="url(#aG)"/>
+    <text x="790" y="2626" class="fc-yes">Yes</text>
+    <rect x="850" y="2616" width="160" height="32" rx="6" fill="#38a169"/>
+    <text x="930" y="2634" text-anchor="middle" class="fc-white">Use that column</text>
+
+    <line x1="650" y1="2666" x2="650" y2="2690" stroke="#d69e2e" stroke-width="1.5" marker-end="url(#aY)"/>
+    <text x="660" y="2682" class="fc-no">No</text>
+    <rect x="520" y="2690" width="260" height="32" rx="6" fill="#d69e2e"/>
+    <text x="650" y="2708" text-anchor="middle" class="fc-white">Fallback: Latest year column</text>
+
+    <line x1="650" y1="2722" x2="650" y2="2766" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 4b: NOTES → OFI                                            -->
+    <!-- ================================================================ -->
+    <rect x="470" y="2766" width="360" height="56" rx="8" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="2788" text-anchor="middle" class="fc-title">Step 4b: Notes → Other Financial Info</text>
+    <text x="650" y="2806" text-anchor="middle" class="fc-badge">3-PHASE MAPPING + SMART MERGE</text>
+
+    <!-- WHY -->
+    <rect x="920" y="2766" width="260" height="56" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="2782" class="fc-why-title">❓ WHY — Notes → OFI</text>
+    <text x="930" y="2796" class="fc-why-body">19 OFI items (Contingent Liabilities,</text>
+    <text x="930" y="2808" class="fc-why-body">Related Party, Auditor Remuneration)</text>
+    <text x="930" y="2820" class="fc-why-body">exist ONLY in Notes, not in CF stmt.</text>
+    <line x1="830" y1="2794" x2="920" y2="2794" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- STANDARD -->
+    <rect x="80" y="2766" width="280" height="56" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="90" y="2782" class="fc-std-title">📜 STANDARD — Ind AS 1, 24, 37</text>
+    <text x="90" y="2796" class="fc-std-body">Ind AS 1: Disclose contingent liabilities</text>
+    <text x="90" y="2808" class="fc-std-body">Ind AS 24: Related party disclosures</text>
+    <text x="90" y="2820" class="fc-std-body">Ind AS 37: Provisions & contingencies</text>
+    <line x1="360" y1="2794" x2="470" y2="2794" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="2822" x2="650" y2="2846" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Phase 1 -->
+    <rect x="500" y="2846" width="300" height="32" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="2864" text-anchor="middle" class="fc-white">Phase 1: Keyword Alias (50+ aliases)</text>
+    <line x1="650" y1="2878" x2="650" y2="2898" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Phase 2 -->
+    <rect x="500" y="2898" width="300" height="32" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="2916" text-anchor="middle" class="fc-white">Phase 2: Context-aware Total</text>
+    <line x1="650" y1="2930" x2="650" y2="2950" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Phase 3 -->
+    <rect x="500" y="2950" width="300" height="32" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="2968" text-anchor="middle" class="fc-white">Phase 3: Fuzzy Fallback (≥ 65)</text>
+    <line x1="650" y1="2982" x2="650" y2="3006" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <!-- Smart Merge -->
+    <rect x="480" y="3006" width="340" height="50" rx="8" fill="#38a169" filter="url(#sh)"/>
+    <text x="650" y="3026" text-anchor="middle" class="fc-title">Smart Merge into CF Mappings</text>
+    <text x="650" y="3044" text-anchor="middle" class="fc-badge">NEW→ADD · DEFAULT_ZERO→OVERRIDE · REAL→KEEP</text>
+
+    <!-- HOW for smart merge -->
+    <rect x="920" y="3006" width="260" height="50" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="930" y="3022" class="fc-how-title">⚙️ HOW — Smart Merge Rules</text>
+    <text x="930" y="3036" class="fc-how-body">Notes value for NEW item → add directly</text>
+    <text x="930" y="3048" class="fc-how-body">Notes > default_zero → override the 0</text>
+    <line x1="820" y1="3031" x2="920" y2="3031" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="3056" x2="650" y2="3106" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 4c-d: DEFAULT ZEROS & DERIVED                              -->
+    <!-- ================================================================ -->
+    <rect x="470" y="3106" width="360" height="56" rx="8" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="3128" text-anchor="middle" class="fc-title">Step 4c-d: Default Zeros & Derived Items</text>
+    <text x="650" y="3146" text-anchor="middle" class="fc-badge">COMMONLY ABSENT → 0 · RESIDUAL → parent−leaves</text>
+
+    <!-- WHY -->
+    <rect x="920" y="3106" width="260" height="56" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="3122" class="fc-why-title">❓ WHY — Default Zeros</text>
+    <text x="930" y="3136" class="fc-why-body">Ind AS requires disclosure even when 0.</text>
+    <text x="930" y="3148" class="fc-why-body">Absence in PDF ≠ missing. For rare items</text>
+    <text x="930" y="3160" class="fc-why-body">(Goodwill, Biological Assets) 0 is safe.</text>
+    <line x1="830" y1="3134" x2="920" y2="3134" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- STANDARD -->
+    <rect x="80" y="3106" width="280" height="56" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="90" y="3122" class="fc-std-title">📜 STANDARD — Ind AS 103, 41, 36</text>
+    <text x="90" y="3136" class="fc-std-body">Ind AS 103: Goodwill (business combos)</text>
+    <text x="90" y="3148" class="fc-std-body">Ind AS 41: Biological Assets (rare)</text>
+    <text x="90" y="3160" class="fc-std-body">Ind AS 36: Impairment (occasional)</text>
+    <line x1="360" y1="3134" x2="470" y2="3134" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- HOW -->
+    <rect x="1200" y="3106" width="190" height="56" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="1210" y="3122" class="fc-how-title">⚙️ HOW — Derived Items</text>
+    <text x="1210" y="3136" class="fc-how-body">"Other NC liabilities" =</text>
+    <text x="1210" y="3148" class="fc-how-body">Total NC Liab − Borrowings −</text>
+    <text x="1210" y="3160" class="fc-how-body">Trade Pay − Other Fin − Provisions</text>
+    <line x1="1090" y1="3134" x2="1200" y2="3134" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="3162" x2="650" y2="3216" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 5: WRITE EXCEL                                             -->
+    <!-- ================================================================ -->
+    <rect x="470" y="3216" width="360" height="56" rx="8" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="3238" text-anchor="middle" class="fc-title">Step 5: Write Excel Output</text>
+    <text x="650" y="3256" text-anchor="middle" class="fc-badge">7 SHEETS · VALUES + FORMULAS · RAW DATA</text>
+
+    <!-- WHY -->
+    <rect x="920" y="3216" width="260" height="56" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="3232" class="fc-why-title">❓ WHY — Formulas in Excel</text>
+    <text x="930" y="3246" class="fc-why-body">Schedule III prescribes aggregation:</text>
+    <text x="930" y="3258" class="fc-why-body">Total NC Assets = PPE + CWIP + Intangible</text>
+    <text x="930" y="3270" class="fc-why-body">+ FV + Others. Excel formulas auto-compute.</text>
+    <line x1="830" y1="3244" x2="920" y2="3244" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- STANDARD -->
+    <rect x="80" y="3216" width="280" height="56" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+    <text x="90" y="3232" class="fc-std-title">📜 STANDARD — Schedule III Format</text>
+    <text x="90" y="3246" class="fc-std-body">BS: 15 aggregation formulas (totals)</text>
+    <text x="90" y="3258" class="fc-std-body">P&L: 9 aggregation formulas (subtotals)</text>
+    <text x="90" y="3270" class="fc-std-body">CF: Direct mapping (no aggregation)</text>
+    <line x1="360" y1="3244" x2="470" y2="3244" stroke="#d69e2e" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="3272" x2="650" y2="3296" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <rect x="500" y="3296" width="300" height="32" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="3314" text-anchor="middle" class="fc-white">Write mapped values to Column C</text>
+    <line x1="650" y1="3328" x2="650" y2="3348" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <rect x="500" y="3348" width="300" height="32" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="3366" text-anchor="middle" class="fc-white">Apply Excel Formulas (BS:15 · P&L:9)</text>
+    <line x1="650" y1="3380" x2="650" y2="3400" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#aB)"/>
+
+    <rect x="500" y="3400" width="300" height="32" rx="6" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="3418" text-anchor="middle" class="fc-white">Write Raw Data Sheets (Raw BS/P&L/CF)</text>
+
+    <line x1="650" y1="3432" x2="650" y2="3476" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 6: COMPLETENESS                                            -->
+    <!-- ================================================================ -->
+    <rect x="470" y="3476" width="360" height="56" rx="8" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="3498" text-anchor="middle" class="fc-title">Step 6: Compute Completeness</text>
+    <text x="650" y="3516" text-anchor="middle" class="fc-badge">ITEMS_WRITTEN / LEAF_ITEMS_COUNT</text>
+
+    <!-- WHY -->
+    <rect x="920" y="3476" width="260" height="42" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="3492" class="fc-why-title">❓ WHY — Completeness Score</text>
+    <text x="930" y="3506" class="fc-why-body">Quantifies extraction quality. Low score</text>
+    <text x="930" y="3518" class="fc-why-body">flags PDFs needing manual review.</text>
+    <line x1="830" y1="3496" x2="920" y2="3496" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- HOW -->
+    <rect x="1200" y="3476" width="190" height="42" rx="6" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+    <text x="1210" y="3492" class="fc-how-title">⚙️ HOW — Score Computation</text>
+    <text x="1210" y="3506" class="fc-how-body">Per sheet: written / leaf_items</text>
+    <text x="1210" y="3518" class="fc-how-body">Overall: weighted average of 3 sheets</text>
+    <line x1="1090" y1="3496" x2="1200" y2="3496" stroke="#805ad5" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="3532" x2="650" y2="3576" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- STEP 7: META SHEET                                              -->
+    <!-- ================================================================ -->
+    <rect x="470" y="3576" width="360" height="56" rx="8" fill="#2b6cb0" filter="url(#sh)"/>
+    <text x="650" y="3598" text-anchor="middle" class="fc-title">Step 7: Write Meta Sheet</text>
+    <text x="650" y="3616" text-anchor="middle" class="fc-badge">YEAR · METHOD · TYPE · COMPLETENESS · PAGES</text>
+
+    <!-- WHY -->
+    <rect x="920" y="3576" width="260" height="42" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="930" y="3592" class="fc-why-title">❓ WHY — Meta Sheet</text>
+    <text x="930" y="3606" class="fc-why-body">Audit trail: how was year detected?</text>
+    <text x="930" y="3618" class="fc-why-body">Which pages used? SA or CO? Score?</text>
+    <line x1="830" y1="3596" x2="920" y2="3596" stroke="#2b6cb0" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <line x1="650" y1="3632" x2="650" y2="3676" stroke="#2b6cb0" stroke-width="2" marker-end="url(#aB)"/>
+
+    <!-- ================================================================ -->
+    <!-- OUTPUT                                                          -->
+    <!-- ================================================================ -->
+    <rect x="470" y="3676" width="360" height="56" rx="25" fill="#38a169" filter="url(#sh)"/>
+    <text x="650" y="3698" text-anchor="middle" class="fc-title">✓ Output Excel Ready</text>
+    <text x="650" y="3716" text-anchor="middle" class="fc-badge">7 SHEETS: BS · P&L · CF · META · RAW_BS · RAW_P&L · RAW_CF</text>
+
+    <!-- ================================================================ -->
+    <!-- RIGHT PANEL: OUTPUT EXCEL SPEC                                  -->
+    <!-- ================================================================ -->
+    <rect x="920" y="3676" width="260" height="120" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="1.5" filter="url(#sh)"/>
+    <text x="930" y="3694" class="fc-step" fill="#22543d">📊 Output Excel — 7 Sheets</text>
+    <text x="930" y="3712" class="fc-sm" fill="#276749">1. Balance Sheet — mapped + formulas</text>
+    <text x="930" y="3728" class="fc-sm" fill="#276749">2. Profit & Loss — mapped + formulas</text>
+    <text x="930" y="3744" class="fc-sm" fill="#276749">3. Cash Flow — mapped (direct)</text>
+    <text x="930" y="3760" class="fc-sm" fill="#276749">4. Meta — year, method, type, score</text>
+    <text x="930" y="3776" class="fc-sm" fill="#276749">5-7. Raw BS / Raw P&L / Raw CF</text>
+    <line x1="830" y1="3704" x2="920" y2="3704" stroke="#38a169" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- ================================================================ -->
+    <!-- LEFT PANEL: INDIAN STANDARDS FOUNDATION                         -->
+    <!-- ================================================================ -->
+    <rect x="20" y="3676" width="340" height="120" rx="8" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5" filter="url(#sh)"/>
+    <text x="30" y="3694" class="fc-std-title">🇮🇳 Indian Standards Foundation</text>
+    <text x="30" y="3712" class="fc-std-body">Schedule III (Companies Act, 2013)</text>
+    <text x="30" y="3726" class="fc-std-body">→ Prescribes BS/P&L/CF format & labels</text>
+    <text x="30" y="3744" class="fc-std-body">Ind AS (IFRS-aligned)</text>
+    <text x="30" y="3758" class="fc-std-body">→ Recognition, measurement, disclosure</text>
+    <text x="30" y="3776" class="fc-std-body">Key: Ind AS 1, 7, 16, 24, 36, 37, 41,</text>
+    <text x="30" y="3790" class="fc-std-body">103, 109, 112, 116</text>
+    <line x1="360" y1="3736" x2="470" y2="3736" stroke="#d69e2e" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="380" y="3730" class="fc-sm" fill="#975a16" style="font-weight:600">ENABLES</text>
+    <text x="380" y="3744" class="fc-sm" fill="#975a16">DETERMINISTIC</text>
+    <text x="380" y="3758" class="fc-sm" fill="#975a16">VALIDATION</text>
+
+    <!-- ================================================================ -->
+    <!-- LEFT PANEL: LLM USAGE SUMMARY                                   -->
+    <!-- ================================================================ -->
+    <rect x="20" y="3816" width="540" height="120" rx="8" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5" filter="url(#sh)"/>
+    <text x="30" y="3834" class="fc-how-title">🤖 LLM Usage Summary — LLM is PRIMARY for Core Tasks</text>
+    <text x="30" y="3854" class="fc-how-body">★ Page Identification — find_pages_by_llm() — PRIMARY</text>
+    <text x="30" y="3868" class="fc-how-body">★ Statement Type — detected in same LLM call as page ID</text>
+    <text x="30" y="3882" class="fc-how-body">★ Mapping — map_by_llm() — PRIMARY (after aliases)</text>
+    <text x="30" y="3896" class="fc-how-body">✦ Year Verification — LLM verify (low confidence only)</text>
+    <text x="30" y="3914" class="fc-how-body">✗ NEVER used for: value extraction, formula computation, notes detection</text>
+    <text x="30" y="3928" class="fc-how-body">Model: Qwen2.5-7B-Instruct (local, on-prem)</text>
+
+    <!-- ================================================================ -->
+    <!-- RIGHT PANEL: DETERMINISTIC ROLE                                 -->
+    <!-- ================================================================ -->
+    <rect x="600" y="3816" width="540" height="120" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5" filter="url(#sh)"/>
+    <text x="610" y="3834" class="fc-why-title">🔧 Deterministic Role — Validation & Fallback</text>
+    <text x="610" y="3854" class="fc-why-body">✦ Quick Det Check — cost optimization (skip LLM ~70% of cases)</text>
+    <text x="610" y="3868" class="fc-why-body">✦ Det Validation — merge LLM+det pages, expand continuations</text>
+    <text x="610" y="3882" class="fc-why-body">✦ Full Det Fallback — when LLM fails (3-pass title scan)</text>
+    <text x="610" y="3896" class="fc-why-body">✦ Keyword Aliases — exact match (Tier 1, before LLM)</text>
+    <text x="610" y="3914" class="fc-why-body">✦ Fuzzy Matching — fallback (Tier 3, after LLM)</text>
+    <text x="610" y="3928" class="fc-why-body">✦ Notes Detection, Value Extraction, Formulas — always deterministic</text>
+
+    <!-- ================================================================ -->
+    <!-- KEYWORD REFERENCE TABLE                                          -->
+    <!-- ================================================================ -->
+    <rect x="20" y="3960" width="1340" height="200" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#sh)"/>
+    <text x="30" y="3980" class="fc-step">🔑 Keyword & Pattern Reference — LLM-First Architecture (Indian Financial Standards)</text>
+
+    <!-- Column headers -->
+    <text x="30" y="4002" class="fc-sm" fill="#1a365d" style="font-weight:700">STEP</text>
+    <text x="130" y="4002" class="fc-sm" fill="#1a365d" style="font-weight:700">KEYWORDS / PATTERNS</text>
+    <text x="530" y="4002" class="fc-sm" fill="#1a365d" style="font-weight:700">WHY IT WORKS (STANDARD)</text>
+    <text x="960" y="4002" class="fc-sm" fill="#805ad5" style="font-weight:700">★ PRIMARY</text>
+    <text x="1150" y="4002" class="fc-sm" fill="#2b6cb0" style="font-weight:700">FALLBACK</text>
+    <line x1="30" y1="4008" x2="1350" y2="4008" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Row 1: Find Pages -->
+    <text x="30" y="4026" class="fc-sm" fill="#805ad5" style="font-weight:600">1. Find Pages</text>
+    <text x="130" y="4026" class="fc-sm">balance\s+sheet, statement\s+of\s+profit, cash\s+flow,</text>
+    <text x="130" y="4040" class="fc-sm">standalone, consolidated, notes\s+to\s+financial</text>
+    <text x="530" y="4026" class="fc-sm">Schedule III mandates these exact titles.</text>
+    <text x="530" y="4040" class="fc-sm">All Indian companies must use them.</text>
+    <text x="960" y="4026" class="fc-sm" fill="#805ad5">★ LLM page ID</text>
+    <text x="960" y="4040" class="fc-sm" fill="#805ad5">(find_pages_by_llm)</text>
+    <text x="1150" y="4026" class="fc-sm" fill="#2b6cb0">Quick det check</text>
+    <text x="1150" y="4040" class="fc-sm" fill="#2b6cb0">Full 3-pass fallback</text>
+
+    <!-- Row 2: Detect Year -->
+    <text x="30" y="4062" class="fc-sm" fill="#2b6cb0" style="font-weight:600">2. Detect Year</text>
+    <text x="130" y="4062" class="fc-sm">(March|April)\s+\d{1,2},?\s*(20\d{2}),</text>
+    <text x="130" y="4076" class="fc-sm">FY\s*(20\d{2}), (20\d{2})\s*[-_]\s*(20\d{2})</text>
+    <text x="530" y="4062" class="fc-sm">Schedule III: "As at March 31, YYYY"</text>
+    <text x="530" y="4076" class="fc-sm">Indian FY convention: Apr 1 → Mar 31</text>
+    <text x="960" y="4062" class="fc-sm" fill="#2b6cb0">Filename regex</text>
+    <text x="960" y="4076" class="fc-sm" fill="#2b6cb0">(deterministic)</text>
+    <text x="1150" y="4062" class="fc-sm" fill="#805ad5">★ LLM year verify</text>
+    <text x="1150" y="4076" class="fc-sm" fill="#805ad5">(low conf only)</text>
+
+    <!-- Row 3: Statement Type -->
+    <text x="30" y="4098" class="fc-sm" fill="#805ad5" style="font-weight:600">2b. Stmt Type</text>
+    <text x="130" y="4098" class="fc-sm">standalone, consolidated, independent,</text>
+    <text x="130" y="4112" class="fc-sm">subsidiary, associate, joint venture</text>
+    <text x="530" y="4098" class="fc-sm">Schedule III: requires both SA + CO when</text>
+    <text x="530" y="4112" class="fc-sm">subsidiaries exist. SA always presented first.</text>
+    <text x="960" y="4098" class="fc-sm" fill="#805ad5">★ LLM (with page ID)</text>
+    <text x="960" y="4112" class="fc-sm" fill="#805ad5">zero extra cost</text>
+    <text x="1150" y="4098" class="fc-sm" fill="#2b6cb0">Det keyword scan</text>
+    <text x="1150" y="4112" class="fc-sm" fill="#2b6cb0">Default: Standalone</text>
+
+    <!-- Row 4: Extract Tables -->
+    <text x="30" y="4134" class="fc-sm" fill="#2b6cb0" style="font-weight:600">3. Extract</text>
+    <text x="130" y="4134" class="fc-sm">₹\s*(in)?\s*(lakhs|crores|millions),</text>
+    <text x="130" y="4148" class="fc-sm">\(?\d[\d,.]*\)?, (a)(b)(c) numbering</text>
+    <text x="530" y="4134" class="fc-sm">Schedule III (a)(b)(c) → section tracking.</text>
+    <text x="530" y="4148" class="fc-sm">Unit line always at top of each statement.</text>
+    <text x="960" y="4134" class="fc-sm" fill="#2b6cb0">Deterministic only</text>
+    <text x="960" y="4148" class="fc-sm" fill="#2b6cb0">(pdfplumber text)</text>
+    <text x="1150" y="4134" class="fc-sm" fill="#718096">No fallback</text>
+    <text x="1150" y="4148" class="fc-sm" fill="#718096">N/A</text>
+
+    <!-- Row 5: Map to Template -->
+    <text x="30" y="4170" class="fc-sm" fill="#805ad5" style="font-weight:600">4. Map</text>
+    <text x="130" y="4170" class="fc-sm">30+ BS aliases, 10+ P&L aliases, 50+ notes aliases,</text>
+    <text x="130" y="4184" class="fc-sm">rapidfuzz token_sort_ratio ≥ 70, section bonus +15</text>
+    <text x="530" y="4170" class="fc-sm">Schedule III labels = common vocabulary.</text>
+    <text x="530" y="4184" class="fc-sm">Ind AS 109/116/36 → specific aliases.</text>
+    <text x="960" y="4170" class="fc-sm" fill="#805ad5">★ LLM mapping</text>
+    <text x="960" y="4184" class="fc-sm" fill="#805ad5">(map_by_llm, Tier 2)</text>
+    <text x="1150" y="4170" class="fc-sm" fill="#2b6cb0">Alias (Tier 1)</text>
+    <text x="1150" y="4184" class="fc-sm" fill="#d69e2e">Fuzzy (Tier 3)</text>
+
+    <!-- Row 6: Notes → OFI -->
+    <text x="30" y="4206" class="fc-sm" fill="#2b6cb0" style="font-weight:600">4b. Notes→OFI</text>
+    <text x="130" y="4206" class="fc-sm">contingent\s+liab, related\s+party, auditor\s+remun,</text>
+    <text x="130" y="4220" class="fc-sm">operating\s+lease, capital\s+commitment, segment</text>
+    <text x="530" y="4206" class="fc-sm">Ind AS 1/24/37 mandate these disclosures.</text>
+    <text x="530" y="4220" class="fc-sm">Only in Notes, never in CF statement.</text>
+    <text x="960" y="4206" class="fc-sm" fill="#2b6cb0">Alias (50+)</text>
+    <text x="960" y="4220" class="fc-sm" fill="#2b6cb0">Context-aware total</text>
+    <text x="1150" y="4206" class="fc-sm" fill="#d69e2e">Fuzzy ≥ 65</text>
+    <text x="1150" y="4220" class="fc-sm" fill="#718096">(no LLM for OFI)</text>
+
+    <!-- ================================================================ -->
+    <!-- ARCHITECTURE RATIONALE BOX                                       -->
+    <!-- ================================================================ -->
+    <rect x="20" y="4180" width="1340" height="0" rx="0" fill="none"/>
+
+    <!-- Bottom rationale -->
+    <rect x="20" y="4180" width="1340" height="0" rx="0" fill="none"/>
+
+</svg>
+</div>
+
+</body>
+</html>
