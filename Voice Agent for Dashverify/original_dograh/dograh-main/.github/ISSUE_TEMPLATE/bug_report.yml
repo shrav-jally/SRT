@@ -1,0 +1,53 @@
+name: "🐞 Bug Report"
+description: "Create a report to help us improve"
+title: "[Bug]: "
+labels: [bug]
+assignees: []
+
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the bug"
+      description: "A clear and concise description of what the bug is."
+      placeholder: "The application crashes when..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Step-by-step instructions to reproduce the behavior."
+      placeholder: "1. Go to...\n2. Click...\n3. Scroll...\n4. See error"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected behavior"
+      description: "What you expected to happen."
+      placeholder: "The application should..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots"
+      description: "If applicable, add screenshots to help explain your problem."
+      placeholder: "Drag & drop images here"
+
+  - type: input
+    id: desktop
+    attributes:
+      label: "Device details"
+      description: "Device, OS, Browser, Version"
+      placeholder: "e.g. Desktop, macOS, Chrome, 119"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Additional context"
+      description: "Add any other context about the problem here."

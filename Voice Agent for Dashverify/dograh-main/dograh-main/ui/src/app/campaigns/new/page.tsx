@@ -1,0 +1,576 @@
+"use client";
+
+import { ArrowLeft, ChevronDown, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useCallback, useEffect, useState } from 'react';
+import type { ITimezoneOption } from 'react-timezone-select';
+import { toast } from 'sonner';
+
+import {
+    createCampaignApiV1CampaignCreatePost,
+    getCampaignDefaultsApiV1OrganizationsCampaignDefaultsGet,
+    getWorkflowsSummaryApiV1WorkflowSummaryGet,
+    listTelephonyConfigurationsApiV1OrganizationsTelephonyConfigsGet
+} from '@/client/sdk.gen';
+import type { TelephonyConfigurationListItem, WorkflowSummaryResponse } from '@/client/types.gen';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select';
+import { useAuth } from '@/lib/auth';
+
+import CampaignAdvancedSettings, { getTimezoneValue, type TimeSlot } from '../CampaignAdvancedSettings';
+import CsvUploadSelector from '../CsvUploadSelector';
+
+export default function NewCampaignPage() {
+    const { user, getAccessToken, redirectToLogin, loading } = useAuth();
+    const router = useRouter();
+
+    // Form state
+    const [campaignName, setCampaignName] = useState('');
+    const [selectedWorkflowId, setSelectedWorkflowId] = useState<string>('');
+    const [sourceType, setSourceType] = useState<'csv'>('csv');
+    const [sourceId, setSourceId] = useState('');
+    const [selectedFileName, setSelectedFileName] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [createError, setCreateError] = useState<string | null>(null);
+
+    // Workflows state
+    const [workflows, setWorkflows] = useState<WorkflowSummaryResponse[]>([]);
+    const [isLoadingWorkflows, setIsLoadingWorkflows] = useState(true);
+
+    // Telephony configurations state
+    const [telephonyConfigs, setTelephonyConfigs] = useState<TelephonyConfigurationListItem[]>([]);
+    const [selectedTelephonyConfigId, setSelectedTelephonyConfigId] = useState<string>('');
+    const [isLoadingTelephonyConfigs, setIsLoadingTelephonyConfigs] = useState(true);
+
+    // Advanced settings state
+    const [showAdvancedSettings, setShowAdvancedSettings] = useState(false);
+    const [orgConcurrentLimit, setOrgConcurrentLimit] = useState<number>(2);
+    const [fromNumbersCount, setFromNumbersCount] = useState<number>(0);
+    const [maxConcurrency, setMaxConcurrency] = useState<string>('');
+    // Retry config state
+    const [retryEnabled, setRetryEnabled] = useState(true);
+    const [maxRetries, setMaxRetries] = useState<string>('2');
+    const [retryDelaySeconds, setRetryDelaySeconds] = useState<string>('120');
+    const [retryOnBusy, setRetryOnBusy] = useState(true);
+    const [retryOnNoAnswer, setRetryOnNoAnswer] = useState(true);
+    const [retryOnVoicemail, setRetryOnVoicemail] = useState(true);
+    // Schedule config state
+    const [scheduleEnabled, setScheduleEnabled] = useState(false);
+    const [scheduleTimezone, setScheduleTimezone] = useState<ITimezoneOption | string>(() => {
+        try {
+            return Intl.DateTimeFormat().resolvedOptions().timeZone;
+        } catch {
+            return 'UTC';
+        }
+    });
+    const [timeSlots, setTimeSlots] = useState<TimeSlot[]>([
+        { day_of_week: 0, start_time: '09:00', end_time: '17:00' },
+    ]);
+    // Circuit breaker config state
+    const [circuitBreakerEnabled, setCircuitBreakerEnabled] = useState(true);
+    const [circuitBreakerFailureThreshold, setCircuitBreakerFailureThreshold] = useState<string>('50');
+    const [circuitBreakerWindowSeconds, setCircuitBreakerWindowSeconds] = useState<string>('120');
+    const [circuitBreakerMinCalls, setCircuitBreakerMinCalls] = useState<string>('5');
+
+    // Redirect if not authenticated
+    useEffect(() => {
+        if (!loading && !user) {
+            redirectToLogin();
+        }
+    }, [loading, user, redirectToLogin]);
+
+    // Fetch workflows
+    const fetchWorkflows = useCallback(async () => {
+        if (!user) return;
+        try {
+            const accessToken = await getAccessToken();
+            const response = await getWorkflowsSummaryApiV1WorkflowSummaryGet({
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                },
+                query: {
+                    status: 'active',
+                },
+            });
+
+            if (response.data) {
+                setWorkflows(response.data);
+            }
+        } catch (error) {
+            console.error('Failed to fetch workflows:', error);
+            toast.error('Failed to load workflows');
+        } finally {
+            setIsLoadingWorkflows(false);
+        }
+    }, [user, getAccessToken]);
+
+    // Fetch telephony configurations
+    const fetchTelephonyConfigs = useCallback(async () => {
+        if (!user) return;
+        try {
+            const accessToken = await getAccessToken();
+            const response = await listTelephonyConfigurationsApiV1OrganizationsTelephonyConfigsGet({
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                }
+            });
+
+            if (response.data) {
+                const configs = response.data.configurations ?? [];
+                setTelephonyConfigs(configs);
+                const defaultConfig = configs.find((c) => c.is_default_outbound) ?? configs[0];
+                if (defaultConfig) {
+                    setSelectedTelephonyConfigId(String(defaultConfig.id));
+                }
+            }
+        } catch (error) {
+            console.error('Failed to fetch telephony configurations:', error);
+            toast.error('Failed to load telephony configurations');
+        } finally {
+            setIsLoadingTelephonyConfigs(false);
+        }
+    }, [user, getAccessToken]);
+
+    // Fetch campaign limits
+    const fetchCampaignDefaults = useCallback(async () => {
+        if (!user) return;
+        try {
+            const accessToken = await getAccessToken();
+            const response = await getCampaignDefaultsApiV1OrganizationsCampaignDefaultsGet({
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                }
+            });
+
+            if (response.data) {
+                setOrgConcurrentLimit(response.data.concurrent_call_limit);
+                setFromNumbersCount(response.data.from_numbers_count);
+
+                const last = (response.data as { last_campaign_settings?: {
+                    retry_config?: { enabled: boolean; max_retries: number; retry_delay_seconds: number; retry_on_busy: boolean; retry_on_no_answer: boolean; retry_on_voicemail: boolean };
+                    max_concurrency?: number | null;
+                    schedule_config?: { enabled: boolean; timezone: string; slots: TimeSlot[] } | null;
+                    circuit_breaker?: { enabled: boolean; failure_threshold: number; window_seconds: number; min_calls_in_window: number } | null;
+                } | null }).last_campaign_settings;
+
+                if (last) {
+                    // Pre-populate from last campaign
+                    if (last.retry_config) {
+                        setRetryEnabled(last.retry_config.enabled);
+                        setMaxRetries(String(last.retry_config.max_retries));
+                        setRetryDelaySeconds(String(last.retry_config.retry_delay_seconds));
+                        setRetryOnBusy(last.retry_config.retry_on_busy);
+                        setRetryOnNoAnswer(last.retry_config.retry_on_no_answer);
+                        setRetryOnVoicemail(last.retry_config.retry_on_voicemail);
+                    } else {
+                        const retryConfig = response.data.default_retry_config;
+                        setRetryEnabled(retryConfig.enabled);
+                        setMaxRetries(String(retryConfig.max_retries));
+                        setRetryDelaySeconds(String(retryConfig.retry_delay_seconds));
+                        setRetryOnBusy(retryConfig.retry_on_busy);
+                        setRetryOnNoAnswer(retryConfig.retry_on_no_answer);
+                        setRetryOnVoicemail(retryConfig.retry_on_voicemail);
+                    }
+                    if (last.max_concurrency) {
+                        setMaxConcurrency(String(last.max_concurrency));
+                    }
+                    if (last.schedule_config) {
+                        setScheduleEnabled(last.schedule_config.enabled);
+                        setScheduleTimezone(last.schedule_config.timezone);
+                        setTimeSlots(last.schedule_config.slots);
+                    }
+                    if (last.circuit_breaker) {
+                        setCircuitBreakerEnabled(last.circuit_breaker.enabled);
+                        setCircuitBreakerFailureThreshold(String(Math.round(last.circuit_breaker.failure_threshold * 100)));
+                        setCircuitBreakerWindowSeconds(String(last.circuit_breaker.window_seconds));
+                        setCircuitBreakerMinCalls(String(last.circuit_breaker.min_calls_in_window));
+                    }
+                } else {
+                    // No previous campaign — use defaults
+                    const retryConfig = response.data.default_retry_config;
+                    setRetryEnabled(retryConfig.enabled);
+                    setMaxRetries(String(retryConfig.max_retries));
+                    setRetryDelaySeconds(String(retryConfig.retry_delay_seconds));
+                    setRetryOnBusy(retryConfig.retry_on_busy);
+                    setRetryOnNoAnswer(retryConfig.retry_on_no_answer);
+                    setRetryOnVoicemail(retryConfig.retry_on_voicemail);
+                }
+            }
+        } catch (error) {
+            console.error('Failed to fetch campaign limits:', error);
+        }
+    }, [user, getAccessToken]);
+
+    // Initial load
+    useEffect(() => {
+        if (user) {
+            fetchWorkflows();
+            fetchCampaignDefaults();
+            fetchTelephonyConfigs();
+        }
+    }, [fetchWorkflows, fetchCampaignDefaults, fetchTelephonyConfigs, user]);
+
+    // Phone-number count for the selected telephony config drives concurrency
+    // bounds. Falls back to the campaign-defaults endpoint's count (org default
+    // config) until the configs list resolves.
+    const selectedTelephonyConfig = telephonyConfigs.find(
+        (c) => String(c.id) === selectedTelephonyConfigId,
+    );
+    const availableFromNumbersCount = selectedTelephonyConfig?.phone_number_count ?? fromNumbersCount;
+
+    // Effective concurrency limit considering both org limit and available CLIs
+    const effectiveLimit = availableFromNumbersCount > 0
+        ? Math.min(orgConcurrentLimit, availableFromNumbersCount)
+        : orgConcurrentLimit;
+
+    // Handle form submission
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setCreateError(null);
+
+        if (!campaignName || !selectedWorkflowId || !sourceId || !selectedTelephonyConfigId) {
+            toast.error('Please fill in all fields');
+            return;
+        }
+
+        // Validate max_concurrency if provided
+        const maxConcurrencyValue = maxConcurrency ? parseInt(maxConcurrency) : null;
+        if (maxConcurrencyValue !== null) {
+            if (isNaN(maxConcurrencyValue) || maxConcurrencyValue < 1 || maxConcurrencyValue > 100) {
+                toast.error('Max concurrent calls must be between 1 and 100');
+                return;
+            }
+            if (maxConcurrencyValue > effectiveLimit) {
+                if (availableFromNumbersCount > 0 && availableFromNumbersCount < orgConcurrentLimit) {
+                    toast.error(`Max concurrent calls cannot exceed ${effectiveLimit}. The selected configuration has ${availableFromNumbersCount} phone number(s) - add more CLIs to increase concurrency.`);
+                } else {
+                    toast.error(`Max concurrent calls cannot exceed organization limit (${effectiveLimit})`);
+                }
+                return;
+            }
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            const accessToken = await getAccessToken();
+
+            const retryConfig = {
+                enabled: retryEnabled,
+                max_retries: parseInt(maxRetries) || 2,
+                retry_delay_seconds: parseInt(retryDelaySeconds) || 120,
+                retry_on_busy: retryOnBusy,
+                retry_on_no_answer: retryOnNoAnswer,
+                retry_on_voicemail: retryOnVoicemail,
+            };
+
+            // Build schedule_config if enabled
+            const timezoneValue = getTimezoneValue(scheduleTimezone);
+            const scheduleConfig = scheduleEnabled && timeSlots.length > 0
+                ? {
+                    enabled: true,
+                    timezone: timezoneValue,
+                    slots: timeSlots,
+                }
+                : undefined;
+
+            // Build circuit_breaker config
+            const circuitBreakerConfig = {
+                enabled: circuitBreakerEnabled,
+                failure_threshold: (parseInt(circuitBreakerFailureThreshold) || 50) / 100,
+                window_seconds: parseInt(circuitBreakerWindowSeconds) || 120,
+                min_calls_in_window: parseInt(circuitBreakerMinCalls) || 5,
+            };
+
+
+            const response = await createCampaignApiV1CampaignCreatePost({
+                body: {
+                    name: campaignName,
+                    workflow_id: parseInt(selectedWorkflowId),
+                    source_type: sourceType,
+                    source_id: sourceId,
+                    telephony_configuration_id: parseInt(selectedTelephonyConfigId),
+                    retry_config: retryConfig,
+                    max_concurrency: maxConcurrencyValue,
+                    schedule_config: scheduleConfig,
+                    circuit_breaker: circuitBreakerConfig,
+                },
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                }
+            });
+
+            if (response.error) {
+                // Extract error message from API response
+                const errorDetail = (response.error as { detail?: string })?.detail;
+                const errorMessage = errorDetail || 'Failed to create campaign';
+                setCreateError(errorMessage);
+                toast.error(errorMessage);
+                return;
+            }
+
+            if (response.data) {
+                toast.success('Campaign created successfully');
+                router.push(`/campaigns/${response.data.id}`);
+            }
+        } catch (error: unknown) {
+            console.error('Failed to create campaign:', error);
+            const errorMessage = 'Failed to create campaign';
+            setCreateError(errorMessage);
+            toast.error(errorMessage);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    // Handle back navigation
+    const handleBack = () => {
+        router.push('/campaigns');
+    };
+
+    // Handle CSV file upload
+    const handleFileUploaded = (fileKey: string, fileName: string) => {
+        setSourceId(fileKey);
+        setSelectedFileName(fileName);
+        setCreateError(null);
+    };
+
+    return (
+        <div className="container mx-auto p-6 pb-12 space-y-6 max-w-2xl">
+            <div>
+                <Button
+                    variant="ghost"
+                    onClick={handleBack}
+                    className="mb-4"
+                >
+                    <ArrowLeft className="h-4 w-4 mr-2" />
+                    Back to Campaigns
+                </Button>
+                <h1 className="text-3xl font-bold mb-2">Create New Campaign</h1>
+                <p className="text-muted-foreground">Set up a new campaign to execute workflows at scale</p>
+            </div>
+
+            <Card>
+                    <CardHeader>
+                        <CardTitle>Campaign Details</CardTitle>
+                        <CardDescription>
+                            Configure your campaign settings
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="space-y-2">
+                                <Label htmlFor="campaign-name">Campaign Name</Label>
+                                <Input
+                                    id="campaign-name"
+                                    placeholder="Enter campaign name"
+                                    value={campaignName}
+                                    onChange={(e) => setCampaignName(e.target.value)}
+                                    maxLength={255}
+                                    required
+                                />
+                                <p className="text-sm text-muted-foreground">
+                                    Choose a descriptive name for your campaign
+                                </p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="workflow">Workflow</Label>
+                                <Select
+                                    value={selectedWorkflowId}
+                                    onValueChange={setSelectedWorkflowId}
+                                    required
+                                >
+                                    <SelectTrigger id="workflow">
+                                        <SelectValue placeholder="Select a workflow" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        {isLoadingWorkflows ? (
+                                            <SelectItem value="loading" disabled>
+                                                Loading workflows...
+                                            </SelectItem>
+                                        ) : workflows.length === 0 ? (
+                                            <SelectItem value="none" disabled>
+                                                No workflows found
+                                            </SelectItem>
+                                        ) : (
+                                            workflows.map((workflow) => (
+                                                <SelectItem
+                                                    key={workflow.id}
+                                                    value={workflow.id.toString()}
+                                                >
+                                                    {workflow.name} (#{workflow.id})
+                                                </SelectItem>
+                                            ))
+                                        )}
+                                    </SelectContent>
+                                </Select>
+                                <p className="text-sm text-muted-foreground">
+                                    Select the workflow to execute for each row in the data source
+                                </p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="telephony-config">Telephony Configuration</Label>
+                                {!isLoadingTelephonyConfigs && telephonyConfigs.length === 0 ? (
+                                    <div className="rounded-md border border-dashed p-3 text-sm text-muted-foreground">
+                                        No telephony configurations yet.{' '}
+                                        <Link
+                                            href="/telephony-configurations"
+                                            className="underline text-foreground"
+                                        >
+                                            Add one
+                                        </Link>{' '}
+                                        to create a campaign.
+                                    </div>
+                                ) : (
+                                    <Select
+                                        value={selectedTelephonyConfigId}
+                                        onValueChange={setSelectedTelephonyConfigId}
+                                        required
+                                    >
+                                        <SelectTrigger id="telephony-config">
+                                            <SelectValue placeholder="Select a telephony configuration" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            {isLoadingTelephonyConfigs ? (
+                                                <SelectItem value="loading" disabled>
+                                                    Loading configurations...
+                                                </SelectItem>
+                                            ) : (
+                                                telephonyConfigs.map((config) => (
+                                                    <SelectItem
+                                                        key={config.id}
+                                                        value={config.id.toString()}
+                                                    >
+                                                        {config.name} ({config.provider})
+                                                        {config.is_default_outbound ? ' - default' : ''}
+                                                    </SelectItem>
+                                                ))
+                                            )}
+                                        </SelectContent>
+                                    </Select>
+                                )}
+                                <p className="text-sm text-muted-foreground">
+                                    Outbound calls for this campaign will use this configuration&apos;s caller IDs
+                                </p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="source-type">Data Source Type</Label>
+                                <Select
+                                    value={sourceType}
+                                    onValueChange={(value) => {
+                                        setSourceType(value as 'csv');
+                                        setSourceId('');
+                                        setSelectedFileName('');
+                                    }}
+                                    required
+                                >
+                                    <SelectTrigger id="source-type">
+                                        <SelectValue placeholder="Select source type" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="csv">CSV File</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                                <p className="text-sm text-muted-foreground">
+                                    Choose where your contact data is stored
+                                </p>
+                            </div>
+
+                            <CsvUploadSelector
+                                onFileUploaded={handleFileUploaded}
+                                selectedFileName={selectedFileName}
+                            />
+
+                            {/* Advanced Settings */}
+                            <Collapsible
+                                open={showAdvancedSettings}
+                                onOpenChange={setShowAdvancedSettings}
+                                className="border rounded-lg"
+                            >
+                                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 hover:bg-muted/50 transition-colors">
+                                    <span className="font-medium">Advanced Settings</span>
+                                    {showAdvancedSettings ? (
+                                        <ChevronDown className="h-4 w-4" />
+                                    ) : (
+                                        <ChevronRight className="h-4 w-4" />
+                                    )}
+                                </CollapsibleTrigger>
+                                <CollapsibleContent className="px-4 pb-4">
+                                    <CampaignAdvancedSettings
+                                        maxConcurrency={maxConcurrency}
+                                        onMaxConcurrencyChange={setMaxConcurrency}
+                                        effectiveLimit={effectiveLimit}
+                                        orgConcurrentLimit={orgConcurrentLimit}
+                                        fromNumbersCount={fromNumbersCount}
+                                        retryEnabled={retryEnabled}
+                                        onRetryEnabledChange={setRetryEnabled}
+                                        maxRetries={maxRetries}
+                                        onMaxRetriesChange={setMaxRetries}
+                                        retryDelaySeconds={retryDelaySeconds}
+                                        onRetryDelaySecondsChange={setRetryDelaySeconds}
+                                        retryOnBusy={retryOnBusy}
+                                        onRetryOnBusyChange={setRetryOnBusy}
+                                        retryOnNoAnswer={retryOnNoAnswer}
+                                        onRetryOnNoAnswerChange={setRetryOnNoAnswer}
+                                        retryOnVoicemail={retryOnVoicemail}
+                                        onRetryOnVoicemailChange={setRetryOnVoicemail}
+                                        scheduleEnabled={scheduleEnabled}
+                                        onScheduleEnabledChange={setScheduleEnabled}
+                                        scheduleTimezone={scheduleTimezone}
+                                        onScheduleTimezoneChange={setScheduleTimezone}
+                                        timeSlots={timeSlots}
+                                        onTimeSlotsChange={setTimeSlots}
+                                        circuitBreakerEnabled={circuitBreakerEnabled}
+                                        onCircuitBreakerEnabledChange={setCircuitBreakerEnabled}
+                                        circuitBreakerFailureThreshold={circuitBreakerFailureThreshold}
+                                        onCircuitBreakerFailureThresholdChange={setCircuitBreakerFailureThreshold}
+                                        circuitBreakerWindowSeconds={circuitBreakerWindowSeconds}
+                                        onCircuitBreakerWindowSecondsChange={setCircuitBreakerWindowSeconds}
+                                        circuitBreakerMinCalls={circuitBreakerMinCalls}
+                                        onCircuitBreakerMinCallsChange={setCircuitBreakerMinCalls}
+                                    />
+                                </CollapsibleContent>
+                            </Collapsible>
+
+                            {createError && (
+                                <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">
+                                    {createError}
+                                </div>
+                            )}
+
+                            <div className="flex gap-4 pt-4">
+                                <Button
+                                    type="submit"
+                                    disabled={isSubmitting || !campaignName || !selectedWorkflowId || !sourceId || !selectedTelephonyConfigId}
+                                >
+                                    {isSubmitting ? 'Creating...' : 'Create Campaign'}
+                                </Button>
+                                <Button
+                                    type="button"
+                                    variant="outline"
+                                    onClick={handleBack}
+                                    disabled={isSubmitting}
+                                >
+                                    Cancel
+                                </Button>
+                            </div>
+                        </form>
+                    </CardContent>
+                </Card>
+        </div>
+    );
+}

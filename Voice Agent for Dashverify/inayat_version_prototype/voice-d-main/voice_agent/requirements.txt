@@ -1,0 +1,25 @@
+fastapi>=0.115.0
+uvicorn>=0.30.0
+websockets>=11.0.3
+pydantic>=2.13.4
+pydantic-settings>=2.14.2
+
+# STT - Faster Whisper (local Whisper model)
+faster-whisper>=1.1.0
+
+# TTS - Kokoro ONNX (int8 quantized, local)
+kokoro>=0.9.2
+
+# LLM - llama-cpp-python (local Llama 3 8B GGUF)
+llama-cpp-python>=0.3.31
+
+# VAD - Silero Voice Activity Detection
+torch>=2.1.0
+torchaudio>=2.1.0
+
+# Audio Processing
+soundfile>=0.12.1
+numpy>=1.24.0
+
+# Groq Cloud LLM fallback
+groq>=0.9.0

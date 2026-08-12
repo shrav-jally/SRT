@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Agent — Diagnostic Dashboard</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙</text></svg>">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        :root{--bg:#0a0e1a;--surface:#111827;--surface-2:#1f2937;--border:rgba(255,255,255,.08);--text:#f1f5f9;--text-dim:#64748b;--accent:#6366f1;--accent-h:#4f46e5;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--info:#3b82f6;--radius:14px;--terminal-bg:#050810;--spinner-border:rgba(255,255,255,.3);--spinner-top:#fff}
+        [data-theme="light"]{--bg:#f8fafc;--surface:#ffffff;--surface-2:#f1f5f9;--border:rgba(0,0,0,.1);--text:#0f172a;--text-dim:#64748b;--accent:#6366f1;--accent-h:#4f46e5;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--info:#3b82f6;--radius:14px;--terminal-bg:#f1f5f9;--spinner-border:rgba(0,0,0,.15);--spinner-top:#6366f1}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:1.25rem}
+        .dashboard{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+        .full-span{grid-column:1/-1}
+        .tab-bar{display:flex;gap:.4rem;border-bottom:1px solid var(--border);padding-bottom:.5rem;margin-bottom:.5rem;flex-wrap:wrap}
+        .tab-btn{padding:.45rem 1rem;font-size:.8rem;font-weight:600;border-radius:8px 8px 0 0;border:1px solid transparent;background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s;font-family:inherit}
+        .tab-btn.active{background:var(--surface-2);color:var(--text);border-color:var(--border);border-bottom-color:transparent}
+        .tab-btn:hover:not(.active){color:var(--text)}
+        .tab-panel{display:none}.tab-panel.active{display:block}
+        .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;display:flex;flex-direction:column;gap:.75rem}
+        .card-title{font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim)}
+        .header{text-align:center;padding:.5rem 0}
+        .header h1{font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,var(--accent),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .header p{color:var(--text-dim);font-size:.82rem;margin-top:.1rem}
+        select,input,textarea{font-family:inherit;background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:.6rem .8rem;border-radius:10px;font-size:.88rem;outline:none;width:100%;resize:vertical}
+        select:focus,input:focus,textarea:focus{border-color:var(--accent)}
+        textarea{min-height:55px;font-family:'JetBrains Mono',monospace;font-size:.8rem}
+        input[type=password]{font-family:'JetBrains Mono',monospace;letter-spacing:.1em}
+        .btn{padding:.65rem 1.1rem;font-weight:600;font-size:.88rem;color:#fff;border:none;border-radius:10px;cursor:pointer;transition:all .2s;font-family:inherit}
+        .btn:disabled{opacity:.5;cursor:not-allowed}
+        .btn-sm{padding:.5rem .9rem;font-size:.8rem}
+        .btn-primary{background:var(--accent);box-shadow:0 3px 12px rgba(99,102,241,.3)}
+        .btn-primary:hover:not(:disabled){background:var(--accent-h);transform:translateY(-1px)}
+        .btn-danger{background:var(--danger);box-shadow:0 3px 12px rgba(239,68,68,.25)}
+        .btn-danger:hover:not(:disabled){background:#dc2626}
+        .btn-success{background:var(--success);box-shadow:0 3px 12px rgba(16,185,129,.25)}
+        .btn-success:hover:not(:disabled){background:#059669}
+        .btn-warning{background:var(--warning);box-shadow:0 3px 12px rgba(245,158,11,.25);color:#000}
+        .btn-warning:hover:not(:disabled){background:#d97706}
+        .controls-row{display:flex;gap:.6rem;align-items:stretch}
+        .controls-row select{flex:1}
+        .status-row{display:flex;gap:.5rem;flex-wrap:wrap}
+        .chip{display:flex;align-items:center;gap:.35rem;padding:.3rem .65rem;border-radius:999px;font-size:.75rem;font-weight:500;background:var(--surface-2);border:1px solid var(--border)}
+        .dot{width:8px;height:8px;border-radius:50%;background:var(--danger);transition:all .3s}
+        .dot.on{background:var(--success);box-shadow:0 0 8px var(--success)}
+        @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(16,185,129,.6)}70%{box-shadow:0 0 0 8px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+        .dot.pulse{animation:pulse-ring 1.4s infinite}
+        .meters{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+        .meter{background:var(--surface-2);border-radius:10px;padding:.55rem;text-align:center}
+        .meter-label{font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.04em}
+        .meter-value{font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:600;margin-top:.1rem}
+        .meter-unit{font-size:.6rem;color:var(--text-dim)}
+        .result-box{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:.75rem;font-family:'JetBrains Mono',monospace;font-size:.8rem;line-height:1.55;max-height:220px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}
+        .result-box .label{color:var(--text-dim)}.result-box .value{color:var(--success)}.result-box .metric{color:var(--warning)}.result-box .err{color:var(--danger)}
+        .terminal{background:var(--terminal-bg);border:1px solid var(--border);border-radius:10px;padding:.7rem;height:220px;overflow-y:auto;font-family:'JetBrains Mono',monospace;font-size:.74rem;line-height:1.5;color:var(--text-dim)}
+        .terminal::-webkit-scrollbar{width:5px}.terminal::-webkit-scrollbar-thumb{background:var(--surface-2);border-radius:3px}
+        .log-line{padding:1px 0;white-space:pre-wrap;word-break:break-all}
+        .log-line.info{color:var(--info)}.log-line.success{color:var(--success)}.log-line.warn{color:var(--warning)}.log-line.error{color:var(--danger)}.log-line.audio{color:#a78bfa}
+        canvas{width:100%;height:65px;border-radius:8px;background:var(--surface-2)}
+        .convo{display:flex;flex-direction:column;gap:.45rem;max-height:280px;overflow-y:auto}
+        .bubble{padding:.55rem .8rem;border-radius:12px;font-size:.83rem;max-width:85%;line-height:1.45}
+        .bubble.user{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px}
+        .bubble.bot{align-self:flex-start;background:var(--surface-2);color:var(--text);border-bottom-left-radius:4px}
+        .bubble .timing{font-size:.68rem;color:rgba(255,255,255,.5);margin-top:.15rem}
+        .bubble.bot .timing{color:var(--text-dim)}
+        .spinner{display:inline-block;width:14px;height:14px;border:2px solid var(--spinner-border);border-top-color:var(--spinner-top);border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:.3rem}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .rec-indicator{display:inline-block;width:10px;height:10px;background:var(--danger);border-radius:50%;margin-right:.4rem;animation:pulse-ring 1s infinite}
+        .badge{display:inline-block;padding:.15rem .5rem;border-radius:6px;font-size:.7rem;font-weight:600}
+        .badge-success{background:rgba(16,185,129,.15);color:var(--success)}
+        .badge-warning{background:rgba(245,158,11,.15);color:var(--warning)}
+        .setting-row{display:flex;gap:.5rem;align-items:center}
+        .setting-row label{font-size:.82rem;min-width:80px;color:var(--text-dim)}
+        .setting-row input,.setting-row select{flex:1}
+        .theme-toggle{background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:.35rem .7rem;border-radius:8px;font-size:.82rem;cursor:pointer;transition:all .2s;font-family:inherit;display:inline-flex;align-items:center;gap:.3rem}
+        .theme-toggle:hover{background:var(--accent);color:#fff}
+        @media(max-width:700px){.dashboard{grid-template-columns:1fr}.meters{grid-template-columns:repeat(2,1fr)}}
+    </style>
+</head>
+<body>
+<div class="dashboard">
+    <div class="full-span header">
+        <h1>🎙 Voice Agent — Diagnostic Dashboard</h1>
+        <p>Component isolation · Latency tracking · Runtime config</p>
+        <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">🌙 Light</button>
+    </div>
+
+    <div class="full-span">
+        <div class="tab-bar">
+            <button class="tab-btn active" data-tab="live">🔴 Live</button>
+            <button class="tab-btn" data-tab="mic">🎤 Mic Test</button>
+            <button class="tab-btn" data-tab="tts">🔊 TTS</button>
+            <button class="tab-btn" data-tab="stt">📝 STT</button>
+            <button class="tab-btn" data-tab="llm">🧠 LLM</button>
+            <button class="tab-btn" data-tab="selftalk">🗣️ Self-Talk</button>
+            <button class="tab-btn" data-tab="settings">⚙️ Settings</button>
+        </div>
+    </div>
+
+    <!-- ══════════════════ TAB: Live Pipeline ══════════════════ -->
+    <div class="tab-panel active full-span" id="tab-live">
+        <div class="dashboard" style="max-width:100%">
+            <div class="card full-span">
+                <div class="controls-row">
+                    <select id="modeSelect"><option value="interview">Interview</option><option value="background_check">Background Check</option></select>
+                    <button id="connectBtn" class="btn btn-primary">Connect &amp; Talk</button>
+                </div>
+                <div class="status-row">
+                    <div class="chip"><div class="dot" id="dotWs"></div><span>WebSocket</span></div>
+                    <div class="chip"><div class="dot" id="dotMic"></div><span>Mic</span></div>
+                    <div class="chip"><div class="dot" id="dotVad"></div><span>VAD</span></div>
+                    <div class="chip"><div class="dot" id="dotBot"></div><span>Bot</span></div>
+                </div>
+            </div>
+            <div class="card full-span"><div class="card-title">Latency</div>
+                <div class="meters">
+                    <div class="meter"><div class="meter-label">Chunks/s</div><div class="meter-value" id="mChunks">—</div></div>
+                    <div class="meter"><div class="meter-label">Bytes In</div><div class="meter-value" id="mBytesIn">—</div></div>
+                    <div class="meter"><div class="meter-label">Bytes Out</div><div class="meter-value" id="mBytesOut">—</div></div>
+                    <div class="meter"><div class="meter-label">Queue</div><div class="meter-value" id="mQueue">—</div></div>
+                </div>
+            </div>
+            <div class="card"><div class="card-title">Mic Waveform</div><canvas id="waveform"></canvas></div>
+            <div class="card"><div class="card-title">Bot Waveform</div><canvas id="waveformBot"></canvas></div>
+            <div class="card full-span"><div class="card-title">Event Log</div><div class="terminal" id="terminal"></div></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ TAB: Mic Test ══════════════════ -->
+    <div class="tab-panel full-span" id="tab-mic">
+        <div class="dashboard" style="max-width:100%">
+            <div class="card full-span">
+                <div class="card-title">🎤 Mic → STT Isolation Test</div>
+                <p style="font-size:.83rem;color:var(--text-dim)">Record from your microphone, send audio directly to Whisper STT. No WebSocket or VAD involved — pure mic → transcription test.</p>
+                <div class="controls-row">
+                    <button id="micRecordBtn" class="btn btn-danger">🎙 Hold to Record</button>
+                    <button id="micPlaybackBtn" class="btn btn-sm btn-primary" disabled>▶ Play Recording</button>
+                </div>
+                <canvas id="micWaveCanvas"></canvas>
+                <div class="result-box" id="micResult"><span class="label">Press and hold the record button, speak, then release.</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ TAB: TTS ══════════════════ -->
+    <div class="tab-panel full-span" id="tab-tts">
+        <div class="card">
+            <div class="card-title">🔊 Text-to-Speech</div>
+            <textarea id="ttsInput" rows="2">Hello! I am your voice assistant. How can I help you today?</textarea>
+            <button id="ttsBtn" class="btn btn-primary">Synthesize &amp; Play</button>
+            <div class="result-box" id="ttsResult"><span class="label">Results here…</span></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ TAB: STT ══════════════════ -->
+    <div class="tab-panel full-span" id="tab-stt">
+        <div class="card">
+            <div class="card-title">📝 STT Round-Trip (TTS → Whisper)</div>
+            <textarea id="sttInput" rows="2">The quick brown fox jumps over the lazy dog.</textarea>
+            <button id="sttBtn" class="btn btn-primary">Generate → Transcribe</button>
+            <div class="result-box" id="sttResult"><span class="label">Results here…</span></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ TAB: LLM ══════════════════ -->
+    <div class="tab-panel full-span" id="tab-llm">
+        <div class="card">
+            <div class="card-title">🧠 LLM Test <span class="badge badge-warning" id="llmBadge">local</span></div>
+            <textarea id="llmInput" rows="2">Say hello and introduce yourself in one sentence.</textarea>
+            <div class="controls-row">
+                <select id="llmMode" style="flex:1"><option value="interview">Interview</option><option value="background_check">Background Check</option></select>
+                <button id="llmBtn" class="btn btn-primary btn-sm">Generate</button>
+            </div>
+            <div class="result-box" id="llmResult"><span class="label">Results here…</span></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ TAB: Self-Talk ══════════════════ -->
+    <div class="tab-panel full-span" id="tab-selftalk">
+        <div class="dashboard" style="max-width:100%">
+            <div class="card full-span">
+                <div class="card-title">🗣️ Self-Talk</div>
+                <p style="font-size:.83rem;color:var(--text-dim)">Full TTS → STT → LLM → TTS loop. No mic needed.</p>
+                <textarea id="selfSeed" rows="2">Hello, I am ready for the interview. Let's begin.</textarea>
+                <div class="controls-row">
+                    <select id="selfMode" style="flex:1"><option value="interview">Interview</option><option value="background_check">Background Check</option></select>
+                    <input id="selfRounds" type="number" value="3" min="1" max="10" style="width:80px" placeholder="Rounds">
+                    <button id="selfBtn" class="btn btn-success btn-sm">Start</button>
+                </div>
+            </div>
+            <div class="card full-span"><div class="card-title">Conversation</div><div class="convo" id="selfConvo"><span style="color:var(--text-dim);font-size:.83rem">Will appear here…</span></div></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ TAB: Settings ══════════════════ -->
+    <div class="tab-panel full-span" id="tab-settings">
+        <div class="dashboard" style="max-width:100%">
+            <div class="card full-span">
+                <div class="card-title">⚙️ LLM Backend Configuration</div>
+                <p style="font-size:.83rem;color:var(--text-dim)">Switch between local CPU inference (Llama.cpp) and Groq cloud API at runtime. The live pipeline and all test tabs will immediately use the new backend.</p>
+                <div class="setting-row"><label>Backend</label><select id="cfgBackend"><option value="local">🖥️ Local (llama-cpp)</option><option value="groq">☁️ Groq Cloud API</option></select></div>
+                <div id="groqSettings" style="display:none">
+                    <div class="setting-row" style="margin-top:.5rem"><label>API Key</label><input type="password" id="cfgApiKey" placeholder="gsk_..."></div>
+                    <div class="setting-row" style="margin-top:.5rem"><label>Model</label><select id="cfgModel">
+                        <option value="llama-3.1-8b-instant">llama-3.1-8b-instant (fast)</option>
+                        <option value="llama-3.3-70b-versatile">llama-3.3-70b-versatile</option>
+                        <option value="llama-3.1-70b-versatile">llama-3.1-70b-versatile</option>
+                        <option value="mixtral-8x7b-32768">mixtral-8x7b-32768</option>
+                        <option value="gemma2-9b-it">gemma2-9b-it</option>
+                    </select></div>
+                </div>
+                <button id="cfgSaveBtn" class="btn btn-primary btn-sm" style="align-self:flex-start;margin-top:.5rem">Apply Backend</button>
+                <div class="result-box" id="cfgResult"><span class="label">Current status will appear here…</span></div>
+            </div>
+            <div class="card full-span">
+                <div class="card-title">📊 Latency Comparison</div>
+                <div class="result-box">
+<span class="label">Expected latency per backend:</span>
+
+<span class="value">☁️ Groq Cloud (LPU)</span>
+   TTFT:  <span class="metric">~80–150ms</span>
+   Speed: <span class="metric">~800 tok/s</span>
+   Round: <span class="metric">~3–5s</span>
+
+<span class="value">🖥️ Local CPU (Llama 8B Q4)</span>
+   TTFT:  <span class="metric">~700–1000ms</span>
+   Speed: <span class="metric">~5 tok/s</span>
+   Round: <span class="metric">~12–15s</span>
+
+<span class="label">Groq is ~50–100× faster for LLM inference.</span>
+<span class="label">TTS + STT stay local regardless.</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ── Theme toggle ──
+(function(){const t=localStorage.getItem('dashboard-theme')||'dark';document.documentElement.setAttribute('data-theme',t);updateToggle(t)})();
+function updateToggle(theme){const btn=document.getElementById('themeToggle');btn.textContent=theme==='light'?'☀️ Dark':'🌙 Light'}
+document.getElementById('themeToggle').addEventListener('click',()=>{const curr=document.documentElement.getAttribute('data-theme');const next=curr==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('dashboard-theme',next);updateToggle(next)});
+
+const API='http://localhost:8080';
+
+// ── Tabs ──
+document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');document.getElementById('tab-'+b.dataset.tab).classList.add('active');
+    if(b.dataset.tab==='settings') loadBackendStatus();
+    if(b.dataset.tab==='llm') loadBackendStatus();
+})});
+
+// ── Shared ──
+function playPCM16(buf,sr=16000){const c=new(window.AudioContext||window.webkitAudioContext)();const i=new Int16Array(buf);const f=new Float32Array(i.length);for(let j=0;j<i.length;j++)f[j]=i[j]/32768;const b=c.createBuffer(1,f.length,sr);b.copyToChannel(f,0);const s=c.createBufferSource();s.buffer=b;s.connect(c.destination);s.start();return b.duration}
+function escHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+
+// ══════════════════════════════════════════
+//  MIC TEST TAB
+// ══════════════════════════════════════════
+const micRecordBtn=document.getElementById('micRecordBtn');
+const micPlaybackBtn=document.getElementById('micPlaybackBtn');
+const micResult=document.getElementById('micResult');
+const micWaveCanvas=document.getElementById('micWaveCanvas');
+const micWaveCtx=micWaveCanvas.getContext('2d');
+let micStream=null,micCtx=null,micProcessor=null,micRecording=false,micChunks=[],micAnalyser=null;
+
+micRecordBtn.addEventListener('mousedown',startMicRecord);
+micRecordBtn.addEventListener('mouseup',stopMicRecord);
+micRecordBtn.addEventListener('mouseleave',()=>{if(micRecording)stopMicRecord()});
+micRecordBtn.addEventListener('touchstart',e=>{e.preventDefault();startMicRecord()});
+micRecordBtn.addEventListener('touchend',e=>{e.preventDefault();stopMicRecord()});
+
+async function startMicRecord(){
+    try{
+        micCtx=new(window.AudioContext||window.webkitAudioContext)();
+        micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
+        const src=micCtx.createMediaStreamSource(micStream);
+        micAnalyser=micCtx.createAnalyser();micAnalyser.fftSize=2048;
+        src.connect(micAnalyser);
+        micProcessor=micCtx.createScriptProcessor(4096,1,1);
+        src.connect(micProcessor);micProcessor.connect(micCtx.destination);
+        micChunks=[];micRecording=true;
+        micRecordBtn.innerHTML='<span class="rec-indicator"></span>Recording…';
+        micResult.innerHTML='<span class="label">🔴 Recording… Release to send to STT.</span>';
+
+        const drawBuf=new Uint8Array(micAnalyser.frequencyBinCount);
+        (function draw(){
+            if(!micRecording)return;requestAnimationFrame(draw);
+            micAnalyser.getByteTimeDomainData(drawBuf);
+            const W=micWaveCanvas.width=micWaveCanvas.clientWidth*devicePixelRatio;
+            const H=micWaveCanvas.height=micWaveCanvas.clientHeight*devicePixelRatio;
+            micWaveCtx.clearRect(0,0,W,H);micWaveCtx.lineWidth=2;micWaveCtx.strokeStyle='#ef4444';micWaveCtx.beginPath();
+            const s=W/drawBuf.length;
+            for(let i=0;i<drawBuf.length;i++){const y=(drawBuf[i]/255)*H;i===0?micWaveCtx.moveTo(0,y):micWaveCtx.lineTo(i*s,y)}
+            micWaveCtx.stroke();
+        })();
+
+        micProcessor.onaudioprocess=e=>{
+            if(!micRecording)return;
+            const raw=e.inputBuffer.getChannelData(0);
+            const ds=downsample(raw,micCtx.sampleRate,16000);
+            const pcm=float32ToInt16(ds);
+            micChunks.push(pcm);
+        };
+    }catch(e){micResult.innerHTML=`<span class="err">Mic error: ${e.message}</span>`}
+}
+
+async function stopMicRecord(){
+    micRecording=false;
+    micRecordBtn.textContent='🎙 Hold to Record';
+    if(micProcessor){micProcessor.disconnect();micProcessor=null}
+    if(micStream){micStream.getTracks().forEach(t=>t.stop());micStream=null}
+
+    if(!micChunks.length){micResult.innerHTML='<span class="label">No audio captured.</span>';return}
+
+    // Merge chunks
+    let totalLen=0;micChunks.forEach(c=>totalLen+=c.length);
+    const merged=new Int16Array(totalLen);let off=0;
+    micChunks.forEach(c=>{merged.set(c,off);off+=c.length});
+
+    const durS=(merged.length/16000);
+    micResult.innerHTML=`<span class="label">Captured ${merged.length} samples (${durS.toFixed(2)}s). Sending to STT…</span>`;
+    micPlaybackBtn.disabled=false;
+    micPlaybackBtn.onclick=()=>playPCM16(merged.buffer,16000);
+
+    // Send to server
+    try{
+        const t0=performance.now();
+        const resp=await fetch(`${API}/test/mic-stt`,{method:'POST',headers:{'Content-Type':'application/octet-stream'},body:merged.buffer});
+        const fetchMs=(performance.now()-t0).toFixed(0);
+        if(!resp.ok)throw new Error(await resp.text());
+        const data=await resp.json();
+        micResult.innerHTML=
+            `<span class="label">Recording:</span>   ${merged.length} samples (${durS.toFixed(2)}s)\n`+
+            `<span class="label">STT Result:</span>  <span class="value">"${data.transcription}"</span>\n`+
+            `<span class="label">STT Latency:</span> <span class="metric">${data.stt_latency_ms}ms</span>\n`+
+            `<span class="label">Round-trip:</span>  <span class="metric">${fetchMs}ms</span>`;
+    }catch(e){micResult.innerHTML=`<span class="err">Error: ${e.message}</span>`}
+    if(micCtx){micCtx.close();micCtx=null}
+}
+
+// ══════════════════════════════════════════
+//  TTS TEST
+// ══════════════════════════════════════════
+document.getElementById('ttsBtn').addEventListener('click',async()=>{
+    const btn=document.getElementById('ttsBtn'),res=document.getElementById('ttsResult');
+    const text=document.getElementById('ttsInput').value.trim();if(!text)return;
+    btn.disabled=true;btn.innerHTML='<span class="spinner"></span>Synthesizing…';
+    res.innerHTML='<span class="label">Processing…</span>';
+    try{
+        const t0=performance.now();
+        const resp=await fetch(`${API}/test/tts`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
+        const fetchMs=(performance.now()-t0).toFixed(0);
+        if(!resp.ok)throw new Error(await resp.text());
+        const buf=await resp.arrayBuffer();const dur=playPCM16(buf);
+        const synthMs=resp.headers.get('X-Synthesis-Latency-Ms')||'?';
+        res.innerHTML=`<span class="label">Input:</span>   "${text}"\n<span class="label">Audio:</span>   <span class="value">${buf.byteLength} bytes</span> (${(dur*1000).toFixed(0)}ms)\n<span class="label">Synth:</span>   <span class="metric">${synthMs}ms</span>\n<span class="label">Total:</span>   <span class="metric">${fetchMs}ms</span>\n<span class="value">✓ Playing…</span>`;
+    }catch(e){res.innerHTML=`<span class="err">Error: ${e.message}</span>`}
+    finally{btn.disabled=false;btn.textContent='Synthesize & Play'}
+});
+
+// ══════════════════════════════════════════
+//  STT TEST
+// ══════════════════════════════════════════
+document.getElementById('sttBtn').addEventListener('click',async()=>{
+    const btn=document.getElementById('sttBtn'),res=document.getElementById('sttResult');
+    const text=document.getElementById('sttInput').value.trim();if(!text)return;
+    btn.disabled=true;btn.innerHTML='<span class="spinner"></span>Running…';
+    res.innerHTML='<span class="label">Generating audio → transcribing…</span>';
+    try{
+        const resp=await fetch(`${API}/test/stt`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
+        if(!resp.ok)throw new Error(await resp.text());const data=await resp.json();
+        const m=data.match?'✅':'❌';
+        res.innerHTML=`<span class="label">Expected:</span>  "${data.expected}"\n<span class="label">Got:</span>       "<span class="value">${data.transcription}</span>"\n<span class="label">Match:</span>     ${m}\n<span class="label">Audio:</span>     <span class="metric">${data.audio_duration_s}s</span>\n<span class="label">TTS:</span>       <span class="metric">${data.tts_latency_ms}ms</span>\n<span class="label">STT:</span>       <span class="metric">${data.stt_latency_ms}ms</span>`;
+    }catch(e){res.innerHTML=`<span class="err">Error: ${e.message}</span>`}
+    finally{btn.disabled=false;btn.textContent='Generate → Transcribe'}
+});
+
+// ══════════════════════════════════════════
+//  LLM TEST
+// ══════════════════════════════════════════
+document.getElementById('llmBtn').addEventListener('click',async()=>{
+    const btn=document.getElementById('llmBtn'),res=document.getElementById('llmResult');
+    const prompt=document.getElementById('llmInput').value.trim(),mode=document.getElementById('llmMode').value;if(!prompt)return;
+    btn.disabled=true;btn.innerHTML='<span class="spinner"></span>Generating…';
+    res.innerHTML='<span class="label">Waiting…</span>';
+    try{
+        const resp=await fetch(`${API}/test/llm`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt,mode})});
+        if(!resp.ok)throw new Error(await resp.text());const data=await resp.json();
+        const badge=data.backend==='groq'?'☁️ groq':'🖥️ local';
+        res.innerHTML=`<span class="label">Backend:</span>  <span class="value">${badge}</span>\n<span class="label">Prompt:</span>   "${prompt}"\n\n<span class="label">Response:</span>\n<span class="value">${escHtml(data.text)}</span>\n\n<span class="label">Tokens:</span>   <span class="metric">${data.token_count}</span>\n<span class="label">TTFT:</span>     <span class="metric">${data.ttft_ms}ms</span>\n<span class="label">Total:</span>    <span class="metric">${data.total_ms}ms</span>`;
+    }catch(e){res.innerHTML=`<span class="err">Error: ${e.message}</span>`}
+    finally{btn.disabled=false;btn.textContent='Generate'}
+});
+
+// ══════════════════════════════════════════
+//  SELF-TALK
+// ══════════════════════════════════════════
+document.getElementById('selfBtn').addEventListener('click',async()=>{
+    const btn=document.getElementById('selfBtn'),convo=document.getElementById('selfConvo');
+    const seed=document.getElementById('selfSeed').value.trim(),mode=document.getElementById('selfMode').value;
+    const rounds=parseInt(document.getElementById('selfRounds').value)||2;if(!seed)return;
+    btn.disabled=true;btn.innerHTML='<span class="spinner"></span>Talking…';
+    convo.innerHTML='<div class="bubble user">'+escHtml(seed)+'<div class="timing">Seed</div></div>';
+    try{
+        const resp=await fetch(`${API}/test/self-talk`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({seed_text:seed,mode,rounds})});
+        if(!resp.ok)throw new Error(await resp.text());const data=await resp.json();
+        convo.innerHTML='';
+        for(const r of data.conversation)for(const s of r.steps){
+            if(s.error){convo.innerHTML+=`<div class="bubble bot" style="background:var(--danger);color:#fff">${s.error}</div>`;continue}
+            if(s.role==='user')convo.innerHTML+=`<div class="bubble user">${escHtml(s.stt_transcription)}<div class="timing">TTS:${s.tts_latency_ms}ms · STT:${s.stt_latency_ms}ms</div></div>`;
+            else convo.innerHTML+=`<div class="bubble bot">${escHtml(s.llm_response)}<div class="timing">LLM:${s.llm_latency_ms}ms (${s.llm_tokens}tok) · TTS:${s.tts_latency_ms}ms</div></div>`;
+        }
+        convo.scrollTop=convo.scrollHeight;
+    }catch(e){convo.innerHTML+=`<div class="bubble bot" style="background:var(--danger);color:#fff">${escHtml(e.message)}</div>`}
+    finally{btn.disabled=false;btn.textContent='Start'}
+});
+
+// ══════════════════════════════════════════
+//  SETTINGS
+// ══════════════════════════════════════════
+document.getElementById('cfgBackend').addEventListener('change',e=>{
+    document.getElementById('groqSettings').style.display=e.target.value==='groq'?'block':'none';
+});
+
+document.getElementById('cfgSaveBtn').addEventListener('click',async()=>{
+    const btn=document.getElementById('cfgSaveBtn'),res=document.getElementById('cfgResult');
+    const backend=document.getElementById('cfgBackend').value;
+    const api_key=document.getElementById('cfgApiKey').value;
+    const model=document.getElementById('cfgModel').value;
+    btn.disabled=true;btn.innerHTML='<span class="spinner"></span>Applying…';
+    try{
+        const resp=await fetch(`${API}/test/llm-backend`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({backend,api_key,model})});
+        if(!resp.ok)throw new Error(await resp.text());const data=await resp.json();
+        res.innerHTML=`<span class="value">✓ Backend switched!</span>\n\n<span class="label">Backend:</span>        <span class="value">${data.backend}</span>\n<span class="label">Local loaded:</span>   ${data.local_loaded?'✅':'❌'}\n<span class="label">Groq configured:</span> ${data.groq_configured?'✅':'❌'}\n<span class="label">Groq model:</span>     <span class="metric">${data.groq_model}</span>`;
+        updateBadge(data.backend);
+    }catch(e){res.innerHTML=`<span class="err">Error: ${e.message}</span>`}
+    finally{btn.disabled=false;btn.textContent='Apply Backend'}
+});
+
+async function loadBackendStatus(){
+    try{
+        const resp=await fetch(`${API}/test/llm-backend`);if(!resp.ok)return;
+        const data=await resp.json();
+        document.getElementById('cfgResult').innerHTML=`<span class="label">Backend:</span>        <span class="value">${data.backend}</span>\n<span class="label">Local loaded:</span>   ${data.local_loaded?'✅':'❌'}\n<span class="label">Groq configured:</span> ${data.groq_configured?'✅':'❌'}\n<span class="label">Groq model:</span>     <span class="metric">${data.groq_model}</span>`;
+        updateBadge(data.backend);
+    }catch(e){}
+}
+function updateBadge(backend){
+    const b=document.getElementById('llmBadge');
+    if(backend==='groq'){b.textContent='☁️ groq';b.className='badge badge-success'}
+    else{b.textContent='🖥️ local';b.className='badge badge-warning'}
+}
+
+// ══════════════════════════════════════════
+//  LIVE PIPELINE
+// ══════════════════════════════════════════
+const connectBtn=document.getElementById('connectBtn'),modeSelect=document.getElementById('modeSelect'),terminal=document.getElementById('terminal');
+const dotWs=document.getElementById('dotWs'),dotMic=document.getElementById('dotMic'),dotVad=document.getElementById('dotVad'),dotBot=document.getElementById('dotBot');
+const mChunks=document.getElementById('mChunks'),mBytesIn=document.getElementById('mBytesIn'),mBytesOut=document.getElementById('mBytesOut'),mQueue=document.getElementById('mQueue');
+const waveCanvas=document.getElementById('waveform'),waveCtx=waveCanvas.getContext('2d');
+const waveBotCanvas=document.getElementById('waveformBot'),waveBotCtx=waveBotCanvas.getContext('2d');
+let ws=null,audioCtx=null,mediaStream=null,processor=null,connected=false,nextPlayTime=0;
+let bytesIn=0,bytesOut=0,playbackQueueSize=0,chunkCounter=0;
+const TARGET_SR=16000;
+function log(msg,cls=''){const el=document.createElement('div');el.className='log-line '+cls;const ts=new Date().toLocaleTimeString('en-US',{hour12:false,fractionalSecondDigits:2});el.textContent=`[${ts}] ${msg}`;terminal.appendChild(el);terminal.scrollTop=terminal.scrollHeight}
+setInterval(()=>{if(!connected)return;mChunks.textContent=chunkCounter;chunkCounter=0;mBytesIn.textContent=fmtB(bytesIn);mBytesOut.textContent=fmtB(bytesOut);mQueue.textContent=playbackQueueSize},1000);
+function fmtB(b){return b<1024?b+'B':b<1048576?(b/1024).toFixed(1)+'K':(b/1048576).toFixed(1)+'M'}
+connectBtn.addEventListener('click',()=>connected?disconnect():connect());
+async function connect(){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();nextPlayTime=audioCtx.currentTime;log('AudioContext SR='+audioCtx.sampleRate,'info');
+mediaStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});dotMic.classList.add('on','pulse');log('Mic granted','success');
+const mode=modeSelect.value;ws=new WebSocket(`ws://localhost:8080/ws/voice?mode=${mode}`);ws.binaryType='arraybuffer';
+ws.onopen=()=>{connected=true;dotWs.classList.add('on');connectBtn.textContent='Disconnect';connectBtn.className='btn btn-danger';modeSelect.disabled=true;log('WS OPEN ('+mode+')','success');startCapture()};
+ws.onmessage=ev=>{if(ev.data instanceof ArrayBuffer){bytesOut+=ev.data.byteLength;playbackQueueSize++;dotBot.classList.add('on');playLivePCM(ev.data)}};
+ws.onclose=ev=>{log('WS CLOSED code='+ev.code,'warn');disconnect()};ws.onerror=()=>log('WS ERROR','error')}catch(e){log('Connect fail: '+e.message,'error');disconnect()}}
+function disconnect(){connected=false;if(processor){processor.disconnect();processor=null}if(mediaStream){mediaStream.getTracks().forEach(t=>t.stop());mediaStream=null}if(ws){ws.close();ws=null}if(audioCtx){audioCtx.close();audioCtx=null}
+[dotWs,dotMic,dotVad,dotBot].forEach(d=>d.classList.remove('on','pulse'));connectBtn.textContent='Connect & Talk';connectBtn.className='btn btn-primary';modeSelect.disabled=false;log('Disconnected','warn')}
+function startCapture(){const src=audioCtx.createMediaStreamSource(mediaStream);const a=audioCtx.createAnalyser();a.fftSize=2048;src.connect(a);
+processor=audioCtx.createScriptProcessor(4096,1,1);src.connect(processor);processor.connect(audioCtx.destination);
+const db=new Uint8Array(a.frequencyBinCount);(function dw(){if(!connected)return;requestAnimationFrame(dw);a.getByteTimeDomainData(db);
+const W=waveCanvas.width=waveCanvas.clientWidth*devicePixelRatio,H=waveCanvas.height=waveCanvas.clientHeight*devicePixelRatio;
+waveCtx.clearRect(0,0,W,H);waveCtx.lineWidth=2;waveCtx.strokeStyle='#6366f1';waveCtx.beginPath();const s=W/db.length;
+for(let i=0;i<db.length;i++){const y=(db[i]/255)*H;i===0?waveCtx.moveTo(0,y):waveCtx.lineTo(i*s,y)}waveCtx.stroke()})();
+processor.onaudioprocess=e=>{if(!connected||ws.readyState!==WebSocket.OPEN)return;const raw=e.inputBuffer.getChannelData(0);
+const ds=downsample(raw,audioCtx.sampleRate,TARGET_SR);const pcm=float32ToInt16(ds);ws.send(pcm.buffer);bytesIn+=pcm.buffer.byteLength;chunkCounter++;
+let sum=0;for(let i=0;i<ds.length;i++)sum+=ds[i]*ds[i];(Math.sqrt(sum/ds.length)>0.02)?dotVad.classList.add('on'):dotVad.classList.remove('on')}}
+function playLivePCM(ab){if(!audioCtx)return;const i=new Int16Array(ab);const f=new Float32Array(i.length);for(let j=0;j<i.length;j++)f[j]=i[j]/32768;
+const b=audioCtx.createBuffer(1,f.length,TARGET_SR);b.copyToChannel(f,0);const s=audioCtx.createBufferSource();s.buffer=b;s.connect(audioCtx.destination);
+if(nextPlayTime<audioCtx.currentTime)nextPlayTime=audioCtx.currentTime;s.start(nextPlayTime);nextPlayTime+=b.duration;
+s.onended=()=>{playbackQueueSize=Math.max(0,playbackQueueSize-1);if(!playbackQueueSize)dotBot.classList.remove('on')};
+const W=waveBotCanvas.width=waveBotCanvas.clientWidth*devicePixelRatio,H=waveBotCanvas.height=waveBotCanvas.clientHeight*devicePixelRatio;
+waveBotCtx.clearRect(0,0,W,H);waveBotCtx.lineWidth=2;waveBotCtx.strokeStyle='#10b981';waveBotCtx.beginPath();
+const step=Math.max(1,Math.floor(f.length/W));for(let j=0;j<W;j++){const y=((f[j*step]||0)+1)/2*H;j===0?waveBotCtx.moveTo(0,y):waveBotCtx.lineTo(j,y)}waveBotCtx.stroke();
+log(`▶ ${ab.byteLength}B (${(b.duration*1000).toFixed(0)}ms)`,'audio')}
+
+// ── Audio helpers ──
+function downsample(buf,from,to){if(from===to)return buf;const r=from/to,len=Math.round(buf.length/r),out=new Float32Array(len);
+for(let i=0;i<len;i++){const c=Math.round(i*r),n=Math.round((i+1)*r);let a=0,cnt=0;for(let j=c;j<n&&j<buf.length;j++){a+=buf[j];cnt++}out[i]=a/cnt}return out}
+function float32ToInt16(f){const o=new Int16Array(f.length);for(let i=0;i<f.length;i++){const s=Math.max(-1,Math.min(1,f[i]));o[i]=s<0?s*0x8000:s*0x7FFF}return o}
+
+// Load status on init
+loadBackendStatus();
+</script>
+</body>
+</html>

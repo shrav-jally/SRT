@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: format-and-lint
+        name: "Run Ruff + ESLint autofix"
+        entry: ./scripts/pre_commit.sh
+        language: script     # runs in your shell, cross-platform
+        pass_filenames: false  # we run the script once, not per-file

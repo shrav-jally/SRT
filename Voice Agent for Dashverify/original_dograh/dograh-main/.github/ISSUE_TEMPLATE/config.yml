@@ -1,0 +1,7 @@
+contact_links:
+  - name: 💡 Feature Request
+    url: https://github.com/orgs/dograh-hq/discussions/new?category=ideas
+    about: Suggest any ideas you have using our discussion forums.
+  - name: "🔒 Report a Security Vulnerability"
+    url: https://github.com/dograh-hq/dograh/security/advisories/new
+    about: "Privately report security vulnerabilities to maintainers (not via public issues)."

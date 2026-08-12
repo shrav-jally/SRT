@@ -1,0 +1,26 @@
+__pycache__
+.DS_Store
+.env
+.env.prod
+.env.test
+
+# logs and run directory on production
+/logs/
+/run/
+infrastructure/
+prd/
+.vercel
+
+.devcontainer/install.local.sh
+venv/
+.venv/
+.playwright-mcp
+coturn/
+*.wav
+dograh_pcm_cache/
+node_modules/
+
+# Superpowers brainstorm mockups (local only)
+.superpowers/
+docs/superpowers/
+.gstack/
