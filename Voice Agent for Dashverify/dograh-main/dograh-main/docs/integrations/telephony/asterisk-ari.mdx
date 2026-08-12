@@ -1,0 +1,279 @@
+---
+title: "Asterisk ARI Integration"
+description: "Connect Dograh AI to your Asterisk PBX using the Asterisk REST Interface (ARI)"
+---
+
+## Overview
+
+Asterisk ARI (Asterisk REST Interface) allows you to connect Dograh AI voice agents to your existing Asterisk PBX. ARI provides a WebSocket-based event model for controlling calls via Stasis applications, giving Dograh full control over call flow and audio streaming.
+
+This guide focuses on the Dograh-specific configuration. For general Asterisk installation and administration, refer to the [official Asterisk documentation](https://docs.asterisk.org/).
+
+## Prerequisites
+
+Before setting up the ARI integration, ensure you have:
+
+- A running Asterisk instance with `chan_websocket` and `res_websocket_client` modules available. Known-working setups: (a) Asterisk 22+, (b) Asterisk 20 LTS with these modules included
+- ARI module enabled in Asterisk
+- `chan_websocket` (WebSocket channel driver) and `res_websocket_client` (loads `websocket_client.conf`) enabled in your Asterisk build. Verify with `asterisk -rx "module show like chan_websocket"` and `asterisk -rx "module show like res_websocket_client"` — both should report **Running**.
+- Network connectivity between your Dograh instance and Asterisk
+- Dograh AI instance running and accessible
+
+<Note>
+If you compiled Asterisk from source, ensure both `chan_websocket` and `res_websocket_client` are included during the build. These modules are required for external media streaming between Asterisk and Dograh. Refer to the [Asterisk build system documentation](https://docs.asterisk.org/) for details on enabling modules.
+</Note>
+
+## Asterisk Configuration
+
+The following Asterisk configuration files need to be set up to work with Dograh. These are minimal examples focused on the Dograh integration -- refer to the [Asterisk documentation](https://docs.asterisk.org/) for full configuration details.
+
+### Enable ARI (`ari.conf`)
+
+Create an ARI user that Dograh will use to authenticate:
+
+```ini
+[general]
+enabled = yes
+
+[dograh]
+type = user
+read_only = no
+password = your_secure_password
+```
+
+<Note>
+The username (section name, e.g., `dograh`) and password here must match the **Stasis App Name** and **App Password** you configure in Dograh.
+</Note>
+
+### Enable the HTTP Server (`http.conf`)
+
+ARI requires the Asterisk HTTP server to be enabled:
+
+```ini
+[general]
+enabled = yes
+bindaddr = 0.0.0.0
+bindport = 8088
+```
+
+### Configure the Stasis Dialplan (`extensions.conf`)
+
+Route incoming calls to your Stasis application so Dograh can handle them:
+
+```ini
+[from-external]
+exten => _X.,1,NoOp(Incoming call to ${EXTEN})
+ same => n,Stasis(dograh)
+ same => n,Hangup()
+```
+
+Replace `dograh` with the app name you configured in `ari.conf` and in Dograh.
+
+### Configure External Media Streaming (`websocket_client.conf`)
+
+Dograh uses Asterisk's external media streaming to send and receive audio over WebSocket. Configure a WebSocket client connection that points to your Dograh instance:
+
+<Tabs>
+  <Tab title="Dograh Cloud">
+    ```ini
+    [dograh]
+    type = websocket_client
+    uri = wss://api.dograh.com/api/v1/telephony/ws/ari
+    protocols = media
+    tls_enabled = yes
+    ca_list_file = /etc/ssl/certs/ca-certificates.crt
+    ```
+
+    <Note>
+    `tls_enabled = yes` is required even though the URI scheme is `wss://` — without it Asterisk will not negotiate TLS and the connection will fail. The ARI credentials (**Stasis App Name** and **App Password**) must match what you configure in the Dograh dashboard under Telephony Settings.
+    </Note>
+  </Tab>
+  <Tab title="Self-hosted">
+    ```ini
+    [dograh]
+    type = websocket_client
+    uri = ws://your-dograh-host:port/api/v1/telephony/ws/ari
+    protocols = media
+    ```
+
+    <Note>
+    Self-hosted deployments on an internal network may use an unencrypted WebSocket (`ws://`). If your Dograh instance is exposed over HTTPS, use `wss://` and the corresponding hostname instead.
+    </Note>
+  </Tab>
+</Tabs>
+
+<Note>
+The section name (e.g., `dograh`) is the **WebSocket Client Name** you'll enter in the Dograh telephony configuration. This name tells Asterisk which WebSocket connection to use for external media streaming during calls.
+</Note>
+
+<Note>
+Dograh's external media channel uses **G.711 μ-law (`ulaw`)**. Make sure any PJSIP endpoint or SIP trunk that places or receives calls through Dograh allows `ulaw` (e.g. `allow=ulaw` in the endpoint config).
+</Note>
+
+Refer to the [Asterisk WebSocket documentation](https://docs.asterisk.org/) for additional `websocket_client.conf` options and TLS configuration.
+
+### Apply the configuration changes
+
+After editing any of the files above, reload the affected Asterisk modules from the Asterisk CLI (`asterisk -rvvv`):
+
+```bash
+ari reload                                 # picks up ari.conf changes
+dialplan reload                            # picks up extensions.conf changes
+module reload res_websocket_client.so      # picks up websocket_client.conf changes
+```
+
+Changes to `http.conf` require a full Asterisk reload (`core reload`) or a service restart.
+
+## Configuration in Dograh
+
+### Step 1: Navigate to Telephony Settings
+
+1. Navigate to **/telephony-configurations** and click **Add configuration**
+2. Select **Asterisk ARI** as your provider
+
+### Step 2: Enter Your ARI Credentials
+
+Configure the following fields:
+
+| Field | Description | Example |
+|-------|-------------|---------|
+| **ARI Endpoint URL** | HTTP base URL of your Asterisk ARI server | `http://asterisk.example.com:8088` |
+| **Stasis App Name** | The ARI username configured in `ari.conf` | `dograh` |
+| **App Password** | The ARI password configured in `ari.conf` | `your_secure_password` |
+| **WebSocket Client Name** | The connection name from `websocket_client.conf` | `dograh` |
+| **From Extensions** | Optional SIP extensions or trunk numbers for outbound calls | `PJSIP/6001` or `6001` |
+
+### Step 3: Save and Add Extensions
+
+1. Click **Save Configuration**
+2. Open the configuration you just created and add each SIP extension that should be reachable as a **phone number** (e.g. `8000`). For inbound, you'll assign a workflow to each extension separately — see [Inbound Calling](#inbound-calling) below.
+3. Create a test workflow and initiate a test call to verify the connection.
+
+## Inbound Calling
+
+Unlike other telephony providers that use HTTP webhooks for inbound calls, ARI delivers inbound calls as **StasisStart events on the ARI WebSocket**. Dograh automatically detects these events and activates the workflow assigned to the called extension.
+
+### How It Works
+
+1. An external call arrives at Asterisk and the dialplan routes it to `Stasis(dograh)`
+2. Asterisk fires a StasisStart event over the ARI WebSocket with the channel in `Ring` state and the dialed extension in the dialplan context
+3. Dograh looks up the called extension in your telephony configuration's phone numbers, finds the assigned workflow, validates quota, and creates a workflow run
+4. The call is answered, bridged to an external media channel, and your voice agent workflow begins
+
+Workflow assignment is **per extension**, so different extensions on the same Asterisk can route to different agents.
+
+### Setting Up Inbound Calls
+
+**Step 1: Configure the Asterisk dialplan**
+
+Ensure your dialplan routes the extensions you care about into the Stasis application. Either route a specific extension:
+
+```ini
+[from-external]
+exten => 8000,1,NoOp(Incoming call to 8000)
+ same => n,Stasis(dograh)
+ same => n,Hangup()
+```
+
+…or use a pattern that catches every extension you'll register in Dograh:
+
+```ini
+[from-external]
+exten => _X.,1,NoOp(Incoming call to ${EXTEN})
+ same => n,Stasis(dograh)
+ same => n,Hangup()
+```
+
+Replace `dograh` with the app name you configured in `ari.conf` and in Dograh.
+
+**Step 2: Add the extension as a phone number in Dograh**
+
+1. Go to **/telephony-configurations** and open your Asterisk ARI configuration
+2. In the **Phone numbers** section, add a phone number whose address is the SIP extension (e.g. `8000`)
+3. Set its **Inbound workflow** to the agent that should answer
+4. Save
+
+   <Note>
+   Adding the extension in Dograh doesn't change Asterisk's dialplan — that's
+   what Step 1 is for. The Dograh entry tells the StasisStart handler which
+   workflow to run when a call to that extension reaches the Stasis app.
+   </Note>
+
+Repeat Step 2 for each extension that should reach a voice agent.
+
+**Step 3: Test an inbound call**
+
+Place a call to one of the extensions you configured. You should see the assigned workflow activate and the voice agent respond.
+
+### Inbound Call Context
+
+When an inbound call activates a workflow, the following context is available to your workflow:
+
+| Field | Description |
+|-------|-------------|
+| `caller_number` | The caller's phone number or extension |
+| `called_number` | The dialed number or extension |
+| `direction` | Always `inbound` |
+| `call_id` | The Asterisk channel ID |
+| `provider` | Always `ari` |
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Cannot connect to ARI endpoint">
+    - Verify the ARI endpoint URL is correct and reachable from your Dograh instance
+    - Check that the Asterisk HTTP server is running (`http.conf` has `enabled = yes`)
+    - Ensure firewall rules allow traffic on the ARI port (default: 8088)
+    - Confirm the ARI module is loaded: run `module show like res_ari` in the Asterisk CLI
+  </Accordion>
+
+  <Accordion title="Authentication failed">
+    - Verify the Stasis App Name matches the ARI user section name in `ari.conf`
+    - Check the App Password matches the password in `ari.conf`
+    - Ensure there are no extra spaces in the credentials
+  </Accordion>
+
+  <Accordion title="No audio during calls">
+    - Verify `chan_websocket` is loaded: run `module show like chan_websocket` in the Asterisk CLI
+    - Check that `websocket_client.conf` is correctly configured with the right Dograh URI
+    - Ensure the WebSocket Client Name in Dograh matches the section name in `websocket_client.conf`
+    - Verify network connectivity and firewall rules allow WebSocket traffic between Asterisk and Dograh
+  </Accordion>
+
+  <Accordion title="Calls not reaching Dograh">
+    - Ensure the dialplan routes calls to `Stasis(your_app_name)`
+    - Verify the app name in the dialplan matches the ARI user in `ari.conf`
+    - Check Asterisk CLI for errors: `asterisk -rvvv`
+    - Confirm the ARI WebSocket connection is active
+  </Accordion>
+
+  <Accordion title="Inbound calls are immediately hung up">
+    - Verify the called extension is added as a phone number under your ARI
+    configuration in /telephony-configurations and has an **Inbound workflow**
+    assigned
+    - Confirm the workflow exists and belongs to the same organization as the
+    ARI config
+    - Check that your organization has available quota
+    - Review Dograh logs for warnings like "no matching phone number registered
+    for config" or "has no inbound_workflow_id assigned"
+  </Accordion>
+
+  <Accordion title="WebSocket client connection issues">
+    - Check the URI in `websocket_client.conf` points to the correct Dograh host and port
+    - Verify the Dograh instance is running and accepting WebSocket connections
+    - If using TLS, ensure certificates are correctly configured on both sides
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+- Keep your Asterisk instance on the same network or a low-latency connection to Dograh for optimal audio quality
+- Use strong passwords for ARI authentication
+- Restrict ARI access to known IP addresses using firewall rules
+- Monitor Asterisk logs alongside Dograh logs when debugging call issues
+- Keep Asterisk updated to the latest stable version for security and compatibility
+
+## Further Reading
+
+- [Asterisk Documentation](https://docs.asterisk.org/) -- official reference for all Asterisk configuration
+- [ARI Documentation](https://docs.asterisk.org/Configuration/Interfaces/Asterisk-REST-Interface-ARI/) -- detailed ARI configuration and API reference

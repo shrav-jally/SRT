@@ -1,0 +1,397 @@
+---
+title: "Custom Telephony Provider"
+description: "Build your own telephony provider integration for Dograh AI"
+---
+
+## Overview
+
+A telephony provider is implemented as a **self-registering package** under `api/services/telephony/providers/<name>/`. The package contributes everything Dograh needs to wire the provider in — the provider class, transport factory, audio config, request/response schemas, optional HTTP routes, and the form metadata used to render its configuration UI — through a single `ProviderSpec` registered at import time.
+
+Adding a new provider should not require touching the factory, the audio config, the API routes module, the run-pipeline module, or the frontend. The only edits outside the provider folder are:
+
+1. One import line in `api/services/telephony/providers/__init__.py`
+2. One import line in `api/schemas/telephony_config.py` to add the request/response classes to the `TelephonyConfigRequest` discriminated union
+
+## Provider Package Layout
+
+```
+api/services/telephony/providers/your_provider/
+├── __init__.py        # Builds and registers ProviderSpec
+├── config.py          # Pydantic Request/Response schemas
+├── provider.py        # TelephonyProvider subclass
+├── transport.py       # Pipecat WebSocket transport factory
+├── serializers.py     # Frame serializer (usually re-exports from pipecat)
+├── routes.py          # (optional) HTTP webhook/callback handlers
+└── strategies.py      # (optional) Transfer/hangup strategies
+```
+
+Three files are required (`__init__.py`, `config.py`, `provider.py`, `transport.py`). The rest are optional and are discovered automatically when present:
+
+- **`routes.py`** — if the module exists and exports `router: APIRouter`, the routes module is imported lazily and mounted under `/api/v1/telephony` by `api.routes.telephony` via `importlib`. Providers that only stream over WebSocket (e.g. ARI) can omit it.
+- **`strategies.py`** — used by transports that need provider-specific call transfer/hangup logic in the frame serializer (e.g. Twilio Conference transfers).
+- **`serializers.py`** — typically a re-export from pipecat. Keep the file even when it's a one-line re-export so transport code imports from `.serializers`, giving you an obvious place to drop a custom subclass later.
+
+## The `TelephonyProvider` Interface
+
+Subclass `TelephonyProvider` in `provider.py`:
+
+```python
+from api.services.telephony.base import (
+    CallInitiationResult,
+    NormalizedInboundData,
+    ProviderSyncResult,
+    TelephonyProvider,
+)
+
+
+class YourProvider(TelephonyProvider):
+    PROVIDER_NAME = "your_provider"
+    WEBHOOK_ENDPOINT = "your-provider-xml"  # path under /api/v1/telephony
+
+    def __init__(self, config: dict):
+        self.api_key = config.get("api_key")
+        self.from_numbers = config.get("from_numbers", [])
+
+    # ---------- outbound ----------
+    async def initiate_call(self, to_number, webhook_url, workflow_run_id=None,
+                            from_number=None, **kwargs) -> CallInitiationResult: ...
+    async def get_call_status(self, call_id) -> dict: ...
+    async def get_call_cost(self, call_id) -> dict: ...
+    async def get_available_phone_numbers(self) -> list[str]: ...
+    def validate_config(self) -> bool: ...
+
+    # ---------- webhooks ----------
+    async def verify_webhook_signature(self, url, params, signature) -> bool: ...
+    async def get_webhook_response(self, workflow_id, user_id, workflow_run_id) -> str: ...
+    def parse_status_callback(self, data: dict) -> dict: ...
+
+    # ---------- websocket ----------
+    async def handle_websocket(self, websocket, workflow_id, user_id, workflow_run_id): ...
+
+    # ---------- inbound ----------
+    @classmethod
+    def can_handle_webhook(cls, webhook_data, headers) -> bool: ...
+
+    @staticmethod
+    def parse_inbound_webhook(webhook_data) -> NormalizedInboundData: ...
+
+    @staticmethod
+    def validate_account_id(config_data, webhook_account_id) -> bool: ...
+
+    def normalize_phone_number(self, phone_number: str) -> str: ...
+
+    async def verify_inbound_signature(self, url, webhook_data, headers, body="") -> bool: ...
+
+    async def start_inbound_stream(self, *, websocket_url, workflow_run_id,
+                                   normalized_data, backend_endpoint): ...
+
+    @staticmethod
+    def generate_error_response(error_type, message) -> tuple: ...
+
+    # ---------- transfers ----------
+    async def transfer_call(self, destination, transfer_id, conference_name,
+                            timeout=30, **kwargs) -> dict: ...
+    def supports_transfers(self) -> bool: ...
+
+    # ---------- optional ----------
+    async def configure_inbound(self, address, webhook_url) -> ProviderSyncResult:
+        # Default returns ok=True — implement only if your provider supports
+        # programmatic webhook configuration (e.g. binding a number to a URL
+        # via API). Used to point inbound numbers at /api/v1/telephony/inbound/run.
+        return ProviderSyncResult(ok=True)
+```
+
+See `api/services/telephony/base.py` for the full docstrings on each method.
+
+## Implementation Guide
+
+### 1. Configuration schemas
+
+Define Pydantic models for the credential payload. The `provider` `Literal` discriminator is what makes the schemas dispatch correctly through the registry's discriminated union.
+
+```python
+# providers/your_provider/config.py
+from typing import List, Literal
+from pydantic import BaseModel, Field
+
+
+class YourProviderConfigurationRequest(BaseModel):
+    provider: Literal["your_provider"] = Field(default="your_provider")
+    api_key: str = Field(..., description="Your Provider API key")
+    api_secret: str = Field(..., description="Your Provider API secret")
+    from_numbers: List[str] = Field(default_factory=list)
+
+
+class YourProviderConfigurationResponse(BaseModel):
+    provider: Literal["your_provider"] = Field(default="your_provider")
+    api_key: str        # masked when returned
+    api_secret: str     # masked when returned
+    from_numbers: List[str]
+```
+
+### 2. Transport factory
+
+Build the Pipecat `FastAPIWebsocketTransport` for accepted WebSockets. Always load credentials through `load_credentials_for_transport` so the right config row is picked when the workflow run carries a `telephony_configuration_id` (multi-config orgs).
+
+```python
+# providers/your_provider/transport.py
+from fastapi import WebSocket
+from api.services.pipecat.audio_config import AudioConfig
+from api.services.pipecat.audio_mixer import build_audio_out_mixer
+from api.services.telephony.factory import load_credentials_for_transport
+from pipecat.transports.websocket.fastapi import (
+    FastAPIWebsocketParams,
+    FastAPIWebsocketTransport,
+)
+from .serializers import YourProviderFrameSerializer
+
+
+async def create_transport(
+    websocket: WebSocket,
+    workflow_run_id: int,
+    audio_config: AudioConfig,
+    organization_id: int,
+    *,
+    vad_config: dict | None = None,
+    ambient_noise_config: dict | None = None,
+    telephony_configuration_id: int | None = None,
+    # provider-specific kwargs (forwarded by run_pipeline_telephony as **transport_kwargs)
+    stream_id: str,
+    call_id: str,
+):
+    config = await load_credentials_for_transport(
+        organization_id, telephony_configuration_id,
+        expected_provider="your_provider",
+    )
+
+    serializer = YourProviderFrameSerializer(
+        stream_id=stream_id,
+        call_id=call_id,
+        api_key=config["api_key"],
+    )
+    mixer = await build_audio_out_mixer(
+        audio_config.transport_out_sample_rate, ambient_noise_config
+    )
+
+    return FastAPIWebsocketTransport(
+        websocket=websocket,
+        params=FastAPIWebsocketParams(
+            audio_in_enabled=True,
+            audio_out_enabled=True,
+            audio_in_sample_rate=audio_config.transport_in_sample_rate,
+            audio_out_sample_rate=audio_config.transport_out_sample_rate,
+            audio_out_mixer=mixer,
+            serializer=serializer,
+        ),
+    )
+```
+
+### 3. Routes (optional)
+
+If your provider POSTs webhooks to Dograh (answer URL, status callbacks, hangup callbacks), expose them through a module-level `router`. The routes are auto-mounted under `/api/v1/telephony`.
+
+```python
+# providers/your_provider/routes.py
+from fastapi import APIRouter, Request
+from api.services.telephony.status_processor import (
+    StatusCallbackRequest,
+    _process_status_update,
+)
+
+router = APIRouter()
+
+
+@router.post("/your-provider/status-callback/{workflow_run_id}")
+async def status_callback(workflow_run_id: int, request: Request):
+    ...
+```
+
+Routes are loaded lazily via `importlib` from `api.routes.telephony._mount_provider_routers`, so your route module can freely import other backend services without creating import cycles at provider-class load time.
+
+### 4. Register the `ProviderSpec`
+
+The package's `__init__.py` is where everything comes together:
+
+```python
+# providers/your_provider/__init__.py
+from typing import Any, Dict
+
+from api.services.pipecat.audio_config import AudioConfig
+from api.services.telephony.registry import (
+    ProviderSpec,
+    ProviderUIField,
+    ProviderUIMetadata,
+    register,
+)
+
+from .config import YourProviderConfigurationRequest, YourProviderConfigurationResponse
+from .provider import YourProvider
+from .transport import create_transport
+
+
+def _config_loader(value: Dict[str, Any]) -> Dict[str, Any]:
+    """Normalize the stored credentials dict into the constructor shape."""
+    return {
+        "provider": "your_provider",
+        "api_key": value.get("api_key"),
+        "api_secret": value.get("api_secret"),
+        "from_numbers": value.get("from_numbers", []),
+    }
+
+
+_AUDIO_CONFIG = AudioConfig(
+    transport_in_sample_rate=8000,
+    transport_out_sample_rate=8000,
+    vad_sample_rate=8000,
+    pipeline_sample_rate=8000,
+    buffer_size_seconds=5.0,
+)
+
+
+_UI_METADATA = ProviderUIMetadata(
+    display_name="Your Provider",
+    docs_url="https://docs.your-provider.com",
+    fields=[
+        ProviderUIField(name="api_key",    label="API Key",    type="text",     sensitive=True),
+        ProviderUIField(name="api_secret", label="API Secret", type="password", sensitive=True),
+        ProviderUIField(
+            name="from_numbers", label="Phone Numbers", type="string-array",
+            description="E.164-formatted phone numbers used for outbound calls",
+        ),
+    ],
+)
+
+
+SPEC = ProviderSpec(
+    name="your_provider",
+    provider_cls=YourProvider,
+    config_loader=_config_loader,
+    transport_factory=create_transport,
+    audio_config=_AUDIO_CONFIG,
+    config_request_cls=YourProviderConfigurationRequest,
+    config_response_cls=YourProviderConfigurationResponse,
+    ui_metadata=_UI_METADATA,
+    # Credential field that uniquely identifies the provider account.
+    # Used to disambiguate inbound webhooks across multiple configs of the
+    # same provider. Empty string for providers without an account-id concept.
+    account_id_credential_field="api_key",
+)
+
+register(SPEC)
+```
+
+`ProviderSpec` covers everything downstream code needs:
+
+| Field | Used by |
+| --- | --- |
+| `name` | Stored as the discriminator on every `TelephonyConfiguration` row and as the `WorkflowRunMode` value |
+| `provider_cls` | `factory.get_default_telephony_provider`, `get_telephony_provider_by_id`, `get_telephony_provider_for_run` |
+| `config_loader` | `factory._normalize_with_phone_numbers` (replaces the old if/elif chain) |
+| `transport_factory` | `run_pipeline_telephony` |
+| `audio_config` | `create_audio_config()` and `run_pipeline_telephony` |
+| `config_request_cls` / `config_response_cls` | `TelephonyConfigRequest` discriminated union |
+| `ui_metadata` | `GET /api/v1/organizations/telephony-providers/metadata` (drives the form UI) and the `_sensitive_fields` masking helper |
+| `account_id_credential_field` | Inbound webhook routing across multiple configs of the same provider |
+
+### 5. Wire the package into the registry import chain
+
+Add one import line to `api/services/telephony/providers/__init__.py`:
+
+```python
+from api.services.telephony.providers import (  # noqa: F401  -- side effects
+    ari,
+    cloudonix,
+    plivo,
+    telnyx,
+    twilio,
+    vobiz,
+    vonage,
+    your_provider,        # ← add this
+)
+```
+
+### 6. Add to the discriminated union
+
+Add one import block to `api/schemas/telephony_config.py` so the request/response classes participate in the `TelephonyConfigRequest` union and the `TelephonyConfigurationResponse` shape:
+
+```python
+from api.services.telephony.providers.your_provider.config import (
+    YourProviderConfigurationRequest,
+    YourProviderConfigurationResponse,
+)
+
+TelephonyConfigRequest = Annotated[
+    Union[
+        # ...existing entries...
+        YourProviderConfigurationRequest,
+    ],
+    Field(discriminator="provider"),
+]
+
+
+class TelephonyConfigurationResponse(BaseModel):
+    # ...existing entries...
+    your_provider: Optional[YourProviderConfigurationResponse] = None
+```
+
+That's it for backend wiring.
+
+## Frontend
+
+The configuration form is **metadata-driven**. The UI calls `GET /api/v1/organizations/telephony-providers/metadata`, gets back the list of providers and their `ProviderUIField` definitions, and renders each form generically. **No per-provider frontend code is needed** — your `ProviderUIMetadata` declaration is what drives the form.
+
+If you add a new field type that the existing renderer doesn't support (e.g. a file upload), extend the renderer in `ui/src/app/(authenticated)/telephony-configurations/`. The supported `ProviderUIField.type` values today are `text`, `password`, `textarea`, `string-array`, and `number`.
+
+## Audio Format Considerations
+
+Each provider declares its wire format through its `AudioConfig`. Common shapes:
+
+- **Twilio / Plivo**: 8 kHz μ-law, base64-encoded JSON frames
+- **Vonage**: 16 kHz Linear PCM as binary frames
+- **Asterisk ARI**: 8 kHz Linear PCM via externalMedia
+
+The pipeline sample rate is capped at 16 kHz to satisfy VAD; transports handle resampling between the wire format and the pipeline's internal rate.
+
+## Testing
+
+```python
+# api/tests/telephony/test_your_provider.py
+import pytest
+from api.services.telephony.providers.your_provider import YourProvider
+
+
+@pytest.mark.asyncio
+async def test_validate_config():
+    provider = YourProvider({
+        "api_key": "test_key",
+        "api_secret": "test_secret",
+        "from_numbers": ["+1234567890"],
+    })
+    assert provider.validate_config() is True
+```
+
+For end-to-end testing, save your provider through the telephony-configurations UI and trigger a test call from a workflow.
+
+## Best Practices
+
+1. **Trust the registry** — never import another provider's class directly; resolve through the factory helpers (`get_default_telephony_provider`, `get_telephony_provider_by_id`, etc.).
+2. **Sensitive fields** — mark every credential field `sensitive=True` in `ProviderUIMetadata`. The save endpoint masks these on read and preserves the original when the client re-submits a masked value.
+3. **Inbound signature verification** — always validate inbound webhook signatures in `verify_inbound_signature`. Returning `True` when no signature header is present is acceptable; return `False` when a signature *is* present but invalid.
+4. **Transports load credentials lazily** — call `load_credentials_for_transport` with the `telephony_configuration_id` from the workflow run. Don't read the org's default config from `transport.py`.
+5. **Logging** — use `loguru.logger`.
+
+## Reference Implementations
+
+| Provider | Notable for |
+| --- | --- |
+| `providers/twilio/` | Full-featured: outbound, inbound, conference transfers, status callbacks, custom strategies |
+| `providers/plivo/` | Recently-added reference; mirrors Twilio's shape with multi-callback signatures |
+| `providers/vonage/` | JWT auth, 16 kHz Linear PCM, NCCO responses |
+| `providers/cloudonix/` | SIP-based, custom call strategies |
+| `providers/telnyx/` | Call-control style: REST-driven inbound answer flow rather than markup response |
+| `providers/ari/` | Minimal example — no `routes.py`, no inbound webhook verification, WebSocket-only |
+
+<Note>
+  Use ARI as the smallest viable example when your provider doesn't expose HTTP
+  webhooks, and Twilio as the reference when it does.
+</Note>

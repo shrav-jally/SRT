@@ -1,0 +1,133 @@
+---
+title: "MCP Server"
+description: "Connect Codex, Claude, and other AI assistants to your Dograh workspace via the Model Context Protocol"
+---
+
+## Overview
+
+Dograh exposes an [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that lets AI assistants like Codex, Claude Code, Claude Desktop, and Cursor access your workspace and documentation. Once connected, an assistant can list your agents, fetch agent definitions, and search Dograh docs on your behalf.
+
+## Prerequisites
+
+- A Dograh API key. Generate one at [`/api-keys`](https://app.dograh.com/api-keys) (or `http://localhost:3010/api-keys` for self-hosted). See [API Keys](/configurations/api-keys).
+- Your Dograh MCP endpoint:
+  - Hosted: `https://app.dograh.com/api/v1/mcp/`
+  - Self-hosted: `<YOUR_BACKEND_URL>/api/v1/mcp/`
+
+The endpoint is also shown in **Platform Settings → MCP Server** inside the Dograh UI.
+
+<Note>
+If you deployed Dograh to a remote server using [`setup_remote.sh`](/deployment/docker#option-2%3A-remote-server-deployment), your endpoint is served with a self-signed SSL certificate. Claude Code will refuse MCP connections to it unless you start the CLI with TLS verification disabled:
+
+```bash
+NODE_TLS_REJECT_UNAUTHORIZED=0 claude
+```
+
+This is only required for self-signed certificates. If you have set up a [custom domain](/deployment/custom-domain) with Let's Encrypt certificates via Certbot, no extra flag is needed.
+</Note>
+
+## Claude Code
+
+Register Dograh as an MCP server with the Claude Code CLI:
+
+```bash
+claude mcp add --transport http dograh https://app.dograh.com/api/v1/mcp/ \
+  --header "X-API-Key: YOUR_API_KEY"
+```
+
+Replace `YOUR_API_KEY` with the key you generated. For self-hosted deployments, swap the URL for your backend.
+
+Verify the server is connected:
+
+```bash
+claude mcp list
+```
+
+## Codex
+
+Open Codex's config file (`~/.codex/config.toml`) and add a `dograh` MCP server:
+
+```toml
+[mcp_servers.dograh]
+url = "https://app.dograh.com/api/v1/mcp/"
+http_headers = { "X-API-Key" = "YOUR_API_KEY" }
+```
+
+Replace `YOUR_API_KEY` with the key you generated. For self-hosted deployments, replace the URL with your backend MCP endpoint.
+
+If you prefer to keep the API key out of `config.toml`, store it in an environment variable instead:
+
+```toml
+[mcp_servers.dograh]
+url = "https://app.dograh.com/api/v1/mcp/"
+env_http_headers = { "X-API-Key" = "DOGRAH_API_KEY" }
+```
+
+Then set the API key before starting Codex:
+
+```bash
+export DOGRAH_API_KEY="YOUR_API_KEY"
+codex
+```
+
+Verify the server is registered:
+
+```bash
+codex mcp list
+codex mcp get dograh
+```
+
+## Claude Desktop
+
+Open Claude Desktop's config file (`claude_desktop_config.json`) and add the `dograh` entry under `mcpServers`:
+
+```json
+{
+  "mcpServers": {
+    "dograh": {
+      "url": "https://app.dograh.com/api/v1/mcp/",
+      "headers": {
+        "X-API-Key": "YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+Restart Claude Desktop after saving. The Dograh tools should appear in the tool picker.
+
+## Cursor and other MCP clients
+
+Any MCP client that supports Streamable HTTP transport can connect with the same URL and header. Paste the configuration above into your client's MCP settings file and replace `YOUR_API_KEY`.
+
+## Example prompts
+
+Once the MCP server is connected, you can drive Dograh from your coding agent in plain English. A few prompts to try:
+
+**Explore your workspace**
+
+- "List my agents in Dograh."
+- "Show me the definition of the agent called *Lead Qualifier*."
+- "Which credentials and tools are configured in my Dograh workspace?"
+- "List the recordings from my most recent agent."
+
+**Edit an agent**
+
+- "In my *Lead Qualifier* agent, add a new agent node after the greeting that asks the caller for their budget, then routes to the existing qualification node."
+- "Add an end-call node to *Support Bot* that triggers when the user says they are done, with a polite goodbye prompt."
+- "Rename the *intro* node in *Lead Qualifier* to *greeting* and update any edges that reference it."
+- "Change the LLM model on all agent nodes in *Support Bot* to `gpt-4o-mini`."
+
+**Learn the platform**
+
+- "Search the Dograh docs for how to configure a TURN server."
+- "What node types does Dograh support, and what fields does a `knowledge_base` node take?"
+- "How do I deploy Dograh on a custom domain with HTTPS?"
+
+<Note>
+Agent edits are saved as a new **draft** version — your published agent keeps serving calls until you explicitly publish the draft from the Dograh UI.
+</Note>
+
+<Note>
+The API key controls which workspace the assistant sees. Treat it like any other credential — do not commit it to source control or paste it into shared chats.
+</Note>

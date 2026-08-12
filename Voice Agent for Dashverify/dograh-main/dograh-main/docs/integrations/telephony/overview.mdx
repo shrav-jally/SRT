@@ -1,0 +1,104 @@
+---
+title: "Telephony Integration"
+description: "Connect voice agents with telephony providers for inbound and outbound calls"
+---
+
+## Overview
+
+Dograh AI's telephony integration system provides a unified interface for connecting with various telephony providers. The same configuration powers both outbound calls (initiated from Dograh) and inbound calls (received on a phone number you own).
+
+## Supported Providers
+
+<CardGroup cols={3}>
+  <Card title="Twilio" href="/integrations/telephony/twilio">
+    Industry-leading cloud communications platform with global reach
+  </Card>
+  <Card title="Vonage" href="/integrations/telephony/vonage">
+    High-quality voice with 16kHz audio and excellent international coverage
+  </Card>
+  <Card title="Plivo" href="/integrations/telephony/plivo">
+    Cloud communications platform with programmable voice and global PSTN reach
+  </Card>
+  <Card title="Cloudonix" href="/integrations/telephony/cloudonix">
+    SIP-based telephony with flexible trunk configuration
+  </Card>
+  <Card title="Vobiz" href="/integrations/telephony/vobiz">
+    Cloud-based telephony with global reach and competitive pricing
+  </Card>
+  <Card title="Asterisk ARI" href="/integrations/telephony/asterisk-ari">
+    Connect to your own Asterisk PBX via the Asterisk REST Interface
+  </Card>
+  <Card title="Custom Provider" href="/integrations/telephony/custom">
+    Build your own telephony provider integration
+  </Card>
+</CardGroup>
+
+## Configuration
+
+All telephony providers are configured from a single page in Dograh:
+
+1. Navigate to **/telephony-configurations** and click **Add configuration**
+2. Select your provider
+3. Enter your credentials and save
+4. Open the new configuration and add at least one **phone number**
+5. (Optional) Assign an **Inbound workflow** to a phone number to enable inbound calling
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.tella.tv/video/setting-up-telephony-configurations-in-dobra-f6zj/embed"
+  title="Setting up telephony configurations in Dograh"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+A single org can hold multiple configurations (for example, separate Twilio sub-accounts) and multiple phone numbers per configuration. Mark one configuration as the **default outbound** to use it for test calls and campaigns by default.
+
+## Common Features
+
+The telephony integration in Dograh AI supports:
+
+- **Outbound Calls**: Initiate calls to any phone number from a workflow or campaign
+- **Inbound Calls**: Route incoming calls to the right voice agent — see the [Inbound Calling guide](/integrations/telephony/inbound)
+- **Call Transfer**: Transfer an in-progress call to a human or another number (provider-dependent)
+- **Call Status Tracking**: Monitor call lifecycle events (initiated, ringing, answered, completed, failed)
+- **WebSocket Audio Streaming**: Real-time, bidirectional audio between caller and agent
+- **Webhook Signature Verification**: Inbound webhooks are verified against the matched configuration's credentials
+
+## Inbound Calling
+
+Inbound calls use a **single org-wide webhook URL**:
+
+```
+https://api.dograh.com/api/v1/telephony/inbound/run
+```
+
+Dograh resolves the org from the webhook's account credentials and the agent from the called number's **Inbound workflow** assignment. See [Inbound Calling](/integrations/telephony/inbound) for the full setup.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Calls not connecting">
+    - Verify credentials are correctly configured
+    - Check phone number format (E.164 with country code, e.g. `+1234567890`)
+    - Ensure webhook URLs are publicly accessible
+    - Review provider-specific error logs
+  </Accordion>
+  
+  <Accordion title="Audio quality issues">
+    - Check network bandwidth and latency
+    - Verify audio codec compatibility
+    - Review WebSocket connection stability
+  </Accordion>
+  
+  <Accordion title="Webhook signature validation failing">
+    - Confirm auth tokens / API secrets match between provider and Dograh configuration
+    - Verify webhook URL matches exactly (including the `/inbound/run` path)
+    - Check for proxy or load balancer modifications
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+- [Set up your first telephony provider](/integrations/telephony/twilio)
+- [Configure inbound calling](/integrations/telephony/inbound)
+- [Build a custom provider integration](/integrations/telephony/custom)

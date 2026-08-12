@@ -1,0 +1,242 @@
+---
+title: "Custom Domain"
+description: "Deploy Dograh AI with custom domain names and SSL certificates"
+---
+
+Deploy Dograh AI with your own custom domain name for a professional production setup. By now, you should be able to create and test a voice agent by following the previous guide to setup the platform on a remote server using [Docker](docker#option-2%3A-remote-server-deployment)
+
+## What is Custom Domain Deployment?
+
+Custom domain deployment allows you to run Dograh AI with a personalized domain name (like `voice.yourcompany.com`) instead of using IP addresses. This setup includes:
+
+- **Custom Domain**: Access your application via a memorable domain name
+- **Automatic SSL**: Proper SSL certificates from Let's Encrypt or similar providers
+- **Professional Setup**: Production-ready configuration for business use
+- **Easy Sharing**: Share a clean URL with your team and customers
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+- A domain name you own (e.g., `yourcompany.com`)
+- Access to your domain's DNS settings (usually through your domain registrar)
+- Dograh AI already running on your server via the [remote deployment](docker#option-2%3A-remote-server-deployment) guide
+- Your server's public IP address
+
+## Step 1: Configure DNS Records
+
+You need to create a DNS record that points your domain to your server's IP address.
+
+### Add an A Record
+
+Log in to your domain registrar or DNS provider and add an A record:
+
+| Setting | Value |
+|---------|-------|
+| Type | A |
+| Name/Host | `voice` (or `@` for root domain) |
+| Value/Points to | Your server's IP address (e.g., `203.0.113.50`) |
+| TTL | 300 (or default) |
+
+<Note>
+DNS changes can take anywhere from a few minutes to 48 hours to propagate, though most changes take effect within 5-30 minutes. You can check if your DNS has propagated using tools like [dnschecker.org](https://dnschecker.org).
+</Note>
+
+### Verify DNS Propagation
+
+Before proceeding, verify that your domain points to your server:
+
+```bash
+nslookup voice.yourcompany.com
+```
+
+You should see your server's IP address in the response.
+
+## Step 2: Quick Setup (Recommended)
+
+Once your DNS is configured, run the automated setup script that handles the rest.
+
+<Note>
+You must be at the same place where you had run `setup_remote.sh` from. The directory should contain `dograh/` with the artifacts that got created when `setup_remote.sh` was run.
+</Note>
+<Note>
+You must not move the `dograh/` directory to a different location after running `setup_custom_domain.sh`, since we set up auto certificate renewal script as certbot renewal hook pointing to the `dograh/` directory.
+</Note>
+
+```bash
+curl -o setup_custom_domain.sh https://raw.githubusercontent.com/dograh-hq/dograh/main/scripts/setup_custom_domain.sh && chmod +x setup_custom_domain.sh && sudo ./setup_custom_domain.sh
+```
+
+The script will prompt you for:
+- Your domain name
+- An email address for Let's Encrypt notifications
+
+It will automatically:
+- Verify DNS configuration
+- Install Certbot
+- Generate Let's Encrypt SSL certificates
+- Update the canonical public host/base URL settings in `.env`
+- Validate the runtime config that `dograh-init` will render from `.env`
+- Configure automatic certificate renewal
+- Restart Dograh services through the validated startup wrapper
+
+Once complete, your application will be available at `https://voice.yourcompany.com`.
+
+<Note>
+If you prefer to set things up manually, continue with the steps below.
+</Note>
+
+---
+
+## Manual Setup
+
+If you prefer to configure everything manually, follow these steps instead of using the automated script.
+
+### Install Certbot
+
+Certbot is the official Let's Encrypt client that automates SSL certificate generation.
+
+**Ubuntu/Debian:**
+
+```bash
+sudo apt update
+sudo apt install certbot -y
+```
+
+**Amazon Linux/RHEL:**
+
+```bash
+sudo yum install certbot -y
+```
+
+### Stop Dograh Services
+
+Before generating certificates, stop the running Dograh services to free up port 80:
+
+```bash
+cd dograh
+sudo docker compose --profile remote down
+```
+
+### Generate SSL Certificates
+
+Run Certbot to obtain SSL certificates for your domain:
+
+```bash
+sudo certbot certonly --standalone -d voice.yourcompany.com
+```
+
+Replace `voice.yourcompany.com` with your actual domain name.
+
+Certbot will:
+1. Verify that you control the domain
+2. Generate SSL certificates
+3. Store them in `/etc/letsencrypt/live/voice.yourcompany.com/`
+
+<Note>
+You'll be prompted to enter an email address for renewal notifications and agree to the terms of service.
+</Note>
+
+### Copy Certificates to Dograh Directory
+
+Copy the generated certificates to the dograh certs directory:
+
+```bash
+cd dograh
+sudo cp /etc/letsencrypt/live/voice.yourcompany.com/fullchain.pem certs/local.crt
+sudo cp /etc/letsencrypt/live/voice.yourcompany.com/privkey.pem certs/local.key
+sudo chmod 644 certs/local.crt certs/local.key
+```
+
+### Update Canonical Public URL Settings
+
+Update `.env` so the canonical remote settings point at your domain:
+
+```bash
+nano dograh/.env
+```
+
+```bash
+PUBLIC_HOST=voice.yourcompany.com
+PUBLIC_BASE_URL=https://voice.yourcompany.com
+```
+
+### Start Dograh Services
+
+Start Dograh through the validated startup wrapper so `dograh-init` regenerates nginx and coturn runtime config before Docker starts:
+
+```bash
+cd dograh
+./remote_up.sh
+```
+
+### Access Your Application
+
+Your application is now available at:
+
+```
+https://voice.yourcompany.com
+```
+
+You should see a valid SSL certificate (green padlock) in your browser.
+
+### Set Up Certificate Renewal
+
+Let's Encrypt certificates expire after 90 days. Set up automatic renewal.
+
+Create a renewal hook script that copies the new certificates:
+
+```bash
+sudo nano /etc/letsencrypt/renewal-hooks/deploy/dograh-reload.sh
+```
+
+Add the following content (replace paths as needed):
+
+```bash
+#!/bin/bash
+# Copy renewed certificates to dograh certs directory
+cp /etc/letsencrypt/live/voice.yourcompany.com/fullchain.pem /home/ubuntu/dograh/certs/local.crt
+cp /etc/letsencrypt/live/voice.yourcompany.com/privkey.pem /home/ubuntu/dograh/certs/local.key
+chmod 644 /home/ubuntu/dograh/certs/local.crt /home/ubuntu/dograh/certs/local.key
+
+# Restart nginx to load new certificates
+cd /home/ubuntu/dograh
+docker compose --profile remote restart nginx
+```
+
+Make the script executable:
+
+```bash
+sudo chmod +x /etc/letsencrypt/renewal-hooks/deploy/dograh-reload.sh
+```
+
+Test that renewal works:
+
+```bash
+sudo certbot renew --dry-run
+```
+
+## Troubleshooting
+
+### Certificate Generation Fails
+
+If Certbot fails to generate certificates:
+
+1. **Port 80 blocked**: Ensure port 80 is open in your firewall and no service is using it
+2. **DNS not propagated**: Wait for DNS changes to propagate and verify with `nslookup`
+3. **Rate limits**: Let's Encrypt has rate limits. If you've exceeded them, wait before retrying
+
+### SSL Certificate Errors in Browser
+
+If you see SSL errors after setup:
+
+1. Verify the certificates were copied correctly: `ls -la dograh/certs/`
+2. Run `./remote_up.sh --preflight-only` in `dograh/` to verify the `dograh-init` runtime render matches `.env`
+3. Restart the nginx container: `sudo docker compose --profile remote restart nginx`
+
+### WebRTC Connection Issues
+
+If voice calls don't connect after domain setup:
+
+1. Ensure TCP/UDP ports 3478, 5349, and UDP 49152-49200 are still open
+2. Check that `PUBLIC_HOST` / `PUBLIC_BASE_URL` in `.env` match your domain, then re-run `./remote_up.sh`

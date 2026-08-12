@@ -1,0 +1,80 @@
+---
+title: Setup
+description: Set up the Dograh contributor environment with the devcontainer-first workflow.
+---
+<Note>
+If the steps below do not work for you, please open an issue on [GitHub](https://github.com/dograh-hq/dograh/issues).
+</Note>
+
+<Tip>
+**Using Claude Code or Codex?** Install the official Dograh setup skill and let your agent walk you through the contributor setup — it covers both the devcontainer and host-managed paths, runs Dograh's own scripts, and verifies the stack is healthy.
+
+<CodeGroup>
+```text Claude Code
+/plugin marketplace add dograh-hq/dograh-plugins
+/plugin install dograh@dograh
+```
+```text Codex
+codex plugin marketplace add dograh-hq/dograh-plugins
+codex plugin add dograh@dograh
+```
+</CodeGroup>
+
+Start a new session, then ask it to *"set up Dograh for development"* (or run `/dograh-setup develop` in Claude Code). More at [dograh-hq/dograh-plugins](https://github.com/dograh-hq/dograh-plugins).
+</Tip>
+
+### Recommended: Devcontainer Setup
+
+#### System Requirements
+- Git
+- Docker Desktop or another local Docker engine
+- For the IDE path: VS Code with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- For the terminal-only path: Node.js on your host so you can install the Dev Container CLI
+
+1. Fork the Dograh repository at https://github.com/dograh-hq/dograh
+2. Clone **your fork**:
+```bash
+git clone https://github.com/<GITHUB_HANDLE>/dograh
+cd dograh
+```
+3. Start the devcontainer.
+
+   In VS Code, open the repository and run **Dev Containers: Reopen in Container**.
+
+   Without an IDE, use the Dev Container CLI:
+```bash
+npm install -g @devcontainers/cli
+devcontainer up --workspace-folder .
+devcontainer exec --workspace-folder . bash
+```
+4. Wait for the first build to finish. The first build takes several minutes; subsequent opens are much faster.
+5. Start the backend from a terminal inside the container:
+```bash
+bash scripts/start_services_dev.sh
+```
+
+   Without an IDE, run the same command from your host:
+```bash
+devcontainer exec --workspace-folder . bash scripts/start_services_dev.sh
+```
+6. Start the UI from another terminal inside the container:
+```bash
+cd ui
+npm run dev -- --hostname 0.0.0.0
+```
+
+   Without an IDE, use another host terminal:
+```bash
+devcontainer exec --workspace-folder . bash -lc 'cd ui && npm run dev -- --hostname 0.0.0.0'
+```
+7. Verify that the backend is healthy:
+```bash
+curl -X GET localhost:8000/api/v1/health
+```
+8. Open the app at `http://localhost:3000`.
+
+### More Setup Options
+
+- For what the devcontainer bootstrap does, rebuild guidance, logs, and personal install hooks, see [Devcontainer Workflow](/contribution/devcontainer).
+- If you cloned `dograh-hq/dograh` directly instead of your fork, see [Fork Workflow](/contribution/fork-workflow) to reset `origin` and `upstream`.
+- If you do not want to use the devcontainer, see [Host-managed Setup](/contribution/host-managed-setup).
