@@ -1,0 +1,5255 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmpatg92r1x/2020-21_nse_annual_report_cg.pdf",
+    "file_name": "2020-21_nse_annual_report_cg.pdf",
+    "financial_year": "2020-21",
+    "extraction_timestamp": "2026-07-03T07:41:56.025180+00:00",
+    "page_count": 230
+  },
+  "standalone": {
+    "profit_and_loss": {
+      "statement": "standalone_profit_and_loss",
+      "page": 71,
+      "pages": [
+        71
+      ],
+      "title": "REVISED STANDALONE STATEMENT OF PROFIT AND LOSS FOR THE YEAR ENDED 31 MARCH, 2021",
+      "currency": null,
+      "periods": [
+        "31.03.2021",
+        "31.03.2020"
+      ],
+      "column_headers": [
+        "2020-21",
+        "2019-20"
+      ],
+      "extraction_method": "word_position_clustering_two_column",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Note No.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Income",
+          "line_item": "Revenue from operations 30 Other income 31",
+          "note_no": null,
+          "values": {
+            "current_period": 42.17,
+            "previous_period": 56.88
+          }
+        },
+        {
+          "section": "Income",
+          "line_item": "Total income",
+          "note_no": null,
+          "values": {
+            "current_period": 2568.06,
+            "previous_period": 3226.36
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Cost of materials consumed 32",
+          "note_no": null,
+          "values": {
+            "current_period": 1761.99,
+            "previous_period": 1947.34
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Purchases of stock-in-trade 33",
+          "note_no": null,
+          "values": {
+            "current_period": 84.69,
+            "previous_period": 60.92
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Changes in inventories of finished goods, work-in-progress and stock-in-trade 34",
+          "note_no": null,
+          "values": {
+            "current_period": -97.08,
+            "previous_period": 171.29
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Employee benefits expense 35",
+          "note_no": null,
+          "values": {
+            "current_period": 258.9,
+            "previous_period": 322.93
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Finance costs 36",
+          "note_no": null,
+          "values": {
+            "current_period": 166.25,
+            "previous_period": 247.97
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Depreciation and amortisation expense 37",
+          "note_no": null,
+          "values": {
+            "current_period": 81.21,
+            "previous_period": 90.54
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Other expenses 38",
+          "note_no": null,
+          "values": {
+            "current_period": 402.9,
+            "previous_period": 563.89
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Total expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 2658.86,
+            "previous_period": 3404.88
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Loss before exceptional items and tax",
+          "note_no": null,
+          "values": {
+            "current_period": -90.8,
+            "previous_period": -178.52
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Exceptional items (net) 47",
+          "note_no": null,
+          "values": {
+            "current_period": 914.38,
+            "previous_period": -1369.27
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit / (loss) before tax",
+          "note_no": null,
+          "values": {
+            "current_period": 823.58,
+            "previous_period": -1547.79
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Tax expense:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Current tax 24",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Deferred tax (net) 24",
+          "note_no": null,
+          "values": {
+            "current_period": 134.59,
+            "previous_period": -67.96
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit / (loss) for the year",
+          "note_no": null,
+          "values": {
+            "current_period": 688.99,
+            "previous_period": -1479.83
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Items that will not be reclassified subsequently to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Remeasurement gain / (loss) on defined benefit plans",
+          "note_no": null,
+          "values": {
+            "current_period": -3.84,
+            "previous_period": -0.13
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Income tax relating to items that will not be reclassified subsequently to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": 0.97,
+            "previous_period": 0.05
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total other comprehensive income for the year",
+          "note_no": null,
+          "values": {
+            "current_period": -2.87,
+            "previous_period": -0.08
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total comprehensive income for the year",
+          "note_no": null,
+          "values": {
+            "current_period": 686.12,
+            "previous_period": -1479.91
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Earnings per share (basic) (`) (Face value of ` 2 each) 51",
+          "note_no": null,
+          "values": {
+            "current_period": 7.94,
+            "previous_period": -23.61
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Earnings per share (diluted) (`) (Face value of ` 2 each) 51",
+          "note_no": null,
+          "values": {
+            "current_period": 7.5,
+            "previous_period": -23.61
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 25,
+        "total_rows": 4
+      }
+    },
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 79,
+      "pages": [
+        79
+      ],
+      "title": "Changes in Balance Sheet as at 31 March, 2021",
+      "currency": "INR equivalents of Euro and USD",
+      "periods": [
+        "31.03.2021"
+      ],
+      "column_headers": [
+        "As at",
+        "As at"
+      ],
+      "extraction_method": "word_position_clustering_two_column",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Note No.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Property, plant and equipment",
+          "note_no": null,
+          "values": {
+            "current_period": 769.14,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Capital work-in-progress",
+          "note_no": null,
+          "values": {
+            "current_period": 2.43,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets",
+          "note_no": null,
+          "values": {
+            "current_period": 31.71,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets under development",
+          "note_no": null,
+          "values": {
+            "current_period": 7.82,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Investments 3(B)-a",
+          "note_no": null,
+          "values": {
+            "current_period": 303.69,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Loans",
+          "note_no": null,
+          "values": {
+            "current_period": 6.51,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Others",
+          "note_no": null,
+          "values": {
+            "current_period": 6.09,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Deferred tax assets (net) 3(B)-b",
+          "note_no": null,
+          "values": {
+            "current_period": 938.15,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Other non-current assets",
+          "note_no": null,
+          "values": {
+            "current_period": 1.81,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets > Financial Assets",
+          "line_item": "Total non-current assets",
+          "note_no": null,
+          "values": {
+            "current_period": 2067.35,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": null,
+          "values": {
+            "current_period": 381.92,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Investments",
+          "note_no": null,
+          "values": {
+            "current_period": 0.01,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Trade receivables",
+          "note_no": null,
+          "values": {
+            "current_period": 521.67,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Cash and cash equivalents",
+          "note_no": null,
+          "values": {
+            "current_period": 357.18,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Bank balances other than (iii) above",
+          "note_no": null,
+          "values": {
+            "current_period": 36.03,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Loans",
+          "note_no": null,
+          "values": {
+            "current_period": 35.1,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Others",
+          "note_no": null,
+          "values": {
+            "current_period": 1.93,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Current tax assets (net) 3(B)-c",
+          "note_no": null,
+          "values": {
+            "current_period": 50.81,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other current assets",
+          "note_no": null,
+          "values": {
+            "current_period": 279.97,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Total current assets",
+          "note_no": null,
+          "values": {
+            "current_period": 1664.62,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "(3) Assets classified as held for sale and discontinued operations",
+          "note_no": null,
+          "values": {
+            "current_period": 279.85,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "TOTAL ASSETS",
+          "note_no": null,
+          "values": {
+            "current_period": 4011.82,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Equity share capital",
+          "note_no": null,
+          "values": {
+            "current_period": 267.6,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Other equity 3(B)-d",
+          "note_no": null,
+          "values": {
+            "current_period": 899.26,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Total equity",
+          "note_no": null,
+          "values": {
+            "current_period": 1166.86,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings 3(B)-e",
+          "note_no": null,
+          "values": {
+            "current_period": 808.15,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 12.77,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": 27.19,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Total non-current liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 848.11,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings 3(B)-e",
+          "note_no": null,
+          "values": {
+            "current_period": 136.48,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Trade payables",
+          "note_no": null,
+          "values": {
+            "current_period": 998.72,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 582.76,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other current liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 130.74,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": 148.15,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Total current liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 1996.85,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "(3) Liabilities associated with group of assets classified as held for sale and discontinued operations",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "TOTAL EQUITY AND LIABILITIES",
+          "note_no": null,
+          "values": {
+            "current_period": 4011.82,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 38,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "cash_flow": {
+      "statement": "standalone_cash_flow",
+      "page": 72,
+      "pages": [
+        72
+      ],
+      "title": "REVISED STANDALONE STATEMENT OF CASH FLOWS FOR THE YEAR ENDED 31 MARCH, 2021 REVISED STANDALONE STATEMENT OF CASH FLOWS FOR THE YEAR ENDED 31 MARCH, 2021(Contd.)",
+      "currency": "Previous year gain of ` 0.30 crores",
+      "periods": [],
+      "column_headers": [
+        "REVISED STANDALONE STATEMENT OF CASH FLOWS FOR THE YEAR ENDED 31 MARCH, 2021(Contd.)"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "[A] CASH FLOWS FROM OPERATING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit / (loss) before tax from continuing operations",
+          "note_no": null,
+          "values": {
+            "current_period": 823.58,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustments for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortisation expense",
+          "note_no": null,
+          "values": {
+            "current_period": 81.21,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Allowances for doubtful receivables",
+          "note_no": null,
+          "values": {
+            "current_period": 61.76,
+            "previous_period": 63.98
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Bad debts written off",
+          "note_no": null,
+          "values": {
+            "current_period": 0.33,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Gain) / loss arising on financial instruments designated as FVTPL",
+          "note_no": null,
+          "values": {
+            "current_period": -0.14,
+            "previous_period": -0.06
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Finance costs",
+          "note_no": null,
+          "values": {
+            "current_period": 166.25,
+            "previous_period": 247.97
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest income",
+          "note_no": null,
+          "values": {
+            "current_period": -13.07,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Dividend income",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unrealised exchange (gain) / loss (net)",
+          "note_no": null,
+          "values": {
+            "current_period": 1.99,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Intangible assets write off",
+          "note_no": null,
+          "values": {
+            "current_period": 7.15,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Profit) / loss on sale of property, plant and equipment (net)",
+          "note_no": null,
+          "values": {
+            "current_period": 0.23,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exceptional items (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -914.38,
+            "previous_period": 1369.27
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Operating profit before working capital changes",
+          "note_no": null,
+          "values": {
+            "current_period": 214.91,
+            "previous_period": 252.8
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustments for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase) / Decrease in trade and other receivables",
+          "note_no": null,
+          "values": {
+            "current_period": -156.55,
+            "previous_period": 603.76
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase) / Decrease in inventories",
+          "note_no": null,
+          "values": {
+            "current_period": -109.23,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase / (Decrease) in trade and other payables",
+          "note_no": null,
+          "values": {
+            "current_period": -283.9,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase / (Decrease) in provisions",
+          "note_no": null,
+          "values": {
+            "current_period": 2.66,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash (used in) / from operations",
+          "note_no": null,
+          "values": {
+            "current_period": -332.11,
+            "previous_period": 644.79
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax paid (net of refunds)",
+          "note_no": null,
+          "values": {
+            "current_period": -2.74,
+            "previous_period": -9.94
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing operating activities",
+          "note_no": null,
+          "values": {
+            "current_period": -334.85,
+            "previous_period": 634.85
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from discontinued operating activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 0.49
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing and discontinued operating activities [A]",
+          "note_no": null,
+          "values": {
+            "current_period": -334.85,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "[B] CASH FLOWS FROM INVESTING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add: Inflows from investing activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceed from sale of property, plant and equipment",
+          "note_no": null,
+          "values": {
+            "current_period": 0.46,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Loans repaid by subsidiaries and related parties",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 16.02
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest received",
+          "note_no": null,
+          "values": {
+            "current_period": 8.2,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Dividend received",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Outflows from investing activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 32,
+        "total_rows": 0
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 41,
+        "extraction_method": "pdfplumber",
+        "row_count": 54,
+        "column_count": 14,
+        "rows": [
+          [
+            "requirement",
+            "s of very low vibratio",
+            "n and noise for",
+            "by your Company, as",
+            "stipulated und",
+            "er Schedule V of",
+            "covered under the said r",
+            "ule shall be made",
+            "available to",
+            "Complaint Committee has been constituted region-wise,",
+            "docum",
+            "ent and explanator",
+            "y statement to the notice",
+            "from the London Stock Exchange effective from"
+          ],
+          [
+            "domestic an",
+            "d export markets.",
+            "Also developed",
+            "SEBI LODR, is enclosed",
+            "separately.",
+            "",
+            "any Member on a specifi",
+            "c request made in",
+            "this regard,",
+            "presided by a woman employee and comprising five to",
+            "of the",
+            "Extraordinary Gen",
+            "eral Meeting wherein the",
+            "24 May 2021."
+          ],
+          [
+            "software for",
+            "optimising thermal",
+            "characteristics",
+            "",
+            "",
+            "",
+            "by him or her in writing.",
+            "",
+            "",
+            "seven Company employees with an external member to",
+            "shareh",
+            "olders’ approval wa",
+            "s given for the said issue.",
+            ""
+          ],
+          [
+            "of products",
+            "by making least",
+            "use of cooling",
+            "A certificate from M/s",
+            "Parikh & Asso",
+            "ciates, Practising",
+            "",
+            "",
+            "",
+            "whom employees can address their complaints.",
+            "",
+            "",
+            "",
+            "As on 31 March 2021, 104,462 GDRs were"
+          ],
+          [
+            "equipment a",
+            "nd electrical grad",
+            "e steels which",
+            "Company Secretaries,",
+            "regarding co",
+            "mpliance with the",
+            "EMPLOYEE STOCK O",
+            "PTION PLAN 2",
+            "021",
+            "",
+            "In case",
+            "of warrants, TII",
+            "has paid 25% of warrant",
+            "outstanding."
+          ],
+          [
+            "",
+            "",
+            "",
+            "conditions of Corpora",
+            "te Governanc",
+            "e, as stipulated",
+            "",
+            "",
+            "",
+            "During the year under review, no incident of sexual",
+            "consid",
+            "eration aggregatin",
+            "g to `37.50 Crore at the",
+            ""
+          ],
+          [
+            "will help in r",
+            "educed use of com",
+            "modities.",
+            "",
+            "",
+            "",
+            "The shareholders of t",
+            "he Company ha",
+            "d, through",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "under SEBI LODR, is",
+            "annexed to",
+            "the Report on",
+            "",
+            "",
+            "",
+            "harassment was reported.",
+            "time of",
+            "warrants subscrip",
+            "tion. The balance warrant",
+            ""
+          ],
+          [
+            "• Worked on d",
+            "evelopment of new",
+            "core materials,",
+            "Corporate Governance",
+            ".",
+            "",
+            "special resolution pas",
+            "sed by Postal",
+            "Ballot on",
+            "",
+            "subscri",
+            "ption money is pay",
+            "able by TII upon exercising",
+            "ANNUAL RETURN"
+          ],
+          [
+            "new electro",
+            "de formation, new",
+            "constructional",
+            "",
+            "",
+            "",
+            "23 September 2021, ap implementation of Empl",
+            "proved the introd oyee Stock Option",
+            "uction and Plan 2021",
+            "VIGIL MECHANISM",
+            "the opt",
+            "ion to convert the w",
+            "arrants into equity shares.",
+            "Pursuant to sub-section 3(a) of Section 134 and sub-section (3) of Section 92 of the Act, a"
+          ],
+          [
+            "designs fo new passiv",
+            "r current trans e ferro-resonance",
+            "formers and circuit and",
+            "CORPORATE SOCIA Your Company is no",
+            "L RESPON w a part of",
+            "SIBILITY (CSR) the Murugappa",
+            "(‘ESOP 2021’ / ‘Schem",
+            "e’) and authorise",
+            "d the Board",
+            "Your Company has set up a vigil mechanism, viz. a Whistle Blower Policy, as per the provisions of Section",
+            "The w more t",
+            "arrants can be ex ranches, at any ti",
+            "ercised by TII, in one or me on or before expiry of",
+            "copy of the Annual Return of the Company as on 31 March 2021 is placed on the website of"
+          ],
+          [
+            "electrode co transformers",
+            "nfiguration for cap for higher r",
+            "acitor voltage eliability and",
+            "Group, which is known",
+            "for its traditio",
+            "n of philanthropy",
+            "/ Nomination and Remu to the eligible employe",
+            "neration Committ es, such number",
+            "ee to issue of Options",
+            "177 of the Act and Regulation 22 of the SEBI LODR",
+            "18 mo",
+            "nths from the date",
+            "of allotment of warrants.",
+            "the Company and the same is available on the"
+          ],
+          [
+            "performance",
+            ". Developed 800",
+            "kV Bushing",
+            "and community service",
+            ".",
+            "",
+            "under the ESOP 2021, a",
+            "s would be exerc",
+            "isable into,",
+            "to enable its employees to report violations, genuine",
+            "",
+            "",
+            "",
+            "following link:"
+          ],
+          [
+            "for 800 kV",
+            "Transformers and",
+            "reactors. Also",
+            "",
+            "",
+            "",
+            "not exceeding 2,70,00",
+            ",000 (Two Cro",
+            "re Seventy",
+            "concerns, unethical behaviour and irregularities, if",
+            "As on 3",
+            "1 March 2021:",
+            "",
+            "http://www.cgglobal.com/frontend/finalnonproduct."
+          ],
+          [
+            "established",
+            "manufacturing pro",
+            "cess for UHV",
+            "Owing to the financial coupled with COVID-1",
+            "stress faced 9 induced l",
+            "by the Company, ockdown and its",
+            "Lakhs) fully paid-up equ",
+            "ity shares of `2",
+            "each in the",
+            "any, which could adversely affect the Company’s operations. None of the Whistle Blowers was denied",
+            "• Th",
+            "e authorised shar",
+            "e capital of your Company",
+            "aspx?cnl2=Nu/tTrrPlMI="
+          ],
+          [
+            "Instrument T",
+            "ransformers.",
+            "",
+            "impact on business op",
+            "erations, you",
+            "r Company could",
+            "Company.",
+            "",
+            "",
+            "access to the Audit Committee of the Board.",
+            "wa",
+            "s `407,60,00,00",
+            "0/- (Rupees Four Hundred",
+            "REPORTING OF FRAUDS BY AUDITORS"
+          ],
+          [
+            "• Indigenous",
+            "development of 14",
+            "5 kV and 245",
+            "not incur any CSR exp",
+            "enditure durin",
+            "g the year under",
+            "The Nomination and",
+            "Remuneration",
+            "Committee",
+            "",
+            "Se 20",
+            "ven Crore And 3,80,00,000 equi",
+            "Sixty Lakh) divided into ty shares of `2/-(Rupees",
+            "During the year under review, the Statutory"
+          ],
+          [
+            "kV Hybrid Ga",
+            "s Insulated Switch",
+            "gear (GIS) with",
+            "review. It may be not",
+            "ed that durin",
+            "g the year under",
+            "shall act as the Com",
+            "pensation Com",
+            "mittee and",
+            "The Ombudsperson appointed by your Board",
+            "tw",
+            "o) each.",
+            "",
+            "Auditors of the Company had not reported any"
+          ],
+          [
+            "objective of",
+            "economical design",
+            "with reduced",
+            "review, there was no",
+            "statutory requ",
+            "irement to incur",
+            "is empowered to for",
+            "mulate detailed",
+            "terms and",
+            "deals with the complaints received by or against",
+            "",
+            "",
+            "",
+            "matter under Section 143(12) of the Act. Therefore"
+          ],
+          [
+            "Greenhouse",
+            "gas and enhanced",
+            "reliability.",
+            "any CSR expenditure,",
+            "in view of",
+            "the average net",
+            "conditions of the ES",
+            "OP 2021, admi",
+            "nister and",
+            "employees, customers and vendors of the Company",
+            "• Th",
+            "e subscribed and p",
+            "aid-up share capital of your",
+            "disclosure is not applicable in terms of Section"
+          ],
+          [
+            "",
+            "",
+            "",
+            "profits of the Company",
+            "for past thre",
+            "e financial years",
+            "supervise the same.",
+            "",
+            "",
+            "and supervises the investigation, ensures appropriate",
+            "",
+            "",
+            "",
+            "134(3)(ca) of the Act."
+          ],
+          [
+            "• Successfully",
+            "launched indigeno",
+            "usly developed",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Co",
+            "mpany stood at",
+            "`267,59,96,058/-(Rupees",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "being negative.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "action and submits a report to the Chairman of the",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40.5kV SF6",
+            "Gas Circuit Breaker.",
+            "These Breakers",
+            "",
+            "",
+            "",
+            "The maximum number o",
+            "f Options under",
+            "ESOP 2021",
+            "Audit Committee on a quarterly basis.",
+            "Tw",
+            "o Hundred And Si",
+            "xty Seven Crore Fifty Nine",
+            "OTHER DISCLOSURES / REPORTING"
+          ],
+          [
+            "are compact",
+            "with latest Arc As",
+            "sist technology",
+            "However, your Com",
+            "pany is com",
+            "mitted towards",
+            "that may be granted",
+            "to each eligible",
+            "employee",
+            "",
+            "La",
+            "khs Ninety Six Tho",
+            "usand and Fifty Eight only)",
+            ""
+          ],
+          [
+            "deploying lo",
+            "w energy mecha",
+            "nism. Further,",
+            "inclusive growth and b",
+            "ased on the",
+            "recommendation",
+            "shall vary depending u",
+            "pon the grade, h",
+            "owever the",
+            "DIVIDEND DISTRIBUTION POLICY",
+            "co",
+            "nsisting of 133,79",
+            ",98,029 equity shares of",
+            "The Company has not issued any equity shares with"
+          ],
+          [
+            "developed 12",
+            "kV Ring Main Unit (R",
+            "MU) – Arista-S",
+            "of the Board-level CS",
+            "R Committee",
+            ", your Company",
+            "same shall not exceed",
+            "20,00,000 (Twe",
+            "nty Lakhs)",
+            "Pursuant to Regulation 43A of the SEBI LODR, your",
+            "`2",
+            "/- (Rupees two) ea",
+            "ch.",
+            "differential rights as to dividend, voting or otherwise."
+          ],
+          [
+            "for Smart Di the Power D",
+            "stribution application istribution networks",
+            "to strengthen in utilities for",
+            "will be identifying focu",
+            "s areas / CS",
+            "R initiatives to be",
+            "in number, per eligible",
+            "Employee in an",
+            "y year and",
+            "Company has formulated a Dividend Distribution",
+            "Post 3",
+            "1 March 2021, y",
+            "our Company issued and",
+            "DIRECTORS’ RESPONSIBILITY"
+          ],
+          [
+            "reliability and",
+            "continuity of power",
+            "supply.",
+            "carried out in the com have a maximum impa",
+            "ing financial ct.",
+            "years in order to",
+            "in aggregate. The sp the Options would be criteria would be determ",
+            "ecific employees granted and the ined by the Nom",
+            "to whom ir eligibility ination and",
+            "Policy. It is available on the website of the Company under:",
+            "allotted Charter",
+            "1,38,45,000 eq ed Bank (Singapo",
+            "uity shares to Standard re) Limited on preferential",
+            "STATEMENT The Board of Directors confirm that the Company has"
+          ],
+          [
+            "CONSERVATION",
+            "OF ENERGY, TE",
+            "CHNOLOGY",
+            "Details of the compo",
+            "sition of the",
+            "CSR Committee",
+            "Remuneration Committe",
+            "e at its sole discr",
+            "etion.",
+            "http://www.cgglobal.com/frontend/finalnonproduct. aspx?cnl2=yrnPqECUvhk=",
+            "allotme",
+            "nt basis for settle",
+            "ment of obligations under",
+            "in place a framework of internal financial controls and"
+          ],
+          [
+            "ABSORPTION A",
+            "ND FOREIGN EXC",
+            "HANGE",
+            "and CSR Policy of th",
+            "e Company",
+            "are given in the",
+            "",
+            "",
+            "",
+            "",
+            "the G",
+            "uarantee Obligat",
+            "ions (‘SCB’) Settlement",
+            "compliance system, which is monitored and reviewed"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Section titled ‘Annual",
+            "Report on C",
+            "SR initiatives’ in",
+            "Options granted under",
+            "ESOP 2021 wou",
+            "ld vest on",
+            "",
+            "Agreem",
+            "ent. Consequently,",
+            "as on date, the subscribed",
+            "by the Audit Committee and the Board besides the"
+          ],
+          [
+            "EARNINGS AND",
+            "OUTGO",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "PUBLIC DEPOSITS",
+            "and p",
+            "aid-up share cap",
+            "ital of your Company is",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "Annexure 2 of this Re",
+            "port.",
+            "",
+            "or after 1 (one) year fro",
+            "m the date of gr",
+            "ant but not",
+            "",
+            "",
+            "",
+            "",
+            "statutory, internal and secretarial auditors. To the best"
+          ],
+          [
+            "Details, as require",
+            "d under Section 1",
+            "34 of the Act",
+            "",
+            "",
+            "",
+            "later than 4 (four) year",
+            "s from the date",
+            "of grant of",
+            "Your Company has not accepted any deposits from",
+            "`270,3",
+            "6,86,058/-(Rupees",
+            "Two Hundred And Seventy",
+            "of their knowledge and belief and according to the"
+          ],
+          [
+            "read with the Com are given in the p",
+            "panies (Accounts) rescribed format a",
+            "Rules, 2014, s Annexure 1",
+            "REGISTRAR AND S",
+            "HARE TRAN",
+            "SFER AGENT",
+            "such Options or any oth",
+            "er terms as deci",
+            "ded by the",
+            "public or its members under Chapter V of the Act and no deposits were outstanding as on 31 March 2021.",
+            "Crore T Eight o",
+            "hirty Six Lakhs Eig nly) consisting of 13",
+            "hty Six Thousand and Fifty 5,18,43,029 equity shares",
+            "information and explanations obtained by them, your"
+          ],
+          [
+            "to this Report.",
+            "",
+            "",
+            "Your Company h",
+            "as appoint",
+            "ed Datamatics",
+            "Nomination and Remune",
+            "ration Committee",
+            ".",
+            "",
+            "of `2/-",
+            "(Rupees two) each.",
+            "",
+            "Directors make the following statements in terms of Section 134(3)(c) of the Companies Act, 2013:"
+          ],
+          [
+            "",
+            "",
+            "",
+            "Business Solutions",
+            "Limited (‘DB",
+            "SL’), an entity",
+            "As on the date of this",
+            "report, your Co",
+            "mpany has",
+            "SHARE CAPITAL",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "ENVIRONMENT, A detailed review",
+            "HEALTH AND S of the Environmen",
+            "AFETY (EHS) t, Health and",
+            "which is registered w Share Transfer Agen",
+            "ith SEBI, as i t. Contact",
+            "ts Registrar and details of DBSL",
+            "granted 18,34,100 opti under ESOP 2021. Sinc",
+            "ons to the eligible e the ESOP Sch",
+            "employees eme of the",
+            "During the year under review, your Company allotted equity shares and warrants to Tube Investments of",
+            "Your C on BSE",
+            "ompany’s equity sh Limited and Natio",
+            "ares are listed and traded nal Stock Exchange of India",
+            "a) the annual Financial Statements for the year ended 31 March 2021 have been prepared"
+          ],
+          [
+            "Safety (EHS) measu is given in the Secti",
+            "res undertaken by on titled “Managem",
+            "your Company ent Discussion",
+            "are mentioned in th Corporate Governanc",
+            "e section tit e” of this An",
+            "led “Report on nual Report.",
+            "Company was introdu financial year 2021-22",
+            "ced and imple , the disclosure",
+            "mented in as required",
+            "India Limited (‘TII’) on preferential allotment / private placement basis as follows:",
+            "Limited Your C",
+            ". ompany had issued",
+            "Global Depository Receipts",
+            "in conformity with the applicable accounting standards along with proper explanation relating to material departures, if any;"
+          ],
+          [
+            "and Analysis”, whic",
+            "h forms part of this",
+            "Report.",
+            "PARTICULARS OF",
+            "EMPLOYEE",
+            "S",
+            "under the relevant SEBI for financial year ended",
+            "Regulations is no 31 March 2021.",
+            "t applicable",
+            "- 642,523,365 equity shares aggregating to",
+            "(‘GDRs",
+            "’) in 1996 and the",
+            "underlying shares for each",
+            ""
+          ],
+          [
+            "MANAGEMENT",
+            "DISCUSSION AN",
+            "D ANALYSIS",
+            "Disclosures pertaining",
+            "to remuner",
+            "ation and other",
+            "",
+            "",
+            "",
+            "approx. `550 Crore and 175,233,645 warrants",
+            "GDR w",
+            "ere issued in the",
+            "name of The Bank of New",
+            "b) that such accounting policies as mentioned"
+          ],
+          [
+            "",
+            "",
+            "",
+            "details as required und",
+            "er Section 19",
+            "7 of the Act read",
+            "",
+            "",
+            "",
+            "aggregating to approx. `150 Crore were allotted on",
+            "York,",
+            "or the Depository.",
+            "Each GDR is equivalent",
+            "in the Notes to the Financial Statements have"
+          ],
+          [
+            "A detailed review o",
+            "f the operations, pe",
+            "rformance and",
+            "",
+            "",
+            "",
+            "COMPLAINTS RELAT",
+            "ING TO SEXUA",
+            "L",
+            "",
+            "to five",
+            "equity shares. O",
+            "n 5 February 2021, your",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "with Rule 5(1) of the",
+            "Companies (",
+            "Appointment and",
+            "",
+            "",
+            "",
+            "26 November 2020.",
+            "",
+            "",
+            "",
+            "been selected and applied consistently and"
+          ],
+          [
+            "future outlook of yo",
+            "ur Company and its",
+            "businesses is",
+            "Remuneration of Mana",
+            "gerial Person",
+            "nel) Rules, 2014",
+            "HARASSMENT",
+            "",
+            "",
+            "",
+            "Board",
+            "approved the propo",
+            "sal for termination of GDR",
+            "judgment and estimates have been made that are"
+          ],
+          [
+            "given in the Sectio",
+            "n titled “Managem",
+            "ent Discussion",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "are given in Annexure",
+            "3 to this Repo",
+            "rt. In accordance",
+            "Your Company has ado",
+            "pted a Prevention",
+            "of Sexual",
+            "- 68,728,522 equity shares aggregating to approx.",
+            "progra",
+            "m of the Compan",
+            "y and delisting of GDRs,",
+            "reasonable and prudent so as to give a true and"
+          ],
+          [
+            "and Analysis”, whic",
+            "h forms part of this",
+            "Report.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "with the provisions of",
+            "Section 19",
+            "7(12) of the Act",
+            "Harassment Policy and h",
+            "as also constituted",
+            "an Internal",
+            "`100 Crore were allotted on 19 December 2020.",
+            "which",
+            "were outstanding",
+            "and listed on the London",
+            "fair view of the state of affairs of the Company"
+          ],
+          [
+            "",
+            "",
+            "",
+            "read with Rule 5(2) of",
+            "Companies (",
+            "Appointment and",
+            "Complaint Committee in",
+            "compliance with",
+            "the Sexual",
+            "",
+            "Stock",
+            "Exchange, subject",
+            "to compliance with the",
+            "as at 31 March 2021 and of the profit of the"
+          ],
+          [
+            "CORPORATE GO",
+            "VERNANCE",
+            "",
+            "Remuneration of Mana",
+            "gerial Person",
+            "nel) Rules, 2014,",
+            "Harassment of Women",
+            "at Workplace",
+            "(Prevention,",
+            "The issue proceeds were utilized by the Company",
+            "applica",
+            "ble laws. Accordin",
+            "gly the GDRs got delisted",
+            "Company for the year ended on that date;"
+          ],
+          [
+            "A section on Corpor",
+            "ate Governance stan",
+            "dards followed",
+            "the names and other",
+            "particulars o",
+            "f the employees",
+            "Prohibition and Redress",
+            "al) Act, 2013. T",
+            "he Internal",
+            "for the purposes/objects as stated in the Offer",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "52 | CG POWER AN",
+            "D INDUSTRIAL SOLUTI",
+            "ONS LIMITED 2020-21",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Annual Report 2020-21 | 53"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 71,
+        "extraction_method": "pdfplumber",
+        "row_count": 43,
+        "column_count": 8,
+        "rows": [
+          [
+            "REVISED STANDALONE BALANCE SHEET AS AT 31 MARCH, 2021",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Note No.",
+            "As at 31-03-2021 (Revised)",
+            "",
+            "As at 31-03-2020 (Revised)",
+            "",
+            "As at 1-04-2019 (Revised)",
+            ""
+          ],
+          [
+            "ASSETS",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "769.14",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "2.43",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "31.71",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "7.82",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "303.64",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "-",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "6.51",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "6.09",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "733.41",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.81",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1862.56",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "381.92",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "521.67",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "357.18",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "36.03",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "35.10",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.93",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "122.57",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "279.97",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1736.38",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "279.85",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "3878.79",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "EQUITY AND LIABILITIES",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "267.60",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "766.23",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1033.83",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "812.99",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "12.77",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "825.76",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "27.19",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "131.64",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "84.09",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "914.63",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "582.76",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1713.12",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "130.74",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "148.15",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "-",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "3878.79",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 71,
+        "extraction_method": "pdfplumber",
+        "row_count": 28,
+        "column_count": 6,
+        "rows": [
+          [
+            "REVISED STANDALONE STATEMENT OF PROFIT AND LOSS FOR THE YEAR ENDED 31 MARCH, 2021",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Note No.",
+            "2020-21 (Revised)",
+            "",
+            "2019-20 (Revised)",
+            ""
+          ],
+          [
+            "INCOME",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "2525.89",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "42.17",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "2568.06",
+            "",
+            ""
+          ],
+          [
+            "EXPENSES",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1761.99",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "84.69",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "(97.08)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "258.90",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "166.25",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "81.21",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "402.90",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "2658.86",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(90.80)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "914.38",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "823.58",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "-",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "134.59",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "134.59",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "688.99",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "(3.84)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "0.97",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(2.87)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "686.12",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "7.94",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "7.50",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": "19",
+        "title": "standalone financial statements of the Company and the said financial statements were audited by Recasting Auditors. The recasted standalone financial statements",
+        "page": 73,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 3,
+        "rows": [
+          [
+            "Balance as at 1-04-2020 (Revised)",
+            "Changes in equity share capital during the year*",
+            "Balance as at 31-03-2021 (Revised)"
+          ],
+          [
+            "",
+            "",
+            "267.60"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": "19",
+        "title": "standalone financial statements of the Company and the said financial statements were audited by Recasting Auditors. The recasted standalone financial statements",
+        "page": 73,
+        "extraction_method": "pdfplumber",
+        "row_count": 9,
+        "column_count": 9,
+        "rows": [
+          [
+            "",
+            "Retained Earnings",
+            "General Reserve",
+            "Capital Reserve",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Equity Instruments through Other Comprehensive Income",
+            "Share Warrants Money",
+            "Total Equity"
+          ],
+          [
+            "",
+            "(1334.66)",
+            "415.89",
+            "672.49",
+            "12.95",
+            "18.29",
+            "(227.00)",
+            "-",
+            "(442.04)"
+          ],
+          [
+            "",
+            "688.99",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "688.99"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "37.50",
+            "37.50"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "507.75",
+            "-",
+            "-",
+            "507.75"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(23.10)",
+            "-",
+            "-",
+            "(23.10)"
+          ],
+          [
+            "",
+            "(227.00)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "227.00",
+            "-",
+            "-"
+          ],
+          [
+            "",
+            "(2.87)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(2.87)"
+          ],
+          [
+            "",
+            "(875.54)",
+            "415.89",
+            "672.49",
+            "12.95",
+            "502.94",
+            "-",
+            "37.50",
+            "766.23"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "19",
+        "title": "standalone financial statements of the Company and the said financial statements were audited by Recasting Auditors. The recasted standalone financial statements",
+        "page": 73,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 9,
+        "rows": [
+          [
+            "",
+            "Retained Earnings",
+            "General Reserve",
+            "Capital Reserve",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Equity Instruments through Other Comprehensive Income",
+            "Share Warrants Money",
+            "Total Equity"
+          ],
+          [
+            "",
+            "",
+            "415.89 - -",
+            "672.49 - -",
+            "12.95 - -",
+            "18.29 - -",
+            "(227.00) - -",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "415.89",
+            "672.49",
+            "12.95",
+            "18.29",
+            "(227.00)",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_7",
+        "note_no": null,
+        "title": null,
+        "page": 149,
+        "extraction_method": "pdfplumber",
+        "row_count": 43,
+        "column_count": 6,
+        "rows": [
+          [
+            "REVISED STANDALONE BALANCE SHEET AS AT 31 MARCH, 2020",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Note No.",
+            "As at 31-03-2020 (Revised)",
+            "",
+            "As at 31-03-2019 (Recasted)",
+            ""
+          ],
+          [
+            "ASSETS",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "843.44",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.21",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "39.17",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "14.25",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "14.75",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "4.23",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "6.52",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "33.54",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "867.03",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.08",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1825.22",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "272.69",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "403.06",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "100.94",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "39.68",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "35.64",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "2.79",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "114.11",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "276.23",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1245.15",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "279.85",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "3350.22",
+            "",
+            ""
+          ],
+          [
+            "EQUITY AND LIABILITIES",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "125.35",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "(442.04)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(316.69)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "292.89",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "16.22",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "309.11",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "33.33",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1037.93",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "120.06",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1069.90",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "793.80",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "3021.69",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "185.81",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "116.97",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "-",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "3350.22",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_8",
+        "note_no": null,
+        "title": null,
+        "page": 149,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 4,
+        "rows": [
+          [
+            "REVISED STANDALONE STATEMENT OF PROFIT AND LOSS FOR THE YEAR ENDED 31 MARCH, 2020",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Note No.",
+            "2019-20 (Revised)",
+            "2018-19 (Recasted)"
+          ],
+          [
+            "INCOME",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_9",
+        "note_no": null,
+        "title": null,
+        "page": 151,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 3,
+        "rows": [
+          [
+            "Balance as at 1-04-2019 (Revised)",
+            "Changes in equity share capital during the year",
+            "Balance as at 31-03-2020 (Revised)"
+          ],
+          [
+            "",
+            "",
+            "125.35"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_10",
+        "note_no": null,
+        "title": null,
+        "page": 151,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 9,
+        "rows": [
+          [
+            "",
+            "",
+            "Retained Earnings",
+            "General Reserve",
+            "Capital Reserve",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Equity Instruments through Other Comprehensive Income",
+            "Total Equity"
+          ],
+          [
+            "",
+            "",
+            "145.25",
+            "415.89",
+            "672.49",
+            "12.95",
+            "18.29",
+            "(227.00)",
+            "1037.87"
+          ],
+          [
+            "",
+            "",
+            "(1479.83)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(1479.83)"
+          ],
+          [
+            "",
+            "",
+            "(0.08)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(0.08)"
+          ],
+          [
+            "",
+            "",
+            "(1334.66)",
+            "415.89",
+            "672.49",
+            "12.95",
+            "18.29",
+            "(227.00)",
+            "(442.04)"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_11",
+        "note_no": null,
+        "title": null,
+        "page": 151,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 8,
+        "rows": [
+          [
+            "",
+            "Retained Earnings",
+            "General Reserve",
+            "Capital Reserve",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Equity Instruments through Other Comprehensive Income",
+            "Total Equity"
+          ],
+          [
+            "",
+            "2927.28 (2679.95) (99.84) (2.24) -",
+            "415.89 - - -",
+            "672.49 - - -",
+            "12.95 - - -",
+            "18.29 - - -",
+            "(105.20) - (121.80)",
+            ""
+          ],
+          [
+            "",
+            "145.25",
+            "415.89",
+            "672.49",
+            "12.95",
+            "18.29",
+            "(227.00)",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "profit_and_loss": {
+      "statement": "consolidated_profit_and_loss",
+      "page": 110,
+      "pages": [
+        110
+      ],
+      "title": "REVISED CONSOLIDATED STATEMENT OF PROFIT AND LOSS FOR THE YEAR ENDED 31 MARCH, 2021",
+      "currency": null,
+      "periods": [
+        "31.03.2021",
+        "31.03.2020"
+      ],
+      "column_headers": [
+        "2020-21 (Revised)",
+        "2019-20 (Revised)"
+      ],
+      "extraction_method": "word_position_clustering_two_column",
+      "rows": [
+        {
+          "section": "Income",
+          "line_item": "Revenue from operations 31 Other income 32",
+          "note_no": "",
+          "values": {
+            "current_period": 111.42,
+            "previous_period": 48.23
+          }
+        },
+        {
+          "section": "Income",
+          "line_item": "Total Income",
+          "note_no": "",
+          "values": {
+            "current_period": 3075.37,
+            "previous_period": 5158.11
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Cost of materials consumed 33",
+          "note_no": "",
+          "values": {
+            "current_period": 1969.33,
+            "previous_period": 3069.04
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Purchases of stock-in-trade 34",
+          "note_no": "",
+          "values": {
+            "current_period": 86.12,
+            "previous_period": 60.92
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Changes in inventories of finished goods, work-in-progress and stock-in-trade 35",
+          "note_no": "",
+          "values": {
+            "current_period": -81.18,
+            "previous_period": 198.15
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Employee benefits expense 36",
+          "note_no": "",
+          "values": {
+            "current_period": 371.78,
+            "previous_period": 867.13
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Finance costs 37",
+          "note_no": "",
+          "values": {
+            "current_period": 197.1,
+            "previous_period": 324.05
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Depreciation and amortisation expense 38",
+          "note_no": "",
+          "values": {
+            "current_period": 138.31,
+            "previous_period": 211.48
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Other expenses 39",
+          "note_no": "",
+          "values": {
+            "current_period": 510.42,
+            "previous_period": 918.22
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Total Expenses",
+          "note_no": "",
+          "values": {
+            "current_period": 3191.88,
+            "previous_period": 5648.99
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Loss before exceptional items and tax",
+          "note_no": "",
+          "values": {
+            "current_period": -116.51,
+            "previous_period": -490.88
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Exceptional items (net) 50",
+          "note_no": "",
+          "values": {
+            "current_period": 1543.67,
+            "previous_period": -909.03
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit / (loss) before tax",
+          "note_no": "",
+          "values": {
+            "current_period": 1427.16,
+            "previous_period": -1399.91
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Tax expense:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Current tax 10",
+          "note_no": "",
+          "values": {
+            "current_period": 2.81,
+            "previous_period": 2.64
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Deferred tax (net) 10",
+          "note_no": "",
+          "values": {
+            "current_period": 144.81,
+            "previous_period": -78.45
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit / (loss) from continuing operations after tax",
+          "note_no": "",
+          "values": {
+            "current_period": 1279.54,
+            "previous_period": -1324.1
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit / (loss) from discontinued operations before tax 45",
+          "note_no": "",
+          "values": {
+            "current_period": 0.06,
+            "previous_period": -6.92
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Tax expense on discontinued operations 10",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 0.12
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit / (loss) from discontinued operations after tax",
+          "note_no": "",
+          "values": {
+            "current_period": 0.06,
+            "previous_period": -7.04
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Profit / (loss) for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 1279.6,
+            "previous_period": -1331.14
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Attributable to:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Equity holders of the parent",
+          "note_no": "",
+          "values": {
+            "current_period": 1295.2,
+            "previous_period": -1323.65
+          }
+        },
+        {
+          "section": "Expenses",
+          "line_item": "Non-controlling interests",
+          "note_no": "",
+          "values": {
+            "current_period": 15.6,
+            "previous_period": 7.49
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Items that will not be reclassified subsequently to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Remeasurement gain / (loss) on defined benefit plans",
+          "note_no": "",
+          "values": {
+            "current_period": -4,
+            "previous_period": -0.36
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Income tax relating to items that will not be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": 1.03,
+            "previous_period": 0.11
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Items that will be reclassified subsequently to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": 5.91,
+            "previous_period": 11.89
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total other comprehensive income for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 2.94,
+            "previous_period": 11.64
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Total comprehensive income for the year",
+          "note_no": "",
+          "values": {
+            "current_period": 1282.54,
+            "previous_period": -1319.5
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Attributable to:",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Equity holders of the parent",
+          "note_no": "",
+          "values": {
+            "current_period": 1298.14,
+            "previous_period": -1312.01
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Non-controlling interests",
+          "note_no": "",
+          "values": {
+            "current_period": 15.6,
+            "previous_period": 7.49
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Earnings per share for continuing operations 49",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(basic) (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 14.92,
+            "previous_period": -21.01
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(diluted) (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 14.1,
+            "previous_period": -21.01
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Earnings per share for discontinued operations 49",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(basic) (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 0,
+            "previous_period": -0.11
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(diluted) (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 0,
+            "previous_period": -0.11
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "Earnings per share 49",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(basic) (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 14.92,
+            "previous_period": -21.12
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(diluted) (`)",
+          "note_no": "",
+          "values": {
+            "current_period": 14.1,
+            "previous_period": -21.12
+          }
+        },
+        {
+          "section": "Other Comprehensive Income",
+          "line_item": "(Face value of ` 2 each)",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 45,
+        "total_rows": 4
+      }
+    },
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 120,
+      "pages": [
+        120
+      ],
+      "title": "Changes in Consolidated Balance sheet as at 31 March 2021",
+      "currency": null,
+      "periods": [
+        "31.03.2021"
+      ],
+      "column_headers": [
+        "As at",
+        "As at"
+      ],
+      "extraction_method": "word_position_clustering_two_column",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Note No",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Property, plant and equipment",
+          "note_no": null,
+          "values": {
+            "current_period": 912.14,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Capital work-in-progress",
+          "note_no": null,
+          "values": {
+            "current_period": 12.31,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Goodwill",
+          "note_no": null,
+          "values": {
+            "current_period": 155.68,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets",
+          "note_no": null,
+          "values": {
+            "current_period": 77.87,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Intangible assets under development",
+          "note_no": null,
+          "values": {
+            "current_period": 7.82,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Financial assets",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Investments",
+          "note_no": null,
+          "values": {
+            "current_period": 1.86,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Loans 3(B)-a",
+          "note_no": null,
+          "values": {
+            "current_period": 11.06,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Others 3(B)-b",
+          "note_no": null,
+          "values": {
+            "current_period": 6.09,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Deferred tax assets (net) 3(B)-c",
+          "note_no": null,
+          "values": {
+            "current_period": 942.69,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Other non-current assets",
+          "note_no": null,
+          "values": {
+            "current_period": 14.14,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Non-Current Assets",
+          "line_item": "Total non current assets",
+          "note_no": null,
+          "values": {
+            "current_period": 2141.66,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets",
+          "line_item": "Inventories",
+          "note_no": null,
+          "values": {
+            "current_period": 428.27,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Investments",
+          "note_no": null,
+          "values": {
+            "current_period": 0.01,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Trade receivables 3(B)-d",
+          "note_no": null,
+          "values": {
+            "current_period": 587.02,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Cash and cash equivalents 3(B)-b",
+          "note_no": null,
+          "values": {
+            "current_period": 497.71,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Bank balances other than (iii) above",
+          "note_no": null,
+          "values": {
+            "current_period": 46.83,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Loans",
+          "note_no": null,
+          "values": {
+            "current_period": 33.13,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Others",
+          "note_no": null,
+          "values": {
+            "current_period": 129.81,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Current tax assets (net) 3(B)-e",
+          "note_no": null,
+          "values": {
+            "current_period": 53.3,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Other current assets 3(B)-f",
+          "note_no": null,
+          "values": {
+            "current_period": 326.4,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "Total current assets",
+          "note_no": null,
+          "values": {
+            "current_period": 2102.48,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "(3) Assets classified as held for sale and discontinued operations",
+          "note_no": null,
+          "values": {
+            "current_period": 290.17,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "ASSETS > Current Assets > Financial Assets",
+          "line_item": "TOTAL ASSETS",
+          "note_no": null,
+          "values": {
+            "current_period": 4534.31,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Equity share capital",
+          "note_no": null,
+          "values": {
+            "current_period": 267.6,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Other equity 3(B)-g",
+          "note_no": null,
+          "values": {
+            "current_period": -216.84,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Equity",
+          "line_item": "Total equity",
+          "note_no": null,
+          "values": {
+            "current_period": 50.76,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings 3(B)-h",
+          "note_no": null,
+          "values": {
+            "current_period": 831.09,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 18.19,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": 27.62,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Deferred tax liabilities (net)",
+          "note_no": null,
+          "values": {
+            "current_period": 4.68,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Other non-current liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 0.46,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Non-Current Liabilities > Financial Liabilities",
+          "line_item": "Total non current liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 882.04,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Borrowings 3(B)-h",
+          "note_no": null,
+          "values": {
+            "current_period": 132.83,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Trade payables 3(B)-i",
+          "note_no": null,
+          "values": {
+            "current_period": 1032.18,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other financial liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 1362.2,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Other current liabilities 3(B)-j",
+          "note_no": null,
+          "values": {
+            "current_period": 845.18,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Provisions",
+          "note_no": null,
+          "values": {
+            "current_period": 218.07,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "Total current liabilities",
+          "note_no": null,
+          "values": {
+            "current_period": 3590.46,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "(3) Liabilities associated with group of assets classified as held for sale and discontinued operations",
+          "note_no": null,
+          "values": {
+            "current_period": 11.05,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "TOTAL EQUITY AND LIABILITIES",
+          "note_no": null,
+          "values": {
+            "current_period": 4534.31,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "EQUITY AND LIABILITIES > Current Liabilities > Financial Liabilities",
+          "line_item": "210 | CG POWER AND INDUSTRIAL SOLUTIONS LIMITED 2020-21",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 43,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "cash_flow": {
+      "statement": "consolidated_cash_flow",
+      "page": 111,
+      "pages": [
+        111
+      ],
+      "title": "REVISED CONSOLIDATED STATEMENT OF CASH FLOWS FOR THE YEAR ENDED MARCH 31, 2021  REVISED CONSOLIDATED STATEMENT OF CASH FLOWS FOR THE YEAR ENDED MARCH 31, 2021",
+      "currency": null,
+      "periods": [],
+      "column_headers": [
+        "2020-21",
+        "2019-20 2020-21 2019-20"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "[A] CASH FLOWS FROM OPERATING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit / (loss) before taxes from continuing operations",
+          "note_no": null,
+          "values": {
+            "current_period": 1427.16,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustments for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortisation expense",
+          "note_no": null,
+          "values": {
+            "current_period": 138.31,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Allowances for doubtful receivables",
+          "note_no": null,
+          "values": {
+            "current_period": 57.87,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Bad debts written off",
+          "note_no": null,
+          "values": {
+            "current_period": 0.33,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Gain arising on financial instruments designated as FVTPL",
+          "note_no": null,
+          "values": {
+            "current_period": -0.14,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Finance costs",
+          "note_no": null,
+          "values": {
+            "current_period": 197.1,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest income",
+          "note_no": null,
+          "values": {
+            "current_period": -13.2,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unrealised exchange (gain) (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -3.39,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Unrealised exchange (gain) / loss on consolidation (net)",
+          "note_no": null,
+          "values": {
+            "current_period": 7.11,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Intangible assets write off",
+          "note_no": null,
+          "values": {
+            "current_period": 7.15,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Loss on sale of property, plant and equipment (net)",
+          "note_no": null,
+          "values": {
+            "current_period": 0.23,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exceptional items (net)",
+          "note_no": null,
+          "values": {
+            "current_period": -1543.67,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Operating profit before working capital changes",
+          "note_no": null,
+          "values": {
+            "current_period": 274.86,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Adjustments for:",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase) / Decrease in trade and other receivables",
+          "note_no": null,
+          "values": {
+            "current_period": -144.51,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Increase) / Decrease in inventories",
+          "note_no": null,
+          "values": {
+            "current_period": -85.63,
+            "previous_period": 292.24
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase / (Decrease) in trade and other payables",
+          "note_no": null,
+          "values": {
+            "current_period": -248.71,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Increase / (Decrease ) in provisions",
+          "note_no": null,
+          "values": {
+            "current_period": -21.92,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Cash (used in) / from operations",
+          "note_no": null,
+          "values": {
+            "current_period": -225.91,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Income tax paid (net of refunds)",
+          "note_no": null,
+          "values": {
+            "current_period": -3.52,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Non-controlling interest in (profit) / loss",
+          "note_no": null,
+          "values": {
+            "current_period": -15.6,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing operating activities",
+          "note_no": null,
+          "values": {
+            "current_period": -245.03,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from discontinued operating activities",
+          "note_no": null,
+          "values": {
+            "current_period": 2.83,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Net cash flow (used in) / from continuing and discontinued operating activities (A)",
+          "note_no": null,
+          "values": {
+            "current_period": -242.2,
+            "previous_period": 691.55
+          }
+        },
+        {
+          "section": null,
+          "line_item": "[B] CASH FLOWS FROM INVESTING ACTIVITIES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add: Inflows from investing activities",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from sale of property, plant and equipment",
+          "note_no": null,
+          "values": {
+            "current_period": 2.63,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Proceeds from sale of investments in subsidiary",
+          "note_no": null,
+          "values": {
+            "current_period": 0.26,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Interest received",
+          "note_no": null,
+          "values": {
+            "current_period": 7.76,
+            "previous_period": 5.61
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 31,
+        "total_rows": 0
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": "2020",
+        "title": "21 (Revised) 2019-20 (Revised)",
+        "page": 110,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 5,
+        "rows": [
+          [
+            "REVISED CONSOLIDATED BALANCE SHEET AS AT 31 MARCH, 2021",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Note No.",
+            "As at 31-03-2021 (Revised)",
+            "As at 31-03-2020 (Revised)",
+            "As at 1-04-2019 (Revised)"
+          ],
+          [
+            "ASSETS",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": "2020",
+        "title": "21 (Revised) 2019-20 (Revised)",
+        "page": 110,
+        "extraction_method": "pdfplumber",
+        "row_count": 43,
+        "column_count": 6,
+        "rows": [
+          [
+            "REVISED CONSOLIDATED STATEMENT OF PROFIT AND LOSS FOR THE YEAR ENDED 31 MARCH, 2021",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Note No.",
+            "2020-21 (Revised)",
+            "",
+            "2019-20 (Revised)",
+            ""
+          ],
+          [
+            "INCOME",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "2963.95",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "111.42",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "3075.37",
+            "",
+            ""
+          ],
+          [
+            "EXPENSES",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1969.33",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "86.12",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "(81.18)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "371.78",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "197.10",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "138.31",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "510.42",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "3191.88",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "(116.51)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1543.67",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1427.16",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "2.81",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "144.81",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "147.62",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1279.54",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "0.06",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "-",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "0.06",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1279.60",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1295.20",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "15.60",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1279.60",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "(4.00)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "1.03",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "5.91",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "2.94",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1282.54",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1298.14",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "15.60",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "1282.54",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "14.92",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "14.10",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "0.00",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "0.00",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "14.92",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "14.10",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": "20",
+        "title": "1B VOLUNTARY REVISION OF CONSOLIDATED FINANCIAL STATEMENTS",
+        "page": 112,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 3,
+        "rows": [
+          [
+            "Balance as at 1-04-2020 (Revised)",
+            "Changes in equity share capital during the year*",
+            "Balance as at 31-03-2021 (Revised)"
+          ],
+          [
+            "",
+            "",
+            "267.60"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": "20",
+        "title": "1B VOLUNTARY REVISION OF CONSOLIDATED FINANCIAL STATEMENTS",
+        "page": 112,
+        "extraction_method": "pdfplumber",
+        "row_count": 11,
+        "column_count": 14,
+        "rows": [
+          [
+            "",
+            "Retained Earnings",
+            "Effective portion of cash flow hedge",
+            "Foreign Currency Translation Reserve",
+            "Equity Instruments through Other Comprehensive Income",
+            "Capital Reserve",
+            "Capital Reserve on Consolidation",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Share Warrants Money",
+            "Statutory Reserve",
+            "Total",
+            "Non- Controlling interest",
+            "Total Equity"
+          ],
+          [
+            "",
+            "(2577.51)",
+            "0.37",
+            "17.95",
+            "(244.31)",
+            "671.65",
+            "3.58",
+            "12.95",
+            "18.30",
+            "-",
+            "-",
+            "(2097.02)",
+            "15.54",
+            "(2081.48)"
+          ],
+          [
+            "",
+            "1295.20",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "1295.20",
+            "(15.60)",
+            "1279.60"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "37.50",
+            "-",
+            "37.50",
+            "-",
+            "37.50"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "507.75",
+            "-",
+            "-",
+            "507.75",
+            "-",
+            "507.75"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(23.10)",
+            "-",
+            "-",
+            "(23.10)",
+            "-",
+            "(23.10)"
+          ],
+          [
+            "",
+            "(244.31)",
+            "-",
+            "-",
+            "244.31",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          [
+            "",
+            "(2.97)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(2.97)",
+            "-",
+            "(2.97)"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "5.91",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "5.91",
+            "0.47",
+            "6.38"
+          ],
+          [
+            "",
+            "-",
+            "(0.42)",
+            "(75.15)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(75.57)",
+            "-",
+            "(75.57)"
+          ],
+          [
+            "",
+            "(1529.59)",
+            "(0.05)",
+            "(51.29)",
+            "-",
+            "671.65",
+            "3.58",
+            "12.95",
+            "502.95",
+            "37.50",
+            "-",
+            "(352.30)",
+            "0.41",
+            "(351.89)"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": "20",
+        "title": "1B VOLUNTARY REVISION OF CONSOLIDATED FINANCIAL STATEMENTS",
+        "page": 112,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 14,
+        "rows": [
+          [
+            "",
+            "Retained Earnings",
+            "Effective portion of cash flow hedge",
+            "Foreign Currency Translation Reserve",
+            "Equity Instruments through Other Comprehensive Income",
+            "Capital Reserve",
+            "Capital Reserve on Consolidation",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Share Warrants Money",
+            "Statutory Reserve",
+            "Total",
+            "Non- Controlling interest",
+            "Total Equity"
+          ],
+          [
+            "",
+            "(1501.18) (1323.65) 39.47 (0.25) - - 208.10",
+            "1.32 - - - - (0.12) (0.83)",
+            "187.35 - - - 12.01 - (181.41)",
+            "(244.31) - - - - - -",
+            "671.65 - - - - - -",
+            "144.63 - - - - - (141.05)",
+            "12.95 - - - - - -",
+            "18.30 - - - - - -",
+            "- - - - - - -",
+            "67.05 - - - - - (67.05)",
+            "(642.24) (1323.65) 39.47 (0.25) 12.01 (0.12) (182.24)",
+            "54.82 (7.49) (39.47) - 7.68 - -",
+            "(587.42) (1331.14) - (0.25) 19.69 (0.12) (182.24)"
+          ],
+          [
+            "",
+            "(2577.51)",
+            "0.37",
+            "17.95",
+            "(244.31)",
+            "671.65",
+            "3.58",
+            "12.95",
+            "18.30",
+            "-",
+            "-",
+            "(2097.02)",
+            "15.54",
+            "(2081.48)"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "2019",
+        "title": "20 2018-19",
+        "page": 187,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 4,
+        "rows": [
+          [
+            "REVISED CONSOLIDATED BALANCE SHEET AS AT 31 MARCH, 2020",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Note No.",
+            "As at 31-03-2020 (Revised)",
+            "As at 31-03-2019 (Recasted)"
+          ],
+          [
+            "ASSETS",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_7",
+        "note_no": "2019",
+        "title": "20 2018-19",
+        "page": 187,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 4,
+        "rows": [
+          [
+            "REVISED CONSOLIDATED STATEMENT OF PROFIT AND LOSS FOR THE YEAR ENDED 31 MARCH, 2020",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Note No.",
+            "2019-20 (Revised)",
+            "2018-19 (Recasted)"
+          ],
+          [
+            "Income",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "note_id": "note_8",
+        "note_no": null,
+        "title": null,
+        "page": 189,
+        "extraction_method": "pdfplumber",
+        "row_count": 2,
+        "column_count": 3,
+        "rows": [
+          [
+            "Balance as at 1-04-2019 (Revised)",
+            "Changes in equity share capital during the year",
+            "Balance as at 31-03-2020 (Revised)"
+          ],
+          [
+            "",
+            "",
+            "125.35"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_9",
+        "note_no": null,
+        "title": null,
+        "page": 189,
+        "extraction_method": "pdfplumber",
+        "row_count": 9,
+        "column_count": 13,
+        "rows": [
+          [
+            "",
+            "Retained Earnings",
+            "Effective portion of cash flow hedge",
+            "Foreign Currency Translation Reserve",
+            "Equity Instru- ments through Other Compre- hensive Income",
+            "Capital Reserve",
+            "Capital Reserve on Consolidation",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Stat- utory Reserve",
+            "Total",
+            "Non- Con- trolling interest",
+            "Total Equity"
+          ],
+          [
+            "",
+            "(1501.18)",
+            "1.32",
+            "187.35",
+            "(244.31)",
+            "671.65",
+            "144.63",
+            "12.95",
+            "18.30",
+            "67.05",
+            "(642.24)",
+            "54.82",
+            "(587.42)"
+          ],
+          [
+            "",
+            "(1323.65)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(1323.65)",
+            "(7.49)",
+            "(1331.14)"
+          ],
+          [
+            "",
+            "39.47",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "39.47",
+            "(39.47)",
+            "-"
+          ],
+          [
+            "",
+            "(0.25)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(0.25)",
+            "-",
+            "(0.25)"
+          ],
+          [
+            "",
+            "-",
+            "-",
+            "12.01",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "12.01",
+            "7.68",
+            "19.69"
+          ],
+          [
+            "",
+            "-",
+            "(0.12)",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "(0.12)",
+            "-",
+            "(0.12)"
+          ],
+          [
+            "",
+            "208.10",
+            "(0.83)",
+            "(181.41)",
+            "-",
+            "-",
+            "(141.05)",
+            "-",
+            "-",
+            "(67.05)",
+            "(182.24)",
+            "-",
+            "(182.24)"
+          ],
+          [
+            "",
+            "(2577.51)",
+            "0.37",
+            "17.95",
+            "(244.31)",
+            "671.65",
+            "3.58",
+            "12.95",
+            "18.30",
+            "-",
+            "(2097.02)",
+            "15.54",
+            "(2081.48)"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_10",
+        "note_no": null,
+        "title": null,
+        "page": 189,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 13,
+        "rows": [
+          [
+            "",
+            "Retained Earnings",
+            "Effective portion of cash flow hedge",
+            "Foreign Currency Translation Reserve",
+            "Equity Instru- ments through Other Compre- hensive Income",
+            "Capital Reserve",
+            "Capital Reserve on Consolidation",
+            "Capital Redemption Reserve",
+            "Securities Premium",
+            "Stat- utory Reserve",
+            "Total",
+            "Non- Con- trolling interest",
+            "Total Equity"
+          ],
+          [
+            "",
+            "1407.63 (2794.00) - (99.84) (14.97) - - -",
+            "(4.14) - - - - - - 5.46",
+            "192.57 - - - - - (5.22) -",
+            "(122.51) - - - - (121.80) - -",
+            "671.65 - - - - - - -",
+            "144.63 - - - - - - -",
+            "12.95 - - - - - - -",
+            "18.30 - - - - - - -",
+            "67.05 - - - - - - -",
+            "2388.13 (2794.00) - (99.84) (14.97) (121.80) (5.22) 5.46",
+            "38.72 (3.63) 15.70 - - - 4.03 -",
+            ""
+          ],
+          [
+            "",
+            "(1501.18)",
+            "1.32",
+            "187.35",
+            "(244.31)",
+            "671.65",
+            "144.63",
+            "12.95",
+            "18.30",
+            "67.05",
+            "(642.24)",
+            "54.82",
+            ""
+          ]
+        ]
+      }
+    ]
+  }
+}

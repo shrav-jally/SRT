@@ -1,0 +1,12 @@
+# Python 3.14 compatible dependencies
+pdfplumber
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langchain-text-splitters
+python-dotenv
+pandas
+openpyxl
+pydantic
+tiktoken

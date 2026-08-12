@@ -1,0 +1,108 @@
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/README.md
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/input/sample_annual_report.pdf
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/inspect_pdf_text.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/main.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/output/annual_report.txt
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/output/entities.json
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/output/financial_output.xlsx
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/output/validated_entities.json
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/requirements.txt
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/sample_setup.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/__init__.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/chunker.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/config.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/excel_writer.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/extractor.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/models.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/parser.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/prompts.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/utils.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/src/validator.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/templates/financial_template.xlsx
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/tests/test_excel_mapping.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/tests/test_extractor_notes.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/tests/test_numeric_parsing.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/tests/test_pipeline_consistency.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/tests/test_preprocessing.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/tests/test_table_reconstruction.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/tests/test_validation_rules.py
+Early Warning System  (Sentinel)/ews_p1/FinancialExtractor/tests/test_validator_numeric.py
+Early Warning System  (Sentinel)/financial_tables_v4/2012-13_nse_annual_report_cox_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2012-13_nse_annual_report_cox_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2013-14_nse_annual_report_cox_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2013-14_nse_annual_report_cox_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2014-15_nse_annual_report_cox_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2014-15_nse_annual_report_cox_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2015-16_nse_annual_report_cox_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2015-16_nse_annual_report_cox_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2016-17_nse_annual_report_cox_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2016-17_nse_annual_report_cox_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2017-18_nse_annual_report_brig_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2017-18_nse_annual_report_brig_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2017-18_nse_annual_report_raj_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2017-18_nse_annual_report_raj_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2018-19_nse_annual_report_brig_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2018-19_nse_annual_report_brig_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2018-19_nse_annual_report_cg_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2018-19_nse_annual_report_cg_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2018-19_nse_annual_report_cox_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2018-19_nse_annual_report_cox_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2018-19_nse_annual_report_raj_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2018-19_nse_annual_report_raj_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2019-20_nse_annual_report_brig_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2019-20_nse_annual_report_brig_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2019-20_nse_annual_report_cg_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2019-20_nse_annual_report_cg_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2019-20_nse_annual_report_raj_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2019-20_nse_annual_report_raj_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2020-21_nse_annual_report_brig_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2020-21_nse_annual_report_brig_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2020-21_nse_annual_report_cg_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2020-21_nse_annual_report_cg_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2020-21_nse_annual_report_raj_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2020-21_nse_annual_report_raj_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2021-22_nse_annual_report_brig_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2021-22_nse_annual_report_brig_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2021-22_nse_annual_report_cg_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2021-22_nse_annual_report_cg_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2021-22_nse_annual_report_raj_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2021-22_nse_annual_report_raj_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2022-23_nse_annual_report_brig_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2022-23_nse_annual_report_brig_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2022-23_nse_annual_report_cg_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2022-23_nse_annual_report_cg_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2022-23_nse_annual_report_gen_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2022-23_nse_annual_report_gen_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2022-23_nse_annual_report_raj_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2022-23_nse_annual_report_raj_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2023-24_nse_annual_report_brig_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2023-24_nse_annual_report_brig_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2023-24_nse_annual_report_cg_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2023-24_nse_annual_report_cg_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2023-24_nse_annual_report_gen_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2023-24_nse_annual_report_gen_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2023-24_nse_annual_report_raj_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2023-24_nse_annual_report_raj_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_bse_annual_report_cox_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_bse_annual_report_cox_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_nse_annual_report_brig_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_nse_annual_report_brig_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_nse_annual_report_cg_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_nse_annual_report_cg_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_nse_annual_report_gen_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_nse_annual_report_gen_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_nse_annual_report_raj_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2024-25_nse_annual_report_raj_tables.xlsx
+Early Warning System  (Sentinel)/financial_tables_v4/2025-26_nse_annual_report_cg_tables.json
+Early Warning System  (Sentinel)/financial_tables_v4/2025-26_nse_annual_report_cg_tables.xlsx
+Extraction Pipeline/LightOnOCR_vs_Baidu_UnlimitedOCR_Executive_Comparison.pdf
+ICICI Lombard/Executive_OnePager_Agentic_TeleMedical.pdf
+ICICI Lombard/agentic pipeline.png
+backup_ref.txt
+git_porcelain.txt
+git_push_output.txt
+git_status_post_reset.txt
+scripts/add_and_commit.ps1
+scripts/add_batches.ps1
+tracked.txt
+untracked.txt

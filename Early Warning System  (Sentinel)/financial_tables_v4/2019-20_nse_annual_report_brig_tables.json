@@ -1,0 +1,4223 @@
+{
+  "metadata": {
+    "source_file": "/tmp/tmpou9qadpq/2019-20_nse_annual_report_brig.pdf",
+    "file_name": "2019-20_nse_annual_report_brig.pdf",
+    "financial_year": "2019-20",
+    "extraction_timestamp": "2026-07-03T09:18:19.435888+00:00",
+    "page_count": 214
+  },
+  "standalone": {
+    "profit_and_loss": {
+      "statement": "standalone_profit_and_loss",
+      "page": 161,
+      "pages": [
+        161
+      ],
+      "title": "Statement of Consolidated Profit and Loss for the year ended 31st March 2020",
+      "currency": "in Rs.",
+      "periods": [
+        "31.03.2020",
+        "31.03.2019"
+      ],
+      "column_headers": [
+        "Note",
+        "31/03/2020",
+        "31/03/2019"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "REVENUE",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "I. Revenue from operations",
+          "note_no": "27",
+          "values": {
+            "current_period": 26923183759,
+            "previous_period": 25802409484
+          }
+        },
+        {
+          "section": null,
+          "line_item": "II. Other income",
+          "note_no": "28",
+          "values": {
+            "current_period": 141467665,
+            "previous_period": -25135722
+          }
+        },
+        {
+          "section": null,
+          "line_item": "III. Total revenue (I+II)",
+          "note_no": "",
+          "values": {
+            "current_period": 27064651424,
+            "previous_period": 25777273762
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IV. EXPENSES",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Purchase / Cost of Revenue",
+          "note_no": null,
+          "values": {
+            "current_period": 15112609171,
+            "previous_period": 14543037135
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Employee Benefit expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 1608642294,
+            "previous_period": 1585137746
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other Operating Expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 2313694391,
+            "previous_period": 2080798977
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Financial costs",
+          "note_no": null,
+          "values": {
+            "current_period": 62980041,
+            "previous_period": 131769787
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortization expense",
+          "note_no": "4",
+          "values": {
+            "current_period": 1795299751,
+            "previous_period": 1351019468
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total expenses (IV)",
+          "note_no": "",
+          "values": {
+            "current_period": 20893225648,
+            "previous_period": 19691763113
+          }
+        },
+        {
+          "section": null,
+          "line_item": "V. Profit/(loss) before tax (III-IV)",
+          "note_no": "",
+          "values": {
+            "current_period": 6171425776,
+            "previous_period": 6085510649
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VI. Tax expense",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current tax",
+          "note_no": "",
+          "values": {
+            "current_period": 1775577108,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deferred tax",
+          "note_no": "",
+          "values": {
+            "current_period": -5198637,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VII. Profit/(loss) for the period (V-VI)",
+          "note_no": "",
+          "values": {
+            "current_period": 4401047305,
+            "previous_period": 4439761048
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VIII. Other comprehensive income",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Items that will not be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Remeasurement of the defined benefit plan (net of tax)",
+          "note_no": "",
+          "values": {
+            "current_period": -11384193,
+            "previous_period": -10722656
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Items that will be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exchange differences on translation of foreign operations",
+          "note_no": "",
+          "values": {
+            "current_period": 2520439691,
+            "previous_period": 1474153637
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Asset impaired during the year",
+          "note_no": "",
+          "values": {
+            "current_period": -8683054265,
+            "previous_period": 4117661490
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IX. Total comprehensive income for the period",
+          "note_no": null,
+          "values": {
+            "current_period": -1772951462,
+            "previous_period": 1785530539
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "(1) Basic (in Rs.)",
+          "note_no": "",
+          "values": {
+            "current_period": 9.24,
+            "previous_period": 9.32
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "(2) Diluted (in Rs.)",
+          "note_no": "",
+          "values": {
+            "current_period": 9.24,
+            "previous_period": 9.32
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "Notes forming part of consolidated financial statements",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 26,
+        "total_rows": 3
+      }
+    },
+    "balance_sheet": {
+      "statement": "standalone_balance_sheet",
+      "page": 129,
+      "pages": [
+        129
+      ],
+      "title": "Financial Statement",
+      "currency": null,
+      "periods": [
+        "31.03.2020"
+      ],
+      "column_headers": [
+        "Note No.",
+        "Current Period",
+        "Previous Period"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Sale / Sale /",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation/A",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "As on 1st Additions during Deletions As on D ep. As on 1st Deletions the year per",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "year year",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "PROPERTY, PLANT AND EQUIPMENT",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 Electrical Equipment 2 2",
+          "note_no": "",
+          "values": {
+            "current_period": 24039615,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2 Office Equipment 5 5",
+          "note_no": "",
+          "values": {
+            "current_period": 52096644,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3 Air conditioners 7 , 7 , 5 ,",
+          "note_no": "",
+          "values": {
+            "current_period": 5451802,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "4 Computers 3",
+          "note_no": "",
+          "values": {
+            "current_period": 358262317,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "5 Furniture 1",
+          "note_no": "",
+          "values": {
+            "current_period": 100800973,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "6 Vehicles 1 , 1 , 1 ,",
+          "note_no": "",
+          "values": {
+            "current_period": 1078483,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "5 - INTANGIBE FIXED ASSETS",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1 Computer Products / Rights 2 , 2 , 1 ,",
+          "note_no": "",
+          "values": {
+            "current_period": 2074534,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2 , 1 , 3 TOTAL 5",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annual Report 2019-2020",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": 127
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 16,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "cash_flow": {
+      "statement": "standalone_cash_flow",
+      "page": 112,
+      "pages": [
+        112
+      ],
+      "title": "Statement of Profit and Loss for the year ended 31st March, 2020",
+      "currency": "in Rs.",
+      "periods": [
+        "25.06.2020"
+      ],
+      "column_headers": [
+        "For the period",
+        "For the period"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "REVENUE",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "I. Revenue from operations",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "II. Other income",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "III. Total revenue (I+II)",
+          "note_no": null,
+          "values": {
+            "current_period": 4,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IV. EXPENSES",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Purchase / Cost of Revenue 2",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Employee Benefit expenses 2 Other Operating Expenses 3",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Financial costs 3",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortization expense",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total expenses (IV)",
+          "note_no": null,
+          "values": {
+            "current_period": 4,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "V. Profit/(loss) before tax (III-IV)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VI. Tax expense",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current tax",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deferred tax",
+          "note_no": null,
+          "values": {
+            "current_period": 2,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VII. Profit/(loss) for the period (V-VI)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VIII. Other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Items that will not be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Remeasurement of the defined benefit plan(net of tax)",
+          "note_no": null,
+          "values": {
+            "current_period": 4,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Items that will be reclassified to profit or loss",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exchange differences on translation of foreign operations",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IX. Total comprehensive income for the period (VII+VIII)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "Basic (in Rs.) b) Diluted (in Rs.)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "Notes forming part of Standalone financial statements",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 23,
+        "total_rows": 3
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 126,
+        "extraction_method": "pdfplumber",
+        "row_count": 6,
+        "column_count": 3,
+        "rows": [
+          [
+            "Type of asset",
+            "Method",
+            "Useful lives"
+          ],
+          [
+            "Computer equipment",
+            "Straight line",
+            "3 years"
+          ],
+          [
+            "Office equipments",
+            "Straight line",
+            "5 years"
+          ],
+          [
+            "Furniture and fixtures",
+            "Straight line",
+            "10 years"
+          ],
+          [
+            "Electrical installations",
+            "Straight line",
+            "10 years"
+          ],
+          [
+            "Vehicles",
+            "Straight line",
+            "8 years"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": "4",
+        "title": "PROPERTY, PLANT AND EQUIPMENT & INTANGIBLE ASSETS AS AT 31-03-2020",
+        "page": 129,
+        "extraction_method": "pdfplumber",
+        "row_count": 9,
+        "column_count": 13,
+        "rows": [
+          [
+            "Sl.",
+            "Particulars",
+            "Gross Block",
+            "",
+            "",
+            "",
+            "Depreciation/Amortization",
+            "",
+            "",
+            "",
+            "",
+            "Net Block as on 31st Mar 2020",
+            "Net Block as on 31st March,2019"
+          ],
+          [
+            "",
+            "",
+            "As on 1st April, 2019",
+            "Additions during the year",
+            "Sale / Deletions during the year",
+            "As on 31st Mar 2020",
+            "D ep. As on 1st April, 2019",
+            "Depreciation/A mortization for the year",
+            "Sale / Deletions during the year",
+            "Adjustments to Reserves as per New Act",
+            "Total Depreciation",
+            "",
+            ""
+          ],
+          [
+            "1 2 3 4 5 6 1",
+            "PROPERTY, PLANT AND EQUIPMENT Electrical Equipment Office Equipment Air conditioners Computers Furniture Vehicles INTANGIBE FIXED ASSETS Computer Products / Rights TOTAL",
+            "2 4,039,615",
+            "",
+            "",
+            "- 2 4,039,615 5 4,577,235 7 ,491,714 359,865,718 103,227,814 1 ,078,482",
+            "22,115,112 51,740,027 5 ,157,592 357,996,335 95,274,622 1 ,051,484",
+            "- 1,924,503 356,617 294,210 265,982 5,526,351 26,999",
+            "",
+            "",
+            "- 24,039,615 52,096,644 5,451,802 358,262,317 100,800,973 1,078,483",
+            "- - 2,480,591 2,039,912 1,603,401 2,426,841 (1)",
+            "- 1 ,924,503 2 ,837,208 2 ,334,122 1 ,869,383 7 ,953,192 26,998"
+          ],
+          [
+            "",
+            "",
+            "5 4,577,235",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "7 ,491,714 3 59,865,718 1 03,227,814 1 ,078,482",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "5 50,280,578",
+            "-",
+            "-",
+            "550,280,578",
+            "533,335,172",
+            "8,394,662",
+            "-",
+            "-",
+            "541,729,834",
+            "8,550,744",
+            "1 6,945,404"
+          ],
+          [
+            "",
+            "",
+            "2 ,374,274",
+            "",
+            "",
+            "- 2 ,374,274",
+            "1 ,713,698",
+            "360,836",
+            "",
+            "",
+            "2,074,534",
+            "- 299,740",
+            "6 60,576"
+          ],
+          [
+            "",
+            "",
+            "2,374,274",
+            "-",
+            "-",
+            "2 ,374,274",
+            "1 ,713,698",
+            "3 60,836",
+            "-",
+            "-",
+            "2 ,074,534",
+            "299,740",
+            "660,576"
+          ],
+          [
+            "",
+            "",
+            "5 52,654,852",
+            "-",
+            "-",
+            "552,654,852",
+            "535,048,870",
+            "8,755,498",
+            "-",
+            "-",
+            "543,804,368",
+            "8,850,484",
+            "1 7,605,980"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": "5",
+        "title": "INVESTMENT PROPERTY",
+        "page": 130,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Land at cost",
+            "2 ,195,210",
+            "2 ,195,210"
+          ],
+          [
+            "",
+            "Total Investment Property",
+            "2 ,195,210",
+            "2 ,195,210"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": "5",
+        "title": "INVESTMENT PROPERTY",
+        "page": 130,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Investments - Non- Current (a) Investment in Equity Instruements at cost (i) Subsidiaries (Unquoted) Frontier Data Management Inc. USA International Expressions Inc. USA Online Media Solutions Limited , Israel Ybrant Media Acquisition Inc. USA Dream Ad Group Max Interactive Pty Ltd., Australia Dyomo Corporation .USA Ybrant Digital Services De Publicidade Ltda,Brasil Ybrant Digital (Brasil) Ltd., Singapore LGS Global FZE, UAE LIL Projects Private Limited Yreach Media Pvt.Ltd",
+            "1 ,298,477,349 1 ,045,363,208 5 17,881,121 1 ,265,240,000 5 43,240,000 4 17,490,000 4 67,300 2 65,932 4 5 2 43,650 9 9,980 9 9,000",
+            "1 ,298,477,349 1 ,045,363,208 5 17,881,121 1 ,265,240,000 5 43,240,000 4 17,490,000 4 67,300 2 65,932 4 5 2 43,650 9 9,980 9 9,000"
+          ],
+          [
+            "",
+            "Total Investments Non- Current",
+            "5 ,088,867,585",
+            "5 ,088,867,585"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": "5",
+        "title": "INVESTMENT PROPERTY",
+        "page": 130,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Loans - Non- Current Unsecured, Considered Good (a) Security deposits",
+            "2 ,066,310",
+            "2 ,854,473"
+          ],
+          [
+            "",
+            "Total Loans - Non- Current",
+            "2 ,066,310",
+            "2 ,854,473"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "5",
+        "title": "INVESTMENT PROPERTY",
+        "page": 130,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other financial assets - Non- Current Unsecured Considered Good Advances to related parties - Ybrant Employees Welfare Trust - LGSL Foundation Trust",
+            "1 0,750,000 5 ,694,873",
+            "1 0,750,000 5 ,694,873"
+          ],
+          [
+            "",
+            "Total Other financial assets - Non- Current",
+            "1 6,444,873",
+            "1 6,444,873"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_7",
+        "note_no": "5",
+        "title": "INVESTMENT PROPERTY",
+        "page": 130,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Deferred tax assets (net) Deferred tax liability Allam Raghunath Acturail gain or loss of gratutity Deferred tax assets Opening Deferred tax assets Mollama Manohar - Provision for gratuity and compensated absences Allowances for bad and doubtful debts Acturail gain or loss of gratutity MAT Credit",
+            "4 7,154,913 1 89,015 1 4,309,762 1 73,227 1 48,273 ( 3,239,316) 5 6,288,350",
+            "4 7,154,913 - 2 5,419,300 1 24,612 3 62,105 ( 11,596,255) 5 6,288,350"
+          ],
+          [
+            "",
+            "Deferred tax assets (net)",
+            "2 0,336,368",
+            "2 3,443,199"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_8",
+        "note_no": "10",
+        "title": "NON- CURRENT TAX ASSETS (NET)",
+        "page": 131,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Non- Current tax assets (net) -TDS Receivables",
+            "6 ,836,507",
+            "6 ,269,388"
+          ],
+          [
+            "",
+            "Total Non- Current tax assets (net)",
+            "6 ,836,507",
+            "6 ,269,388"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_9",
+        "note_no": "10",
+        "title": "NON- CURRENT TAX ASSETS (NET)",
+        "page": 131,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Trade receivables (i) Unsecured considered good Less: Allowances for bad and doubtful debts Notes In determining the allowances for doubtful trade receivables the Company has used a practical expedient by computing the expected credit loss allowance for trade receivables based on a provision matrix. The provision matrix takes into account historical credit loss experience and is adjusted for forward looking information. The expected credit loss allowance is based on the ageing of the receivables that are due and rates used in the provision matrix.",
+            "2 ,224,338,317 6 3,931,718",
+            "2 ,350,691,048 7 4,314,141"
+          ],
+          [
+            "",
+            "Total Trade receivables",
+            "2,160,406,599",
+            "2,276,376,907"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_10",
+        "note_no": "10",
+        "title": "NON- CURRENT TAX ASSETS (NET)",
+        "page": 131,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Cash and cash equivalents Balances with banks (i) Current accounts (ii) Cheques, drafts on hand (iii) Cash on hand",
+            "1 ,812,621 - 5 ,953",
+            "9 81,397 - 8 ,801"
+          ],
+          [
+            "",
+            "Total Cash and cash equivalents",
+            "1,818,574",
+            "990,198"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_11",
+        "note_no": "10",
+        "title": "NON- CURRENT TAX ASSETS (NET)",
+        "page": 131,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other bank balances - Current (i) Earmarked balances with Banks - Unpaid Dividend (ii) Balances with bank held as Margin Money",
+            "2 62,659 2 94,000",
+            "2 62,659 2 94,000"
+          ],
+          [
+            "",
+            "Total Other bank balances - Current",
+            "556,659",
+            "556,659"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_12",
+        "note_no": "14",
+        "title": "LOANS - CURRENT",
+        "page": 132,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Loans -Current Unsecured Considered Good (a) Loans to related parties (b) Others - Advances to Employees - Other Advances",
+            "2 ,248,206 1 ,053,131,989",
+            "2 ,199,073 1 ,183,036,365"
+          ],
+          [
+            "",
+            "Total Loans - Current",
+            "1,055,380,195",
+            "1,185,235,438"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_13",
+        "note_no": "14",
+        "title": "LOANS - CURRENT",
+        "page": 132,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other financial asset-Current (a) Security deposits - Rental deposits",
+            "3 ,256,938",
+            "4 ,243,808"
+          ],
+          [
+            "",
+            "Total Other Financial Assets - Current",
+            "3,256,938",
+            "4,243,808"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_14",
+        "note_no": "14",
+        "title": "LOANS - CURRENT",
+        "page": 132,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other Current Assets Others.",
+            "1 34,044,785",
+            "1 48,254,755"
+          ],
+          [
+            "",
+            "Total Other Current Assets",
+            "134,044,785",
+            "148,254,755"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_15",
+        "note_no": null,
+        "title": null,
+        "page": 133,
+        "extraction_method": "pdfplumber",
+        "row_count": 7,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other equity (i) Reserves & Surplus (a) Capital reserve (b) Retained earnings: Opening balance Add: Total Other Comphrehensive income for th Less: Transfer to general reserve Less:Dividend Less:Dividend distribution tax Closing Balance (c) Other reserves - General reserve Opening balance. Add: Additions during the year Closing Balance - Foreign currency translation reserve",
+            "4 ,167,811,992 670,056,302 e p e r i o d (22,100,379) - -",
+            "4 ,167,811,992 669,908,676 147,626 - -"
+          ],
+          [
+            "",
+            "",
+            "647,955,923",
+            "670,056,302"
+          ],
+          [
+            "",
+            "",
+            "3 9,817,160 -",
+            "3 9,817,160 -"
+          ],
+          [
+            "",
+            "",
+            "39,817,160",
+            "39,817,160"
+          ],
+          [
+            "",
+            "Total Reserves and Surplus",
+            "4,855,585,075",
+            "4,877,685,454"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_16",
+        "note_no": "19",
+        "title": "BORROWINGS - NON CURRENT",
+        "page": 134,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Borrowings - Non-Current (i) From banks-Secured (ii) From other parties-Unsecured Loans from Related parties Dream Ad, Panama Frontier Data Management Inc. USA International Expressions Inc. USA Online Media Solutions Limited , Israel Ybrant Media Acquisition Inc. USA",
+            "- 8 2,929,000 9 8,051,103 7 9,288,869 1 18,890,030 6 14,590,304",
+            "- 7 6,087,000 8 9,961,464 7 2,747,196 1 09,081,090 5 63,883,956"
+          ],
+          [
+            "",
+            "Total Long term Borrowings Non-Current",
+            "993,749,306",
+            "911,760,706"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_17",
+        "note_no": "19",
+        "title": "BORROWINGS - NON CURRENT",
+        "page": 134,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Provisions- Non Current Provision for employee benefits (a) Gratuity (b) Leave encashment Other Provisions",
+            "- 4 ,856,181 1 ,691,467 3 9,333,375",
+            "- 4 ,972,807 1 ,691,467 3 3,727,325"
+          ],
+          [
+            "",
+            "Total provisions Non current",
+            "45,881,023",
+            "40,391,599"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_18",
+        "note_no": "19",
+        "title": "BORROWINGS - NON CURRENT",
+        "page": 134,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Borrowings - Current-Secured Cash Credits and Working Capital from Banks (a) Axis Bank Ltd - Cash Credit Facility (b) Canara Bank - OD Facility Notes: Note No 21(a): Working Capital of Rs 4500 lakhs and Bank Guarantee /LC of Rs 400 Lakhs, term loan of Rs 500 lakhs and Rs.200 Lakhs Loan Equivalent Risk(LER) from Axis Bank Ltd are secured by charge on current assets, Fixed Assets, Pledge of promoters shares,immovable property and personal Guarantee of Promoter Directors. Note No 21(b)::Working Capital of Rs 3500 lakhs and Bank Guarantee of Rs 1000 Lakhs and trem loan of 450 lakhs from Canara Bank are secured by charge on current assets, Fixed Assets, Pledge of promoters shares,immovable property and personal Guarantee of Promoter Directors.",
+            "3 60,205,069 -",
+            "3 60,205,069 3 10,029,740"
+          ],
+          [
+            "",
+            "Total Borrowings Current",
+            "360,205,069",
+            "670,234,809"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_19",
+        "note_no": "22",
+        "title": "TRADE PAYABLES - CURRENT",
+        "page": 135,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Trade payables",
+            "3 64,904,540",
+            "3 37,098,077"
+          ],
+          [
+            "",
+            "Total Trade payables - Current",
+            "364,904,540",
+            "337,098,077"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_20",
+        "note_no": "22",
+        "title": "TRADE PAYABLES - CURRENT",
+        "page": 135,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other financial liabilities - Current Interest accrued and due on borrowings Others",
+            "7 1,344,569 1 7,724,497",
+            "4 5,276,614 1 2,820,619"
+          ],
+          [
+            "",
+            "Total Other financial liabilities - Current",
+            "89,069,066",
+            "58,097,233"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_21",
+        "note_no": "22",
+        "title": "TRADE PAYABLES - CURRENT",
+        "page": 135,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other current liabilities Unpaid dividend Other Current Liabilities To related parties LIL Projects Pvt Limited Yreach media Pvt Limited",
+            "1 04,667,389 2 60,845,580 3 91,140,983 7,323,643",
+            "1 04,667,389 3 35,775,919 4 07,449,402 6,919,267"
+          ],
+          [
+            "",
+            "Total Other current liabilities",
+            "763,977,595",
+            "854,811,977"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_22",
+        "note_no": "22",
+        "title": "TRADE PAYABLES - CURRENT",
+        "page": 135,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st Mar 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Provisions - Current (i) Provision for employee benefits Employee benefit payable (ii) Others (a) Provisions for expenses (b) Other Provisions (c)Tax",
+            "1 9,922,231 5 84,916 5 4,679,268 -",
+            "1 7,243,929 5 34,916 5 2,976,778 -"
+          ],
+          [
+            "",
+            "Total Provisions - Current",
+            "75,186,415",
+            "70,755,623"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_23",
+        "note_no": "26",
+        "title": "REVENUE FROM OPERATIONS",
+        "page": 136,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "For the period 31st Mar, 2020",
+            "For the period 31st Mar 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Sale of Services Domestic Sale of Services Exports Sale of Software Exports",
+            "- - 4,665,875,360",
+            "- 103,940,000 4,481,755,061"
+          ],
+          [
+            "",
+            "Total Revenue from Operations",
+            "4,665,875,360",
+            "4,585,695,061"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_24",
+        "note_no": "26",
+        "title": "REVENUE FROM OPERATIONS",
+        "page": 136,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "For the period 31st Mar, 2020",
+            "For the period 31st Mar 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Interest income Net gain/loss on foreign currency translation and transaction Other Income",
+            "1 21,748,118 1 5,321,543 -",
+            "137,070 ( 35,563,206) 16,972,536"
+          ],
+          [
+            "",
+            "Total Other Income",
+            "1 37,069,661",
+            "( 18,453,600)"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_25",
+        "note_no": "26",
+        "title": "REVENUE FROM OPERATIONS",
+        "page": 136,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "For the period 31st Mar, 2020",
+            "For the period 31st Mar 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Software Purchase & Sub Contractors Cost",
+            "3,566,539,924",
+            "3,514,417,093"
+          ],
+          [
+            "",
+            "Total Purchase/Cost of Revenue",
+            "3,566,539,924",
+            "3,514,417,093"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_26",
+        "note_no": "26",
+        "title": "REVENUE FROM OPERATIONS",
+        "page": 136,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "For the period 31st Mar, 2020",
+            "For the period 31st Mar 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Salaries,wages and allowances Contribution to provident and other fund Staff Welfare Expenses",
+            "4 94,570,492 644,136 723,354",
+            "494,750,024 784,073 750,457"
+          ],
+          [
+            "",
+            "Total Employee Benefit Expenses",
+            "4 95,937,982",
+            "496,284,554"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_27",
+        "note_no": "30",
+        "title": "OTHER OPERATING EXPENSES",
+        "page": 137,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "For the period 31st Mar, 2020",
+            "For the period 31st Mar 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Power & Fuel Rent Repairs & Maintenance Insurance Rates & Taxes (excluding Income Tax) Miscellaneous Expenses Payment to Auditors: (i) As Auditor fee (ii) For Tax Audit fee (iii) For Other Audit related Services Ins Fee Telephone, Postage and Others Business Promotion Expenses Travelling and Conveyance Office Maintenance Printing & Stationery Expenses Security Charges Consultancy Charges Event Sponsorship & Seminar Fee Web Development Expenses Professional Charges Sales and Marketing Expenses Books & Subscriptions Proivision for Impairment of Debtors Bad Debts written off Other Expenses Investments-written off",
+            "3 ,198,549 4 8,179,366 7 ,934,955 7 ,211,514 103,413 1 ,564,025 - 200,000 100,000 200,000 3 ,288,462 1 8,703,299 7 1,196,142 2 3,282,891 2 2,740,909 5 ,609,178 1 ,323,406 2 4,823,881 1 6,081,383 5 7,227,267 1 4,519,136 8 3,565,918 3 ,016,980 (10,382,423) 2 54,840,391 2 1,566,344 -",
+            "2,069,275 46,279,024 6,115,338 5,999,145 60,400 1,571,031 - 200,000 100,000 200,000 3,307,423 18,213,788 81,232,597 23,859,162 22,816,236 6,166,237 1,326,137 25,005,247 16,610,216 66,621,406 14,757,077 102,164,686 3,036,158 ( 37,167,483) 24,046,491 1,470,000"
+          ],
+          [
+            "",
+            "Total Other Operating Expenses",
+            "6 80,094,987",
+            "436,059,591"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_28",
+        "note_no": "30",
+        "title": "OTHER OPERATING EXPENSES",
+        "page": 137,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "For the period 31st Mar, 2020",
+            "For the period 31st Mar 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Interest on Working capital Loans Interest on Unsecured Loan Loan processing Charges & Bank Charges",
+            "6 1,624,422 1 ,268,316 87,303",
+            "129,218,869 2,184,948 338,258"
+          ],
+          [
+            "",
+            "Total Finance Costs",
+            "6 2,980,041",
+            "131,742,075"
+          ]
+        ]
+      }
+    ]
+  },
+  "consolidated": {
+    "profit_and_loss": {
+      "statement": "consolidated_profit_and_loss",
+      "page": 161,
+      "pages": [
+        161
+      ],
+      "title": "Statement of Consolidated Profit and Loss for the year ended 31st March 2020",
+      "currency": "in Rs.",
+      "periods": [
+        "31.03.2020",
+        "31.03.2019"
+      ],
+      "column_headers": [
+        "Note",
+        "31/03/2020",
+        "31/03/2019"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "REVENUE",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "I. Revenue from operations",
+          "note_no": "27",
+          "values": {
+            "current_period": 26923183759,
+            "previous_period": 25802409484
+          }
+        },
+        {
+          "section": null,
+          "line_item": "II. Other income",
+          "note_no": "28",
+          "values": {
+            "current_period": 141467665,
+            "previous_period": -25135722
+          }
+        },
+        {
+          "section": null,
+          "line_item": "III. Total revenue (I+II)",
+          "note_no": "",
+          "values": {
+            "current_period": 27064651424,
+            "previous_period": 25777273762
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IV. EXPENSES",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Purchase / Cost of Revenue",
+          "note_no": null,
+          "values": {
+            "current_period": 15112609171,
+            "previous_period": 14543037135
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Employee Benefit expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 1608642294,
+            "previous_period": 1585137746
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Other Operating Expenses",
+          "note_no": null,
+          "values": {
+            "current_period": 2313694391,
+            "previous_period": 2080798977
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Financial costs",
+          "note_no": null,
+          "values": {
+            "current_period": 62980041,
+            "previous_period": 131769787
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation and amortization expense",
+          "note_no": "4",
+          "values": {
+            "current_period": 1795299751,
+            "previous_period": 1351019468
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total expenses (IV)",
+          "note_no": "",
+          "values": {
+            "current_period": 20893225648,
+            "previous_period": 19691763113
+          }
+        },
+        {
+          "section": null,
+          "line_item": "V. Profit/(loss) before tax (III-IV)",
+          "note_no": "",
+          "values": {
+            "current_period": 6171425776,
+            "previous_period": 6085510649
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VI. Tax expense",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Current tax",
+          "note_no": "",
+          "values": {
+            "current_period": 1775577108,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deferred tax",
+          "note_no": "",
+          "values": {
+            "current_period": -5198637,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VII. Profit/(loss) for the period (V-VI)",
+          "note_no": "",
+          "values": {
+            "current_period": 4401047305,
+            "previous_period": 4439761048
+          }
+        },
+        {
+          "section": null,
+          "line_item": "VIII. Other comprehensive income",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Items that will not be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Remeasurement of the defined benefit plan (net of tax)",
+          "note_no": "",
+          "values": {
+            "current_period": -11384193,
+            "previous_period": -10722656
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Items that will be reclassified to profit or loss",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Exchange differences on translation of foreign operations",
+          "note_no": "",
+          "values": {
+            "current_period": 2520439691,
+            "previous_period": 1474153637
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Asset impaired during the year",
+          "note_no": "",
+          "values": {
+            "current_period": -8683054265,
+            "previous_period": 4117661490
+          }
+        },
+        {
+          "section": null,
+          "line_item": "IX. Total comprehensive income for the period",
+          "note_no": null,
+          "values": {
+            "current_period": -1772951462,
+            "previous_period": 1785530539
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "(1) Basic (in Rs.)",
+          "note_no": "",
+          "values": {
+            "current_period": 9.24,
+            "previous_period": 9.32
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "(2) Diluted (in Rs.)",
+          "note_no": "",
+          "values": {
+            "current_period": 9.24,
+            "previous_period": 9.32
+          }
+        },
+        {
+          "section": "Earning Per Share",
+          "line_item": "Notes forming part of consolidated financial statements",
+          "note_no": "",
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 26,
+        "total_rows": 3
+      }
+    },
+    "balance_sheet": {
+      "statement": "consolidated_balance_sheet",
+      "page": 59,
+      "pages": [
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "title": "Profit Carried to Balance Sheet 219,326.33 237,055.85 6479.56 6,700.56",
+      "currency": "Rs. in Lakhs",
+      "periods": [],
+      "column_headers": [
+        "FY 2019-20",
+        "FY 2018-19 FY 2019-20 FY 2018-19"
+      ],
+      "extraction_method": "word_position_clustering",
+      "rows": [
+        {
+          "section": null,
+          "line_item": "Total Revenue",
+          "note_no": null,
+          "values": {
+            "current_period": 270646.51,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Gross Profit before Interest, Depreciation &",
+          "note_no": null,
+          "values": {
+            "current_period": 80297.06,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Tax",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Interest",
+          "note_no": null,
+          "values": {
+            "current_period": 629.8,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Depreciation",
+          "note_no": null,
+          "values": {
+            "current_period": 17953,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit before Tax",
+          "note_no": null,
+          "values": {
+            "current_period": 61714.26,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Provision for Tax",
+          "note_no": null,
+          "values": {
+            "current_period": 17755.77,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Deferred Tax",
+          "note_no": null,
+          "values": {
+            "current_period": -51.99,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit after Tax",
+          "note_no": null,
+          "values": {
+            "current_period": 44010.47,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Add: Other comprehensive income",
+          "note_no": null,
+          "values": {
+            "current_period": -61739.99,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Total comprehensive income for the period",
+          "note_no": null,
+          "values": {
+            "current_period": -17729.51,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Balance Brought forward from the previous",
+          "note_no": null,
+          "values": {
+            "current_period": 237055.85,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "year",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit available for appropriations",
+          "note_no": null,
+          "values": {
+            "current_period": 219326.33,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Dividend",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Tax on Dividends",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Amount transferred to retained earnings as per",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Schedule II of Companies Act, 2013",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Less: Transferred to General Reserve",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Profit Carried to Balance Sheet",
+          "note_no": null,
+          "values": {
+            "current_period": 219326.33,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "State of Affairs / Company’s performance",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "During the year under review, your",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "lakhs as against Rs. a consolidated gross profit of Rs.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Rs. lakhs in the previous year. depreciation of Rs. lakhs and",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "resulted in a net profit of Rs. lakhs",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "There is no change in the nature of business review.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annual Report 2019-2020",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 57
+          }
+        },
+        {
+          "section": null,
+          "line_item": "There are no Material Changes and Commitments which occurred between the end of the",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "and the date of this Report.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "COVID-19",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "During the current COVID-19 pandemic employees have done a commendable job",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "first few companies to make a quick employees. Our pro-activeness in setting",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "continuity processes, and infrastructure customers while maintaining health and",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "customer accolades for the smooth and delighted with the way Brightcom teams",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "business continuity keeping health and Considering well-being of employees, we",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "counsel to their stress, anxieties and fears.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Transfer to Reserves",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Your Company has not proposed to transfer",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Deposits",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Your Company has not accepted any deposits",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Companies Act, 2013 read with the Companies financial year.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Dividend",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "During the year under review, the Board",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Rs.0.05/- per equity share for your",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Meeting of the Company. The company makes investments or extends",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "for their business purposes. Details of loans,",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "186 of the Companies Act, 2013, along with proposed to be utilized by the recipient,",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "provided in this annual report.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Change in the nature of business, if any",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "During the year under review, there was no any of its subsidiaries.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Material changes and commitments",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "During the year under review, there have have affected the financial position of the",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Subsidiary Companies nature of the business carried on by the",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "has not floated any new subsidiary Company.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annual Report 2019-2020",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 58
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Section 129(3) of the Companies Act, 2013 subsidiaries, it shall, in addition to its",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "statement of the company and of all subsidiaries and also attach along with its financial",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2020 is attached to Financial Statements of Consolidated Financial Statements",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "In compliance with Regulation 34 of the SEBI",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Regulations, 2015 and in compliance with provisions of the Companies Act, 2013 and",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "other applicable Accounting Standards, of the Annual Report.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Nomination and Remuneration Policy The Company’s remuneration Policy is",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "performance talent. Brightcom follows performance based variable pay, which is",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "the different business units/ overall determined by the Nomination and",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "for its approval. The above remunerations the Company, wherever required.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "The Nomination and Remuneration Policy http://brightcomgroup.com/investors/",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Declaration of Independence by Independent The Company has received necessary",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "under Section 149(7) of the Act and LODR independence as laid down in Section 149(6)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Management’s Discussion and Analysis",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Pursuant to the provisions of Regulation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Obligations and Disclosure Requirements)",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Discussion & Analysis is provided as a separate",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Related Party Transactions",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "All related party transactions that were ordinary course of the business of the",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "no materially significant related party with the Promoters, Directors, Key Managerial",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "potential conflict with the interest of the The policy on related party transactions as",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Directors is hosted on the website of the approvals from the Audit Committee are",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "normal in nature. Further, disclosures are basis.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Annual Report 2019-2020",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": 59
+          }
+        },
+        {
+          "section": null,
+          "line_item": "None of the Directors had any pecuniary than to the extent of their shareholding",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "remuneration/sitting fee.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Since all related party transactions entered business and were on an arm’s length basis,",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "in Form AOC-2 is not applicable to the The details of related party disclosures",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "provided in this annual report.",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Committees The following are the details of the Committees",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "1. Audit Committee;",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "2. Nomination and Remuneration",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "3. Stakeholders’ Relationship Committee;",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "4. Corporate Social Responsibility The composition of each of the above",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "provided in detail in the Corporate Governance",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Corporate Governance",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Pursuant to the provisions of Chapter IV",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Disclosure Requirements) Regulations, been incorporated in the Annual Report",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "from the Practicing Company Secretary",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Governance as stipulated under the said",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Requirements) Regulations, 2015 also forms",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Code of conduct for prevention of Insider",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Code of Conduct for Prevention of Insider accordance with Securities and Exchange",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "(Amendment) Regulations, 2018 is uploaded the PIT Code is to protect the interest",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "unpublished price sensitive information and shares of the Company by its Designated",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Mollama is the Compliance Officer under the Directors and Key Managerial Personnel",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "In pursuance of Section 152 of the Companies",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "Vijay Kancharla (DIN: 02744217), Executive ensuing Annual General Meeting and being",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        },
+        {
+          "section": null,
+          "line_item": "The Board of Directors on the recommendation",
+          "note_no": null,
+          "values": {
+            "current_period": null,
+            "previous_period": null
+          }
+        }
+      ],
+      "validation": {
+        "row_count": 104,
+        "total_rows": 0,
+        "current_period_balanced": false,
+        "previous_period_balanced": false
+      }
+    },
+    "notes_to_accounts": [
+      {
+        "note_id": "note_1",
+        "note_no": null,
+        "title": null,
+        "page": 164,
+        "extraction_method": "pdfplumber",
+        "row_count": 11,
+        "column_count": 5,
+        "rows": [
+          [
+            "Name of Investee",
+            "Principal activities",
+            "Country of incorporation",
+            "Percentage of ownership/ voting rights",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "31/Mar/20",
+            "31/Mar/19"
+          ],
+          [
+            "Ybrant Media Acquisition Inc",
+            "Digital Marketing",
+            "USA",
+            "100",
+            "100"
+          ],
+          [
+            "Online Media Solutions Limited",
+            "Digital Marketing",
+            "Israel",
+            "100",
+            "100"
+          ],
+          [
+            "International Expressions Inc",
+            "Digital Marketing",
+            "USA",
+            "100",
+            "100"
+          ],
+          [
+            "Dream AD SA Panama",
+            "Digital Marketing",
+            "Panama",
+            "100",
+            "100"
+          ],
+          [
+            "Ybrant Digital Servicos De Publicidade Ltd",
+            "Digital Marketing",
+            "Brazil",
+            "100",
+            "100"
+          ],
+          [
+            "LGS Global FZE",
+            "Digital Marketing",
+            "UAE",
+            "100",
+            "100"
+          ],
+          [
+            "Ybrant Digital (Brasil) Limited",
+            "Digital Marketing",
+            "Singapore",
+            "100",
+            "100"
+          ],
+          [
+            "Frontier Data Management Inc",
+            "Digital Marketing",
+            "USA",
+            "100",
+            "100"
+          ],
+          [
+            "Dream AD SA Argentina",
+            "Digital Marketing",
+            "Argentina",
+            "100",
+            "100"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_2",
+        "note_no": null,
+        "title": null,
+        "page": 165,
+        "extraction_method": "pdfplumber",
+        "row_count": 7,
+        "column_count": 5,
+        "rows": [
+          [
+            "Dyomo Corporation",
+            "Digital Marketing",
+            "USA",
+            "100",
+            "100"
+          ],
+          [
+            "Get Media Mexico Socidadanonima De Capital Variable, Mexico",
+            "Digital Marketing",
+            "Mexico",
+            "100",
+            "100"
+          ],
+          [
+            "Dream AD SA Chile",
+            "Digital Marketing",
+            "Chile",
+            "100",
+            "100"
+          ],
+          [
+            "Dream AD SA Uruguay",
+            "Digital Marketing",
+            "Uruguay",
+            "100",
+            "100"
+          ],
+          [
+            "Max Interactive Pty Ltd",
+            "Digital Marketing",
+            "Australia",
+            "100",
+            "100"
+          ],
+          [
+            "LIL Projects Private Limited",
+            "Digital Marketing/ Software Development",
+            "India",
+            "100",
+            "100"
+          ],
+          [
+            "YReach Media Private Limited",
+            "Digital Marketing/ Software Development",
+            "India",
+            "100",
+            "100"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_3",
+        "note_no": null,
+        "title": null,
+        "page": 177,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 3,
+        "rows": [
+          [
+            "Type of asset",
+            "Method",
+            "Useful lives"
+          ],
+          [
+            "Computer equipment",
+            "Straight line",
+            "3 years"
+          ],
+          [
+            "Office equipments",
+            "Straight line",
+            "5 years"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_4",
+        "note_no": null,
+        "title": null,
+        "page": 178,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 3,
+        "rows": [
+          [
+            "Furniture and fixtures",
+            "Straight line",
+            "10 years"
+          ],
+          [
+            "Electrical installations",
+            "Straight line",
+            "10 years"
+          ],
+          [
+            "Vehicles",
+            "Straight line",
+            "8 years"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_5",
+        "note_no": "5",
+        "title": "INVESTMENT PROPERTY",
+        "page": 182,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Land at cost",
+            "2 ,195,210",
+            "2,195,210"
+          ],
+          [
+            "",
+            "Total Investment Property",
+            "2 ,195,210",
+            "2,195,210"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_6",
+        "note_no": "5",
+        "title": "INVESTMENT PROPERTY",
+        "page": 182,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Investments - Non Current Investment in Equity Instruements at cost Equity Shares -Unquoted Affiliates",
+            "2 ,511,464,733",
+            "2,254,582,790"
+          ],
+          [
+            "",
+            "Total Investments-Non - Current",
+            "2 ,511,464,733",
+            "2,254,582,790"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_7",
+        "note_no": "5",
+        "title": "INVESTMENT PROPERTY",
+        "page": 182,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Loans - Non- Current Unsecured, Considered Good (a) Security deposits (b)Other Advances",
+            "2 ,066,310 9 98,659,754",
+            "59,044,999 1,592,206,126"
+          ],
+          [
+            "",
+            "Total Loans - Non current",
+            "1 ,000,726,064",
+            "1,651,251,125"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_8",
+        "note_no": "8",
+        "title": "OTHER FINANCIAL ASSETS - NON CURRENT",
+        "page": 183,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other financial assets - Non- Current Unsecured, Considered Good Advances other than Capital advances (a)Other advances (b) Advances to related parties - Ybrant Employees Welfare Trust - LGSL Foundation Trust",
+            "1 49,560,144 1 0,750,000 5 ,694,873",
+            "120,999,523 10,750,000 5,694,873"
+          ],
+          [
+            "",
+            "Total Other financial assets - Non Current",
+            "1 66,005,017",
+            "137,444,396"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_9",
+        "note_no": "8",
+        "title": "OTHER FINANCIAL ASSETS - NON CURRENT",
+        "page": 183,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Deferred tax assets (net) Deferred tax liability Allowances for bad and doubtful debts Acturail gain or loss of gratutity Deferred Tax Liabiliy Net Deferred tax assets Opening Deferred tax assets - Fixed Assets - Provision for gratuity and compensated absences Allowances for bad and doubtful debts Gratuity Expenses Foreign currency difference Lycos share of deferred tax MAT Credit Deferred Tax Asset Net",
+            "4 7,154,913 - 1 89,015 4 7,343,928 2 5,935,451 2 03,508 5 ,397,550 (3,239,316) 2 7,832 1 ,045,658 - 5 6,288,350 8 5,659,033",
+            "47,154,913 47,154,913 33,651,940 1,200,282 2,928,402 ( 11,596,255) - 431,847 ( 680,765) 56,288,350 82,223,801"
+          ],
+          [
+            "",
+            "Deferred Tax Asset( Net)",
+            "3 8,315,105",
+            "35,068,888"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_10",
+        "note_no": "10",
+        "title": "NON- CURRENT TAX ASSETS (NET)",
+        "page": 184,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Non- Current tax assets (net) -TDS Receivables",
+            "6 ,836,507",
+            "6,269,388"
+          ],
+          [
+            "",
+            "Total Non- Current tax assets (net)",
+            "6 ,836,507",
+            "6,269,388"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_11",
+        "note_no": "10",
+        "title": "NON- CURRENT TAX ASSETS (NET)",
+        "page": 184,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other non-current assets Others",
+            "3 07,419,850",
+            "298,277,651"
+          ],
+          [
+            "",
+            "Total Other Non Current Assets",
+            "3 07,419,850",
+            "298,277,651"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_12",
+        "note_no": "12",
+        "title": "TRADE RECEIVABLES",
+        "page": 185,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Trade receivables (a)Unsecured Considered good Less: Allowances for bad and doubtful debts Notes In determining the allowances for doubtful trade receivables the Company has used a practical expedient by computing the expected credit loss allowance for trade receivables based on a provision matrix. The provision matrix takes into account historical credit loss experience and is adjusted for forward looking information. The expected credit loss allowance is based on the ageing of the receivables that are due and rates used in the provision matrix.",
+            "9 ,837,983,610 9 0,868,216",
+            "8,985,156,531 87,387,935"
+          ],
+          [
+            "",
+            "Total Trade Receivables",
+            "9 ,747,115,394",
+            "8,897,768,596"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_13",
+        "note_no": "12",
+        "title": "TRADE RECEIVABLES",
+        "page": 185,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "",
+            "Cash and cash equivalents Balances with banks - Current Accounts - Cash on hand",
+            "1 ,189,420,352 6 ,190",
+            "1,025,770,729 19,582"
+          ],
+          [
+            "",
+            "Total Cash and cash equivalents",
+            "1 ,189,426,542",
+            "1,025,790,311"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_14",
+        "note_no": "14",
+        "title": "OTHER BANK BALANCES - CURRENT",
+        "page": 186,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other bank balances - Current (i) Earmarked balances with Banks - Unpaid Dividend (ii) Balances with bank held as Margin Money",
+            "2 62,659 2 94,000",
+            "262,659 294,000"
+          ],
+          [
+            "",
+            "Total Other bank balances - Current",
+            "5 56,659",
+            "556,659"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_15",
+        "note_no": "14",
+        "title": "OTHER BANK BALANCES - CURRENT",
+        "page": 186,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Loans -Current Unsecured Considered Good (a) Loans to related parties (b) Others Advances to Employees Other Advances",
+            "2 ,248,206 6 ,523,745,425",
+            "3,009,134 6,833,020,825"
+          ],
+          [
+            "",
+            "Total Loans - Current",
+            "6 ,525,993,631",
+            "6,836,029,959"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_16",
+        "note_no": "16",
+        "title": "OTHER FINANCIAL ASSETS - CURRENT",
+        "page": 187,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other financial asset-Current (a) Security deposits - Rental deposits",
+            "3 ,256,938",
+            "4,243,808"
+          ],
+          [
+            "",
+            "Total Other financial assets - Current",
+            "3 ,256,938",
+            "4,243,808"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_17",
+        "note_no": "16",
+        "title": "OTHER FINANCIAL ASSETS - CURRENT",
+        "page": 187,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other Current Assets Other receivable Prepaid expenses",
+            "1 ,494,711,637 7 9,335,090",
+            "5,326,736,320 79,046,323"
+          ],
+          [
+            "",
+            "Total Other Current Assets",
+            "1 ,574,046,727",
+            "5,405,782,643"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_18",
+        "note_no": null,
+        "title": null,
+        "page": 188,
+        "extraction_method": "pdfplumber",
+        "row_count": 3,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "",
+            "Equity share capital (i) Authorized (975,000,000 Equity Shares of Rs.2/- each ) (ii) Issued , Subscribed and Paid Up (476,251,499 Equity Shares of Rs.2/- each ) (iii) Reconciliation of the shares outstanding at the beginning and Number of Shares Shares outstanding at the beginning of the year Add: Issued and allotted during the year Shares outstanding at the end of the year",
+            "",
+            "1,950,000,000 952,502,998 g period: 476,251,499 476,251,499 - 75,084,653 15.77% 62,044,564 13.03% 33,368,913 7.01% 24,766,812 5.20%"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_19",
+        "note_no": "20",
+        "title": "PROVISIONS - NON CURRENT",
+        "page": 189,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "",
+            "Other equity (i) Reserves & Surplus (a) Capital reserve (b) Retained earnings: Opening balance Add: Total Other Comphrehensive income for the perio Less: Transfer to general reserve Less:Dividend Less:Dividend distribution tax Closing Balance (c) Other reserves - General reserve Opening balance Add: Additions during the year Closing Balance - Foreign currency translation reserve",
+            "4 ,167,811,992 2 3,705,584,559 d (1,772,951,462) - - 2 1,932,633,097 - - 3 9,817,160 3 9,817,160 - 1 ,171,848,365",
+            "4,167,811,992 21,920,054,021 1,785,530,539 - - 23,705,584,559 - - 39,817,160 39,817,160 - 1,171,848,365"
+          ],
+          [
+            "",
+            "Total Reserve & Surplus",
+            "2 7,312,110,615",
+            "29,085,062,077"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_20",
+        "note_no": "20",
+        "title": "PROVISIONS - NON CURRENT",
+        "page": 189,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Provisions - Non current Provision for employee benefits (a) Gratuity (b) Leave encashment Acrrued Severance Pay Other Provisions",
+            "5 ,103,308 1 ,691,467 5 3,673,911 3 9,333,375",
+            "4,972,807 1,691,467 49,245,582 33,867,752"
+          ],
+          [
+            "",
+            "Total Provisions - Non Current",
+            "9 9,802,061",
+            "89,777,608"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_21",
+        "note_no": "21",
+        "title": "DEFERRED TAX LIABILITIES (NET)",
+        "page": 190,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "DEFERRED TAX LIABILITIES (NET) Opening Deferred tax liability 3 2,615,284 ADD: Deferred Tax Liability for the year ( Due to SLM and WDV Difference ) Deferred Tax Liability due to others - Gross Deferred tax liability 3 2,615,284 Deferred tax assets - Opening Deferred tax 3 ,343,198 ADD: During th year Deferred Tax Asset for the year ( Due to SLM and WDV Diffe r e n c e ) - Provision for Gratuity and Compensated Absences 2 ,809,063 Foreign currency difference (2,632,245) Gross Deferred tax Asset 3 ,520,016",
+            "",
+            "32,615,284 - 32,615,284 - 3,560,936 - 1,620,526 (1,838,264) 3,343,198"
+          ],
+          [
+            "",
+            "Deferred Tax Liability - Net",
+            "2 9,095,268",
+            "29,272,085"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_22",
+        "note_no": "21",
+        "title": "DEFERRED TAX LIABILITIES (NET)",
+        "page": 190,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Borrowings - Current-Secured Cash Credits and Working Capital from Banks (a) Axis Bank Ltd - Cash Credit Facility (b) Canara Bank - OD Facility Notes: Note No 22(a): Working Capital of Rs 4500 lakhs and Bank Guarantee /LC of Rs 400 Lakhs, term loan of Rs 500 lakhs and Rs.200 Lakhs Loan Equivalent Risk(LER) from Axis Bank Ltd are secured by charge on current assets, Fixed Assets, Pledge of promoters shares,immovable property and personal Guarantee of Promoter Directors. Note No 22(b)::Working Capital of Rs 3500 lakhs and Bank Guarantee of Rs 1000 Lakhs and trem loan of 450 lakhs from Canara Bank are secured by charge on current assets, Fixed Assets, Pledge of promoters shares,immovable property and personal Guarantee of Promoter Directors.",
+            "3 60,205,069 -",
+            "360,205,069 310,029,740"
+          ],
+          [
+            "",
+            "Total borrowings - current",
+            "3 60,205,069",
+            "670,234,809"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_23",
+        "note_no": "23",
+        "title": "TRADE PAYABLES - CURRENT",
+        "page": 191,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "",
+            "Trade payables",
+            "1 ,015,404,455",
+            "844,113,457"
+          ],
+          [
+            "",
+            "Total Trade Payables - Current",
+            "1 ,015,404,455",
+            "844,113,457"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_24",
+        "note_no": "23",
+        "title": "TRADE PAYABLES - CURRENT",
+        "page": 191,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other financial liabilities - Current Current maturities of long term debt Interest accrued and due on borrowings Others",
+            "- 7 1,344,569 1 7,724,497",
+            "- 45,276,614 12,820,619"
+          ],
+          [
+            "",
+            "Total Other financial liabilities - Current",
+            "8 9,069,066",
+            "58,097,233"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_25",
+        "note_no": "25",
+        "title": "OTHER CURRENT LIABILITIES",
+        "page": 192,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Other current liabilities Unpaid dividend Other Current Liabilities Acquisition Payables -Lycos Inc",
+            "1 04,667,390 9 66,649,598 1 ,206,240,000",
+            "104,667,390 987,177,528 1,106,720,000"
+          ],
+          [
+            "",
+            "Total Other current liabilities",
+            "2 ,277,556,988",
+            "2,198,564,918"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_26",
+        "note_no": "25",
+        "title": "OTHER CURRENT LIABILITIES",
+        "page": 192,
+        "extraction_method": "pdfplumber",
+        "row_count": 4,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "As at 31st March 2020",
+            "As at 31st March 2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "Provisions - Current (i) Provision for employee benefits Employee benefit payable (ii) Others (a) Provisions for expenses (b) Other Provisions (c)Tax",
+            "2 3,279,618 6 18,556 5 4,679,212 4 85,705,506",
+            "22,985,524 22,860,103 56,375,488 613,172,562"
+          ],
+          [
+            "",
+            "Total Provisions - Current",
+            "5 64,282,892",
+            "715,393,677"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_27",
+        "note_no": "27",
+        "title": "REVENUE FROM OPERATIONS",
+        "page": 193,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "Year Ending",
+            "Year Ending"
+          ],
+          [
+            "",
+            "",
+            "31/03/2020",
+            "31/03/2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "(a)Sale of Services Domestic (b)Sale of Services Exports (c)Sale of Software Exports",
+            "1,008,959 22,256,299,440 4,665,875,360",
+            "- 21,320,654,423 4,481,755,061"
+          ],
+          [
+            "",
+            "Total Revenue from Operations",
+            "26,923,183,759",
+            "25,802,409,484"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_28",
+        "note_no": "27",
+        "title": "REVENUE FROM OPERATIONS",
+        "page": 193,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "Year Ending",
+            "Year Ending"
+          ],
+          [
+            "",
+            "",
+            "31/03/2020",
+            "31/03/2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "(a)Interest income (b)Net gain/(loss) on foreign currency translation and transaction Other Income",
+            "121,758,639 4,387,483 15,321,543",
+            "155,064 (42,263,322) 16,972,536"
+          ],
+          [
+            "",
+            "Total Other Income",
+            "141,467,665",
+            "(25,135,722)"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_29",
+        "note_no": "27",
+        "title": "REVENUE FROM OPERATIONS",
+        "page": 193,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "Year Ending",
+            "Year Ending"
+          ],
+          [
+            "",
+            "",
+            "31/03/2020",
+            "31/03/2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "(a)Media Cost (b)Internet,cloud and Infrastructure (c)Syndication Cost (d)Software Purchase & Sub Contractors Cost",
+            "9,762,142,643 1,427,785,806 353,176,283 3,569,504,439",
+            "9,329,324,849 1,411,263,679 288,031,514 3,514,417,093"
+          ],
+          [
+            "",
+            "Total Purchase/Cost of Revenue",
+            "15,112,609,171",
+            "14,543,037,135"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_30",
+        "note_no": "27",
+        "title": "REVENUE FROM OPERATIONS",
+        "page": 193,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "Year Ending",
+            "Year Ending"
+          ],
+          [
+            "",
+            "",
+            "31/03/2020",
+            "31/03/2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "(a)Salaries,wages and allowances (b)Contribution to provident and other fund (c)Staff Welfare Expenses",
+            "1,605,622,442 1,859,839 1,160,013",
+            "1,561,925,753 22,227,949 984,044"
+          ],
+          [
+            "",
+            "Total Employee Benefit Expenses",
+            "1,608,642,294",
+            "1,585,137,746"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_31",
+        "note_no": "31",
+        "title": "OTHER OPERATING EXPENSES",
+        "page": 194,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "Year Ending",
+            "Year Ending"
+          ],
+          [
+            "",
+            "",
+            "31/03/2020",
+            "31/03/2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "(a)Power & Fuel (b)Rent (c)Repairs & Maintenance (d)Insurance (e)Rates & Taxes (excluding Income Tax) (f)Miscellaneous Expenses (g)Payment to Auditors: (i) As Auditor fee (ii) For Tax Audit fee (iii) For Other Audit related Services (h)Ins Fee (i)Telephone, Postage and Others (j)Business Promotion Expenses (k)Travelling and Conveyance (l)Office Maintenance (m)Printing & Stationery Expenses (n)Security Charges (o)Consultancy Charges (p)Event Sponsorship & Seminar Fee (q)Web Development Expenses (r)Professional Charges (s)Sales and Marketing Expenses (t)Books & Subscriptions (u)Proivision for Impairment of Debtors (v)Bad debts written off (v)Other Expenses (w)Investments Write off",
+            "23,055,927 319,854,245 41,674,370 38,867,218 42,869,206 29,820,898 8,928,563 397,604 1,137,436 7,008,201 51,044,449 702,636,131 125,944,771 108,306,417 14,046,896 2,496,441 63,931,849 18,254,732 75,635,154 72,519,005 170,234,178 4,912,290 1,545,672 254,840,391 133,732,347 -",
+            "21,436,749 311,854,970 43,393,364 37,124,114 42,783,284 27,924,434 5,709,733 394,805 3,336,106 7,070,570 49,991,572 741,104,662 126,596,259 106,399,249 14,195,653 2,512,541 65,808,221 18,631,478 86,887,249 72,593,674 188,379,609 4,866,264 (31,997,013) - 132,331,430 1,470,000"
+          ],
+          [
+            "",
+            "Total Other Operating Expenses",
+            "2,313,694,391",
+            "2,080,798,977"
+          ]
+        ]
+      },
+      {
+        "note_id": "note_32",
+        "note_no": "31",
+        "title": "OTHER OPERATING EXPENSES",
+        "page": 194,
+        "extraction_method": "pdfplumber",
+        "row_count": 5,
+        "column_count": 4,
+        "rows": [
+          [
+            "S.No.",
+            "Particulars",
+            "Year Ending",
+            "Year Ending"
+          ],
+          [
+            "",
+            "",
+            "31/03/2020",
+            "31/03/2019"
+          ],
+          [
+            "",
+            "",
+            "Rupees",
+            "Rupees"
+          ],
+          [
+            "I",
+            "(a) Interest on Working capital Loans (b)Interest on Unsecured Loan (c)Loan processing Charges & Bank Charges",
+            "61,624,422 1,268,316 87,303",
+            "129,218,869 2,184,948 365,970"
+          ],
+          [
+            "",
+            "Total Finance Costs",
+            "62,980,041",
+            "131,769,787"
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+﻿git : fatal: sha1 file '<stdout>' write error: Broken pipe
+At line:1 char:1
++ git push origin main 2>&1 | Out-File -Encoding UTF8 git_push_output.t ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: sha1 fil...or: Broken pipe 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+fatal: the remote end hung up unexpectedly
+error: failed to push some refs to 'https://github.com/shrav-jally/SRT.git'
