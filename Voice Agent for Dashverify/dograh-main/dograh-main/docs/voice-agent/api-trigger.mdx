@@ -1,0 +1,140 @@
+---
+title: "API Trigger"
+description: "Trigger outbound calls from external systems like n8n, Zapier, or your own backend"
+---
+
+The API Trigger node lets you initiate outbound calls to your voice agent programmatically. When you add an API Trigger node to your workflow, Dograh generates a unique endpoint URL that external systems can call to start a conversation.
+
+This is useful when you want to trigger calls from your own backend, a CRM, or workflow tools like n8n and Zapier.
+
+## Prerequisites
+
+- A configured [telephony provider](/integrations/telephony/overview) — outbound calls will fail without one
+- An [API key](/configurations/api-keys) for authentication
+
+## Finding your trigger URL
+
+When you add an API Trigger node to your workflow, Dograh assigns it a unique UUID. The trigger node exposes two URLs that share this UUID:
+
+- A **production URL** for the published workflow
+- A **test URL** for the latest draft
+
+You can copy either URL from the trigger node's settings dialog.
+
+```
+POST https://your-dograh-instance/api/v1/public/agent/{uuid}        # Production
+POST https://your-dograh-instance/api/v1/public/agent/test/{uuid}   # Test
+```
+
+If you are using the hosted version, replace `your-dograh-instance` with `api.dograh.com`.
+
+### Test vs production
+
+| Mode       | URL                                | Runs                                                                      |
+|------------|------------------------------------|---------------------------------------------------------------------------|
+| Production | `/api/v1/public/agent/{uuid}`      | The published version of the agent.                                       |
+| Test       | `/api/v1/public/agent/test/{uuid}` | The latest draft. Falls back to the published version if no draft exists. |
+
+Use the test URL while iterating on changes so production traffic continues to hit the published version.
+
+The production URL only executes a **published** workflow. If you update the workflow but do not publish it, the production trigger will continue to run the older published version.
+
+Once you publish your draft, both URLs run the same definition.
+
+<Warning>
+A common pitfall is editing the workflow, saving the draft, and then calling the production trigger URL expecting the new behavior. That will not work until you publish the workflow. Use the test URL to verify draft changes before publishing.
+</Warning>
+
+The request body, headers, and response shape are identical for both URLs.
+
+## Making a request
+
+Authenticate by passing your API key in the `X-API-Key` header. The request body requires a `phone_number` and accepts optional `initial_context` and `telephony_configuration_id` fields.
+
+<CodeGroup>
+```bash Production URL
+curl -X POST https://your-dograh-instance/api/v1/public/agent/{uuid} \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: dg_your_api_key" \
+  -d '{
+    "phone_number": "+14155550100",
+    "initial_context": {
+      "customer_name": "Jane",
+      "appointment_date": "March 15"
+    }
+  }'
+```
+
+```bash Test URL
+curl -X POST https://your-dograh-instance/api/v1/public/agent/test/{uuid} \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: dg_your_api_key" \
+  -d '{
+    "phone_number": "+14155550100",
+    "initial_context": {
+      "customer_name": "Jane",
+      "appointment_date": "March 15"
+    }
+  }'
+```
+</CodeGroup>
+
+Use the test URL when you want to verify draft changes before publishing.
+
+### Response
+
+A successful request returns a `workflow_run_id` that you can use to [retrieve run details](/api-reference/runs/get-run), recordings, and transcripts.
+
+```json
+{
+  "status": "initiated",
+  "workflow_run_id": 12345,
+  "workflow_run_name": "WR-API-7823"
+}
+```
+
+### Error responses
+
+| Status | Cause |
+|---|---|
+| `400` | Telephony provider not configured, or call failed to initiate |
+| `401` | Missing or invalid API key |
+| `403` | API key does not have access to this agent |
+| `404` | Trigger not found or not active |
+
+## Initial context
+
+`initial_context` is a JSON object containing any information you want your voice agent to access during the call. You can reference these values in your prompts using [template variables](/voice-agent/template-variables) — values enclosed in `{{` and `}}`.
+
+For example, if your request includes:
+```json
+{
+    "phone_number": "+14155550100",
+    "initial_context": {
+        "user": {
+            "name": "John"
+        }
+    }
+}
+```
+
+You can reference the user's name in your agent prompt as `{{user.name}}` — in Agent prompts, `initial_context` fields are referenced directly by name (not prefixed with `initial_context.`). See [template variables](/voice-agent/template-variables) for the exact syntax in prompts versus webhook payloads.
+
+See [Context & Variables](/core-concepts/context-and-variables) for more on how data flows through a call.
+
+## Choosing a telephony configuration
+
+By default, calls are placed through your organization's default outbound [telephony configuration](/integrations/telephony/overview). To route a specific call through a different configuration — for example, to dial out from a regional number — pass `telephony_configuration_id` in the request body.
+
+```json
+{
+  "phone_number": "+14155550100",
+  "telephony_configuration_id": 42
+}
+```
+
+The id is shown on each row in **Telephony configurations** (`https://app.dograh.com/telephony-configurations` for hosted or `http://localhost:3010/telephony-configurations` for local). The configuration must belong to the same organization as the API Trigger; otherwise the request returns `404`.
+
+<Note>
+For full endpoint details including all parameters and response fields, see the [API reference](/api-reference/runs/trigger).
+</Note>
