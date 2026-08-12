@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" role="img" aria-label="Architecture diagram showing BGV database, monitoring, Twilio, Candidate, Dograh AI, FastMCP and outcomes">
+  <defs>
+    <style>
+      .node { fill: #ffffff; stroke: #cbd5e1; stroke-width:1; }
+      .label { font: 14px/1.2 'Segoe UI', Arial; fill: #0f172a; }
+      .small { font-size:12px; fill: #475569; }
+      .connector { stroke: #94a3b8; stroke-width:2; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <g transform="translate(40,40)">
+    <rect class="node" x="0" y="40" width="140" height="70" rx="10" />
+    <text class="label" x="70" y="82" text-anchor="middle">BGV Database</text>
+    <text class="small" x="70" y="100" text-anchor="middle">Candidates · Cases</text>
+  </g>
+
+  <g transform="translate(220,40)">
+    <rect class="node" x="0" y="40" width="160" height="70" rx="10" />
+    <text class="label" x="80" y="82" text-anchor="middle">Monitoring & Trigger</text>
+    <text class="small" x="80" y="100" text-anchor="middle">Pending cases</text>
+  </g>
+
+  <g transform="translate(420,40)">
+    <circle cx="60" cy="75" r="36" fill="#eef2ff" stroke="#bfdbfe" />
+    <text class="label" x="60" y="82" text-anchor="middle">Twilio</text>
+    <text class="small" x="60" y="100" text-anchor="middle">Voice</text>
+  </g>
+
+  <g transform="translate(560,40)">
+    <rect class="node" x="0" y="40" width="120" height="70" rx="10" />
+    <text class="label" x="60" y="82" text-anchor="middle">Candidate</text>
+    <text class="small" x="60" y="100" text-anchor="middle">Receives call</text>
+  </g>
+
+  <g transform="translate(720,40)">
+    <rect class="node" x="0" y="20" width="140" height="110" rx="10" />
+    <text class="label" x="70" y="62" text-anchor="middle">Dograh AI Agent</text>
+    <text class="small" x="70" y="82" text-anchor="middle">Speech · Reasoning</text>
+  </g>
+
+  <g transform="translate(900,40)">
+    <rect class="node" x="0" y="40" width="140" height="70" rx="10" />
+    <text class="label" x="70" y="82" text-anchor="middle">FastMCP Tools</text>
+    <text class="small" x="70" y="100" text-anchor="middle">Read / Update case</text>
+  </g>
+
+  <g transform="translate(1080,40)">
+    <rect class="node" x="0" y="40" width="120" height="70" rx="10" />
+    <text class="label" x="60" y="82" text-anchor="middle">BGV Database</text>
+    <text class="small" x="60" y="100" text-anchor="middle">Update · Audit</text>
+  </g>
+
+  <!-- Connectors -->
+  <path class="connector" d="M180 90 L220 90" marker-end="url(#arrow)" />
+  <path class="connector" d="M380 90 L420 90" marker-end="url(#arrow)" />
+  <path class="connector" d="M498 90 L560 90" marker-end="url(#arrow)" />
+  <path class="connector" d="M680 90 L720 90" marker-end="url(#arrow)" />
+  <path class="connector" d="M860 90 L900 90" marker-end="url(#arrow)" />
+  <path class="connector" d="M1040 90 L1080 90" marker-end="url(#arrow)" />
+
+  <!-- Outcomes box -->
+  <g transform="translate(40,180)">
+    <rect x="0" y="0" width="1160" height="140" rx="10" fill="#f0fdf4" stroke="#a7f3d0" />
+    <text class="label" x="20" y="26">Outcomes</text>
+    <g transform="translate(24,36)">
+      <rect x="0" y="10" width="240" height="72" rx="8" fill="#ffffff" stroke="#c6f6e8" />
+      <text class="small" x="120" y="54" text-anchor="middle">Case Resolved</text>
+    </g>
+    <g transform="translate(280,36)">
+      <rect x="0" y="10" width="240" height="72" rx="8" fill="#ffffff" stroke="#c6f6e8" />
+      <text class="small" x="120" y="54" text-anchor="middle">Follow-up Scheduled</text>
+    </g>
+    <g transform="translate(536,36)">
+      <rect x="0" y="10" width="240" height="72" rx="8" fill="#ffffff" stroke="#c6f6e8" />
+      <text class="small" x="120" y="54" text-anchor="middle">SLA Extension</text>
+    </g>
+    <g transform="translate(792,36)">
+      <rect x="0" y="10" width="240" height="72" rx="8" fill="#ffffff" stroke="#c6f6e8" />
+      <text class="small" x="120" y="54" text-anchor="middle">Escalated to Analyst</text>
+    </g>
+  </g>
+</svg>

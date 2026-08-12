@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Voice Agent for BGV Insufficiency Resolution</title>
+    <meta name="description" content="Concise functional overview of the AI Voice Agent for BGV insufficiency resolution." />
+    <style>
+      :root {
+        /* Deloitte-inspired palette */
+        --bg: #f3f8f4;
+        --surface: #ffffff;
+        --surface-alt: #f8fbf9;
+        --text: #071018;
+        --muted: #4b5563;
+        --border: #e6f0ea;
+        --primary: #00A859; /* deloitte green */
+        --primary-dark: #007a4d;
+        --accent: rgba(0,168,89,0.08);
+        --success: #0f766e;
+        --warning: #b45309;
+        --max-width: 1120px;
+        --radius: 8px;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Inter, "IBM Plex Sans", "Source Sans 3", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+      .page { padding: 24px 0 48px; }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      }
+      .hero {
+        padding: 32px;
+        margin-bottom: 20px;
+      }
+      .eyebrow {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(0,168,89,0.06), rgba(0,122,77,0.03));
+        color: var(--primary-dark);
+        font-weight: 700;
+        font-size: 0.82rem;
+        margin-bottom: 12px;
+        border: 1px solid rgba(0,168,89,0.08);
+      }
+      h1, h2, h3 { margin: 0 0 10px; line-height: 1.2; }
+      h1 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+      h2 { font-size: 1.24rem; }
+      p, li { color: var(--muted); }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        margin: 14px 0 0;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+      .grid { display: grid; gap: 16px; }
+      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .section { padding: 20px 24px; }
+      .section + .section { margin-top: 16px; }
+      .list { padding-left: 18px; margin: 8px 0 0; }
+      .list li + li { margin-top: 6px; }
+      .pill {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        font-size: 0.84rem;
+        color: var(--muted);
+        margin: 4px 6px 0 0;
+      }
+      .chevron-list { list-style: none; padding: 0; margin: 10px 0 0; }
+      /* Collapsible section styles */
+      .collapsible-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        cursor: pointer;
+      }
+      .collapsible-header h2 { margin: 0; }
+      .toggle-btn {
+        display: inline-grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--accent);
+        font-weight: 700;
+        transition: transform 180ms ease, background 180ms ease;
+      }
+      .toggle-btn[aria-expanded="true"] { transform: rotate(90deg); background: var(--surface-alt); }
+
+      /* Architecture diagram container */
+      .architecture-diagram { padding: 18px; }
+      .arch-svg { width: 100%; height: auto; display: block; }
+      .chevron-list li {
+        padding: 10px 0 10px 18px;
+        border-bottom: 1px solid var(--border);
+        position: relative;
+      }
+      .chevron-list li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .chevron-list li:last-child { border-bottom: none; }
+      .table-wrap { overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { padding: 10px 12px; border: 1px solid var(--border); text-align: left; }
+      th { background: var(--surface-alt); }
+      .badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-right: 8px;
+      }
+      .badge-ok { background: rgba(0,168,89,0.08); color: var(--primary-dark); border: 1px solid rgba(0,168,89,0.12); }
+      .badge-warn { background: #fff7ed; color: var(--warning); }
+      .link { color: var(--primary); font-weight: 600; }
+      .footer { padding: 20px 24px; color: var(--muted); font-size: 0.95rem; }
+      @media (max-width: 760px) {
+        .grid-2, .grid-3 { grid-template-columns: 1fr; }
+        .hero { padding: 24px; }
+        .section { padding: 18px 20px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <section class="card hero">
+          <div class="eyebrow">POC / MVP • AI Voice Automation • BGV Operations</div>
+          <h1>AI Voice Agent for BGV Insufficiency Resolution</h1>
+          <p>
+            A voice-driven solution that automates candidate follow-up for background verification insufficiencies,
+            reduces analyst effort, and accelerates case resolution through structured conversation and record updates.
+          </p>
+          <div class="meta">
+            <span><strong>Version:</strong> 1.0</span>
+            <span><strong>Prepared for:</strong> Akash / Samatha</span>
+            <span><strong>Prepared by:</strong> Shravya, Inayat, Saketh</span>
+            <span><strong>Stack:</strong> Dograh AI + Twilio + FastMCP + SQLite + Python</span>
+          </div>
+          <p style="margin-top: 12px;"><a class="link" href="https://indeloitte-my.sharepoint.com/personal/shrajallepally_ext_deloitte_com/Documents/Microsoft%20Copilot%20Chat%20Files/BGV_Voice_Agent_TDD.pdf" target="_blank" rel="noopener noreferrer">View related PDF</a></p>
+        </section>
+
+        <section class="card section">
+          <h2>1. Design Planning Summary</h2>
+          <div class="grid grid-2">
+            <div>
+              <h3>Background</h3>
+              <p>
+                BGV teams often face incomplete records, invalid references, missing documents, and unresolved verification issues.
+                Analysts spend significant time manually contacting candidates, tracking responses, and updating records.
+              </p>
+            </div>
+            <div>
+              <h3>Proposed Solution</h3>
+              <p>
+                The solution introduces an AI voice agent that automatically calls candidates when an insufficiency is detected,
+                collects required information, updates records, and routes exceptions when needed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card section">
+          <div class="collapsible-header" role="button">
+            <h2>2. Business Value</h2>
+            <button class="toggle-btn" aria-expanded="false" aria-controls="section-2">›</button>
+          </div>
+          <div id="section-2" class="collapsible-content" hidden>
+            <ul class="chevron-list">
+              <li>Reduces analyst effort spent on repetitive candidate follow-ups.</li>
+              <li>Improves insufficiency resolution turnaround time.</li>
+              <li>Prevents onboarding delays and supports SLA compliance.</li>
+              <li>Creates a standard, auditable process for every candidate interaction.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card section">
+          <div class="collapsible-header" role="button">
+            <h2>3. Functional Overview</h2>
+            <button class="toggle-btn" aria-expanded="false" aria-controls="section-3">›</button>
+          </div>
+          <div id="section-3" class="collapsible-content" hidden>
+            <ol class="chevron-list">
+              <li>Candidate case is reviewed and an insufficiency is identified.</li>
+              <li>The voice agent is triggered and a call is initiated through Twilio.</li>
+              <li>The agent collects missing details through a guided conversation.</li>
+              <li>Relevant records are updated and the interaction is logged.</li>
+              <li>The case is resolved or escalated to an analyst.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="card section">
+          <h2>4. Architecture at a Glance</h2>
+          <div class="architecture-diagram">
+            <img src="architecture_diagram.png" alt="Architecture diagram" style="width:100%;height:auto;display:block;border-radius:6px;border:1px solid var(--border);" />
+          </div>
+        </section>
+
+        <section class="card section">
+          <h2>5. Current Progress Status</h2>
+          <p>
+            <span class="badge badge-ok">Completed</span>
+            <span class="badge badge-ok">Validated</span>
+            <span class="badge badge-warn">In Progress</span>
+          </p>
+          <ul class="list">
+            <li>Database integration and candidate retrieval</li>
+            <li>Insufficiency detection and automated call triggering</li>
+            <li>Twilio voice integration and Dograh AI orchestration</li>
+            <li>Read/write operations, session logging, and audit trail</li>
+            <li>Contact update and escalation workflows</li>
+          </ul>
+        </section>
+
+        <section class="card section">
+          <h2>6. Key Challenges</h2>
+          <ul class="list">
+            <li>Network restrictions due to VPN and firewall limitations.</li>
+            <li>Production deployment readiness needs security hardening and guardrails.</li>
+            <li>Additional work is required in monitoring, access control, FAQ support, and intent classification.</li>
+          </ul>
+        </section>
+
+        <section class="card section">
+          <h2>7. Cost Estimate</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Scenario</th>
+                  <th>Total Cost (USD)</th>
+                  <th>Total Cost (INR)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Call usage only</td><td>$9.75</td><td>₹839</td></tr>
+                <tr><td>With 1 Twilio number</td><td>$11.25</td><td>₹968</td></tr>
+                <tr><td>With 10 Twilio numbers</td><td>$24.75</td><td>₹2,129</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card section">
+          <div class="collapsible-header" role="button">
+            <h2>8. Next Steps</h2>
+            <button class="toggle-btn" aria-expanded="false" aria-controls="section-8">›</button>
+          </div>
+          <div id="section-8" class="collapsible-content" hidden>
+            <ul class="chevron-list">
+              <li>Implement security review, guardrails, and compliance checks.</li>
+              <li>Enhance agent intelligence with FAQ support and human escalation workflows.</li>
+              <li>Refine deployment architecture, monitoring, and scaling readiness.</li>
+              <li>Validate larger-scale usage and alternate voice-agent options.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card footer">
+          <p>The AI Voice Agent for BGV Insufficiency Resolution demonstrates a working end-to-end proof of concept and provides a scalable foundation for future enterprise deployment.</p>
+        </section>
+      </div>
+      </div>
+      <script>
+        (function () {
+          const toggles = document.querySelectorAll('.toggle-btn');
+          toggles.forEach(btn => {
+            const targetId = btn.getAttribute('aria-controls');
+            const target = document.getElementById(targetId);
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const expanded = btn.getAttribute('aria-expanded') === 'true';
+              btn.setAttribute('aria-expanded', String(!expanded));
+              if (target) target.hidden = expanded;
+            });
+            const header = btn.closest('.collapsible-header');
+            if (header) {
+              header.addEventListener('click', (e) => {
+                if (e.target === btn) return;
+                btn.click();
+              });
+              header.setAttribute('tabindex', '0');
+              header.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
+              });
+            }
+          });
+        })();
+      </script>
+    </body>
+  </html>
